@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tvnserver" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="../bin/Debug_Win32/kvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Debug_Win32/tvnserver/" />
+				<Option deps_output="../bin/Debug_Win32/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+					<Add directory="../pjlib/pjlib/include/" />
+					<Add directory="../pjlib/pjlib-util/include/" />
+					<Add directory="../pjlib/pjnath/include/" />
+					<Add directory="../openssl/include/" />
+					<Add directory="../usrsctplib/" />
+				</Compiler>
+				<Linker>
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static.lib" />
+					<Add library="$(SolutionDir)pjlib/pjlib/lib/pjlib-i386-Win32-vc10-Debug.lib" />
+					<Add library="$(SolutionDir)pjlib/pjlib-util/lib/pjlib-util-i386-Win32-vc10-Debug.lib" />
+					<Add library="$(SolutionDir)pjlib/pjnath/lib/pjnath-i386-Win32-vc10-Debug.lib" />
+					<Add library="$(SolutionDir)OpenSSL/lib/VC/static/libeay32MTd.lib" />
+					<Add library="$(SolutionDir)OpenSSL/lib/VC/static/ssleay32MTd.lib" />
+					<Add library="$(OutDir)usrsctplib.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="DebugNoUnicode x64">
+				<Option output="../bin/DebugNoUnicode_x64/tvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/DebugNoUnicode_x64/tvnserver/" />
+				<Option deps_output="../bin/DebugNoUnicode_x64/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static-64.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="DebugNoUnicode Win32">
+				<Option output="../bin/DebugNoUnicode_Win32/tvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/DebugNoUnicode_Win32/tvnserver/" />
+				<Option deps_output="../bin/DebugNoUnicode_Win32/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseNoUnicode x64">
+				<Option output="../bin/ReleaseNoUnicode_x64/tvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/ReleaseNoUnicode_x64/tvnserver/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_x64/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static-64.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="Debug x64">
+				<Option output="../bin/Debug_x64/tvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Debug_x64/tvnserver/" />
+				<Option deps_output="../bin/Debug_x64/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static-64.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release x64">
+				<Option output="../bin/Release_x64/kvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Release_x64/tvnserver/" />
+				<Option deps_output="../bin/Release_x64/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DWIN64" />
+					<Add option="-DPJ_WIN64=1" />
+					<Add option="-DPJ_M_X86_64=1" />
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+					<Add directory="../pjlib/pjlib/include/" />
+					<Add directory="../pjlib/pjlib-util/include/" />
+					<Add directory="../pjlib/pjnath/include/" />
+					<Add directory="../openssl/include/" />
+					<Add directory="../usrsctplib/" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static-64.lib" />
+					<Add library="$(SolutionDir)pjlib/pjlib/lib/pjlib-x86_64-x64-vc10-Release.lib" />
+					<Add library="$(SolutionDir)pjlib/pjlib-util/lib/pjlib-util-x86_64-x64-vc10-Release.lib" />
+					<Add library="$(SolutionDir)pjlib/pjnath/lib/pjnath-x86_64-x64-vc10-Release.lib" />
+					<Add library="$(SolutionDir)OpenSSL/lib64/VC/static/libeay32MT.lib" />
+					<Add library="$(SolutionDir)OpenSSL/lib64/VC/static/ssleay32MT.lib" />
+					<Add library="$(SolutionDir)/bin/Release_x64/usrsctplib.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseNoUnicode Win32">
+				<Option output="../bin/ReleaseNoUnicode_Win32/tvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/ReleaseNoUnicode_Win32/tvnserver/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_Win32/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="../bin/Release_Win32/kvnserver" prefix_auto="1" extension_auto="1" />
+				<Option object_output="../obj/Release_Win32/tvnserver/" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+					<Add directory="../pjlib/pjlib/include/" />
+					<Add directory="../pjlib/pjlib-util/include/" />
+					<Add directory="../pjlib/pjnath/include/" />
+					<Add directory="../openssl/include/" />
+					<Add directory="../usrsctplib/" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="comctl32.lib" />
+					<Add library="$(SolutionDir)libjpeg-turbo/jpeg-static.lib" />
+					<Add library="$(SolutionDir)pjlib/pjlib/lib/pjlib-i386-Win32-vc10-Release.lib" />
+					<Add library="$(SolutionDir)pjlib/pjlib-util/lib/pjlib-util-i386-Win32-vc10-Release.lib" />
+					<Add library="$(SolutionDir)pjlib/pjnath/lib/pjnath-i386-Win32-vc10-Release.lib" />
+					<Add library="$(SolutionDir)OpenSSL/lib/VC/static/libeay32MT.lib" />
+					<Add library="$(SolutionDir)OpenSSL/lib/VC/static/ssleay32MT.lib" />
+					<Add library="$(OutDir)usrsctplib.lib" />
+					<Add library="winmm.lib" />
+					<Add library="kernel32.lib" />
+					<Add library="user32.lib" />
+					<Add library="gdi32.lib" />
+					<Add library="winspool.lib" />
+					<Add library="comdlg32.lib" />
+					<Add library="advapi32.lib" />
+					<Add library="shell32.lib" />
+					<Add library="ole32.lib" />
+					<Add library="oleaut32.lib" />
+					<Add library="uuid.lib" />
+					<Add library="odbc32.lib" />
+					<Add library="odbccp32.lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="../win-event-log/MessageProvider.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="BuildTime.cpp" />
+		<Unit filename="BuildTime.h" />
+		<Unit filename="res/connected.ico" />
+		<Unit filename="res/disabled.ico" />
+		<Unit filename="res/idle.ico" />
+		<Unit filename="res/konturvnc.png" />
+		<Unit filename="res/tightvnc.bmp" />
+		<Unit filename="resource.h" />
+		<Unit filename="tvnserver.cpp" />
+		<Unit filename="tvnserver.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

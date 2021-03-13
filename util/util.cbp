@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="util" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="../bin/Debug_Win32/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Debug_Win32/util/" />
+				<Option deps_output="../bin/Debug_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="DebugNoUnicode x64">
+				<Option output="../bin/DebugNoUnicode_x64/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/DebugNoUnicode_x64/util/" />
+				<Option deps_output="../bin/DebugNoUnicode_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="DebugNoUnicode Win32">
+				<Option output="../bin/DebugNoUnicode_Win32/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/DebugNoUnicode_Win32/util/" />
+				<Option deps_output="../bin/DebugNoUnicode_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="ReleaseNoUnicode x64">
+				<Option output="../bin/ReleaseNoUnicode_x64/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/ReleaseNoUnicode_x64/util/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug x64">
+				<Option output="../bin/Debug_x64/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Debug_x64/util/" />
+				<Option deps_output="../bin/Debug_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="Release x64">
+				<Option output="../bin/Release_x64/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Release_x64/util/" />
+				<Option deps_output="../bin/Release_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseNoUnicode Win32">
+				<Option output="../bin/ReleaseNoUnicode_Win32/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/ReleaseNoUnicode_Win32/util/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="../bin/Release_Win32/util" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Release_Win32/util/" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="AnsiStringStorage.cpp" />
+		<Unit filename="AnsiStringStorage.h" />
+		<Unit filename="BrokenHandleException.cpp" />
+		<Unit filename="BrokenHandleException.h" />
+		<Unit filename="Command.cpp" />
+		<Unit filename="Command.h" />
+		<Unit filename="CommandLine.cpp" />
+		<Unit filename="CommandLine.h" />
+		<Unit filename="CommandLineArgs.cpp" />
+		<Unit filename="CommandLineArgs.h" />
+		<Unit filename="CommandLineFormatException.cpp" />
+		<Unit filename="CommandLineFormatException.h" />
+		<Unit filename="CommandLineFormatHelp.cpp" />
+		<Unit filename="CommandLineFormatHelp.h" />
+		<Unit filename="CommonHeader.h" />
+		<Unit filename="DateTime.cpp" />
+		<Unit filename="DateTime.h" />
+		<Unit filename="Deflater.cpp" />
+		<Unit filename="Deflater.h" />
+		<Unit filename="DemandTimer.cpp" />
+		<Unit filename="DemandTimer.h" />
+		<Unit filename="DesCrypt.cpp" />
+		<Unit filename="DesCrypt.h" />
+		<Unit filename="Exception.cpp" />
+		<Unit filename="Exception.h" />
+		<Unit filename="Inflater.cpp" />
+		<Unit filename="Inflater.h" />
+		<Unit filename="KeyContainer.cpp" />
+		<Unit filename="KeyContainer.h" />
+		<Unit filename="Keymap.cpp" />
+		<Unit filename="Keymap.h" />
+		<Unit filename="ListenerContainer.h" />
+		<Unit filename="MacroCommand.cpp" />
+		<Unit filename="MacroCommand.h" />
+		<Unit filename="ResourceLoader.cpp" />
+		<Unit filename="ResourceLoader.h" />
+		<Unit filename="Singleton.h" />
+		<Unit filename="StringParser.cpp" />
+		<Unit filename="StringParser.h" />
+		<Unit filename="StringStorage.cpp" />
+		<Unit filename="StringStorage.h" />
+		<Unit filename="StringTable.cpp" />
+		<Unit filename="StringTable.h" />
+		<Unit filename="StringTemplate.h" />
+		<Unit filename="StringVector.h" />
+		<Unit filename="URLEncode.h" />
+		<Unit filename="Unicode.cpp" />
+		<Unit filename="Unicode.h" />
+		<Unit filename="UnicodeStringStorage.cpp" />
+		<Unit filename="UnicodeStringStorage.h" />
+		<Unit filename="Utf8StringStorage.cpp" />
+		<Unit filename="Utf8StringStorage.h" />
+		<Unit filename="VncPassCrypt.cpp" />
+		<Unit filename="VncPassCrypt.h" />
+		<Unit filename="ZLibBase.cpp" />
+		<Unit filename="ZLibBase.h" />
+		<Unit filename="ZlibException.cpp" />
+		<Unit filename="ZlibException.h" />
+		<Unit filename="inttypes.h" />
+		<Unit filename="md5.cpp" />
+		<Unit filename="md5.h" />
+		<Unit filename="urlencode.cpp" />
+		<Unit filename="winhdr.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

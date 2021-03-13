@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="logserver" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="../bin/Debug_Win32/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Debug_Win32/logserver/" />
+				<Option deps_output="../bin/Debug_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="DebugNoUnicode x64">
+				<Option output="../bin/DebugNoUnicode_x64/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../x64/DebugNoUnicode/logserver/" />
+				<Option deps_output="../bin/DebugNoUnicode_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="DebugNoUnicode Win32">
+				<Option output="../bin/DebugNoUnicode_Win32/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/DebugNoUnicode_Win32/logserver/" />
+				<Option deps_output="../bin/DebugNoUnicode_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="ReleaseNoUnicode x64">
+				<Option output="../bin/ReleaseNoUnicode_x64/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../x64/ReleaseNoUnicode/logserver/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug x64">
+				<Option output="../bin/Debug_x64/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Debug_x64/logserver/" />
+				<Option deps_output="../bin/Debug_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="Release x64">
+				<Option output="../bin/Release_x64/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Release_x64/logserver/" />
+				<Option deps_output="../bin/Release_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseNoUnicode Win32">
+				<Option output="../bin/ReleaseNoUnicode_Win32/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/ReleaseNoUnicode_Win32/logserver/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="../bin/Release_Win32/logserver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Release_Win32/logserver/" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="ClientLogger.cpp" />
+		<Unit filename="ClientLogger.h" />
+		<Unit filename="ConnectionListener.h" />
+		<Unit filename="ConnectionTimer.cpp" />
+		<Unit filename="ConnectionTimer.h" />
+		<Unit filename="FileLogDefs.h" />
+		<Unit filename="ListenLogServer.cpp" />
+		<Unit filename="ListenLogServer.h" />
+		<Unit filename="LogConn.cpp" />
+		<Unit filename="LogConn.h" />
+		<Unit filename="LogConnAuthListener.h" />
+		<Unit filename="LogLevelSender.cpp" />
+		<Unit filename="LogLevelSender.h" />
+		<Unit filename="LogListener.h" />
+		<Unit filename="LogServer.cpp" />
+		<Unit filename="LogServer.h" />
+		<Unit filename="SecurityPipeClient.cpp" />
+		<Unit filename="SecurityPipeClient.h" />
+		<Unit filename="SecurityPipeServer.cpp" />
+		<Unit filename="SecurityPipeServer.h" />
+		<Unit filename="TimerListener.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
