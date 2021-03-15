@@ -31,7 +31,7 @@ void Workstation::lock() throw(SystemException)
   }
 }
 
-void Workstation::logOff()
+void Workstation::logOff() throw(SystemException)
 {
   if (ExitWindowsEx(EWX_LOGOFF, SHTDN_REASON_MAJOR_APPLICATION) == FALSE) {
     throw SystemException();
