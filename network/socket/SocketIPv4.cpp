@@ -62,7 +62,7 @@ SocketIPv4::~SocketIPv4()
   }
 }
 
-void SocketIPv4::connect(const TCHAR *host, unsigned short port)
+void SocketIPv4::connect(const TCHAR *host, unsigned short port) throw(SocketException)
 {
   SocketAddressIPv4 address(host, port);
 
@@ -149,7 +149,7 @@ SocketIPv4 *SocketIPv4::accept()
   SocketIPv4 *accepted;
 
   try {
-    accepted = new SocketIPv4(); 
+    accepted = new SocketIPv4();
     accepted->close();
   } catch(...) {
     // Cleanup and throw further
@@ -216,7 +216,7 @@ SOCKET SocketIPv4::getAcceptedSocket(struct sockaddr_in *addr)
 int SocketIPv4::send(const char *data, int size, int flags)
 {
   int result;
-  
+
 
   if(m_p2p != NULL && m_p2p->m_enable){
 	/*  if(!m_dumpPacket || !m_gotP2p){
@@ -231,7 +231,7 @@ int SocketIPv4::send(const char *data, int size, int flags)
   if (result == -1) {
     throw IOException(_T("Ошибка отправки данных в сокет."));
   }
-  
+
   return result;
 }
 
@@ -264,7 +264,7 @@ int SocketIPv4::recv(char *buffer, int size, int flags)
 bool SocketIPv4::getLocalAddr(SocketAddressIPv4 *addr)
 {
   AutoLock l(&m_mutex);
-  
+
   if (m_localAddr == 0) {
     return false;
   }
