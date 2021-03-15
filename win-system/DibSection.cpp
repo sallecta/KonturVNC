@@ -25,11 +25,11 @@
 #include "DibSection.h"
 #include "win-system/SystemException.h"
 
-#include <include/process.h>
+//#include <include/process.h>
 
 #include "win-system/Environment.h"
 
-#include "atlimage.h"
+#include "atl/atlimage.h"
 
 DibSection::DibSection(const PixelFormat *pf, const Dimension *dim, HWND compatibleWin)
 : m_isOwnTargetDC(false),

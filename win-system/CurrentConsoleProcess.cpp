@@ -42,7 +42,7 @@ CurrentConsoleProcess::~CurrentConsoleProcess()
 }
 
 
-void CurrentConsoleProcess::start()
+void CurrentConsoleProcess::start() throw(SystemException)
 {
   cleanup();
 
@@ -53,7 +53,7 @@ void CurrentConsoleProcess::start()
   if (p_sessionID!=-1){
 	 m_args.format(_T("-sas %d"),sessionId);
 	  sessionId = p_sessionID;
-  } 
+  }
 
   m_log->info(_T("Try to start \"%s %s\" process as current user at %d session"),
             m_path.getString(),
@@ -99,7 +99,7 @@ void CurrentConsoleProcess::start()
         throw SystemException();
     }
 
-	
+
 
     m_log->debug(_T("Try SetTokenInformation(%p, , , )"),
                (void *)userToken);
@@ -111,8 +111,8 @@ void CurrentConsoleProcess::start()
     }
 
     StringStorage commandLine = getCommandLineString();
-	 
-	
+
+
 
     m_log->debug(_T("Try CreateProcessAsUser(%p, 0, %s, 0, 0, %d, NORMAL_PRIORITY_CLASS, 0, 0,")
                _T(" sti, pi)"),

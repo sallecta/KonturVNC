@@ -21,7 +21,7 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include <crtdbg.h>
 #include "SCMClient.h"
 
 #include "thread/Thread.h"
@@ -47,7 +47,7 @@ int SCMClientException::getSCMErrorCode() const
   return m_scmErrCode;
 }
 
-SCMClient::SCMClient(DWORD desiredAccess)
+SCMClient::SCMClient(DWORD desiredAccess) throw(SystemException)
 {
   m_managerHandle = OpenSCManager(NULL, NULL, desiredAccess);
 
@@ -64,7 +64,7 @@ SCMClient::~SCMClient()
 }
 
 void SCMClient::installService(const TCHAR *name, const TCHAR *nameToDisplay,
-                               const TCHAR *binPath, const TCHAR *dependencies)
+                               const TCHAR *binPath, const TCHAR *dependencies) throw(SystemException)
 {
   SC_HANDLE serviceHandle = CreateService(
     m_managerHandle,              // SCManager database
@@ -104,7 +104,7 @@ void SCMClient::installService(const TCHAR *name, const TCHAR *nameToDisplay,
   CloseServiceHandle(serviceHandle);
 }
 
-void SCMClient::removeService(const TCHAR *name)
+void SCMClient::removeService(const TCHAR *name) throw(SystemException)
 {
   try { stopService(name); } catch (...) { }
 
@@ -139,7 +139,7 @@ void SCMClient::removeService(const TCHAR *name)
   }
 }
 
-void SCMClient::startService(const TCHAR *name, bool waitCompletion)
+void SCMClient::startService(const TCHAR *name, bool waitCompletion) throw(SystemException, SCMClientException)
 {
   // FIXME: Wrap SC_HANDLE into a class with a call to CloseServiceHandle()
   //        in the destructor.
@@ -179,7 +179,7 @@ void SCMClient::startService(const TCHAR *name, bool waitCompletion)
   CloseServiceHandle(serviceHandle);
 }
 
-void SCMClient::stopService(const TCHAR *name, bool waitCompletion)
+void SCMClient::stopService(const TCHAR *name, bool waitCompletion) throw(SystemException, SCMClientException)
 {
   SC_HANDLE serviceHandle = OpenService(m_managerHandle, name, SERVICE_STOP | SERVICE_QUERY_STATUS);
   if (serviceHandle == NULL) {
@@ -218,7 +218,7 @@ void SCMClient::stopService(const TCHAR *name, bool waitCompletion)
   CloseServiceHandle(serviceHandle);
 }
 
-DWORD SCMClient::getServiceState(SC_HANDLE hService) const
+DWORD SCMClient::getServiceState(SC_HANDLE hService) const throw(SystemException)
 {
   DWORD bytesNeeded;
   SERVICE_STATUS_PROCESS status;

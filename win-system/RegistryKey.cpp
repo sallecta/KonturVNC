@@ -24,6 +24,7 @@
 
 #include "RegistryKey.h"
 #include <vector>
+#include <crtdbg.h>
 
 RegistryKey::RegistryKey(HKEY rootKey, const TCHAR *entry,
                          bool createIfNotExists, SECURITY_ATTRIBUTES *sa)

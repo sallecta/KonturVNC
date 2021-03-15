@@ -24,14 +24,14 @@
 
 #include "Keyboard.h"
 
-void Keyboard::getState(BYTE state[256])
+void Keyboard::getState(BYTE state[256]) throw(SystemException)
 {
   if (!GetKeyboardState(state)) {
     throw SystemException();
   }
 }
 
-void Keyboard::setState(BYTE state[256])
+void Keyboard::setState(BYTE state[256]) throw(SystemException)
 {
   if (!SetKeyboardState(state)) {
     throw SystemException();

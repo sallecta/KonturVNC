@@ -25,7 +25,7 @@
 #include "VersionInfo.h"
 #include "vector"
 
-VersionInfo::VersionInfo(const TCHAR *pathToFile)
+VersionInfo::VersionInfo(const TCHAR *pathToFile) throw(SystemException)
 {
   DWORD handle = 0;
   DWORD verInfoSize = GetFileVersionInfoSize(pathToFile, &handle);

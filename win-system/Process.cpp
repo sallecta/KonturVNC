@@ -83,7 +83,7 @@ void Process::getStartupInfo(STARTUPINFO *sti)
   }
 }
 
-void Process::start()
+void Process::start() throw(SystemException)
 {
   cleanup();
 
@@ -92,7 +92,9 @@ void Process::start()
   PROCESS_INFORMATION pi;
 
   StringStorage commandLine = getCommandLineString();
-
+    #ifndef _ASSERT
+    #define _ASSERT(expr) ((void)0)
+    #endif
   _ASSERT(!commandLine.isEmpty());
   if (CreateProcess(NULL, (LPTSTR) commandLine.getString(),
                     NULL, NULL, m_handlesIsInherited, NULL, NULL, NULL,
@@ -104,7 +106,7 @@ void Process::start()
   m_hProcess = pi.hProcess;
 }
 
-void Process::kill()
+void Process::kill() throw(SystemException)
 {
   if (TerminateProcess(m_hProcess, 0) == 0) {
     throw SystemException();
@@ -123,7 +125,7 @@ void Process::stopWait()
   SetEvent(m_hStopWait);
 }
 
-DWORD Process::getExitCode()
+DWORD Process::getExitCode() throw(SystemException)
 {
   DWORD exitCode;
 

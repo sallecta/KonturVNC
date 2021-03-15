@@ -28,7 +28,7 @@ Shell::Shell()
 {
 }
 
-void Shell::runAsAdmin(const TCHAR *pathToFile, const TCHAR *parameters)
+void Shell::runAsAdmin(const TCHAR *pathToFile, const TCHAR *parameters) throw(SystemException)
 {
   SHELLEXECUTEINFO sei;
 
@@ -51,7 +51,7 @@ void Shell::runAsAdmin(const TCHAR *pathToFile, const TCHAR *parameters)
   CloseHandle(sei.hProcess);
 }
 
-void Shell::open(const TCHAR *file, const TCHAR *parameters, const TCHAR *workDirectory)
+void Shell::open(const TCHAR *file, const TCHAR *parameters, const TCHAR *workDirectory) throw(SystemException)
 {
   int ret = (int)ShellExecute(0, _T("open"), file, parameters, workDirectory, SW_SHOW);
 

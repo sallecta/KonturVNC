@@ -157,15 +157,19 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++98" />
+					<Add option="-fpermissive" />
 					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_LIB" />
-					<Add option="-O2" />
-					<Add option="-Wall" />
-					<Add option="-Wextra" />
 					<Add directory="../" />
 					<Add directory="./" />
 					<Add directory="$(VCInstallDir)/" />
+					<Add directory="$(CODEBLOCKS)/MinGW/i686-w64-mingw32/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />

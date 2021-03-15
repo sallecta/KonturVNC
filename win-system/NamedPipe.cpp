@@ -44,7 +44,7 @@ NamedPipe::~NamedPipe(void)
   }
 }
 
-void NamedPipe::close()
+void NamedPipe::close() throw()
 {
   AutoLock al(&m_hPipeMutex);
   if (m_asServer) {
@@ -65,12 +65,12 @@ void NamedPipe::close()
   m_writeEvent.notify();
 }
 
-size_t NamedPipe::write(const void *buffer, size_t len)
+size_t NamedPipe::write(const void *buffer, size_t len) throw(IOException)
 {
   return writeByHandle(buffer, len, m_hPipe);
 }
 
-size_t NamedPipe::read(void *buffer, size_t len)
+size_t NamedPipe::read(void *buffer, size_t len) throw(IOException)
 {
   return readByHandle(buffer, len, m_hPipe);
 }

@@ -44,7 +44,7 @@ AnonymousPipe::~AnonymousPipe()
   }
 }
 
-void AnonymousPipe::close()
+void AnonymousPipe::close() throw(Exception)
 {
   AutoLock al(&m_hPipeMutex);
 

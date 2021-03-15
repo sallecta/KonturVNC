@@ -28,7 +28,7 @@
 #include <crtdbg.h>
 #include <winnt.h>
 
-SecurityIdentifier::SecurityIdentifier(SID *sid)
+SecurityIdentifier::SecurityIdentifier(SID *sid) throw(SystemException)
 {
   m_sid = (SID *)LocalAlloc(LPTR, SECURITY_MAX_SID_SIZE);
 
@@ -55,7 +55,7 @@ bool SecurityIdentifier::isValid()
   return IsValidSid(m_sid) == TRUE;
 }
 
-void SecurityIdentifier::toString(StringStorage *sidString)
+void SecurityIdentifier::toString(StringStorage *sidString) throw(SystemException)
 {
   TCHAR *localAllocatedSidString;
 
@@ -69,7 +69,7 @@ void SecurityIdentifier::toString(StringStorage *sidString)
 }
 
 // FIXME: refactor this method.
-SecurityIdentifier *SecurityIdentifier::getProcessOwner(HANDLE processHandle)
+SecurityIdentifier *SecurityIdentifier::getProcessOwner(HANDLE processHandle) throw(SystemException)
 {
   HANDLE procToken;
 
@@ -92,7 +92,7 @@ SecurityIdentifier *SecurityIdentifier::getProcessOwner(HANDLE processHandle)
   }
 }
 
-SecurityIdentifier *SecurityIdentifier::createSidFromString(const TCHAR *sidString)
+SecurityIdentifier *SecurityIdentifier::createSidFromString(const TCHAR *sidString) throw(SystemException)
 {
   return new SecurityIdentifier(sidString);
 }

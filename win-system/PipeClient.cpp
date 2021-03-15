@@ -29,7 +29,7 @@ PipeClient::PipeClient()
 {
 }
 
-NamedPipe *PipeClient::connect(const TCHAR *name)
+NamedPipe *PipeClient::connect(const TCHAR *name) throw(Exception)
 {
   StringStorage pipeName;
   pipeName.format(_T("\\\\.\\pipe\\%s"), name);
