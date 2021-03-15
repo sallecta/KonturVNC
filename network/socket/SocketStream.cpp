@@ -57,7 +57,7 @@ size_t SocketStream::write(const void *buf, size_t size) throw(IOException)
   return (size_t)m_socket->send((char *)buf, (int)size);
 }
 
-void SocketStream::close()
+void SocketStream::close() throw()
 {
   try {
     m_socket->shutdown(SD_BOTH);
