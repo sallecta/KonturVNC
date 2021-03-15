@@ -69,7 +69,7 @@ void SocketIPv4::connect(const TCHAR *host, unsigned short port) throw(SocketExc
   connect(address);
 }
 
-void SocketIPv4::connect(const SocketAddressIPv4 &addr)
+void SocketIPv4::connect(const SocketAddressIPv4 &addr) throw(SocketException)
 {
   struct sockaddr_in targetSockAddr = addr.getSockAddr();
 
