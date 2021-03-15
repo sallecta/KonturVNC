@@ -18,7 +18,7 @@ LPCTSTR CURLEncode::m_lpszReservedString=_T("$&+,./:;=?@-_!*()'");
 int CURLEncode::m_iReservedLen=(int)_tcslen(m_lpszReservedString);
 
 // Convert a byte into Hexadecimal CString
-CString CURLEncode::toHex(BYTE val) 
+CString CURLEncode::toHex(BYTE val)
 {
 	CString csRet;
 	csRet.Format(_T("%%%0.2X"), val);
@@ -76,7 +76,7 @@ TCHAR CURLEncode::fromUTF8(WORD w)
 //                  so if we are encoding just a string containing Keywords,
 //                  we want to encode the reserved characters.
 //                  but if we are encoding a simple URL, we wont.
-CString CURLEncode::Encode(CString strURL, BOOL bEncodeReserved/*=FALSE*/)
+ATL::CString CURLEncode::Encode(CString strURL, BOOL bEncodeReserved/*=FALSE*/)
 {
 	// First encode the % sign, because we are adding lots of it later...
 	strURL.Replace(_T("%"), toHex(__toascii(_T('%'))));
@@ -120,7 +120,7 @@ CString CURLEncode::Encode(CString strURL, BOOL bEncodeReserved/*=FALSE*/)
 	for (int i=0; i<strURL.GetLength(); i++)
 	{
 		tc=strURL.GetAt(i);
-		if ((tc<_T('a') || tc>_T('z')) && 
+		if ((tc<_T('a') || tc>_T('z')) &&
 			(tc<_T('A') || tc>_T('Z')) &&
 			(tc<_T('0') || tc>_T('9')) &&
 			strDoNotReplace.Find(tc)<0)

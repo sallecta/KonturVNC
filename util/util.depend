@@ -1,0 +1,291 @@
+# depslib dependency file v1.0
+1615660992 source:z:\media\data\dev\git\konturvnc\util\ansistringstorage.cpp
+	"AnsiStringStorage.h"
+	"CommonHeader.h"
+	"util/Exception.h"
+	<crtdbg.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\ansistringstorage.h
+	"StringStorage.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\stringstorage.h
+	"winhdr.h"
+	<vector>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\winhdr.h
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<windows.h>
+	<psapi.h>
+	<Wtsapi32.h>
+	<tchar.h>
+	<commctrl.h>
+	<Dbghelp.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\commonheader.h
+	"winhdr.h"
+	"StringStorage.h"
+	"StringTable.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\stringtable.h
+	"StringStorage.h"
+	<map>
+
+1615799276 z:\media\data\dev\git\konturvnc\\util\exception.h
+	"StringStorage.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\stringstorage.h
+	"winhdr.h"
+	<vector>
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\winhdr.h
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<windows.h>
+	<psapi.h>
+	<Wtsapi32.h>
+	<tchar.h>
+	<commctrl.h>
+	<Dbghelp.h>
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\brokenhandleexception.cpp
+	"BrokenHandleException.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\brokenhandleexception.h
+	"Exception.h"
+
+1615799276 z:\media\data\dev\git\konturvnc\util\exception.h
+	"StringStorage.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\command.cpp
+	"Command.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\command.h
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\commandline.cpp
+	"CommandLine.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\commandline.h
+	"util/CommonHeader.h"
+	"CommandLineArgs.h"
+	"KeyContainer.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\commonheader.h
+	"winhdr.h"
+	"StringStorage.h"
+	"StringTable.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\stringtable.h
+	"StringStorage.h"
+	<map>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\commandlineargs.h
+	"util/CommonHeader.h"
+	<vector>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\keycontainer.h
+	"util/CommonHeader.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\commandlineargs.cpp
+	"CommandLineArgs.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\commandlineformatexception.cpp
+	"CommandLineFormatException.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\commandlineformatexception.h
+	"util/Exception.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\commandlineformathelp.cpp
+	"CommandLineFormatHelp.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\commandlineformathelp.h
+	"util/Exception.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\datetime.cpp
+	"DateTime.h"
+	<crtdbg.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\datetime.h
+	"inttypes.h"
+	"winhdr.h"
+	"StringStorage.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\inttypes.h
+
+1615839898 source:z:\media\data\dev\git\konturvnc\util\deflater.cpp
+	"Deflater.h"
+	<crtdbg.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\deflater.h
+	"ZLibBase.h"
+	"ZLibException.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\zlibbase.h
+	"zlib/zlib.h"
+	<vector>
+
+1615660992 z:\media\data\dev\git\konturvnc\\zlib\zlib.h
+	"zconf.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\zlib\zconf.h
+	<windows.h>
+	<limits.h>
+	<sys/types.h>
+	<stdarg.h>
+	<stddef.h>
+	<unistd.h>
+	<unixio.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\zlibexception.h
+	"util/Exception.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\demandtimer.cpp
+	"DemandTimer.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\demandtimer.h
+	"DateTime.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\descrypt.cpp
+	"DesCrypt.h"
+	"util/CommonHeader.h"
+
+1615840257 z:\media\data\dev\git\konturvnc\util\descrypt.h
+	<crtdefs.h>
+	"util/inttypes.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\inttypes.h
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\exception.cpp
+	"util/Exception.h"
+
+1615840575 source:z:\media\data\dev\git\konturvnc\util\inflater.cpp
+	"Inflater.h"
+	<crtdbg.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\inflater.h
+	"ZLibBase.h"
+	"ZLibException.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\keycontainer.cpp
+	"KeyContainer.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\keymap.cpp
+	"Keymap.h"
+	"util/winhdr.h"
+	"win-system/InputInjector.h"
+	"win-system/Keyboard.h"
+	<crtdbg.h>
+	"rfb/keysymdef.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\keymap.h
+	"util/CommonHeader.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\win-system\inputinjector.h
+	"util/CommonHeader.h"
+	"log-writer/LogWriter.h"
+	"SystemException.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\log-writer\logwriter.h
+	"Logger.h"
+	"util/CharDefs.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\log-writer\logger.h
+	"util/CharDefs.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\chardefs.h
+	<Tchar.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\\win-system\systemexception.h
+	"util/Exception.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\win-system\keyboard.h
+	"util/winhdr.h"
+	"SystemException.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\rfb\keysymdef.h
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\macrocommand.cpp
+	"MacroCommand.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\macrocommand.h
+	"Command.h"
+	<list>
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\md5.cpp
+	"md5.h"
+	<memory.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\md5.h
+	"util/inttypes.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\resourceloader.cpp
+	"ResourceLoader.h"
+	"util/UnicodeStringStorage.h"
+	<crtdbg.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\resourceloader.h
+	"winhdr.h"
+	"Singleton.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\singleton.h
+	"CommonHeader.h"
+	<crtdbg.h>
+	"thread/LocalMutex.h"
+	"thread/AutoLock.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\localmutex.h
+	"util/CommonHeader.h"
+	"Lockable.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\lockable.h
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\autolock.h
+	"Lockable.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\unicodestringstorage.h
+	"StringStorage.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\stringparser.cpp
+	"StringParser.h"
+	<stdio.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\stringparser.h
+	"inttypes.h"
+	"CommonHeader.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\stringstorage.cpp
+	"StringStorage.h"
+	"CommonHeader.h"
+	"Exception.h"
+	<stdio.h>
+	<crtdbg.h>
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\stringtable.cpp
+	"StringTable.h"
+	"ResourceLoader.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\unicode.cpp
+	"Unicode.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\util\unicode.h
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\unicodestringstorage.cpp
+	"UnicodeStringStorage.h"
+	"CommonHeader.h"
+	"util/Exception.h"
+	<crtdbg.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\util\unicodestringstorage.h
+	"StringStorage.h"
+
+1615660992 source:z:\media\data\dev\git\konturvnc\util\vncpasscrypt.cpp
+	"VncPassCrypt.h"
+	"util/CommonHeader.h"
+	"DesCrypt.h"
+
+1615829878 z:\media\data\dev\git\konturvnc\util\vncpasscrypt.h
+	"util/inttypes.h"
+	<vector>
+
