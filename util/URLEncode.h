@@ -12,7 +12,7 @@
 #ifndef __URLENC_H__
 #define __URLENC_H__
 
-#include <atlstr.h>
+#include <atl/atlstr.h>
 
 
 // For ANSI, set default codepage to Hebrew.
@@ -37,4 +37,4 @@ public:
 	CString Decode(CString strURL);
 };
 
-#endif 
+#endif

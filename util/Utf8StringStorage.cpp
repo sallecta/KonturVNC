@@ -30,7 +30,8 @@
 
 Utf8StringStorage::Utf8StringStorage()
 {
-  fromStringStorage(&StringStorage(_T("")));
+  fromStringStorage(&StringStorage(_T("")));//taking address of temporary [-fpermissive]|
+}
 }
 
 Utf8StringStorage::Utf8StringStorage(const std::vector<char> *utf8Buffer)
