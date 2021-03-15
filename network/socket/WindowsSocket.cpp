@@ -41,7 +41,7 @@ void WindowsSocket::startup(BYTE loVer, BYTE hiVer) throw(Exception)
   m_isStarted = true;
 }
 
-void WindowsSocket::cleanup()
+void WindowsSocket::cleanup() throw(Exception)
 {
   if (!m_isStarted) {
     throw Exception(_T("WindowsSocket не был инициализирован."));
