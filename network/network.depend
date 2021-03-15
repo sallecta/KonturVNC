@@ -905,3 +905,65 @@
 
 1615660991 z:\media\data\dev\git\konturvnc\\p2p\p2peventlistener.h
 
+1615797311 source:z:\media\data\dev\git\konturvnc\network\socket\socketipv4.cpp
+	<stdlib.h>
+	"SocketAddressIPv4.h"
+	"SocketAddressIPv4.h"
+	"SocketIPv4.h"
+	"thread/AutoLock.h"
+	<crtdbg.h>
+
+1615798190 source:z:\media\data\dev\git\konturvnc\network\socket\socketstream.cpp
+	<stdlib.h>
+	"SocketStream.h"
+	"../socket/sockdefs.h"
+	<crtdbg.h>
+
+1615797926 z:\media\data\dev\git\konturvnc\network\socket\socketstream.h
+	"io-lib/Channel.h"
+	"../socket/SocketAddressIPv4.h"
+	"../socket/SocketIPv4.h"
+	"../socket/SocketAddressIPv4.h"
+	"io-lib/IOException.h"
+
+1615795838 source:z:\media\data\dev\git\konturvnc\network\socket\windowssocket.cpp
+	"WindowsSocket.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\socket\windowssocket.h
+	"util/CommonHeader.h"
+	"util/Exception.h"
+
+1615797519 source:z:\media\data\dev\git\konturvnc\network\tcpserver.cpp
+	"TcpServer.h"
+	"network/socket/SocketAddressIPv4.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\tcpserver.h
+	"thread/Thread.h"
+	"util/Exception.h"
+	"network/socket/SocketIPv4.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\network\socket\socketipv4.h
+	"sockdefs.h"
+	"SocketIPv4.h"
+	"SocketAddressIPv4.h"
+	"SocketException.h"
+	"io-lib/Channel.h"
+	"io-lib/IOException.h"
+	"win-system/WsaStartup.h"
+	"thread/LocalMutex.h"
+	"p2p/p2ptransport.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\network\socket\sockdefs.h
+	"util/CommonHeader.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\network\socket\socketaddressipv4.h
+	"util/CommonHeader.h"
+	"thread/LocalMutex.h"
+	"SocketException.h"
+	"sockdefs.h"
+	"win-system/WsaStartup.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\network\socket\socketexception.h
+	"util/Exception.h"
+	"sockdefs.h"
+
