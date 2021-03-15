@@ -21,7 +21,7 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include <crtdbg.h>
 #include "tvnserver/resource.h"
 #include "IpAccessControlDialog.h"
 #include "ConfigDialog.h"
