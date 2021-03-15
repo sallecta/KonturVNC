@@ -26,7 +26,7 @@
 
 bool WindowsSocket::m_isStarted = false;
 
-void WindowsSocket::startup(BYTE loVer, BYTE hiVer)
+void WindowsSocket::startup(BYTE loVer, BYTE hiVer) throw(Exception)
 {
   if (m_isStarted) {
     throw Exception(_T("WindowsSocket уже проинициализировано."));

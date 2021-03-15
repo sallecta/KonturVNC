@@ -1,0 +1,907 @@
+# depslib dependency file v1.0
+1615660991 source:z:\media\data\dev\git\konturvnc\network\rfbinputgate.cpp
+	"RfbInputGate.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\rfbinputgate.h
+	"io-lib/Channel.h"
+	"io-lib/DataInputStream.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\channel.h
+	"util/Exception.h"
+	"InputStream.h"
+	"OutputStream.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\exception.h
+	"StringStorage.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\stringstorage.h
+	"winhdr.h"
+	<vector>
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\winhdr.h
+	<winsock2.h>
+	<ws2tcpip.h>
+	<wspiapi.h>
+	<windows.h>
+	<psapi.h>
+	<Wtsapi32.h>
+	<tchar.h>
+	<commctrl.h>
+	<Dbghelp.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\inputstream.h
+	"IOException.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\ioexception.h
+	"util/Exception.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\outputstream.h
+	"IOException.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\datainputstream.h
+	"util/inttypes.h"
+	"InputStream.h"
+	"IOException.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\inttypes.h
+
+1615795182 source:z:\media\data\dev\git\konturvnc\network\rfboutputgate.cpp
+	"RfbOutputGate.h"
+	<exception>
+
+1615660991 z:\media\data\dev\git\konturvnc\network\rfboutputgate.h
+	"io-lib/DataOutputStream.h"
+	"io-lib/BufferedOutputStream.h"
+	"thread/LocalMutex.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\dataoutputstream.h
+	"util/inttypes.h"
+	"OutputStream.h"
+	"IOException.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\io-lib\bufferedoutputstream.h
+	"OutputStream.h"
+	"DataOutputStream.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\localmutex.h
+	"util/CommonHeader.h"
+	"Lockable.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\commonheader.h
+	"winhdr.h"
+	"StringStorage.h"
+	"StringTable.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\stringtable.h
+	"StringStorage.h"
+	<map>
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\lockable.h
+
+1615795271 source:z:\media\data\dev\git\konturvnc\network\socket\socketaddressipv4.cpp
+	<stdlib.h>
+	<string.h>
+	<vector>
+	"sockdefs.h"
+	"SocketAddressIPv4.h"
+	"SocketAddressIPv4.h"
+	"SocketException.h"
+	"util/AnsiStringStorage.h"
+	"thread/AutoLock.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\socket\sockdefs.h
+	"util/CommonHeader.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\socket\socketaddressipv4.h
+	"util/CommonHeader.h"
+	"thread/LocalMutex.h"
+	"SocketException.h"
+	"sockdefs.h"
+	"win-system/WsaStartup.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\socket\socketexception.h
+	"util/Exception.h"
+	"sockdefs.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\win-system\wsastartup.h
+	"util/CommonHeader.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\ansistringstorage.h
+	"StringStorage.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\autolock.h
+	"Lockable.h"
+
+1615660991 source:z:\media\data\dev\git\konturvnc\network\socket\socketexception.cpp
+	"SocketException.h"
+
+1615660991 source:z:\media\data\dev\git\konturvnc\network\tcpclientthread.cpp
+	"TcpClientThread.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\tcpclientthread.h
+	"thread/Thread.h"
+	"socket/SocketIPv4.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\thread.h
+	"util/CommonHeader.h"
+	"LocalMutex.h"
+	"DesktopSelector.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\desktopselector.h
+	"util/CommonHeader.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\network\socket\socketipv4.h
+	"sockdefs.h"
+	"SocketIPv4.h"
+	"SocketAddressIPv4.h"
+	"SocketException.h"
+	"io-lib/Channel.h"
+	"io-lib/IOException.h"
+	"win-system/WsaStartup.h"
+	"thread/LocalMutex.h"
+	"p2p/p2ptransport.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\p2p\p2ptransport.h
+	"log-writer/LogWriter.h"
+	"util/AnsiStringStorage.h"
+	"win-system/WindowsEvent.h"
+	"ice.h"
+	"sctp.h"
+	"dtls.h"
+	"P2pEventListener.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\log-writer\logwriter.h
+	"Logger.h"
+	"util/CharDefs.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\log-writer\logger.h
+	"util/CharDefs.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\\util\chardefs.h
+	<Tchar.h>
+
+1615660992 z:\media\data\dev\git\konturvnc\\win-system\windowsevent.h
+	"util/CommonHeader.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\p2p\ice.h
+	"log-writer/LogWriter.h"
+	"thread/Thread.h"
+	"thread/GlobalMutex.h"
+	"thread/AutoLock.h"
+	"win-system/WindowsEvent.h"
+	"pj/addr_resolv.h"
+	<pjlib.h>
+	<pjlib-util.h>
+	<pjnath.h>
+	"dtls.h"
+	"sctp.h"
+	"P2pEventListener.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\globalmutex.h
+	"util/CommonHeader.h"
+	"util/Exception.h"
+	"Lockable.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\addr_resolv.h
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\sock.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\types.h
+	<pj/config.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\config.h
+	<pj/compat/cc_msvc.h>
+	<pj/compat/cc_gcc.h>
+	<pj/compat/cc_mwcc.h>
+	<pj/compat/cc_codew.h>
+	<pj/compat/cc_gcce.h>
+	<pj/compat/cc_armcc.h>
+	<pj/compat/os_auto.h>
+	<pj/compat/os_symbian.h>
+	<pj/compat/os_win32_wince.h>
+	<pj/compat/os_win32.h>
+	<pj/compat/os_linux_kernel.h>
+	<pj/compat/os_linux.h>
+	<pj/compat/os_palmos.h>
+	<pj/compat/os_sunos.h>
+	<pj/compat/os_darwinos.h>
+	<pj/compat/os_rtems.h>
+	<pj/compat/m_auto.h>
+	<pj/compat/size_t.h>
+	<pj/config_site.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\cc_msvc.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\cc_gcc.h
+	<inttypes.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\cc_mwcc.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\cc_codew.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\cc_gcce.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\cc_armcc.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_symbian.h
+	<e32def.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_win32_wince.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_win32.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_linux_kernel.h
+	<linux/module.h>
+	<linux/kernel.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_linux.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_palmos.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_sunos.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_darwinos.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\os_rtems.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\size_t.h
+	<stddef.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\config_site.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pjlib.h
+	<pj/activesock.h>
+	<pj/addr_resolv.h>
+	<pj/array.h>
+	<pj/assert.h>
+	<pj/ctype.h>
+	<pj/errno.h>
+	<pj/except.h>
+	<pj/fifobuf.h>
+	<pj/file_access.h>
+	<pj/file_io.h>
+	<pj/guid.h>
+	<pj/hash.h>
+	<pj/ioqueue.h>
+	<pj/ip_helper.h>
+	<pj/list.h>
+	<pj/lock.h>
+	<pj/log.h>
+	<pj/math.h>
+	<pj/os.h>
+	<pj/pool.h>
+	<pj/pool_buf.h>
+	<pj/rand.h>
+	<pj/rbtree.h>
+	<pj/sock.h>
+	<pj/sock_qos.h>
+	<pj/sock_select.h>
+	<pj/ssl_sock.h>
+	<pj/string.h>
+	<pj/timer.h>
+	<pj/unicode.h>
+	<pj/compat/high_precision.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\activesock.h
+	<pj/ioqueue.h>
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\ioqueue.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\array.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\assert.h
+	<pj/config.h>
+	<pj/compat/assert.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\assert.h
+	<assert.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\ctype.h
+	<pj/types.h>
+	<pj/compat/ctype.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\ctype.h
+	<ctype.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\errno.h
+	<pj/types.h>
+	<pj/compat/errno.h>
+	<stdarg.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\errno.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\except.h
+	<pj/types.h>
+	<pj/compat/setjmp.h>
+	<pj/log.h>
+	<windows.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\setjmp.h
+	<setjmp.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\log.h
+	<pj/types.h>
+	<stdarg.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\fifobuf.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\file_access.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\file_io.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\guid.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\hash.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\ip_helper.h
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\list.h
+	<pj/types.h>
+	"list_i.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\list_i.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\lock.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\math.h
+	<pj/string.h>
+	<pj/compat/high_precision.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\string.h
+	<pj/types.h>
+	<pj/compat/string.h>
+	<pj/string_i.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\string.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<pj/types.h>
+	<pj/compat/stdarg.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\stdarg.h
+	<stdarg.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\string_i.h
+	<pj/pool.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\pool.h
+	<pj/list.h>
+	<pj/pool_alt.h>
+	<pjlib.h>
+	"pool_i.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\pool_alt.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\pool_i.h
+	<pj/string.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\compat\high_precision.h
+	<math.h>
+	<asm/div64.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\os.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\pool_buf.h
+	<pj/pool.h>
+	<pjlib.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\rand.h
+	<pj/config.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\rbtree.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\sock_qos.h
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\sock_select.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\ssl_sock.h
+	<pj/ioqueue.h>
+	<pj/sock.h>
+	<pj/sock_qos.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\timer.h
+	<pj/types.h>
+	<pj/lock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib\include\\pj\unicode.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util.h
+	<pjlib-util/errno.h>
+	<pjlib-util/types.h>
+	<pjlib-util/getopt.h>
+	<pjlib-util/base64.h>
+	<pjlib-util/crc32.h>
+	<pjlib-util/hmac_md5.h>
+	<pjlib-util/hmac_sha1.h>
+	<pjlib-util/md5.h>
+	<pjlib-util/sha1.h>
+	<pjlib-util/dns.h>
+	<pjlib-util/resolver.h>
+	<pjlib-util/srv_resolver.h>
+	<pjlib-util/dns_server.h>
+	<pjlib-util/scanner.h>
+	<pjlib-util/string.h>
+	<pjlib-util/xml.h>
+	<pjlib-util/json.h>
+	<pjlib-util/stun_simple.h>
+	<pjlib-util/pcap.h>
+	<pjlib-util/http_client.h>
+	<pjlib-util/cli.h>
+	<pjlib-util/cli_console.h>
+	<pjlib-util/cli_telnet.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\errno.h
+	<pj/errno.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\types.h
+	<pj/types.h>
+	<pjlib-util/config.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\config.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\getopt.h
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\base64.h
+	<pjlib-util/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\crc32.h
+	<pjlib-util/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\hmac_md5.h
+	<pj/types.h>
+	<pjlib-util/md5.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\md5.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\hmac_sha1.h
+	<pj/types.h>
+	<pjlib-util/sha1.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\sha1.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\dns.h
+	<pjlib-util/types.h>
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\resolver.h
+	<pjlib-util/dns.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\srv_resolver.h
+	<pjlib-util/resolver.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\dns_server.h
+	<pjlib-util/types.h>
+	<pjlib-util/dns.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\scanner.h
+	<pjlib-util/types.h>
+	<pjlib-util/scanner_cis_bitwise.h>
+	<pjlib-util/scanner_cis_uint.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\scanner_cis_bitwise.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\scanner_cis_uint.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\string.h
+	<pj/types.h>
+	<pjlib-util/scanner.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\xml.h
+	<pj/types.h>
+	<pj/list.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\json.h
+	<pj/types.h>
+	<pj/list.h>
+	<pj/pool.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\stun_simple.h
+	<pjlib-util/types.h>
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\pcap.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\http_client.h
+	<pj/activesock.h>
+	<pjlib-util/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\cli.h
+	<pjlib-util/types.h>
+	<pj/list.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\cli_console.h
+	<pjlib-util/cli_imp.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\cli_imp.h
+	<pjlib-util/cli.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjlib-util\include\\pjlib-util\cli_telnet.h
+	<pjlib-util/cli_imp.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath.h
+	<pjnath/config.h>
+	<pjnath/errno.h>
+	<pjnath/ice_session.h>
+	<pjnath/ice_strans.h>
+	<pjnath/nat_detect.h>
+	<pjnath/stun_auth.h>
+	<pjnath/stun_config.h>
+	<pjnath/stun_msg.h>
+	<pjnath/stun_session.h>
+	<pjnath/stun_sock.h>
+	<pjnath/stun_transaction.h>
+	<pjnath/turn_session.h>
+	<pjnath/turn_sock.h>
+	<pjnath/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\config.h
+	<pj/types.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\errno.h
+	<pj/errno.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\ice_session.h
+	<pjnath/types.h>
+	<pjnath/stun_session.h>
+	<pjnath/errno.h>
+	<pj/sock.h>
+	<pj/timer.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\types.h
+	<pj/types.h>
+	<pjnath/config.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\stun_session.h
+	<pjnath/stun_msg.h>
+	<pjnath/stun_auth.h>
+	<pjnath/stun_config.h>
+	<pjnath/stun_transaction.h>
+	<pj/list.h>
+	<pj/lock.h>
+	<pj/timer.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\stun_msg.h
+	<pjnath/types.h>
+	<pj/sock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\stun_auth.h
+	<pjnath/stun_msg.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\stun_config.h
+	<pjnath/stun_msg.h>
+	<pj/assert.h>
+	<pj/errno.h>
+	<pj/string.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\stun_transaction.h
+	<pjnath/stun_msg.h>
+	<pjnath/stun_config.h>
+	<pj/lock.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\ice_strans.h
+	<pjnath/ice_session.h>
+	<pjnath/stun_sock.h>
+	<pjnath/turn_sock.h>
+	<pjlib-util/resolver.h>
+	<pj/ioqueue.h>
+	<pj/timer.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\stun_sock.h
+	<pjnath/stun_config.h>
+	<pjlib-util/resolver.h>
+	<pj/ioqueue.h>
+	<pj/lock.h>
+	<pj/sock.h>
+	<pj/sock_qos.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\turn_sock.h
+	<pjnath/turn_session.h>
+	<pj/sock_qos.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\turn_session.h
+	<pjnath/stun_session.h>
+	<pjlib-util/resolver.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\pjlib\pjnath\include\\pjnath\nat_detect.h
+	<pjnath/stun_session.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\\p2p\dtls.h
+	"log-writer/LogWriter.h"
+	"thread/LocalMutex.h"
+	<openssl/err.h>
+	<openssl/pem.h>
+	<openssl/bn.h>
+	<openssl/rsa.h>
+	<openssl/crypto.h>
+	<openssl/ssl.h>
+	<openssl/bio.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\err.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<stdlib.h>
+	<openssl/ossl_typ.h>
+	<openssl/bio.h>
+	<openssl/lhash.h>
+	<errno.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\e_os2.h
+	<openssl/opensslconf.h>
+	<sys/socket.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\opensslconf.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ossl_typ.h
+	<openssl/e_os2.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\bio.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<stdarg.h>
+	<openssl/crypto.h>
+	<stdint.h>
+	<inttypes.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\crypto.h
+	<stdlib.h>
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/stack.h>
+	<openssl/safestack.h>
+	<openssl/opensslv.h>
+	<openssl/ossl_typ.h>
+	<openssl/ebcdic.h>
+	<openssl/symhacks.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\stack.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\safestack.h
+	<openssl/stack.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\opensslv.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ebcdic.h
+	<sys/types.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\symhacks.h
+	<openssl/e_os2.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\lhash.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/bio.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\pem.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/evp.h>
+	<openssl/x509.h>
+	<openssl/pem2.h>
+	<openssl/symhacks.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\evp.h
+	<openssl/opensslconf.h>
+	<openssl/opensslconf.h>
+	<openssl/ossl_typ.h>
+	<openssl/symhacks.h>
+	<openssl/bio.h>
+	<openssl/objects.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\objects.h
+	<openssl/obj_mac.h>
+	<openssl/bio.h>
+	<openssl/asn1.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\obj_mac.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\asn1.h
+	<time.h>
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/safestack.h>
+	<openssl/symhacks.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\bn.h
+	<openssl/e_os2.h>
+	<stdio.h>
+	<openssl/ossl_typ.h>
+	<openssl/crypto.h>
+	<assert.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\x509.h
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/buffer.h>
+	<openssl/evp.h>
+	<openssl/bio.h>
+	<openssl/stack.h>
+	<openssl/asn1.h>
+	<openssl/safestack.h>
+	<openssl/ec.h>
+	<openssl/ecdsa.h>
+	<openssl/ecdh.h>
+	<openssl/rsa.h>
+	<openssl/dsa.h>
+	<openssl/dh.h>
+	<openssl/sha.h>
+	<openssl/ossl_typ.h>
+	<openssl/x509_vfy.h>
+	<openssl/pkcs7.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\buffer.h
+	<openssl/ossl_typ.h>
+	<stddef.h>
+	<sys/types.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ec.h
+	<openssl/opensslconf.h>
+	<openssl/asn1.h>
+	<openssl/symhacks.h>
+	<openssl/bn.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ecdsa.h
+	<openssl/opensslconf.h>
+	<openssl/ec.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ecdh.h
+	<openssl/opensslconf.h>
+	<openssl/ec.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\rsa.h
+	<openssl/asn1.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\dsa.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+	<openssl/dh.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\dh.h
+	<openssl/e_os2.h>
+	<openssl/bio.h>
+	<openssl/ossl_typ.h>
+	<openssl/bn.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\sha.h
+	<openssl/e_os2.h>
+	<stddef.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\x509_vfy.h
+	<openssl/x509.h>
+	<openssl/opensslconf.h>
+	<openssl/lhash.h>
+	<openssl/bio.h>
+	<openssl/crypto.h>
+	<openssl/symhacks.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\pkcs7.h
+	<openssl/asn1.h>
+	<openssl/bio.h>
+	<openssl/e_os2.h>
+	<openssl/symhacks.h>
+	<openssl/ossl_typ.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\pem2.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ssl.h
+	<openssl/e_os2.h>
+	<openssl/comp.h>
+	<openssl/bio.h>
+	<openssl/x509.h>
+	<openssl/crypto.h>
+	<openssl/lhash.h>
+	<openssl/buffer.h>
+	<openssl/pem.h>
+	<openssl/hmac.h>
+	<openssl/kssl.h>
+	<openssl/safestack.h>
+	<openssl/symhacks.h>
+	<openssl/ssl2.h>
+	<openssl/ssl3.h>
+	<openssl/tls1.h>
+	<openssl/dtls1.h>
+	<openssl/ssl23.h>
+	<openssl/srtp.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\comp.h
+	<openssl/crypto.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\hmac.h
+	<openssl/opensslconf.h>
+	<openssl/evp.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\kssl.h
+	<openssl/opensslconf.h>
+	<stdio.h>
+	<ctype.h>
+	<krb5.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ssl2.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ssl3.h
+	<openssl/comp.h>
+	<openssl/buffer.h>
+	<openssl/evp.h>
+	<openssl/ssl.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\tls1.h
+	<openssl/buffer.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\dtls1.h
+	<openssl/buffer.h>
+	<openssl/pqueue.h>
+	<resource.h>
+	<sys/timeb.h>
+	<winsock.h>
+	<sys/timeval.h>
+	<sys/times.h>
+	<sys/time.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\pqueue.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\ssl23.h
+
+1615660970 z:\media\data\dev\git\konturvnc\openssl\include\\openssl\srtp.h
+	<openssl/ssl.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\\p2p\sctp.h
+	<queue>
+	"log-writer/LogWriter.h"
+	"thread/Thread.h"
+	"thread/GlobalMutex.h"
+	"thread/Autolock.h"
+	"win-system/WindowsEvent.h"
+	<usrsctp.h>
+	"dtls.h"
+
+1615660992 z:\media\data\dev\git\konturvnc\usrsctplib\\usrsctp.h
+	<errno.h>
+	<sys/types.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<stdint.h>
+
+1615660991 z:\media\data\dev\git\konturvnc\\p2p\p2peventlistener.h
+
