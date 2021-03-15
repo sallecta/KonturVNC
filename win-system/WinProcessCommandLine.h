@@ -55,7 +55,7 @@ protected:
   WinCommandLineArgs *m_wcla;
 
   vector<StringStorage> m_strParam;
-  vector<pair<StringStorage, StringStorage>> m_strParams;
+  vector<pair<StringStorage, StringStorage> > m_strParams;
 
 private:
   void optionParser(StringStorage *out);
