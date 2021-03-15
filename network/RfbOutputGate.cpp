@@ -40,7 +40,7 @@ RfbOutputGate::~RfbOutputGate()
   delete m_tunnel;
 }
 
-void RfbOutputGate::flush()
+void RfbOutputGate::flush() throw(IOException)
 {
   m_tunnel->flush();
 }
