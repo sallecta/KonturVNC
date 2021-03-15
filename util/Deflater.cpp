@@ -44,7 +44,7 @@ Deflater::~Deflater()
   deflateEnd(&m_zlibStream);
 }
 
-void Deflater::deflate()
+void Deflater::deflate()throw(ZLibException)
 {
   size_t reserve = m_inputSize / 100 + 1024;
   size_t avaliableOutput = m_inputSize + reserve;
@@ -68,6 +68,6 @@ void Deflater::deflate()
   if (m_zlibStream.avail_in != 0) {
     throw ZLibException(_T("Not enough buffer size for data compression"));
   }
- 
+
   m_outputSize = m_zlibStream.total_out - prevTotalOut;
 }
