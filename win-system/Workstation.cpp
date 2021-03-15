@@ -24,7 +24,7 @@
 
 #include "Workstation.h"
 
-void Workstation::lock()
+void Workstation::lock() throw(SystemException)
 {
   if (LockWorkStation() == FALSE) {
     throw SystemException();
