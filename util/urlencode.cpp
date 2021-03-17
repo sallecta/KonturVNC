@@ -7,8 +7,7 @@
 // If you have any comments or questions, feel free to email me.
 //
 // You may use this class for any purpose, commercial or personal.
-
-#include <atl/atlcom.h>
+#include <atl/atlcoll.h>
 #include <atl/cstringt.h>
 #include <atl/atlstr.h>
 #include "URLEncode.h"
@@ -120,7 +119,7 @@ CString CURLEncode::Encode(ATL::CString strURL, BOOL bEncodeReserved/*=FALSE*/)
 
 	for (int i=0; i<strURL.GetLength(); i++)
 	{
-		tc=strURL.GetAt(i);
+		tc=strURL[i];
 		if ((tc<_T('a') || tc>_T('z')) &&
 			(tc<_T('A') || tc>_T('Z')) &&
 			(tc<_T('0') || tc>_T('9')) &&
