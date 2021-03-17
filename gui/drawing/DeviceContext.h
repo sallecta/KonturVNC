@@ -24,7 +24,7 @@
 
 #ifndef _DEVICE_CONTEXT_H_
 #define _DEVICE_CONTEXT_H_
-#endif
+
 #include "util/CommonHeader.h"
 //#include "gui/PaintWindow.h"
 
@@ -58,3 +58,4 @@ protected:
 };
 
 
+#endif

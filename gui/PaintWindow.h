@@ -33,9 +33,9 @@ class PaintWindow: public BaseWindow
 public:
   PaintWindow();
   virtual ~PaintWindow();
+  HDC getHDCPaint();
 
 private:
-  HDC getHDCPaint();
 
   friend class DeviceContext;
 
