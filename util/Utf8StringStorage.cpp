@@ -30,7 +30,8 @@
 
 Utf8StringStorage::Utf8StringStorage()
 {
-  fromStringStorage(&StringStorage(_T("")));//taking address of temporary [-fpermissive]|
+    StringStorage tmpStrStrg=StringStorage(_T(""));
+    fromStringStorage(&tmpStrStrg);//taking address of temporary [-fpermissive]
 }
 
 
