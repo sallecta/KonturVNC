@@ -128,7 +128,7 @@ CString CURLEncode::Encode(ATL::CString strURL, BOOL bEncodeReserved/*=FALSE*/)
 			w=toUTF8(tc);
 			nc=toHex(HIBYTE(w));
 			nc.Append(toHex(LOBYTE(w)));
-			strURL.Replace(CString(tc), nc);
+			strURL.Replace(LPCTSTR(tc), nc);
 			// We have added 5 extra characters to the length of the string,
 			// So we can ignore them.
 			i+=5;
