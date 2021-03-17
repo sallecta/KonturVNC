@@ -2,9 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release Win32" />
-	<File name="URLEncode.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Deflater.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="788" topLine="14" />
+			<Cursor1 position="1284" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="Deflater.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1532" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="URLEncode.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="801" topLine="22" />
 		</Cursor>
 	</File>
 	<File name="Inflater.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,9 +27,9 @@
 			<Cursor1 position="1498" topLine="30" />
 		</Cursor>
 	</File>
-	<File name="Utf8StringStorage.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Utf8StringStorage.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1290" topLine="30" />
+			<Cursor1 position="1376" topLine="21" />
 		</Cursor>
 	</File>
 	<File name="Inflater.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -34,12 +44,22 @@
 	</File>
 	<File name="StringStorage.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1604" topLine="46" />
+			<Cursor1 position="6062" topLine="178" />
 		</Cursor>
 	</File>
 	<File name="DesCrypt.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1679" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="CommonHeader.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="StringStorage.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7029" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Exception.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -62,19 +82,9 @@
 			<Cursor1 position="2256" topLine="57" />
 		</Cursor>
 	</File>
-	<File name="urlencode.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="urlencode.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2553" topLine="70" />
-		</Cursor>
-	</File>
-	<File name="Deflater.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1284" topLine="16" />
-		</Cursor>
-	</File>
-	<File name="Deflater.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1532" topLine="28" />
+			<Cursor1 position="5673" topLine="146" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
