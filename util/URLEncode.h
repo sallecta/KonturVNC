@@ -33,7 +33,7 @@ private:
 	TCHAR fromUTF8(WORD w);
 
 public:
-	CString Encode(CString strURL, BOOL bEncodeReserved=FALSE);
+	CString Encode(ATL::CString strURL, BOOL bEncodeReserved=FALSE);
 	CString Decode(CString strURL);
 };
 

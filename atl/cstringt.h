@@ -317,7 +317,7 @@ namespace _CSTRING_IMPL_
 
 // TODO: disable conversion functions when _CSTRING_DISABLE_NARROW_WIDE_CONVERSION is defined.
 
-template <typename BaseType, class StringTraits>
+template <typename BaseType, typename StringTraits>
 class CStringT :
     public CSimpleStringT <BaseType, _CSTRING_IMPL_::_MFCDLLTraitsCheck<BaseType, StringTraits>::c_bIsMFCDLLTraits>
 {
@@ -752,7 +752,6 @@ public:
         CThisSimpleString::ReleaseBufferSetLength(nLength);
         return nCount;
     }
-
 
     static PCXSTR DefaultTrimChars()
     {

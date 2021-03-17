@@ -42,7 +42,7 @@
 			<Cursor1 position="4165" topLine="119" />
 		</Cursor>
 	</File>
-	<File name="socket\SocketIPv4.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="socket\SocketIPv4.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="4607" topLine="131" />
 		</Cursor>
@@ -52,7 +52,7 @@
 			<Cursor1 position="1497" topLine="21" />
 		</Cursor>
 	</File>
-	<File name="socket\SocketStream.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="socket\SocketStream.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1992" topLine="39" />
 		</Cursor>

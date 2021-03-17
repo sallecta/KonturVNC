@@ -7,8 +7,8 @@
 // If you have any comments or questions, feel free to email me.
 //
 // You may use this class for any purpose, commercial or personal.
-
-
+#include <atl/cstringt.h>
+#include <atl/atlstr.h>
 #include "URLEncode.h"
 
 // Put the percent (%) sign first, so it won't overwrite the converted Hex'es
@@ -20,7 +20,7 @@ int CURLEncode::m_iReservedLen=(int)_tcslen(m_lpszReservedString);
 // Convert a byte into Hexadecimal CString
 CString CURLEncode::toHex(BYTE val)
 {
-	CString csRet;
+	ATL::CString csRet;
 	csRet.Format(_T("%%%0.2X"), val);
 	return csRet;
 }
@@ -76,18 +76,17 @@ TCHAR CURLEncode::fromUTF8(WORD w)
 //                  so if we are encoding just a string containing Keywords,
 //                  we want to encode the reserved characters.
 //                  but if we are encoding a simple URL, we wont.
-ATL::CString CURLEncode::Encode(CString strURL, BOOL bEncodeReserved/*=FALSE*/)
+CString CURLEncode::Encode(ATL::CString strURL, BOOL bEncodeReserved/*=FALSE*/)
 {
 	// First encode the % sign, because we are adding lots of it later...
 	strURL.Replace(_T("%"), toHex(__toascii(_T('%'))));
-
 
 	// Encdoe the reserved characters, if we choose to
 	if (bEncodeReserved)
 	{
 		for (int i=0; i<m_iReservedLen; i++)
 		{
-			strURL.Replace(CString(m_lpszReservedString[i]), toHex(__toascii(m_lpszReservedString[i])));
+			strURL.Replace(LPCTSTR(m_lpszReservedString[i]), toHex(__toascii(m_lpszReservedString[i])));
 		}
 	}
 

@@ -2,7 +2,7 @@
 #define __ATLSIMPSTR_H__
 #define _In_count_(nLength)
 #pragma once
-
+#include<windows.h>
 #include <wincon.h>
 #include <atl\atlcore.h>
 #include <atl\atlexcept.h>
@@ -10,6 +10,7 @@
 namespace ATL
 {
 struct CStringData;
+
 
 // Pure virtual interface
 class IAtlStringMgr
