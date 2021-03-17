@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "util/CommonHeader.h"
 #include "BaseWindow.h"
 
@@ -54,19 +55,19 @@ bool BaseWindow::createWindow(const StringStorage *windowName, DWORD style, HWND
     return false;
   }
   m_windowName = *windowName;
-  m_hWnd = CreateWindow(m_className.getString(), 
-                        m_windowName.getString(), 
-                        style, 
-                        xPos, yPos, 
-                        width, height, 
-                        hWndParent, 
-                        0, 
-                        GetModuleHandle(0), 
+  m_hWnd = CreateWindow(m_className.getString(),
+                        m_windowName.getString(),
+                        style,
+                        xPos, yPos,
+                        width, height,
+                        hWndParent,
+                        0,
+                        GetModuleHandle(0),
                         reinterpret_cast<LPVOID>(this));
   m_bWndCreated = (m_hWnd == 0 ? false : true);
   if (m_bWndCreated) {
-      SetWindowLongPtr(m_hWnd, 
-                       GWLP_USERDATA, 
+      SetWindowLongPtr(m_hWnd,
+                       GWLP_USERDATA,
                        reinterpret_cast<LONG_PTR>(this));
   }
   return true;
@@ -116,14 +117,14 @@ void BaseWindow::hide()
 bool BaseWindow::setSize(int width, int height)
 {
   _ASSERT(m_hWnd != 0);
-  return !!SetWindowPos(m_hWnd, 0, 0, 0, width, height, 
+  return !!SetWindowPos(m_hWnd, 0, 0, 0, width, height,
                         SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
 }
 
 bool BaseWindow::setPosition(int xPos, int yPos)
 {
   _ASSERT(m_hWnd != 0);
-  return !!SetWindowPos(m_hWnd, 0, xPos, yPos, 0, 0, 
+  return !!SetWindowPos(m_hWnd, 0, xPos, yPos, 0, 0,
                         SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);
 }
 
@@ -249,7 +250,7 @@ bool BaseWindow::wndProc(UINT message, WPARAM wParam, LPARAM lParam)
       point.x = points.x;
       point.y = points.y;
 
-      unsigned short wheelSpeed = 0; 
+      unsigned short wheelSpeed = 0;
       if (message == WM_MOUSEWHEEL) {
         // Get speed wheel and set mouse button.
         signed short wheelSignedSpeed = static_cast<signed short>(HIWORD(wParam));
