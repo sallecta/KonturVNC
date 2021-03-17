@@ -7,6 +7,8 @@
 // If you have any comments or questions, feel free to email me.
 //
 // You may use this class for any purpose, commercial or personal.
+
+#include <atl/atlcom.h>
 #include <atl/cstringt.h>
 #include <atl/atlstr.h>
 #include "URLEncode.h"
