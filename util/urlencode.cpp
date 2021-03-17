@@ -94,15 +94,15 @@ CString CURLEncode::Encode(ATL::CString strURL, BOOL bEncodeReserved/*=FALSE*/)
 	// see: http://www.blooberry.com/indexdot/html/topics/urlencoding.htm
 	for (int i=0; i<m_iUnsafeLen; i++)
 	{
-		strURL.Replace(CString(m_lpszUnsafeString[i]), toHex(__toascii(m_lpszUnsafeString[i])));
+		strURL.Replace(LPCTSTR(m_lpszUnsafeString[i]), toHex(__toascii(m_lpszUnsafeString[i])));
 	}
 
 	// Encode unprintable characters 0x00-0x1F, and 0x7F
-	for (char c=0x00; c<=0x1F; c++)
+	for (wchar_t c=0x00; c<=0x1F; c++)
 	{
-		strURL.Replace(CString(c), toHex(c));
+		strURL.Replace(LPCTSTR(c), toHex(c));
 	}
-	strURL.Replace(CString((char)0x7F), toHex(0x7F));
+	strURL.Replace(LPCTSTR((wchar_t)0x7F), toHex(0x7F));
 
 	// Now encode all other unsafe characters
 	TCHAR tc=0;
