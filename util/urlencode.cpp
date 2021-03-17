@@ -7,6 +7,7 @@
 // If you have any comments or questions, feel free to email me.
 //
 // You may use this class for any purpose, commercial or personal.
+
 #include <atl/atlcoll.h>
 #include <atl/cstringt.h>
 #include <atl/atlstr.h>
@@ -155,8 +156,8 @@ CString CURLEncode::Decode(CString strURL)
 	BOOL bFound=FALSE;
 	while (i>-1)
 	{
-		tc1=strURL.GetAt(i+1);
-		tc2=strURL.GetAt(i+2);
+		tc1=strURL[i+1];
+		tc2=strURL[i+2];
 
 		if (isHex(tc1) && isHex(tc2))
 		{
