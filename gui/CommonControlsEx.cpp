@@ -34,7 +34,7 @@ CommonControlsEx::~CommonControlsEx()
 {
 }
 
-void CommonControlsEx::init()
+void CommonControlsEx::init() throw(Exception)
 {
   INITCOMMONCONTROLSEX iccsex = {0};
 
