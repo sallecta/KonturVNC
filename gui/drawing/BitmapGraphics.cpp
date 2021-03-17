@@ -21,7 +21,7 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include <crtdbg.h>
 #include "BitmapGraphics.h"
 
 BitmapGraphics::BitmapGraphics(DeviceContext *complatibleDC, int width, int height)
