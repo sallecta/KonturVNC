@@ -179,6 +179,7 @@ public:
         if (pchSrc == NULL && nLength != 0)
             ThrowInvalidArgException();
 
+
         CStringData* pData = pStringMgr->Allocate(nLength, sizeof(XCHAR));
         if (pData == NULL)
         {

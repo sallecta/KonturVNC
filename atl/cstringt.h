@@ -6,6 +6,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <wchar.h>
+#include <atl/atlbase.h>
 #include <atl\atlmem.h>
 
 namespace ATL
@@ -573,6 +574,7 @@ public:
         return pszResult ? ((int)(pszResult - pszString)) : -1;
     }
 
+
     int Find(_In_ XCHAR ch, _In_opt_ int iStart = 0) const throw()
     {
         int nLength = CThisSimpleString::GetLength();
@@ -751,6 +753,41 @@ public:
 
         CThisSimpleString::ReleaseBufferSetLength(nLength);
         return nCount;
+    }
+    void SetAt2(int argIndex, XCHAR argChar)
+    {
+        int nLength = CThisSimpleString::GetLength();
+        PXSTR strTmp = CThisSimpleString::GetBuffer(nLength);
+        strTmp[argIndex] = argChar;
+        CThisSimpleString::Empty();
+        //CStringData* pOldData = CThisSimpleString::GetData();
+        //IAtlStringMgr* pStringMgr = pOldData->pStringMgr;
+
+        //pOldData->Release();
+        //CStringData* pNewData = pStringMgr->Allocate(nLength, sizeof(strTmp));
+        CThisSimpleString::Append(strTmp);
+
+        //CThisSimpleString::ReleaseBuffer;
+        delete(strTmp);
+
+    }
+     void Delete2(int nIndex, int nCount /* = 1 */)
+    {
+    if (nIndex <= 0)
+    nIndex = 0;
+    int nNewLength = CThisSimpleString::GetData()->nDataLength;
+    if (nCount > 0 && nIndex <= nNewLength)
+    {
+    //CThisSimpleString::CopyBeforeWrite();
+    int nBytesToCopy = nNewLength - (nIndex + nCount) + 1;
+    TCHAR* m_pchData;
+    m_pchData = CThisSimpleString::GetBuffer();
+    memcpy(m_pchData + nIndex,
+    m_pchData + nIndex + nCount, nBytesToCopy * sizeof(TCHAR));
+   CThisSimpleString:: GetData()->nDataLength = nNewLength - nCount;
+    }
+
+//    return nNewLength;
     }
 
     static PCXSTR DefaultTrimChars()

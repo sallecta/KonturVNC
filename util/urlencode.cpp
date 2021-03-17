@@ -7,7 +7,7 @@
 // If you have any comments or questions, feel free to email me.
 //
 // You may use this class for any purpose, commercial or personal.
-
+#include <atl/atlsimpcoll.h>
 #include <atl/atlcoll.h>
 #include <atl/cstringt.h>
 #include <atl/atlstr.h>
@@ -165,8 +165,9 @@ CString CURLEncode::Decode(CString strURL)
 
 			// first deal with 1-byte unprintable characters
 			if (b<0x1F || b==0x7F) {
-				strURL.SetAt(i, b);
-				strURL.Delete(i+1, 2);
+                LPCTSTR sTemp = (LPCTSTR)strURL;
+				strURL.SetAt2(i, b);
+				strURL.Delete2(i+1, 2);
 			} else {
 				// Then deal with 1-byte unsafe/reserved characters
 				// We are reading for those static LPCTSTR strings,
@@ -176,8 +177,8 @@ CString CURLEncode::Decode(CString strURL)
 				{
 					if (__toascii(m_lpszUnsafeString[ii])==b)
 					{
-						strURL.SetAt(i, m_lpszUnsafeString[ii]);
-						strURL.Delete(i+1, 2);
+						strURL.SetAt2(i, m_lpszUnsafeString[ii]);
+						strURL.Delete2(i+1, 2);
 						bFound=TRUE;
 					}
 				}
@@ -185,8 +186,8 @@ CString CURLEncode::Decode(CString strURL)
 				{
 					if (__toascii(m_lpszReservedString[ii])==b)
 					{
-						strURL.SetAt(i, m_lpszReservedString[ii]);
-						strURL.Delete(i+1, 2);
+						strURL.SetAt2(i, m_lpszReservedString[ii]);
+						strURL.Delete2(i+1, 2);
 						bFound=TRUE;
 					}
 				}
@@ -194,16 +195,16 @@ CString CURLEncode::Decode(CString strURL)
 				if (!bFound)
 				{
 					// We need to have 2 bytes for decoding
-					if (strURL.GetAt(i+3)==_T('%'))
+					if (strURL[i+3]==_T('%'))
 					{
-						tc1=strURL.GetAt(i+4);
-						tc2=strURL.GetAt(i+5);
+						tc1=strURL[i+4];
+						tc2=strURL[i+5];
 
 						if (isHex(tc1) && isHex(tc2))
 						{
 							BYTE b2=hexToDec(tc1, tc2);
-							strURL.SetAt(i, fromUTF8(MAKEWORD(b2, b)));
-							strURL.Delete(i+1, 5);
+							strURL.SetAt2(i, fromUTF8(MAKEWORD(b2, b)));
+							strURL.Delete2(i+1, 5);
 						}
 					}
 				}
