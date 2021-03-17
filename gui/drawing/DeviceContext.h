@@ -24,9 +24,9 @@
 
 #ifndef _DEVICE_CONTEXT_H_
 #define _DEVICE_CONTEXT_H_
-
+#endif
 #include "util/CommonHeader.h"
-#include "gui/PaintWindow.h"
+//#include "gui/PaintWindow.h"
 
 class DeviceContext
 {
@@ -57,4 +57,4 @@ protected:
   friend class BitmapGraphics;
 };
 
-#endif
+
