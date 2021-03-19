@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "ToolBar.h"
 #include <CommCtrl.h>
 
@@ -173,7 +174,7 @@ void ToolBar::autoSize()
     GetClientRect(GetParent(m_hWndToolbar), &r);
     getButtonRect(0, &btnRect);
     int height = getButtonsHeight() + btnRect.top * 2 + 2;
-    SetWindowPos(m_hWndToolbar, HWND_TOP, 0, 0, r.right - r.left, height, 
+    SetWindowPos(m_hWndToolbar, HWND_TOP, 0, 0, r.right - r.left, height,
                  SWP_NOMOVE);
   } else {
     SendMessage(m_hWndToolbar, TB_AUTOSIZE, 0, 0);
@@ -222,14 +223,14 @@ bool ToolBar::isVisible()
 
 bool ToolBar::checkButton(int idButton, bool check)
 {
-  LRESULT result = SendMessage(m_hWndToolbar, TB_CHECKBUTTON, 
+  LRESULT result = SendMessage(m_hWndToolbar, TB_CHECKBUTTON,
           idButton, MAKELONG(check, 0));
   return !!result;
 }
 
-LRESULT ToolBar::getState(int idButton) 
+LRESULT ToolBar::getState(int idButton)
 {
-  LRESULT result = SendMessage(m_hWndToolbar, TB_GETSTATE, 
+  LRESULT result = SendMessage(m_hWndToolbar, TB_GETSTATE,
                    idButton, 0);
   return result;
 }

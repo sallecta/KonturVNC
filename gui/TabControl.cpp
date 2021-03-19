@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "TabControl.h"
 #include "util/CommonHeader.h"
 #include <commctrl.h>
