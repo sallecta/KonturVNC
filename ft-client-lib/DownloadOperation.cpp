@@ -83,7 +83,7 @@ void DownloadOperation::start() throw(IOException)
   }
 }
 
-void DownloadOperation::onFileListReply(DataInputStream *input)
+void DownloadOperation::onFileListReply(DataInputStream *input) throw(OperationNotPermittedException)
 {
   m_toCopy->setChild(m_replyBuffer->getFilesInfo(),
                      m_replyBuffer->getFilesInfoCount());
