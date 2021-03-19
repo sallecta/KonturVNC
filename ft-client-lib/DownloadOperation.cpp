@@ -90,7 +90,7 @@ void DownloadOperation::onFileListReply(DataInputStream *input)
   gotoNext();
 }
 
-void DownloadOperation::onDownloadReply(DataInputStream *input)
+void DownloadOperation::onDownloadReply(DataInputStream *input)throw()
 {
   //
   // Cleanup
