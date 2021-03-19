@@ -301,7 +301,7 @@ void DownloadOperation::processFile() throw(IOException)
   m_sender->sendDownloadRequest(m_pathToSourceFile.getString(), m_fileOffset);
 }
 
-void DownloadOperation::processFolder()
+void DownloadOperation::processFolder() throw(IOException)
 {
   File local(m_pathToTargetFile.getString());
   if (local.exists() && local.isDirectory()) {
@@ -325,7 +325,7 @@ void DownloadOperation::processFolder()
                                 m_replyBuffer->isCompressionSupported());
 }
 
-void DownloadOperation::gotoNext()
+void DownloadOperation::gotoNext() throw(IOException)
 {
   FileInfoList *current = m_toCopy;
 
@@ -361,7 +361,7 @@ void DownloadOperation::gotoNext()
   } // if / else
 } // void
 
-void DownloadOperation::tryCalcInputFilesSize()
+void DownloadOperation::tryCalcInputFilesSize() throw(IOException)
 {
   FileInfoList *fil = m_toCopy;
 

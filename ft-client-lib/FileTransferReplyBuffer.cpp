@@ -31,7 +31,7 @@ FileTransferReplyBuffer::FileTransferReplyBuffer(LogWriter *logWriter)
 : m_logWriter(logWriter),
   m_isCompressionSupported(false),
   m_filesInfoCount(0), m_filesInfo(NULL),
-  m_downloadBufferSize(0), 
+  m_downloadBufferSize(0),
   m_downloadFileFlags(0), m_downloadLastModified(0),
   m_dirSize(0)
 {
@@ -90,7 +90,7 @@ vector<UINT8> FileTransferReplyBuffer::getDownloadBuffer()
   return m_downloadBuffer;
 }
 
-void FileTransferReplyBuffer::onCompressionSupportReply(DataInputStream *input)
+void FileTransferReplyBuffer::onCompressionSupportReply(DataInputStream *input) throw(IOException)
 {
   m_isCompressionSupported = (input->readUInt8() == 1);
 
@@ -98,7 +98,7 @@ void FileTransferReplyBuffer::onCompressionSupportReply(DataInputStream *input)
                     m_isCompressionSupported ? _T("supported") : _T("not supported"));
 }
 
-void FileTransferReplyBuffer::onFileListReply(DataInputStream *input)
+void FileTransferReplyBuffer::onFileListReply(DataInputStream *input) throw(IOException, ZLibException)
 {
   UINT8 compressionLevel = 0;
   UINT32 compressedSize = 0;
@@ -156,22 +156,22 @@ void FileTransferReplyBuffer::onFileListReply(DataInputStream *input)
   }
 }
 
-void FileTransferReplyBuffer::onMd5DataReply(DataInputStream *input)
+void FileTransferReplyBuffer::onMd5DataReply(DataInputStream *input) throw(IOException, OperationNotSupportedException)
 {
   throw OperationNotSupportedException();
 }
 
-void FileTransferReplyBuffer::onUploadReply(DataInputStream *input)
+void FileTransferReplyBuffer::onUploadReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received upload reply\n"));
 }
 
-void FileTransferReplyBuffer::onUploadDataReply(DataInputStream *input)
+void FileTransferReplyBuffer::onUploadDataReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received upload data reply\n"));
 }
 
-void FileTransferReplyBuffer::onUploadEndReply(DataInputStream *input)
+void FileTransferReplyBuffer::onUploadEndReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received upload end reply\n"));
 }
