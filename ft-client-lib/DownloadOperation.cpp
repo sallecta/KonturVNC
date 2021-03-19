@@ -56,7 +56,7 @@ DownloadOperation::~DownloadOperation()
   }
 }
 
-void DownloadOperation::start()
+void DownloadOperation::start() throw(IOException)
 {
   m_foldersToCalcSizeLeft = 0;
 
