@@ -138,7 +138,7 @@ void DownloadOperation::onDownloadReply(DataInputStream *input)throw()
                                     compression);
 }
 
-void DownloadOperation::onDownloadDataReply(DataInputStream *input)
+void DownloadOperation::onDownloadDataReply(DataInputStream *input) throw()
 {
   if (isTerminating()) {
     gotoNext();
@@ -178,7 +178,7 @@ void DownloadOperation::onDownloadDataReply(DataInputStream *input)
   m_sender->sendDownloadDataRequest(bufferSize, compression);
 }
 
-void DownloadOperation::onDownloadEndReply(DataInputStream *input)
+void DownloadOperation::onDownloadEndReply(DataInputStream *input) throw()
 {
   //
   // Cleanup
@@ -200,7 +200,7 @@ void DownloadOperation::onDownloadEndReply(DataInputStream *input)
   gotoNext();
 }
 
-void DownloadOperation::onLastRequestFailedReply(DataInputStream *input)
+void DownloadOperation::onLastRequestFailedReply(DataInputStream *input) throw()
 {
   //
   // This LRF message received from get folder size request
@@ -222,13 +222,13 @@ void DownloadOperation::onLastRequestFailedReply(DataInputStream *input)
   }
 }
 
-void DownloadOperation::onDirSizeReply(DataInputStream *input)
+void DownloadOperation::onDirSizeReply(DataInputStream *input) throw()
 {
   m_totalBytesToCopy += m_replyBuffer->getDirSize();
   decFoldersToCalcSizeCount();
 }
 
-void DownloadOperation::startDownload()
+void DownloadOperation::startDownload() throw(IOException)
 {
   if (isTerminating()) {
     killOp();
@@ -259,7 +259,7 @@ void DownloadOperation::startDownload()
   } // if terminating
 }
 
-void DownloadOperation::processFile()
+void DownloadOperation::processFile() throw(IOException)
 {
   m_fileOffset = 0;
 
