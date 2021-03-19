@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "DownloadOperation.h"
 
 DownloadOperation::DownloadOperation(LogWriter *logWriter,
