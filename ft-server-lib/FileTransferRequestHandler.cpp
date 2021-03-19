@@ -567,13 +567,13 @@ void FileTransferRequestHandler::uploadStartRequested()
 
     m_output->flush();
   }
-  
+
   m_ftsDialog->show();
   StringStorage ss;
   StringStorage stat;
   size_t ld = fullPathName.findLast(_T('\\'));
   if (ld != (size_t)-1) {
-    fullPathName.getSubstring(&ss, ld+1, fullPathName.getLength());  
+    fullPathName.getSubstring(&ss, ld+1, fullPathName.getLength());
   }
 
 
@@ -752,12 +752,12 @@ void FileTransferRequestHandler::downloadStartRequested()
     m_output->flush();
   }
   m_ftsDialog->show();
-  
+
   StringStorage ss;
   StringStorage stat;
   size_t ld = fullPathName.findLast(_T('\\'));
   if (ld != (size_t)-1) {
-    fullPathName.getSubstring(&ss, ld+1, fullPathName.getLength());  
+    fullPathName.getSubstring(&ss, ld+1, fullPathName.getLength());
   }
 
 
@@ -949,7 +949,7 @@ bool FileTransferRequestHandler::getDirectorySize(const TCHAR *pathname, UINT64 
   return true;
 }
 
-void FileTransferRequestHandler::checkAccess()
+void FileTransferRequestHandler::checkAccess() throw(SystemException)
 {
   try {
     if (!isFileTransferEnabled()) {
