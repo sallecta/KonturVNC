@@ -42,7 +42,7 @@ LocalFilesDeleteOperation::~LocalFilesDeleteOperation()
 {
 }
 
-void LocalFilesDeleteOperation::start()
+void LocalFilesDeleteOperation::start() throw()
 {
   // Notify listeners that operation have started
   notifyStart();
