@@ -47,15 +47,14 @@ void RemoteFileListOperation::start() throw(IOException)
   notifyStart();
 }
 
-void RemoteFileListOperation::onFileListReply(DataInputStream *input)
+void RemoteFileListOperation::onFileListReply(DataInputStream *input) throw()
 {
   m_isOk = true;
   m_isFinished = true;
   notifyFinish();
 }
 
-void RemoteFileListOperation::onLastRequestFailedReply(DataInputStream *input)
-{
+void RemoteFileListOperation::onLastRequestFailedReply(DataInputStream *input) throw()
   m_isOk = false;
   m_isFinished = true;
 
