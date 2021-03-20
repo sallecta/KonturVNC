@@ -252,3 +252,39 @@
 	"InputStream.h"
 	"IOException.h"
 
+1616271783 source:z:\media\data\dev\git\konturvnc\ft-client-lib\filetransfereventadapter.cpp
+	"FileTransferEventAdapter.h"
+	"ft-common/FTMessage.h"
+
+1616271151 source:z:\media\data\dev\git\konturvnc\ft-client-lib\filetransferrequestsender.cpp
+	"FileTransferRequestSender.h"
+	"ft-common/FTMessage.h"
+	"thread/AutoLock.h"
+
+1616271623 source:z:\media\data\dev\git\konturvnc\ft-client-lib\localfilesdeleteoperation.cpp
+	"LocalFilesDeleteOperation.h"
+	"file-lib/File.h"
+
+1616271499 z:\media\data\dev\git\konturvnc\ft-client-lib\localfilesdeleteoperation.h
+	"FileTransferOperation.h"
+	"thread/Thread.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\thread.h
+	"util/CommonHeader.h"
+	"LocalMutex.h"
+	"DesktopSelector.h"
+
+1615660991 z:\media\data\dev\git\konturvnc\\thread\desktopselector.h
+	"util/CommonHeader.h"
+
+1615660985 source:z:\media\data\dev\git\konturvnc\ft-client-lib\operationeventlistener.cpp
+	"OperationEventListener.h"
+
+1615660985 source:z:\media\data\dev\git\konturvnc\ft-client-lib\operationnotpermittedexception.cpp
+	"OperationNotPermittedException.h"
+
+1615660985 source:z:\media\data\dev\git\konturvnc\ft-client-lib\operationsupport.cpp
+	"OperationSupport.h"
+	"ft-common/FTMessage.h"
+	<algorithm>
+
