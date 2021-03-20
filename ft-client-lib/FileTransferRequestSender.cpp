@@ -41,7 +41,7 @@ void FileTransferRequestSender::setOutput(RfbOutputGate *outputStream)
   m_output = outputStream;
 }
 
-void FileTransferRequestSender::sendCompressionSupportRequest()
+void FileTransferRequestSender::sendCompressionSupportRequest() throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -52,7 +52,7 @@ void FileTransferRequestSender::sendCompressionSupportRequest()
 }
 
 void FileTransferRequestSender::sendFileListRequest(const TCHAR *fullPath,
-                                                    bool useCompression)
+                                                    bool useCompression) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -72,7 +72,7 @@ void FileTransferRequestSender::sendFileListRequest(const TCHAR *fullPath,
 }
 
 void FileTransferRequestSender::sendDownloadRequest(const TCHAR *fullPathName,
-                                                    UINT64 offset)
+                                                    UINT64 offset) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -88,7 +88,7 @@ void FileTransferRequestSender::sendDownloadRequest(const TCHAR *fullPathName,
 }
 
 void FileTransferRequestSender::sendDownloadDataRequest(UINT32 size,
-                                                        bool useCompression)
+                                                        bool useCompression) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -106,7 +106,7 @@ void FileTransferRequestSender::sendDownloadDataRequest(UINT32 size,
   m_output->flush();
 }
 
-void FileTransferRequestSender::sendRmFileRequest(const TCHAR *fullPathName)
+void FileTransferRequestSender::sendRmFileRequest(const TCHAR *fullPathName) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -118,7 +118,7 @@ void FileTransferRequestSender::sendRmFileRequest(const TCHAR *fullPathName)
   m_output->flush();
 }
 
-void FileTransferRequestSender::sendMkDirRequest(const TCHAR *fullPathName)
+void FileTransferRequestSender::sendMkDirRequest(const TCHAR *fullPathName) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -131,7 +131,7 @@ void FileTransferRequestSender::sendMkDirRequest(const TCHAR *fullPathName)
 }
 
 void FileTransferRequestSender::sendMvFileRequest(const TCHAR *oldFileName,
-                                                  const TCHAR *newFileName)
+                                                  const TCHAR *newFileName) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -149,7 +149,7 @@ void FileTransferRequestSender::sendMvFileRequest(const TCHAR *oldFileName,
 
 void FileTransferRequestSender::sendUploadRequest(const TCHAR *fullPathName,
                                                   bool overwrite,
-                                                  UINT64 offset)
+                                                  UINT64 offset) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -175,7 +175,7 @@ void FileTransferRequestSender::sendUploadRequest(const TCHAR *fullPathName,
 
 void FileTransferRequestSender::sendUploadDataRequest(const char *buffer,
                                                       UINT32 size,
-                                                      bool useCompression)
+                                                      bool useCompression) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -206,7 +206,7 @@ void FileTransferRequestSender::sendUploadDataRequest(const char *buffer,
 }
 
 void FileTransferRequestSender::sendUploadEndRequest(UINT8 fileFlags,
-                                                     UINT64 modificationTime)
+                                                     UINT64 modificationTime) throw(IOException)
 {
   AutoLock al(m_output);
 
@@ -222,7 +222,7 @@ void FileTransferRequestSender::sendUploadEndRequest(UINT8 fileFlags,
   m_output->flush();
 }
 
-void FileTransferRequestSender::sendFolderSizeRequest(const TCHAR *fullPath)
+void FileTransferRequestSender::sendFolderSizeRequest(const TCHAR *fullPath) throw(IOException)
 {
   AutoLock al(m_output);
 
