@@ -98,7 +98,7 @@ void FileTransferEventAdapter::onDirSizeReply(DataInputStream *input) throw(Oper
   throw OperationNotPermittedException();
 }
 
-void FileTransferEventAdapter::onLastRequestFailedReply(DataInputStream *input)
+void FileTransferEventAdapter::onLastRequestFailedReply(DataInputStream *input) throw(OperationNotPermittedException)
 {
   throw OperationNotPermittedException();
 }
