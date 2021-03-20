@@ -37,7 +37,7 @@ RemoteFileListOperation::~RemoteFileListOperation()
 {
 }
 
-void RemoteFileListOperation::start()
+void RemoteFileListOperation::start() throw(IOException)
 {
   m_isOk = false;
   m_isFinished = false;
