@@ -176,12 +176,12 @@ void FileTransferReplyBuffer::onUploadEndReply(DataInputStream *input) throw(IOE
   m_logWriter->info(_T("Received upload end reply\n"));
 }
 
-void FileTransferReplyBuffer::onDownloadReply(DataInputStream *input)
+void FileTransferReplyBuffer::onDownloadReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received download reply\n"));
 }
 
-void FileTransferReplyBuffer::onDownloadDataReply(DataInputStream *input)
+void FileTransferReplyBuffer::onDownloadDataReply(DataInputStream *input) throw(IOException, ZLibException)
 {
   UINT8 coLevel = input->readUInt8();
   UINT32 coBufferSize = input->readUInt32();
@@ -197,7 +197,7 @@ void FileTransferReplyBuffer::onDownloadDataReply(DataInputStream *input)
                     coBufferSize, uncoBufferSize, coLevel);
 }
 
-void FileTransferReplyBuffer::onDownloadEndReply(DataInputStream *input)
+void FileTransferReplyBuffer::onDownloadEndReply(DataInputStream *input) throw(IOException)
 {
   m_downloadFileFlags = input->readUInt8();
   m_downloadLastModified = input->readUInt64();
@@ -208,29 +208,29 @@ void FileTransferReplyBuffer::onDownloadEndReply(DataInputStream *input)
                     m_downloadFileFlags, m_downloadLastModified);
 }
 
-void FileTransferReplyBuffer::onMkdirReply(DataInputStream *input)
+void FileTransferReplyBuffer::onMkdirReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received mkdir reply\n"));
 }
 
-void FileTransferReplyBuffer::onRmReply(DataInputStream *input)
+void FileTransferReplyBuffer::onRmReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received rm reply\n"));
 }
 
-void FileTransferReplyBuffer::onMvReply(DataInputStream *input)
+void FileTransferReplyBuffer::onMvReply(DataInputStream *input) throw(IOException)
 {
   m_logWriter->info(_T("Received rename reply\n"));
 }
 
-void FileTransferReplyBuffer::onDirSizeReply(DataInputStream *input)
+void FileTransferReplyBuffer::onDirSizeReply(DataInputStream *input) throw(IOException)
 {
   m_dirSize = input->readUInt64();
 
   m_logWriter->info(_T("Received dirsize reply\n"));
 }
 
-void FileTransferReplyBuffer::onLastRequestFailedReply(DataInputStream *input)
+void FileTransferReplyBuffer::onLastRequestFailedReply(DataInputStream *input) throw(IOException)
 {
   input->readUTF8(&m_lastErrorMessage);
 
@@ -243,6 +243,7 @@ vector<UINT8> FileTransferReplyBuffer::readCompressedDataBlock(DataInputStream *
                                                                UINT32 compressedSize,
                                                                UINT32 uncompressedSize,
                                                                UINT8 compressionLevel)
+                                                               throw(IOException, ZLibException)
 {
   //
   // Buffers with compressed and uncompressed data.
