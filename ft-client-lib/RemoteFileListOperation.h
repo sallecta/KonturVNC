@@ -48,8 +48,8 @@ public:
   // File transfer message handlers
   //
 
-  virtual void onFileListReply(DataInputStream *input);
-  virtual void onLastRequestFailedReply(DataInputStream *input);
+  virtual void onFileListReply(DataInputStream *input) throw();
+  virtual void onLastRequestFailedReply(DataInputStream *input) throw();
 
   //
   // Returns true if operation is finished and was no error,
