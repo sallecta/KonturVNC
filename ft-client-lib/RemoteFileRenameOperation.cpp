@@ -69,13 +69,13 @@ void RemoteFileRenameOperation::start() throw(IOException)
                               m_pathToTargetFile.getString());
 }
 
-void RemoteFileRenameOperation::onMvReply(DataInputStream *input)
+void RemoteFileRenameOperation::onMvReply(DataInputStream *input) throw()
 {
   // Notify listeners that operation has finished
   notifyFinish();
 }
 
-void RemoteFileRenameOperation::onLastRequestFailedReply(DataInputStream *input)
+void RemoteFileRenameOperation::onLastRequestFailedReply(DataInputStream *input) throw()
 {
   // Logging
   StringStorage message;

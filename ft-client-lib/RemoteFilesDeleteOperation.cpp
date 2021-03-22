@@ -88,13 +88,13 @@ void RemoteFilesDeleteOperation::onFileListReply(DataInputStream *input) throw(I
   }
 }
 
-void RemoteFilesDeleteOperation::onRmReply(DataInputStream *input)
+void RemoteFilesDeleteOperation::onRmReply(DataInputStream *input) throw(IOException)
 {
   // Go to next file to delete it
   gotoNext();
 }
 
-void RemoteFilesDeleteOperation::onLastRequestFailedReply(DataInputStream *input)
+void RemoteFilesDeleteOperation::onLastRequestFailedReply(DataInputStream *input) throw(IOException)
 {
   //
   // Logging
