@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "UploadOperation.h"
 
 #include "ft-common/WinFilePath.h"
