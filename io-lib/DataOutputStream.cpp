@@ -122,7 +122,8 @@ void DataOutputStream::writeUTF8(const TCHAR *string)
   //size_t sizeInBytes = 0;
 
   // to UTF8 string convertion
-  Utf8StringStorage utf8String(&StringStorage(string));
+  StringStorage tmpStrStrg=StringStorage(string);
+  Utf8StringStorage utf8String(&tmpStrStrg);
 
   // FIXME: Why try/catch() is used?
   try {
