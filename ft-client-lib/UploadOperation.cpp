@@ -390,7 +390,7 @@ void UploadOperation::processFile() throw(IOException)
                               initialFileOffset);
 } // void
 
-void UploadOperation::sendFileDataChunk()
+void UploadOperation::sendFileDataChunk() throw(IOException)
 {
   _ASSERT(m_fis != NULL);
 
