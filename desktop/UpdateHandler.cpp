@@ -55,7 +55,8 @@ bool UpdateHandler::updateExternalFrameBuffer(FrameBuffer *dstFb, FrameBuffer *s
   Rect srcFbRect = srcFb->getDimension().getRect();
   Rect resultViewPort = srcFbRect.intersection(viewPort);
 
-  if (!dstPf.isEqualTo(&srcPf) || !dstFbDim.isEqualTo(&Dimension(&resultViewPort)) ||
+  Dimension tmpDimension = Dimension(&resultViewPort);
+  if (!dstPf.isEqualTo(&srcPf) || !dstFbDim.isEqualTo(&tmpDimension) ||
       !resultViewPort.isEqualTo(viewPort)) {
     dstFb->setProperties(&resultViewPort, &srcPf);
     return false;

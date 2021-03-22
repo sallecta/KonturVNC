@@ -36,7 +36,9 @@ UpdateHandlerImpl::UpdateHandlerImpl(UpdateListener *externalUpdateListener, Scr
                                                         &m_fbLocMut, log);
   // At this point the screen driver must contain valid screen properties.
   m_backupFrameBuffer.assignProperties(m_screenDriver->getScreenBuffer());
-  m_updateKeeper.setBorderRect(&m_screenDriver->getScreenDimension().getRect());
+
+  Rect tmpRect = m_screenDriver->getScreenDimension().getRect();
+  m_updateKeeper.setBorderRect(&tmpRect);
   m_updateFilter = new UpdateFilter(m_screenDriver,
                                     &m_backupFrameBuffer,
                                     &m_fbLocMut, log);
@@ -72,16 +74,18 @@ void UpdateHandlerImpl::extract(UpdateContainer *updateContainer)
   // Note: The getVideoRegion() function is not a thread safe function, but it invokes
   // only from this one place and so that is why it does not cover by the mutex.
   m_screenDriver->getVideoRegion(&updateContainer->videoRegion);
+
   // Constrain the video region to the current frame buffer border.
-  Region fbRect(&m_backupFrameBuffer.getDimension().getRect());
+  Rect tmpRect = m_backupFrameBuffer.getDimension().getRect();
+  Region fbRect(&tmpRect);
   updateContainer->videoRegion.intersect(&fbRect);
   updateContainer->videoRegion.intersect(&fbRect);
 
   m_updateFilter->filter(updateContainer);
 
+  tmpRect = m_screenDriver->getScreenBuffer()->getDimension().getRect();
   if (!m_absoluteRect.isEmpty()) {
-    updateContainer->changedRegion.addRect(&m_screenDriver->getScreenBuffer()->
-                                           getDimension().getRect());
+    updateContainer->changedRegion.addRect(&tmpRect);
     m_absoluteRect.clear();
   }
 
@@ -113,7 +117,8 @@ void UpdateHandlerImpl::extract(UpdateContainer *updateContainer)
   // Checking for mouse shape changing
   if (updateContainer->cursorShapeChanged || m_fullUpdateRequested) {
     // Update cursor shape
-    m_screenDriver->grabCursorShape(&m_backupFrameBuffer.getPixelFormat());
+    PixelFormat tmpPixelFormat = m_backupFrameBuffer.getPixelFormat();
+    m_screenDriver->grabCursorShape(&tmpPixelFormat);
     // Store cursor shape
     m_cursorShape.clone(m_screenDriver->getCursorShape());
 
