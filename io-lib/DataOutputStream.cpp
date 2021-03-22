@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "DataOutputStream.h"
 #include "util/Utf8StringStorage.h"
 #include <vector>
