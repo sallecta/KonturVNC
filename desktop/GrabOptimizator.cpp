@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "GrabOptimizator.h"
 #include "util/Exception.h"
 

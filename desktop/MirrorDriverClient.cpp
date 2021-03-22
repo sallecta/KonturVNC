@@ -22,10 +22,11 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "MirrorDriverClient.h"
 #include "util/Exception.h"
 #include "win-system/Environment.h"
-// FIXME: Why the class should depence from the tvnserver-app project?
+// FIXME: Why the class should depend on the tvnserver-app project?
 #include "tvnserver-app/NamingDefs.h"
 
 const TCHAR MirrorDriverClient::MINIPORT_REGISTRY_PATH[] =

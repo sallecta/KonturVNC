@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "DesktopBaseImpl.h"
 #include "util/BrokenHandleException.h"
 
