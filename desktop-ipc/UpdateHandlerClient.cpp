@@ -209,5 +209,6 @@ void UpdateHandlerClient::sendInit(BlockingGate *gate)
   sendPixelFormat(&tmpPixelFormat, gate);
   Dimension dim = m_backupFrameBuffer.getDimension();
   sendDimension(&dim, gate);
-  sendFrameBuffer(&m_backupFrameBuffer, &dim.getRect(), gate);
+  Rect tmpRect = dim.getRect();
+  sendFrameBuffer(&m_backupFrameBuffer, &tmpRect, gate);
 }
