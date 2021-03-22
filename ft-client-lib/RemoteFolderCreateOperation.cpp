@@ -45,7 +45,7 @@ RemoteFolderCreateOperation::~RemoteFolderCreateOperation()
 {
 }
 
-void RemoteFolderCreateOperation::start()
+void RemoteFolderCreateOperation::start() throw(IOException)
 {
   // Logging
   StringStorage message;
