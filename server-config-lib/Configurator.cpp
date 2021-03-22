@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "win-system/Environment.h"
 #include "wsconfig-lib/TvnLogFilename.h"
 #include "config-lib/RegistrySettingsManager.h"

@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "IpAccessControl.h"
 
 void IpAccessControl::serialize(DataOutputStream *output)

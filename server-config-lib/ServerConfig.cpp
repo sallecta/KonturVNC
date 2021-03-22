@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "ServerConfig.h"
 
 #include "win-system/Environment.h"

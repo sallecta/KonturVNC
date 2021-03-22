@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "PortMappingContainer.h"
 
 PortMappingContainer::PortMappingContainer()
