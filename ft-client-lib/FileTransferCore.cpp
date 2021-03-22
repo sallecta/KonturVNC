@@ -83,7 +83,7 @@ void FileTransferCore::setInterface(FileTransferInterface *ftInterface)
 }
 
 const OperationSupport &FileTransferCore::getSupportedOps()
-{ 
+{
   return m_supportedOps;
 }
 
@@ -115,7 +115,7 @@ void FileTransferCore::ftOpStarted(FileTransferOperation *sender)
   m_ftInterface->onFtOpStarted();
 }
 
-void FileTransferCore::ftOpFinished(FileTransferOperation *sender)
+void FileTransferCore::ftOpFinished(FileTransferOperation *sender) throw(IOException)
 {
   //
   // If operation that sends to us this notification is remote file list operation
@@ -183,8 +183,8 @@ void FileTransferCore::ftOpInfoMessage(FileTransferOperation *sender,
   m_ftInterface->onFtOpInfo(message);
 }
 
-void FileTransferCore::executeOperation(FileTransferOperation *newOperation)
-    
+void FileTransferCore::executeOperation(FileTransferOperation *newOperation) throw(IOException)
+
 {
   //
   // Cleanup, free previous operation

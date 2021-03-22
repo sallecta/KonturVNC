@@ -443,7 +443,7 @@ void UploadOperation::gotoNext()
   gotoNext(true);
 }
 
-void UploadOperation::gotoNext(bool fake)
+void UploadOperation::gotoNext(bool fake) throw(IOException)
 {
   FileInfoList *current = m_toCopy;
 
