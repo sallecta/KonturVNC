@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "DesktopServerProto.h"
 #include "server-config-lib/Configurator.h"
 #include "util/Exception.h"
