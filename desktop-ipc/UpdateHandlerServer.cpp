@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "UpdateHandlerServer.h"
 
 UpdateHandlerServer::UpdateHandlerServer(BlockingGate *forwGate,
