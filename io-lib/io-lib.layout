@@ -2,11 +2,6 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release Win32" />
-	<File name="DataInputStream.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2309" topLine="49" />
-		</Cursor>
-	</File>
 	<File name="DataOutputStream.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2485" topLine="55" />
@@ -15,6 +10,16 @@
 	<File name="Channel.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1680" topLine="28" />
+		</Cursor>
+	</File>
+	<File name="DataInputStream.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2309" topLine="49" />
+		</Cursor>
+	</File>
+	<File name="BufferedOutputStream.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1980" topLine="36" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

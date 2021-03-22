@@ -2,29 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release Win32" />
-	<File name="BaseWindow.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1130" topLine="18" />
-		</Cursor>
-	</File>
 	<File name="BaseDialog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="5810" topLine="236" />
 		</Cursor>
 	</File>
-	<File name="PaintWindow.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1329" topLine="30" />
-		</Cursor>
-	</File>
 	<File name="drawing\BitmapGraphics.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1123" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="CommonControlsEx.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1333" topLine="19" />
 		</Cursor>
 	</File>
 	<File name="CommonControlsEx.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,19 +22,44 @@
 			<Cursor1 position="1170" topLine="23" />
 		</Cursor>
 	</File>
+	<File name="ToolBar.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1096" topLine="13" />
+		</Cursor>
+	</File>
 	<File name="drawing\DeviceContext.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1198" topLine="22" />
 		</Cursor>
 	</File>
-	<File name="ListBox.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="TabControl.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1419" topLine="33" />
+			<Cursor1 position="1104" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="ListBox.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1111" topLine="21" />
 		</Cursor>
 	</File>
 	<File name="drawing\DeviceContext.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1131" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="BaseWindow.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1130" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="CommonControlsEx.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1333" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="PaintWindow.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1329" topLine="30" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

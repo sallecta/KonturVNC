@@ -55,6 +55,7 @@ void RemoteFileListOperation::onFileListReply(DataInputStream *input) throw()
 }
 
 void RemoteFileListOperation::onLastRequestFailedReply(DataInputStream *input) throw()
+{
   m_isOk = false;
   m_isFinished = true;
 
