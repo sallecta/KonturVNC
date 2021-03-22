@@ -40,7 +40,7 @@ BufferedOutputStream::~BufferedOutputStream()
   delete m_output;
 }
 
-size_t BufferedOutputStream::write(const void *buffer, size_t len)
+size_t BufferedOutputStream::write(const void *buffer, size_t len) throw(IOException)
 {
   if (m_dataLength + len >= sizeof(m_buffer)) {
     flush();
@@ -55,7 +55,7 @@ size_t BufferedOutputStream::write(const void *buffer, size_t len)
   return len;
 }
 
-void BufferedOutputStream::flush()
+void BufferedOutputStream::flush() throw(IOException)
 {
   m_output->writeFully(&m_buffer[0], m_dataLength);
 

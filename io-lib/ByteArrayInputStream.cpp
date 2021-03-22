@@ -33,7 +33,7 @@ ByteArrayInputStream::~ByteArrayInputStream()
 {
 }
 
-size_t ByteArrayInputStream::read(void *buffer, size_t len)
+size_t ByteArrayInputStream::read(void *buffer, size_t len) throw(IOException)
 {
   if (m_left == 0) {
     throw IOException(_T("End of stream reached"));
