@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "WinDxRecoverableException.h"
 #include "WinDxCriticalException.h"
 #include "thread/AutoLock.h"
