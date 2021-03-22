@@ -46,7 +46,7 @@ size_t ByteArrayInputStream::read(void *buffer, size_t len) throw(IOException)
   char *out = (char *)buffer;
   char *in = (char *)m_buffer;
 
-  size_t bytesToCopy = min(m_left, len);
+  size_t bytesToCopy = std::min(m_left, len);
   size_t outOffset = 0;
   size_t inOffset = m_bufferSize - m_left;
 
