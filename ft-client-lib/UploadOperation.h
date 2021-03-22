@@ -37,7 +37,7 @@
 //
 // Remark: Class uses difficult trick to get remote directory file list
 // (to check file collisions, when we trying to upload some file,
-// but it's already exist on remote machine). 
+// but it's already exist on remote machine).
 //
 // So, we need to send file list request every time before step one folder down
 // or up (as you know, all this features realized in 'gotoNext' method) and when reply
@@ -92,12 +92,12 @@ public:
   // Event handlers to process file transfer messages
   //
 
-  virtual void onUploadReply(DataInputStream *input) throw(IOException);
-  virtual void onUploadDataReply(DataInputStream *input) throw(IOException);
-  virtual void onUploadEndReply(DataInputStream *input) throw(IOException);
-  virtual void onMkdirReply(DataInputStream *input) throw(IOException);
-  virtual void onLastRequestFailedReply(DataInputStream *input) throw(IOException);
-  virtual void onFileListReply(DataInputStream *input) throw(IOException);
+  virtual void onUploadReply(DataInputStream *input) throw();
+  virtual void onUploadDataReply(DataInputStream *input) throw();
+  virtual void onUploadEndReply(DataInputStream *input) throw();
+  virtual void onMkdirReply(DataInputStream *input) throw();
+  virtual void onLastRequestFailedReply(DataInputStream *input) throw();
+  virtual void onFileListReply(DataInputStream *input) throw();
 
 private:
 
@@ -127,7 +127,7 @@ protected:
   // file system.
   //
 
-  void processFolder() throw(IOException);  
+  void processFolder() throw(IOException);
 
   //
   // Tryies to start upload of current file (notated by m_toCopy member).

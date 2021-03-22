@@ -75,7 +75,7 @@ UploadOperation::~UploadOperation()
   releaseRemoteFilesInfo();
 }
 
-void UploadOperation::start()
+void UploadOperation::start() throw(IOException)
 {
   //
   // Reset flags
@@ -102,12 +102,12 @@ void UploadOperation::start()
                                 m_replyBuffer->isCompressionSupported());
 }
 
-void UploadOperation::onUploadReply(DataInputStream *input)
+void UploadOperation::onUploadReply(DataInputStream *input) throw()
 {
   sendFileDataChunk();
 }
 
-void UploadOperation::onUploadDataReply(DataInputStream *input)
+void UploadOperation::onUploadDataReply(DataInputStream *input) throw()
 {
   if (isTerminating()) {
     gotoNext();
@@ -117,7 +117,7 @@ void UploadOperation::onUploadDataReply(DataInputStream *input)
   sendFileDataChunk();
 }
 
-void UploadOperation::onUploadEndReply(DataInputStream *input)
+void UploadOperation::onUploadEndReply(DataInputStream *input) throw()
 {
   // Cleanup
   try { m_fis->close(); } catch (...) { }
@@ -131,13 +131,13 @@ void UploadOperation::onUploadEndReply(DataInputStream *input)
   gotoNext();
 }
 
-void UploadOperation::onMkdirReply(DataInputStream *input)
+void UploadOperation::onMkdirReply(DataInputStream *input) throw()
 {
   // Upload next file in the list
   gotoNext();
 }
 
-void UploadOperation::onLastRequestFailedReply(DataInputStream *input)
+void UploadOperation::onLastRequestFailedReply(DataInputStream *input) throw()
 {
   StringStorage errDesc;
 
@@ -157,7 +157,7 @@ void UploadOperation::onLastRequestFailedReply(DataInputStream *input)
   gotoNext();
 }
 
-void UploadOperation::onFileListReply(DataInputStream *input)
+void UploadOperation::onFileListReply(DataInputStream *input) throw()
 {
   initRemoteFiles(m_replyBuffer->getFilesInfo(),
                   m_replyBuffer->getFilesInfoCount());
@@ -178,7 +178,7 @@ void UploadOperation::killOp()
   notifyFinish();
 }
 
-bool UploadOperation::specialHandler()
+bool UploadOperation::specialHandler() throw(IOException)
 {
   // If first upload that start real upload operation
   if (m_firstUpload) {
@@ -258,7 +258,7 @@ UINT64 UploadOperation::getFileSize(const TCHAR *pathToFile)
   return fileSize;
 }
 
-void UploadOperation::startUpload()
+void UploadOperation::startUpload() throw(IOException)
 {
   if (isTerminating()) {
     killOp();
@@ -290,7 +290,7 @@ void UploadOperation::startUpload()
   } // terminate operation is needed
 } // void
 
-void UploadOperation::processFolder()
+void UploadOperation::processFolder() throw(IOException)
 {
   StringStorage message;
 
@@ -312,7 +312,7 @@ void UploadOperation::processFolder()
   m_sender->sendMkDirRequest(m_pathToTargetFile.getString());
 }
 
-void UploadOperation::processFile()
+void UploadOperation::processFile() throw(IOException)
 {
   //
   // Cleanup
