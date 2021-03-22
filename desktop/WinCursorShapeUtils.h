@@ -63,7 +63,7 @@ private:
 };
 
 template< typename T >
-static bool WinCursorShapeUtils::winColorShapeToRfb(const FrameBuffer *pixels,
+bool WinCursorShapeUtils::winColorShapeToRfb(const FrameBuffer *pixels,
                                                     char *maskAND)
 {
   char *pixelsBuffer = (char *)pixels->getBuffer();
