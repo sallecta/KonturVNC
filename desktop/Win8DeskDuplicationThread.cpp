@@ -182,7 +182,8 @@ void Win8DeskDuplicationThread::processDirtyRects(size_t dirtyCount,
     m_log->debug(_T("Destination dirty rect = %d, %d, %dx%d"), dstRect.left, dstRect.top, dstRect.getWidth(), dstRect.getHeight());
 
     stageDim.width = static_cast<int> (autoMapSurface.getStride() / 4);
-    m_auxiliaryFrameBuffer.setPropertiesWithoutResize(&stageDim, &m_targetFb->getPixelFormat());
+    PixelFormat tmpPixelFormat = m_targetFb->getPixelFormat();
+    m_auxiliaryFrameBuffer.setPropertiesWithoutResize(&stageDim, &tmpPixelFormat);
     m_auxiliaryFrameBuffer.setBuffer(autoMapSurface.getBuffer());
     m_targetFb->copyFrom(&dstRect, &m_auxiliaryFrameBuffer, rect.left, rect.top);
     m_auxiliaryFrameBuffer.setBuffer(0);
