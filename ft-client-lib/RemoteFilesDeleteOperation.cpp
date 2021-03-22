@@ -59,7 +59,7 @@ void RemoteFilesDeleteOperation::start()
   remove(false);
 }
 
-void RemoteFilesDeleteOperation::onFileListReply(DataInputStream *input)
+void RemoteFilesDeleteOperation::onFileListReply(DataInputStream *input) throw(IOException)
 {
   //FileInfoList *current = m_toDelete;
 
