@@ -148,8 +148,10 @@ void UpdateHandlerServer::extractReply(BlockingGate *backGate)
   backGate->writeUInt8(updCont.cursorShapeChanged);
   if (updCont.cursorShapeChanged) {
     const CursorShape *curSh = m_updateHandler->getCursorShape();
-    sendDimension(&curSh->getDimension(), backGate);
-    sendPoint(&curSh->getHotSpot(), backGate);
+    Dimension tmpDimension = curSh->getDimension();
+    sendDimension(&tmpDimension, backGate);
+    Point tmpHotSpot = curSh->getHotSpot();
+    sendPoint(&tmpHotSpot, backGate);
 
     // Send pixels
     backGate->writeFully(curSh->getPixels()->getBuffer(), curSh->getPixelsSize());
@@ -163,8 +165,10 @@ void UpdateHandlerServer::extractReply(BlockingGate *backGate)
 void UpdateHandlerServer::screenPropReply(BlockingGate *backGate)
 {
   const FrameBuffer *fb = m_updateHandler->getFrameBuffer();
-  sendPixelFormat(&fb->getPixelFormat(), backGate);
-  sendDimension(&fb->getDimension(), backGate);
+  PixelFormat tmpPixelFormat = fb->getPixelFormat();
+  sendPixelFormat(&tmpPixelFormat, backGate);
+  Dimension tmDimension = fb->getDimension();
+  sendDimension(&tmDimension, backGate);
 }
 
 void UpdateHandlerServer::receiveFullReqReg(BlockingGate *backGate)
@@ -190,6 +194,7 @@ void UpdateHandlerServer::serverInit(BlockingGate *backGate)
   Dimension dim = readDimension(backGate);
   fb.setProperties(&dim, &m_oldPf);
 
-  readFrameBuffer(&fb, &dim.getRect(), backGate);
+  Rect tmpRect = dim.getRect();
+  readFrameBuffer(&fb, &tmpRect, backGate);
   m_updateHandler->initFrameBuffer(&fb);
 }
