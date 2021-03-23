@@ -7,7 +7,7 @@
 FTStatusDialog::FTStatusDialog()
 	: BaseDialog(IDD_FT_STATUS)
 {
-	
+
 }
 
 
@@ -46,7 +46,7 @@ void FTStatusDialog::initControls()
 
 	RECT Rect;
 	GetWindowRect(hwnd, &Rect);
-	SetWindowPos(hwnd, 
+	SetWindowPos(hwnd,
 					HWND_TOPMOST,
 					x,
 					y,
@@ -54,16 +54,16 @@ void FTStatusDialog::initControls()
 					Rect.bottom - Rect.top,
 					SWP_NOSIZE | SWP_SHOWWINDOW);
 	    hfFont = CreateFont(16, 0, 0, 0, 10, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY,
-            DEFAULT_PITCH, L"Times New Roman");
+            DEFAULT_PITCH, "Times New Roman");
 		hWndLabel = GetDlgItem(hwnd, IDC_FTSTATUS);
-        //hWndLabel = CreateWindowEx( WS_EX_TRANSPARENT, L"STATIC", L"", WS_CHILD | WS_VISIBLE | SS_LEFT | WS_SYSMENU , 10, 10, 145, 20, hwnd, NULL, NULL, NULL);           
-        SendMessage(hWndLabel, WM_SETFONT, (WPARAM)hfFont, NULL);  
-		
+        //hWndLabel = CreateWindowEx( WS_EX_TRANSPARENT, L"STATIC", L"", WS_CHILD | WS_VISIBLE | SS_LEFT | WS_SYSMENU , 10, 10, 145, 20, hwnd, NULL, NULL, NULL);
+        SendMessage(hWndLabel, WM_SETFONT, (WPARAM)hfFont, NULL);
+
 }
 
 BOOL FTStatusDialog::onInitDialog()
 {
-  
+
   initControls();
   hide();
   return TRUE;
