@@ -236,7 +236,7 @@ void ControlClient::onTerminate()
   try { m_transport->close(); } catch (...) { }
 }
 
-void ControlClient::sendError(const TCHAR *message)
+void ControlClient::sendError(const TCHAR *message) throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_ERROR);
   m_gate->writeUTF8(message);
@@ -246,7 +246,7 @@ void ControlClient::sendError(const TCHAR *message)
 // FIXME: Code duplicate (see RfbInitializer class).
 //
 
-void ControlClient::authMsgRcdv()
+void ControlClient::authMsgRcdv() throw(IOException)
 {
   UINT8 challenge[16];
   UINT8 response[16];
