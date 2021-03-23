@@ -45,7 +45,7 @@ UINT64 AuthTracker::checkBan()
   {
     AutoLock al(&m_countMutex);
     if (m_failureCount >= m_failureMaxCount) {
-      banTime = max(0, m_failureTimeInterval -
+      banTime = std::max(UINT64(0), m_failureTimeInterval -
                        (DateTime::now() - m_firstFailureTime).getTime());
     }
   }
