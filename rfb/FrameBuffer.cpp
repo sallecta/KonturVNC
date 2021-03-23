@@ -40,8 +40,10 @@ FrameBuffer::~FrameBuffer(void)
 
 bool FrameBuffer::assignProperties(const FrameBuffer *srcFrameBuffer)
 {
-  setProperties(&srcFrameBuffer->getDimension(),
-                &srcFrameBuffer->getPixelFormat());
+  Dimension tmpDimension = srcFrameBuffer->getDimension();
+  PixelFormat tmpPixelFormat = srcFrameBuffer->getPixelFormat();
+  setProperties(&tmpDimension,
+                &tmpPixelFormat);
   return resizeBuffer();
 }
 
@@ -50,8 +52,9 @@ bool FrameBuffer::clone(const FrameBuffer *srcFrameBuffer)
   if (!assignProperties(srcFrameBuffer)) {
     return false;
   }
-
-  Rect fbRect = &m_dimension.getRect();
+  //Dimension tmpDimension = m_dimension;
+  Rect tmpRect = m_dimension.getRect();
+  Rect fbRect = &tmpRect;
   copyFrom(&fbRect, srcFrameBuffer, fbRect.left, fbRect.top);
 
   return true;
@@ -100,8 +103,10 @@ void FrameBuffer::fillRect(const Rect *dstRect, UINT32 color)
 
 bool FrameBuffer::isEqualTo(const FrameBuffer *frameBuffer)
 {
-  return m_dimension.cmpDim(&frameBuffer->getDimension()) &&
-         m_pixelFormat.isEqualTo(&frameBuffer->getPixelFormat());
+  Dimension tmpDimension = frameBuffer->getDimension();
+  PixelFormat tmpPixelFormat = frameBuffer->getPixelFormat();
+  return m_dimension.cmpDim(&tmpDimension) &&
+         m_pixelFormat.isEqualTo(&tmpPixelFormat);
 }
 
 void FrameBuffer::clipRect(const Rect *dstRect, const FrameBuffer *srcFrameBuffer,
@@ -125,7 +130,8 @@ void FrameBuffer::clipRect(const Rect *dstRect, const FrameBuffer *srcFrameBuffe
   dstCommonArea.move(-dstRect->left, -dstRect->top);
   srcCommonArea.move(-srcRect.left, -srcRect.top);
 
-  Rect commonRect(&dstCommonArea.intersection(&srcCommonArea));
+  Rect tmpRect = dstCommonArea.intersection(&srcCommonArea);
+  Rect commonRect(&tmpRect);
 
   // Moving commonRect to destination coordinates and source
   dstClippedRect->setRect(&commonRect);
@@ -140,7 +146,8 @@ bool FrameBuffer::overlay(const Rect *dstRect,
                           int srcX, int srcY,
                           const char *andMask)
 {
-  if (!m_pixelFormat.isEqualTo(&srcFrameBuffer->getPixelFormat())) {
+  PixelFormat tmpPixelFormat = srcFrameBuffer->getPixelFormat();
+  if (!m_pixelFormat.isEqualTo(&tmpPixelFormat)) {
     return false;
   }
   if (m_pixelFormat.bitsPerPixel == 32) {
@@ -374,7 +381,7 @@ void *FrameBuffer::getBufferPtr(int x, int y) const
 }
 
 int FrameBuffer::getBufferSize() const
-{ 
+{
   return (m_dimension.area() * m_pixelFormat.bitsPerPixel) / 8;
 }
 

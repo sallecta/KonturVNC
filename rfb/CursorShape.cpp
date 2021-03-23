@@ -85,7 +85,8 @@ bool CursorShape::setProperties(const Dimension *newDim,
 
 void CursorShape::resetToEmpty()
 {
-  setDimension(&Dimension(0, 0));
+  Dimension tmpDimension = Dimension(0, 0);
+  setDimension(&tmpDimension);
   setHotSpot(0, 0);
 }
 
