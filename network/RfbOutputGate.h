@@ -21,7 +21,7 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include "NamingDefs/h"
 #ifndef _RFB_OUTPUT_GATE_H_
 #define _RFB_OUTPUT_GATE_H_
 
