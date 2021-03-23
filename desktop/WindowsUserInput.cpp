@@ -233,7 +233,8 @@ void WindowsUserInput::getApplicationRegion(unsigned int procId, Region *region)
       if (procForegr == procId) {
         region->addRect(&rect);
       } else {
-        region->subtract(&Region(&rect));
+        Region tmpRegion = Region(&rect);
+        region->subtract(&tmpRegion);
       }
     }
     hForegr = GetWindow(hForegr, GW_HWNDPREV);

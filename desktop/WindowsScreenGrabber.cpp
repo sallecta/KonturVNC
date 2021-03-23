@@ -40,7 +40,7 @@ WindowsScreenGrabber::~WindowsScreenGrabber(void)
 
 bool WindowsScreenGrabber::applyNewProperties()
 {
-  if (!applyNewPixelFormat() || !applyNewFullScreenRect() || !openDIBSection()) 
+  if (!applyNewPixelFormat() || !applyNewFullScreenRect() || !openDIBSection())
   {
     return false;
   }
@@ -169,7 +169,8 @@ bool WindowsScreenGrabber::getScreenSizeChanged()
 bool WindowsScreenGrabber::applyNewPixelFormat()
 {
   m_screen.update();
-  m_workFrameBuffer.setEmptyPixelFmt(&m_screen.getPixelFormat());
+  PixelFormat tmpPixelFormat = m_screen.getPixelFormat();
+  m_workFrameBuffer.setEmptyPixelFmt(&tmpPixelFormat);
 
   return true;
 }
@@ -217,7 +218,7 @@ bool WindowsScreenGrabber::grabByDIBSection(const Rect *rect)
     bitBltFlag = SRCCOPY;
   }
 
-  if (BitBlt(m_destDC, rect->left, rect->top, rect->getWidth(), rect->getHeight(), 
+  if (BitBlt(m_destDC, rect->left, rect->top, rect->getWidth(), rect->getHeight(),
              m_screenDC, rect->left + m_offsetFrameBuffer.x,
              rect->top + m_offsetFrameBuffer.y, bitBltFlag) == 0) {
     return false;
