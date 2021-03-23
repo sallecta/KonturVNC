@@ -197,7 +197,8 @@ template<class PIXEL_T> bool FrameBuffer::overlayT(const Rect *dstRect,
 bool FrameBuffer::copyFrom(const Rect *dstRect, const FrameBuffer *srcFrameBuffer,
                            int srcX, int srcY)
 {
-  if (!m_pixelFormat.isEqualTo(&srcFrameBuffer->getPixelFormat())) {
+  PixelFormat tmpPixelFormat = srcFrameBuffer->getPixelFormat();
+  if (!m_pixelFormat.isEqualTo(&tmpPixelFormat)) {
     return false;
   }
 
@@ -234,13 +235,15 @@ bool FrameBuffer::copyFrom(const Rect *dstRect, const FrameBuffer *srcFrameBuffe
 bool FrameBuffer::copyFrom(const FrameBuffer *srcFrameBuffer,
                            int srcX, int srcY)
 {
-  return copyFrom(&m_dimension.getRect(), srcFrameBuffer, srcX, srcY);
+  Rect tmpRect = m_dimension.getRect();
+  return copyFrom(&tmpRect, srcFrameBuffer, srcX, srcY);
 }
 
 bool FrameBuffer::cmpFrom(const Rect *dstRect, const FrameBuffer *srcFrameBuffer,
                           const int srcX, const int srcY)
 {
-  if (!m_pixelFormat.isEqualTo(&srcFrameBuffer->getPixelFormat())) {
+  PixelFormat tmpPixelFormat = srcFrameBuffer->getPixelFormat();
+  if (!m_pixelFormat.isEqualTo(&tmpPixelFormat)) {
     return false;
   }
 
