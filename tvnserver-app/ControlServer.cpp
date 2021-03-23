@@ -28,7 +28,7 @@
 
 ControlServer::ControlServer(PipeServer *pipeServer,
                              RfbClientManager *rfbClientManager,
-                             LogWriter *log)
+                             LogWriter *log) throw(Exception)
 : m_authenticator(30000, 3),
   m_pipeServer(pipeServer),
   m_rfbClientManager(rfbClientManager),
