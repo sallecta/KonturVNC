@@ -55,7 +55,8 @@ void TvnService::onStart() throw(SystemException)
     m_tvnServer->addListener(this);
     m_winServiceEvents->onSuccServiceStart();
   } catch (Exception &e) {
-    m_winServiceEvents->onFailedServiceStart(&StringStorage(e.getMessage()));
+    StringStorage tmpStringStorage = StringStorage(e.getMessage());
+    m_winServiceEvents->onFailedServiceStart(&tmpStringStorage);
   }
 }
 
