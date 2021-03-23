@@ -280,7 +280,7 @@ void ControlClient::authMsgRcdv() throw(IOException)
   }
 }
 
-void ControlClient::getClientsListMsgRcvd()
+void ControlClient::getClientsListMsgRcvd() throw(IOException)
 {
   //UINT32 clientCount = 0;
 
@@ -298,7 +298,7 @@ void ControlClient::getClientsListMsgRcvd()
   }
 }
 
-void ControlClient::getServerInfoMsgRcvd()
+void ControlClient::getServerInfoMsgRcvd() throw(IOException)
 {
   //bool acceptFlag = false;
   //bool serviceFlag = false;
@@ -330,14 +330,14 @@ void ControlClient::getServerInfoMsgRcvd()
   m_gate->writeUTF8(status.getString());
 }
 
-void ControlClient::reloadConfigMsgRcvd()
+void ControlClient::reloadConfigMsgRcvd() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
   Configurator::getInstance()->load();
 }
 
-void ControlClient::disconnectAllMsgRcvd()
+void ControlClient::disconnectAllMsgRcvd() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
@@ -345,14 +345,14 @@ void ControlClient::disconnectAllMsgRcvd()
   m_connectingSocketThreadCollector.destroyAllThreads();
 }
 
-void ControlClient::shutdownMsgRcvd()
+void ControlClient::shutdownMsgRcvd() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
   TvnServer::getInstance()->generateExternalShutdownSignal();
 }
 
-void ControlClient::addClientMsgRcvd()
+void ControlClient::addClientMsgRcvd() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
@@ -393,7 +393,7 @@ void ControlClient::addClientMsgRcvd()
   ZombieKiller::getInstance()->addZombie(newConnectionThread);
 }
 
-void ControlClient::connectToTcpDispatcher()
+void ControlClient::connectToTcpDispatcher() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
@@ -437,7 +437,7 @@ void ControlClient::connectToTcpDispatcher()
   m_connectingSocketThreadCollector.addThread(newConnectionThread);
 }
 
-void ControlClient::setServerConfigMsgRcvd()
+void ControlClient::setServerConfigMsgRcvd() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
@@ -446,7 +446,7 @@ void ControlClient::setServerConfigMsgRcvd()
   Configurator::getInstance()->load();
 }
 
-void ControlClient::getShowTrayIconFlagMsgRcvd()
+void ControlClient::getShowTrayIconFlagMsgRcvd() throw(IOException)
 {
   bool showIcon = Configurator::getInstance()->getServerConfig()->getShowTrayIconFlag();
 
@@ -455,7 +455,7 @@ void ControlClient::getShowTrayIconFlagMsgRcvd()
   m_gate->writeUInt8(showIcon ? 1 : 0);
 }
 
-void ControlClient::updateTvnControlProcessIdMsgRcvd()
+void ControlClient::updateTvnControlProcessIdMsgRcvd() throw(IOException)
 {
   m_gate->readUInt32();
 
@@ -468,7 +468,7 @@ void ControlClient::updateTvnControlProcessIdMsgRcvd()
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 }
 
-void ControlClient::getServerConfigMsgRcvd()
+void ControlClient::getServerConfigMsgRcvd() throw(IOException)
 {
   m_gate->writeUInt32(ControlProto::REPLY_OK);
 
