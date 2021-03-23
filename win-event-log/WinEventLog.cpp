@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "WinEventLog.h"
 #include "util/CommonHeader.h"
 #include "tvnserver-app/NamingDefs.h"
