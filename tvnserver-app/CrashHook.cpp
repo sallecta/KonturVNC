@@ -31,13 +31,34 @@
 #include "thread/AutoLock.h"
 #include "tvnserver-app/NamingDefs.h"
 
-typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(__in  HANDLE hProcess,
-                                       __in  DWORD ProcessId,
-                                       __in  HANDLE hFile,
-                                       __in  MINIDUMP_TYPE DumpType,
-                                       __in  PMINIDUMP_EXCEPTION_INFORMATION ExceptionParam,
-                                       __in  PMINIDUMP_USER_STREAM_INFORMATION UserStreamParam,
-                                       __in  PMINIDUMP_CALLBACK_INFORMATION CallbackParam);
+//typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(__in  HANDLE hProcess,
+//                                       __in  DWORD ProcessId,
+//                                       __in  HANDLE hFile,
+//                                       __in  MINIDUMP_TYPE DumpType,
+//                                       __in  PMINIDUMP_EXCEPTION_INFORMATION ExceptionParam,
+//                                       __in  PMINIDUMP_USER_STREAM_INFORMATION UserStreamParam,
+//                                       __in  PMINIDUMP_CALLBACK_INFORMATION CallbackParam);
+
+#include <windows.h>
+#include <Dbghelp.h>
+extern "C" {
+
+typedef BOOL (WINAPI * MINIDUMPWRITEDUMP)
+    (HANDLE,
+    DWORD,
+    HANDLE,
+    MINIDUMP_TYPE,
+    PMINIDUMP_EXCEPTION_INFORMATION, PMINIDUMP_USER_STREAM_INFORMATION,
+    PMINIDUMP_CALLBACK_INFORMATION);
+
+/*!
+ * \brief Application top level exception handler that creates (if it's possible) core dump
+ * @param pExceptionInfo pointer to exception information
+ */
+LONG WINAPI TopLevelFilter(struct _EXCEPTION_POINTERS* pExceptionInfo);
+
+}
+
 
 bool CrashHook::m_guiEnabled = false;
 HKEY CrashHook::m_rootHkey = HKEY_CURRENT_USER;
