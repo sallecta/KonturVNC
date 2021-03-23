@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "RfbKeySym.h"
 #include "util/CommonHeader.h"
 
