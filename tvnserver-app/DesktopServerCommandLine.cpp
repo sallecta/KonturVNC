@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "DesktopServerCommandLine.h"
 
 #include "util/StringParser.h"
