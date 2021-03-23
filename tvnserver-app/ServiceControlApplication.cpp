@@ -173,7 +173,7 @@ void ServiceControlApplication::setTvnControlStartEntry() const throw(SystemExce
                           pathToTvnControl.getString());
 }
 
-void ServiceControlApplication::removeTvnControlStartEntry() const
+void ServiceControlApplication::removeTvnControlStartEntry() const throw(SystemException)
 {
   RegistryKey runKey(Registry::getCurrentLocalMachineKey(),
                      _T("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"),

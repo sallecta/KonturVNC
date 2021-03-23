@@ -80,7 +80,7 @@ void TvnService::onTvnServerShutdown()
   TvnService::stop();
 }
 
-void TvnService::install()
+void TvnService::install() throw(SystemException)
 {
   StringStorage binPath;
 
@@ -93,14 +93,14 @@ void TvnService::install()
                            binPath.getString(), _T(""));
 }
 
-void TvnService::remove()
+void TvnService::remove() throw(SystemException)
 {
   SCMClient scManager;
 
   scManager.removeService(ServiceNames::SERVICE_NAME);
 }
 
-void TvnService::reinstall()
+void TvnService::reinstall() throw(SystemException)
 {
   try {
     remove();
@@ -109,14 +109,14 @@ void TvnService::reinstall()
   TvnService::install();
 }
 
-void TvnService::start(bool waitCompletion)
+void TvnService::start(bool waitCompletion) throw(SystemException)
 {
   SCMClient scManager;
 
   scManager.startService(ServiceNames::SERVICE_NAME, waitCompletion);
 }
 
-void TvnService::stop(bool waitCompletion)
+void TvnService::stop(bool waitCompletion) throw(SystemException)
 {
   SCMClient scManager;
 
