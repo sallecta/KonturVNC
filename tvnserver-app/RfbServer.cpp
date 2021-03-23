@@ -29,7 +29,7 @@ RfbServer::RfbServer(const TCHAR *bindHost, unsigned short bindPort,
                      RfbClientManager *clientManager,
                      bool lockAddr,
                      LogWriter *log,
-                     const Rect *viewPort)
+                     const Rect *viewPort)  throw(Exception)
 : TcpServer(bindHost, bindPort, false, lockAddr),
   m_clientManager(clientManager),
   m_log(log), m_chatDialog(m_clientManager)
@@ -37,7 +37,7 @@ RfbServer::RfbServer(const TCHAR *bindHost, unsigned short bindPort,
   if (viewPort != 0) {
     m_viewPort.setArbitraryRect(viewPort);
   }
-  
+
   m_chatDialog.create();
   m_chatDialog.hide();
 
@@ -89,7 +89,7 @@ void RfbServer::onAcceptConnection(SocketIPv4 *socket)
 
     socket->enableNaggleAlgorithm(true);
 
-  
+
 
 
     m_clientManager->addNewConnection(socket, &m_viewPort, false, false,&m_chatDialog,&m_ftsDialog) ; //m_chatDialog);

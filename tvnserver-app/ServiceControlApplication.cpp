@@ -120,7 +120,7 @@ int ServiceControlApplication::run()
   return success ? RET_OK : RET_ERR;
 }
 
-void ServiceControlApplication::runElevatedInstance() const
+void ServiceControlApplication::runElevatedInstance() const throw(SystemException)
 {
   StringStorage executablePath;
   Environment::getCurrentModulePath(&executablePath);
@@ -133,6 +133,7 @@ void ServiceControlApplication::runElevatedInstance() const
 }
 
 void ServiceControlApplication::executeCommand(const ServiceControlCommandLine *cmdLine) const
+ throw(SystemException)
 {
   if (cmdLine->installationRequested()) {
     TvnService::install();
@@ -153,7 +154,7 @@ void ServiceControlApplication::executeCommand(const ServiceControlCommandLine *
   }
 }
 
-void ServiceControlApplication::setTvnControlStartEntry() const
+void ServiceControlApplication::setTvnControlStartEntry() const throw(SystemException)
 {
   // Prepare tvncontrol start command.
   StringStorage executablePath;

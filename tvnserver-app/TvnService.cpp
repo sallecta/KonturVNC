@@ -46,7 +46,7 @@ TvnService::~TvnService()
 {
 }
 
-void TvnService::onStart()
+void TvnService::onStart() throw(SystemException)
 {
   try {
     m_winServiceEvents->enable();

@@ -73,7 +73,8 @@ int QueryConnectionApplication::run()
   return dialog.showModal();
 }
 
-int QueryConnectionApplication::execute(const TCHAR *peerAddr, bool acceptByDefault, DWORD timeOutSec)
+int QueryConnectionApplication::execute
+(const TCHAR *peerAddr, bool acceptByDefault, DWORD timeOutSec) throw(Exception)
 {
    // Prepare command for execution.
 
