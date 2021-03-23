@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <windows.h>
 #include "CrashHook.h"
 #include "win-system/DynamicLibrary.h"
 #include "win-system/Environment.h"
