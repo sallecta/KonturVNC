@@ -181,7 +181,7 @@ HCURSOR WindowsCursorShapeGrabber::getHCursor()
   cursorInfo.cbSize = sizeof(CURSORINFO);
 
   if (GetCursorInfo(&cursorInfo) == 0) {
-    return false;
+    return 0;
   }
 
   return cursorInfo.hCursor;
