@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "ZrleEncoder.h"
 
 ZrleEncoder::ZrleEncoder(PixelConverter *conv, DataOutputStream *output)
