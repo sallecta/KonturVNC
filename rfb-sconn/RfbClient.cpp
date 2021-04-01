@@ -361,8 +361,8 @@ Rect RfbClient::getViewPortRect(const Dimension *fbDimension)
   m_constViewPort.update(fbDimension);
   m_dynamicViewPort.update(fbDimension);
 
-  return m_constViewPort.getViewPortRect().intersection(
-    &m_dynamicViewPort.getViewPortRect());
+  Rect tmpRect = m_dynamicViewPort.getViewPortRect();
+  return m_constViewPort.getViewPortRect().intersection(&tmpRect);
 }
 
 void RfbClient::getViewPortInfo(const Dimension *fbDimension, Rect *resultRect,
