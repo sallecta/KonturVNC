@@ -62,7 +62,8 @@ UpdateSender::UpdateSender(RfbCodeRegistrator *codeRegtor,
   m_display(0),m_viewportChanged(false)
 {
   // FIXME: argument must be defined
-  m_updateKeeper = new UpdateKeeper(&Rect());
+  Rect tmpRect = Rect();
+  m_updateKeeper = new UpdateKeeper(&tmpRect);
 
   // Capabilities
   codeRegtor->addEncCap(EncodingDefs::COPYRECT,          VendorDefs::STANDARD,
@@ -92,7 +93,7 @@ UpdateSender::UpdateSender(RfbCodeRegistrator *codeRegtor,
 							("P2PBEGNE"));
 
   // Request codes
-  
+
   codeRegtor->regCode(UpdSenderClientMsgDefs::RFB_START_CP, this);
   codeRegtor->regCode(UpdSenderClientMsgDefs::RFB_REQ_REBOOT, this);
   codeRegtor->regCode(UpdSenderClientMsgDefs::RFB_SHARE_DISPLAY, this);
@@ -157,7 +158,8 @@ void UpdateSender::init(const Dimension *viewPortDimension,
     m_clientDim = *viewPortDimension;
   }
   m_lastViewPortDim = *viewPortDimension;
-  m_updateKeeper->setBorderRect(&viewPortDimension->getRect());
+  Rect tmpRect = viewPortDimension->getRect();
+  m_updateKeeper->setBorderRect(&tmpRect);
 }
 
 void UpdateSender::newUpdates(const UpdateContainer *updateContainer,
@@ -254,7 +256,8 @@ void UpdateSender::sendFbInClientDim(const EncodeOptions *encodeOptions,
   blankFrameBuffer.setColor(0, 0, 0);
   blankFrameBuffer.copyFrom(fb, 0, 0);
 
-  Region region(&dim->getRect());
+  Rect tmpRect = dim->getRect();
+  Region region(&tmpRect);
   std::vector<Rect> rects;
   splitRegion(m_enbox.getEncoder(), &region, &rects, &blankFrameBuffer, encodeOptions);
 
@@ -423,9 +426,9 @@ void UpdateSender::sendUpdate()
 
   // Send updates
   if (m_viewportChanged || updCont.screenSizeChanged || (!requestedFullReg.isEmpty() &&
-                                    !encodeOptions.desktopSizeEnabled())) 
+                                    !encodeOptions.desktopSizeEnabled()))
   {
-    m_viewportChanged = false; 
+    m_viewportChanged = false;
     m_log->debug(_T("Screen size changed or full region requested"));
     if (encodeOptions.desktopSizeEnabled()) {
       m_log->debug(_T("Desktop resize is enabled, sending NewFBSize %dx%d"),
@@ -954,7 +957,7 @@ bool UpdateSender::updateViewPort(Rect *outNewViewPort, bool *shareApp, Region *
                                   Region *newShareAppRegion)
 {
   Rect newViewPort;
-  
+
   ViewPortState dynViewPort;
   if(m_viewportChanged)
   {
@@ -962,12 +965,12 @@ bool UpdateSender::updateViewPort(Rect *outNewViewPort, bool *shareApp, Region *
 	dynViewPort.setFullDesktop();
    else
 	dynViewPort.setDisplayNumber(m_display);
-  
+
   }
 
   m_senderControlInformation->onGetViewPort(&newViewPort, shareApp, newShareAppRegion, m_viewportChanged, &dynViewPort);
-  
-  
+
+
 
   AutoLock al(&m_viewPortMut);
   bool viewPortChanged = !m_viewPort.isEqualTo(&newViewPort);
@@ -978,8 +981,8 @@ bool UpdateSender::updateViewPort(Rect *outNewViewPort, bool *shareApp, Region *
   bool shareAppModeChanged = *shareApp != m_shareOnlyApp;
   // Emulating share app mode changes as view port changes.
   viewPortChanged = viewPortChanged || shareAppModeChanged;
-  
-  
+
+
 
   *outNewViewPort = newViewPort;
   return viewPortChanged;

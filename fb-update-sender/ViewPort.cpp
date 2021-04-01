@@ -104,7 +104,8 @@ void ViewPort::update(const Dimension *fbDimension)
   m_log->debug(_T("View port coordinates: (%d, %d %dx%d)"),
     rect.left, rect.top, rect.getWidth(), rect.getHeight());
   // Constrain and save
-  m_rect = rect.intersection(&fbDimension->getRect());
+  Rect tmpRect = fbDimension->getRect();
+  m_rect = rect.intersection(&tmpRect);
   if (m_rect.getWidth() < 0 || m_rect.getHeight() < 0) {
     m_rect.clear();
   }
