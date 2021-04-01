@@ -112,7 +112,7 @@ template <class PIXEL_T>
 void TightEncoder::sendAnyRect(const Rect *rect,
                                const FrameBuffer *serverFb,
                                const FrameBuffer *clientFb,
-                               const EncodeOptions *options)
+                               const EncodeOptions *options) throw(IOException)
 {
   // Compute maximum number of colors to be allowed in the palette.
   int maxColors = rect->area() / getConf(options).idxMaxColorsDivisor;
@@ -148,7 +148,7 @@ void TightEncoder::sendAnyRect(const Rect *rect,
   }
 }
 
-void TightEncoder::sendSolidRect(const Rect *r, const FrameBuffer *fb)
+void TightEncoder::sendSolidRect(const Rect *r, const FrameBuffer *fb) throw(IOException)
 {
   PixelFormat pf = fb->getPixelFormat();
   size_t pixelSize = pf.bitsPerPixel / 8;
@@ -169,7 +169,7 @@ void TightEncoder::sendSolidRect(const Rect *r, const FrameBuffer *fb)
 template <class PIXEL_T>
 void TightEncoder::sendMonoRect(const Rect *rect,
                                 const FrameBuffer *fb,
-                                const EncodeOptions *options)
+                                const EncodeOptions *options) throw(IOException)
 {
   // Send control info.
   const int zlibStreamId = ZLIB_STREAM_MONO;
@@ -209,7 +209,7 @@ void TightEncoder::sendMonoRect(const Rect *rect,
 template <class PIXEL_T>
 void TightEncoder::sendIndexedRect(const Rect *rect,
                                    const FrameBuffer *fb,
-                                   const EncodeOptions *options)
+                                   const EncodeOptions *options) throw(IOException)
 {
   // Send control info.
   const int zlibStreamId = ZLIB_STREAM_IDX;
@@ -249,7 +249,7 @@ void TightEncoder::sendIndexedRect(const Rect *rect,
 template <class PIXEL_T>
 void TightEncoder::sendFullColorRect(const Rect *rect,
                                      const FrameBuffer *fb,
-                                     const EncodeOptions *options)
+                                     const EncodeOptions *options) throw(IOException)
 {
   // Send control info.
   const int zlibStreamId = ZLIB_STREAM_RAW;
@@ -280,7 +280,7 @@ void TightEncoder::sendFullColorRect(const Rect *rect,
 
 void TightEncoder::sendJpegRect(const Rect *rect,
                                 const FrameBuffer *serverFb,
-                                const EncodeOptions *options)
+                                const EncodeOptions *options) throw(IOException)
 {
   _ASSERT(options->jpegEnabled());
 
@@ -396,7 +396,7 @@ void TightEncoder::copyPixels(const Rect *rect, const FrameBuffer *fb,
 
 template <class PIXEL_T>
 void TightEncoder::encodeMonoRect(const Rect *rect, const FrameBuffer *fb,
-                                  DataOutputStream *out)
+                                  DataOutputStream *out) throw(IOException)
 {
   const PIXEL_T *src = (const PIXEL_T *)fb->getBufferPtr(rect->left, rect->top);
   const int w = rect->getWidth();
@@ -445,7 +445,7 @@ void TightEncoder::encodeMonoRect(const Rect *rect, const FrameBuffer *fb,
 
 template <class PIXEL_T>
 void TightEncoder::encodeIndexedRect(const Rect *rect, const FrameBuffer *fb,
-                                     DataOutputStream *out)
+                                     DataOutputStream *out) throw(IOException)
 {
   const PIXEL_T *src = (const PIXEL_T *)fb->getBufferPtr(rect->left, rect->top);
   const int w = rect->getWidth();
@@ -468,7 +468,7 @@ void TightEncoder::encodeIndexedRect(const Rect *rect, const FrameBuffer *fb,
 }
 
 void TightEncoder::sendCompressed(const char *data, size_t dataLen,
-                                  int streamId, int zlibLevel)
+                                  int streamId, int zlibLevel) throw(IOException)
 {
   if (dataLen < TIGHT_MIN_TO_COMPRESS) {
     m_output->writeFully(data, dataLen);
@@ -530,7 +530,7 @@ void TightEncoder::sendCompressed(const char *data, size_t dataLen,
   }
 }
 
-void TightEncoder::sendCompactLength(size_t dataLen)
+void TightEncoder::sendCompactLength(size_t dataLen) throw(IOException)
 {
   _ASSERT(dataLen <= 0x3FFFFF);
 
