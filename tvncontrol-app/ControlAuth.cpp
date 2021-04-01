@@ -31,6 +31,7 @@
 #include "util/DesCrypt.h"
 
 ControlAuth::ControlAuth(ControlGate *gate, const TCHAR *password)
+  throw(IOException, ControlAuthException, Exception)
 : m_gate(gate)
 {
   // Prepare data for authentication.
@@ -75,7 +76,7 @@ ControlAuth::~ControlAuth()
 {
 }
 
-void ControlAuth::authRfb()
+void ControlAuth::authRfb() throw(IOException, ControlAuthException)
 {
   UINT8 challenge[16];
   UINT8 response[16];
