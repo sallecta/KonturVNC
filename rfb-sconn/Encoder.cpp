@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "Encoder.h"
 
 Encoder::Encoder(PixelConverter *conv, DataOutputStream *output)
