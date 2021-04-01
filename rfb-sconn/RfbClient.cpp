@@ -93,7 +93,7 @@ void RfbClient::getPeerHost(StringStorage *host)
 {
   SocketAddressIPv4 addr;
   if(m_peerName.getLength()!=0){
-  host->setString(m_peerName.getString()); 
+  host->setString(m_peerName.getString());
 	return;
   }
   if (m_socket->getPeerAddr(&addr)) {
@@ -189,11 +189,11 @@ void RfbClient::execute()
   RfbInitializer rfbInitializer(&sockStream, m_extAuthListener, this,
                                 !m_isOutgoing);
 
-  
+
   P2pTransport p2p(m_log,false, NULL);
 
   m_socket->setP2P(&p2p);
-  
+
 
   try {
     // First initialization phase
@@ -240,7 +240,8 @@ void RfbClient::execute()
     Dimension fbDim;
     m_desktop->getFrameBufferProperties(&fbDim, &pf);
     Rect viewPort = getViewPortRect(&fbDim);
-    m_updateSender->init(&Dimension(&viewPort), &pf);
+    Dimension tmpDimension = Dimension(&viewPort);
+    m_updateSender->init(&tmpDimension, &pf);
     m_log->debug(_T("UpdateSender has been initialized"));
     // ClientInputHandler initialization
     m_clientInputHandler = new ClientInputHandler(&codeRegtor, this,
@@ -252,7 +253,7 @@ void RfbClient::execute()
     m_log->debug(_T("ClipboardExchange has been created"));
 
 	m_chatHandler = new TextChatHandler(&codeRegtor, &output, m_log,m_chatDialog);
-	
+
 	m_sdpHandler= new SdpHandler(&codeRegtor, &output, m_log, &p2p);
 	//m_chatDialog->show();
 
@@ -272,8 +273,9 @@ void RfbClient::execute()
                                                  viewPort.getWidth(),
                                                  viewPort.getHeight());
     m_log->info(_T("Entering RFB initialization phase 2"));
+    tmpDimension = Dimension(&viewPort);
     rfbInitializer.afterAuthPhase(&srvToClCaps, &clToSrvCaps,
-                                  &encCaps, &Dimension(&viewPort), &pf);
+                                  &encCaps, &tmpDimension, &pf);
     m_log->debug(_T("RFB initialization phase 2 completed"));
 
     // Start normal phase
@@ -314,7 +316,7 @@ void RfbClient::sendUpdate(const UpdateContainer *updateContainer,
 
 void RfbClient::sendMsg(const StringStorage *msg)
 {
-  
+
 	m_chatHandler->sendMsgToClient(msg);
 
 }
