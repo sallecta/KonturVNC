@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "RreEncoder.h"
 
 RreEncoder::RreEncoder(PixelConverter *conv, DataOutputStream *output)
