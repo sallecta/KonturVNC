@@ -52,7 +52,7 @@ int HextileEncoder::getCode() const
 
 void HextileEncoder::sendRectangle(const Rect *rect,
                                    const FrameBuffer *serverFb,
-                                   const EncodeOptions *options)
+                                   const EncodeOptions *options) throw(IOException)
 {
   const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
 
@@ -70,7 +70,7 @@ void HextileEncoder::sendRectangle(const Rect *rect,
 
 template <class PIXEL_T>
 void HextileEncoder::hextileFunction(const Rect &r,
-                                     const FrameBuffer *frameBuffer)
+                                     const FrameBuffer *frameBuffer) throw(IOException)
 {
   Rect t;
   PIXEL_T *buf;
