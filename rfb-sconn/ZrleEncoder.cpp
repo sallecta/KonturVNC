@@ -56,7 +56,7 @@ void ZrleEncoder::splitRectangle(const Rect *rect,
 
 void ZrleEncoder::sendRectangle(const Rect *rect,
                                 const FrameBuffer *serverFb,
-                                const EncodeOptions *options)
+                                const EncodeOptions *options) throw(IOException)
 {
   // Determing the number of bytes per pixel and the first byte of them.
   // It is possible only if red, green and blue intensities fit
@@ -94,12 +94,12 @@ void ZrleEncoder::sendRectangle(const Rect *rect,
       m_numberFirstByte = 0;
     }
   }
- 
+
   // Reserve data once for potentional transmitting of whole frame buffer
   // in raw encoding with CPIXELs.
   // If vector will be small it will be resized automatically.
   m_rgbData.reserve(rect->area() * 3);
-  
+
   m_fbWidth = clientFb->getDimension().width;
   size_t bpp = clientFb->getBitsPerPixel();
   if (bpp == 8) {
@@ -140,7 +140,7 @@ void ZrleEncoder::sendRect(const Rect *rect,
       fillPalette<PIXEL_T>(&tileRect, clientFb);
       int numColors = m_pal.getNumColors();
       m_oldSize = m_rgbData.size();
-      
+
       // If number of colors is 1 the tile with minimal size is solid.
       if (numColors == 1) {
         writeSolidTile();
@@ -155,7 +155,7 @@ void ZrleEncoder::sendRect(const Rect *rect,
         } else {
           m_mSize = ((tileRect.getWidth() + 1) / 2) * tileRect.getHeight();
         }
-        
+
         //TODO: Test this code
         // Size of raw tile is (1 + width * height * pixelSize).
         m_rawTileSize = 1 + tileRect.area() * m_bytesPerPixel;
@@ -207,7 +207,7 @@ void ZrleEncoder::sendRect(const Rect *rect,
     m_deflater.setInput(reinterpret_cast<const char *>(&m_rgbData.front()),
                         m_rgbData.size());
     m_deflater.deflate();
-  
+
     m_output->writeUInt32(m_deflater.getOutputSize());
     m_output->writeFully(m_deflater.getOutput(),
                          m_deflater.getOutputSize());
@@ -312,7 +312,7 @@ void ZrleEncoder::pushRunLengthPaletteRle(int runLength,
 {
   do {
     if (runLength > 255) {
-      paletteRleData->push_back(255); 
+      paletteRleData->push_back(255);
     } else {
       paletteRleData->push_back(runLength);
     }
@@ -349,7 +349,7 @@ void ZrleEncoder::writePaletteRleTile(const Rect *tileRect,
   // Processing of the first pixel.
   paletteRleData.push_back(indexOfColor);
   UINT8 previousIndexOfColor = indexOfColor;
-  
+
   int runLength = 0;
   for (int i = 1; i < tileRect->area(); ++i) {
     // FIXME: This variant may be not the most optimal.
@@ -431,7 +431,7 @@ void ZrleEncoder::fillPalette(const Rect *tileRect,
   // Pixel for adding to palette
   PIXEL_T oldPixel = px;
   int palLength = 1;
-  
+
   // Fill RLE tile vector.
   px &= mask;
   // Write type of subencoding.
@@ -452,7 +452,7 @@ void ZrleEncoder::fillPalette(const Rect *tileRect,
     int y = tileRect->top + i / tileRect->getWidth();
 
     px = buffer[y * m_fbWidth + x];
-    
+
     // Fill palette
     if (tryInsertPx && oldPixel != px) {
       tryInsertPx = m_pal.insert(oldPixel, palLength);
@@ -461,7 +461,7 @@ void ZrleEncoder::fillPalette(const Rect *tileRect,
     } else {
       palLength++;
     }
-    
+
     // Fill RLE tile vector.
     px &= mask;
     if (px != previousPx) {
@@ -504,7 +504,7 @@ void ZrleEncoder::copyCPixels(const Rect *rect,
   const int rectWidth = rect->getWidth();
   const UINT8 *src = static_cast<const UINT8 *>(fb->getBufferPtr(rect->left, rect->top));
   const int fbStride = fb->getDimension().width;
-  
+
   for (int y = 0; y < rectHeight; y++) {
     for (int x = 0; x < rectWidth; x++) {
       memcpy(dst, src + m_numberFirstByte, 3);
