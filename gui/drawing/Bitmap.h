@@ -28,10 +28,10 @@
 #include "util/CommonHeader.h"
 
 #include <string>
-#include <sstream>
+//#include <sstream>
 
 // Class manipulating windows HBITMAP object
-// 
+//
 //
 class Bitmap
 {
