@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "UpdateSender.h"
 #include "rfb/VendorDefs.h"
 #include "rfb/EncodingDefs.h"
