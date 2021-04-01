@@ -139,21 +139,24 @@ void CursorUpdates::drawCursor(UpdateContainer *updCont, FrameBuffer *fb)
 {
   AutoLock al(&m_curPosLocMut);
   // Add previous background rectangle to the changed region.
-  Rect rect(&m_shapeBackground.getDimension().getRect());
+  Rect tmpRect = m_shapeBackground.getDimension().getRect();
+  Rect rect(&tmpRect);
   rect.setLocation(m_backgroundPos.x, m_backgroundPos.y);
   updCont->changedRegion.addRect(&rect);
   // Keep the current background rectangle.
   Point hotSpot = m_cursorShape.getHotSpot();
   m_backgroundPos.setPoint(m_cursorPos.x - hotSpot.x,
                            m_cursorPos.y - hotSpot.y);
-  m_shapeBackground.setProperties(&m_cursorShape.getDimension(),
-                                  &m_cursorShape.getPixelFormat());
+  Dimension tmpDimension =m_cursorShape.getDimension();
+  PixelFormat tmpPixelFormat =m_cursorShape.getPixelFormat();
+  m_shapeBackground.setProperties(&tmpDimension, &tmpPixelFormat);
   // Keep background under cursor shape to can reconstruct full image.
   m_shapeBackground.copyFrom(fb,
                              m_backgroundPos.x,
                              m_backgroundPos.y);
   // Draw the cursor shape on the frame buffer
-  rect.setRect(&m_cursorShape.getDimension().getRect());
+  tmpRect = m_cursorShape.getDimension().getRect();
+  rect.setRect(&tmpRect);
   rect.setLocation(m_backgroundPos.x, m_backgroundPos.y);
 
   fb->overlay(&rect,
@@ -219,7 +222,8 @@ Point CursorUpdates::getCurPos()
 Rect CursorUpdates::getBackgroundRect()
 {
   AutoLock al(&m_curPosLocMut);
-  Rect rect(&m_shapeBackground.getDimension().getRect());
+  Rect tmpRect = m_shapeBackground.getDimension().getRect();
+  Rect rect(&tmpRect);
   rect.setLocation(m_backgroundPos.x, m_backgroundPos.y);
   return rect;
 }
