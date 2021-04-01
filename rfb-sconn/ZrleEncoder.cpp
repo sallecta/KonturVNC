@@ -118,7 +118,7 @@ template <class PIXEL_T>
 void ZrleEncoder::sendRect(const Rect *rect,
                            const FrameBuffer *serverFb,
                            const FrameBuffer *clientFb,
-                           const EncodeOptions *options)
+                           const EncodeOptions *options) throw(IOException)
 {
   m_rgbData.resize(0);
   //const PIXEL_T *buffer = static_cast<const PIXEL_T *>(clientFb->getBuffer());
@@ -217,7 +217,7 @@ void ZrleEncoder::sendRect(const Rect *rect,
 
 template <class PIXEL_T>
 void ZrleEncoder::writeRawTile(const Rect *tileRect,
-                               const FrameBuffer *fb)
+                               const FrameBuffer *fb) throw(IOException)
 {
   m_oldSize = m_rgbData.size();
   m_rgbData.resize(m_oldSize + tileRect->area() * m_bytesPerPixel + 1);
@@ -240,7 +240,7 @@ void ZrleEncoder::writeSolidTile() throw(IOException)
 
 template <class PIXEL_T>
 void ZrleEncoder::writePackedPaletteTile(const Rect *tileRect,
-                                         const FrameBuffer *fb)
+                                         const FrameBuffer *fb) throw(IOException)
 {
   int numColors = m_pal.getNumColors();
   m_oldSize = m_rgbData.size();
@@ -323,7 +323,7 @@ void ZrleEncoder::pushRunLengthPaletteRle(int runLength,
 
 template <class PIXEL_T>
 void ZrleEncoder::writePaletteRleTile(const Rect *tileRect,
-                                      const FrameBuffer *fb)
+                                      const FrameBuffer *fb) throw(IOException)
 {
   int numColors = m_pal.getNumColors();
   std::vector<UINT8> paletteRleData;
