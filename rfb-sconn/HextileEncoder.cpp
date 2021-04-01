@@ -22,8 +22,6 @@
 //-------------------------------------------------------------------------
 //
 
-#include "HextileEncoder.h"
-#include "HextileTile.h"
 
 #include <crtdbg.h>
 
@@ -34,6 +32,9 @@ const int hextileBgSpecified = 2;
 const int hextileFgSpecified = 4;
 const int hextileAnySubrects = 8;
 const int hextileSubrectsColoured = 16;
+
+#include "HextileEncoder.h"
+#include "HextileTile.h"
 
 HextileEncoder::HextileEncoder(PixelConverter *conv, DataOutputStream *output)
 : Encoder(conv, output)
