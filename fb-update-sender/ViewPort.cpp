@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "ViewPort.h"
 #include "thread/AutoLock.h"
 #include "util/BrokenHandleException.h"
