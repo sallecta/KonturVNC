@@ -66,7 +66,8 @@ void ViewPort::update(const Dimension *fbDimension)
     m_desktop->getApplicationRegion(m_state.m_processId, &m_appRegion);
     // Also, the view port rectangle will be FULL_DESKTOP.
   case ViewPortState::FULL_DESKTOP:
-    rect.setRect(&fbDimension->getRect());
+    Rect tmpRect = fbDimension->getRect();
+    rect.setRect(&tmpRect);
     break;
   case ViewPortState::PRIMARY_DISPLAY:
     _ASSERT(m_desktop != 0);
