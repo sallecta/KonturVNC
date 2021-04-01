@@ -98,7 +98,8 @@ void RfbInitializer::initVersion()
     } else {
       m_output->writeUInt8(0);
     }
-    AnsiStringStorage reason(&StringStorage(e.getMessage()));
+    StringStorage tmpStringStorage = StringStorage(e.getMessage());
+    AnsiStringStorage reason(&tmpStringStorage);
     unsigned int reasonLen = (unsigned int)reason.getLength();
     _ASSERT(reasonLen == reason.getLength());
 
@@ -281,7 +282,7 @@ void RfbInitializer::readClientInit()
   m_input->readUTF8(&username);
   m_username.setString(username.getString());
   }
-  
+
 }
 
 void RfbInitializer::sendServerInit(const Dimension *dim,
