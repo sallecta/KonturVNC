@@ -223,3 +223,6 @@ pip-log.txt
 Version.h
 /tvnserver/Version.h
 /tvnviewer/Version.h
+
+*.depend
+*.layout
