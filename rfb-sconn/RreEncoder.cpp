@@ -75,7 +75,7 @@ void RreEncoder::sendRectangle(const Rect *rect,
 
 template <class PIXEL_T>
 void RreEncoder::rreEncode(const Rect *r,
-                           const FrameBuffer *frameBuffer)
+                           const FrameBuffer *frameBuffer) throw(IOException)
 {
   PIXEL_T *buffer = (PIXEL_T *)frameBuffer->getBuffer();
   int fbWidth = frameBuffer->getDimension().width;
