@@ -55,7 +55,7 @@ void RreEncoder::splitRectangle(const Rect *rect,
 
 void RreEncoder::sendRectangle(const Rect *rect,
                                const FrameBuffer *serverFb,
-                               const EncodeOptions *options)
+                               const EncodeOptions *options) throw(IOException)
 {
   const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
 
@@ -83,9 +83,9 @@ void RreEncoder::rreEncode(const Rect *r,
   PIXEL_T mask = pxFormat.redMax << pxFormat.redShift |
                  pxFormat.greenMax << pxFormat.greenShift |
                  pxFormat.blueMax << pxFormat.blueShift;
-  
+
   PIXEL_T backgroundPixelValue = buffer[r->top * fbWidth + r->left] & mask;
-  
+
   // Clear the cache with m_rects.
   m_rects.resize(0);
 
@@ -108,11 +108,11 @@ void RreEncoder::rreEncode(const Rect *r,
       }
     }
   }
-  
+
   // Send header.
   m_output->writeUInt32(static_cast<UINT32>(subrectPixelValue.size()));
   m_output->writeFully(&backgroundPixelValue, sizeof(PIXEL_T));
-  
+
   // Send subrectangles.
   for (size_t i = 0; i < subrectPixelValue.size(); i++) {
     m_output->writeFully(&subrectPixelValue[i], sizeof(PIXEL_T));
