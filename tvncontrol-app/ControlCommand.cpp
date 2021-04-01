@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "ControlCommand.h"
 #include "RemoteException.h"
 #include "ControlAuthException.h"
