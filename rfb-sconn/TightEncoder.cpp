@@ -67,7 +67,7 @@ void TightEncoder::splitRectangle(const Rect *rect,
   if (maxWidth > rectWidth) {
     maxWidth = rectWidth;
   }
-  
+
   int maxHeight = maxSize / maxWidth;
 
   for (int y0 = rect->top; y0 < rect->bottom; y0 += maxHeight) {
@@ -81,7 +81,7 @@ void TightEncoder::splitRectangle(const Rect *rect,
 
 void TightEncoder::sendRectangle(const Rect *rect,
                                  const FrameBuffer *serverFb,
-                                 const EncodeOptions *options)
+                                 const EncodeOptions *options) throw(IOException)
 {
   // First, convert pixels to client format.
   const FrameBuffer *clientFb = m_pixelConverter->convert(rect, serverFb);
