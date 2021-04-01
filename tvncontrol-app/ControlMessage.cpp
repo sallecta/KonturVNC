@@ -56,14 +56,14 @@ ControlMessage::~ControlMessage()
   delete m_tunnel;
 }
 
-void ControlMessage::send()
+void ControlMessage::send() throw(IOException, RemoteException)
 {
   sendData();
 
   checkRetCode();
 }
 
-void ControlMessage::sendData()
+void ControlMessage::sendData() throw(IOException)
 {
   m_gate->writeUInt32(m_messageId);
   _ASSERT((UINT32)m_tunnel->size() == m_tunnel->size());
@@ -71,7 +71,7 @@ void ControlMessage::sendData()
   m_gate->writeFully(m_tunnel->toByteArray(), m_tunnel->size());
 }
 
-void ControlMessage::checkRetCode()
+void ControlMessage::checkRetCode() throw(IOException, RemoteException)
 {
   UINT32 messageId = m_gate->readUInt32();
 

@@ -67,7 +67,7 @@ ControlCommandLine::~ControlCommandLine()
 {
 }
 
-void ControlCommandLine::parse(const CommandLineArgs *cmdArgs)
+void ControlCommandLine::parse(const CommandLineArgs *cmdArgs) throw(CommandLineFormatException)
 {
   CommandLineFormat fmt[] = {
     { PASSWORD_FILE, NEEDS_ARG },
@@ -90,7 +90,7 @@ void ControlCommandLine::parse(const CommandLineArgs *cmdArgs)
     { CONFIG_SERVICE, NO_ARG },
     { SLAVE_MODE, NO_ARG },
     { DONT_ELEVATE, NO_ARG },
-	
+
   };
 
   if (!CommandLine::parse(fmt, sizeof(fmt) / sizeof(CommandLineFormat), cmdArgs)) {

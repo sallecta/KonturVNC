@@ -49,7 +49,7 @@ void ControlProxy::setPasswordProperties(const TCHAR *passwordFile,
   m_forService = forService;
 }
 
-TvnServerInfo ControlProxy::getServerInfo()
+TvnServerInfo ControlProxy::getServerInfo() throw(IOException, RemoteException)
 {
   TvnServerInfo ret;
 
@@ -65,28 +65,28 @@ TvnServerInfo ControlProxy::getServerInfo()
   return ret;
 }
 
-void ControlProxy::reloadServerConfig()
+void ControlProxy::reloadServerConfig() throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
   createMessage(ControlProto::RELOAD_CONFIG_MSG_ID)->send();
 }
 
-void ControlProxy::disconnectAllClients()
+void ControlProxy::disconnectAllClients() throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
   createMessage(ControlProto::DISCONNECT_ALL_CLIENTS_MSG_ID)->send();
 }
 
-void ControlProxy::shutdownTightVnc()
+void ControlProxy::shutdownTightVnc() throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
   createMessage(ControlProto::SHUTDOWN_SERVER_MSG_ID)->send();
 }
 
-void ControlProxy::getClientsList(list<RfbClientInfo *> *clients)
+void ControlProxy::getClientsList(list<RfbClientInfo *> *clients) throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
@@ -108,6 +108,7 @@ void ControlProxy::getClientsList(list<RfbClientInfo *> *clients)
 }
 
 void ControlProxy::makeOutgoingConnection(const TCHAR *connectString, bool viewOnly)
+   throw(IOException, RemoteException);
 {
   AutoLock l(m_gate);
 
