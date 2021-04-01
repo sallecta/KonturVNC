@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "TightEncoder.h"
 
 #include "io-lib/ByteArrayOutputStream.h"
