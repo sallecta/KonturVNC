@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "WinFile.h"
 #include "win-system/SystemException.h"
 #include "win-system/Environment.h"
