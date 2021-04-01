@@ -90,7 +90,8 @@ void HextileEncoder::hextileFunction(const Rect &r,
 
       t.right = min(r.right, t.left + 16);
 
-      fb.setProperties(&t, &frameBuffer->getPixelFormat());
+      PixelFormat tmpPixelFormat = frameBuffer->getPixelFormat();
+      fb.setProperties(&t, &tmpPixelFormat);
       fb.copyFrom(frameBuffer, t.left, t.top);
       buf = (PIXEL_T *)fb.getBuffer();
 
