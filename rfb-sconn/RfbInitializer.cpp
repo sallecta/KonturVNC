@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "RfbInitializer.h"
 #include "thread/AutoLock.h"
 #include "rfb/VendorDefs.h"
