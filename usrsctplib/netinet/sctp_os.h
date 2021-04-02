@@ -69,7 +69,7 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_os.h 235828 2012-05-23 11:26:28Z tuexe
 #endif
 
 #if defined(__Userspace__)
-#include <netinet/sctp_os_userspace.h>
+#include "../netinet/sctp_os_userspace.h"
 #endif
 
 #if defined(__APPLE__)
