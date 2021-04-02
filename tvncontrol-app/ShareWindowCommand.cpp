@@ -35,7 +35,7 @@ ShareWindowCommand::~ShareWindowCommand()
 {
 }
 
-void ShareWindowCommand::execute()
+void ShareWindowCommand::execute() throw(IOException, RemoteException)
 {
   m_proxy->shareWindow(&m_shareWindowName);
 }

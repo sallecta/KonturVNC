@@ -33,7 +33,7 @@ ShareFullCommand::~ShareFullCommand()
 {
 }
 
-void ShareFullCommand::execute()
+void ShareFullCommand::execute() throw(IOException, RemoteException)
 {
   m_proxy->shareFull();
 }

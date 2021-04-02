@@ -34,7 +34,7 @@ ShareAppCommand::~ShareAppCommand()
 {
 }
 
-void ShareAppCommand::execute()
+void ShareAppCommand::execute() throw(IOException, RemoteException)
 {
   m_proxy->shareApp(m_procId);
 }

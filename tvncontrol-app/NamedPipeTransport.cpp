@@ -52,14 +52,14 @@ Channel *NamedPipeTransport::getIOStream()
   return m_pipe;
 }
 
-Transport *NamedPipeTransport::accept()
+Transport *NamedPipeTransport::accept() throw(Exception)
 {
   _ASSERT(m_pipeServer != 0);
 
   return new NamedPipeTransport(m_pipeServer->accept());
 }
 
-void NamedPipeTransport::close()
+void NamedPipeTransport::close() throw(Exception)
 {
   if (m_pipe != 0) {
     m_pipe->close();

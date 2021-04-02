@@ -33,7 +33,7 @@ ShutdownCommand::~ShutdownCommand()
 {
 }
 
-void ShutdownCommand::execute()
+void ShutdownCommand::execute() throw(IOException, RemoteException)
 {
   m_proxy->shutdownTightVnc();
 }
