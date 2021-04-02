@@ -35,7 +35,7 @@
 __FBSDID("$FreeBSD: head/sys/netinet6/sctp6_usrreq.c 285877 2015-07-25 18:26:09Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
+#include "../netinet/sctp_os.h"
 #ifdef INET6
 #ifdef __FreeBSD__
 #include <sys/proc.h>
