@@ -108,7 +108,7 @@ void ControlProxy::getClientsList(list<RfbClientInfo *> *clients) throw(IOExcept
 }
 
 void ControlProxy::makeOutgoingConnection(const TCHAR *connectString, bool viewOnly)
-   throw(IOException, RemoteException);
+   throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
