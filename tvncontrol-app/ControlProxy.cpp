@@ -188,7 +188,7 @@ void ControlProxy::shareApp(unsigned int procId)
   msg->send();
 }
 
-void ControlProxy::setServerConfig(ServerConfig *config)
+void ControlProxy::setServerConfig(ServerConfig *config) throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
@@ -199,7 +199,7 @@ void ControlProxy::setServerConfig(ServerConfig *config)
   msg->send();
 }
 
-void ControlProxy::getServerConfig(ServerConfig *config)
+void ControlProxy::getServerConfig(ServerConfig *config) throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
@@ -208,7 +208,7 @@ void ControlProxy::getServerConfig(ServerConfig *config)
   config->deserialize(m_gate);
 }
 
-bool ControlProxy::getShowTrayIconFlag()
+bool ControlProxy::getShowTrayIconFlag() throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 
@@ -217,7 +217,7 @@ bool ControlProxy::getShowTrayIconFlag()
   return m_gate->readUInt8() == 1;
 }
 
-void ControlProxy::updateTvnControlProcessId(DWORD processId)
+void ControlProxy::updateTvnControlProcessId(DWORD processId) throw(IOException, RemoteException)
 {
   AutoLock l(m_gate);
 

@@ -33,7 +33,7 @@ DisconnectAllCommand::~DisconnectAllCommand()
 {
 }
 
-void DisconnectAllCommand::execute()
+void DisconnectAllCommand::execute() throw(IOException, RemoteException)
 {
   m_proxy->disconnectAllClients();
 }
