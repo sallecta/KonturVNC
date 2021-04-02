@@ -323,6 +323,9 @@
 		</Unit>
 		<Unit filename="BuildTime.cpp" />
 		<Unit filename="BuildTime.h" />
+		<Unit filename="D:/dev/git/KonturVNC/tvnserver/tvnserver.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Unit filename="res/connected.ico" />
 		<Unit filename="res/disabled.ico" />
 		<Unit filename="res/idle.ico" />
@@ -330,9 +333,6 @@
 		<Unit filename="res/tightvnc.bmp" />
 		<Unit filename="resource.h" />
 		<Unit filename="tvnserver.cpp" />
-		<Unit filename="tvnserver.rc">
-			<Option compilerVar="WINDRES" />
-		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

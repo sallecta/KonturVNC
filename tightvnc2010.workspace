@@ -50,5 +50,6 @@
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 		</Project>
 		<Project filename="usrsctplib/usrsctplib.cbp" />
+		<Project filename="D:/dev/git/KonturVNC/testGuiRes/testGuiRes.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
