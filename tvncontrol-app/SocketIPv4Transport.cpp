@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "SocketIPv4Transport.h"
 
 #include "network/socket/SocketStream.h"
