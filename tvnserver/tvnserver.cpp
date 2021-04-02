@@ -107,7 +107,7 @@ LogWriter preLog(0);
   // Check if need to start additional application that packed into tvnserver.exe.
 
 if (firstKey.isEqualTo(_T("-reboot"))) {
-  Environment::RemoteReboot();	
+  Environment::RemoteReboot();
   return 0;
 }
 
@@ -115,7 +115,7 @@ if (firstKey.isEqualTo(_T("-reboot"))) {
 	  StringStorage second(_T(""));
 	  if(parser.optionSpecified(firstKey.getString(),&second)){
 		DWORD (WINAPI* lpfnWmsgSendMessage)(DWORD dwSessionId, UINT uMsg, WPARAM wParam, LPARAM lParam);
-		DWORD dwSessionId = _wtoi(second.getString());
+		DWORD dwSessionId = second.getString();
 
         HINSTANCE hLib = LoadLibrary(_T("wmsgapi.dll"));
 
