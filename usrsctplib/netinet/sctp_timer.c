@@ -36,24 +36,24 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_timer.c 286781 2015-08-14 14:26:13Z tu
 #endif
 
 #define _IP_VHL
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_pcb.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_pcb.h"
 #ifdef INET6
 #if defined(__Userspace_os_FreeBSD)
 #include <netinet6/sctp6_var.h>
 #endif
 #endif
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_timer.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctp_indata.h>
-#include <netinet/sctp_asconf.h>
-#include <netinet/sctp_input.h>
-#include <netinet/sctp.h>
-#include <netinet/sctp_uio.h>
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_timer.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctp_indata.h"
+#include "../netinet/sctp_asconf.h"
+#include "../netinet/sctp_input.h"
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_uio.h"
 #if defined(INET) || defined(INET6)
 #if !defined(__Userspace_os_Windows)
 #include <netinet/udp.h>

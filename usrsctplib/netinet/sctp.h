@@ -605,7 +605,7 @@ struct sctp_error_no_user_data {
 #endif
 #undef SCTP_PACKED
 
-#include <netinet/sctp_uio.h>
+#include "../netinet/sctp_uio.h"
 
 /* This dictates the size of the packet
  * collection buffer. This only applies

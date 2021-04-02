@@ -44,12 +44,12 @@
 #include <string.h>
 #include <stdio.h>
 #include <errno.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_pcb.h>
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_pcb.h"
 #else
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_callout.h>
-#include <netinet/sctp_pcb.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_callout.h"
+#include "../netinet/sctp_pcb.h"
 #endif
 
 /*

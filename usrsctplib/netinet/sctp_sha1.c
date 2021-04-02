@@ -31,7 +31,7 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <netinet/sctp_sha1.h>
+#include "../netinet/sctp_sha1.h"
 
 #if defined(SCTP_USE_NSS_SHA1)
 /* A SHA-1 Digest is 160 bits, or 20 bytes */

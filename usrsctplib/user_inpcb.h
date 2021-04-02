@@ -33,7 +33,8 @@
 #ifndef _USER_INPCB_H_
 #define _USER_INPCB_H_
 
-#include <user_route.h> /* was <net/route.h> */
+#include "user_route.h"
+/* was <net/route.h> */
 
 #define	in6pcb		inpcb	/* for KAME src sync over BSD*'s */
 #define	in6p_sp		inp_sp	/* for KAME src sync over BSD*'s */

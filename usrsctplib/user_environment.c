@@ -35,7 +35,7 @@
 #include <stdint.h>
 #include <netinet/sctp_os_userspace.h>
 #endif
-#include <user_environment.h>
+#include "user_environment.h"
 #include <sys/types.h>
 /* #include <sys/param.h> defines MIN */
 #if !defined(MIN)

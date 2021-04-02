@@ -35,33 +35,33 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_pcb.c 285925 2015-07-27 22:35:54Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
+#include "../netinet/sctp_os.h"
 #ifdef __FreeBSD__
 #include <sys/proc.h>
 #endif
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctp_asconf.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_timer.h>
-#include <netinet/sctp_bsd_addr.h>
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctp_asconf.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_timer.h"
+#include "../netinet/sctp_bsd_addr.h"
 #if defined(__FreeBSD__) && __FreeBSD_version >= 803000
-#include <netinet/sctp_dtrace_define.h>
+#include "netinet/sctp_dtrace_define.h"
 #endif
 #if defined(INET) || defined(INET6)
 #if !defined(__Userspace_os_Windows)
-#include <netinet/udp.h>
+#include "../netinet/udp.h"
 #endif
 #endif
 #ifdef INET6
 #if defined(__Userspace__)
 #include "user_ip6_var.h"
 #else
-#include <netinet6/ip6_var.h>
+#include "../netinet6/ip6_var.h"
 #endif
 #endif
 #if defined(__FreeBSD__)
@@ -70,7 +70,7 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_pcb.c 285925 2015-07-27 22:35:54Z tuex
 #include <sys/unistd.h>
 #endif
 #if defined(__Userspace__)
-#include <user_socketvar.h>
+#include "../user_socketvar.h"
 #if !defined(__Userspace_os_Windows)
 #include <netdb.h>
 #endif
@@ -6867,7 +6867,7 @@ sctp_pcb_finish(void)
 	struct sctp_laddr *wi, *nwi;
 	int i;
 	struct sctp_iterator *it, *nit;
-	
+
 #if !defined(__FreeBSD__)
 	/* Notify the iterator to exit. */
 	SCTP_IPI_ITERATOR_WQ_LOCK();

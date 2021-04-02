@@ -38,7 +38,7 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_output.h 285837 2015-07-24 14:09:03Z r
 #ifndef _NETINET_SCTP_OUTPUT_H_
 #define _NETINET_SCTP_OUTPUT_H_
 
-#include <netinet/sctp_header.h>
+#include "../netinet/sctp_header.h"
 
 #if defined(_KERNEL) || defined(__Userspace__)
 

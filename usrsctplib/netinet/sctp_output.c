@@ -35,25 +35,25 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_output.c 285925 2015-07-27 22:35:54Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
+#include "../netinet/sctp_os.h"
 #ifdef __FreeBSD__
 #include <sys/proc.h>
 #endif
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_uio.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_auth.h>
-#include <netinet/sctp_timer.h>
-#include <netinet/sctp_asconf.h>
-#include <netinet/sctp_indata.h>
-#include <netinet/sctp_bsd_addr.h>
-#include <netinet/sctp_input.h>
-#include <netinet/sctp_crc32.h>
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_uio.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_auth.h"
+#include "../netinet/sctp_timer.h"
+#include "../netinet/sctp_asconf.h"
+#include "../netinet/sctp_indata.h"
+#include "../netinet/sctp_bsd_addr.h"
+#include "../netinet/sctp_input.h"
+#include "../netinet/sctp_crc32.h"
 #if defined(__Userspace_os_Linux)
 #define __FAVOR_BSD    /* (on Ubuntu at least) enables UDP header field names like BSD in RFC 768 */
 #endif

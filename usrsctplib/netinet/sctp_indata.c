@@ -36,17 +36,17 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_indata.c 286206 2015-08-02 16:07:30Z t
 #endif
 
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_input.h>
-#include <netinet/sctp_indata.h>
-#include <netinet/sctp_uio.h>
-#include <netinet/sctp_timer.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_input.h"
+#include "../netinet/sctp_indata.h"
+#include "../netinet/sctp_uio.h"
+#include "../netinet/sctp_timer.h"
 
 
 /*

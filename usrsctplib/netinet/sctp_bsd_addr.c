@@ -35,19 +35,19 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_bsd_addr.c 276914 2015-01-10 20:49:57Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_bsd_addr.h>
-#include <netinet/sctp_uio.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_timer.h>
-#include <netinet/sctp_asconf.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_indata.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_bsd_addr.h"
+#include "../netinet/sctp_uio.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_timer.h"
+#include "../netinet/sctp_asconf.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_indata.h"
 #if defined(__FreeBSD__)
 #include <sys/unistd.h>
 #endif

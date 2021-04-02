@@ -28,12 +28,12 @@
 
 
 #ifdef _WIN32
-#include <netinet/sctp_pcb.h>
+#include "../netinet/sctp_pcb.h"
 #include <sys/timeb.h>
 #include <iphlpapi.h>
 #pragma comment(lib, "IPHLPAPI.lib")
 #endif
-#include <netinet/sctp_os_userspace.h>
+#include "../netinet/sctp_os_userspace.h"
 
 #if !defined(_WIN32) && !defined(__Userspace_os_NaCl)
 int

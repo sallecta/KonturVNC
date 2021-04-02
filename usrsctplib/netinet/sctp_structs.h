@@ -38,9 +38,9 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_structs.h 285792 2015-07-22 11:30:37Z 
 #ifndef _NETINET_SCTP_STRUCTS_H_
 #define _NETINET_SCTP_STRUCTS_H_
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctp_auth.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctp_auth.h"
 
 struct sctp_timer {
 	sctp_os_timer_t timer;

@@ -38,7 +38,7 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_auth.h 271673 2014-09-16 14:20:33Z tue
 #ifndef _NETINET_SCTP_AUTH_H_
 #define _NETINET_SCTP_AUTH_H_
 
-#include <netinet/sctp_os.h>
+#include "../netinet/sctp_os.h"
 
 /* digest lengths */
 #define SCTP_AUTH_DIGEST_LEN_SHA1	20

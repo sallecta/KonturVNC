@@ -32,13 +32,13 @@
  *
  */
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_input.h>
-#include <netinet/sctp_peeloff.h>
+#include "netinet/sctp_os.h"
+#include "netinet/sctp_pcb.h"
+#include "netinet/sctputil.h"
+#include "netinet/sctp_var.h"
+#include "netinet/sctp_sysctl.h"
+#include "netinet/sctp_input.h"
+#include "netinet/sctp_peeloff.h"
 #ifdef INET6
 #include <netinet6/sctp6_var.h>
 #endif
@@ -54,7 +54,7 @@
 #endif
 #include <arpa/inet.h>
 #else
-#include <user_socketvar.h>
+#include "user_socketvar.h"
 #endif
 userland_mutex_t accept_mtx;
 userland_cond_t accept_cond;

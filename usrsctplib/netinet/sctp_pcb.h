@@ -38,10 +38,10 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_pcb.h 284515 2015-06-17 15:20:14Z tuex
 #ifndef _NETINET_SCTP_PCB_H_
 #define _NETINET_SCTP_PCB_H_
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp.h>
-#include <netinet/sctp_constants.h>
-#include <netinet/sctp_sysctl.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_constants.h"
+#include "../netinet/sctp_sysctl.h"
 
 LIST_HEAD(sctppcbhead, sctp_inpcb);
 LIST_HEAD(sctpasochead, sctp_tcb);
@@ -53,8 +53,8 @@ LIST_HEAD(sctp_ifalist, sctp_ifa);
 TAILQ_HEAD(sctp_readhead, sctp_queued_to_read);
 TAILQ_HEAD(sctp_streamhead, sctp_stream_queue_pending);
 
-#include <netinet/sctp_structs.h>
-#include <netinet/sctp_auth.h>
+#include "../netinet/sctp_structs.h"
+#include "../netinet/sctp_auth.h"
 
 #define SCTP_PCBHASH_ALLADDR(port, mask) (port & mask)
 #define SCTP_PCBHASH_ASOC(tag, mask) (tag & mask)
@@ -660,7 +660,7 @@ struct sctp_tcb {
 
 #elif defined(SCTP_PROCESS_LEVEL_LOCKS)
 
-#include <netinet/sctp_process_lock.h>
+#include "../netinet/sctp_process_lock.h"
 
 #elif defined(__Windows__)
 

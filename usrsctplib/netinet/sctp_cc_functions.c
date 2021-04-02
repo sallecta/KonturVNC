@@ -35,21 +35,21 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_cc_functions.c 283650 2015-05-28 16:00:23Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_input.h>
-#include <netinet/sctp_indata.h>
-#include <netinet/sctp_uio.h>
-#include <netinet/sctp_timer.h>
-#include <netinet/sctp_auth.h>
-#include <netinet/sctp_asconf.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_input.h"
+#include "../netinet/sctp_indata.h"
+#include "../netinet/sctp_uio.h"
+#include "../netinet/sctp_timer.h"
+#include "../netinet/sctp_auth.h"
+#include "../netinet/sctp_asconf.h"
 #if defined(__FreeBSD__) && __FreeBSD_version >= 803000
-#include <netinet/sctp_dtrace_declare.h>
+#include "../netinet/sctp_dtrace_declare.h"
 #endif
 
 #define SHIFT_MPTCP_MULTI_N 40

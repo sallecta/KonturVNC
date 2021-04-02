@@ -47,7 +47,7 @@
 #include <iphlpapi.h>
 #include <Mswsock.h>
 #include <Windows.h>
-#include "user_environment.h"
+#include "../user_environment.h"
 typedef CRITICAL_SECTION userland_mutex_t;
 #if WINVER < 0x0600
 enum {
@@ -439,20 +439,20 @@ struct sx {int dummy;};
 #if defined(HAVE_SYS_QUEUE_H)
 #include <sys/queue.h>
 #else
-#include <user_queue.h>
+#include "../user_queue.h"
 #endif
-#include <user_malloc.h>
+#include "../user_malloc.h"
 /* #include <sys/kernel.h> */
 /* #include <sys/sysctl.h> */
 /* #include <sys/protosw.h> */
 /* on FreeBSD, this results in a redefintion of SOCK(BUF)_(UN)LOCK and
  *  uknown type of struct mtx for sb_mtx in struct sockbuf */
-#include "user_socketvar.h" /* MALLOC_DECLARE's M_PCB. Replacement for sys/socketvar.h */
+#include "../user_socketvar.h" /* MALLOC_DECLARE's M_PCB. Replacement for sys/socketvar.h */
 /* #include <sys/jail.h> */
 /* #include <sys/sysctl.h> */
-#include <user_environment.h>
-#include <user_atomic.h>
-#include <user_mbuf.h>
+#include "../user_environment.h"
+#include "../user_atomic.h"
+#include "../user_mbuf.h"
 /* #include <sys/uio.h> */
 /* #include <sys/lock.h> */
 #if defined(__FreeBSD__) && __FreeBSD_version > 602000
@@ -487,10 +487,10 @@ struct sx {int dummy;};
 #if defined(HAVE_NETINET_IP_ICMP_H)
 #include <netinet/ip_icmp.h>
 #else
-#include <user_ip_icmp.h>
+#include "../user_ip_icmp.h"
 #endif
 /* #include <netinet/in_pcb.h> ported to userspace */
-#include <user_inpcb.h>
+#include "../user_inpcb.h"
 
 /* for getifaddrs */
 #include <sys/types.h>
@@ -549,7 +549,7 @@ struct sx {int dummy;};
 #include <sys/filedesc.h>
 #endif
 
-#include "netinet/sctp_sha1.h"
+#include "../netinet/sctp_sha1.h"
 
 #if __FreeBSD_version >= 700000
 #include <netinet/ip_options.h>
@@ -801,10 +801,10 @@ sctp_hashfreedestroy(void *vhashtbl, struct malloc_type *type, u_long hashmask);
  * which is used in the timer related functions such as
  * SCTP_OS_TIMER_INIT etc.
 */
-#include <netinet/sctp_callout.h>
+#include "../netinet/sctp_callout.h"
 
 /* __Userspace__ Creating a receive thread */
-#include <user_recv_thread.h>
+#include "../user_recv_thread.h"
 
 /*__Userspace__ defining KTR_SUBSYS 1 as done in sctp_os_macosx.h */
 #define KTR_SUBSYS 1
@@ -1066,7 +1066,7 @@ struct sockaddr_conn {
 #define SCTP_IP_ID(inp) (ip_id)
 
 /* need sctphdr to get port in SCTP_IP_OUTPUT. sctphdr defined in sctp.h  */
-#include <netinet/sctp.h>
+#include "../netinet/sctp.h"
 extern void sctp_userspace_ip_output(int *result, struct mbuf *o_pak,
                                      sctp_route_t *ro, void *stcb,
                                      uint32_t vrf_id);

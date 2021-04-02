@@ -35,17 +35,17 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_peeloff.c 279859 2015-03-10 19:49:25Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp.h>
-#include <netinet/sctp_uio.h>
-#include <netinet/sctp_peeloff.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_auth.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_uio.h"
+#include "../netinet/sctp_peeloff.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_auth.h"
 
 #if defined(__APPLE__)
 #define APPLE_FILE_NO 5

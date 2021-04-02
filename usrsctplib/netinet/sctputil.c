@@ -35,26 +35,26 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctputil.c 287294 2015-08-29 17:26:29Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
 #ifdef INET6
 #if defined(__Userspace__) || defined(__FreeBSD__)
 #include <netinet6/sctp6_var.h>
 #endif
 #endif
-#include <netinet/sctp_header.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_uio.h>
-#include <netinet/sctp_timer.h>
-#include <netinet/sctp_indata.h>/* for sctp_deliver_data() */
-#include <netinet/sctp_auth.h>
-#include <netinet/sctp_asconf.h>
-#include <netinet/sctp_bsd_addr.h>
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_uio.h"
+#include "../netinet/sctp_timer.h"
+#include "../netinet/sctp_indata.h"/* for sctp_deliver_data() */
+#include "../netinet/sctp_auth.h"
+#include "../netinet/sctp_asconf.h"
+#include "../netinet/sctp_bsd_addr.h"
 #if defined(__Userspace__)
-#include <netinet/sctp_constants.h>
+#include "../netinet/sctp_constants.h"
 #endif
 #if defined(__FreeBSD__)
 #include <netinet/udp.h>

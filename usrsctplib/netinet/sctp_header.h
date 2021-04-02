@@ -44,8 +44,8 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_header.h 273168 2014-10-16 15:36:04Z t
 #if !defined(__Userspace_os_Windows)
 #include <sys/time.h>
 #endif
-#include <netinet/sctp.h>
-#include <netinet/sctp_constants.h>
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_constants.h"
 
 #if !defined(__Userspace_os_Windows)
 #define SCTP_PACKED __attribute__((packed))

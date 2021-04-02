@@ -38,8 +38,8 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_sysctl.h 287294 2015-08-29 17:26:29Z t
 #ifndef _NETINET_SCTP_SYSCTL_H_
 #define _NETINET_SCTP_SYSCTL_H_
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp_constants.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp_constants.h"
 
 struct sctp_sysctl {
 	uint32_t sctp_sendspace;

@@ -35,16 +35,16 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_auth.c 280642 2015-03-25 22:45:54Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp.h>
-#include <netinet/sctp_header.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctp_var.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_indata.h>
-#include <netinet/sctp_output.h>
-#include <netinet/sctp_auth.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_header.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctp_var.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_indata.h"
+#include "../netinet/sctp_output.h"
+#include "../netinet/sctp_auth.h"
 
 #ifdef SCTP_DEBUG
 #define SCTP_AUTH_DEBUG		(SCTP_BASE_SYSCTL(sctp_debug_on) & SCTP_DEBUG_AUTH1)

@@ -38,7 +38,7 @@ __FBSDID("$FreeBSD: head/sys/netinet/sctp_var.h 284384 2015-06-14 17:48:44Z tuex
 #ifndef _NETINET_SCTP_VAR_H_
 #define _NETINET_SCTP_VAR_H_
 
-#include <netinet/sctp_uio.h>
+#include "../netinet/sctp_uio.h"
 
 #if defined(_KERNEL) || defined(__Userspace__)
 
@@ -413,7 +413,7 @@ void sctp_ctlinput(int, struct sockaddr *, void *);
 int sctp_ctloutput(struct socket *, struct sockopt *);
 #ifdef INET
 void sctp_input_with_port(struct mbuf *, int, uint16_t);
-#if defined(__FreeBSD__) && __FreeBSD_version >= 1100020  
+#if defined(__FreeBSD__) && __FreeBSD_version >= 1100020
 int sctp_input(struct mbuf **, int *, int);
 #else
 void sctp_input(struct mbuf *, int);

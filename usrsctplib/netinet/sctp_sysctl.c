@@ -35,13 +35,13 @@
 __FBSDID("$FreeBSD: head/sys/netinet/sctp_sysctl.c 287282 2015-08-29 09:14:32Z tuexen $");
 #endif
 
-#include <netinet/sctp_os.h>
-#include <netinet/sctp.h>
-#include <netinet/sctp_constants.h>
-#include <netinet/sctp_sysctl.h>
-#include <netinet/sctp_pcb.h>
-#include <netinet/sctputil.h>
-#include <netinet/sctp_output.h>
+#include "../netinet/sctp_os.h"
+#include "../netinet/sctp.h"
+#include "../netinet/sctp_constants.h"
+#include "../netinet/sctp_sysctl.h"
+#include "../netinet/sctp_pcb.h"
+#include "../netinet/sctputil.h"
+#include "../netinet/sctp_output.h"
 #ifdef __FreeBSD__
 #include <sys/smp.h>
 #include <sys/sysctl.h>
