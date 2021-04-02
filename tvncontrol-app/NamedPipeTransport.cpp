@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "NamedPipeTransport.h"
 
 NamedPipeTransport::NamedPipeTransport(NamedPipe *client)
