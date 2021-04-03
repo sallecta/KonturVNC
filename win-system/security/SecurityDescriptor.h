@@ -52,7 +52,7 @@ public:
    * @throws SystemException on fail.
    */
   void setRulesAsDacl(size_t count,
-                      EXPLICIT_ACCESS *rules);
+                      EXPLICIT_ACCESS *rules) throw(SystemException);
 
   /**
    * Sets information in a discretionary access control list (DACL).
@@ -60,7 +60,7 @@ public:
    * @param acl access control list.
    * @throws SystemException on fail.
    */
-  void setUserDacl(ACL *acl);
+  void setUserDacl(ACL *acl) throw(SystemException);
 
   /**
   Marks the security descriptor as having no owner.
