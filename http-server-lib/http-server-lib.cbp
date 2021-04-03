@@ -2,14 +2,14 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="httpserverlib" />
+		<Option title="http-server-lib" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug Win32">
-				<Option output="../bin/Debug_Win32/httpserverlib" prefix_auto="1" extension_auto="1" />
+				<Option output="$(WORKSPACE_DIRECTORY)/out/bin/Debug_Win32/httpserverlib" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="../obj/Debug_Win32/httpserverlib/" />
+				<Option object_output="$(WORKSPACE_DIRECTORY)/out/obj/Debug_Win32/httpserverlib/" />
 				<Option deps_output="../bin/Debug_Win32/" />
 				<Option type="2" />
 				<Option compiler="gcc" />

@@ -28,13 +28,14 @@
 		<Project filename="fb-update-sender/fb-update-sender.cbp" />
 		<Project filename="rfb-sconn/rfb-sconn.cbp" />
 		<Project filename="tvncontrol-app/tvncontrol-app.cbp" />
+		<Project filename="win-event-log/win-event-log.cbp" />
+		<Project filename="usrsctplib/usrsctplib.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 		</Project>
 		<Project filename="log-server/log-server.cbp" />
 		<Project filename="viewer-keysym-test/viewer-keysym-test.cbp" />
 		<Project filename="hookldr/hookldr.cbp" />
-		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="tcp-dispatcher/tcp-dispatcher.cbp" />
 		<Project filename="tvnviewer/tvnviewer.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
@@ -49,7 +50,5 @@
 		<Project filename="p2p/p2p.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 		</Project>
-		<Project filename="usrsctplib/usrsctplib.cbp" />
-		<Project filename="D:/dev/git/KonturVNC/testGuiRes/testGuiRes.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

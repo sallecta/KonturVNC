@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="fbupdatesender" />
+		<Option title="fb-update-sender" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -144,9 +144,9 @@
 				</Linker>
 			</Target>
 			<Target title="Release Win32">
-				<Option output="../bin/Release_Win32/fbupdatesender" prefix_auto="1" extension_auto="1" />
+				<Option output="$(WORKSPACE_DIRECTORY)/out/bin/Release_Win32/fbupdatesender" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="../obj/Release_Win32/fbupdatesender/" />
+				<Option object_output="$(WORKSPACE_DIRECTORY)/out/obj/Release_Win32/fbupdatesender/" />
 				<Option deps_output="../bin/Release_Win32/" />
 				<Option type="2" />
 				<Option compiler="gcc" />

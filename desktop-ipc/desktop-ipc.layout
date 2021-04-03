@@ -2,21 +2,6 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release Win32" />
-	<File name="UpdateHandlerServer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6600" topLine="168" />
-		</Cursor>
-	</File>
-	<File name="UpdateHandlerClient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7720" topLine="182" />
-		</Cursor>
-	</File>
-	<File name="DesktopServerProto.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1125" topLine="12" />
-		</Cursor>
-	</File>
 	<File name="ReconnectingChannel.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1663" topLine="33" />
@@ -25,6 +10,21 @@
 	<File name="ReconnectingChannel.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1928" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="DesktopServerProto.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1125" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="UpdateHandlerServer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6600" topLine="168" />
+		</Cursor>
+	</File>
+	<File name="UpdateHandlerClient.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7720" topLine="182" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
