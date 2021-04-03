@@ -30,8 +30,10 @@
 		<Project filename="tvncontrol-app/tvncontrol-app.cbp" />
 		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
+		<Project filename="log-writer/log-writer.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
+			<Depends filename="log-writer/log-writer.cbp" />
 		</Project>
 		<Project filename="log-server/log-server.cbp" />
 		<Project filename="viewer-keysym-test/viewer-keysym-test.cbp" />
@@ -42,7 +44,6 @@
 			<Depends filename="avilog/avilogv11.cbp" />
 		</Project>
 		<Project filename="viewer-core/viewer-core.cbp" />
-		<Project filename="log-writer/log-writer.cbp" />
 		<Project filename="setup-helper/setup-helper.cbp" />
 		<Project filename="libjpeg-turbo/libjpeg-turbo.cbp" />
 		<Project filename="avilog/avilogv11.cbp" />
