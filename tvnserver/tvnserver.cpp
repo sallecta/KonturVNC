@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <stdlib.h>
 #include "util/CommonHeader.h"
 #include "util/winhdr.h"
 #include "util/CommandLine.h"
@@ -115,7 +116,7 @@ if (firstKey.isEqualTo(_T("-reboot"))) {
 	  StringStorage second(_T(""));
 	  if(parser.optionSpecified(firstKey.getString(),&second)){
 		DWORD (WINAPI* lpfnWmsgSendMessage)(DWORD dwSessionId, UINT uMsg, WPARAM wParam, LPARAM lParam);
-		DWORD dwSessionId = second.getString();
+		DWORD dwSessionId = atoi(second.getString());
 
         HINSTANCE hLib = LoadLibrary(_T("wmsgapi.dll"));
 
