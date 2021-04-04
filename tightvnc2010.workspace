@@ -32,6 +32,7 @@
 		<Project filename="usrsctplib/usrsctplib.cbp" />
 		<Project filename="log-writer/log-writer.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp">
+			<Depends filename="tvnserver-app/tvnserver-app.cbp" />
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 			<Depends filename="log-writer/log-writer.cbp" />
 		</Project>

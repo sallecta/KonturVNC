@@ -303,6 +303,7 @@
 					<Add library="$(WORKSPACE_DIRECTORY)/OpenSSL/lib/VC/static/ssleay32MT.lib" />
 					<Add library="$(TARGET_OUTPUT_DIR)/libusrsctplib.a" />
 					<Add library="$(TARGET_OUTPUT_DIR)/liblogwriter.a" />
+					<Add library="$(TARGET_OUTPUT_DIR)/libtvnserverapp.a" />
 					<Add library="winmm" />
 					<Add library="kernel32" />
 					<Add library="user32" />
