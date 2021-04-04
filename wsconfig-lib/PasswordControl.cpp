@@ -74,7 +74,8 @@ void PasswordControl::setPassword(const TCHAR *plainText)
 {
   char plainTextInANSI[9];
   memset(plainTextInANSI, 0, sizeof(plainTextInANSI));
-  AnsiStringStorage ansiPlainTextStorage(&StringStorage(plainText));//taking address of temporary [-fpermissive]
+  StringStorage tmpStringStorage = StringStorage(plainText);
+  AnsiStringStorage ansiPlainTextStorage(&tmpStringStorage);
   memcpy(plainTextInANSI, ansiPlainTextStorage.getString(),
          min(ansiPlainTextStorage.getLength(), sizeof(plainTextInANSI)));
 

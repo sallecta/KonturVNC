@@ -31,11 +31,7 @@
 		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
 		<Project filename="log-writer/log-writer.cbp" />
-		<Project filename="tvnserver/tvnserver.cbp">
-			<Depends filename="tvnserver-app/tvnserver-app.cbp" />
-			<Depends filename="usrsctplib/usrsctplib.cbp" />
-			<Depends filename="log-writer/log-writer.cbp" />
-		</Project>
+		<Project filename="tvnserver/tvnserver.cbp" />
 		<Project filename="log-server/log-server.cbp" />
 		<Project filename="viewer-keysym-test/viewer-keysym-test.cbp" />
 		<Project filename="hookldr/hookldr.cbp" />

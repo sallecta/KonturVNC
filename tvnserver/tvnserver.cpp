@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include "util/StringStorage.h"
 #include <stdlib.h>
 #include "util/CommonHeader.h"
 #include "util/winhdr.h"
