@@ -162,6 +162,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="lib_win_system" />
 				</Linker>
 			</Target>
 		</Build>

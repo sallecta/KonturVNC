@@ -317,11 +317,11 @@
 					<Add library="odbccp32" />
 					<Add library="lib_tvnserver_app" />
 					<Add library="lib_tvncontrol_app" />
-					<Add library="lib_win_system" />
 					<Add library="lib_util" />
 					<Add library="lib_thread" />
 					<Add library="lib_server_config" />
 					<Add library="lib_log_server" />
+					<Add library="lib_win_system" />
 					<Add library="lib_desktop" />
 					<Add library="lib_desktop_ipc" />
 					<Add library="lib_gui" />
