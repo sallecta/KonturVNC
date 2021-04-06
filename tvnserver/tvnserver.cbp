@@ -13,13 +13,13 @@
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-O0" />
 					<Add option="-DWIN32" />
 					<Add option="-D_DEBUG" />
 					<Add option="-D_WINDOWS" />
-					<Add option="-O0" />
-					<Add option="-Wall" />
-					<Add option="-Wextra" />
 					<Add directory="./" />
 					<Add directory="../" />
 					<Add directory="../pjlib/pjlib/include/" />
@@ -50,6 +50,7 @@
 					<Add library="uuid.lib" />
 					<Add library="odbc32.lib" />
 					<Add library="odbccp32.lib" />
+					<Add library="version.lib" />
 				</Linker>
 			</Target>
 			<Target title="DebugNoUnicode x64">
@@ -339,6 +340,7 @@
 					<Add library="lib_file" />
 					<Add library="wtsapi32" />
 					<Add library="psapi" />
+					<Add library="libversion" />
 					<Add directory="$(TARGET_OUTPUT_DIR)" />
 				</Linker>
 			</Target>

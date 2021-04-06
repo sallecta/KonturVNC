@@ -15,17 +15,20 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-g" />
+					<Add option="-O0" />
 					<Add option="-DWIN32" />
 					<Add option="-D_DEBUG" />
 					<Add option="-D_LIB" />
-					<Add option="-O0" />
-					<Add option="-Wall" />
-					<Add option="-Wextra" />
 					<Add directory="../" />
 					<Add directory="./" />
 					<Add directory="$(VCInstallDir)/" />
 				</Compiler>
+				<Linker>
+					<Add library="version.lib" />
+				</Linker>
 			</Target>
 			<Target title="DebugNoUnicode x64">
 				<Option output="../bin/DebugNoUnicode_x64/winsystem" prefix_auto="1" extension_auto="1" />
