@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="p2p" />
+		<Option title="lib_p2p" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -132,21 +132,21 @@
 					<Add library="odbccp32.lib" />
 				</Linker>
 			</Target>
-			<Target title="Release Win32">
-				<Option output="../bin/Release_Win32/p2p" prefix_auto="1" extension_auto="1" />
+			<Target title="Release_Win32">
+				<Option output="../out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="../obj/Release_Win32/p2p/" />
+				<Option object_output="../out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
 				<Option deps_output="../bin/Release_Win32/" />
 				<Option type="2" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
 					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_LIB" />
-					<Add option="-O2" />
-					<Add option="-Wall" />
-					<Add option="-Wextra" />
 					<Add directory="./" />
 					<Add directory="../" />
 					<Add directory="../pjlib/pjlib/include/" />

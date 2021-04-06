@@ -302,7 +302,6 @@
 					<Add library="$(WORKSPACE_DIRECTORY)/OpenSSL/lib/VC/static/libeay32MT.lib" />
 					<Add library="$(WORKSPACE_DIRECTORY)/OpenSSL/lib/VC/static/ssleay32MT.lib" />
 					<Add library="winmm" />
-					<Add library="comctl32" />
 					<Add library="kernel32" />
 					<Add library="user32" />
 					<Add library="gdi32" />
@@ -318,6 +317,7 @@
 					<Add library="lib_tvnserver_app" />
 					<Add library="lib_tvncontrol_app" />
 					<Add library="lib_desktop" />
+					<Add library="lib_log_writer" />
 					<Add library="lib_util" />
 					<Add library="lib_thread" />
 					<Add library="lib_server_config" />
@@ -325,7 +325,7 @@
 					<Add library="lib_win_system" />
 					<Add library="lib_desktop_ipc" />
 					<Add library="lib_gui" />
-					<Add library="lib_log_writer" />
+					<Add library="comctl32" />
 					<Add library="lib_win_event_log" />
 					<Add library="lib_network" />
 					<Add library="lib_http_server" />

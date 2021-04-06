@@ -4,7 +4,7 @@
 
 #include <Windows.h>
 #include <io.h>
-#include <fcntl.h> 
+#include <fcntl.h>
 
 int P2pTransport::m_pnum = 0;
 
@@ -14,13 +14,13 @@ void hexdump(void *ptr, int buflen) {
   int i, j;
   for (i=0; i<buflen; i+=16) {
     printf("%06x: ", i);
-    for (j=0; j<16; j++) 
+    for (j=0; j<16; j++)
       if (i+j < buflen)
         printf("%02x ", buf[i+j]);
       else
         printf("   ");
     printf(" ");
-    for (j=0; j<16; j++) 
+    for (j=0; j<16; j++)
       if (i+j < buflen)
         printf("%c", isprint(buf[i+j]) ? buf[i+j] : '.');
     printf("\n");
@@ -41,7 +41,7 @@ void SetStdOutToNewConsole()
     setvbuf( stdout, NULL, _IONBF, 0 );
 
     // give the console window a nicer title
-    SetConsoleTitle(L"Debug Output");
+    SetConsoleTitleA("Debug Output");
 
     // give the console window a bigger buffer size
     CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -64,7 +64,7 @@ P2pTransport::P2pTransport(LogWriter *log, bool isControl, P2pEventListener * p2
 	m_isControl = isControl;
 	this->resume();
 	//SetStdOutToNewConsole();
-	
+
 	ice.Init(m_isControl, &dtls_tansp, &sctp_tansp);
 	ice.resume();
 
@@ -77,7 +77,7 @@ void P2pTransport::GetSDP(AnsiStringStorage * sdp)
 	len = ice.EncodeSession(buffer, sizeof(buffer));
 	if (len == -1)
 	{
-	
+
 		sdp->setString("");
 
 	}
@@ -85,9 +85,9 @@ void P2pTransport::GetSDP(AnsiStringStorage * sdp)
 	{
 
 		sdp->setString(buffer);
-		
+
 	}
-	
+
 
 }
 
@@ -114,7 +114,7 @@ int P2pTransport::send(const char *data, int size)
 
 if(size>1200)size=1200;
 if (usrsctp_sendv(sctp_tansp.sock, data, size, NULL, 0, NULL, 0, SCTP_SENDV_NOINFO, 0) < 0) {
-	
+
     if (errno == EWOULDBLOCK) {
 //		printf("EWOULDBLOCK %d\n",size);
 		sleep(1);
@@ -123,7 +123,7 @@ if (usrsctp_sendv(sctp_tansp.sock, data, size, NULL, 0, NULL, 0, SCTP_SENDV_NOIN
 		  sleep(1);
 	  }
 	  return size;
-      
+
     } else {
       printf("sctp_send_error %d\n", errno);
     }
@@ -146,7 +146,7 @@ int P2pTransport::recv(char *buffer, int size)
 		AutoLock al(&sctp_tansp.outToUserEvent_mutex);
 		nbytes = BIO_read(sctp_tansp.recv_bio, buffer, size);
 	}
-	
+
 	return nbytes;
 }
 
