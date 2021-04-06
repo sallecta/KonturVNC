@@ -10,7 +10,6 @@
 		<Project filename="ft-server-lib/ft-server-lib.cbp" />
 		<Project filename="ft-client-lib/ft-client-lib.cbp" />
 		<Project filename="ft-common/ft-common.cbp" />
-		<Project filename="server-config-lib/server-config-lib.cbp" />
 		<Project filename="client-config-lib/client-config-lib.cbp" />
 		<Project filename="io-lib/io-lib.cbp" />
 		<Project filename="desktop-ipc/desktop-ipc.cbp" />
@@ -24,13 +23,14 @@
 		<Project filename="rfb-sconn/rfb-sconn.cbp" />
 		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
+		<Project filename="log-server/log-server.cbp" />
+		<Project filename="server-config-lib/server-config-lib.cbp" />
 		<Project filename="win-system/win-system.cbp" />
 		<Project filename="tvncontrol-app/tvncontrol-app.cbp" />
 		<Project filename="util/util.cbp" />
 		<Project filename="tvnserver-app/tvnserver-app.cbp" />
 		<Project filename="log-writer/log-writer.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp" />
-		<Project filename="log-server/log-server.cbp" />
 		<Project filename="viewer-keysym-test/viewer-keysym-test.cbp" />
 		<Project filename="hookldr/hookldr.cbp" />
 		<Project filename="tcp-dispatcher/tcp-dispatcher.cbp" />
@@ -46,7 +46,6 @@
 		<Project filename="p2p/p2p.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 		</Project>
-		<Project filename="konturVncServer/konturVncServer.cbp" />
 		<Project filename="ztest.util/ztest.util.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

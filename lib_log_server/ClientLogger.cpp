@@ -112,8 +112,10 @@ void ClientLogger::print(int logLevel, const TCHAR *line)
   UINT32 threadId = GetCurrentThreadId();
 
   AutoLock al(&m_logWritingMut);
-  updateLogDumpLines(processId, threadId, &DateTime::now(), logLevel, line);
-  flush(processId, threadId, &DateTime::now(), logLevel, line);
+  DateTime tmpDateTime = DateTime::now();
+  updateLogDumpLines(processId, threadId, &tmpDateTime, logLevel, line);
+  tmpDateTime = DateTime::now();
+  flush(processId, threadId, &tmpDateTime, logLevel, line);
 }
 
 bool ClientLogger::acceptsLevel(int logLevel)
