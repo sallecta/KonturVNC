@@ -33,7 +33,7 @@ documentation and/or software.
 #ifndef _MD5_H_
 #define _MD5_H_
 
-#include "util/inttypes.h"
+#include "inttypes.h"
 
 class MD5
 {

@@ -1,5 +1,5 @@
 /* $Id: ip_helper.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJ_IP_ROUTE_H__
 #define __PJ_IP_ROUTE_H__
@@ -25,7 +25,7 @@
  * @brief IP helper API
  */
 
-#include <pj/sock.h>
+#include "sock.h"
 
 PJ_BEGIN_DECL
 
@@ -34,7 +34,7 @@ PJ_BEGIN_DECL
  * @ingroup PJ_IO
  * @{
  *
- * This module provides functions to query local host's IP interface and 
+ * This module provides functions to query local host's IP interface and
  * routing table.
  */
 

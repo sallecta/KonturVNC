@@ -2,12 +2,12 @@
 #define __CSTRINGT_H__
 
 #pragma once
-#include <atl\atlsimpstr.h>
+#include "atlsimpstr.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <wchar.h>
-#include <atl/atlbase.h>
-#include <atl\atlmem.h>
+#include "atlbase.h"
+#include "atlmem.h"
 
 namespace ATL
 {

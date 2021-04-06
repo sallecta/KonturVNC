@@ -25,7 +25,7 @@
 #ifndef __THREAD_H__
 #define __THREAD_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "LocalMutex.h"
 #include "DesktopSelector.h"
 

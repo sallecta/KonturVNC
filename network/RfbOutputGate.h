@@ -25,8 +25,8 @@
 #ifndef _RFB_OUTPUT_GATE_H_
 #define _RFB_OUTPUT_GATE_H_
 
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/BufferedOutputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/BufferedOutputStream.h"
 
 #include "thread/LocalMutex.h"
 

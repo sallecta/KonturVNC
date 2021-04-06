@@ -1,5 +1,5 @@
 /* $Id: scanner.h 4537 2013-06-19 06:47:43Z riza $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJ_SCANNER_H__
 #define __PJ_SCANNER_H__
@@ -25,7 +25,7 @@
  * @brief Text Scanning.
  */
 
-#include <pjlib-util/types.h>
+#include "types.h"
 
 PJ_BEGIN_DECL
 
@@ -39,9 +39,9 @@ PJ_BEGIN_DECL
  * @{
  */
 #if defined(PJ_SCANNER_USE_BITWISE) && PJ_SCANNER_USE_BITWISE != 0
-#  include <pjlib-util/scanner_cis_bitwise.h>
+#  include "scanner_cis_bitwise.h"
 #else
-#  include <pjlib-util/scanner_cis_uint.h>
+#  include "scanner_cis_uint.h"
 #endif
 
 /**
@@ -77,7 +77,7 @@ PJ_DECL(pj_status_t) pj_cis_init(pj_cis_buf_t *cs_buf, pj_cis_t *cis);
 PJ_DECL(pj_status_t) pj_cis_dup(pj_cis_t *new_cis, pj_cis_t *existing);
 
 /**
- * Add the characters in the specified range '[cstart, cend)' to the 
+ * Add the characters in the specified range '[cstart, cend)' to the
  * specification (the last character itself ('cend') is not added).
  *
  * @param cis       The scanner character specification.
@@ -160,7 +160,7 @@ PJ_INLINE(int) pj_cis_match( const pj_cis_t *cis, pj_uint8_t c )
 enum
 {
     /** This flags specifies that the scanner should automatically skip
-	whitespaces 
+	whitespaces
      */
     PJ_SCAN_AUTOSKIP_WS = 1,
 
@@ -221,7 +221,7 @@ typedef struct pj_scan_state
  * string during initialization.
  *
  * @param scanner   The scanner to be initialized.
- * @param bufstart  The input buffer to scan. Note that buffer[buflen] will be 
+ * @param bufstart  The input buffer to scan. Note that buffer[buflen] will be
  *		    filled with NULL char until scanner is destroyed, so
  *		    the actual buffer length must be at least buflen+1.
  * @param buflen    The length of the input buffer, which normally is
@@ -231,13 +231,13 @@ typedef struct pj_scan_state
  * @param callback  Callback to be called when the scanner encounters syntax
  *		    error condition.
  */
-PJ_DECL(void) pj_scan_init( pj_scanner *scanner, char *bufstart, 
-			    pj_size_t buflen, 
+PJ_DECL(void) pj_scan_init( pj_scanner *scanner, char *bufstart,
+			    pj_size_t buflen,
 			    unsigned options,
 			    pj_syn_err_func_ptr callback );
 
 
-/** 
+/**
  * Call this function when application has finished using the scanner.
  *
  * @param scanner   The scanner.
@@ -245,7 +245,7 @@ PJ_DECL(void) pj_scan_init( pj_scanner *scanner, char *bufstart,
 PJ_DECL(void) pj_scan_fini( pj_scanner *scanner );
 
 
-/** 
+/**
  * Determine whether the EOF condition for the scanner has been met.
  *
  * @param scanner   The scanner.
@@ -258,7 +258,7 @@ PJ_INLINE(int) pj_scan_is_eof( const pj_scanner *scanner)
 }
 
 
-/** 
+/**
  * Peek strings in current position according to parameter spec, and return
  * the strings in parameter out. The current scanner position will not be
  * moved. If the scanner is already in EOF state, syntax error callback will
@@ -275,10 +275,10 @@ PJ_DECL(int) pj_scan_peek( pj_scanner *scanner,
 			   const pj_cis_t *spec, pj_str_t *out);
 
 
-/** 
+/**
  * Peek len characters in current position, and return them in out parameter.
  * Note that whitespaces or newlines will be returned as it is, regardless
- * of PJ_SCAN_AUTOSKIP_WS settings. If the character left is less than len, 
+ * of PJ_SCAN_AUTOSKIP_WS settings. If the character left is less than len,
  * syntax error callback will be called.
  *
  * @param scanner   The scanner.
@@ -292,7 +292,7 @@ PJ_DECL(int) pj_scan_peek_n( pj_scanner *scanner,
 			     pj_size_t len, pj_str_t *out);
 
 
-/** 
+/**
  * Peek strings in current position until spec is matched, and return
  * the strings in parameter out. The current scanner position will not be
  * moved. If the scanner is already in EOF state, syntax error callback will
@@ -305,11 +305,11 @@ PJ_DECL(int) pj_scan_peek_n( pj_scanner *scanner,
  * @return the character right after the peek-ed position.
  */
 PJ_DECL(int) pj_scan_peek_until( pj_scanner *scanner,
-				 const pj_cis_t *spec, 
+				 const pj_cis_t *spec,
 				 pj_str_t *out);
 
 
-/** 
+/**
  * Get characters from the buffer according to the spec, and return them
  * in out parameter. The scanner will attempt to get as many characters as
  * possible as long as the spec matches. If the first character doesn't
@@ -324,7 +324,7 @@ PJ_DECL(void) pj_scan_get( pj_scanner *scanner,
 			   const pj_cis_t *spec, pj_str_t *out);
 
 
-/** 
+/**
  * Just like #pj_scan_get(), but additionally performs unescaping when
  * escaped ('%') character is found. The input spec MUST NOT contain the
  * specification for '%' characted.
@@ -337,7 +337,7 @@ PJ_DECL(void) pj_scan_get_unescape( pj_scanner *scanner,
 				    const pj_cis_t *spec, pj_str_t *out);
 
 
-/** 
+/**
  * Get characters between quotes. If current input doesn't match begin_quote,
  * syntax error will be thrown. Note that the resulting string will contain
  * the enclosing quote.
@@ -348,10 +348,10 @@ PJ_DECL(void) pj_scan_get_unescape( pj_scanner *scanner,
  * @param out		String to store the result.
  */
 PJ_DECL(void) pj_scan_get_quote( pj_scanner *scanner,
-				 int begin_quote, int end_quote, 
+				 int begin_quote, int end_quote,
 				 pj_str_t *out);
 
-/** 
+/**
  * Get characters between quotes. If current input doesn't match begin_quote,
  * syntax error will be thrown. Note that the resulting string will contain
  * the enclosing quote.
@@ -385,7 +385,7 @@ PJ_DECL(void) pj_scan_get_n( pj_scanner *scanner,
 			     unsigned N, pj_str_t *out);
 
 
-/** 
+/**
  * Get one character from the scanner.
  *
  * @param scanner   The scanner.
@@ -395,7 +395,7 @@ PJ_DECL(void) pj_scan_get_n( pj_scanner *scanner,
 PJ_DECL(int) pj_scan_get_char( pj_scanner *scanner );
 
 
-/** 
+/**
  * Get characters from the scanner and move the scanner position until the
  * current character matches the spec.
  *
@@ -407,7 +407,7 @@ PJ_DECL(void) pj_scan_get_until( pj_scanner *scanner,
 				 const pj_cis_t *spec, pj_str_t *out);
 
 
-/** 
+/**
  * Get characters from the scanner and move the scanner position until the
  * current character matches until_char.
  *
@@ -415,11 +415,11 @@ PJ_DECL(void) pj_scan_get_until( pj_scanner *scanner,
  * @param until_char    Get until the input match this character.
  * @param out		String to store the result.
  */
-PJ_DECL(void) pj_scan_get_until_ch( pj_scanner *scanner, 
+PJ_DECL(void) pj_scan_get_until_ch( pj_scanner *scanner,
 				    int until_char, pj_str_t *out);
 
 
-/** 
+/**
  * Get characters from the scanner and move the scanner position until the
  * current character matches until_char.
  *
@@ -430,7 +430,7 @@ PJ_DECL(void) pj_scan_get_until_ch( pj_scanner *scanner,
 PJ_DECL(void) pj_scan_get_until_chr( pj_scanner *scanner,
 				     const char *until_spec, pj_str_t *out);
 
-/** 
+/**
  * Advance the scanner N characters, and skip whitespace
  * if necessary.
  *
@@ -443,9 +443,9 @@ PJ_DECL(void) pj_scan_advance_n( pj_scanner *scanner,
 				 unsigned N, pj_bool_t skip);
 
 
-/** 
+/**
  * Compare string in current position with the specified string.
- * 
+ *
  * @param scanner   The scanner.
  * @param s	    The string to compare with.
  * @param len	    Length of the string to compare.
@@ -455,7 +455,7 @@ PJ_DECL(void) pj_scan_advance_n( pj_scanner *scanner,
 PJ_DECL(int) pj_scan_strcmp( pj_scanner *scanner, const char *s, int len);
 
 
-/** 
+/**
  * Case-less string comparison of current position with the specified
  * string.
  *
@@ -483,11 +483,11 @@ PJ_DECL(int) pj_scan_stricmp( pj_scanner *scanner, const char *s, int len);
  *
  * @see strnicmp_alnum, pj_stricmp_alnum
  */
-PJ_DECL(int) pj_scan_stricmp_alnum( pj_scanner *scanner, const char *s, 
+PJ_DECL(int) pj_scan_stricmp_alnum( pj_scanner *scanner, const char *s,
 				    int len);
 
 
-/** 
+/**
  * Get a newline from the scanner. A newline is defined as '\\n', or '\\r', or
  * "\\r\\n". If current input is not newline, syntax error will be thrown.
  *
@@ -496,7 +496,7 @@ PJ_DECL(int) pj_scan_stricmp_alnum( pj_scanner *scanner, const char *s,
 PJ_DECL(void) pj_scan_get_newline( pj_scanner *scanner );
 
 
-/** 
+/**
  * Manually skip whitespaces according to flag that was specified when
  * the scanner was initialized.
  *
@@ -512,17 +512,17 @@ PJ_DECL(void) pj_scan_skip_whitespace( pj_scanner *scanner );
  */
 PJ_DECL(void) pj_scan_skip_line( pj_scanner *scanner );
 
-/** 
+/**
  * Save the full scanner state.
  *
  * @param scanner   The scanner.
  * @param state	    Variable to store scanner's state.
  */
-PJ_DECL(void) pj_scan_save_state( const pj_scanner *scanner, 
+PJ_DECL(void) pj_scan_save_state( const pj_scanner *scanner,
 				  pj_scan_state *state);
 
 
-/** 
+/**
  * Restore the full scanner state.
  * Note that this would not restore the string if application has modified
  * it. This will only restore the scanner scanning position.
@@ -530,7 +530,7 @@ PJ_DECL(void) pj_scan_save_state( const pj_scanner *scanner,
  * @param scanner   The scanner.
  * @param state	    State of the scanner.
  */
-PJ_DECL(void) pj_scan_restore_state( pj_scanner *scanner, 
+PJ_DECL(void) pj_scan_restore_state( pj_scanner *scanner,
 				     pj_scan_state *state);
 
 /**

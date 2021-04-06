@@ -25,7 +25,7 @@
 #ifndef __RECT_H__
 #define __RECT_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class Rect
 {
@@ -38,7 +38,7 @@ public:
   Rect(const RECT *rect) {fromWindowsRect(rect);}
 
   virtual ~Rect(void) {}
-  
+
   int left;
   int top;
   int right;

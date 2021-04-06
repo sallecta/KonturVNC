@@ -26,7 +26,7 @@
 #define _LOGWRITER_H_
 
 #include "Logger.h"
-#include "util/CharDefs.h"
+#include "../util/CharDefs.h"
 
 // This class is a high level wrap for the Logger class. It helps write log in different
 // log levels by the different functions.

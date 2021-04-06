@@ -25,7 +25,7 @@
 #ifndef __APPLICATIONCRASHEVENTS_H__
 #define __APPLICATIONCRASHEVENTS_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class ApplicationCrashEvents
 {

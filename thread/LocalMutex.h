@@ -25,7 +25,7 @@
 #ifndef __LOCALMUTEX_H__
 #define __LOCALMUTEX_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "Lockable.h"
 

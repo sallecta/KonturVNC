@@ -26,7 +26,7 @@
 #define __CURSORSHAPE_H__
 
 #include "FrameBuffer.h"
-#include "region/Point.h"
+#include "../region/Point.h"
 
 class CursorShape
 {

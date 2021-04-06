@@ -1,5 +1,5 @@
 /* $Id: stun_config.h 4199 2012-07-05 10:52:55Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJNATH_STUN_CONFIG_H__
 #define __PJNATH_STUN_CONFIG_H__
@@ -25,10 +25,10 @@
  * @brief STUN endpoint.
  */
 
-#include <pjnath/stun_msg.h>
-#include <pj/assert.h>
-#include <pj/errno.h>
-#include <pj/string.h>
+#include "stun_msg.h"
+#include "../../../pjlib/include/pj//assert.h"
+#include "../../../pjlib/include/pj//errno.h"
+#include "../../../pjlib/include/pj//string.h"
 
 
 PJ_BEGIN_DECL
@@ -75,7 +75,7 @@ typedef struct pj_stun_config
 
     /**
      * The interval to cache outgoing  STUN response in the STUN session,
-     * in miliseconds. 
+     * in miliseconds.
      *
      * Default 10000 (10 seconds).
      */

@@ -25,30 +25,30 @@
 #ifndef __RFBCLIENTMANAGER_H__
 #define __RFBCLIENTMANAGER_H__
 
-#include "util/ListenerContainer.h"
-#include "rfb-sconn/RfbClient.h"
-#include "thread/AutoLock.h"
-#include "thread/Thread.h"
-#include "thread/LocalMutex.h"
-#include "win-system/WindowsEvent.h"
-#include "desktop/Desktop.h"
-#include "desktop/DesktopFactory.h"
-#include "log-writer/LogWriter.h"
+#include "../util/ListenerContainer.h"
+#include "../rfb-sconn/RfbClient.h"
+#include "../thread/AutoLock.h"
+#include "../thread/Thread.h"
+#include "../thread/LocalMutex.h"
+#include "../win-system/WindowsEvent.h"
+#include "../desktop/Desktop.h"
+#include "../desktop/DesktopFactory.h"
+#include "../log-writer/LogWriter.h"
 
 // Listener interfaces
 #include "RfbClientManager.h"
 #include "RfbClientManagerEventListener.h"
-#include "rfb-sconn/ClientTerminationListener.h"
-#include "desktop/ClipboardListener.h"
-#include "desktop/AbnormDeskTermListener.h"
-#include "desktop/UpdateSendingListener.h"
-#include "rfb-sconn/ClientAuthListener.h"
-#include "tvncontrol-app/RfbClientInfo.h"
+#include "../rfb-sconn/ClientTerminationListener.h"
+#include "../desktop/ClipboardListener.h"
+#include "../desktop/AbnormDeskTermListener.h"
+#include "../desktop/UpdateSendingListener.h"
+#include "../rfb-sconn/ClientAuthListener.h"
+#include "../tvncontrol-app/RfbClientInfo.h"
 #include "NewConnectionEvents.h"
-#include "rfb-sconn/TextMsgListener.h"
+#include "../rfb-sconn/TextMsgListener.h"
 
-#include "tvnserver-app/ChatDialog.h"
-#include "tvnserver-app/FTStatusDialog.h"
+#include "../tvnserver-app/ChatDialog.h"
+#include "../tvnserver-app/FTStatusDialog.h"
 
 typedef std::list<RfbClient *> ClientList;
 typedef std::list<RfbClient *>::iterator ClientListIter;

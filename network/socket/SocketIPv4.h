@@ -31,12 +31,12 @@
 #include "SocketAddressIPv4.h"
 #include "SocketException.h"
 
-#include "io-lib/Channel.h"
-#include "io-lib/IOException.h"
-#include "win-system/WsaStartup.h"
-#include "thread/LocalMutex.h"
+#include "../../io-lib/Channel.h"
+#include "../../io-lib/IOException.h"
+#include "../../win-system/WsaStartup.h"
+#include "../../thread/LocalMutex.h"
 
-#include "p2p/p2ptransport.h"
+#include "../../p2p/p2ptransport.h"
 
 /**
  * IPv4 Socket class.

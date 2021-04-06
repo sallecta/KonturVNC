@@ -24,7 +24,7 @@
 
 #include "Utf8StringStorage.h"
 #include "CommonHeader.h"
-#include "util/Exception.h"
+#include "Exception.h"
 #include "UnicodeStringStorage.h"
 #include <crtdbg.h>
 

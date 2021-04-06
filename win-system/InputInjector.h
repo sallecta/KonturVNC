@@ -25,8 +25,8 @@
 #ifndef _INPUT_INJECTOR_H_
 #define _INPUT_INJECTOR_H_
 
-#include "util/CommonHeader.h"
-#include "log-writer/LogWriter.h"
+#include "../util/CommonHeader.h"
+#include "../log-writer/LogWriter.h"
 #include "SystemException.h"
 
 /**

@@ -1,5 +1,5 @@
 /* $Id: xml.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJ_XML_H__
 #define __PJ_XML_H__
@@ -25,8 +25,8 @@
  * @brief PJLIB XML Parser/Helper.
  */
 
-#include <pj/types.h>
-#include <pj/list.h>
+#include "../../../pjlib/include/pj/types.h"
+#include "../../../pjlib/include/pj/list.h"
 
 PJ_BEGIN_DECL
 
@@ -69,8 +69,8 @@ struct pj_xml_node
 
 /**
  * Parse XML message into XML document with a single root node. The parser
- * is capable of parsing XML processing instruction construct ("<?") and 
- * XML comments ("<!--"), however such constructs will be ignored and will not 
+ * is capable of parsing XML processing instruction construct ("<?") and
+ * XML comments ("<!--"), however such constructs will be ignored and will not
  * be included in the resulted XML node tree.
  *
  * @param pool	    Pool to allocate memory from.
@@ -91,7 +91,7 @@ PJ_DECL(pj_xml_node*) pj_xml_parse( pj_pool_t *pool, char *msg, pj_size_t len);
  * @param len	    The length of the buffer.
  * @param prolog    If set to nonzero, will print XML prolog ("<?xml..")
  *
- * @return	    The size of the printed message, or -1 if there is not 
+ * @return	    The size of the printed message, or -1 if there is not
  *		    sufficient space in the buffer to print the message.
  */
 PJ_DECL(int) pj_xml_print( const pj_xml_node *node, char *buf, pj_size_t len,
@@ -156,7 +156,7 @@ PJ_DECL(void) pj_xml_add_attr( pj_xml_node *node, pj_xml_attr *attr );
  *
  * @return	    XML node found or NULL.
  */
-PJ_DECL(pj_xml_node*) pj_xml_find_node(const pj_xml_node *parent, 
+PJ_DECL(pj_xml_node*) pj_xml_find_node(const pj_xml_node *parent,
 				       const pj_str_t *name);
 
 /**
@@ -168,7 +168,7 @@ PJ_DECL(pj_xml_node*) pj_xml_find_node(const pj_xml_node *parent,
  *
  * @return	    XML node found or NULL.
  */
-PJ_DECL(pj_xml_node*) pj_xml_find_next_node(const pj_xml_node *parent, 
+PJ_DECL(pj_xml_node*) pj_xml_find_next_node(const pj_xml_node *parent,
 					    const pj_xml_node *node,
 					    const pj_str_t *name);
 
@@ -181,12 +181,12 @@ PJ_DECL(pj_xml_node*) pj_xml_find_next_node(const pj_xml_node *parent,
  *
  * @return	    XML node found or NULL.
  */
-PJ_DECL(pj_xml_node*) pj_xml_find_node_rec(const pj_xml_node *parent, 
+PJ_DECL(pj_xml_node*) pj_xml_find_node_rec(const pj_xml_node *parent,
 					   const pj_str_t *name);
 
 
 /**
- * Find first attribute within a node with the specified name and optional 
+ * Find first attribute within a node with the specified name and optional
  * value.
  *
  * @param node	    XML Node.
@@ -195,7 +195,7 @@ PJ_DECL(pj_xml_node*) pj_xml_find_node_rec(const pj_xml_node *parent,
  *
  * @return	    XML attribute found, or NULL.
  */
-PJ_DECL(pj_xml_attr*) pj_xml_find_attr(const pj_xml_node *node, 
+PJ_DECL(pj_xml_attr*) pj_xml_find_attr(const pj_xml_node *node,
 				       const pj_str_t *name,
 				       const pj_str_t *value);
 
@@ -211,15 +211,15 @@ PJ_DECL(pj_xml_attr*) pj_xml_find_attr(const pj_xml_node *node,
  *
  * @return	    The first matched node, or NULL.
  */
-PJ_DECL(pj_xml_node*) pj_xml_find( const pj_xml_node *parent, 
+PJ_DECL(pj_xml_node*) pj_xml_find( const pj_xml_node *parent,
 				   const pj_str_t *name,
-				   const void *data, 
-				   pj_bool_t (*match)(const pj_xml_node *, 
+				   const void *data,
+				   pj_bool_t (*match)(const pj_xml_node *,
 						      const void*));
 
 
 /**
- * Recursively find a child node with the specified name and match the 
+ * Recursively find a child node with the specified name and match the
  * function.
  *
  * @param parent    Parent node.
@@ -230,10 +230,10 @@ PJ_DECL(pj_xml_node*) pj_xml_find( const pj_xml_node *parent,
  *
  * @return	    The first matched node, or NULL.
  */
-PJ_DECL(pj_xml_node*) pj_xml_find_rec(const pj_xml_node *parent, 
+PJ_DECL(pj_xml_node*) pj_xml_find_rec(const pj_xml_node *parent,
 				      const pj_str_t *name,
-				      const void *data, 
-				      pj_bool_t (*match)(const pj_xml_node*, 
+				      const void *data,
+				      pj_bool_t (*match)(const pj_xml_node*,
 							 const void*));
 
 

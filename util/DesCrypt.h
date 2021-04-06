@@ -25,7 +25,7 @@
 #ifndef __DESCRYPT_H__
 #define __DESCRYPT_H__
 
-#include "util/inttypes.h"
+#include "inttypes.h"
 
 class DesCrypt
 {

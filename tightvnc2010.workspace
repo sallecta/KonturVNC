@@ -3,11 +3,9 @@
 	<Workspace title="tightvnc2010 workspace">
 		<Project filename="thread/thread.cbp" />
 		<Project filename="region/region.cbp" />
-		<Project filename="win-system/win-system.cbp" />
 		<Project filename="network/network.cbp" />
 		<Project filename="config-lib/config-lib.cbp" />
 		<Project filename="wsconfig-lib/wsconfig-lib.cbp" />
-		<Project filename="util/util.cbp" />
 		<Project filename="gui/gui.cbp" />
 		<Project filename="ft-server-lib/ft-server-lib.cbp" />
 		<Project filename="ft-client-lib/ft-client-lib.cbp" />
@@ -19,17 +17,17 @@
 		<Project filename="desktop/desktop.cbp" />
 		<Project filename="http-server-lib/http-server-lib.cbp" />
 		<Project filename="rfb/rfb.cbp" />
-		<Project filename="tvnserver-app/tvnserver-app.cbp">
-			<Depends filename="win-event-log/win-event-log.cbp" />
-		</Project>
 		<Project filename="screen-hooks/screenhooks.cbp" />
 		<Project filename="file-lib/file-lib.cbp" />
 		<Project filename="zlib/zlib.cbp" />
 		<Project filename="fb-update-sender/fb-update-sender.cbp" />
 		<Project filename="rfb-sconn/rfb-sconn.cbp" />
-		<Project filename="tvncontrol-app/tvncontrol-app.cbp" />
 		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
+		<Project filename="win-system/win-system.cbp" />
+		<Project filename="tvncontrol-app/tvncontrol-app.cbp" />
+		<Project filename="util/util.cbp" />
+		<Project filename="tvnserver-app/tvnserver-app.cbp" />
 		<Project filename="log-writer/log-writer.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp" />
 		<Project filename="log-server/log-server.cbp" />
@@ -48,5 +46,7 @@
 		<Project filename="p2p/p2p.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 		</Project>
+		<Project filename="konturVncServer/konturVncServer.cbp" />
+		<Project filename="ztest.util/ztest.util.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

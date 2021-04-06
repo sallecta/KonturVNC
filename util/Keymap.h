@@ -25,7 +25,7 @@
 #ifndef _KEYMAP_H_
 #define _KEYMAP_H_
 
-#include "util/CommonHeader.h"
+#include "CommonHeader.h"
 
 // FIXME: This class is Windows-specific so it should not reside in util/.
 

@@ -25,7 +25,7 @@
 #ifndef _CHANNEL_H_
 #define _CHANNEL_H_
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 #include "InputStream.h"
 #include "OutputStream.h"

@@ -4,19 +4,19 @@
 #ifndef _SCTP_H_
 #define _SCTP_H_
 
-#include <queue>    
+#include <queue>
 
-#define _WINSOCKAPI_ 
+#define _WINSOCKAPI_
 
-#include "log-writer/LogWriter.h"
-#include "thread/Thread.h"
-#include "thread/GlobalMutex.h"
-#include "thread/Autolock.h"
-#include "win-system/WindowsEvent.h"
+#include "../log-writer/LogWriter.h"
+#include "../thread/Thread.h"
+#include "../thread/GlobalMutex.h"
+#include "../thread/Autolock.h"
+#include "../win-system/WindowsEvent.h"
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <usrsctp.h>
+#include "../usrsctplib/usrsctp.h"
 #include "dtls.h"
 
 #ifndef RTCDC_MAX_CHANNEL_NUM
@@ -31,12 +31,12 @@
 #define RTCDC_MAX_OUT_STREAM 256
 #endif
 
-	
+
 class Sctp:
 	public Thread
 {
 public:
-	
+
 struct sctp_message {
   void *data;
   unsigned int len;

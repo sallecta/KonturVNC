@@ -1,5 +1,5 @@
 /* $Id: hmac_sha1.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJLIB_UTIL_HMAC_SHA1_H__
 #define __PJLIB_UTIL_HMAC_SHA1_H__
@@ -25,8 +25,8 @@
  * @brief HMAC SHA1 Message Authentication
  */
 
-#include <pj/types.h>
-#include <pjlib-util/sha1.h>
+#include "../../../pjlib/include/pj/types.h"
+#include "sha1.h"
 
 PJ_BEGIN_DECL
 
@@ -35,7 +35,7 @@ PJ_BEGIN_DECL
  * @ingroup PJLIB_UTIL_ENCRYPTION
  * @{
  *
- * This module contains the implementation of HMAC: Keyed-Hashing 
+ * This module contains the implementation of HMAC: Keyed-Hashing
  * for Message Authentication, as described in RFC 2104.
  */
 
@@ -59,8 +59,8 @@ typedef struct pj_hmac_sha1_context
  * @param key_len	Length of the authentication key.
  * @param digest	Buffer to be filled with HMAC SHA1 digest.
  */
-PJ_DECL(void) pj_hmac_sha1(const pj_uint8_t *input, unsigned input_len, 
-			   const pj_uint8_t *key, unsigned key_len, 
+PJ_DECL(void) pj_hmac_sha1(const pj_uint8_t *input, unsigned input_len,
+			   const pj_uint8_t *key, unsigned key_len,
 			   pj_uint8_t digest[20]);
 
 
@@ -71,7 +71,7 @@ PJ_DECL(void) pj_hmac_sha1(const pj_uint8_t *input, unsigned input_len,
  * @param key		Pointer to the authentication key.
  * @param key_len	Length of the authentication key.
  */
-PJ_DECL(void) pj_hmac_sha1_init(pj_hmac_sha1_context *hctx, 
+PJ_DECL(void) pj_hmac_sha1_init(pj_hmac_sha1_context *hctx,
 			        const pj_uint8_t *key, unsigned key_len);
 
 /**
@@ -82,11 +82,11 @@ PJ_DECL(void) pj_hmac_sha1_init(pj_hmac_sha1_context *hctx,
  * @param input_len	Length of input stream in bytes.
  */
 PJ_DECL(void) pj_hmac_sha1_update(pj_hmac_sha1_context *hctx,
-				  const pj_uint8_t *input, 
+				  const pj_uint8_t *input,
 				  unsigned input_len);
 
 /**
- * Finish the message and return the digest. 
+ * Finish the message and return the digest.
  *
  * @param hctx		HMAC-SHA1 context.
  * @param digest	Buffer to be filled with HMAC SHA1 digest.

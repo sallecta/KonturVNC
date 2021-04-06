@@ -25,12 +25,12 @@
 #ifndef __DESKTOP_H__
 #define __DESKTOP_H__
 
-#include "util/StringStorage.h"
-#include "region/Dimension.h"
-#include "region/Region.h"
-#include "rfb/PixelFormat.h"
-#include "rfb/FrameBuffer.h"
-#include "fb-update-sender/UpdateRequestListener.h"
+#include "../util/StringStorage.h"
+#include "../region/Dimension.h"
+#include "../region/Region.h"
+#include "../rfb/PixelFormat.h"
+#include "../rfb/FrameBuffer.h"
+#include "../fb-update-sender/UpdateRequestListener.h"
 
 // This class is a public interface to a desktop.
 class Desktop : public UpdateRequestListener

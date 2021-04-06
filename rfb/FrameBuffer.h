@@ -25,8 +25,8 @@
 #ifndef __FRAMEBUFFER_H__
 #define __FRAMEBUFFER_H__
 
-#include "region/Dimension.h"
-#include "rfb/PixelFormat.h"
+#include "../region/Dimension.h"
+#include "../rfb/PixelFormat.h"
 
 // FIXME: Move implementation to the .cpp file.
 
@@ -71,7 +71,7 @@ public:
   }
 
   virtual inline void setDisplayCount(int dispCount) {  displayCount = dispCount;  };
-  
+
   virtual inline int getDisplayCount() const {  return displayCount;  };
 
   // Sets dimension to the frame buffer without buffer resizing

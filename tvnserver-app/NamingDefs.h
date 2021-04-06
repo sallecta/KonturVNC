@@ -26,7 +26,7 @@
 #define _PUBLIC_NAMES_H_
 
 // This file contains all public names.
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class NamingDefs
 {

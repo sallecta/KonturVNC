@@ -23,7 +23,7 @@
 //
 
 #include "ResourceLoader.h"
-#include "util/UnicodeStringStorage.h"
+#include "UnicodeStringStorage.h"
 
 #include <crtdbg.h>
 
@@ -58,7 +58,7 @@ bool ResourceLoader::loadString(UINT id, StringStorage *string)
   // | length  |     string     | length  | string  | ...
   // | 2 bytes | len * 2 bytes  | 2 bytes | len * 2 | ...
   // Strings stored in the UTF16-encoding.
-  // 
+  //
 
 
   // Id of string-group, based from 0.
@@ -95,7 +95,7 @@ bool ResourceLoader::loadString(UINT id, StringStorage *string)
 HACCEL ResourceLoader::loadAccelerator(UINT id)
 {
   return LoadAccelerators(m_appInstance,
-                          MAKEINTRESOURCE(id)); 
+                          MAKEINTRESOURCE(id));
 }
 
 HCURSOR ResourceLoader::loadStandardCursor(const TCHAR *id)

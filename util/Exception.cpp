@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/Exception.h"
+#include "Exception.h"
 
 Exception::Exception()
 {

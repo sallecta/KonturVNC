@@ -25,10 +25,10 @@
 #ifndef __CRASHHOOK_H__
 #define __CRASHHOOK_H__
 
-#include "util/CommonHeader.h"
-#include "util/Singleton.h"
-#include "thread/LocalMutex.h"
-#include "win-system/ApplicationCrashEvents.h"
+#include "../util/CommonHeader.h"
+#include "../util/Singleton.h"
+#include "../thread/LocalMutex.h"
+#include "../win-system/ApplicationCrashEvents.h"
 
 class CrashHook : private Singleton<CrashHook>
 {

@@ -25,8 +25,8 @@
 #ifndef __GLOBALMUTEX_H__
 #define __GLOBALMUTEX_H__
 
-#include "util/CommonHeader.h"
-#include "util/Exception.h"
+#include "../util/CommonHeader.h"
+#include "../util/Exception.h"
 #include "Lockable.h"
 
 /**

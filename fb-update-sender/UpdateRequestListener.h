@@ -25,7 +25,7 @@
 #ifndef __UPDATEREQUESTLISTENER_H__
 #define __UPDATEREQUESTLISTENER_H__
 
-#include "region/Rect.h"
+#include "../region/Rect.h"
 
 class UpdateRequestListener
 {

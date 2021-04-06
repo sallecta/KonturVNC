@@ -24,7 +24,7 @@
 
 #include "AnsiStringStorage.h"
 #include "CommonHeader.h"
-#include "util/Exception.h"
+#include "Exception.h"
 #include <crtdbg.h>
 
 AnsiStringStorage::AnsiStringStorage()

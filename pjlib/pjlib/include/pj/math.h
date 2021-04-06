@@ -1,5 +1,5 @@
 /* $Id: math.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
 #ifndef __PJ_MATH_H__
@@ -26,8 +26,8 @@
  * @brief Mathematics and Statistics.
  */
 
-#include <pj/string.h>
-#include <pj/compat/high_precision.h>
+#include "string.h"
+#include "compat/high_precision.h"
 
 PJ_BEGIN_DECL
 
@@ -85,7 +85,7 @@ typedef struct pj_math_stat
 PJ_INLINE(unsigned) pj_isqrt(unsigned i)
 {
     unsigned res = 1, prev;
-    
+
     /* Rough guess, calculate half bit of input */
     prev = i >> 2;
     while (prev) {
@@ -127,7 +127,7 @@ PJ_INLINE(void) pj_math_stat_update(pj_math_stat *stat, int val)
 #endif
 
     stat->last = val;
-    
+
     if (stat->n++) {
 	if (stat->min > val)
 	    stat->min = val;
@@ -140,7 +140,7 @@ PJ_INLINE(void) pj_math_stat_update(pj_math_stat *stat, int val)
 #if PJ_HAS_FLOATING_POINT
     delta = val - stat->fmean_;
     stat->fmean_ += delta/stat->n;
-    
+
     /* Return mean value with 'rounding' */
     stat->mean = (int) (stat->fmean_ + 0.5);
 
@@ -176,7 +176,7 @@ PJ_INLINE(unsigned) pj_math_stat_get_stddev(const pj_math_stat *stat)
 
 /**
  * Set the standard deviation of statistics state. This is useful when
- * the statistic state is operated in 'read-only' mode as a storage of 
+ * the statistic state is operated in 'read-only' mode as a storage of
  * statistical data.
  *
  * @param stat	    Statistic state.
@@ -185,7 +185,7 @@ PJ_INLINE(unsigned) pj_math_stat_get_stddev(const pj_math_stat *stat)
  */
 PJ_INLINE(void) pj_math_stat_set_stddev(pj_math_stat *stat, unsigned dev)
 {
-    if (stat->n == 0) 
+    if (stat->n == 0)
 	stat->n = 1;
     stat->m2_ = dev*dev*stat->n;
 }

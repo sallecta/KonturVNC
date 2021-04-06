@@ -25,7 +25,7 @@
 #ifndef __WSASTARTUP_H__
 #define __WSASTARTUP_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 // Class that startup at constructor and cleanup at destructor Windows Sockets subsystem.
 class WsaStartup

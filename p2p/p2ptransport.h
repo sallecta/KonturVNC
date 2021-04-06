@@ -4,9 +4,9 @@
 #ifndef _P2PTRANSPORT_H_
 #define _P2PTRANSPORT_H_
 
-#include "log-writer/LogWriter.h"
-#include "util/AnsiStringStorage.h"
-#include "win-system/WindowsEvent.h"
+#include "../log-writer/LogWriter.h"
+#include "../util/AnsiStringStorage.h"
+#include "../win-system/WindowsEvent.h"
 
 #include "ice.h"
 #include "sctp.h"
@@ -31,11 +31,11 @@ public:
   WindowsEvent m_inEvent;
   bool m_enable;
   static int m_pnum;
-  
+
 private:
 	bool m_isControl;
 	P2pEventListener * m_p2pEventListener;
-	 
+
 protected:
 	virtual void execute();
 

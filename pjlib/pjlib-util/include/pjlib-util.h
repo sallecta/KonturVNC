@@ -1,5 +1,5 @@
 /* $Id: pjlib-util.h 4704 2014-01-16 05:30:46Z ming $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJLIB_UTIL_H__
 #define __PJLIB_UTIL_H__
@@ -26,51 +26,51 @@
  */
 
 /* Base */
-#include <pjlib-util/errno.h>
-#include <pjlib-util/types.h>
+#include "pjlib-util/errno.h"
+#include "pjlib-util/types.h"
 
 /* Getopt */
-#include <pjlib-util/getopt.h>
+#include "pjlib-util/getopt.h"
 
 /* Crypto */
-#include <pjlib-util/base64.h>
-#include <pjlib-util/crc32.h>
-#include <pjlib-util/hmac_md5.h>
-#include <pjlib-util/hmac_sha1.h>
-#include <pjlib-util/md5.h>
-#include <pjlib-util/sha1.h>
+#include "pjlib-util/base64.h"
+#include "pjlib-util/crc32.h"
+#include "pjlib-util/hmac_md5.h"
+#include "pjlib-util/hmac_sha1.h"
+#include "pjlib-util/md5.h"
+#include "pjlib-util/sha1.h"
 
 /* DNS and resolver */
-#include <pjlib-util/dns.h>
-#include <pjlib-util/resolver.h>
-#include <pjlib-util/srv_resolver.h>
+#include "pjlib-util/dns.h"
+#include "pjlib-util/resolver.h"
+#include "pjlib-util/srv_resolver.h"
 
 /* Simple DNS server */
-#include <pjlib-util/dns_server.h>
+#include "pjlib-util/dns_server.h"
 
 /* Text scanner and utilities */
-#include <pjlib-util/scanner.h>
-#include <pjlib-util/string.h>
+#include "pjlib-util/scanner.h"
+#include "pjlib-util/string.h"
 
 /* XML */
-#include <pjlib-util/xml.h>
+#include "pjlib-util/xml.h"
 
 /* JSON */
-#include <pjlib-util/json.h>
+#include "pjlib-util/json.h"
 
 /* Old STUN */
-#include <pjlib-util/stun_simple.h>
+#include "pjlib-util/stun_simple.h"
 
 /* PCAP */
-#include <pjlib-util/pcap.h>
+#include "pjlib-util/pcap.h"
 
 /* HTTP */
-#include <pjlib-util/http_client.h>
+#include "pjlib-util/http_client.h"
 
 /** CLI **/
-#include <pjlib-util/cli.h>
-#include <pjlib-util/cli_console.h>
-#include <pjlib-util/cli_telnet.h>
+#include "pjlib-util/cli.h"
+#include "pjlib-util/cli_console.h"
+#include "pjlib-util/cli_telnet.h"
 
 #endif	/* __PJLIB_UTIL_H__ */
 

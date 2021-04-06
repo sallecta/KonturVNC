@@ -25,11 +25,11 @@
 #ifndef SOCKET_ADDRESS_IPV4_H
 #define SOCKET_ADDRESS_IPV4_H
 
-#include "util/CommonHeader.h"
-#include "thread/LocalMutex.h"
+#include "../../util/CommonHeader.h"
+#include "../../thread/LocalMutex.h"
 #include "SocketException.h"
 #include "sockdefs.h"
-#include "win-system/WsaStartup.h"
+#include "../../win-system/WsaStartup.h"
 
 // FIXME: Deprecated method, only for testing of old code.
 void getLocalIPAddrString(char *buffer, int buflen);

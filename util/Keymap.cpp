@@ -24,15 +24,15 @@
 
 #include "Keymap.h"
 
-#include "util/winhdr.h"
-#include "win-system/InputInjector.h"
-#include "win-system/Keyboard.h"
+#include "winhdr.h"
+#include "../win-system/InputInjector.h"
+#include "../win-system/Keyboard.h"
 #include <crtdbg.h>
 
 #define XK_MISCELLANY
 #define XK_CYRILLIC
 
-#include "rfb/keysymdef.h"
+#include "../rfb/keysymdef.h"
 
 
 // X11 Key sym to virtual key translation table entry.

@@ -25,7 +25,7 @@
 #ifndef __COMMANDLINEARGS_H__
 #define __COMMANDLINEARGS_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <vector>
 
 // This class produce initial parse of a command line.

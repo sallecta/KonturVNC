@@ -1,5 +1,5 @@
 /* $Id: assert.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJ_ASSERT_H__
 #define __PJ_ASSERT_H__
@@ -25,8 +25,8 @@
  * @brief Assertion macro pj_assert().
  */
 
-#include <pj/config.h>
-#include <pj/compat/assert.h>
+#include "config.h"
+#include "compat/assert.h"
 
 /**
  * @defgroup pj_assert Assertion Macro
@@ -52,7 +52,7 @@
 
 /**
  * @hideinitializer
- * If #PJ_ENABLE_EXTRA_CHECK is declared and the value is non-zero, then 
+ * If #PJ_ENABLE_EXTRA_CHECK is declared and the value is non-zero, then
  * #PJ_ASSERT_RETURN macro will evaluate the expression in @a expr during
  * run-time. If the expression yields false, assertion will be triggered
  * and the current function will return with the specified return value.
@@ -71,7 +71,7 @@
 
 /**
  * @hideinitializer
- * If #PJ_ENABLE_EXTRA_CHECK is declared and non-zero, then 
+ * If #PJ_ENABLE_EXTRA_CHECK is declared and non-zero, then
  * #PJ_ASSERT_ON_FAIL macro will evaluate the expression in @a expr during
  * run-time. If the expression yields false, assertion will be triggered
  * and @a exec_on_fail will be executed.

@@ -4,17 +4,17 @@
 #ifndef _ICE_H_
 #define _ICE_H_
 
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
-#include "thread/Thread.h"
-#include "thread/GlobalMutex.h"
-#include "thread/AutoLock.h"
-#include "win-system/WindowsEvent.h"
+#include "../thread/Thread.h"
+#include "../thread/GlobalMutex.h"
+#include "../thread/AutoLock.h"
+#include "../win-system/WindowsEvent.h"
 
-#include "pj/addr_resolv.h"
-#include <pjlib.h>
-#include <pjlib-util.h>
-#include <pjnath.h>
+#include "../pjlib/pjlib/include/pj/addr_resolv.h"
+#include "../pjlib/pjlib/include/pjlib.h"
+#include "../pjlib/pjlib-util/include/pjlib-util.h"
+#include "../pjlib/pjnath/include/pjnath.h"
 
 #include "dtls.h"
 #include "sctp.h"
@@ -44,7 +44,7 @@ public:
 		pj_pool_t * pool;
 		int sessions;
 	};
-  
+
 
 static struct IceContext g_ice_stor;
 static struct IceContext * g_ice;
@@ -88,7 +88,7 @@ struct IceSt
 		// callback thread.
 		pj_thread_t *ice_thread;
 		char thread_quit_flag;
-		
+
 		Dtls::dtls_transport * dtls_tr;
 		Sctp::sctp_transport * sctp_tr;
 
@@ -96,7 +96,7 @@ struct IceSt
 		bool terminating;
 		P2pEventListener * p2pEventListener;
 		char err_str[1024];
-		
+
 	};
 	typedef struct IceSt * ice_t;
 
@@ -114,7 +114,7 @@ struct IceSt
 	WindowsEvent * m_outEvent;
 	WindowsEvent * m_inEvent;
 	P2pEventListener * m_p2pEventListener;
-	
+
 
 protected:
 	virtual void execute();

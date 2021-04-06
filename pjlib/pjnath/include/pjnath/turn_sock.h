@@ -1,5 +1,5 @@
 /* $Id: turn_sock.h 4606 2013-10-01 05:00:57Z ming $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJNATH_TURN_SOCK_H__
 #define __PJNATH_TURN_SOCK_H__
@@ -24,8 +24,8 @@
  * @file turn_sock.h
  * @brief TURN relay using UDP client as transport protocol
  */
-#include <pjnath/turn_session.h>
-#include <pj/sock_qos.h>
+#include "turn_session.h"
+#include "../../../pjlib/include/pj/sock_qos.h"
 
 
 PJ_BEGIN_DECL
@@ -56,7 +56,7 @@ Also see <b>\ref samples_page</b> for other samples.
  */
 
 
-/** 
+/**
  * Opaque declaration for TURN client.
  */
 typedef struct pj_turn_sock pj_turn_sock;
@@ -75,7 +75,7 @@ typedef struct pj_turn_sock_cb
      * function is called).
      *
      * @param turn_sock	    The TURN client transport.
-     * @param data	    The data as received from the peer.    
+     * @param data	    The data as received from the peer.
      * @param data_len	    Length of the data.
      * @param peer_addr	    The peer address.
      * @param addr_len	    The length of the peer address.
@@ -94,7 +94,7 @@ typedef struct pj_turn_sock_cb
      * @param old_state	    Previous state.
      * @param new_state	    Current state.
      */
-    void (*on_state)(pj_turn_sock *turn_sock, 
+    void (*on_state)(pj_turn_sock *turn_sock,
 		     pj_turn_state_t old_state,
 		     pj_turn_state_t new_state);
 
@@ -289,7 +289,7 @@ PJ_DECL(pj_status_t) pj_turn_sock_get_info(pj_turn_sock *turn_sock,
 
 /**
  * Acquire the internal mutex of the TURN transport. Application may need
- * to call this function to synchronize access to other objects alongside 
+ * to call this function to synchronize access to other objects alongside
  * the TURN transport, to avoid deadlock.
  *
  * @param turn_sock	The TURN transport instance.
@@ -312,7 +312,7 @@ PJ_DECL(pj_status_t) pj_turn_sock_unlock(pj_turn_sock *turn_sock);
 
 
 /**
- * Set STUN message logging for this TURN session. 
+ * Set STUN message logging for this TURN session.
  * See #pj_stun_session_set_log().
  *
  * @param turn_sock	The TURN transport instance.
@@ -369,7 +369,7 @@ PJ_DECL(pj_status_t) pj_turn_sock_set_software_name(pj_turn_sock *turn_sock,
  *			When this function returns PJ_SUCCESS, the final
  *			result of the allocation process will be notified
  *			to application in \a on_state() callback.
- *			
+ *
  */
 PJ_DECL(pj_status_t) pj_turn_sock_alloc(pj_turn_sock *turn_sock,
 				        const pj_str_t *domain,
@@ -402,7 +402,7 @@ PJ_DECL(pj_status_t) pj_turn_sock_set_perm(pj_turn_sock *turn_sock,
 					   unsigned options);
 
 /**
- * Send a data to the specified peer address via the TURN relay. This 
+ * Send a data to the specified peer address via the TURN relay. This
  * function will encapsulate the data as STUN Send Indication or TURN
  * ChannelData packet and send the message to the TURN server. The TURN
  * server then will send the data to the peer.
@@ -419,7 +419,7 @@ PJ_DECL(pj_status_t) pj_turn_sock_set_perm(pj_turn_sock *turn_sock,
  *
  * @return		PJ_SUCCESS if the operation has been successful,
  *			or the appropriate error code on failure.
- */ 
+ */
 PJ_DECL(pj_status_t) pj_turn_sock_sendto(pj_turn_sock *turn_sock,
 					const pj_uint8_t *pkt,
 					unsigned pkt_len,

@@ -25,7 +25,7 @@
 #ifndef __WINDOWSEVENT_H__
 #define __WINDOWSEVENT_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class WindowsEvent
 {

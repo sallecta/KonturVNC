@@ -25,7 +25,7 @@
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
 
-#include "util/CharDefs.h"
+#include "../util/CharDefs.h"
 
 //
 // The Logger class defines abstract low-level interface for logging

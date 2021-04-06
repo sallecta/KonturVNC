@@ -1,5 +1,5 @@
 /* $Id: types.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJNATH_TYPES_H__
 #define __PJNATH_TYPES_H__
@@ -25,8 +25,8 @@
  * @brief PJNATH types.
  */
 
-#include <pj/types.h>
-#include <pjnath/config.h>
+#include "../../../pjlib/include/pj/types.h"
+#include "config.h"
 
 /**
  * @defgroup PJNATH NAT Traversal Helper Library
@@ -51,7 +51,7 @@ PJ_DECL(pj_status_t) pjnath_init(void);
 
 
 /**
- * Display error to the log. 
+ * Display error to the log.
  *
  * @param sender    The sender name.
  * @param title	    Title message.

@@ -25,8 +25,8 @@
 #ifndef __UPDATECONTAINER_H__
 #define __UPDATECONTAINER_H__
 
-#include "region/Region.h"
-#include "region/Point.h"
+#include "../region/Region.h"
+#include "../region/Point.h"
 
 class UpdateContainer
 {

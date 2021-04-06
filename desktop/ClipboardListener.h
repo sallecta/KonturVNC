@@ -25,7 +25,7 @@
 #ifndef __CLIPBOARDLISTENER_H__
 #define __CLIPBOARDLISTENER_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class ClipboardListener
 {

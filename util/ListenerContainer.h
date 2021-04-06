@@ -27,8 +27,8 @@
 
 #include <vector>
 
-#include "thread/LocalMutex.h"
-#include "thread/AutoLock.h"
+#include "../thread/LocalMutex.h"
+#include "../thread/AutoLock.h"
 
 using namespace std;
 

@@ -25,7 +25,7 @@
 #ifndef __COMMANDLINE_H__
 #define __COMMANDLINE_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "CommandLineArgs.h"
 #include "KeyContainer.h"
 

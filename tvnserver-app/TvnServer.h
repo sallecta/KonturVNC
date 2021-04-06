@@ -25,10 +25,10 @@
 #ifndef _TVN_SERVER_H_
 #define _TVN_SERVER_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
-#include "desktop/WinServiceDesktopFactory.h"
-#include "desktop/ApplicationDesktopFactory.h"
+#include "../desktop/WinServiceDesktopFactory.h"
+#include "../desktop/ApplicationDesktopFactory.h"
 #include "RfbClientManager.h"
 #include "RfbServer.h"
 #include "ExtraRfbServers.h"

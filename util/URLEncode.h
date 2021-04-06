@@ -12,7 +12,7 @@
 #ifndef __URLENC_H__
 #define __URLENC_H__
 
-#include <atl/atlstr.h>
+#include "../atl/atlstr.h"
 
 
 // For ANSI, set default codepage to Hebrew.

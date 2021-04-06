@@ -25,10 +25,10 @@
 #ifndef __WINEVENTLOG_H__
 #define __WINEVENTLOG_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <vector>
-#include "thread/LocalMutex.h"
-#include "log-writer/LogWriter.h"
+#include "../thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
 
 typedef std::vector<TCHAR *> StringContainer;
 

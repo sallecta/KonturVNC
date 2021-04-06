@@ -1,5 +1,5 @@
 /* $Id: base64.h 3553 2011-05-05 06:14:19Z nanang $ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #ifndef __PJLIB_UTIL_BASE64_H__
 #define __PJLIB_UTIL_BASE64_H__
@@ -25,7 +25,7 @@
  * @brief Base64 encoding and decoding
  */
 
-#include <pjlib-util/types.h>
+#include "types.h"
 
 PJ_BEGIN_DECL
 
@@ -56,7 +56,7 @@ PJ_BEGIN_DECL
  * @param in_len    Size of the input buffer.
  * @param output    Output buffer. Caller must allocate this buffer with
  *		    the appropriate size.
- * @param out_len   On entry, it specifies the length of the output buffer. 
+ * @param out_len   On entry, it specifies the length of the output buffer.
  *		    Upon return, this will be filled with the actual
  *		    length of the output buffer.
  *
@@ -72,11 +72,11 @@ PJ_DECL(pj_status_t) pj_base64_encode(const pj_uint8_t *input, int in_len,
  * @param input	    Input string.
  * @param out	    Buffer to store the output. Caller must allocate
  *		    this buffer with the appropriate size.
- * @param out_len   On entry, it specifies the length of the output buffer. 
+ * @param out_len   On entry, it specifies the length of the output buffer.
  *		    Upon return, this will be filled with the actual
  *		    length of the output.
  */
-PJ_DECL(pj_status_t) pj_base64_decode(const pj_str_t *input, 
+PJ_DECL(pj_status_t) pj_base64_decode(const pj_str_t *input,
 				      pj_uint8_t *out, int *out_len);
 
 

@@ -25,7 +25,7 @@
 #ifndef __VNCPASSCRYPT_H__
 #define __VNCPASSCRYPT_H__
 
-#include "util/inttypes.h"
+#include "inttypes.h"
 #include <vector>
 
 class VncPassCrypt

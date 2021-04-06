@@ -24,7 +24,7 @@
 
 #include "UnicodeStringStorage.h"
 #include "CommonHeader.h"
-#include "util/Exception.h"
+#include "Exception.h"
 #include <crtdbg.h>
 
 UnicodeStringStorage::UnicodeStringStorage()

@@ -25,7 +25,7 @@
 #ifndef __DESKTOPSELECTOR_H__
 #define __DESKTOPSELECTOR_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class DesktopSelector
 {

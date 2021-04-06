@@ -25,19 +25,19 @@
 #ifndef _ENVIRONMENT_H_
 #define _ENVIRONMENT_H_
 
-#include "util/StringStorage.h"
-#include "log-writer/LogWriter.h"
+#include "../util/StringStorage.h"
+#include "../log-writer/LogWriter.h"
 
 #include <winnt.h>
 
 class Environment
 {
 public:
-  static const int APPLICATION_DATA_SPECIAL_FOLDER = 0x0; 
+  static const int APPLICATION_DATA_SPECIAL_FOLDER = 0x0;
   static const int COMMON_APPLICATION_DATA_SPECIAL_FOLDER = 0x1;
   static const int USERDESKTOP_DATA_SPECIAL_FOLDER = 0x2;
   static const int USERDOCS_DATA_SPECIAL_FOLDER = 0x3;
-  
+
 
 public:
   Environment();
@@ -117,7 +117,7 @@ public:
 
   // Returns true if the Aero is On.
   static bool isAeroOn(LogWriter *log);
-    
+
 private:
   static void init();
   // Operation system version info.

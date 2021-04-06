@@ -25,7 +25,7 @@
 #ifndef _COMMAND_LINE_FORMAT_HELP_H_
 #define _COMMAND_LINE_FORMAT_HELP_H_
 
-#include "util/Exception.h"
+#include "Exception.h"
 
 class CommandLineFormatHelp : public Exception
 {

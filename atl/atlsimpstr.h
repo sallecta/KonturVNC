@@ -4,8 +4,8 @@
 #pragma once
 #include<windows.h>
 #include <wincon.h>
-#include <atl\atlcore.h>
-#include <atl\atlexcept.h>
+#include "atlcore.h"
+#include "atlexcept.h"
 
 namespace ATL
 {

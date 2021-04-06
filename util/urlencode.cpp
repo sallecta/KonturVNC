@@ -7,10 +7,10 @@
 // If you have any comments or questions, feel free to email me.
 //
 // You may use this class for any purpose, commercial or personal.
-#include <atl/atlsimpcoll.h>
-#include <atl/atlcoll.h>
-#include <atl/cstringt.h>
-#include <atl/atlstr.h>
+#include "../atl/atlsimpcoll.h"
+#include "../atl/atlcoll.h"
+#include "../atl/cstringt.h"
+#include "../atl/atlstr.h"
 #include "URLEncode.h"
 
 // Put the percent (%) sign first, so it won't overwrite the converted Hex'es

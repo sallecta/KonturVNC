@@ -4,18 +4,18 @@
 #ifndef _DTLS_H_
 #define _DTLS_H_
 
-#include "log-writer/LogWriter.h"
-#include "thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
+#include "../thread/LocalMutex.h"
 
 
 #define NOCRYPT
-#include <openssl/err.h>
-#include <openssl/pem.h>
-#include <openssl/bn.h>
-#include <openssl/rsa.h>
-#include <openssl/crypto.h>
-#include <openssl/ssl.h>
-#include <openssl/bio.h>
+#include "../openssl/include/openssl/err.h"
+#include "../openssl/include/openssl/pem.h"
+#include "../openssl/include/openssl/bn.h"
+#include "../openssl/include/openssl/rsa.h"
+#include "../openssl/include/openssl/crypto.h"
+#include "../openssl/include/openssl/ssl.h"
+#include "../openssl/include/openssl/bio.h"
 
 class Dtls
 {
@@ -28,7 +28,7 @@ struct dtls_transport {
   LocalMutex incoming_mutex;
   LocalMutex outgoing_mutex;
   bool handshake_done;
-  
+
  };
 
 

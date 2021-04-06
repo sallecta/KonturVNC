@@ -26,13 +26,13 @@
 #define __RFBCLIENT_H__
 
 #include <list>
-#include "network/socket/SocketIPv4.h"
-#include "win-system/WindowsEvent.h"
-#include "thread/Thread.h"
-#include "network/RfbOutputGate.h"
-#include "desktop/Desktop.h"
-#include "fb-update-sender/UpdateSender.h"
-#include "log-writer/LogWriter.h"
+#include "../network/socket/SocketIPv4.h"
+#include "../win-system/WindowsEvent.h"
+#include "../thread/Thread.h"
+#include "../network/RfbOutputGate.h"
+#include "../desktop/Desktop.h"
+#include "../fb-update-sender/UpdateSender.h"
+#include "../log-writer/LogWriter.h"
 
 #include "RfbDispatcher.h"
 #include "ClipboardExchange.h"
@@ -42,10 +42,10 @@
 #include "TextChatHandler.h"
 #include "SdpHandler.h"
 
-#include "tvnserver-app/NewConnectionEvents.h"
+#include "../tvnserver-app/NewConnectionEvents.h"
 
-#include "tvnserver-app/ChatDialog.h"
-#include "tvnserver-app/FTStatusDialog.h"
+#include "../tvnserver-app/ChatDialog.h"
+#include "../tvnserver-app/FTStatusDialog.h"
 
 
 class ClientAuthListener;
@@ -131,8 +131,8 @@ private:
   bool m_isMarkedOk;
   LocalMutex m_clientStateMut;
   ClientTerminationListener *m_extTermListener;
-  
-  
+
+
 
   SocketIPv4 *m_socket;
 
@@ -148,10 +148,10 @@ private:
   Desktop *m_desktop;
 
   TextChatHandler *m_chatHandler;
-  
+
   SdpHandler *m_sdpHandler;
 
- ChatDialog * m_chatDialog; 
+ ChatDialog * m_chatDialog;
  FTStatusDialog * m_ftsDialog;
 
   bool m_viewOnly;

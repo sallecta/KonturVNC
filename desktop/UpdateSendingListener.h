@@ -25,8 +25,8 @@
 #ifndef __UPDATESENDINGLISTENER_H__
 #define __UPDATESENDINGLISTENER_H__
 
-#include "rfb/CursorShape.h"
-#include "rfb/FrameBuffer.h"
+#include "../rfb/CursorShape.h"
+#include "../rfb/FrameBuffer.h"
 #include "UpdateContainer.h"
 
 class UpdateSendingListener

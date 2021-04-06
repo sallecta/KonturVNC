@@ -26,12 +26,13 @@
 #include "CommonHeader.h"
 #include "Exception.h"
 #include <stdio.h>
-
+#include <iostream>
 #include <crtdbg.h>
 
 StringStorage::StringStorage()
 {
   setString(_T(""));
+  std::cout << "StringStorage constructor" << endl;
 }
 
 StringStorage::StringStorage(const TCHAR *string)
@@ -367,7 +368,7 @@ bool StringStorage::operator < (const StringStorage &str) const
   return _tcscmp(getString(), str.getString()) < 0;
 }
 
-void StringStorage::operator += (const TCHAR* str) 
+void StringStorage::operator += (const TCHAR* str)
 {
   appendString(str);
 }

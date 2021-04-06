@@ -22,12 +22,19 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/StringStorage.h"
 #include <stdlib.h>
-#include "util/CommonHeader.h"
-#include "util/winhdr.h"
-#include "util/CommandLine.h"
-#include "win-system/WinCommandLineArgs.h"
+#include "../log-writer/LogWriter.h"
+#include "../tvnserver-app/WinEventLogWriter.h"
+#include "../util/ResourceLoader.h"
+#include "../tvncontrol-app/ControlCommandLine.h"
+#include "util/StringStorage.h"//not working in linker
+//#include "util/StringStorage.h"
+#include "../util/Singleton.h"
+#include "../win-system/WinCommandLineArgs.h"
+#include "../util/CommandLine.h"//not working in linker
+
+//#include "util/winhdr.h"
+//#include "util/CommandLine.h"
 
 #include "tvnserver-app/TvnService.h"
 #include "tvnserver-app/TvnServerApplication.h"
@@ -40,13 +47,11 @@
 #include "tvnserver-app/DesktopServerCommandLine.h"
 
 #include "tvncontrol-app/ControlApplication.h"
-#include "tvncontrol-app/ControlCommandLine.h"
 
 #include "tvnserver/resource.h"
 #include "tvnserver-app/CrashHook.h"
 #include "tvnserver-app/NamingDefs.h"
 
-#include "tvnserver-app/WinEventLogWriter.h"
 
 #include "win-system/Environment.h"
 #include "win-system/RegistryKey.h"
@@ -98,7 +103,6 @@ LogWriter preLog(0);
 
   StringStorage firstKey(_T(""));
 
-
   try {
     WinCommandLineArgs args(lpCmdLine);
     parser.parse(format,  sizeof(format) / sizeof(CommandLineFormat), &args);
@@ -108,7 +112,7 @@ LogWriter preLog(0);
 
   // Check if need to start additional application that packed into tvnserver.exe.
 
-if (firstKey.isEqualTo(_T("-reboot"))) {
+if (firstKey.isEqualTo(_T("-reboot"))) {//0x1c3
   Environment::RemoteReboot();
   return 0;
 }
