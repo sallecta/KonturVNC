@@ -23,7 +23,7 @@
 //
 
 #include "ViewerCollector.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 ViewerCollector::ViewerCollector()
 : m_countToReconnect(0)

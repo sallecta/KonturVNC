@@ -23,7 +23,7 @@
 //
 
 #include "Win32ScreenDriver.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 Win32ScreenDriver::Win32ScreenDriver(UpdateKeeper *updateKeeper,
                                      UpdateListener *updateListener,

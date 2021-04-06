@@ -30,7 +30,7 @@
 #include "../win-system/VersionInfo.h"
 #include "../win-system/Environment.h"
 
-#include "../gui/Control.h"
+#include "../lib_gui/Control.h"
 
 #include "../tvnserver/BuildTime.h"
 

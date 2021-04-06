@@ -26,7 +26,7 @@
 #define __RECONNECTINGCHANNEL_H__
 
 #include "../io-lib/Channel.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../win-system/WindowsEvent.h"
 #include "../log-writer/LogWriter.h"
 

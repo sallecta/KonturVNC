@@ -24,7 +24,7 @@
 
 #include <crtdbg.h>
 #include "RfbInitializer.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "../rfb/VendorDefs.h"
 #include "../rfb/AuthDefs.h"
 #include "CapContainer.h"

@@ -26,7 +26,7 @@
 
 #include "../util/StringParser.h"
 
-#include "../gui/BalloonTip.h"
+#include "../lib_gui/BalloonTip.h"
 
 #include "../tvnserver/resource.h"
 

@@ -27,7 +27,7 @@
 #include "TvnViewer.h"
 #include "resource.h"
 
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 #include "../win-system/Process.h"
 
 ConfigurationDialog::ConfigurationDialog()

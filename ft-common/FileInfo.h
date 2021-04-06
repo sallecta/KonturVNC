@@ -27,7 +27,7 @@
 
 #include "../util/StringStorage.h"
 #include "../util/inttypes.h"
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 
 //
 // Contains information about file in file transfer protocol

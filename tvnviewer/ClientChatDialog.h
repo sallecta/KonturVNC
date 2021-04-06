@@ -2,9 +2,9 @@
 #ifndef _CLIENT_CHAT_DIALOG_H_
 #define _CLIENT_CHAT_DIALOG_H_
 
-#include "../gui/BaseDialog.h"
-#include "../gui/TextBox.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/TextBox.h"
+#include "../lib_thread/LocalMutex.h"
 
 #include "../rfb-sconn/TextMsgListener.h"
 

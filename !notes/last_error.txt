@@ -1,0 +1,3 @@
+kvncserver
+
+..\out\bin\Release_Win32\lib_win_system.a(VersionInfo.o):VersionInfo.cpp|| undefined reference to `GetFileVersionInfoSizeA@8'|

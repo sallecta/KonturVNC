@@ -31,8 +31,8 @@
 #include "../win-system/RegistryKey.h"
 #include "DisplayEsc.h"
 #include "../win-system/Screen.h"
-#include "../gui/MessageWindow.h"
-#include "../thread/GuiThread.h"
+#include "../lib_gui/MessageWindow.h"
+#include "../lib_thread/GuiThread.h"
 #include "../win-system/WindowsEvent.h"
 #include "../log-writer/LogWriter.h"
 

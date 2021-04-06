@@ -25,7 +25,7 @@
 #ifndef __DESKTOPSERVERWATCHER_H__
 #define __DESKTOPSERVERWATCHER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/Process.h"
 #include "../log-writer/LogWriter.h"
 #include "../lib_desktop_ipc/ReconnectionListener.h"

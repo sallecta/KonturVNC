@@ -26,7 +26,7 @@
 #define __BLOCKINGINPUTGATE_H__
 
 #include "../io-lib/DataInputStream.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class BlockingInputGate : public LocalMutex, public DataInputStream
 {

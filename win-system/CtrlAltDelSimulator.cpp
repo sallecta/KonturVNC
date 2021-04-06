@@ -23,7 +23,7 @@
 //
 
 #include "CtrlAltDelSimulator.h"
-#include "../thread/DesktopSelector.h"
+#include "../lib_thread/DesktopSelector.h"
 
 CtrlAltDelSimulator::CtrlAltDelSimulator()
 {

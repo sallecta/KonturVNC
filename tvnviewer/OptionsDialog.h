@@ -30,11 +30,11 @@
 #include "client-config-lib/ConnectionConfigSM.h"
 #include "client-config-lib/ViewerSettingsManager.h"
 #include "../util/StringParser.h"
-#include "../gui/BaseDialog.h"
-#include "../gui/TextBox.h"
-#include "../gui/CheckBox.h"
-#include "../gui/ComboBox.h"
-#include "../gui/TrackBar.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/TextBox.h"
+#include "../lib_gui/CheckBox.h"
+#include "../lib_gui/ComboBox.h"
+#include "../lib_gui/TrackBar.h"
 #include "resource.h"
 
 class OptionsDialog : public BaseDialog

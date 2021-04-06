@@ -2,8 +2,8 @@
 #ifndef _FTS_DIALOG_H_
 #define _FTS_DIALOG_H_
 
-#include "../gui/BaseDialog.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_thread/LocalMutex.h"
 
 
 

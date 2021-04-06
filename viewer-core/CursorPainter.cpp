@@ -24,7 +24,7 @@
 
 #include "CursorPainter.h"
 
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 CursorPainter::CursorPainter(FrameBuffer *fb, LogWriter *logWriter)
 : m_fb(fb),

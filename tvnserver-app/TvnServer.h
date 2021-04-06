@@ -37,8 +37,8 @@
 
 #include "../http-server-lib/HttpServer.h"
 
-#include "../thread/ZombieKiller.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/ZombieKiller.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../log-writer/LogWriter.h"
 #include "../util/Singleton.h"
 #include "../util/ListenerContainer.h"

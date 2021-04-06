@@ -27,10 +27,10 @@
 
 #include "../util/winhdr.h"
 
-#include "../gui/BaseDialog.h"
-#include "../gui/CheckBox.h"
-#include "../gui/TextBox.h"
-#include "../gui/BalloonTip.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/CheckBox.h"
+#include "../lib_gui/TextBox.h"
+#include "../lib_gui/BalloonTip.h"
 
 #include "../win-system/RegistryKey.h"
 

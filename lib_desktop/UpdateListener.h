@@ -25,7 +25,7 @@
 #ifndef __UPDATELISTENER_H__
 #define __UPDATELISTENER_H__
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class UpdateListener
 {

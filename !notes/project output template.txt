@@ -1,4 +1,4 @@
-..\out\bin\$(TARGET_NAME)\$(PROJECTNAME).a
+..\out\bin\$(TARGET_NAME)\$(PROJECTNAME)
 ..\out\obj\$(TARGET_NAME)\$(PROJECTNAME)
 
 Release_Win32

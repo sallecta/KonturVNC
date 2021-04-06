@@ -26,7 +26,7 @@
 #define _CONNECTTOTCPDISPATCHERTHREAD_H_
 
 #include "../util/StringStorage.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "RfbClientManager.h"
 #include "TcpDispatcherConnectionListener.h"
 #include "../util/AnsiStringStorage.h"

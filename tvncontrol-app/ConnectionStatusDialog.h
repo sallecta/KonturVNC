@@ -1,7 +1,7 @@
 #pragma once
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/TextBox.h"
 #include <list>
 #include "RfbClientInfo.h"
 
@@ -27,7 +27,7 @@ private:
 
 
 protected:
-	TextBox m_clientList; 
+	TextBox m_clientList;
 	ControlTrayIcon *m_tray;
 
 };

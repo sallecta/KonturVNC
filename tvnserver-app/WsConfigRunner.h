@@ -25,7 +25,7 @@
 #ifndef __WSCONFIGRUNNER_H__
 #define __WSCONFIGRUNNER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../log-writer/LogWriter.h"
 
 // This class runs TvnControl in current session.

@@ -26,7 +26,7 @@
 #include "ServerCommandLine.h"
 #include "TvnServerHelp.h"
 
-#include "../thread/GlobalMutex.h"
+#include "../lib_thread/GlobalMutex.h"
 
 #include "../util/ResourceLoader.h"
 #include "../util/StringTable.h"

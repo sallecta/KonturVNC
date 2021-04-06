@@ -28,7 +28,7 @@
 #include "../util/CommonHeader.h"
 
 #include "NamedPipe.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "SecurityAttributes.h"
 
 /**

@@ -28,7 +28,7 @@
 #include "../util/CommonHeader.h"
 #include "WindowsEvent.h"
 #include "../io-lib/Channel.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "Pipe.h"
 
 /**

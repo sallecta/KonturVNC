@@ -26,7 +26,7 @@
 #include "../win-system/DynamicLibrary.h"
 #include "../win-system/Environment.h"
 #include "../win-system/RegistryKey.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "NamingDefs.h"
 
 typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(__in  HANDLE hProcess,

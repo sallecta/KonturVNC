@@ -27,7 +27,7 @@
 
 #include "RfbClientManager.h"
 #include "ControlAppAuthenticator.h"
-#include "../thread/ThreadCollector.h"
+#include "../lib_thread/ThreadCollector.h"
 
 #include "../network/TcpServer.h"
 

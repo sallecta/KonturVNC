@@ -27,7 +27,7 @@
 #include "CommonInputValidation.h"
 #include "UIDataAccess.h"
 #include "ConfigDialog.h"
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 #include "../server-config-lib/ServerConfig.h"
 #include "../server-config-lib/Configurator.h"
 #include "../util/CommonHeader.h"

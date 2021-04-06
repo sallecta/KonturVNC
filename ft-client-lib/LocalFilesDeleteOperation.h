@@ -26,7 +26,7 @@
 #define _LOCAL_FILES_DELETE_OPERATION_H_
 
 #include "FileTransferOperation.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 
 class LocalFilesDeleteOperation : public FileTransferOperation,
                                   private Thread

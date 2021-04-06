@@ -23,10 +23,10 @@
 //
 
 #include "WindowsUserInput.h"
-#include "../thread/DesktopSelector.h"
+#include "../lib_thread/DesktopSelector.h"
 #include "../win-system/Environment.h"
 #include "../win-system/Keyboard.h"
-#include "../gui/WindowFinder.h"
+#include "../lib_gui/WindowFinder.h"
 #include "../util/BrokenHandleException.h"
 
 WindowsUserInput::WindowsUserInput(ClipboardListener *clipboardListener,

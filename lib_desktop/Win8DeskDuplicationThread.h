@@ -27,8 +27,8 @@
 
 #include "../rfb/FrameBuffer.h"
 #include "Win8CursorShape.h"
-#include "../thread/LocalMutex.h"
-#include "../thread/GuiThread.h"
+#include "../lib_thread/LocalMutex.h"
+#include "../lib_thread/GuiThread.h"
 #include "Win8DuplicationListener.h"
 #include "../log-writer/LogWriter.h"
 

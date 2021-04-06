@@ -27,7 +27,7 @@
 
 #include "../util/CommonHeader.h"
 #include "../util/Singleton.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../win-system/ApplicationCrashEvents.h"
 
 class ClientCrashHook : private Singleton<ClientCrashHook>

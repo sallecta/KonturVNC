@@ -26,7 +26,7 @@
 #define __WINDOWSAPPLICATION_H__
 
 #include "../util/winhdr.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 #include <list>
 

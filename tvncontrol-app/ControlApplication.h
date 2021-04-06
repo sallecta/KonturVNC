@@ -34,8 +34,8 @@
 #include "../server-config-lib/Configurator.h"
 #include "../log-writer/LogWriter.h"
 
-#include "../thread/Thread.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/Thread.h"
+#include "../lib_thread/LocalMutex.h"
 
 #include "../tvncontrol-app/ControlGate.h"
 #include "../tvncontrol-app/ControlAuthException.h"

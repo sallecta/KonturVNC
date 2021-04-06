@@ -28,7 +28,7 @@
 #include <list>
 #include "../network/socket/SocketIPv4.h"
 #include "../win-system/WindowsEvent.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../network/RfbOutputGate.h"
 #include "../lib_desktop/Desktop.h"
 #include "../fb-update-sender/UpdateSender.h"

@@ -179,6 +179,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="lib_log_writer" />
 				</Linker>
 			</Target>
 		</Build>

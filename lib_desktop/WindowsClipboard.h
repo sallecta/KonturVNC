@@ -26,10 +26,10 @@
 #define __WINDOWSCLIPBOARD_H__
 
 #include "../util/CommonHeader.h"
-#include "../gui/MessageWindow.h"
+#include "../lib_gui/MessageWindow.h"
 #include "ClipboardListener.h"
 #include "../log-writer/LogWriter.h"
-#include "../thread/GuiThread.h"
+#include "../lib_thread/GuiThread.h"
 
 class WindowsClipboard : protected MessageWindow, GuiThread
 {

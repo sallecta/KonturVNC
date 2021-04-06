@@ -24,9 +24,9 @@
 
 #include "FileAccount.h"
 #include "../util/Unicode.h"
-#include "../file-lib/File.h"
-#include "../thread/AutoLock.h"
-#include "../file-lib/EOFException.h"
+#include "../lib_file/File.h"
+#include "../lib_thread/AutoLock.h"
+#include "../lib_file/EOFException.h"
 
 FileAccount::FileAccount(const TCHAR *logDir,
                          const TCHAR *fileName,

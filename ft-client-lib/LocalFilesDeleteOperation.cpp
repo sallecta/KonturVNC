@@ -23,7 +23,7 @@
 //
 
 #include "LocalFilesDeleteOperation.h"
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 
 LocalFilesDeleteOperation::LocalFilesDeleteOperation(LogWriter *logWriter,
                                                      const FileInfo *filesToDelete,

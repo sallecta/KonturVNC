@@ -25,7 +25,7 @@
 #include <map>
 #include <vector>
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../util/StringStorage.h"
 
 #ifndef _CAPS_CONTAINER_H_

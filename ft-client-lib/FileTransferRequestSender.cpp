@@ -24,7 +24,7 @@
 
 #include "FileTransferRequestSender.h"
 #include "ft-common/FTMessage.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 FileTransferRequestSender::FileTransferRequestSender(LogWriter *logWriter)
 : m_logWriter(logWriter),

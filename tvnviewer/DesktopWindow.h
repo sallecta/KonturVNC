@@ -26,15 +26,15 @@
 #define _DESKTOP_WINDOW_H_
 
 #include "../win-system/WinClipboard.h"
-#include "../gui/DibFrameBuffer.h"
+#include "../lib_gui/DibFrameBuffer.h"
 #include "../region/Rect.h"
 #include "../region/Dimension.h"
 #include "ScaleManager.h"
 #include "client-config-lib/ConnectionConfig.h"
-#include "../gui/PaintWindow.h"
-#include "../gui/ScrollBar.h"
-#include "../gui/drawing/SolidBrush.h"
-#include "../gui/drawing/Graphics.h"
+#include "../lib_gui/PaintWindow.h"
+#include "../lib_gui/ScrollBar.h"
+#include "../lib_gui/drawing/SolidBrush.h"
+#include "../lib_gui/drawing/Graphics.h"
 #include "../rfb/RfbKeySym.h"
 #include "viewer-core/RemoteViewerCore.h"
 

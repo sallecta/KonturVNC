@@ -1,6 +1,6 @@
-// Copyright (C) 2009,2010,2011,2012 GlavSoft LLC.
 // All rights reserved.
 //
+// Copyright (C) 2009,2010,2011,2012 GlavSoft LLC.
 //-------------------------------------------------------------------------
 // This file is part of the TightVNC software.  Please visit our Web site:
 //

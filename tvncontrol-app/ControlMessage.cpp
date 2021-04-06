@@ -31,7 +31,7 @@
 #include "../util/VncPassCrypt.h"
 #include "../util/AnsiStringStorage.h"
 #include "../tvnserver-app/NamingDefs.h"
-#include "../file-lib/WinFile.h"
+#include "../lib_file/WinFile.h"
 
 #include "../tvnserver/resource.h"
 

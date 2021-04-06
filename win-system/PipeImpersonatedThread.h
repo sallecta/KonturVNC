@@ -25,7 +25,7 @@
 #ifndef __PIPEIMPERSONATEDTHREAD_H__
 #define __PIPEIMPERSONATEDTHREAD_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "WindowsEvent.h"
 
 class PipeImpersonatedThread : public Thread

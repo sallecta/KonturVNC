@@ -29,9 +29,9 @@
 #include "../io-lib/Channel.h"
 #include "../io-lib/DataInputStream.h"
 #include "../io-lib/DataOutputStream.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../log-writer/Logger.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "../log-writer/LogDump.h"
 
 class ClientLogger : public Logger, private Thread, public LogDump

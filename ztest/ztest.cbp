@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="ztest.util" />
+		<Option title="ztest" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Release_Win32">
-				<Option output="../out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="1" extension_auto="1" />
+				<Option output="../out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
 				<Option object_output="../out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -21,7 +21,6 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-m32" />
-					<Add library="util" />
 					<Add directory="../out/bin/$(TARGET_NAME)" />
 					<LinkerExe value="CppCompiler" />
 				</Linker>
@@ -31,7 +30,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="ztest.util.cpp" />
+		<Linker>
+			<Add library="lib_file" />
+		</Linker>
+		<Unit filename="ztest.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

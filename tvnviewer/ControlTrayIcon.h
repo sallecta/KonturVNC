@@ -25,8 +25,8 @@
 #ifndef _CONTROL_TRAY_ICON_H_
 #define _CONTROL_TRAY_ICON_H_
 
-#include "../gui/NotifyIcon.h"
-#include "../gui/Menu.h"
+#include "../lib_gui/NotifyIcon.h"
+#include "../lib_gui/Menu.h"
 #include "TvnViewer.h"
 
 #include "resource.h"

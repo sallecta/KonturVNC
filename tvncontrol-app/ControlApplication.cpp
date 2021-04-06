@@ -52,10 +52,10 @@
 #include "../win-system/Process.h"
 #include "../win-system/WinCommandLineArgs.h"
 
-#include "../thread/ZombieKiller.h"
-#include "../thread/GlobalMutex.h"
+#include "../lib_thread/ZombieKiller.h"
+#include "../lib_thread/GlobalMutex.h"
 
-#include "../gui/CommonControlsEx.h"
+#include "../lib_gui/CommonControlsEx.h"
 
 #include "../network/socket/WindowsSocket.h"
 

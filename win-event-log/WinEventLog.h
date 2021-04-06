@@ -27,7 +27,7 @@
 
 #include "../util/CommonHeader.h"
 #include <vector>
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../log-writer/LogWriter.h"
 
 typedef std::vector<TCHAR *> StringContainer;

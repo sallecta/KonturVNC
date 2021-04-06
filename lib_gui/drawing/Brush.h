@@ -22,24 +22,22 @@
 //-------------------------------------------------------------------------
 //
 
-#ifndef _PEN_H_
-#define _PEN_H_
+#ifndef _BRUSH_H_
+#define _BRUSH_H_
 
-#include "../util/CommonHeader.h"
+#include "../../util/CommonHeader.h"
 
-class Pen
+class Brush
 {
 public:
-  const static int SOLID_TYPE = PS_SOLID;
-  const static int DASH_TYPE = PS_DASH;
-  const static int NULL_TYPE = PS_NULL;
-
-public:
-  Pen(int type, int width, COLORREF color);
-  virtual ~Pen();
+  Brush();
+  virtual ~Brush();
 
 protected:
-  HPEN m_pen;
+  void release();
+
+protected:
+  HBRUSH m_brush;
 
   friend class Graphics;
 };

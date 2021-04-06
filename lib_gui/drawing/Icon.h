@@ -22,40 +22,31 @@
 //-------------------------------------------------------------------------
 //
 
-#ifndef _DEVICE_CONTEXT_H_
-#define _DEVICE_CONTEXT_H_
+#ifndef _ICON_H_
+#define _ICON_H_
 
-#include "../util/CommonHeader.h"
-//#include "gui/PaintWindow.h"
+#include "../../util/CommonHeader.h"
 
-class DeviceContext
+#include "Bitmap.h"
+
+class Icon
 {
 public:
-  // Create device context linked to window DC.
-  DeviceContext(HWND window);
-  // Create device context complatible with other DC.
-  DeviceContext(DeviceContext* compatibleDevice);
-  // Destroys device context.
-  virtual ~DeviceContext();
+  Icon();
+  Icon(HICON icon);
+  Icon(Bitmap *bitmap);
+  Icon(Bitmap *bitmap, Bitmap *mask);
+  Icon(DWORD icon);
+  virtual ~Icon();
 
-private:
-  // Initialize class from PaintWindow
-  DeviceContext(class PaintWindow * pntWnd);
-
-  friend class PaintWindow;
+  HICON getHICON();
 
 protected:
-  // Selects an object into this device context.
-  HGDIOBJ selectObject(HGDIOBJ object);
+  void fromBitmap(Bitmap *bitmap, Bitmap *mask);
 
 protected:
-  HDC m_dc;
-  HWND m_wnd;
-  bool m_hasOwnDC;
-
-  friend class Graphics;
-  friend class BitmapGraphics;
+  HICON m_icon;
+  bool m_hasOwnIcon;
 };
-
 
 #endif

@@ -24,7 +24,7 @@
 
 #include "WindowsInputBlocker.h"
 #include "../util/Exception.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 LocalMutex WindowsInputBlocker::m_instanceMutex;
 HHOOK WindowsInputBlocker::m_hKeyboardHook = 0;

@@ -25,7 +25,7 @@
 #include "LocalWindowsApplication.h"
 
 #include "../util/winhdr.h"
-#include "../thread/DesktopSelector.h"
+#include "../lib_thread/DesktopSelector.h"
 
 LocalWindowsApplication::LocalWindowsApplication(HINSTANCE hInstance,
                                                  const TCHAR *windowClassName)

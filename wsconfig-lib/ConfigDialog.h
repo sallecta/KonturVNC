@@ -28,10 +28,10 @@
 #include "config-lib/SettingsManager.h"
 #include "config-lib/RegistrySettingsManager.h"
 
-#include "../gui/BaseDialog.h"
-#include "../gui/Control.h"
-#include "../gui/ListBox.h"
-#include "../gui/TabControl.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/Control.h"
+#include "../lib_gui/ListBox.h"
+#include "../lib_gui/TabControl.h"
 
 #include "../server-config-lib/Configurator.h"
 

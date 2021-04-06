@@ -27,7 +27,7 @@
 
 #include "config-lib/SettingsManager.h"
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 #include "../rfb/EncodingDefs.h"
 

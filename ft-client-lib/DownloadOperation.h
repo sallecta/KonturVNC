@@ -26,7 +26,7 @@
 #define _DOWNLOAD_OPERATION_H_
 
 #include "ft-common/FileInfo.h"
-#include "../file-lib/WinFileChannel.h"
+#include "../lib_file/WinFileChannel.h"
 #include "FileInfoList.h"
 #include "CopyOperation.h"
 

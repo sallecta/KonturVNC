@@ -26,7 +26,7 @@
 #define __GATEKICKER_H__
 
 #include "BlockingGate.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/WindowsEvent.h"
 
 class GateKicker : public Thread

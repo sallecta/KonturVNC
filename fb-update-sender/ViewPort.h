@@ -28,7 +28,7 @@
 #include "ViewPortState.h"
 #include "../rfb/FrameBuffer.h"
 #include "../lib_desktop/Desktop.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../util/DateTime.h"
 #include "../log-writer/LogWriter.h"
 

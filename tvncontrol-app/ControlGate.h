@@ -29,7 +29,7 @@
 #include "../io-lib/DataOutputStream.h"
 #include "../io-lib/Channel.h"
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class ControlGate : public DataInputStream, public DataOutputStream,
                     public LocalMutex

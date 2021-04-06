@@ -28,7 +28,7 @@
 #include "UpdateDetector.h"
 #include "../win-system/WindowsEvent.h"
 #include "HookInstaller.h"
-#include "../gui/MessageWindow.h"
+#include "../lib_gui/MessageWindow.h"
 #include "HookUpdateTimer.h"
 #include "../win-system/Process.h"
 #include "../log-writer/LogWriter.h"

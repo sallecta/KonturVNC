@@ -26,7 +26,7 @@
 #define __LOGCONN_H__
 
 #include "../io-lib/Channel.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/Pipe.h"
 #include "LogListener.h"
 #include "LogLevelSender.h"

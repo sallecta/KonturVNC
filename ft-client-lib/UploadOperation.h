@@ -25,8 +25,8 @@
 #ifndef _UPLOAD_OPERATION_H_
 #define _UPLOAD_OPERATION_H_
 
-#include "../file-lib/File.h"
-#include "../file-lib/WinFileChannel.h"
+#include "../lib_file/File.h"
+#include "../lib_file/WinFileChannel.h"
 #include "FileTransferOperation.h"
 #include "FileInfoList.h"
 #include "CopyOperation.h"

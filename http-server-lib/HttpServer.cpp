@@ -25,7 +25,7 @@
 #include "HttpServer.h"
 #include "HttpClient.h"
 
-#include "../thread/ZombieKiller.h"
+#include "../lib_thread/ZombieKiller.h"
 
 HttpServer::HttpServer
 (const TCHAR *bindHost, unsigned short bindPort, bool lockAddr, LogWriter *log) throw(Exception)

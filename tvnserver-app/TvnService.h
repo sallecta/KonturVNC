@@ -31,7 +31,7 @@
 #include "../lib_log_server/ClientLogger.h"
 #include "../win-system/Service.h"
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "WinServiceEvents.h"
 #include "NewConnectionEvents.h"
 

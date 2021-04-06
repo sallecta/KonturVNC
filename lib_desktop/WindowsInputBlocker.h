@@ -26,8 +26,8 @@
 #define __WINDOWSINPUTBLOCKER_H__
 
 #include "../util/CommonHeader.h"
-#include "../thread/Thread.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/Thread.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../win-system/WinTimeMillis.h"
 #include "../win-system/WindowsEvent.h"
 #include "InputBlocker.h"

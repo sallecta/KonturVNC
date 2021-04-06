@@ -31,7 +31,7 @@
 #include "ScreenGrabber.h"
 #include "WindowsCursorShapeGrabber.h"
 #include "../rfb/FrameBuffer.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "UpdateListener.h"
 #include "UpdateDetector.h"
 #include "CopyRectDetector.h"

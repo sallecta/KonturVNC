@@ -25,10 +25,10 @@
 #ifndef __UPDATEKEEPER_H__
 #define __UPDATEKEEPER_H__
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../region/Region.h"
 #include "UpdateContainer.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 class UpdateKeeper : public Lockable
 {

@@ -27,7 +27,7 @@
 
 #include "../log-writer/LogWriter.h"
 #include "../rfb/CursorShape.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class CursorPainter
 {

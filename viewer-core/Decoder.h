@@ -30,8 +30,8 @@
 #include "../region/Rect.h"
 #include "../rfb/FrameBuffer.h"
 #include "../rfb/EncodingDefs.h"
-#include "../thread/AutoLock.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/AutoLock.h"
+#include "../lib_thread/LocalMutex.h"
 
 class Decoder
 {

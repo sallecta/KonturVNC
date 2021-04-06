@@ -25,7 +25,7 @@
 #ifndef _BLOCKING_GATE_H_
 #define _BLOCKING_GATE_H_
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../io-lib/Channel.h"
 #include "../io-lib/DataOutputStream.h"
 #include "../io-lib/DataInputStream.h"

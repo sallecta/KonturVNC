@@ -24,7 +24,7 @@
 #include <crtdbg.h>
 #include "SCMClient.h"
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 
 SCMClientException::SCMClientException(int scmErrCode)
 : SystemException(_T("[Exception description is not avaliable]"))

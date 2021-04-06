@@ -24,7 +24,7 @@
 
 #include "CapsContainer.h"
 
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 CapsContainer::CapsContainer()
 {

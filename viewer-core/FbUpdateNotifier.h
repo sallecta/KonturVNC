@@ -30,8 +30,8 @@
 #include "../region/Point.h"
 #include "../region/Rect.h"
 #include "../region/Region.h"
-#include "../thread/LocalMutex.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/LocalMutex.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/WindowsEvent.h"
 
 #include "tvnviewer/AvilogThread.h"

@@ -25,7 +25,7 @@
 #ifndef _ABOUT_DIALOG_H_
 #define _ABOUT_DIALOG_H_
 
-#include "../gui/BaseDialog.h"
+#include "../lib_gui/BaseDialog.h"
 
 /**
  * TightVNC server about dialog.

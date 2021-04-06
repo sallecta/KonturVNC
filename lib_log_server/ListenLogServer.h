@@ -25,7 +25,7 @@
 #ifndef __LISTENLOGSERVER_H__
 #define __LISTENLOGSERVER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/PipeServer.h"
 #include "ConnectionListener.h"
 

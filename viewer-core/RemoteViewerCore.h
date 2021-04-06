@@ -33,7 +33,7 @@
 #include "../rfb/FrameBuffer.h"
 #include "../region/Dimension.h"
 #include "../region/Point.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 
 #include "CapsContainer.h"
 #include "CoreEventsAdapter.h"

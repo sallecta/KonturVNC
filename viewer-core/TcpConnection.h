@@ -30,7 +30,7 @@
 #include "../network/RfbOutputGate.h"
 #include "../network/socket/SocketIPv4.h"
 #include "../network/socket/SocketStream.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class TcpConnection
 {

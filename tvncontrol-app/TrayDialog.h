@@ -1,7 +1,7 @@
 
-#include "../gui/BaseDialog.h"
-#include "../gui/ListView.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/ListView.h"
+#include "../lib_thread/LocalMutex.h"
 #include "RfbClientInfo.h"
 
 #ifndef _TRAY_DIALOG_H_

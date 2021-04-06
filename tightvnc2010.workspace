@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_file>
 	<Workspace title="tightvnc2010 workspace">
-		<Project filename="thread/thread.cbp" />
-		<Project filename="region/region.cbp" />
-		<Project filename="network/network.cbp" />
-		<Project filename="config-lib/config-lib.cbp" />
-		<Project filename="wsconfig-lib/wsconfig-lib.cbp" />
-		<Project filename="gui/gui.cbp" />
+		<Project filename="!notes/!notes.cbp" />
 		<Project filename="ft-server-lib/ft-server-lib.cbp" />
 		<Project filename="ft-client-lib/ft-client-lib.cbp" />
 		<Project filename="ft-common/ft-common.cbp" />
 		<Project filename="client-config-lib/client-config-lib.cbp" />
-		<Project filename="io-lib/io-lib.cbp" />
-		<Project filename="http-server-lib/http-server-lib.cbp" />
-		<Project filename="rfb/rfb.cbp" />
 		<Project filename="screen-hooks/screenhooks.cbp" />
-		<Project filename="file-lib/file-lib.cbp" />
 		<Project filename="zlib/zlib.cbp" />
-		<Project filename="fb-update-sender/fb-update-sender.cbp" />
-		<Project filename="rfb-sconn/rfb-sconn.cbp" />
-		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
-		<Project filename="D:/dev/git/KonturVNC/lib_desktop/lib_desktop.cbp" />
+		<Project filename="lib_file/lib_file.cbp" />
+		<Project filename="config-lib/config-lib.cbp" />
+		<Project filename="region/region.cbp" />
+		<Project filename="wsconfig-lib/wsconfig-lib.cbp" />
+		<Project filename="tcp-dispatcher/tcp-dispatcher.cbp" />
+		<Project filename="rfb/rfb.cbp" />
+		<Project filename="io-lib/io-lib.cbp" />
+		<Project filename="rfb-sconn/rfb-sconn.cbp" />
+		<Project filename="fb-update-sender/fb-update-sender.cbp" />
+		<Project filename="http-server-lib/http-server-lib.cbp" />
+		<Project filename="network/network.cbp" />
+		<Project filename="win-event-log/win-event-log.cbp" />
+		<Project filename="lib_gui/lib_gui.cbp" />
+		<Project filename="lib_thread/lib_thread.cbp" />
+		<Project filename="lib_desktop/lib_desktop.cbp" />
 		<Project filename="lib_desktop_ipc/lib_desktop_ipc.cbp" />
 		<Project filename="lib_log_server/lib_log_server.cbp" />
 		<Project filename="server-config-lib/server-config-lib.cbp" />
@@ -33,7 +35,6 @@
 		<Project filename="tvnserver/tvnserver.cbp" />
 		<Project filename="viewer-keysym-test/viewer-keysym-test.cbp" />
 		<Project filename="hookldr/hookldr.cbp" />
-		<Project filename="tcp-dispatcher/tcp-dispatcher.cbp" />
 		<Project filename="tvnviewer/tvnviewer.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 			<Depends filename="avilog/avilogv11.cbp" />
@@ -46,6 +47,6 @@
 		<Project filename="p2p/p2p.cbp">
 			<Depends filename="usrsctplib/usrsctplib.cbp" />
 		</Project>
-		<Project filename="ztest.util/ztest.util.cbp" />
+		<Project filename="ztest/ztest.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

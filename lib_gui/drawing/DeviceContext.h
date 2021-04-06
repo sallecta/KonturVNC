@@ -22,39 +22,40 @@
 //-------------------------------------------------------------------------
 //
 
-#ifndef _NOTIFY_ICON_H_
-#define _NOTIFY_ICON_H_
+#ifndef _DEVICE_CONTEXT_H_
+#define _DEVICE_CONTEXT_H_
 
-#include "../util/CommonHeader.h"
+#include "../../util/CommonHeader.h"
+//#include "gui/PaintWindow.h"
 
-#include "NotifyIconWindow.h"
-
-#include "../gui/drawing/Icon.h"
-
-#include <shellapi.h>
-
-// FIXME: Add documentation to class.
-class NotifyIcon : public NotifyIconWindow
+class DeviceContext
 {
 public:
-  NotifyIcon(bool showAfterCreation = true);
-  virtual ~NotifyIcon();
+  // Create device context linked to window DC.
+  DeviceContext(HWND window);
+  // Create device context complatible with other DC.
+  DeviceContext(DeviceContext* compatibleDevice);
+  // Destroys device context.
+  virtual ~DeviceContext();
 
-  const Icon *getIcon() const;
-  bool isVisible() const;
+private:
+  // Initialize class from PaintWindow
+  DeviceContext(class PaintWindow * pntWnd);
 
-  void setIcon(Icon *icon);
-  void setText(const TCHAR *text);
-
-  void showBalloon(const TCHAR *message, const TCHAR *caption, DWORD timeoutMillis);
-
-  void show();
-  void hide();
+  friend class PaintWindow;
 
 protected:
-  NOTIFYICONDATA m_nid;
-  Icon *m_icon;
-  bool m_visible;
+  // Selects an object into this device context.
+  HGDIOBJ selectObject(HGDIOBJ object);
+
+protected:
+  HDC m_dc;
+  HWND m_wnd;
+  bool m_hasOwnDC;
+
+  friend class Graphics;
+  friend class BitmapGraphics;
 };
+
 
 #endif

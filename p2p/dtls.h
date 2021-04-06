@@ -5,7 +5,7 @@
 #define _DTLS_H_
 
 #include "../log-writer/LogWriter.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 
 #define NOCRYPT

@@ -26,7 +26,7 @@
 #include "../util/AnsiStringStorage.h"
 #include "../tvncontrol-app/ControlProto.h"
 
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 #include "../util/DesCrypt.h"
 

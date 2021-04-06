@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "WinDxRecoverableException.h"
 #include "WinDxCriticalException.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 #include "WinDxgiAcquiredFrame.h"
 #include "WinD3D11Texture2D.h"

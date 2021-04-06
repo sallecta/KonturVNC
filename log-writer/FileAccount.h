@@ -27,8 +27,8 @@
 
 #include "../util/CommonHeader.h"
 #include "../util/DateTime.h"
-#include "../thread/LocalMutex.h"
-#include "../file-lib/WinFile.h"
+#include "../lib_thread/LocalMutex.h"
+#include "../lib_file/WinFile.h"
 #include "LogDump.h"
 
 class FileAccount : public LogDump

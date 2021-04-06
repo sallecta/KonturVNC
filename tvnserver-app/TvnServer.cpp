@@ -30,7 +30,7 @@
 
 #include "../server-config-lib/Configurator.h"
 
-#include "../thread/GlobalMutex.h"
+#include "../lib_thread/GlobalMutex.h"
 
 #include "../tvnserver/resource.h"
 
@@ -42,7 +42,7 @@
 #include "../util/AnsiStringStorage.h"
 #include "../tvnserver-app/NamingDefs.h"
 
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 
 // FIXME: Bad dependency on tvncontrol-app.
 #include "../tvncontrol-app/TransportFactory.h"

@@ -25,7 +25,7 @@
 #ifndef __CONNECTIONTIMER_H__
 #define __CONNECTIONTIMER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/WindowsEvent.h"
 #include "TimerListener.h"
 

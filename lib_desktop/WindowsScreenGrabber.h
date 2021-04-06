@@ -34,7 +34,7 @@
 #include "../region/Rect.h"
 #include "../server-config-lib/Configurator.h"
 #include "../win-system/WindowsEvent.h"
-#include "../thread/GuiThread.h"
+#include "../lib_thread/GuiThread.h"
 #include "../win-system/Screen.h"
 
 //

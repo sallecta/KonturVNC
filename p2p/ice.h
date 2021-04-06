@@ -6,9 +6,9 @@
 
 #include "../log-writer/LogWriter.h"
 
-#include "../thread/Thread.h"
-#include "../thread/GlobalMutex.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/Thread.h"
+#include "../lib_thread/GlobalMutex.h"
+#include "../lib_thread/AutoLock.h"
 #include "../win-system/WindowsEvent.h"
 
 #include "../pjlib/pjlib/include/pj/addr_resolv.h"

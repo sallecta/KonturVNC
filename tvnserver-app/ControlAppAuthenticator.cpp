@@ -23,7 +23,7 @@
 //
 
 #include "ControlAppAuthenticator.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "../util/VncPassCrypt.h"
 
 ControlAppAuthenticator::ControlAppAuthenticator(UINT64 failureTimeInterval,

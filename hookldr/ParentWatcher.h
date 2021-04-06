@@ -29,7 +29,7 @@
 #include "ParentEventsListener.h"
 #include "../win-system/WindowsEvent.h"
 #include "../util/CommonHeader.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include <Tlhelp32.h>
 
 class ParentWatcher : private Thread

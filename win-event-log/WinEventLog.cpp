@@ -29,7 +29,7 @@
 #include "../util/Exception.h"
 #include "../win-system/Environment.h"
 #include "../win-system/RegistryKey.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 WinEventLog::WinEventLog(LogWriter *log)
 : m_hEventLog(0),

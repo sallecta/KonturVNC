@@ -25,7 +25,7 @@
 #ifndef __AUTHTRACKER_H__
 #define __AUTHTRACKER_H__
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../util/DateTime.h"
 
 // This class will be insert an time interval between trying of

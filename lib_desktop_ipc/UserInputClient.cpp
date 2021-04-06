@@ -23,7 +23,7 @@
 //
 
 #include "UserInputClient.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "ReconnectException.h"
 #include "../util/BrokenHandleException.h"
 

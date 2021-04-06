@@ -22,39 +22,26 @@
 //-------------------------------------------------------------------------
 //
 
-#ifndef __BITMAP_H__
-#define __BITMAP_H__
+#ifndef _PEN_H_
+#define _PEN_H_
 
-#include "../util/CommonHeader.h"
+#include "../../util/CommonHeader.h"
 
-#include <string>
-//#include <sstream>
-
-// Class manipulating windows HBITMAP object
-//
-//
-class Bitmap
+class Pen
 {
 public:
-  // Creates empty bitmap with specified size.
-  Bitmap(int width, int height);
-  // Creates compatible with dc bitmap with specified size.
-  Bitmap(HDC dc, int width, int height);
-  // Creates bitmap from HBITMAP object.
-  Bitmap(HBITMAP bitmap);
-  // Destroys bitmap object.
-  virtual ~Bitmap();
+  const static int SOLID_TYPE = PS_SOLID;
+  const static int DASH_TYPE = PS_DASH;
+  const static int NULL_TYPE = PS_NULL;
 
-  // Returns bitmap width.
-  int getWidth() const;
-  // Returns bitmap height.
-  int getHeight() const;
+public:
+  Pen(int type, int width, COLORREF color);
+  virtual ~Pen();
+
 protected:
-  HBITMAP m_bitmap;
+  HPEN m_pen;
 
-  friend class Icon;
   friend class Graphics;
-  friend class BitmapGraphics;
 };
 
 #endif

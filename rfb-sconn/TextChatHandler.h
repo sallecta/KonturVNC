@@ -9,7 +9,7 @@
 #include "../network/RfbOutputGate.h"
 #include "../log-writer/LogWriter.h"
 
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 #include "../tvnserver-app/ChatDialog.h"
 

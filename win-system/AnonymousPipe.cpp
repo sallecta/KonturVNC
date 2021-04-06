@@ -24,7 +24,7 @@
 
 #include "AnonymousPipe.h"
 #include "../win-system/Environment.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 AnonymousPipe::AnonymousPipe(HANDLE hWrite, HANDLE hRead, LogWriter *log)
 : m_hWrite(hWrite),

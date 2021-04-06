@@ -28,7 +28,7 @@
 #include "../util/winhdr.h"
 #include "../util/StringStorage.h"
 #include "../util/Exception.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 
 /**
  * Win32 service class (abstract).

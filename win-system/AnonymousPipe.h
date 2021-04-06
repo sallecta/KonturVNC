@@ -30,7 +30,7 @@
 #include "../util/CommonHeader.h"
 
 #include "WindowsEvent.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../log-writer/LogWriter.h"
 
 class AnonymousPipe : public Channel, private Pipe

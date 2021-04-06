@@ -25,7 +25,7 @@
 #ifndef _VIEWER_COLLECTOR_H_
 #define _VIEWER_COLLECTOR_H_
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include <list>
 #include "ViewerInstance.h"
 

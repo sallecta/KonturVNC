@@ -24,7 +24,7 @@
 
 #include "WinVideoRegionFounderImpl.h"
 #include "../server-config-lib/Configurator.h"
-#include "../gui/WindowFinder.h"
+#include "../lib_gui/WindowFinder.h"
 
 WinVideoRegionFounderImpl::WinVideoRegionFounderImpl()
 {

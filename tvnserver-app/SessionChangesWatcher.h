@@ -25,7 +25,7 @@
 #ifndef __SESSIONCHANGESWATCHER_H__
 #define __SESSIONCHANGESWATCHER_H__
 
-#include "../thread/GuiThread.h"
+#include "../lib_thread/GuiThread.h"
 #include "../util/AnEventListener.h"
 #include "../log-writer/LogWriter.h"
 

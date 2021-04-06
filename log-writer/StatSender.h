@@ -1,7 +1,7 @@
 #ifndef __STATSENDER_H__
 #define __STATSENDER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../win-system/WindowsEvent.h"
 #include "../network/socket/SocketIPv4.h"
 #include "tvnviewer/ConnectionData.h"

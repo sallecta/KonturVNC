@@ -25,7 +25,7 @@
 #ifndef __RFBDISPATCHER_H__
 #define __RFBDISPATCHER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "RfbDispatcherListener.h"
 #include "../util/AnEventListener.h"
 #include "../win-system/WindowsEvent.h"

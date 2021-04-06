@@ -9,9 +9,9 @@
 #define _WINSOCKAPI_
 
 #include "../log-writer/LogWriter.h"
-#include "../thread/Thread.h"
-#include "../thread/GlobalMutex.h"
-#include "../thread/Autolock.h"
+#include "../lib_thread/Thread.h"
+#include "../lib_thread/GlobalMutex.h"
+#include "../lib_thread/Autolock.h"
 #include "../win-system/WindowsEvent.h"
 
 #define _CRT_SECURE_NO_WARNINGS

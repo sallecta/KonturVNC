@@ -27,9 +27,9 @@
 
 #include "../server-config-lib/Configurator.h"
 
-#include "../gui/BaseDialog.h"
-#include "../gui/TextBox.h"
-#include "../gui/SpinControl.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/TextBox.h"
+#include "../lib_gui/SpinControl.h"
 
 class VideoRegionsConfigDialog : public BaseDialog
 {

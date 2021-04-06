@@ -26,7 +26,7 @@
 #define _WTS_H_
 
 #include "../util/winhdr.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "DynamicLibrary.h"
 #include "SystemException.h"
 #include "../log-writer/LogWriter.h"

@@ -25,8 +25,8 @@
 #ifndef _EDIT_PORT_MAPPING_DIALOG_H_
 #define _EDIT_PORT_MAPPING_DIALOG_H_
 
-#include "../gui/BaseDialog.h"
-#include "../gui/TextBox.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/TextBox.h"
 
 #include "../server-config-lib/PortMapping.h"
 

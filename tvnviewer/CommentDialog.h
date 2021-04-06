@@ -2,8 +2,8 @@
 #ifndef _COMMENT_DIALOG_H_
 #define _COMMENT_DIALOG_H_
 
-#include "../gui/BaseDialog.h"
-#include "../gui/ComboBox.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/ComboBox.h"
 #include "resource.h"
 #include "config-lib/CommentHistory.h"
 

@@ -23,7 +23,7 @@
 //
 
 #include "RfbClient.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "RfbCodeRegistrator.h"
 #include "ft-server-lib/FileTransferRequestHandler.h"
 #include "../network/socket/SocketStream.h"

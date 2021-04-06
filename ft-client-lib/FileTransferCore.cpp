@@ -32,7 +32,7 @@
 #include "UploadOperation.h"
 #include "DownloadOperation.h"
 
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 #include "ft-common/FolderListener.h"
 
 FileTransferCore::FileTransferCore(LogWriter *logWriter,

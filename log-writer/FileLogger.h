@@ -26,7 +26,7 @@
 #define __FILELOGGER_H__
 
 #include "FileAccount.h"
-#include "../log-writer/Logger.h"
+#include "Logger.h"
 
 // This class is an implementation of the Logger class to write the log into a file.
 class FileLogger : public Logger

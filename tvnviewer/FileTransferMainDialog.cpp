@@ -30,7 +30,7 @@
 #include "NewFolderDialog.h"
 #include "FileRenameDialog.h"
 
-#include "../file-lib/File.h"
+#include "../lib_file/File.h"
 
 #include "resource.h"
 #include <stdio.h>

@@ -26,7 +26,7 @@
 #define __UPDATEDETECTOR_H__
 
 #include "UpdateKeeper.h"
-#include "../thread/GuiThread.h"
+#include "../lib_thread/GuiThread.h"
 #include "UpdateListener.h"
 
 class UpdateDetector : public GuiThread

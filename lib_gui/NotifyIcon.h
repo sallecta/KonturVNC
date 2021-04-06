@@ -22,31 +22,39 @@
 //-------------------------------------------------------------------------
 //
 
-#ifndef _ICON_H_
-#define _ICON_H_
+#ifndef _NOTIFY_ICON_H_
+#define _NOTIFY_ICON_H_
 
 #include "../util/CommonHeader.h"
 
-#include "Bitmap.h"
+#include "NotifyIconWindow.h"
 
-class Icon
+#include "drawing/Icon.h"
+
+#include <shellapi.h>
+
+// FIXME: Add documentation to class.
+class NotifyIcon : public NotifyIconWindow
 {
 public:
-  Icon();
-  Icon(HICON icon);
-  Icon(Bitmap *bitmap);
-  Icon(Bitmap *bitmap, Bitmap *mask);
-  Icon(DWORD icon);
-  virtual ~Icon();
+  NotifyIcon(bool showAfterCreation = true);
+  virtual ~NotifyIcon();
 
-  HICON getHICON();
+  const Icon *getIcon() const;
+  bool isVisible() const;
+
+  void setIcon(Icon *icon);
+  void setText(const TCHAR *text);
+
+  void showBalloon(const TCHAR *message, const TCHAR *caption, DWORD timeoutMillis);
+
+  void show();
+  void hide();
 
 protected:
-  void fromBitmap(Bitmap *bitmap, Bitmap *mask);
-
-protected:
-  HICON m_icon;
-  bool m_hasOwnIcon;
+  NOTIFYICONDATA m_nid;
+  Icon *m_icon;
+  bool m_visible;
 };
 
 #endif

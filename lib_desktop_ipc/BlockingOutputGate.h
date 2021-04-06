@@ -26,7 +26,7 @@
 #define __BLOCKINGOUTPUTGATE_H__
 
 #include "../io-lib/DataOutputStream.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class BlockingOutputGate : public LocalMutex, public DataOutputStream
 {

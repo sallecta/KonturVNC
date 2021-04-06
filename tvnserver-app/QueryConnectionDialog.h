@@ -27,8 +27,8 @@
 
 #include "../util/CommonHeader.h"
 
-#include "../gui/BaseDialog.h"
-#include "../gui/Control.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/Control.h"
 
 class QueryConnectionDialog : public BaseDialog
 {

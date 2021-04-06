@@ -25,8 +25,8 @@
 #ifndef __UPDATESENDER_H__
 #define __UPDATESENDER_H__
 
-#include "../thread/AutoLock.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/AutoLock.h"
+#include "../lib_thread/Thread.h"
 #include "../lib_desktop/UpdateKeeper.h"
 #include "UpdateRequestListener.h"
 #include "../rfb/FrameBuffer.h"

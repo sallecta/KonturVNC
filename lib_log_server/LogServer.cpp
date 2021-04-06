@@ -23,7 +23,7 @@
 //
 
 #include "LogServer.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 LogServer::LogServer(const TCHAR *publicPipeName)
 : m_listenLogServer(0),

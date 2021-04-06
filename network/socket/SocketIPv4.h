@@ -34,7 +34,7 @@
 #include "../../io-lib/Channel.h"
 #include "../../io-lib/IOException.h"
 #include "../../win-system/WsaStartup.h"
-#include "../../thread/LocalMutex.h"
+#include "../../lib_thread/LocalMutex.h"
 
 #include "../../p2p/p2ptransport.h"
 

@@ -32,7 +32,7 @@
 #include "../tvncontrol-app/Transport.h"
 #include "ControlAppAuthenticator.h"
 #include "TcpDispatcherConnectionListener.h"
-#include "../thread/ThreadCollector.h"
+#include "../lib_thread/ThreadCollector.h"
 #include "../log-writer/LogWriter.h"
 
 /**

@@ -29,7 +29,7 @@
 #include "../rfb/CursorShape.h"
 #include "../lib_desktop/UpdateContainer.h"
 #include "../util/DateTime.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../log-writer/LogWriter.h"
 
 class CursorUpdates

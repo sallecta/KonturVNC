@@ -28,7 +28,7 @@
 #include "WindowsScreenGrabber.h"
 #include "ScreenDriver.h"
 #include "../rfb/FrameBuffer.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 #include "UpdateContainer.h"
 #include "GrabOptimizator.h"
 

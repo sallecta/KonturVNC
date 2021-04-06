@@ -27,9 +27,9 @@
 
 #include "../util/ListenerContainer.h"
 #include "../rfb-sconn/RfbClient.h"
-#include "../thread/AutoLock.h"
-#include "../thread/Thread.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/AutoLock.h"
+#include "../lib_thread/Thread.h"
+#include "../lib_thread/LocalMutex.h"
 #include "../win-system/WindowsEvent.h"
 #include "../lib_desktop/Desktop.h"
 #include "../lib_desktop/DesktopFactory.h"

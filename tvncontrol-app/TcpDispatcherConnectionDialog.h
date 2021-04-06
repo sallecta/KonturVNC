@@ -27,8 +27,8 @@
 
 #include "../util/winhdr.h"
 
-#include "../gui/BaseDialog.h"
-#include "../gui/ComboBox.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/ComboBox.h"
 
 #include "../win-system/RegistryKey.h"
 

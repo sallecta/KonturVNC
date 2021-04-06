@@ -25,12 +25,12 @@
 #ifndef _FILE_TRANSFER_MAIN_DIALOG_H_
 #define _FILE_TRANSFER_MAIN_DIALOG_H_
 
-#include "../gui/BaseDialog.h"
-#include "../gui/Control.h"
-#include "../gui/TextBox.h"
-#include "../gui/ComboBox.h"
-#include "../gui/ImagedButton.h"
-#include "../gui/ProgressBar.h"
+#include "../lib_gui/BaseDialog.h"
+#include "../lib_gui/Control.h"
+#include "../lib_gui/TextBox.h"
+#include "../lib_gui/ComboBox.h"
+#include "../lib_gui/ImagedButton.h"
+#include "../lib_gui/ProgressBar.h"
 
 #include "ft-common/FileInfo.h"
 
@@ -38,7 +38,7 @@
 
 #include "FileInfoListView.h"
 #include "FileExistDialog.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "ft-client-lib/FileTransferInterface.h"
 
 #include <vector>

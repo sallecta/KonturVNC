@@ -27,7 +27,7 @@
 
 #include "ViewerInstance.h"
 #include "../network/TcpServer.h"
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 class ConnectionListener : protected TcpServer
 {

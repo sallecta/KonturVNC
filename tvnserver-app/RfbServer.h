@@ -26,7 +26,7 @@
 #define __RFB_SERVER_H__
 
 #include "RfbClientManager.h"
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "../network/TcpServer.h"
 #include "../region/Rect.h"
 

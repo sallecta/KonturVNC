@@ -25,7 +25,7 @@
 #ifndef _GRAPHICS_H_
 #define _GRAPHICS_H_
 
-#include "../util/CommonHeader.h"
+#include "../../util/CommonHeader.h"
 
 #include "DeviceContext.h"
 #include "Bitmap.h"

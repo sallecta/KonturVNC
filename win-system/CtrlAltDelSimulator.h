@@ -25,7 +25,7 @@
 #ifndef __CTRLALTDELSIMULATOR_H__
 #define __CTRLALTDELSIMULATOR_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 
 class CtrlAltDelSimulator : public Thread
 {

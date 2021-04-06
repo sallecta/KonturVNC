@@ -33,7 +33,7 @@
 #include "ScaleManager.h"
 #include "ReconnectWnd.h"
 #include "ViewerMenu.h"
-#include "../gui/ToolBar.h"
+#include "../lib_gui/ToolBar.h"
 #include "../log-writer/LogWriter.h"
 #include "viewer-core/FileTransferCapability.h"
 #include "viewer-core/RemoteViewerCore.h"

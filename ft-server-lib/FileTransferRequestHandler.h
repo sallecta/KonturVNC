@@ -29,7 +29,7 @@
 #include "../network/RfbInputGate.h"
 #include "../network/RfbOutputGate.h"
 #include "ft-common/FileInfo.h"
-#include "../file-lib/WinFileChannel.h"
+#include "../lib_file/WinFileChannel.h"
 #include "../util/Inflater.h"
 #include "../util/Deflater.h"
 #include "../lib_desktop/Desktop.h"

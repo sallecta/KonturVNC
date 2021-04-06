@@ -28,7 +28,7 @@
 #include "../io-lib/DataOutputStream.h"
 #include "../io-lib/BufferedOutputStream.h"
 
-#include "../thread/LocalMutex.h"
+#include "../lib_thread/LocalMutex.h"
 
 /**
  * Gate for writting rfb messages.

@@ -25,7 +25,7 @@
 #ifndef __DESKTOPSRVDISPATCHER_H__
 #define __DESKTOPSRVDISPATCHER_H__
 
-#include "../thread/GuiThread.h"
+#include "../lib_thread/GuiThread.h"
 #include "BlockingGate.h"
 #include "ClientListener.h"
 #include "../util/AnEventListener.h"

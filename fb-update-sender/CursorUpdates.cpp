@@ -23,7 +23,7 @@
 //
 
 #include "CursorUpdates.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 CursorUpdates::CursorUpdates(LogWriter *log)
 : m_blockCurPosTime(0),

@@ -25,7 +25,7 @@
 #include "WindowsApplication.h"
 
 #include "../util/CommonHeader.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 
 LocalMutex WindowsApplication::m_MDLMutex;
 

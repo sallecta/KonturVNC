@@ -29,8 +29,8 @@
 
 #include <crtdbg.h>
 
-#include "../thread/LocalMutex.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/LocalMutex.h"
+#include "../lib_thread/AutoLock.h"
 
 //
 // Template that realize singleton pattern which does not supports "lazy"

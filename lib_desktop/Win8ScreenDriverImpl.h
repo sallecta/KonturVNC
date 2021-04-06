@@ -26,8 +26,8 @@
 #define __WIN8SCREENDRIVERIMPL_H__
 
 #include "../log-writer/LogWriter.h"
-#include "../thread/GuiThread.h"
-#include "../thread/ThreadCollector.h"
+#include "../lib_thread/GuiThread.h"
+#include "../lib_thread/ThreadCollector.h"
 #include "../win-system/WindowsEvent.h"
 #include "../region/Rect.h"
 #include "../rfb/FrameBuffer.h"

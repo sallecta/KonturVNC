@@ -1,7 +1,7 @@
 #include "ChatDialog.h"
 
 #include "../tvnserver/resource.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "../win-system/Environment.h"
 
 #include "../util/DateTime.h"

@@ -30,7 +30,7 @@
 #include "../log-writer/FileAccount.h"
 #include "../util/Singleton.h"
 #include "LogConnAuthListener.h"
-#include "../thread/ThreadCollector.h"
+#include "../lib_thread/ThreadCollector.h"
 #include "LogListener.h"
 #include <list>
 #include <map>

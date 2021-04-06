@@ -25,7 +25,7 @@
 #ifndef __HOOKUPDATETIMER_H__
 #define __HOOKUPDATETIMER_H__
 
-#include "../thread/Thread.h"
+#include "../lib_thread/Thread.h"
 #include "UpdateListener.h"
 #include "../win-system/WindowsEvent.h"
 

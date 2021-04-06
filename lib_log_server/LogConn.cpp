@@ -24,7 +24,7 @@
 
 #include "LogConn.h"
 #include "LogConnAuthListener.h"
-#include "../thread/AutoLock.h"
+#include "../lib_thread/AutoLock.h"
 #include "SecurityPipeServer.h"
 #include "../io-lib/DataInputStream.h"
 #include "../io-lib/DataOutputStream.h"
