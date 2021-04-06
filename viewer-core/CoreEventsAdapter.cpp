@@ -23,7 +23,7 @@
 //
 
 #include "CoreEventsAdapter.h"
-#include "rfb/AuthDefs.h"
+#include "../rfb/AuthDefs.h"
 
 // It's abstract, but still needs an implementation.
 CoreEventsAdapter::~CoreEventsAdapter()

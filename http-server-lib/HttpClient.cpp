@@ -26,7 +26,7 @@
 
 #include "HttpRequestHandler.h"
 
-#include "network/socket/SocketStream.h"
+#include "../network/socket/SocketStream.h"
 
 HttpClient::HttpClient(SocketIPv4 *socket, LogWriter *log)
 : TcpClientThread(socket),

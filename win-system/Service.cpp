@@ -24,7 +24,7 @@
 
 #include "Service.h"
 
-#include "win-system/SystemException.h"
+#include "../win-system/SystemException.h"
 
 #include <crtdbg.h>
 

@@ -25,7 +25,7 @@
 #ifndef _IP_ACCESS_RULE_H_
 #define _IP_ACCESS_RULE_H_
 
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 //
 // Class contains information about

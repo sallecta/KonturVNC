@@ -25,8 +25,8 @@
 #ifndef _AUTHENTICATION_DIALOG_H_
 #define _AUTHENTICATION_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
 #include "resource.h"
 
 class AuthenticationDialog : public BaseDialog

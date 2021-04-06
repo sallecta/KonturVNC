@@ -1,8 +1,8 @@
 
 
-#include "rfb/VendorDefs.h"
+#include "../rfb/VendorDefs.h"
 #include "SdpCapability.h"
-#include "rfb/MsgDefs.h"
+#include "../rfb/MsgDefs.h"
 
 
 SdpCapability::SdpCapability()
@@ -37,7 +37,7 @@ switch (code) {
 
 	m_p2p->ice.StartNego();
 
-	
+
 	m_p2p->GetSDP(&msg);
 	m_core->sendClientSdp(&msg);
 	break;
@@ -45,7 +45,7 @@ switch (code) {
 	case ClientMsgDefs::P2P_OK:
 		break;
 }
-	
+
 
 
 }

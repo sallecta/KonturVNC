@@ -27,11 +27,11 @@
 
 #include "Transport.h"
 
-#include "network/socket/SocketIPv4.h"
+#include "../network/socket/SocketIPv4.h"
 
-#include "win-system/Pipe.h"
-#include "win-system/PipeClient.h"
-#include "win-system/PipeServer.h"
+#include "../win-system/Pipe.h"
+#include "../win-system/PipeClient.h"
+#include "../win-system/PipeServer.h"
 
 /**
  * Transport factory.

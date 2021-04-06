@@ -25,9 +25,9 @@
 #ifndef __SESSIONCHANGESWATCHER_H__
 #define __SESSIONCHANGESWATCHER_H__
 
-#include "thread/GuiThread.h"
-#include "util/AnEventListener.h"
-#include "log-writer/LogWriter.h"
+#include "../thread/GuiThread.h"
+#include "../util/AnEventListener.h"
+#include "../log-writer/LogWriter.h"
 
 class SessionChangesWatcher : public GuiThread
 {

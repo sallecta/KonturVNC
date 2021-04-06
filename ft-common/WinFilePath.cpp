@@ -23,7 +23,7 @@
 //
 
 #include "WinFilePath.h"
-#include "win-system/Environment.h"
+#include "../win-system/Environment.h"
 #include <shlobj.h>
 
 
@@ -84,7 +84,7 @@ void WinFilePath::setString(const TCHAR *string)
 		str.setString(specFolder.getString());
 		str.appendString(tmp.getString());
   }
-	
+
 	str.getSubstring(&specFolder,0,5);
 
 	if(specFolder.isEqualTo(_T("[Docs]"))){

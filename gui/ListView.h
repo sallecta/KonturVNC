@@ -25,7 +25,7 @@
 #ifndef __LISTVIEW_H_
 #define __LISTVIEW_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <commctrl.h>
 #include "Control.h"
 
@@ -119,7 +119,7 @@ public:
   LPARAM getItemData(int index);
 
   //
-  // Returns first selected list view item 
+  // Returns first selected list view item
   //
 
   ListViewItem getSelectedItem();

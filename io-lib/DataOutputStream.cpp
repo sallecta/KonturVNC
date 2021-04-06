@@ -24,7 +24,7 @@
 
 #include <crtdbg.h>
 #include "DataOutputStream.h"
-#include "util/Utf8StringStorage.h"
+#include "../util/Utf8StringStorage.h"
 #include <vector>
 
 #define GETBYTE(x, n) (((x) >> ((n) * 8)) & 0xFF)

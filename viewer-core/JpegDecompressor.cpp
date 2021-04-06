@@ -24,8 +24,8 @@
 
 #include "JpegDecompressor.h"
 
-#include "util/AnsiStringStorage.h"
-#include "util/Exception.h"
+#include "../util/AnsiStringStorage.h"
+#include "../util/Exception.h"
 
 JpegDecompressor::JpegDecompressor()
 {
@@ -134,7 +134,7 @@ void JpegDecompressor::decompress(vector<UINT8> &buffer,
 void JpegDecompressor::init()
 {
   jpeg_create_decompress(&m_jpeg.cinfo);
-  
+
   m_jpeg.cinfo.err = jpeg_std_error(&m_jpeg.jerr);
   m_jpeg.cinfo.err->error_exit = errorExit;
   m_jpeg.cinfo.err->output_message = outputMessage;

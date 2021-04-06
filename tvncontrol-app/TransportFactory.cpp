@@ -26,7 +26,7 @@
 #include "SocketIPv4Transport.h"
 #include "NamedPipeTransport.h"
 
-#include "win-system/SecurityAttributes.h"
+#include "../win-system/SecurityAttributes.h"
 
 Transport *TransportFactory::createSocketClientTransport(const TCHAR *connectHost,
                                                          unsigned int connectPort) throw(SocketException)

@@ -26,11 +26,11 @@
 #define __VIEWPORT_H__
 
 #include "ViewPortState.h"
-#include "rfb/FrameBuffer.h"
-#include "desktop/Desktop.h"
-#include "thread/LocalMutex.h"
-#include "util/DateTime.h"
-#include "log-writer/LogWriter.h"
+#include "../rfb/FrameBuffer.h"
+#include "../lib_desktop/Desktop.h"
+#include "../thread/LocalMutex.h"
+#include "../util/DateTime.h"
+#include "../log-writer/LogWriter.h"
 
 // This class calculates actual view port rectangle.
 // Typical usage:

@@ -25,7 +25,7 @@
 #ifndef _PORT_MAPPING_H_
 #define _PORT_MAPPING_H_
 
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 #include "PortMappingRect.h"
 
 class PortMapping

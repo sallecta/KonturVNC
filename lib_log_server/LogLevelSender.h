@@ -25,9 +25,9 @@
 #ifndef __LOGLEVELSENDER_H__
 #define __LOGLEVELSENDER_H__
 
-#include "thread/Thread.h"
-#include "win-system/WindowsEvent.h"
-#include "io-lib/DataOutputStream.h"
+#include "../thread/Thread.h"
+#include "../win-system/WindowsEvent.h"
+#include "../io-lib/DataOutputStream.h"
 
 class LogLevelSender : public Thread
 {

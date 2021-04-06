@@ -25,7 +25,7 @@
 #ifndef __FILECHANNEL_H__
 #define __FILECHANNEL_H__
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 
 class FileChannel : public Channel
 {

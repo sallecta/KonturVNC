@@ -25,7 +25,7 @@
 #ifndef __HOOKLOADERAPPLICATION_H__
 #define __HOOKLOADERAPPLICATION_H__
 
-#include "win-system/LocalWindowsApplication.h"
+#include "../win-system/LocalWindowsApplication.h"
 #include "ParentWatcher.h"
 
 class HookLoaderApplication : public WindowsApplication,

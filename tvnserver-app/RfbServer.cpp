@@ -23,7 +23,7 @@
 //
 
 #include "RfbServer.h"
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 RfbServer::RfbServer(const TCHAR *bindHost, unsigned short bindPort,
                      RfbClientManager *clientManager,

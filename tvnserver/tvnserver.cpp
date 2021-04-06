@@ -27,7 +27,7 @@
 #include "../tvnserver-app/WinEventLogWriter.h"
 #include "../util/ResourceLoader.h"
 #include "../tvncontrol-app/ControlCommandLine.h"
-#include "util/StringStorage.h"//not working in linker
+#include "../util/StringStorage.h"//not working in linker
 //#include "util/StringStorage.h"
 #include "../util/Singleton.h"
 #include "../win-system/WinCommandLineArgs.h"
@@ -36,25 +36,25 @@
 //#include "util/winhdr.h"
 //#include "util/CommandLine.h"
 
-#include "tvnserver-app/TvnService.h"
-#include "tvnserver-app/TvnServerApplication.h"
-#include "tvnserver-app/QueryConnectionApplication.h"
-#include "tvnserver-app/DesktopServerApplication.h"
-#include "tvnserver-app/AdditionalActionApplication.h"
-#include "tvnserver-app/ServiceControlApplication.h"
-#include "tvnserver-app/ServiceControlCommandLine.h"
-#include "tvnserver-app/QueryConnectionCommandLine.h"
-#include "tvnserver-app/DesktopServerCommandLine.h"
+#include "../tvnserver-app/TvnService.h"
+#include "../tvnserver-app/TvnServerApplication.h"
+#include "../tvnserver-app/QueryConnectionApplication.h"
+#include "../tvnserver-app/DesktopServerApplication.h"
+#include "../tvnserver-app/AdditionalActionApplication.h"
+#include "../tvnserver-app/ServiceControlApplication.h"
+#include "../tvnserver-app/ServiceControlCommandLine.h"
+#include "../tvnserver-app/QueryConnectionCommandLine.h"
+#include "../tvnserver-app/DesktopServerCommandLine.h"
 
-#include "tvncontrol-app/ControlApplication.h"
+#include "../tvncontrol-app/ControlApplication.h"
 
-#include "tvnserver/resource.h"
-#include "tvnserver-app/CrashHook.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../tvnserver/resource.h"
+#include "../tvnserver-app/CrashHook.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 
-#include "win-system/Environment.h"
-#include "win-system/RegistryKey.h"
+#include "../win-system/Environment.h"
+#include "../win-system/RegistryKey.h"
 
 
 

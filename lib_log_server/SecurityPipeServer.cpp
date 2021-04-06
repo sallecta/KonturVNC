@@ -23,12 +23,12 @@
 //
 
 #include "SecurityPipeServer.h"
-#include "win-system/PipeServer.h"
-#include "win-system/PipeClient.h"
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "win-system/Environment.h"
-#include "win-system/WinHandles.h"
+#include "../win-system/PipeServer.h"
+#include "../win-system/PipeClient.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../win-system/Environment.h"
+#include "../win-system/WinHandles.h"
 #include "ConnectionTimer.h"
 #include <time.h>
 

@@ -23,7 +23,7 @@
 //
 
 #include <crtdbg.h>
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "BaseWindow.h"
 
 BaseWindow::BaseWindow()

@@ -25,7 +25,7 @@
 #ifndef _WIN_FILE_PATH_H_
 #define _WIN_FILE_PATH_H_
 
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class WinFilePath : public StringStorage
 {

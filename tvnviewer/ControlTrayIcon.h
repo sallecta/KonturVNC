@@ -25,8 +25,8 @@
 #ifndef _CONTROL_TRAY_ICON_H_
 #define _CONTROL_TRAY_ICON_H_
 
-#include "gui/NotifyIcon.h"
-#include "gui/Menu.h"
+#include "../gui/NotifyIcon.h"
+#include "../gui/Menu.h"
 #include "TvnViewer.h"
 
 #include "resource.h"
@@ -55,7 +55,7 @@ protected:
   // Show login-dialog after click "New connection..." in pop-up menu of tray icon
   //
   virtual void onNewConnection();
-  
+
   //
   // Show dialog with connection options after click
   // "Options for incoming connection..." in pop-up menu of tray icon
@@ -66,7 +66,7 @@ protected:
   // Show dialog with configuration of viewer
   //
   virtual void onConfiguration();
-  
+
   //
   // Show about-dialog of viewer
   //

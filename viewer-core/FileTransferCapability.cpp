@@ -31,7 +31,7 @@
 #include "ft-client-lib/FileTransferCore.h"
 
 #include "ft-common/FTMessage.h"
-#include "rfb/VendorDefs.h"
+#include "../rfb/VendorDefs.h"
 
 FileTransferCapability::FileTransferCapability(Logger *logger)
 : m_logWriter(logger),

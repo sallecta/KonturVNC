@@ -23,10 +23,10 @@
 //
 
 #include "FileAccount.h"
-#include "util/Unicode.h"
-#include "file-lib/File.h"
-#include "thread/AutoLock.h"
-#include "file-lib/EOFException.h"
+#include "../util/Unicode.h"
+#include "../file-lib/File.h"
+#include "../thread/AutoLock.h"
+#include "../file-lib/EOFException.h"
 
 FileAccount::FileAccount(const TCHAR *logDir,
                          const TCHAR *fileName,

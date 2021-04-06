@@ -23,10 +23,10 @@
 //
 
 #include "AboutDialog.h"
-#include "win-system/Shell.h"
-#include "win-system/VersionInfo.h"
-#include "win-system/Environment.h"
-#include "gui/Control.h"
+#include "../win-system/Shell.h"
+#include "../win-system/VersionInfo.h"
+#include "../win-system/Environment.h"
+#include "../gui/Control.h"
 #include "BuildTime.h"
 #include "resource.h"
 

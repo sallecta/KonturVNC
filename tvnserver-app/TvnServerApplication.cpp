@@ -26,15 +26,15 @@
 #include "ServerCommandLine.h"
 #include "TvnServerHelp.h"
 
-#include "thread/GlobalMutex.h"
+#include "../thread/GlobalMutex.h"
 
-#include "util/ResourceLoader.h"
-#include "util/StringTable.h"
-#include "tvnserver-app/NamingDefs.h"
-#include "win-system/WinCommandLineArgs.h"
+#include "../util/ResourceLoader.h"
+#include "../util/StringTable.h"
+#include "../tvnserver-app/NamingDefs.h"
+#include "../win-system/WinCommandLineArgs.h"
 
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 TvnServerApplication::TvnServerApplication(HINSTANCE hInstance,
                                            const TCHAR *windowClassName,
@@ -62,7 +62,7 @@ StringStorage firstKey(_T(""));
   try {
     ServerCommandLine parser;
     WinCommandLineArgs cmdArgs(m_commandLine.getString());
-	
+
     if (!parser.parse(&cmdArgs) || parser.showHelp()) {
       throw Exception(_T("Wrong command line argument"));
     }
@@ -72,7 +72,7 @@ StringStorage firstKey(_T(""));
     return 0;
   }
 
-    
+
   // Reject 2 instances of TightVNC server application.
 
   //GlobalMutex *appInstanceMutex;

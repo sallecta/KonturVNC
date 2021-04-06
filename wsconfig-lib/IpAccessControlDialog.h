@@ -25,12 +25,12 @@
 #ifndef _IP_ACCESS_CONTROL_DIALOG_H_
 #define _IP_ACCESS_CONTROL_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/ListView.h"
-#include "gui/SpinControl.h"
-#include "gui/BalloonTip.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/ListView.h"
+#include "../gui/SpinControl.h"
+#include "../gui/BalloonTip.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 #include "EditIpAccessRuleDialog.h"
 

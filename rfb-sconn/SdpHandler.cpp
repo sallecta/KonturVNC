@@ -1,14 +1,14 @@
 
 #include "SdpHandler.h"
-#include "rfb/MsgDefs.h"
+#include "../rfb/MsgDefs.h"
 
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 
 SdpHandler::SdpHandler(RfbCodeRegistrator *registrator,
                              RfbOutputGate *output,
                              LogWriter *log, P2pTransport * p2p)
-: 
+:
   m_output(output), m_log(log), m_p2p(p2p)
 {
   // Request codes
@@ -37,7 +37,7 @@ m_output->writeUInt32(length);
 m_output->writeFully(msg.getString(), length);
 m_output->flush();
 }
-  
+
 
 }
 

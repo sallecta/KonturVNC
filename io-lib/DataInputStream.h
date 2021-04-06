@@ -25,7 +25,7 @@
 #ifndef _DATA_INPUT_STREAM_H_
 #define _DATA_INPUT_STREAM_H_
 
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 #include "InputStream.h"
 #include "IOException.h"
 

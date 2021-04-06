@@ -25,7 +25,7 @@
 #ifndef _OPERATION_NOT_PERMITTED_EXECEPTIONH_H_
 #define _OPERATION_NOT_PERMITTED_EXECEPTIONH_H_
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 //
 // This exception is raised when client receives valid (from ft protocol extension

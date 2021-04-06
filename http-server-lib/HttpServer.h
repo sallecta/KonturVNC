@@ -25,9 +25,9 @@
 #ifndef _HTTP_SERVER_H_
 #define _HTTP_SERVER_H_
 
-#include "util/CommonHeader.h"
-#include "network/TcpServer.h"
-#include "log-writer/LogWriter.h"
+#include "../util/CommonHeader.h"
+#include "../network/TcpServer.h"
+#include "../log-writer/LogWriter.h"
 
 /**
  * Simple tcp server that accepts connections and give management over

@@ -33,10 +33,10 @@
 #include "OptionsDialog.h"
 #include "ViewerCollector.h"
 #include "ReconnectWnd.h"
-#include "win-system/WindowsApplication.h"
+#include "../win-system/WindowsApplication.h"
 
-#include "log-writer/LogWriter.h"
-#include "thread/AutoLock.h"
+#include "../log-writer/LogWriter.h"
+#include "../thread/AutoLock.h"
 
 #include <map>
 

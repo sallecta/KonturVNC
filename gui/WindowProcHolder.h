@@ -25,7 +25,7 @@
 #ifndef _WINDOW_PROC_HOLDER_H_
 #define _WINDOW_PROC_HOLDER_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class WindowProcHolder
 {

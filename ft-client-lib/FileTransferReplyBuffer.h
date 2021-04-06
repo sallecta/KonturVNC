@@ -27,15 +27,15 @@
 
 #include "FileTransferEventHandler.h"
 
-#include "io-lib/DataInputStream.h"
+#include "../io-lib/DataInputStream.h"
 
 #include "ft-common/FileInfo.h"
-#include "util/Inflater.h"
-#include "util/ZLibException.h"
+#include "../util/Inflater.h"
+#include "../util/ZLibException.h"
 
 #include "ft-common/OperationNotSupportedException.h"
 
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 class FileTransferReplyBuffer : public FileTransferEventHandler
 {

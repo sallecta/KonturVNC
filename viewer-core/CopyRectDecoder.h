@@ -27,7 +27,7 @@
 
 #include "DecoderOfRectangle.h"
 
-#include "region/Point.h"
+#include "../region/Point.h"
 
 class CopyRectDecoder : public DecoderOfRectangle
 {

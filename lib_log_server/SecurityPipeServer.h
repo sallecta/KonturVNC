@@ -25,7 +25,7 @@
 #ifndef __SECURITYPIPESERVER_H__
 #define __SECURITYPIPESERVER_H__
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 #include "TimerListener.h"
 
 // The SecurityPipeServer class generates new security pipe connection by

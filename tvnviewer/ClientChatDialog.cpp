@@ -1,7 +1,7 @@
 #include "ClientChatDialog.h"
 
 #include "resource.h"
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 #include <client-config-lib/ViewerConfig.h>
 
@@ -41,7 +41,7 @@ void ClientChatDialog::initControls()
 
 	RECT Rect;
 	GetWindowRect(hwnd, &Rect);
-	SetWindowPos(hwnd, 
+	SetWindowPos(hwnd,
 		HWND_TOPMOST,
 		Rect.left,
 		Rect.top,
@@ -99,7 +99,7 @@ void ClientChatDialog::Send()
 
 	m_message.getText(&msg);
 
-	if(msg.getLength()>0){ 
+	if(msg.getLength()>0){
 
 		StringStorage fullName(ViewerConfig::getInstance()->getPeerName());
 		m_message.setText(_T(""));

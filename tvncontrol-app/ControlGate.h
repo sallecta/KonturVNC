@@ -25,11 +25,11 @@
 #ifndef _CONTROL_GATE_H_
 #define _CONTROL_GATE_H_
 
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/Channel.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/Channel.h"
 
-#include "thread/LocalMutex.h"
+#include "../thread/LocalMutex.h"
 
 class ControlGate : public DataInputStream, public DataOutputStream,
                     public LocalMutex

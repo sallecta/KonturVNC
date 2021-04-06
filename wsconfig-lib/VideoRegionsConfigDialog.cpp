@@ -22,12 +22,12 @@
 //-------------------------------------------------------------------------
 //
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 #include "VideoRegionsConfigDialog.h"
 #include "ConfigDialog.h"
 #include "UIDataAccess.h"
 #include "CommonInputValidation.h"
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 
 VideoRegionsConfigDialog::VideoRegionsConfigDialog()
 : BaseDialog(IDD_CONFIG_VIDEO_CLASSES_PAGE), m_parentDialog(NULL)
@@ -114,13 +114,13 @@ void VideoRegionsConfigDialog::apply()
     AutoLock al(m_config);
 
     StringVector *videoClasses = m_config->getVideoClassNames();
-  
+
     videoClasses->clear();
-  
+
     //
     // Split text from text area to string array
     //
-  
+
     StringStorage classNamesStringStorage;
     m_videoRegions.getText(&classNamesStringStorage);
 

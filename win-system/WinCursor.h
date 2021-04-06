@@ -25,8 +25,8 @@
 #ifndef __WINCURSOR_H__
 #define __WINCURSOR_H__
 
-#include "region/Point.h"
-#include "util/CommonHeader.h"
+#include "../region/Point.h"
+#include "../util/CommonHeader.h"
 
 class WinCursor
 {

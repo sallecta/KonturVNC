@@ -23,7 +23,7 @@
 //
 
 #include "ServerCommandLine.h"
-#include "util/CommandLine.h"
+#include "../util/CommandLine.h"
 
 ServerCommandLine::ServerCommandLine()
 {
@@ -43,7 +43,7 @@ bool ServerCommandLine::parse(const CommandLineArgs *cmdArgs)
     { _T("/h"), NO_ARG },
     { _T("/?"), NO_ARG },
     { _T("-run"), NO_ARG },
-	{ _T("-system"), NO_ARG },	 
+	{ _T("-system"), NO_ARG },
   };
 
   if (!CommandLine::parse(format, sizeof(format) / sizeof(CommandLineFormat), cmdArgs)) {

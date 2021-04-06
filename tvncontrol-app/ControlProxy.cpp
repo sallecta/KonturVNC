@@ -23,8 +23,8 @@
 //
 
 #include "ControlProxy.h"
-#include "tvncontrol-app/ControlProto.h"
-#include "thread/AutoLock.h"
+#include "../tvncontrol-app/ControlProto.h"
+#include "../thread/AutoLock.h"
 
 #include <crtdbg.h>
 

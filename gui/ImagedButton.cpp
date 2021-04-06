@@ -23,7 +23,7 @@
 //
 
 #include "ImagedButton.h"
-#include "util/UnicodeStringStorage.h"
+#include "../util/UnicodeStringStorage.h"
 #include <crtdbg.h>
 
 ImagedButton::ImagedButton()
@@ -221,7 +221,7 @@ void ImagedButton::drawIcon(HDC* dc, RECT* imageRect, bool isPressed, bool isDis
   DrawState(*dc, NULL, NULL, (LPARAM)*m_icon, 0,
             imageRect->left, imageRect->top,
             (imageRect->right - imageRect->left),
-            (imageRect->bottom - imageRect->top), 
+            (imageRect->bottom - imageRect->top),
             (isDisabled ? DSS_DISABLED : DSS_NORMAL) | DST_ICON);
 } // End of drawIcon
 

@@ -23,7 +23,7 @@
 //
 
 #include "SessionChangesWatcher.h"
-#include "win-system/WTS.h"
+#include "../win-system/WTS.h"
 
 SessionChangesWatcher::SessionChangesWatcher(AnEventListener *extSessionChangesListener,
                                              LogWriter *log)

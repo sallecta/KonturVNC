@@ -24,7 +24,7 @@
 
 #include "ZrleDecoder.h"
 
-#include "io-lib/ByteArrayInputStream.h"
+#include "../io-lib/ByteArrayInputStream.h"
 
 #include <vector>
 
@@ -88,7 +88,7 @@ void ZrleDecoder::decode(RfbInputGate *input,
 
   for (int y = dstRect->top; y < dstRect->bottom; y += TILE_SIZE) {
     for (int x = dstRect->left; x < dstRect->right; x += TILE_SIZE) {
-      Rect tileRect(x, y, 
+      Rect tileRect(x, y,
                     min(x + TILE_SIZE, dstRect->right),
                     min(y + TILE_SIZE, dstRect->bottom));
 
@@ -198,11 +198,11 @@ void ZrleDecoder::readSolidTile(DataInputStream *input,
   char solid[4] = {0, 0, 0, 0};
 
   input->readFully(solid + m_numberFirstByte, m_bytesPerPixel);
-  
+
   char *pixelsPtr = &pixels.front();
   // TODO: Can we optimize this?
   for (size_t i = 0; i < tileLength; i++) {
-    memcpy(pixelsPtr + m_numberFirstByte, solid, m_bytesPerPixel); 
+    memcpy(pixelsPtr + m_numberFirstByte, solid, m_bytesPerPixel);
     pixelsPtr += m_bytesPerPixel;
   }
 }
@@ -279,7 +279,7 @@ void ZrleDecoder::readPlainRleTile(DataInputStream *input,
       } else {
         throw Exception(_T("Corrupt protocol in Zrle-decoder (plain rle tile)."));
       }
-      indexPixel += m_bytesPerPixel; 
+      indexPixel += m_bytesPerPixel;
     }
   }
 }
@@ -303,7 +303,7 @@ void ZrleDecoder::readPaletteRleTile(DataInputStream *input,
       color -= 128;
       runLength = readRunLength(input);
     }
-    
+
     char * pixelsPtr = &pixels[indexPixel * m_bytesPerPixel];
     for(size_t i = 0; i < runLength; i++) {
       memcpy(pixelsPtr, &palette[color], m_bytesPerPixel);
@@ -328,7 +328,7 @@ void ZrleDecoder::drawTile(FrameBuffer *fb,
 
   int x = tileRect->left;
   int y = tileRect->top;
-   
+
   const char *pixelsPtr = &pixels->front();
   char *bufferPtr = 0;
   for (int i = 0; i < tileLength; i++) {

@@ -25,8 +25,8 @@
 #ifndef __DIBFRAMEBUFFER_H__
 #define __DIBFRAMEBUFFER_H__
 
-#include "rfb/FrameBuffer.h"
-#include "win-system/DibSection.h"
+#include "../rfb/FrameBuffer.h"
+#include "../win-system/DibSection.h"
 
 // This class is a wrapper for a FramBuffer and a DIB section.
 // It changes DIB section proerties by oneself according to FrameBuffer
@@ -98,9 +98,9 @@ public:
   // Note that this function does not copy any transparent windows.
   // This function throwing an exception on a failure.
   void blitFromDibSection(const Rect *rect);
-  
+
   void saveScreenshot();
-  
+
   // This function copies with strech a block of bits from the DIB section to the source DC
   // (that has been used to create the compatible DIB section).
   // Note that this function does not copy any transparent windows.

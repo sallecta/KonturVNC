@@ -25,16 +25,16 @@
 #include "QueryConnectionApplication.h"
 #include "QueryConnectionCommandLine.h"
 #include "QueryConnectionDialog.h"
-#include "win-system/CurrentConsoleProcess.h"
+#include "../win-system/CurrentConsoleProcess.h"
 #include "TvnServerHelp.h"
 
-#include "server-config-lib/Configurator.h"
-#include "win-system/Environment.h"
-#include "win-system/Process.h"
-#include "win-system/WinCommandLineArgs.h"
-#include "util/ResourceLoader.h"
-#include "tvnserver/resource.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../server-config-lib/Configurator.h"
+#include "../win-system/Environment.h"
+#include "../win-system/Process.h"
+#include "../win-system/WinCommandLineArgs.h"
+#include "../util/ResourceLoader.h"
+#include "../tvnserver/resource.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 QueryConnectionApplication::QueryConnectionApplication(HINSTANCE hInstance,
                                                        const TCHAR *windowClassName,

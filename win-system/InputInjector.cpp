@@ -24,7 +24,7 @@
 
 #include "InputInjector.h"
 #include "Keyboard.h"
-#include "win-system/Environment.h"
+#include "../win-system/Environment.h"
 #include <vector>
 
 #include <crtdbg.h>

@@ -25,7 +25,7 @@
 #ifndef _SHAREWINDOWCOMMAND_H_
 #define _SHAREWINDOWCOMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

@@ -24,7 +24,7 @@
 
 #include "ConnectionConfig.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 #include <crtdbg.h>
 

@@ -26,7 +26,7 @@
 #define __RFB_RRE_ENCODER_H_INCLUDED__
 
 #include "Encoder.h"
-#include "region/Region.h"
+#include "../region/Region.h"
 
 class RreEncoder : public Encoder
 {
@@ -52,7 +52,7 @@ private:
 
   // Coordinates of subrectangles.
   std::vector<Rect> m_rects;
-  
+
   // All rectangles are devided (in splitRectangle() function)
   // into new rectangles with maximum size == 64.
   // Rect size == 64 for a better performance and less memory consumption.

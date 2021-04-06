@@ -25,9 +25,9 @@
 #ifndef _IMPERSONATOR_H_
 #define _IMPERSONATOR_H_
 
-#include "util/CommonHeader.h"
-#include "util/StringStorage.h"
-#include "log-writer/LogWriter.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringStorage.h"
+#include "../log-writer/LogWriter.h"
 
 #include "SystemException.h"
 

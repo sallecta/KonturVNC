@@ -30,7 +30,7 @@
 #include "../win-system/WindowsEvent.h"
 #include "../thread/Thread.h"
 #include "../network/RfbOutputGate.h"
-#include "../desktop/Desktop.h"
+#include "../lib_desktop/Desktop.h"
 #include "../fb-update-sender/UpdateSender.h"
 #include "../log-writer/LogWriter.h"
 

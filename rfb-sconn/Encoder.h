@@ -27,12 +27,12 @@
 
 #include <vector>
 
-#include "rfb/FrameBuffer.h"
-#include "io-lib/IOException.h"
-#include "network/RfbOutputGate.h"
-#include "rfb/EncodingDefs.h"
+#include "../rfb/FrameBuffer.h"
+#include "../io-lib/IOException.h"
+#include "../network/RfbOutputGate.h"
+#include "../rfb/EncodingDefs.h"
 #include "EncodeOptions.h"
-#include "rfb/PixelConverter.h"
+#include "../rfb/PixelConverter.h"
 
 //
 // Encoder is the base class for all RFB encoders.

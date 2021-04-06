@@ -24,12 +24,12 @@
 
 
 #include "client-config-lib/ViewerConfig.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 #include "TvnViewer.h"
 #include "ConnectionData.h"
 #include "ConnectionListener.h"
 #include "ViewerCmdLine.h"
-#include "util/ResourceLoader.h"
+#include "../util/ResourceLoader.h"
 
 #include "ClientCrashHook.h"
 
@@ -52,7 +52,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE,
 
   LogWriter logWriter(config.getLogger());
 
-  
+
 
   // resource-loader initialization
   ResourceLoader resourceLoader(hInstance);
@@ -98,6 +98,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE,
                MB_OK | MB_ICONERROR);
     logWriter.debug(ex.getMessage());
   }
-     
+
   return result;
 }

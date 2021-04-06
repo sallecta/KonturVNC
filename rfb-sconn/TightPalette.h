@@ -33,7 +33,7 @@
 #define __RFB_TIGHTPALETTE_H_INCLUDED__
 
 #include <string.h>
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 
 struct TightColorList {
   TightColorList *next;

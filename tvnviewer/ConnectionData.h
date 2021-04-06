@@ -25,8 +25,8 @@
 #ifndef _CONNECTION_DATA_
 #define _CONNECTION_DATA_
 
-#include "util/StringStorage.h"
-#include "rfb/HostPath.h"
+#include "../util/StringStorage.h"
+#include "../rfb/HostPath.h"
 
 class ConnectionData
 {

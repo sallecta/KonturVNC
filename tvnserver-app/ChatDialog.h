@@ -2,11 +2,11 @@
 #ifndef _CHAT_DIALOG_H_
 #define _CHAT_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
-#include "thread/LocalMutex.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
+#include "../thread/LocalMutex.h"
 
-#include "rfb-sconn/TextMsgListener.h"
+#include "../rfb-sconn/TextMsgListener.h"
 
 
 class ChatDialog :
@@ -34,8 +34,8 @@ private:
 	TextBox m_chatlog;
 	TextBox m_message;
 
-	
-		
+
+
 	TextMsgListener *m_extMsgListener;
 
 protected:

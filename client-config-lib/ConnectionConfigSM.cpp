@@ -24,7 +24,7 @@
 
 #include "ConnectionConfigSM.h"
 
-#include "win-system/Registry.h"
+#include "../win-system/Registry.h"
 
 ConnectionConfigSM::ConnectionConfigSM(const TCHAR registryPath[],
                                        const TCHAR entryName[])

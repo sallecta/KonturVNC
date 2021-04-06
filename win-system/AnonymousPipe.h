@@ -25,13 +25,13 @@
 #ifndef __ANONYMOUSPIPE_H__
 #define __ANONYMOUSPIPE_H__
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 #include "Pipe.h"
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "WindowsEvent.h"
-#include "thread/LocalMutex.h"
-#include "log-writer/LogWriter.h"
+#include "../thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
 
 class AnonymousPipe : public Channel, private Pipe
 {

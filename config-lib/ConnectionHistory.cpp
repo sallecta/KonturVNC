@@ -24,7 +24,7 @@
 
 #include "ConnectionHistory.h"
 
-#include "win-system/Registry.h"
+#include "../win-system/Registry.h"
 
 #include <crtdbg.h>
 

@@ -25,30 +25,30 @@
 #include "TvnServer.h"
 #include "WsConfigRunner.h"
 #include "AdditionalActionApplication.h"
-#include "win-system/CurrentConsoleProcess.h"
-#include "win-system/Environment.h"
+#include "../win-system/CurrentConsoleProcess.h"
+#include "../win-system/Environment.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
-#include "thread/GlobalMutex.h"
+#include "../thread/GlobalMutex.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include "wsconfig-lib/TvnLogFilename.h"
 
-#include "network/socket/WindowsSocket.h"
+#include "../network/socket/WindowsSocket.h"
 
-#include "util/StringTable.h"
-#include "util/AnsiStringStorage.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/StringTable.h"
+#include "../util/AnsiStringStorage.h"
+#include "../tvnserver-app/NamingDefs.h"
 
-#include "file-lib/File.h"
+#include "../file-lib/File.h"
 
 // FIXME: Bad dependency on tvncontrol-app.
-#include "tvncontrol-app/TransportFactory.h"
-#include "tvncontrol-app/ControlPipeName.h"
+#include "../tvncontrol-app/TransportFactory.h"
+#include "../tvncontrol-app/ControlPipeName.h"
 
-#include "tvnserver/BuildTime.h"
+#include "../tvnserver/BuildTime.h"
 
 #include <crtdbg.h>
 #include <time.h>

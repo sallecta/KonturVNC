@@ -23,12 +23,12 @@
 //
 
 #include "ControlAuth.h"
-#include "util/AnsiStringStorage.h"
-#include "tvncontrol-app/ControlProto.h"
+#include "../util/AnsiStringStorage.h"
+#include "../tvncontrol-app/ControlProto.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
-#include "util/DesCrypt.h"
+#include "../util/DesCrypt.h"
 
 ControlAuth::ControlAuth(ControlGate *gate, const TCHAR *password)
   throw(IOException, ControlAuthException, Exception)

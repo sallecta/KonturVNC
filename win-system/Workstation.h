@@ -25,7 +25,7 @@
 #ifndef _WORKSTATION_H_
 #define _WORKSTATION_H_
 
-#include "util/winhdr.h"
+#include "../util/winhdr.h"
 
 #include "SystemException.h"
 

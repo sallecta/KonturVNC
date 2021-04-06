@@ -25,7 +25,7 @@
 #ifndef _WIN_STATION_LIBRARY_H_
 #define _WIN_STATION_LIBRARY_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "DynamicLibrary.h"
 

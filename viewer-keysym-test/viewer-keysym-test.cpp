@@ -23,7 +23,7 @@
 //
 
 #include "KeySymTest.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 #include <stdio.h>
 
 int _tmain(int argc, TCHAR *argv[])

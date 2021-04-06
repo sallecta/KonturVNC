@@ -25,13 +25,13 @@
 #ifndef _DECODER_H_
 #define _DECODER_H_
 
-#include "log-writer/LogWriter.h"
-#include "network/RfbInputGate.h"
-#include "region/Rect.h"
-#include "rfb/FrameBuffer.h"
-#include "rfb/EncodingDefs.h"
-#include "thread/AutoLock.h"
-#include "thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
+#include "../network/RfbInputGate.h"
+#include "../region/Rect.h"
+#include "../rfb/FrameBuffer.h"
+#include "../rfb/EncodingDefs.h"
+#include "../thread/AutoLock.h"
+#include "../thread/LocalMutex.h"
 
 class Decoder
 {

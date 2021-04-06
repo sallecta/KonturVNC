@@ -25,7 +25,7 @@
 #ifndef _UI_DATA_ACCESS_H_
 #define _UI_DATA_ACCESS_H_
 
-#include "gui/TextBox.h"
+#include "../gui/TextBox.h"
 
 /**
  * Gives methods to get typized data from ui controls to

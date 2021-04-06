@@ -27,10 +27,10 @@
 #include "HttpReply.h"
 #include "AppletParameter.h"
 #include "VncViewerJarBody.h"
-#include "win-system/Environment.h"
-#include "server-config-lib/Configurator.h"
-#include "util/AnsiStringStorage.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../win-system/Environment.h"
+#include "../server-config-lib/Configurator.h"
+#include "../util/AnsiStringStorage.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 HttpRequestHandler::HttpRequestHandler(DataInputStream *dataInput,
                                        DataOutputStream *dataOutput,

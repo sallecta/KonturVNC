@@ -25,8 +25,8 @@
 #ifndef __LISTENLOGSERVER_H__
 #define __LISTENLOGSERVER_H__
 
-#include "thread/Thread.h"
-#include "win-system/PipeServer.h"
+#include "../thread/Thread.h"
+#include "../win-system/PipeServer.h"
 #include "ConnectionListener.h"
 
 class ListenLogServer : private Thread

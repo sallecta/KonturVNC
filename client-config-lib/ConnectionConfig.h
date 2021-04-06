@@ -27,9 +27,9 @@
 
 #include "config-lib/SettingsManager.h"
 
-#include "thread/LocalMutex.h"
+#include "../thread/LocalMutex.h"
 
-#include "rfb/EncodingDefs.h"
+#include "../rfb/EncodingDefs.h"
 
 //
 // Contains options of connection configuration.

@@ -25,8 +25,8 @@
 #ifndef _FILE_H_
 #define _FILE_H_
 
-#include "util/CommonHeader.h"
-#include "util/inttypes.h"
+#include "../util/CommonHeader.h"
+#include "../util/inttypes.h"
 
 class File
 {

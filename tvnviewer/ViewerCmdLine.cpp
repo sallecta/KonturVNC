@@ -24,7 +24,7 @@
 
 #include "ViewerCmdLine.h"
 #include "config-lib/IniFileSettingsManager.h"
-#include "win-system/SystemException.h"
+#include "../win-system/SystemException.h"
 
 const TCHAR ViewerCmdLine::HELP[] = _T("help");
 const TCHAR ViewerCmdLine::HELP_SHORT[] = _T("h");
@@ -91,7 +91,7 @@ bool ViewerCmdLine::processCmdLine(const CmdLineOption *cmdLines, size_t lenCmdL
          }
        }
        if (m_wpcl.findOptionValue(cmdLines[i].keyName, &strOut)) {
-         m_options[cmdLines[i].keyName] = strOut; 
+         m_options[cmdLines[i].keyName] = strOut;
        }
     }
     if (countRecog != m_wpcl.getOptionsCount()) {
@@ -169,7 +169,7 @@ void ViewerCmdLine::parse()
   parseCopyRect();
   parseViewOnly();
   parseJpegImageQuality();
-  
+
 }
 
 void ViewerCmdLine::onHelp()
@@ -236,7 +236,7 @@ void ViewerCmdLine::parseOptionsFile()
   } else {
     parsePassword();
   }
-  
+
   sm.setApplicationName(_T("options"));
   m_conConf->loadFromStorage(&sm);
 }
@@ -276,7 +276,7 @@ void ViewerCmdLine::parseEncoding()
   }
 }
 
-void ViewerCmdLine::parseMouseShape() 
+void ViewerCmdLine::parseMouseShape()
 {
   if (isPresent(MOUSE_LOCAL)) {
     int localCursorShape = ConnectionConfig::DOT_CURSOR;

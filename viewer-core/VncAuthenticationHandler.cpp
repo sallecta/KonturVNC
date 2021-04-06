@@ -24,8 +24,8 @@
 
 #include "VncAuthenticationHandler.h"
 
-#include "rfb/AuthDefs.h"
-#include "rfb/VendorDefs.h"
+#include "../rfb/AuthDefs.h"
+#include "../rfb/VendorDefs.h"
 
 #include "viewer-core/VncAuthentication.h"
 

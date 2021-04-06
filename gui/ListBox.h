@@ -26,7 +26,7 @@
 #define _LIST_BOX_H_
 
 #include "Control.h"
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class ListBox : public Control
 {

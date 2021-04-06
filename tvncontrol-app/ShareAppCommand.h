@@ -25,7 +25,7 @@
 #ifndef _SHAREAPPCOMMAND_H_
 #define _SHAREAPPCOMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

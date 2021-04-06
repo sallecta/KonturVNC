@@ -24,7 +24,7 @@
 
 #include "FileTransferSecurity.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 FileTransferSecurity::FileTransferSecurity(Desktop *desktop, LogWriter *log)
 : Impersonator(log),

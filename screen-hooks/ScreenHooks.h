@@ -25,7 +25,7 @@
 #ifndef __SCREENHOOKS_H__
 #define __SCREENHOOKS_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 extern "C"
 {

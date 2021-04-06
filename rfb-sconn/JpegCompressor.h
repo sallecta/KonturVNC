@@ -27,8 +27,8 @@
 
 #include <stdio.h>
 
-#include "util/CommonHeader.h"
-#include "rfb/PixelFormat.h"
+#include "../util/CommonHeader.h"
+#include "../rfb/PixelFormat.h"
 
 // For Windows platforms only.
 // For using libjpeg for encoding go to Property Pages of tvnserver -> Linker -> Input -> Additional Dependencies
@@ -38,9 +38,9 @@
 // Also you need to delete LIBJPEG_TURBO directive from the CommonHeader.h file.
 
 #ifdef LIBJPEG_TURBO
-#include "libjpeg-turbo/jpeglib.h"
+#include "../libjpeg-turbo/jpeglib.h"
 #else
-#include "libjpeg/jpeglib.h"
+#include "../libjpeg/jpeglib.h"
 #endif
 
 //

@@ -25,8 +25,8 @@
 #ifndef __CONTROL_H_
 #define __CONTROL_H_
 
-#include "util/CommonHeader.h"
-#include "util/StringStorage.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringStorage.h"
 
 enum VerticalAlignment
 {
@@ -126,7 +126,7 @@ public:
 
   HWND getWindow();
 
-  void operator= (const HWND& window) 
+  void operator= (const HWND& window)
   {
     setWindow(window);
   };

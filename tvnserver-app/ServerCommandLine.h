@@ -25,7 +25,7 @@
 #ifndef __SERVERCOMMANDLINE_H__
 #define __SERVERCOMMANDLINE_H__
 
-#include "util/CommandLine.h"
+#include "../util/CommandLine.h"
 
 /**
  * TvnServerApplication command line parser.

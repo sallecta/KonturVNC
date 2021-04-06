@@ -25,7 +25,7 @@
 #ifndef _TOOL_BAR_H_
 #define _TOOL_BAR_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class ToolBar
 {
@@ -36,7 +36,7 @@ public:
   static const int TB_Style_sep = 0;
   static const int TB_Style_gap = 1;
 
-   ///////////////////////////////////////////////////////// 
+   /////////////////////////////////////////////////////////
   // Auto mode procedures
   /////////////////////////////////////////////////////////
 
@@ -58,18 +58,18 @@ public:
   void setButtonsRange(DWORD id);
 
   // attachToolBar()
-  // This one will create and attach toolbar window to 
+  // This one will create and attach toolbar window to
   // which handle is passed in hwnd. Only for toolbar from bitmap.
   void attachToolBar(HWND hwnd);
 
-  ///////////////////////////////////////////////////////// 
+  /////////////////////////////////////////////////////////
   // Manual mode procedures
   /////////////////////////////////////////////////////////
 
-  // create() creates a windows toolbar. dwStyle is a combination of 
+  // create() creates a windows toolbar. dwStyle is a combination of
   // the toolbar control and button styles. It returns true if successful,
   // or false otherwise.
-  bool create(int tbID, HWND parentHwnd, 
+  bool create(int tbID, HWND parentHwnd,
        DWORD dwStyle = WS_CHILD | WS_VISIBLE | TBSTYLE_FLAT);
 
   // addBitmap() adds one or more images from resources to
@@ -79,7 +79,7 @@ public:
   LRESULT addBitmap(int nButtons, UINT bitmapID);
 
   // addSystemBitmap() adds the system-defined button bitmaps to the list
-  // of the toolbar button specifying by stdBitmapID. Returns the index of 
+  // of the toolbar button specifying by stdBitmapID. Returns the index of
   // the first new image if successful, or -1 otherwise.
   LRESULT addSystemBitmap(UINT stdBitmapID);
 
@@ -87,13 +87,13 @@ public:
   bool addNButton(int nButtons, LPTBBUTTON tbb);
 
   // addButton() adds one button.
-  bool addButton(int iBitmap, int idCommand, BYTE state=TBSTATE_ENABLED, 
+  bool addButton(int iBitmap, int idCommand, BYTE state=TBSTATE_ENABLED,
                  BYTE style=TBSTYLE_BUTTON,  UINT dwData=0, int iString=0);
 
   // checkButton() checks or unchecks a given button in a toolbar control.
   bool checkButton(int idButton, bool check);
 
-  // enableButton() enables or disables the specified button 
+  // enableButton() enables or disables the specified button
   // in the toolbar.
   bool enableButton(int idButton, bool enable);
 
@@ -125,7 +125,7 @@ public:
   // show() displays the toolbar window.
   void show();
 
-  // getTotalWidth() returns the total size of all buttons and 
+  // getTotalWidth() returns the total size of all buttons and
   // separators in the toolbar.
   int getTotalWidth();
 

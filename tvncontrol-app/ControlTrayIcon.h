@@ -25,15 +25,15 @@
 #ifndef _CONTROL_TRAY_ICON_H_
 #define _CONTROL_TRAY_ICON_H_
 
-#include "gui/NotifyIcon.h"
-#include "gui/WindowProcHolder.h"
-#include "gui/drawing/Icon.h"
+#include "../gui/NotifyIcon.h"
+#include "../gui/WindowProcHolder.h"
+#include "../gui/drawing/Icon.h"
 
-#include "thread/Thread.h"
-#include "thread/LocalMutex.h"
+#include "../thread/Thread.h"
+#include "../thread/LocalMutex.h"
 
-#include "util/Command.h"
-#include "util/MacroCommand.h"
+#include "../util/Command.h"
+#include "../util/MacroCommand.h"
 
 #include "wsconfig-lib/ConfigDialog.h"
 

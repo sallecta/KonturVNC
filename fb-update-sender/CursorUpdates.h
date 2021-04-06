@@ -25,12 +25,12 @@
 #ifndef __CURSORUPDATES_H__
 #define __CURSORUPDATES_H__
 
-#include "rfb-sconn/EncodeOptions.h"
-#include "rfb/CursorShape.h"
-#include "desktop/UpdateContainer.h"
-#include "util/DateTime.h"
-#include "thread/LocalMutex.h"
-#include "log-writer/LogWriter.h"
+#include "../rfb-sconn/EncodeOptions.h"
+#include "../rfb/CursorShape.h"
+#include "../lib_desktop/UpdateContainer.h"
+#include "../util/DateTime.h"
+#include "../thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
 
 class CursorUpdates
 {

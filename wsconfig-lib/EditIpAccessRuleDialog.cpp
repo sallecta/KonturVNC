@@ -22,10 +22,10 @@
 //-------------------------------------------------------------------------
 //
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 #include "EditIpAccessRuleDialog.h"
-#include "util/StringParser.h"
-#include "util/AnsiStringStorage.h"
+#include "../util/StringParser.h"
+#include "../util/AnsiStringStorage.h"
 
 EditIpAccessRuleDialog::EditIpAccessRuleDialog()
 : BaseDialog(IDD_EDIT_IP_ACESS_CONTROL), m_data(NULL), m_isOpenedForEdit(false)

@@ -22,13 +22,13 @@
 //-------------------------------------------------------------------------
 //
 
-#include "win-system/RegistryKey.h"
+#include "../win-system/RegistryKey.h"
 #include "MsiProperties.h"
-#include "util/AnsiStringStorage.h"
-#include "util/VncPassCrypt.h"
-#include "server-config-lib/Configurator.h"
+#include "../util/AnsiStringStorage.h"
+#include "../util/VncPassCrypt.h"
+#include "../server-config-lib/Configurator.h"
 #include "config-lib/RegistrySettingsManager.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 #include <msiquery.h>
 #include <shlwapi.h>

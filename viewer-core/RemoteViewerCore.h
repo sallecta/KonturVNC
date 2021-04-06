@@ -25,15 +25,15 @@
 #ifndef _REMOTE_VIEWER_CORE_H_
 #define _REMOTE_VIEWER_CORE_H_
 
-#include "log-writer/LogWriter.h"
-#include "network/RfbInputGate.h"
-#include "network/RfbOutputGate.h"
-#include "network/socket/SocketStream.h"
-#include "network/socket/SocketIPv4.h"
-#include "rfb/FrameBuffer.h"
-#include "region/Dimension.h"
-#include "region/Point.h"
-#include "thread/Thread.h"
+#include "../log-writer/LogWriter.h"
+#include "../network/RfbInputGate.h"
+#include "../network/RfbOutputGate.h"
+#include "../network/socket/SocketStream.h"
+#include "../network/socket/SocketIPv4.h"
+#include "../rfb/FrameBuffer.h"
+#include "../region/Dimension.h"
+#include "../region/Point.h"
+#include "../thread/Thread.h"
 
 #include "CapsContainer.h"
 #include "CoreEventsAdapter.h"
@@ -43,7 +43,7 @@
 #include "TcpConnection.h"
 #include "tvnviewer/AvilogThread.h"
 
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 #include <map>
 
@@ -374,7 +374,7 @@ public:
   void StartRecord();
 
   void StopRecord();
-  
+
   void setDisplay(int disp);
   void reqReboot();
   void startCP();
@@ -512,7 +512,7 @@ private:
   RfbCapabilityInfo readCapability();
   void sendEncodings();
 
-  
+
   //
   // This function return true, if flag m_wasConnected is true.
   // This flag is true after onConnected().
@@ -599,7 +599,7 @@ private:
   FrameBuffer m_frameBuffer;
 
   // Decoder work with this framebuffer. It is not actual frame buffer,
-  // it only easy buffer, common to all decoders. In future this frame buffer 
+  // it only easy buffer, common to all decoders. In future this frame buffer
   // may be replaced small buffers (e.g. 64KB) into ever decoder.
   //
   // After finish of decoding Decoder copy data to m_frameBuffer.

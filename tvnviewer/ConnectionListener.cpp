@@ -25,7 +25,7 @@
 #include "ConnectionListener.h"
 #include "TvnViewer.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 const TCHAR ConnectionListener::DEFAULT_HOST[] = _T("0.0.0.0");
 
@@ -36,7 +36,7 @@ ConnectionListener::ConnectionListener(WindowsApplication *application,
 {
 }
 
-ConnectionListener::~ConnectionListener() 
+ConnectionListener::~ConnectionListener()
 {
   AutoLock al(&m_connectionsLock);
   while (!m_connections.empty()) {

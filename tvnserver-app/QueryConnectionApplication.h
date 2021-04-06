@@ -25,9 +25,9 @@
 #ifndef _QUERY_CONNECTION_APPLICATION_H_
 #define _QUERY_CONNECTION_APPLICATION_H_
 
-#include "win-system/LocalWindowsApplication.h"
+#include "../win-system/LocalWindowsApplication.h"
 
-#include "win-system/SystemException.h"
+#include "../win-system/SystemException.h"
 
 /**
  * Application that shows "Accept / Reject rfb connection dialog" to user

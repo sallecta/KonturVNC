@@ -27,26 +27,26 @@
 
 #include "../util/CommonHeader.h"
 
-#include "../desktop/WinServiceDesktopFactory.h"
-#include "../desktop/ApplicationDesktopFactory.h"
+#include "../lib_desktop/WinServiceDesktopFactory.h"
+#include "../lib_desktop/ApplicationDesktopFactory.h"
 #include "RfbClientManager.h"
 #include "RfbServer.h"
 #include "ExtraRfbServers.h"
 #include "ControlServer.h"
 #include "TvnServerListener.h"
 
-#include "http-server-lib/HttpServer.h"
+#include "../http-server-lib/HttpServer.h"
 
-#include "thread/ZombieKiller.h"
-#include "thread/LocalMutex.h"
-#include "log-writer/LogWriter.h"
-#include "util/Singleton.h"
-#include "util/ListenerContainer.h"
+#include "../thread/ZombieKiller.h"
+#include "../thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
+#include "../util/Singleton.h"
+#include "../util/ListenerContainer.h"
 #include "NewConnectionEvents.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
-#include "tvncontrol-app/TvnServerInfo.h"
+#include "../tvncontrol-app/TvnServerInfo.h"
 #include "LogInitListener.h"
 
 /**

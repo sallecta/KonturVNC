@@ -24,7 +24,7 @@
 
 #include "TcpServer.h"
 
-#include "network/socket/SocketAddressIPv4.h"
+#include "../network/socket/SocketAddressIPv4.h"
 
 TcpServer::TcpServer(const TCHAR *bindHost, unsigned short bindPort,
                      bool autoStart,

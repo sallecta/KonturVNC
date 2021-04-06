@@ -25,10 +25,10 @@
 #ifndef _REGISTRY_SECURITY_ATTRIBUTES_H_
 #define _REGISTRY_SECURITY_ATTRIBUTES_H_
 
-#include "util/winhdr.h"
+#include "../util/winhdr.h"
 
-#include "win-system/security/SecurityIdentifier.h"
-#include "win-system/security/SecurityDescriptor.h"
+#include "../win-system/security/SecurityIdentifier.h"
+#include "../win-system/security/SecurityDescriptor.h"
 
 #include <AccCtrl.h>
 #include <Aclapi.h>

@@ -25,8 +25,8 @@
 #ifndef _CAPABILITIES_MANAGER_H_
 #define _CAPABILITIES_MANAGER_H_
 
-#include "util/CommonHeader.h"
-#include "util/inttypes.h"
+#include "../util/CommonHeader.h"
+#include "../util/inttypes.h"
 
 class AuthHandler;
 class ServerMessageListener;

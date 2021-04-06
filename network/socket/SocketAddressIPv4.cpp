@@ -30,9 +30,9 @@
 #include "SocketAddressIPv4.h"
 #include "SocketAddressIPv4.h"
 #include "SocketException.h"
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 LocalMutex SocketAddressIPv4::s_resolveMutex;
 

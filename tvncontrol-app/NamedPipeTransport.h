@@ -27,8 +27,8 @@
 
 #include "Transport.h"
 
-#include "win-system/Pipe.h"
-#include "win-system/PipeServer.h"
+#include "../win-system/Pipe.h"
+#include "../win-system/PipeServer.h"
 
 /**
  * Transport that uses pipe as transport.

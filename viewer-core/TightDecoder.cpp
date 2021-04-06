@@ -24,7 +24,7 @@
 
 #include "TightDecoder.h"
 
-#include "rfb/StandardPixelFormatFactory.h"
+#include "../rfb/StandardPixelFormatFactory.h"
 
 TightDecoder::TightDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter),
@@ -72,7 +72,7 @@ void TightDecoder::decode(RfbInputGate *input,
   if (compressionType > MAX_SUBENCODING) {
     throw Exception(_T("Sub-encoding in Tight-encoder are not valid"));
   }
-  
+
   if (!fb->getDimension().getRect().intersection(dstRect).isEqualTo(dstRect))
     throw Exception(_T("Error in protocol: incorrect size of rectangle (tight-decoder)"));
 
@@ -178,7 +178,7 @@ void TightDecoder::processJpeg(RfbInputGate *input,
       }
     } catch (const Exception &ex) {
       StringStorage error;
-      error.format(_T("Error in tight-decoder, subencoding \"jpeg\": %s"), 
+      error.format(_T("Error in tight-decoder, subencoding \"jpeg\": %s"),
                    ex.getMessage());
       m_logWriter->error(error.getString());
     }
@@ -372,7 +372,7 @@ void TightDecoder::drawJpegBytes(FrameBuffer *fb,
   for (int i = 0; i < dstLength; i++) {
     UINT8 color[4] = {0, 0, 0, 0};
     memcpy(&color, &pixels->operator [](i * bytesPerCPixel), bytesPerCPixel);
-    UINT32 pixel = (((UINT32)color[0] * pxFormat.redMax + 127) / 255 << pxFormat.redShift | 
+    UINT32 pixel = (((UINT32)color[0] * pxFormat.redMax + 127) / 255 << pxFormat.redShift |
                    ((UINT32)color[1] * pxFormat.greenMax + 127) / 255 << pxFormat.greenShift |
                    ((UINT32)color[2] * pxFormat.blueMax + 127) / 255 << pxFormat.blueShift);
 
@@ -385,7 +385,7 @@ void TightDecoder::drawJpegBytes(FrameBuffer *fb,
  *-- The "gradient" filter pre-processes pixel data with a simple algorithm
  * which converts each color component to a difference between a "predicted"
  * intensity and the actual intensity. Such a technique does not affect
- * uncompressed data size, but helps to compress photo-like images better. 
+ * uncompressed data size, but helps to compress photo-like images better.
  * Pseudo-code for converting intensities to differences is the following:
  *
  *   P[i,j] := V[i-1,j] + V[i,j-1] - V[i-1,j-1];
@@ -411,7 +411,7 @@ void TightDecoder::drawGradient(FrameBuffer *fb,
 
   memset(&opRows[0].front(), 0, opRowLength * sizeof(UINT16));
   memset(&opRows[1].front(), 0, opRowLength * sizeof(UINT16));
-  
+
   PixelFormat pxFormat = fb->getPixelFormat();
   int fbBytesPerPixel = fb->getBytesPerPixel();
   int bytesPerCPixel = fbBytesPerPixel;

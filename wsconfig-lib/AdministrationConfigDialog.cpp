@@ -22,20 +22,20 @@
 //-------------------------------------------------------------------------
 //
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 #include "AdministrationConfigDialog.h"
 #include "CommonInputValidation.h"
 #include "UIDataAccess.h"
 #include "ConfigDialog.h"
-#include "file-lib/File.h"
-#include "server-config-lib/ServerConfig.h"
-#include "server-config-lib/Configurator.h"
-#include "util/CommonHeader.h"
-#include "util/StringParser.h"
+#include "../file-lib/File.h"
+#include "../server-config-lib/ServerConfig.h"
+#include "../server-config-lib/Configurator.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringParser.h"
 #include "wsconfig-lib/ChangePasswordDialog.h"
-#include "util/StringTable.h"
-#include "win-system/Process.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/StringTable.h"
+#include "../win-system/Process.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 AdministrationConfigDialog::AdministrationConfigDialog()
 : BaseDialog(IDD_CONFIG_ADMINISTRATION_PAGE), m_parentDialog(NULL)

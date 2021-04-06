@@ -25,10 +25,10 @@
 #ifndef _OUTGOING_RFB_CONNECTION_THREAD_H_
 #define _OUTGOING_RFB_CONNECTION_THREAD_H_
 
-#include "util/StringStorage.h"
-#include "thread/Thread.h"
+#include "../util/StringStorage.h"
+#include "../thread/Thread.h"
 #include "RfbClientManager.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 /**
 Thread that makes attempt to connect to listening rfb client in separate thread.

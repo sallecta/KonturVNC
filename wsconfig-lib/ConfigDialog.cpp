@@ -23,8 +23,8 @@
 //
 
 #include "ConfigDialog.h"
-#include "tvnserver/resource.h"
-#include "util/CommonHeader.h"
+#include "../tvnserver/resource.h"
+#include "../util/CommonHeader.h"
 
 ConfigDialog::ConfigDialog(bool forService, ControlCommand *reloadConfigCommand)
 : BaseDialog(IDD_CONFIG),

@@ -25,8 +25,8 @@
 #ifndef _SECURITY_IDENTIFIER_H_
 #define _SECURITY_IDENTIFIER_H_
 
-#include "util/winhdr.h"
-#include "win-system/SystemException.h"
+#include "../../util/winhdr.h"
+#include "../../win-system/SystemException.h"
 
 /**
  * Top-level authority of a security identifier (SID).

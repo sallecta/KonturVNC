@@ -23,7 +23,7 @@
 //
 
 #include "WsaStartup.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 WsaStartup::WsaStartup(BYTE minorVer, BYTE majorVer)
 {

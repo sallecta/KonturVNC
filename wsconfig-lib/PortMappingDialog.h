@@ -25,11 +25,11 @@
 #ifndef _PORT_MAPPING_DIALOG_H_
 #define _PORT_MAPPING_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/Control.h"
-#include "gui/ListBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/Control.h"
+#include "../gui/ListBox.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 class PortMappingDialog : public BaseDialog
 {

@@ -25,9 +25,9 @@
 #ifndef _RFB_CLIENT_TO_SERVER_MESSAGE_H_
 #define _RFB_CLIENT_TO_SERVER_MESSAGE_H_
 
-#include "rfb/MsgDefs.h"
-#include "network/RfbOutputGate.h"
-#include "thread/AutoLock.h"
+#include "../rfb/MsgDefs.h"
+#include "../network/RfbOutputGate.h"
+#include "../thread/AutoLock.h"
 
 class RfbClientToServerMessage
 {

@@ -23,7 +23,7 @@
 //
 
 #include "AuthTracker.h"
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 AuthTracker::AuthTracker(UINT64 failureTimeInterval,
                          unsigned int failureMaxCount)

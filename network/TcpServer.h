@@ -25,9 +25,9 @@
 #ifndef _MULTI_THREAD_TCP_SERVER_H_
 #define _MULTI_THREAD_TCP_SERVER_H_
 
-#include "thread/Thread.h"
-#include "util/Exception.h"
-#include "network/socket/SocketIPv4.h"
+#include "../thread/Thread.h"
+#include "../util/Exception.h"
+#include "../network/socket/SocketIPv4.h"
 
 /**
  * Abstract multithreaded TCP server class.

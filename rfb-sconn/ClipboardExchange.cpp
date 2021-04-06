@@ -23,9 +23,9 @@
 //
 
 #include "ClipboardExchange.h"
-#include "rfb/MsgDefs.h"
-#include "util/AnsiStringStorage.h"
-#include "thread/AutoLock.h"
+#include "../rfb/MsgDefs.h"
+#include "../util/AnsiStringStorage.h"
+#include "../thread/AutoLock.h"
 
 ClipboardExchange::ClipboardExchange(RfbCodeRegistrator *codeRegtor,
                                      Desktop *desktop,

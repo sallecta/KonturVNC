@@ -25,7 +25,7 @@
 #ifndef __SECURITYATTRIBUTES_H__
 #define __SECURITYATTRIBUTES_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "security/SecurityIdentifier.h"
 #include "security/SecurityDescriptor.h"

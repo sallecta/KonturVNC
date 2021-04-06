@@ -24,14 +24,14 @@
 
 #include "HelpDialog.h"
 
-#include "util/ResourceLoader.h"
+#include "../util/ResourceLoader.h"
 
-HelpDialog::HelpDialog() 
+HelpDialog::HelpDialog()
 : BaseDialog(IDD_CMDLINE)
 {
 }
 
-BOOL HelpDialog::onInitDialog() 
+BOOL HelpDialog::onInitDialog()
 {
   setControlById(m_shelp, IDC_SHELP);
 

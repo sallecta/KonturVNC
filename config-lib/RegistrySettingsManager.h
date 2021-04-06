@@ -25,8 +25,8 @@
 #ifndef _REGISTRY_SETTINGS_MANAGER_
 #define _REGISTRY_SETTINGS_MANAGER_
 
-#include "util/StringStorage.h"
-#include "win-system/RegistryKey.h"
+#include "../util/StringStorage.h"
+#include "../win-system/RegistryKey.h"
 
 #include "SettingsManager.h"
 

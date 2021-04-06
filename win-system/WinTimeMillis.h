@@ -25,7 +25,7 @@
 #ifndef __WINTIMEMILLIS_H__
 #define __WINTIMEMILLIS_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class WinTimeMillis
 {
@@ -40,7 +40,7 @@ public:
   int diffFrom(const WinTimeMillis *older) const;
 
 protected:
-  bool setToCurrentTime() { GetLocalTime(&m_time); 
+  bool setToCurrentTime() { GetLocalTime(&m_time);
                             return true;}
 
   const SYSTEMTIME *getTime() const { return &m_time; }

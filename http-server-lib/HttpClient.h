@@ -25,14 +25,14 @@
 #ifndef _HTTP_CLIENT_H_
 #define _HTTP_CLIENT_H_
 
-#include "network/TcpClientThread.h"
+#include "../network/TcpClientThread.h"
 
-#include "network/socket/SocketIPv4.h"
+#include "../network/socket/SocketIPv4.h"
 
-#include "io-lib/Channel.h"
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "log-writer/LogWriter.h"
+#include "../io-lib/Channel.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../log-writer/LogWriter.h"
 
 class HttpClient : public TcpClientThread
 {

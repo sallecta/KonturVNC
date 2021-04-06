@@ -25,11 +25,11 @@
 #ifndef _FILE_TRANSFER_REQUEST_SENDER_H_
 #define _FILE_TRANSFER_REQUEST_SENDER_H_
 
-#include "util/inttypes.h"
-#include "network/RfbOutputGate.h"
-#include "io-lib/IOException.h"
+#include "../util/inttypes.h"
+#include "../network/RfbOutputGate.h"
+#include "../io-lib/IOException.h"
 
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 class FileTransferRequestSender
 {

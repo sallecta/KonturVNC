@@ -23,9 +23,9 @@
 //
 
 #include "ClientLogger.h"
-#include "win-system/PipeClient.h"
+#include "../win-system/PipeClient.h"
 #include "SecurityPipeClient.h"
-#include "util/DateTime.h"
+#include "../util/DateTime.h"
 
 ClientLogger::ClientLogger(const TCHAR *publicPipeName, const TCHAR *logFileName)
 : LogDump(false, true),

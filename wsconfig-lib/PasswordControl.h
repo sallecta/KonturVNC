@@ -25,7 +25,7 @@
 #ifndef _PASSWORD_CONTROL_H_
 #define _PASSWORD_CONTROL_H_
 
-#include "gui/Control.h"
+#include "../gui/Control.h"
 #include <vector>
 
 /**

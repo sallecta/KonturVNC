@@ -24,8 +24,8 @@
 
 #include "LocalWindowsApplication.h"
 
-#include "util/winhdr.h"
-#include "thread/DesktopSelector.h"
+#include "../util/winhdr.h"
+#include "../thread/DesktopSelector.h"
 
 LocalWindowsApplication::LocalWindowsApplication(HINSTANCE hInstance,
                                                  const TCHAR *windowClassName)
@@ -45,7 +45,7 @@ LocalWindowsApplication::LocalWindowsApplication(HINSTANCE hInstance,
   }
 
   CloseWindowStation(winSta);
-  
+
   // FIXME: why we don't check returning values?
   DesktopSelector::selectDesktop();
 }

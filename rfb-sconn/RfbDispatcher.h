@@ -25,10 +25,10 @@
 #ifndef __RFBDISPATCHER_H__
 #define __RFBDISPATCHER_H__
 
-#include "thread/Thread.h"
+#include "../thread/Thread.h"
 #include "RfbDispatcherListener.h"
-#include "util/AnEventListener.h"
-#include "win-system/WindowsEvent.h"
+#include "../util/AnEventListener.h"
+#include "../win-system/WindowsEvent.h"
 #include <map>
 
 class RfbDispatcher : public Thread

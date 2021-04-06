@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "rfb/VendorDefs.h"
+#include "../rfb/VendorDefs.h"
 
 const char *const VendorDefs::STANDARD = "STDV";
 const char *const VendorDefs::TIGHTVNC = "TGHT";

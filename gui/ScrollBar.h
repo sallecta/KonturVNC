@@ -25,7 +25,7 @@
 #ifndef _SCROLL_BAR_H_
 #define _SCROLL_BAR_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 // ScrollBar class
 // This class doesn't create any window, it only show/hide that is already

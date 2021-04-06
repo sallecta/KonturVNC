@@ -23,7 +23,7 @@
 //
 
 #include "PixelConverter.h"
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 #include <crtdbg.h>
 
 PixelConverter::PixelConverter(void)
@@ -107,7 +107,7 @@ void PixelConverter::convert(const Rect *rect, FrameBuffer *dstFb,
             *(UINT8 *)dstPixP = dstPixel;
           }
         }
-      } 
+      }
     } else {
       _ASSERT(0);
     }

@@ -25,7 +25,7 @@
 #ifndef _RESOURCE_STRINGS_H_
 #define _RESOURCE_STRINGS_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "resource.h"
 
 class ResourceStrings
@@ -34,9 +34,9 @@ public:
   ResourceStrings();
   ResourceStrings(int min, int max);
 
-  bool isValid(int res); 
+  bool isValid(int res);
   // this function returns string as it is stored
-  StringStorage getStrRes(int strRes); 
+  StringStorage getStrRes(int strRes);
   // this function returns the string without '\t' and '&'
   StringStorage getStrPureRes(int strRes);
 

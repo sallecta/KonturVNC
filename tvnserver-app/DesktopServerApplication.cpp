@@ -24,12 +24,12 @@
 
 #include "DesktopServerApplication.h"
 #include "DesktopServerCommandLine.h"
-#include "util/ResourceLoader.h"
-#include "desktop/WallpaperUtil.h"
-#include "win-system/WTS.h"
-#include "win-system/Environment.h"
-#include "win-system/SharedMemory.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/ResourceLoader.h"
+#include "../lib_desktop/WallpaperUtil.h"
+#include "../win-system/WTS.h"
+#include "../win-system/Environment.h"
+#include "../win-system/SharedMemory.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 DesktopServerApplication::DesktopServerApplication(HINSTANCE appInstance,
                                                    const TCHAR *windowClassName,
@@ -75,7 +75,7 @@ DesktopServerApplication::DesktopServerApplication(HINSTANCE appInstance,
     DateTime startTime = DateTime::now();
 
     while (mem[0] == 0) {
-      unsigned int timeForWait = max((int)10000 - 
+      unsigned int timeForWait = max((int)10000 -
                                      (int)(DateTime::now() -
                                            startTime).getTime(),
                                      0);

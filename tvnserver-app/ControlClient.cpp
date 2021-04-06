@@ -27,22 +27,22 @@
 #include "OutgoingRfbConnectionThread.h"
 #include "ConnectToTcpDispatcherThread.h"
 
-#include "tvncontrol-app/ControlProto.h"
+#include "../tvncontrol-app/ControlProto.h"
 
-#include "network/socket/SocketStream.h"
+#include "../network/socket/SocketStream.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
-#include "util/VncPassCrypt.h"
+#include "../util/VncPassCrypt.h"
 
-#include "rfb/HostPath.h"
+#include "../rfb/HostPath.h"
 
-#include "win-system/WTS.h"
+#include "../win-system/WTS.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include <time.h>
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 const UINT32 ControlClient::REQUIRES_AUTH[] = { ControlProto::ADD_CLIENT_MSG_ID,
                                                 ControlProto::DISCONNECT_ALL_CLIENTS_MSG_ID,

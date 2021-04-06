@@ -27,11 +27,11 @@
 
 #include "RfbClientManager.h"
 #include "ControlAppAuthenticator.h"
-#include "thread/ThreadCollector.h"
+#include "../thread/ThreadCollector.h"
 
-#include "network/TcpServer.h"
+#include "../network/TcpServer.h"
 
-#include "win-system/PipeServer.h"
+#include "../win-system/PipeServer.h"
 
 /**
  * Tcp server that listens for incoming control connections

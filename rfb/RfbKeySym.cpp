@@ -24,10 +24,10 @@
 
 #include <crtdbg.h>
 #include "RfbKeySym.h"
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #define XK_MISCELLANY
-#include "rfb/keysymdef.h"
+#include "../rfb/keysymdef.h"
 
 RfbKeySym::RfbKeySym(RfbKeySymListener *extKeySymListener, LogWriter *log)
 : m_extKeySymListener(extKeySymListener),

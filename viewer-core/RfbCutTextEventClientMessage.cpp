@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 #include "RfbCutTextEventClientMessage.h"
 

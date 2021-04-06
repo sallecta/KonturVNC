@@ -25,9 +25,9 @@
 #ifndef _FILE_INFO_H_
 #define _FILE_INFO_H_
 
-#include "util/StringStorage.h"
-#include "util/inttypes.h"
-#include "file-lib/File.h"
+#include "../util/StringStorage.h"
+#include "../util/inttypes.h"
+#include "../file-lib/File.h"
 
 //
 // Contains information about file in file transfer protocol

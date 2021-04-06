@@ -25,8 +25,8 @@
 #ifndef __UIPICONTROL_H__
 #define __UIPICONTROL_H__
 
-#include "util/CommonHeader.h"
-#include "log-writer/LogWriter.h"
+#include "../util/CommonHeader.h"
+#include "../log-writer/LogWriter.h"
 
 // This class allow to control the uipi for the current process.
 class UipiControl

@@ -25,7 +25,7 @@
 #ifndef _PEN_H_
 #define _PEN_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class Pen
 {

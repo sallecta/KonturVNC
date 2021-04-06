@@ -25,7 +25,7 @@
 #ifndef _BASE_WINDOW_H_
 #define _BASE_WINDOW_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class BaseWindow
 {
@@ -35,7 +35,7 @@ public:
   virtual ~BaseWindow();
 
   // getWindow()
-  // Get a handle of the window 
+  // Get a handle of the window
   HWND getHWnd() const;
   void setHWnd(HWND hwnd);
 

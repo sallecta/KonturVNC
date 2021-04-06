@@ -25,7 +25,7 @@
 #ifndef __WINCOMMANDLINEARGS_H__
 #define __WINCOMMANDLINEARGS_H__
 
-#include "util/CommandLineArgs.h"
+#include "../util/CommandLineArgs.h"
 
 class WinCommandLineArgs : public CommandLineArgs
 {

@@ -25,7 +25,7 @@
 #ifndef _ICON_H_
 #define _ICON_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "Bitmap.h"
 

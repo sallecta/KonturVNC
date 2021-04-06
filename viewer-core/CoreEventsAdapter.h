@@ -25,13 +25,13 @@
 #ifndef _CORE_EVENTS_ADAPTER_H_
 #define _CORE_EVENTS_ADAPTER_H_
 
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/IOException.h"
-#include "network/RfbOutputGate.h"
-#include "rfb/FrameBuffer.h"
-#include "region/Rect.h"
-#include "util/Exception.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/IOException.h"
+#include "../network/RfbOutputGate.h"
+#include "../rfb/FrameBuffer.h"
+#include "../region/Rect.h"
+#include "../util/Exception.h"
 
 #include "AuthHandler.h"
 

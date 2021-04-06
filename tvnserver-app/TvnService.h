@@ -27,11 +27,11 @@
 
 #include "TvnServer.h"
 #include "TvnServerListener.h"
-#include "log-server/LogServer.h"
-#include "log-server/ClientLogger.h"
-#include "win-system/Service.h"
+#include "../lib_log_server/LogServer.h"
+#include "../lib_log_server/ClientLogger.h"
+#include "../win-system/Service.h"
 
-#include "thread/Thread.h"
+#include "../thread/Thread.h"
 #include "WinServiceEvents.h"
 #include "NewConnectionEvents.h"
 

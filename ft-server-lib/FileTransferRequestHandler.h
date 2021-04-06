@@ -25,20 +25,20 @@
 #ifndef _FILE_TRANSFER_REQUEST_HANDLER_H_
 #define _FILE_TRANSFER_REQUEST_HANDLER_H_
 
-#include "util/inttypes.h"
-#include "network/RfbInputGate.h"
-#include "network/RfbOutputGate.h"
+#include "../util/inttypes.h"
+#include "../network/RfbInputGate.h"
+#include "../network/RfbOutputGate.h"
 #include "ft-common/FileInfo.h"
-#include "file-lib/WinFileChannel.h"
-#include "util/Inflater.h"
-#include "util/Deflater.h"
-#include "desktop/Desktop.h"
-#include "rfb-sconn/RfbCodeRegistrator.h"
-#include "rfb-sconn/RfbDispatcherListener.h"
+#include "../file-lib/WinFileChannel.h"
+#include "../util/Inflater.h"
+#include "../util/Deflater.h"
+#include "../lib_desktop/Desktop.h"
+#include "../rfb-sconn/RfbCodeRegistrator.h"
+#include "../rfb-sconn/RfbDispatcherListener.h"
 #include "FileTransferSecurity.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
-#include "tvnserver-app/FTStatusDialog.h"
+#include "../tvnserver-app/FTStatusDialog.h"
 
 /**
  * Handler of file transfer plugin client to server messages.
@@ -131,7 +131,7 @@ protected:
    */
   void checkAccess() throw(SystemException);
 
-  
+
 
 protected:
 

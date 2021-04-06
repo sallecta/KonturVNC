@@ -24,10 +24,10 @@
 
 #include "TvnServerHelp.h"
 
-#include "util/winhdr.h"
-#include "util/StringTable.h"
+#include "../util/winhdr.h"
+#include "../util/StringTable.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 TvnServerHelp::TvnServerHelp()
 {

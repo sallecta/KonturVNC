@@ -22,16 +22,16 @@
 //-------------------------------------------------------------------------
 //
 #include <crtdbg.h>
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 #include "IpAccessControlDialog.h"
 #include "ConfigDialog.h"
 #include "CommonInputValidation.h"
 #include "UIDataAccess.h"
-#include "server-config-lib/Configurator.h"
-#include "server-config-lib/IpAccessControl.h"
-#include "util/CommonHeader.h"
-#include "util/StringParser.h"
-#include "util/AnsiStringStorage.h"
+#include "../server-config-lib/Configurator.h"
+#include "../server-config-lib/IpAccessControl.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringParser.h"
+#include "../util/AnsiStringStorage.h"
 
 IpAccessControlDialog::IpAccessControlDialog()
 : BaseDialog(IDD_CONFIG_ACCESS_CONTROL_PAGE), m_parentDialog(NULL)

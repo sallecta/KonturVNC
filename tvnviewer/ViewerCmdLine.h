@@ -25,10 +25,10 @@
 #ifndef _VIEWER_CMD_LINE_H_
 #define _VIEWER_CMD_LINE_H_
 
-#include "win-system/WinProcessCommandLine.h"
+#include "../win-system/WinProcessCommandLine.h"
 #include "client-config-lib/ViewerConfig.h"
-#include "util/CommandLineFormatException.h"
-#include "util/CommandLineFormatHelp.h"
+#include "../util/CommandLineFormatException.h"
+#include "../util/CommandLineFormatHelp.h"
 #include "HelpDialog.h"
 #include "ConnectionData.h"
 
@@ -100,7 +100,7 @@ private:
     const TCHAR *keyName;
   };
 
-  bool processCmdLine(const CmdLineOption * cmdLines, 
+  bool processCmdLine(const CmdLineOption * cmdLines,
                       size_t lenCmdLineOption);
 
   bool isHelpPresent();

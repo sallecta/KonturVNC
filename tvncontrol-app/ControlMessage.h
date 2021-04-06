@@ -25,10 +25,10 @@
 #ifndef _CONTROL_MESSAGE_H_
 #define _CONTROL_MESSAGE_H_
 
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/ByteArrayOutputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/ByteArrayOutputStream.h"
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "RemoteException.h"
 #include "ControlGate.h"

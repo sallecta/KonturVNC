@@ -1,7 +1,7 @@
 
-#include "gui/BaseDialog.h"
-#include "gui/ListView.h"
-#include "thread/LocalMutex.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/ListView.h"
+#include "../thread/LocalMutex.h"
 #include "RfbClientInfo.h"
 
 #ifndef _TRAY_DIALOG_H_
@@ -15,7 +15,7 @@ public:
 	virtual ~TrayDialog(void);
 	virtual BOOL onInitDialog();
 	virtual void onMessageReceived(UINT uMsg, WPARAM wParam, LPARAM lParam);
-	
+
 	int show();
 	void hide();
 	void addClients(list<RfbClientInfo *> *clients);

@@ -27,10 +27,10 @@
 #include "RemoteException.h"
 #include "ControlAuthException.h"
 
-#include "util/CommonHeader.h"
-#include "util/Exception.h"
+#include "../util/CommonHeader.h"
+#include "../util/Exception.h"
 
-#include "io-lib/IOException.h"
+#include "../io-lib/IOException.h"
 
 ControlCommand::ControlCommand(Command *command, Notificator *notificator)
 : m_command(command), m_notificator(notificator), m_successfull(false)

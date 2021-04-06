@@ -25,7 +25,7 @@
 #ifndef _FILE_NOT_FOUND_EXCEPTION_H_
 #define _FILE_NOT_FOUND_EXCEPTION_H_
 
-#include "io-lib/IOException.h"
+#include "../io-lib/IOException.h"
 
 class FileNotFoundException : public IOException
 {

@@ -23,8 +23,8 @@
 //
 
 #include "WinCommandLineArgs.h"
-#include "util/Exception.h"
-#include "util/UnicodeStringStorage.h"
+#include "../util/Exception.h"
+#include "../util/UnicodeStringStorage.h"
 
 WinCommandLineArgs::WinCommandLineArgs(const TCHAR *cmdLineInWinFormat)
 {

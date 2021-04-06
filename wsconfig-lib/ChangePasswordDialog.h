@@ -25,10 +25,10 @@
 #ifndef _CHANGE_PASSWORD_DIALOG_H_
 #define _CHANGE_PASSWORD_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
-#include "gui/BalloonTip.h"
-#include "util/StringStorage.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
+#include "../gui/BalloonTip.h"
+#include "../util/StringStorage.h"
 
 class ChangePasswordDialog : public BaseDialog
 {

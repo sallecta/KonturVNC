@@ -25,7 +25,7 @@
 #ifndef __PARENTPROCESS_H__
 #define __PARENTPROCESS_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <Tlhelp32.h>
 
 // Retrieves information of the parent process.

@@ -27,7 +27,7 @@
 
 #include "Encoder.h"
 #include "TightPalette.h"
-#include "util/Deflater.h"
+#include "../util/Deflater.h"
 
 class ZrleEncoder : public Encoder
 {
@@ -42,7 +42,7 @@ public:
                               std::vector<Rect> *rectList,
                               const FrameBuffer *serverFb,
                               const EncodeOptions *options);
-  
+
   virtual void sendRectangle(const Rect *rect,
                              const FrameBuffer *serverFb,
                              const EncodeOptions *options) throw(IOException);
@@ -62,7 +62,7 @@ private:
 
   // Send a solid-color tile.
     void writeSolidTile() throw(IOException);
-  
+
   // Send packed palette tile.
   template <class PIXEL_T>
     void writePackedPaletteTile(const Rect *tileRect,
@@ -95,7 +95,7 @@ private:
     void copyPixels(const Rect *rect,
                     const FrameBuffer *fb,
                     UINT8 *dst);
-  
+
   // Copy CPIXELs.
   void copyCPixels(const Rect *rect,
                    const FrameBuffer *fb,
@@ -111,7 +111,7 @@ private:
 
   // Size of packed pixels in palette.
   int m_mSize;
-  
+
   // The only pixel format type for whole rectangle.
   PixelFormat m_pxFormat;
 
@@ -124,7 +124,7 @@ private:
   int m_idxZlibLevel;
   int m_monoZlibLevel;
   int m_rawZlibLevel;
-  
+
   // Color palette.
   TightPalette m_pal;
 

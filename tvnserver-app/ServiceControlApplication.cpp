@@ -25,23 +25,23 @@
 #include "ServiceControlApplication.h"
 #include "ServiceControlCommandLine.h"
 
-#include "util/ResourceLoader.h"
-#include "util/StringTable.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/ResourceLoader.h"
+#include "../util/StringTable.h"
+#include "../tvnserver-app/NamingDefs.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include "WsConfigRunner.h"
 #include "TvnServerHelp.h"
 
-#include "tvncontrol-app/ControlCommandLine.h"
+#include "../tvncontrol-app/ControlCommandLine.h"
 
-#include "win-system/Registry.h"
-#include "win-system/RegistryKey.h"
-#include "win-system/Environment.h"
-#include "win-system/Shell.h"
-#include "win-system/SCMClient.h"
-#include "win-system/WinCommandLineArgs.h"
+#include "../win-system/Registry.h"
+#include "../win-system/RegistryKey.h"
+#include "../win-system/Environment.h"
+#include "../win-system/Shell.h"
+#include "../win-system/SCMClient.h"
+#include "../win-system/WinCommandLineArgs.h"
 
 ServiceControlApplication::ServiceControlApplication(HINSTANCE hInstance,
                                                      const TCHAR *windowClassName,

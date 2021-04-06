@@ -25,10 +25,10 @@
 #ifndef _AUTH_HANDLER_H_
 #define _AUTH_HANDLER_H_
 
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "rfb/AuthDefs.h"
-#include "util/Exception.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../rfb/AuthDefs.h"
+#include "../util/Exception.h"
 
 #include "CapabilitiesManager.h"
 
@@ -52,7 +52,7 @@ protected:
   int m_authErrorCode;
 };
 
-class AuthUnknownException : public AuthException 
+class AuthUnknownException : public AuthException
 {
 public:
   AuthUnknownException(const TCHAR *message = _T("Error in authentification: ")

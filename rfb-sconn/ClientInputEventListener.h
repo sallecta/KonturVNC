@@ -25,7 +25,7 @@
 #ifndef __CLIENTINPUTEVENTLISTENER_H__
 #define __CLIENTINPUTEVENTLISTENER_H__
 
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 
 class ClientInputEventListener
 {

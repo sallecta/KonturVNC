@@ -25,7 +25,7 @@
 #include "WTS.h"
 
 #include "SystemException.h"
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 #include "PipeImpersonatedThread.h"
 #include <crtdbg.h>
 
@@ -107,7 +107,7 @@ bool WTS::getCurrentUserName(StringStorage *userName, LogWriter *log)
   LPTSTR *buffer;
   DWORD byteCount;
   DWORD sessionId = getActiveConsoleSessionId(log);
-  
+
   //ProcessIdToSessionId(GetCurrentProcessId(),&sessionId);
 
   if (m_WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, sessionId,

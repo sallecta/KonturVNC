@@ -25,7 +25,7 @@
 #ifndef _FILE_INFO_LIST_VIEW_H_
 #define _FILE_INFO_LIST_VIEW_H_
 
-#include "gui/ListView.h"
+#include "../gui/ListView.h"
 #include "ft-common/FileInfo.h"
 
 class FileInfoListView : public ListView

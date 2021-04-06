@@ -25,7 +25,7 @@
 #ifndef _CONFIGURATOR_H_
 #define _CONFIGURATOR_H_
 
-#include "config-lib/SettingsManager.h"
+#include "../config-lib/SettingsManager.h"
 
 #include "PortMappingContainer.h"
 #include "IpAccessControl.h"
@@ -33,7 +33,7 @@
 #include "ConfigReloadListener.h"
 #include "RegistrySecurityAttributes.h"
 
-#include "util/ListenerContainer.h"
+#include "../util/ListenerContainer.h"
 
 class Configurator : public ListenerContainer<ConfigReloadListener *>
 {

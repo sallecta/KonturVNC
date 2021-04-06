@@ -24,21 +24,21 @@
 
 #include <crtdbg.h>
 #include "UpdateSender.h"
-#include "rfb/VendorDefs.h"
-#include "rfb/EncodingDefs.h"
-#include "rfb/MsgDefs.h"
+#include "../rfb/VendorDefs.h"
+#include "../rfb/EncodingDefs.h"
+#include "../rfb/MsgDefs.h"
 #include <vector>
-#include "util/inttypes.h"
-#include "util/Exception.h"
+#include "../util/inttypes.h"
+#include "../util/Exception.h"
 #include "UpdSenderMsgDefs.h"
-#include "win-system/WindowsDisplays.h"
+#include "../win-system/WindowsDisplays.h"
 
-#include "win-system/Environment.h"
-#include "server-config-lib/Configurator.h"
-#include "win-system/ProcessHandle.h"
-#include "win-system/CurrentConsoleProcess.h"
+#include "../win-system/Environment.h"
+#include "../server-config-lib/Configurator.h"
+#include "../win-system/ProcessHandle.h"
+#include "../win-system/CurrentConsoleProcess.h"
 
-#include "win-system/RegistryKey.h"
+#include "../win-system/RegistryKey.h"
 
 UpdateSender::UpdateSender(RfbCodeRegistrator *codeRegtor,
                            UpdateRequestListener *updReqListener,

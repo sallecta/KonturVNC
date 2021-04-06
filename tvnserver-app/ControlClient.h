@@ -27,13 +27,13 @@
 
 #include "RfbClientManager.h"
 
-#include "tvncontrol-app/ControlGate.h"
-#include "tvncontrol-app/ControlAuthException.h"
-#include "tvncontrol-app/Transport.h"
+#include "../tvncontrol-app/ControlGate.h"
+#include "../tvncontrol-app/ControlAuthException.h"
+#include "../tvncontrol-app/Transport.h"
 #include "ControlAppAuthenticator.h"
 #include "TcpDispatcherConnectionListener.h"
-#include "thread/ThreadCollector.h"
-#include "log-writer/LogWriter.h"
+#include "../thread/ThreadCollector.h"
+#include "../log-writer/LogWriter.h"
 
 /**
  * ControlClient exception sclass.

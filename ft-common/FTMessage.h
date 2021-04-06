@@ -25,7 +25,7 @@
 #ifndef _FT_MESSAGE_TYPE_H_
 #define _FT_MESSAGE_TYPE_H_
 
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 
 /**
  * File transfer rfb protocol extension, that used to transfer files

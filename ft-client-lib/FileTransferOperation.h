@@ -31,8 +31,8 @@
 #include "FileTransferReplyBuffer.h"
 #include "FileInfoList.h"
 
-#include "log-writer/LogWriter.h"
-#include "util/ListenerContainer.h"
+#include "../log-writer/LogWriter.h"
+#include "../util/ListenerContainer.h"
 
 class OperationEventListener;
 

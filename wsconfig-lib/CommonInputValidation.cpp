@@ -24,11 +24,11 @@
 
 #include "CommonInputValidation.h"
 
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 
-#include "gui/BalloonTip.h"
+#include "../gui/BalloonTip.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include "UIDataAccess.h"
 

@@ -25,7 +25,7 @@
 #ifndef _TVNLOGFILENAME_H_
 #define _TVNLOGFILENAME_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 /**
  * Utility to create path to server log file.

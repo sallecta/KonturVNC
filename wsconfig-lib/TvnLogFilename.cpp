@@ -24,10 +24,10 @@
 
 #include "TvnLogFilename.h"
 
-#include "file-lib/File.h"
+#include "../file-lib/File.h"
 
-#include "win-system/Environment.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../win-system/Environment.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 TvnLogFilename::TvnLogFilename()
 {

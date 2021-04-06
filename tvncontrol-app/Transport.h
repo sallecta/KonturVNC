@@ -25,9 +25,9 @@
 #ifndef _TRANSPORT_H_
 #define _TRANSPORT_H_
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 /**
  * Abstract control transport that can be used by client and server side

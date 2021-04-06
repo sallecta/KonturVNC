@@ -25,10 +25,10 @@
 #ifndef __PIPESERVER_H__
 #define __PIPESERVER_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "NamedPipe.h"
-#include "thread/LocalMutex.h"
+#include "../thread/LocalMutex.h"
 #include "SecurityAttributes.h"
 
 /**

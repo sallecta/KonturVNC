@@ -24,7 +24,7 @@
 
 #include "DataInputStream.h"
 #include <vector>
-#include "util/Utf8StringStorage.h"
+#include "../util/Utf8StringStorage.h"
 
 #define SETBYTE(y, n) (((y) & 0xFF) << ((n) * 8))
 

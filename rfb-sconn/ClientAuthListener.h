@@ -25,8 +25,8 @@
 #ifndef __CLIENTAUTHLISTENER_H__
 #define __CLIENTAUTHLISTENER_H__
 
-#include "desktop/Desktop.h"
-#include "rfb-sconn/RfbClient.h"
+#include "../lib_desktop/Desktop.h"
+#include "../rfb-sconn/RfbClient.h"
 #include "AuthException.h"
 
 class ClientAuthListener

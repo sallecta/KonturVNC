@@ -25,7 +25,7 @@
 #ifndef __SYSTEM_INFORMATION_H__
 #define __SYSTEM_INFORMATION_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class SystemInformation {
 public:
@@ -45,7 +45,7 @@ public:
   // for provided device
   int getBitsPixel(HDC hdc);
 
-  // get the number of monitors that plugged 
+  // get the number of monitors that plugged
   // into video card
   int getMonitorCount();
 };

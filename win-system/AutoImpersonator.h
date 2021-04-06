@@ -26,7 +26,7 @@
 #define __AUTOIMPERSONATOR_H__
 
 #include "Impersonator.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 // This class automaticly impesonates at the constructor and
 // revertes at the destructor.

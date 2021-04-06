@@ -27,7 +27,7 @@
 
 #include "Thread.h"
 #include "LocalMutex.h"
-#include "win-system/WindowsEvent.h"
+#include "../win-system/WindowsEvent.h"
 #include <list>
 
 using namespace std;

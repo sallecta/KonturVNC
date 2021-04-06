@@ -23,7 +23,7 @@
 //
 
 #include "WindowsEvent.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 WindowsEvent::WindowsEvent(const TCHAR *name)
 {

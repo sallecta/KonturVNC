@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "rfb/AuthDefs.h"
+#include "../rfb/AuthDefs.h"
 
 const char *const AuthDefs::SIG_NONE = "NOAUTH__";
 const char *const AuthDefs::SIG_VNC = "VNCAUTH_";

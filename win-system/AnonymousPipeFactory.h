@@ -26,7 +26,7 @@
 #define __ANONYMOUSPIPEFACTORY_H__
 
 #include "AnonymousPipe.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 // The AnonymousPipeFactory class generates the pair of the AnonymousPipe
 // objects that connected to each other.

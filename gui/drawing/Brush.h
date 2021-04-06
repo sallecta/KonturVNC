@@ -25,7 +25,7 @@
 #ifndef _BRUSH_H_
 #define _BRUSH_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class Brush
 {

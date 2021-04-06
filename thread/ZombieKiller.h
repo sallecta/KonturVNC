@@ -28,7 +28,7 @@
 #include "Thread.h"
 #include "LocalMutex.h"
 
-#include "util/Singleton.h"
+#include "../util/Singleton.h"
 
 #include <list>
 

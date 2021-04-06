@@ -25,8 +25,8 @@
 #ifndef __CONNECTIONTIMER_H__
 #define __CONNECTIONTIMER_H__
 
-#include "thread/Thread.h"
-#include "win-system/WindowsEvent.h"
+#include "../thread/Thread.h"
+#include "../win-system/WindowsEvent.h"
 #include "TimerListener.h"
 
 // This class waits for time interval after that notifies to external listener.

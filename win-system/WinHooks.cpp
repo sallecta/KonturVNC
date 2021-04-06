@@ -23,14 +23,14 @@
 //
 
 #include "WinHooks.h"
-#include "win-system/SystemException.h"
+#include "../win-system/SystemException.h"
 
 HHOOK WinHooks::s_hooks = 0;
 HookEventListener *WinHooks::s_eventListener = 0;
 
 WinHooks::WinHooks()
 {
-  
+
 }
 
 WinHooks::~WinHooks()

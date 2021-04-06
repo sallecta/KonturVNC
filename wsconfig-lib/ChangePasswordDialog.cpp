@@ -23,11 +23,11 @@
 //
 
 #include "ChangePasswordDialog.h"
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
-#include "server-config-lib/ServerConfig.h"
+#include "../server-config-lib/ServerConfig.h"
 
-#include "util/VncPassCrypt.h"
+#include "../util/VncPassCrypt.h"
 
 ChangePasswordDialog::ChangePasswordDialog(Control *parent, bool isNewPassword)
 : BaseDialog(IDD_CHANGE_PASSWORD), m_allowEmptyPassword(false), m_newPassword(isNewPassword)

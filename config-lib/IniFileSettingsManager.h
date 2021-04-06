@@ -27,7 +27,7 @@
 
 #include "SettingsManager.h"
 
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class IniFileSettingsManager : public SettingsManager
 {

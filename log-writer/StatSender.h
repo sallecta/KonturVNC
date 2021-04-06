@@ -1,11 +1,11 @@
 #ifndef __STATSENDER_H__
 #define __STATSENDER_H__
 
-#include "thread/Thread.h"
-#include "win-system/WindowsEvent.h"
-#include "network/socket/SocketIPv4.h"
+#include "../thread/Thread.h"
+#include "../win-system/WindowsEvent.h"
+#include "../network/socket/SocketIPv4.h"
 #include "tvnviewer/ConnectionData.h"
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 
 
@@ -15,7 +15,7 @@ public:
   StatSender(ConnectionData * condata, P2pTransport * p2p);
   void setComment(StringStorage * comment);
   virtual ~StatSender();
-  
+
 
 protected:
 	virtual void execute();

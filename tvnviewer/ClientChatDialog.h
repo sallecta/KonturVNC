@@ -2,11 +2,11 @@
 #ifndef _CLIENT_CHAT_DIALOG_H_
 #define _CLIENT_CHAT_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
-#include "thread/LocalMutex.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
+#include "../thread/LocalMutex.h"
 
-#include "rfb-sconn/TextMsgListener.h"
+#include "../rfb-sconn/TextMsgListener.h"
 
 
 class ClientChatDialog :
@@ -22,11 +22,11 @@ public:
 
 	void addMsg(StringStorage msg);
 
-	
+
 	int show();
 	void hide();
 private:
-	
+
 	void initControls();
 	void Send();
 	static LRESULT CALLBACK subEditProc(HWND wnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -38,7 +38,7 @@ private:
 
 	TextMsgListener *m_extMsgListener;
 
-	
+
 protected:
 
 	WNDPROC oldEditProc;

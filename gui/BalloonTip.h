@@ -26,7 +26,7 @@
 #define _BALLOON_TIP_H_
 
 #include "Tooltip.h"
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <commctrl.h>
 
 /**

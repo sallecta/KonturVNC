@@ -25,7 +25,7 @@
 #ifndef _RFB_POINTER_EVENT_CLIENT_MESSAGE_H_
 #define _RFB_POINTER_EVENT_CLIENT_MESSAGE_H_
 
-#include "region/Point.h"
+#include "../region/Point.h"
 
 #include "RfbClientToServerMessage.h"
 

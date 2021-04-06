@@ -25,11 +25,11 @@
 #ifndef _TCPDISPATCHERINITIALIZER_H_
 #define _TCPDISPATCHERINITIALIZER_H_
 
-#include "io-lib/Channel.h"
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/DataInputStream.h"
-#include "util/AnsiStringStorage.h"
-#include "log-writer/LogWriter.h"
+#include "../io-lib/Channel.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/DataInputStream.h"
+#include "../util/AnsiStringStorage.h"
+#include "../log-writer/LogWriter.h"
 
 class InvalidTcpDispProtoType : public Exception
 {

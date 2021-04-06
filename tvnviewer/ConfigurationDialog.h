@@ -29,17 +29,17 @@
 #include "client-config-lib/ConnectionConfig.h"
 #include "client-config-lib/ConnectionConfigSM.h"
 #include "client-config-lib/ViewerSettingsManager.h"
-#include "util/StringParser.h"
-#include "gui/BaseDialog.h"
-#include "gui/Control.h"
-#include "gui/TextBox.h"
-#include "gui/CheckBox.h"
-#include "gui/SpinControl.h"
-#include "gui/ComboBox.h"
-#include "gui/TrackBar.h"
+#include "../util/StringParser.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/Control.h"
+#include "../gui/TextBox.h"
+#include "../gui/CheckBox.h"
+#include "../gui/SpinControl.h"
+#include "../gui/ComboBox.h"
+#include "../gui/TrackBar.h"
 #include "resource.h"
 
-#include "win-system/WindowsApplication.h"
+#include "../win-system/WindowsApplication.h"
 
 class ConfigurationDialog : public BaseDialog
 {

@@ -23,9 +23,9 @@
 //
 
 #include "SecurityPipeClient.h"
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "win-system/NamedPipe.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../win-system/NamedPipe.h"
 
 SecurityPipeClient::SecurityPipeClient(Channel *tempPublChan)
 : m_secChannel(0)

@@ -23,11 +23,11 @@
 //
 
 #include "DibSection.h"
-#include "win-system/SystemException.h"
+#include "../win-system/SystemException.h"
 
 //#include <include/process.h>
 
-#include "win-system/Environment.h"
+#include "../win-system/Environment.h"
 
 #include "atl/atlimage.h"
 

@@ -25,7 +25,7 @@
 #ifndef __TUNNELDEFS_H__
 #define __TUNNELDEFS_H__
 
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 
 class TunnelDefs
 {

@@ -26,8 +26,8 @@
 #include <sstream>
 
 #include "ConnectionData.h"
-#include "util/AnsiStringStorage.h"
-#include "util/VncPassCrypt.h"
+#include "../util/AnsiStringStorage.h"
+#include "../util/VncPassCrypt.h"
 #include "viewer-core/VncAuthentication.h"
 
 ConnectionData::ConnectionData()
@@ -87,7 +87,7 @@ void ConnectionData::setHost(const StringStorage *host)
   chompedString.removeChars(newChar, sizeof(newChar));
   TCHAR carChar[] = _T("\r");
   chompedString.removeChars(carChar, sizeof(carChar));
-  
+
 
   AnsiStringStorage ansiStr(&chompedString);
 

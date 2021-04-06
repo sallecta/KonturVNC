@@ -23,8 +23,8 @@
 //
 
 #include "Screen.h"
-#include "util/Exception.h"
-#include "win-system/Environment.h"
+#include "../util/Exception.h"
+#include "../win-system/Environment.h"
 
 Screen::Screen()
 {

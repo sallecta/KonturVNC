@@ -25,7 +25,7 @@
 #ifndef _OPERATION_NOT_SUPPORTED_EXCEPTION_H_
 #define _OPERATION_NOT_SUPPORTED_EXCEPTION_H_
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 class OperationNotSupportedException : public Exception
 {

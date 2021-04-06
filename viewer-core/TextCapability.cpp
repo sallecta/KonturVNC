@@ -1,8 +1,8 @@
 
 
-#include "rfb/VendorDefs.h"
+#include "../rfb/VendorDefs.h"
 #include "TextCapability.h"
-#include "rfb/MsgDefs.h"
+#include "../rfb/MsgDefs.h"
 
 
 TextCapability::TextCapability()
@@ -25,7 +25,7 @@ void TextCapability::onServerMessage(UINT32 code, DataInputStream *input)
 {
 
 		UINT32 length = input->readUInt32();
-		
+
 		std::vector<TCHAR> charBuff(length + 1);
 
 		input->readFully(&charBuff.front(), length);

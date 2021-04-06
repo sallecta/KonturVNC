@@ -25,8 +25,8 @@
 #ifndef _SCM_CLIENT_H_
 #define _SCM_CLIENT_H_
 
-#include "util/CommonHeader.h"
-#include "util/Exception.h"
+#include "../util/CommonHeader.h"
+#include "../util/Exception.h"
 
 #include "SystemException.h"
 

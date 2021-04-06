@@ -25,9 +25,9 @@
 #ifndef __SCALE_MANAGER_H__
 #define __SCALE_MANAGER_H__
 
-#include "region/Rect.h"
+#include "../region/Rect.h"
 
-class ScaleManager 
+class ScaleManager
 {
 public:
   ScaleManager();
@@ -39,7 +39,7 @@ public:
   // set the rectangle of window
   void setWindow(Rect *rcWnd);
 
-  // need to know for scrolling 
+  // need to know for scrolling
   // false -> single page
   // true -> multiple pages
   bool getVertPages(int iHeight) const;
@@ -64,7 +64,7 @@ public:
 
   // get destination rectangle
   void getDestinationRect(Rect *rcDestination);
- 
+
   // get window rectangle from screen
   void getWndFromScreen(const Rect *screen, Rect *wnd);
 

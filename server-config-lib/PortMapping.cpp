@@ -23,7 +23,7 @@
 //
 
 #include "PortMapping.h"
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 
 #include <tchar.h>
 #include <stdio.h>

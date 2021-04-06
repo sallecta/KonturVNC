@@ -26,7 +26,7 @@
 #include "NamingDefs.h"
 #include "OptionsDialog.h"
 
-#include "win-system/Shell.h"
+#include "../win-system/Shell.h"
 
 LoginDialog::LoginDialog(TvnViewer *viewer)
 : BaseDialog(IDD_LOGINDIALOG),

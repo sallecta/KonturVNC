@@ -30,7 +30,7 @@
 #include "ft-client-lib/FileTransferMessageProcessor.h"
 #include "ft-client-lib/FileTransferCore.h"
 
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 #include "ServerMessageListener.h"
 #include "CapabilitiesManager.h"

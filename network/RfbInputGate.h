@@ -25,9 +25,9 @@
 #ifndef _RFB_INPUT_GATE_H_
 #define _RFB_INPUT_GATE_H_
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 
-#include "io-lib/DataInputStream.h"
+#include "../io-lib/DataInputStream.h"
 
 class RfbInputGate : public DataInputStream
 {

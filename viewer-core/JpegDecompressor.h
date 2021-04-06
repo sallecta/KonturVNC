@@ -27,7 +27,7 @@
 
 #include <cstdio>
 
-#include "region/Rect.h"
+#include "../region/Rect.h"
 
 // More help of jpeg-lib in /usr/share/doc/jpeg-8c-r1/example.c.bz2
 
@@ -39,9 +39,9 @@
 // Also you need to delete LIBJPEG_TURBO directive from the CommonHeader.h file.
 
 #ifdef LIBJPEG_TURBO
-#include "libjpeg-turbo/jpeglib.h"
+#include "../libjpeg-turbo/jpeglib.h"
 #else
-#include "libjpeg/jpeglib.h"
+#include "../libjpeg/jpeglib.h"
 #endif
 
 class JpegDecompressor
@@ -66,7 +66,7 @@ public:
 private:
   /*
    * Initialize JPEG decoder. This function initializes the TD_JPEG_DECOMPRESSOR
-   * structure. 
+   * structure.
    */
   void init();
 

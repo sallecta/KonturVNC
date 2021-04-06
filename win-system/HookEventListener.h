@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 // Abstract class for next using in WinHooks class and as a base class in others.
 class HookEventListener

@@ -25,7 +25,7 @@
 #ifndef _CONNECTION_HISTORY_H_
 #define _CONNECTION_HISTORY_H_
 
-#include "win-system/RegistryKey.h"
+#include "../win-system/RegistryKey.h"
 
 #include <vector>
 

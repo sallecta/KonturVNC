@@ -24,12 +24,12 @@
 
 #include <crtdbg.h>
 #include "WinEventLog.h"
-#include "util/CommonHeader.h"
-#include "tvnserver-app/NamingDefs.h"
-#include "util/Exception.h"
-#include "win-system/Environment.h"
-#include "win-system/RegistryKey.h"
-#include "thread/AutoLock.h"
+#include "../util/CommonHeader.h"
+#include "../tvnserver-app/NamingDefs.h"
+#include "../util/Exception.h"
+#include "../win-system/Environment.h"
+#include "../win-system/RegistryKey.h"
+#include "../thread/AutoLock.h"
 
 WinEventLog::WinEventLog(LogWriter *log)
 : m_hEventLog(0),

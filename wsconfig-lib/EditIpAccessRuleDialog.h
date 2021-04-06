@@ -25,14 +25,14 @@
 #ifndef _EDIT_IP_ACCESS_RULE_DIALOG_H_
 #define _EDIT_IP_ACCESS_RULE_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
-#include "gui/CheckBox.h"
-#include "gui/BalloonTip.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
+#include "../gui/CheckBox.h"
+#include "../gui/BalloonTip.h"
 
-#include "server-config-lib/IpAccessRule.h"
+#include "../server-config-lib/IpAccessRule.h"
 
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class EditIpAccessRuleDialog : public BaseDialog
 {

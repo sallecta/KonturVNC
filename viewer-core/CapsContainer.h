@@ -25,8 +25,8 @@
 #include <map>
 #include <vector>
 
-#include "thread/LocalMutex.h"
-#include "util/StringStorage.h"
+#include "../thread/LocalMutex.h"
+#include "../util/StringStorage.h"
 
 #ifndef _CAPS_CONTAINER_H_
 #define _CAPS_CONTAINER_H_
@@ -93,7 +93,7 @@ public:
   // This function return count of enabled capabilities.
   //
   size_t numEnabled() const;
-  
+
   //
   // Return the capability code at the specified index.
   // List of capabilities contained only enabled capability.

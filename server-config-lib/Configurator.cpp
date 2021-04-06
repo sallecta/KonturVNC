@@ -23,15 +23,15 @@
 //
 
 #include <crtdbg.h>
-#include "win-system/Environment.h"
+#include "../win-system/Environment.h"
 #include "wsconfig-lib/TvnLogFilename.h"
 #include "config-lib/RegistrySettingsManager.h"
 
-#include "win-system/Registry.h"
-#include "win-system/RegistryKey.h"
+#include "../win-system/Registry.h"
+#include "../win-system/RegistryKey.h"
 
 #include "Configurator.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 Configurator *Configurator::s_instance = NULL;
 LocalMutex Configurator::m_instanceMutex;

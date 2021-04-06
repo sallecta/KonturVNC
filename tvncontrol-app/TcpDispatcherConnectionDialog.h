@@ -25,12 +25,12 @@
 #ifndef __TCPDISPATCHERCONNECTIONDIALOG_H__
 #define __TCPDISPATCHERCONNECTIONDIALOG_H__
 
-#include "util/winhdr.h"
+#include "../util/winhdr.h"
 
-#include "gui/BaseDialog.h"
-#include "gui/ComboBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/ComboBox.h"
 
-#include "win-system/RegistryKey.h"
+#include "../win-system/RegistryKey.h"
 
 #include "config-lib/ConnectionHistory.h"
 

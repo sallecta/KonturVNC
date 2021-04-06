@@ -26,7 +26,7 @@
 #define _RFB_SET_ENCODINGS_CLIENT_MESSAGE_H_
 
 #include "RfbClientToServerMessage.h"
-#include "rfb/EncodingDefs.h"
+#include "../rfb/EncodingDefs.h"
 
 class RfbSetEncodingsClientMessage : public RfbClientToServerMessage
 {

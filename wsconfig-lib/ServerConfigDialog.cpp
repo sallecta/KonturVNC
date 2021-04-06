@@ -22,12 +22,12 @@
 //-------------------------------------------------------------------------
 //
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 #include "ServerConfigDialog.h"
 #include "ConfigDialog.h"
 #include "ChangePasswordDialog.h"
-#include "server-config-lib/Configurator.h"
-#include "util/StringParser.h"
+#include "../server-config-lib/Configurator.h"
+#include "../util/StringParser.h"
 #include "CommonInputValidation.h"
 #include "UIDataAccess.h"
 #include <limits.h>
@@ -259,7 +259,7 @@ void ServerConfigDialog::apply()
 
   StringParser::parseInt(rfbPortText.getString(), &intVal);
   m_config->setRfbPort(intVal);
-  
+
   StringParser::parseInt(httpPortText.getString(), &intVal);
   m_config->setHttpPort(intVal);
 

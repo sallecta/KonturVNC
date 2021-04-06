@@ -25,11 +25,11 @@
 #ifndef _NOTIFY_ICON_H_
 #define _NOTIFY_ICON_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "NotifyIconWindow.h"
 
-#include "gui/drawing/Icon.h"
+#include "../gui/drawing/Icon.h"
 
 #include <shellapi.h>
 

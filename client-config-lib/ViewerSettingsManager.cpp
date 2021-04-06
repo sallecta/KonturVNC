@@ -24,8 +24,8 @@
 
 #include "ViewerSettingsManager.h"
 
-#include "util/Exception.h"
-#include "win-system/Registry.h"
+#include "../util/Exception.h"
+#include "../win-system/Registry.h"
 
 SettingsManager *ViewerSettingsManager::s_instance = 0;
 

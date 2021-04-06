@@ -27,7 +27,7 @@
 
 #include <vector>
 
-#include "util/Inflater.h"
+#include "../util/Inflater.h"
 
 #include "DecoderOfRectangle.h"
 #include "JpegDecompressor.h"

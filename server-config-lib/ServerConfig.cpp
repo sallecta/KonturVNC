@@ -25,9 +25,9 @@
 #include <crtdbg.h>
 #include "ServerConfig.h"
 
-#include "win-system/Environment.h"
+#include "../win-system/Environment.h"
 
-#include "file-lib/File.h"
+#include "../file-lib/File.h"
 
 ServerConfig::ServerConfig()
 : m_rfbPort(5959), m_httpPort(5858),

@@ -25,15 +25,15 @@
 #ifndef _TVN_SERVER_APPLICATION_H_
 #define _TVN_SERVER_APPLICATION_H_
 
-#include "util/CommonHeader.h"
-#include "util/winhdr.h"
+#include "../util/CommonHeader.h"
+#include "../util/winhdr.h"
 
-#include "win-system/WindowsApplication.h"
+#include "../win-system/WindowsApplication.h"
 
 #include "TvnServer.h"
 #include "TvnServerListener.h"
 #include "WsConfigRunner.h"
-#include "log-writer/FileLogger.h"
+#include "../log-writer/FileLogger.h"
 #include "LogInitListener.h"
 
 /**

@@ -25,8 +25,8 @@
 #ifndef __WINDOWSDISPLAYS_H__
 #define __WINDOWSDISPLAYS_H__
 
-#include "region/Rect.h"
-#include "util/DateTime.h"
+#include "../region/Rect.h"
+#include "../util/DateTime.h"
 #include <vector>
 
 class WindowsDisplays

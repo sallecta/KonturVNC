@@ -25,8 +25,8 @@
 #ifndef _SECURITY_DESCRIPTOR_H_
 #define _SECURITY_DESCRIPTOR_H_
 
-#include "util/winhdr.h"
-#include "win-system/SystemException.h"
+#include "../../util/winhdr.h"
+#include "../../win-system/SystemException.h"
 #include <AccCtrl.h>
 
 /**

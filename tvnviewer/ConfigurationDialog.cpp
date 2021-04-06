@@ -27,8 +27,8 @@
 #include "TvnViewer.h"
 #include "resource.h"
 
-#include "file-lib/File.h"
-#include "win-system/Process.h"
+#include "../file-lib/File.h"
+#include "../win-system/Process.h"
 
 ConfigurationDialog::ConfigurationDialog()
 : BaseDialog(IDD_CONFIGURATION),
@@ -100,7 +100,7 @@ void ConfigurationDialog::onLogLevelChange()
 void ConfigurationDialog::onOpenFolderButtonClick()
 {
   StringStorage logDir;
-  
+
   ViewerConfig::getInstance()->getLogDir(&logDir);
 
   StringStorage command;
@@ -123,7 +123,7 @@ BOOL ConfigurationDialog::onInitDialog()
   setControlById(m_peerName,IDC_PEERNAME);
   setControlById(m_autoRec,IDC_AUTOREC);
   setControlById(m_askComment,IDC_ACOMMENT);
-  setControlById(m_showToolBars, IDC_CSHOWTOOLBARS); 
+  setControlById(m_showToolBars, IDC_CSHOWTOOLBARS);
   setControlById(m_warnAtSwitching, IDC_CWARNATSW);
   setControlById(m_numberConn, IDC_ENUMCON);
   setControlById(m_snumConn, IDC_SNUMCON);
@@ -250,7 +250,7 @@ void ConfigurationDialog::onOkPressed()
   config->promptOnFullscreen(m_warnAtSwitching.isChecked());
   config->autoRecord(m_autoRec.isChecked());
   config->askComment(m_askComment.isChecked());
-  
+
   StringStorage vPath;
   m_vidPath.getText(&vPath);
   config->setPathToVLogFile(vPath);
@@ -259,7 +259,7 @@ void ConfigurationDialog::onOkPressed()
 
   m_peerName.getText(&sPeerName);
   config->setPeerName(sPeerName);
-  
+
   SettingsManager *sm = ViewerSettingsManager::getInstance();
   config->saveToStorage(sm);
 }

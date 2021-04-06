@@ -39,31 +39,31 @@
 #include "ConnectCommand.h"
 #include "ShutdownCommand.h"
 
-#include "util/VncPassCrypt.h"
-#include "util/winhdr.h"
-#include "util/StringTable.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/VncPassCrypt.h"
+#include "../util/winhdr.h"
+#include "../util/StringTable.h"
+#include "../tvnserver-app/NamingDefs.h"
 
-#include "tvncontrol-app/ControlCommandLine.h"
-#include "tvnserver-app/TvnServerHelp.h"
+#include "../tvncontrol-app/ControlCommandLine.h"
+#include "../tvnserver-app/TvnServerHelp.h"
 
-#include "win-system/Environment.h"
-#include "win-system/Shell.h"
-#include "win-system/Process.h"
-#include "win-system/WinCommandLineArgs.h"
+#include "../win-system/Environment.h"
+#include "../win-system/Shell.h"
+#include "../win-system/Process.h"
+#include "../win-system/WinCommandLineArgs.h"
 
-#include "thread/ZombieKiller.h"
-#include "thread/GlobalMutex.h"
+#include "../thread/ZombieKiller.h"
+#include "../thread/GlobalMutex.h"
 
-#include "gui/CommonControlsEx.h"
+#include "../gui/CommonControlsEx.h"
 
-#include "network/socket/WindowsSocket.h"
+#include "../network/socket/WindowsSocket.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include "wsconfig-lib/ConfigDialog.h"
-#include "util/AnsiStringStorage.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/AnsiStringStorage.h"
+#include "../tvnserver-app/NamingDefs.h"
 #include "SetPasswordsDialog.h"
 
 ControlApplication::ControlApplication(HINSTANCE hinst,

@@ -26,7 +26,7 @@
 #define __CONTROLAPPAUTHENTICATOR_H__
 
 #include "AuthTracker.h"
-#include "win-system/WindowsEvent.h"
+#include "../win-system/WindowsEvent.h"
 
 // This class will be authenticate insert an time interval between
 // failure trying of authentications.

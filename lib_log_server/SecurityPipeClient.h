@@ -25,7 +25,7 @@
 #ifndef __SECURITYPIPECLIENT_H__
 #define __SECURITYPIPECLIENT_H__
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 
 // The SecurityPipeClient class gets new security pipe connection by
 // a granted temporary channel.

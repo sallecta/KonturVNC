@@ -26,7 +26,7 @@
 
 #include <crtdbg.h>
 
-#include "win-system/WTS.h"
+#include "../win-system/WTS.h"
 
 Impersonator::Impersonator(LogWriter *log)
 : m_token(INVALID_HANDLE_VALUE),

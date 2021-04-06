@@ -33,15 +33,15 @@
 #include "ScaleManager.h"
 #include "ReconnectWnd.h"
 #include "ViewerMenu.h"
-#include "gui/ToolBar.h"
-#include "log-writer/LogWriter.h"
+#include "../gui/ToolBar.h"
+#include "../log-writer/LogWriter.h"
 #include "viewer-core/FileTransferCapability.h"
 #include "viewer-core/RemoteViewerCore.h"
 #include "viewer-core/CoreEventsAdapter.h"
 #include "viewer-core/VncAuthentication.h"
-#include "win-system/SystemInformation.h"
-#include "win-system/WindowsApplication.h"
-#include "win-system/WinHooks.h"
+#include "../win-system/SystemInformation.h"
+#include "../win-system/WindowsApplication.h"
+#include "../win-system/WinHooks.h"
 
 #include "ClientChatDialog.h"
 
@@ -49,9 +49,9 @@
 
 #include "viewer-core/SdpCapability.h"
 
-#include "rfb-sconn/TextMsgListener.h"
+#include "../rfb-sconn/TextMsgListener.h"
 
-#include "p2p/P2pEventListener.h"
+#include "../p2p/P2pEventListener.h"
 
 class ViewerWindow : public BaseWindow,
                      public CoreEventsAdapter,
@@ -98,7 +98,7 @@ protected:
 
   bool onMessage(UINT message, WPARAM wParam, LPARAM lParam);
   bool onEraseBackground(HDC hdc);
-  
+
   bool onDisconnect();
   bool onAuthError(WPARAM wParam);
   bool onError();
@@ -114,7 +114,7 @@ protected:
   bool onFocus(WPARAM wParam);
   bool onKillFocus(WPARAM wParam);
   bool onTimer(WPARAM idTimer);
-  
+
   void desktopStateUpdate();
   void commandCtrlAltDel();
   void commandCtrlEsc();
@@ -153,7 +153,7 @@ protected:
 
   int translateAccelToTB(int val);
   void applyScreenChanges(bool isFullScreen);
-  
+
   // function return default rect of viewer window:
   // if size of remote screen is more local desktop, then return rect of desktop
   // else return rect of remote screen + border
@@ -162,7 +162,7 @@ protected:
   LogWriter m_logWriter;
 
   Control m_control;
-  
+
   ConnectionConfigSM m_ccsm;
   ConnectionConfig *m_conConf;
   WindowsApplication *m_application;
@@ -228,7 +228,7 @@ private:
   void adjustWindowSize();
   StringStorage formatWindowName() const;
   void updateKeyState();
-  
+
   int displayCount;
 
   // onHookProc function implementation of HookEventListener base abstract class.

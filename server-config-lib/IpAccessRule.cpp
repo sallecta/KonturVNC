@@ -23,7 +23,7 @@
 //
 
 #include "IpAccessRule.h"
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 IpAccessRule::IpAccessRule()
 : m_action(ACTION_TYPE_DENY)

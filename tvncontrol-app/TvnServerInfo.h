@@ -25,7 +25,7 @@
 #ifndef _TVNSERVER_INFO_H_
 #define _TVNSERVER_INFO_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 /**
  * Public TightVNC server information.

@@ -25,7 +25,7 @@
 #ifndef _WIN_CLIPBOARD_H_
 #define _WIN_CLIPBOARD_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class WinClipboard
 {
@@ -35,7 +35,7 @@ public:
   virtual ~WinClipboard();
 
   void setHWnd(HWND hwnd);
-  
+
   // get string from windows clipboard
   bool getString(StringStorage *str);
 

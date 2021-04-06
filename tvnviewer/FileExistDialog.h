@@ -25,8 +25,8 @@
 #ifndef _FILE_EXIST_DIALOG_H_
 #define _FILE_EXIST_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/Control.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/Control.h"
 #include "ft-common/FileInfo.h"
 
 class FileExistDialog : public BaseDialog

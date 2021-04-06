@@ -25,8 +25,8 @@
 #ifndef _CONTROL_PIPE_NAME_H_
 #define _CONTROL_PIPE_NAME_H_
 
-#include "util/CommonHeader.h"
-#include "log-writer/LogWriter.h"
+#include "../util/CommonHeader.h"
+#include "../log-writer/LogWriter.h"
 
 /**
  * Used to create pipe name for control transport.

@@ -26,8 +26,8 @@
 #define __RFBKEYSYM_H__
 
 #include "RfbKeySymListener.h"
-#include "util/Keymap.h"
-#include "log-writer/LogWriter.h"
+#include "../util/Keymap.h"
+#include "../log-writer/LogWriter.h"
 
 // Translates pressed key to a series of rfb symbols. Gives the series
 // to out by the listener function serial calling.

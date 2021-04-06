@@ -23,21 +23,21 @@
 //
 
 #include "ResourceStrings.h"
-#include "util/ResourceLoader.h"
+#include "../util/ResourceLoader.h"
 
-ResourceStrings::ResourceStrings() 
-: m_min(0), 
+ResourceStrings::ResourceStrings()
+: m_min(0),
   m_max(0)
 {
 }
 
-ResourceStrings::ResourceStrings(int min, int max) 
+ResourceStrings::ResourceStrings(int min, int max)
 {
   m_min = min;
   m_max = max;
 }
 
-bool ResourceStrings::isValid(int res) 
+bool ResourceStrings::isValid(int res)
 {
   if (res >= m_min && res <= m_max) {
     return true;
@@ -45,7 +45,7 @@ bool ResourceStrings::isValid(int res)
   return false;
 }
 
-StringStorage ResourceStrings::getStrRes(int strRes) 
+StringStorage ResourceStrings::getStrRes(int strRes)
 {
   ResourceLoader *rLoader = ResourceLoader::getInstance();
 
@@ -54,7 +54,7 @@ StringStorage ResourceStrings::getStrRes(int strRes)
   return str.getString();
 }
 
-StringStorage ResourceStrings::getStrPureRes(int strRes) 
+StringStorage ResourceStrings::getStrPureRes(int strRes)
 {
   StringStorage strTemp = getStrRes(strRes);
   size_t index = strTemp.findChar(_T('\t'));

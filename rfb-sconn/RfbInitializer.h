@@ -25,12 +25,12 @@
 #ifndef __RFBINITIALIZER_H__
 #define __RFBINITIALIZER_H__
 
-#include "io-lib/Channel.h"
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/DataInputStream.h"
+#include "../io-lib/Channel.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/DataInputStream.h"
 #include "CapContainer.h"
-#include "region/Dimension.h"
-#include "rfb/PixelFormat.h"
+#include "../region/Dimension.h"
+#include "../rfb/PixelFormat.h"
 // External listeners
 #include "ClientAuthListener.h"
 

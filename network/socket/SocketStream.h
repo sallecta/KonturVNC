@@ -25,13 +25,13 @@
 #ifndef SOCKET_STREAM_H
 #define SOCKET_STREAM_H
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 
 #include "../socket/SocketAddressIPv4.h"
 #include "../socket/SocketIPv4.h"
 #include "../socket/SocketAddressIPv4.h"
 
-#include "io-lib/IOException.h"
+#include "../io-lib/IOException.h"
 
 class SocketStream : public Channel
 {

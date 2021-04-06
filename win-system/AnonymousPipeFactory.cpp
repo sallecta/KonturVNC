@@ -23,7 +23,7 @@
 //
 
 #include "AnonymousPipeFactory.h"
-#include "win-system/SecurityAttributes.h"
+#include "../win-system/SecurityAttributes.h"
 
 AnonymousPipeFactory::AnonymousPipeFactory(LogWriter *log)
 : m_log(log)

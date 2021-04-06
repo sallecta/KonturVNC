@@ -25,7 +25,7 @@
 #ifndef __VIEWPORTSTATE_H__
 #define __VIEWPORTSTATE_H__
 
-#include "region/Rect.h"
+#include "../region/Rect.h"
 
 // This class stores a view port state.
 class ViewPortState

@@ -25,7 +25,7 @@
 #ifndef _COMBOBOX_H_
 #define _COMBOBOX_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "Control.h"
 
 class ComboBox : public Control

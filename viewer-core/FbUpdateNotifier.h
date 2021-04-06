@@ -25,14 +25,14 @@
 #ifndef _FB_UDPATE_NOTIFIER_H_
 #define _FB_UPDATE_NOTIFIER_H_
 
-#include "log-writer/LogWriter.h"
-#include "rfb/FrameBuffer.h"
-#include "region/Point.h"
-#include "region/Rect.h"
-#include "region/Region.h"
-#include "thread/LocalMutex.h"
-#include "thread/Thread.h"
-#include "win-system/WindowsEvent.h"
+#include "../log-writer/LogWriter.h"
+#include "../rfb/FrameBuffer.h"
+#include "../region/Point.h"
+#include "../region/Rect.h"
+#include "../region/Region.h"
+#include "../thread/LocalMutex.h"
+#include "../thread/Thread.h"
+#include "../win-system/WindowsEvent.h"
 
 #include "tvnviewer/AvilogThread.h"
 
@@ -55,7 +55,7 @@ public:
   void updatePointerPos(const Point *position);
   void setNewCursor(const Point *hotSpot,
                     UINT16 width, UINT16 height,
-                    const vector<UINT8> *cursor, 
+                    const vector<UINT8> *cursor,
                     const vector<UINT8> *bitmask);
 
 

@@ -25,11 +25,11 @@
 #ifndef _VIDEO_REGIONS_CONFIG_DIALOG_H_
 #define _VIDEO_REGIONS_CONFIG_DIALOG_H_
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
-#include "gui/SpinControl.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
+#include "../gui/SpinControl.h"
 
 class VideoRegionsConfigDialog : public BaseDialog
 {

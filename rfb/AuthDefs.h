@@ -25,7 +25,7 @@
 #ifndef __RFB_AUTH_DEFS_H_INCLUDED__
 #define __RFB_AUTH_DEFS_H_INCLUDED__
 
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 
 class SecurityDefs
 {

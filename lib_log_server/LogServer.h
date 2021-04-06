@@ -27,10 +27,10 @@
 
 #include "ListenLogServer.h"
 #include "LogConn.h"
-#include "log-writer/FileAccount.h"
-#include "util/Singleton.h"
+#include "../log-writer/FileAccount.h"
+#include "../util/Singleton.h"
 #include "LogConnAuthListener.h"
-#include "thread/ThreadCollector.h"
+#include "../thread/ThreadCollector.h"
 #include "LogListener.h"
 #include <list>
 #include <map>

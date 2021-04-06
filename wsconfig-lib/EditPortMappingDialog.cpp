@@ -22,13 +22,13 @@
 //-------------------------------------------------------------------------
 //
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 #include "EditPortMappingDialog.h"
 
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 
-#include "server-config-lib/Configurator.h"
-#include "server-config-lib/PortMappingContainer.h"
+#include "../server-config-lib/Configurator.h"
+#include "../server-config-lib/PortMappingContainer.h"
 
 EditPortMappingDialog::EditPortMappingDialog(DialogType dlgType)
 : BaseDialog(IDD_EDIT_PORT_MAPPING), m_dialogType(dlgType)

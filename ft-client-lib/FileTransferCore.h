@@ -26,7 +26,7 @@
 #define _FILE_TRANSFER_CORE_H_
 
 #include "ft-common/FileInfo.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 #include "FileTransferEventHandler.h"
 #include "FileTransferRequestSender.h"

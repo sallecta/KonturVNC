@@ -23,15 +23,15 @@
 //
 
 #include "FileExistDialog.h"
-#include "util/DateTime.h"
+#include "../util/DateTime.h"
 #include "resource.h"
 #include <crtdbg.h>
 #include <stdio.h>
 
 FileExistDialog::FileExistDialog()
-: m_controlsInitialized(false), 
+: m_controlsInitialized(false),
   m_newFileInfo(NULL),
-  m_existingFileInfo(NULL), 
+  m_existingFileInfo(NULL),
   m_canAppend(true)
 {
   setResourceId(ftclient_fileExistDialog);

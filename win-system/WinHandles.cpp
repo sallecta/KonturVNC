@@ -24,7 +24,7 @@
 
 #include "WinHandles.h"
 #include "Environment.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 WinHandles::WinHandles()
 {

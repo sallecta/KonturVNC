@@ -1,5 +1,5 @@
 #include "CommentHistory.h"
-#include "win-system/Registry.h"
+#include "../win-system/Registry.h"
 #include <crtdbg.h>
 
 CommentHistory::CommentHistory(RegistryKey *key, size_t limit)

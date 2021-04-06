@@ -25,7 +25,7 @@
 #ifndef __WINFILE_H__
 #define __WINFILE_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 enum DesiredAccess
 {

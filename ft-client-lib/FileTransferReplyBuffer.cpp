@@ -23,8 +23,8 @@
 //
 
 #include "FileTransferReplyBuffer.h"
-#include "io-lib/ByteArrayInputStream.h"
-#include "thread/AutoLock.h"
+#include "../io-lib/ByteArrayInputStream.h"
+#include "../thread/AutoLock.h"
 #include <crtdbg.h>
 
 FileTransferReplyBuffer::FileTransferReplyBuffer(LogWriter *logWriter)

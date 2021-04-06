@@ -24,7 +24,7 @@
 
 #include "UpdateLocalConfigCommand.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 UpdateLocalConfigCommand::UpdateLocalConfigCommand(ControlProxy *proxy)
 : m_proxy(proxy)

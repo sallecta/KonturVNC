@@ -23,9 +23,9 @@
 //
 
 #include "HookLoaderApplication.h"
-#include "util/StringParser.h"
-#include "tvnserver-app/NamingDefs.h"
-#include "desktop/HookInstaller.h"
+#include "../util/StringParser.h"
+#include "../tvnserver-app/NamingDefs.h"
+#include "../lib_desktop/HookInstaller.h"
 
 HookLoaderApplication::HookLoaderApplication(HINSTANCE appInstance,
                                              const TCHAR *windowClassName,

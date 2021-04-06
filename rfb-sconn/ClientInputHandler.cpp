@@ -23,7 +23,7 @@
 //
 
 #include "ClientInputHandler.h"
-#include "rfb/MsgDefs.h"
+#include "../rfb/MsgDefs.h"
 
 ClientInputHandler::ClientInputHandler(RfbCodeRegistrator *codeRegtor,
                                        ClientInputEventListener *extEventListener,

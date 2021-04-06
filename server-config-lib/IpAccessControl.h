@@ -29,10 +29,10 @@
 
 #include "IpAccessRule.h"
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
 
 using namespace std;
 

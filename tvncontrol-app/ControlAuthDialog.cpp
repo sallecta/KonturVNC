@@ -24,8 +24,8 @@
 
 #include "ControlAuthDialog.h"
 
-#include "tvnserver/resource.h"
-#include "server-config-lib/ServerConfig.h"
+#include "../tvnserver/resource.h"
+#include "../server-config-lib/ServerConfig.h"
 
 ControlAuthDialog::ControlAuthDialog()
 : BaseDialog(IDD_CONTROL_AUTH)

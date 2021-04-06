@@ -25,8 +25,8 @@
 #ifndef _WINSOCK_CLASS_H_
 #define _WINSOCK_CLASS_H_
 
-#include "util/CommonHeader.h"
-#include "util/Exception.h"
+#include "../util/CommonHeader.h"
+#include "../util/Exception.h"
 
 //
 // Class that startup and cleanup Windows Sockets subsystem.

@@ -24,13 +24,13 @@
 
 #include "FileTransferMainDialog.h"
 
-#include "util/CommonHeader.h"
-#include "util/winhdr.h"
+#include "../util/CommonHeader.h"
+#include "../util/winhdr.h"
 #include "ft-common/WinFilePath.h"
 #include "NewFolderDialog.h"
 #include "FileRenameDialog.h"
 
-#include "file-lib/File.h"
+#include "../file-lib/File.h"
 
 #include "resource.h"
 #include <stdio.h>
@@ -214,14 +214,14 @@ void FileTransferMainDialog::onMessageReceived(UINT uMsg, WPARAM wParam, LPARAM 
       int result = static_cast<int>(lParam);
       m_ftCore->onUpdateState(state, result);
 	  BringWindowToTop(m_ctrlThis.getWindow());
-	  
+
       setProgress(0.0);
       enableControls(true);
       break;
     } else { // If window is closing we can it only if operation finished
       kill(0);
       return;
-    } 
+    }
   } // switch
 } // void
 
@@ -867,7 +867,7 @@ void FileTransferMainDialog::getPathToParentLocalFolder(StringStorage *out)
   getPathToCurrentLocalFolder(out);
   size_t ld = out->findLast(_T('\\'));
   if (ld != (size_t)-1) {
-    out->getSubstring(out, 0, ld);  
+    out->getSubstring(out, 0, ld);
   } else {
     out->setString(_T(""));
     return;
@@ -891,7 +891,7 @@ void FileTransferMainDialog::getPathToSelectedLocalFile(StringStorage *out)
 
   WinFilePath wp(pathToFile->getString());
   pathToFile->setString(wp.getString());
-  
+
 
 }
 
@@ -905,7 +905,7 @@ void FileTransferMainDialog::getPathToParentRemoteFolder(StringStorage *out)
   getPathToCurrentRemoteFolder(out);
   size_t ld = out->findLast(_T('/'));
   if (ld != (size_t)-1) {
-    out->getSubstring(out, 0, ld);  
+    out->getSubstring(out, 0, ld);
   } else {
     out->setString(_T("/"));
     return ;

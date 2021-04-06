@@ -25,7 +25,7 @@
 #ifndef __WINDOW_H__
 #define __WINDOW_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "WindowMessageHandler.h"
 
 class MessageWindow

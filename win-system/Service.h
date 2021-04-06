@@ -25,10 +25,10 @@
 #ifndef _SERVICE_H_
 #define _SERVICE_H_
 
-#include "util/winhdr.h"
-#include "util/StringStorage.h"
-#include "util/Exception.h"
-#include "thread/Thread.h"
+#include "../util/winhdr.h"
+#include "../util/StringStorage.h"
+#include "../util/Exception.h"
+#include "../thread/Thread.h"
 
 /**
  * Win32 service class (abstract).

@@ -24,10 +24,10 @@
 
 #include "ControlPipeName.h"
 
-#include "util/winhdr.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/winhdr.h"
+#include "../tvnserver-app/NamingDefs.h"
 
-#include "win-system/WTS.h"
+#include "../win-system/WTS.h"
 
 void ControlPipeName::createPipeName(bool forService, StringStorage *pipeName, LogWriter *log)
 {

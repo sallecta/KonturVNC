@@ -25,21 +25,21 @@
 #ifndef __DESKTOP_SERVER_APPLICATION_H__
 #define __DESKTOP_SERVER_APPLICATION_H__
 
-#include "win-system/WindowsApplication.h"
-#include "util/AnEventListener.h"
-#include "win-system/AnonymousPipe.h"
-#include "desktop-ipc/BlockingGate.h"
-#include "desktop-ipc/DesktopSrvDispatcher.h"
-#include "desktop-ipc/UpdateHandlerServer.h"
-#include "desktop-ipc/UserInputServer.h"
-#include "desktop-ipc/ConfigServer.h"
-#include "desktop-ipc/GateKickHandler.h"
+#include "../win-system/WindowsApplication.h"
+#include "../util/AnEventListener.h"
+#include "../win-system/AnonymousPipe.h"
+#include "../lib_desktop_ipc/BlockingGate.h"
+#include "../lib_desktop_ipc/DesktopSrvDispatcher.h"
+#include "../lib_desktop_ipc/UpdateHandlerServer.h"
+#include "../lib_desktop_ipc/UserInputServer.h"
+#include "../lib_desktop_ipc/ConfigServer.h"
+#include "../lib_desktop_ipc/GateKickHandler.h"
 #include "SessionChangesWatcher.h"
-#include "win-system/LocalWindowsApplication.h"
-#include "log-server/ClientLogger.h"
-#include "log-writer/LogWriter.h"
-#include "server-config-lib/ConfigReloadListener.h"
-#include "util/CommandLineArgs.h"
+#include "../win-system/LocalWindowsApplication.h"
+#include "../lib_log_server/ClientLogger.h"
+#include "../log-writer/LogWriter.h"
+#include "../server-config-lib/ConfigReloadListener.h"
+#include "../util/CommandLineArgs.h"
 
 /**
  * Desktop server application.

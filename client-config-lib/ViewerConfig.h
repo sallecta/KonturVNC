@@ -25,12 +25,12 @@
 #ifndef _VIEWER_CONFIG_H_
 #define _VIEWER_CONFIG_H_
 
-#include "util/StringStorage.h"
-#include "util/Singleton.h"
+#include "../util/StringStorage.h"
+#include "../util/Singleton.h"
 #include "config-lib/ConnectionHistory.h"
-#include "log-writer/FileLogger.h"
-#include "thread/LocalMutex.h"
-#include "thread/AutoLock.h"
+#include "../log-writer/FileLogger.h"
+#include "../thread/LocalMutex.h"
+#include "../thread/AutoLock.h"
 
 #include "ConnectionConfig.h"
 
@@ -95,7 +95,7 @@ public:
   // Returns "show toolbar" flag
   bool isAutoRecord() const;
 
-  
+
   void askComment(bool ask);
   bool isAskComment() const;
 
@@ -107,17 +107,17 @@ public:
   const TCHAR *getPathToLogFile() const;
 
    const TCHAR *getPathToVLogFile() const;
-   
+
    const TCHAR *getFullPathToVLogFile() const;
 
    const void setPathToVLogFile(StringStorage vPath);
-   
+
    const void setFullPathToVLogFile(StringStorage vPath);
 
      const TCHAR *getUserName() const;
 
 	 const TCHAR *getPeerName() const;
-	
+
 	const void setPeerName(StringStorage peer);
 
   // Returns connection history

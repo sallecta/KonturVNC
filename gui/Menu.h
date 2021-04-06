@@ -25,7 +25,7 @@
 #ifndef _MENU_H_
 #define _MENU_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <crtdbg.h>
 
 class Menu
@@ -43,9 +43,9 @@ public:
   void createPopupMenu();
   bool getSubMenu(int nPos, Menu *menu);
   void termMenu();
-  
+
   int getMenuItemCount();
-  bool appendMenu(StringStorage strVal, UINT uID); 
+  bool appendMenu(StringStorage strVal, UINT uID);
   bool appendSeparator();
   bool appendSubMenu(StringStorage strVal, Menu *pMenu);
 

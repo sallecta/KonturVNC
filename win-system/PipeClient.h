@@ -25,7 +25,7 @@
 #ifndef __PIPECLIENT_H__
 #define __PIPECLIENT_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "NamedPipe.h"
 
 /**

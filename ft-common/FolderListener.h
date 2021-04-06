@@ -25,7 +25,7 @@
 #ifndef _FOLDER_LISTENER_H_
 #define _FOLDER_LISTENER_H_
 
-#include "util/inttypes.h"
+#include "../util/inttypes.h"
 #include "ft-common/FileInfo.h"
 
 //

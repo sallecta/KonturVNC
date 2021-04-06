@@ -25,7 +25,7 @@
 #ifndef __AUTHEXCEPTION_H__
 #define __AUTHEXCEPTION_H__
 
-#include "util/exception.h"
+#include "../util/exception.h"
 
 class AuthException : public Exception
 {

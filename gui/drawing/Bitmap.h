@@ -25,7 +25,7 @@
 #ifndef __BITMAP_H__
 #define __BITMAP_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include <string>
 //#include <sstream>

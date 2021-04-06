@@ -12,8 +12,6 @@
 		<Project filename="ft-common/ft-common.cbp" />
 		<Project filename="client-config-lib/client-config-lib.cbp" />
 		<Project filename="io-lib/io-lib.cbp" />
-		<Project filename="desktop-ipc/desktop-ipc.cbp" />
-		<Project filename="desktop/desktop.cbp" />
 		<Project filename="http-server-lib/http-server-lib.cbp" />
 		<Project filename="rfb/rfb.cbp" />
 		<Project filename="screen-hooks/screenhooks.cbp" />
@@ -23,7 +21,9 @@
 		<Project filename="rfb-sconn/rfb-sconn.cbp" />
 		<Project filename="win-event-log/win-event-log.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
-		<Project filename="log-server/log-server.cbp" />
+		<Project filename="D:/dev/git/KonturVNC/lib_desktop/lib_desktop.cbp" />
+		<Project filename="lib_desktop_ipc/lib_desktop_ipc.cbp" />
+		<Project filename="lib_log_server/lib_log_server.cbp" />
 		<Project filename="server-config-lib/server-config-lib.cbp" />
 		<Project filename="win-system/win-system.cbp" />
 		<Project filename="tvncontrol-app/tvncontrol-app.cbp" />

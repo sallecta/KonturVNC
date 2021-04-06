@@ -25,12 +25,12 @@
 #ifndef _FILE_TRANSFER_MESSAGE_PROCESSOR_H_
 #define _FILE_TRANSFER_MESSAGE_PROCESSOR_H_
 
-#include "io-lib/IOException.h"
-#include "io-lib/DataInputStream.h"
+#include "../io-lib/IOException.h"
+#include "../io-lib/DataInputStream.h"
 
-#include "util/inttypes.h"
-#include "util/ListenerContainer.h"
-#include "util/ZLibException.h"
+#include "../util/inttypes.h"
+#include "../util/ListenerContainer.h"
+#include "../util/ZLibException.h"
 
 #include "ft-common/OperationNotSupportedException.h"
 

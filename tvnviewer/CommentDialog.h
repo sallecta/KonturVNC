@@ -2,13 +2,13 @@
 #ifndef _COMMENT_DIALOG_H_
 #define _COMMENT_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/ComboBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/ComboBox.h"
 #include "resource.h"
 #include "config-lib/CommentHistory.h"
 
-#include "win-system/RegistryKey.h"
-#include "win-system/Registry.h"
+#include "../win-system/RegistryKey.h"
+#include "../win-system/Registry.h"
 #include "NamingDefs.h"
 
 

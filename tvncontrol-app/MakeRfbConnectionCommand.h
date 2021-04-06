@@ -25,7 +25,7 @@
 #ifndef _MAKE_RFB_CONNECTION_COMMAND_H_
 #define _MAKE_RFB_CONNECTION_COMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/COmmonHeader.h"
+#include "../util/COmmonHeader.h"
 
 // This class is a mere envelop for process handle that will automatically
 // closed at destructor calling.

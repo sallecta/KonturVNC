@@ -28,12 +28,12 @@
 #include "config-lib/SettingsManager.h"
 #include "config-lib/RegistrySettingsManager.h"
 
-#include "gui/BaseDialog.h"
-#include "gui/Control.h"
-#include "gui/ListBox.h"
-#include "gui/TabControl.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/Control.h"
+#include "../gui/ListBox.h"
+#include "../gui/TabControl.h"
 
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 #include "ServerConfigDialog.h"
 #include "AdministrationConfigDialog.h"
@@ -41,7 +41,7 @@
 #include "IpAccessControlDialog.h"
 #include "VideoRegionsConfigDialog.h"
 
-#include "tvncontrol-app/ControlCommand.h"
+#include "../tvncontrol-app/ControlCommand.h"
 
 class ConfigDialog : public BaseDialog
 {

@@ -25,7 +25,7 @@
 #ifndef __SHAREDMEMORY_H__
 #define __SHAREDMEMORY_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class SharedMemory
 {

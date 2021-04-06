@@ -25,7 +25,7 @@
 #ifndef __CONNECTIONLISTENER_H__
 #define __CONNECTIONLISTENER_H__
 
-#include "io-lib/Channel.h"
+#include "../io-lib/Channel.h"
 
 class ConnectionListener
 {

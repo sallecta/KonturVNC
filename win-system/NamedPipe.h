@@ -25,10 +25,10 @@
 #ifndef __NAMEDPIPE_H__
 #define __NAMEDPIPE_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "WindowsEvent.h"
-#include "io-lib/Channel.h"
-#include "thread/LocalMutex.h"
+#include "../io-lib/Channel.h"
+#include "../thread/LocalMutex.h"
 #include "Pipe.h"
 
 /**

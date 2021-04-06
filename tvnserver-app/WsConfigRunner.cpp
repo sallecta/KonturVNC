@@ -23,10 +23,10 @@
 //
 
 #include "WsConfigRunner.h"
-#include "win-system/CurrentConsoleProcess.h"
-#include "win-system/Environment.h"
-#include "server-config-lib/Configurator.h"
-#include "tvncontrol-app/ControlCommandLine.h"
+#include "../win-system/CurrentConsoleProcess.h"
+#include "../win-system/Environment.h"
+#include "../server-config-lib/Configurator.h"
+#include "../tvncontrol-app/ControlCommandLine.h"
 
 WsConfigRunner::WsConfigRunner(Logger *logger, bool serviceMode)
 : m_serviceMode(serviceMode),

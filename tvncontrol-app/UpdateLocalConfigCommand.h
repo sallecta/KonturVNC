@@ -25,7 +25,7 @@
 #ifndef _UPDATE_LOCAL_CONFIG_COMMAND_H_
 #define _UPDATE_LOCAL_CONFIG_COMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

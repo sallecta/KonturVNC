@@ -26,14 +26,14 @@
 #include "ControlAuth.h"
 #include "ControlAuthDialog.h"
 #include "ControlProto.h"
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 #include "config-lib/RegistrySettingsManager.h"
-#include "util/VncPassCrypt.h"
-#include "util/AnsiStringStorage.h"
-#include "tvnserver-app/NamingDefs.h"
-#include "file-lib/WinFile.h"
+#include "../util/VncPassCrypt.h"
+#include "../util/AnsiStringStorage.h"
+#include "../tvnserver-app/NamingDefs.h"
+#include "../file-lib/WinFile.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include <crtdbg.h>
 

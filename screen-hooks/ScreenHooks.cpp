@@ -23,10 +23,10 @@
 //
 
 #include "ScreenHooks.h"
-#include "util/CommonHeader.h"
-#include "tvnserver-app/NamingDefs.h"
-#include "region/Point.h"
-#include "region/Region.h"
+#include "../util/CommonHeader.h"
+#include "../tvnserver-app/NamingDefs.h"
+#include "../region/Point.h"
+#include "../region/Region.h"
 
 // Pre-definition:
 LRESULT CALLBACK callWndRetProc(int nCode, WPARAM wParam, LPARAM lParam);

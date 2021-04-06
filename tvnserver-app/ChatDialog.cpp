@@ -1,16 +1,16 @@
 #include "ChatDialog.h"
 
-#include "tvnserver/resource.h"
-#include "thread/AutoLock.h"
-#include "win-system/Environment.h"
+#include "../tvnserver/resource.h"
+#include "../thread/AutoLock.h"
+#include "../win-system/Environment.h"
 
-#include "util/DateTime.h"
+#include "../util/DateTime.h"
 
 
 ChatDialog::ChatDialog(TextMsgListener * extMsgListener)
 	: BaseDialog(IDD_TEXTCHAT_DLG), m_extMsgListener(extMsgListener)
 {
-	
+
 }
 
 
@@ -32,7 +32,7 @@ void ChatDialog::addMsg(StringStorage msg)
 
     timeString.format(_T("%.2d:%.2d @ "),
                       st.wHour, st.wMinute);
-  
+
 	timeString.appendString(msg.getString());
 
 	chatHist.appendString(timeString.getString());
@@ -53,7 +53,7 @@ int ChatDialog::show()
 
 void ChatDialog::hide()
 {
-	
+
 	BaseDialog::hide();
 }
 
@@ -66,7 +66,7 @@ void ChatDialog::initControls()
 
     RECT rcWindow;
     GetWindowRect(hwnd, &rcWindow);
-    
+
 	SIZE sizeWindow = {rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top};
 
     SetWindowPos(hwnd, HWND_TOPMOST, desktopRect.right-sizeWindow.cx, desktopRect.bottom-sizeWindow.cy, 0, 0, SWP_NOSIZE | SWP_SHOWWINDOW);
@@ -74,7 +74,7 @@ void ChatDialog::initControls()
 
 		RECT Rect;
 		GetWindowRect(hwnd, &Rect);
-		SetWindowPos(hwnd, 
+		SetWindowPos(hwnd,
 					HWND_TOPMOST,
 					Rect.left,
 					Rect.top,
@@ -86,8 +86,8 @@ void ChatDialog::initControls()
 	SendMessage(GetDlgItem(m_ctrlThis.getWindow(), IDC_CHATAREA_EDIT),EM_SETREADONLY ,1 ,0);
 	setControlById(m_chatlog, IDC_CHATAREA_EDIT);
 	setControlById(m_message, IDC_INPUTAREA_EDIT);
-	
-	
+
+
 
 }
 
@@ -118,10 +118,10 @@ LRESULT CALLBACK ChatDialog::subEditProc(HWND wnd, UINT msg, WPARAM wParam, LPAR
 void ChatDialog::Send()
 {
 	  StringStorage msg;
-	  
+
 	  m_message.getText(&msg);
 
-	  if(msg.getLength()>0){ 
+	  if(msg.getLength()>0){
 		StringStorage tmp_msg;
 		Environment::getComputerName(&tmp_msg);
 		m_message.setText(_T(""));
@@ -135,14 +135,14 @@ void ChatDialog::Send()
 
 BOOL ChatDialog::onInitDialog()
 {
-  
+
   initControls();
 
   	SetWindowLongPtr(GetDlgItem(m_ctrlThis.getWindow(), IDC_INPUTAREA_EDIT), GWLP_USERDATA, (LONG_PTR)this);
 	oldEditProc = (WNDPROC)SetWindowLongPtr(GetDlgItem(m_ctrlThis.getWindow(), IDC_INPUTAREA_EDIT), GWLP_WNDPROC, (LONG_PTR)subEditProc);
 
 
-  
+
   return TRUE;
 }
 

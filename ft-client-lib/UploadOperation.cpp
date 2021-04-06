@@ -27,7 +27,7 @@
 
 #include "ft-common/WinFilePath.h"
 #include "ft-common/FolderListener.h"
-#include "file-lib/EOFException.h"
+#include "../file-lib/EOFException.h"
 
 UploadOperation::UploadOperation(LogWriter *logWriter,
                                  FileInfo fileToUpload,

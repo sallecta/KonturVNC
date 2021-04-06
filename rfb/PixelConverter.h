@@ -26,7 +26,7 @@
 #define __RFB_PIXEL_CONVERTER_H_INCLUDED__
 
 #include "FrameBuffer.h"
-#include "region/Point.h"
+#include "../region/Point.h"
 
 class PixelConverter
 {

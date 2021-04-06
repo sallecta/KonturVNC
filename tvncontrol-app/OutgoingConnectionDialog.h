@@ -25,13 +25,13 @@
 #ifndef _OUTGOING_CONNECTION_DIALOG_H_
 #define _OUTGOING_CONNECTION_DIALOG_H_
 
-#include "util/winhdr.h"
+#include "../util/winhdr.h"
 
-#include "gui/BaseDialog.h"
-#include "gui/ComboBox.h"
-#include "gui/CheckBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/ComboBox.h"
+#include "../gui/CheckBox.h"
 
-#include "win-system/RegistryKey.h"
+#include "../win-system/RegistryKey.h"
 
 #include "config-lib/ConnectionHistory.h"
 

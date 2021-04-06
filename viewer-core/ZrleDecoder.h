@@ -27,8 +27,8 @@
 
 #include "DecoderOfRectangle.h"
 
-#include "io-lib/DataInputStream.h"
-#include "util/Inflater.h"
+#include "../io-lib/DataInputStream.h"
+#include "../util/Inflater.h"
 
 class ZrleDecoder : public DecoderOfRectangle
 {

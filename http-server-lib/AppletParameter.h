@@ -25,7 +25,7 @@
 #ifndef _APPLET_PARAMETER_H_
 #define _APPLET_PARAMETER_H_
 
-#include "util/AnsiStringStorage.h"
+#include "../util/AnsiStringStorage.h"
 
 class AppletParameter
 {

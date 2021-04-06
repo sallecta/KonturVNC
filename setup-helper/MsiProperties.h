@@ -25,7 +25,7 @@
 #ifndef __MSIPROPERTIES_H__
 #define __MSIPROPERTIES_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <strsafe.h>
 #include <msiquery.h>
 

@@ -23,9 +23,9 @@
 //
 
 #include "RfbClientManager.h"
-#include "thread/ZombieKiller.h"
+#include "../thread/ZombieKiller.h"
 #include "QueryConnectionApplication.h"
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 
 

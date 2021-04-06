@@ -25,12 +25,12 @@
 #ifndef _CONNECTTOTCPDISPATCHERTHREAD_H_
 #define _CONNECTTOTCPDISPATCHERTHREAD_H_
 
-#include "util/StringStorage.h"
-#include "thread/Thread.h"
+#include "../util/StringStorage.h"
+#include "../thread/Thread.h"
 #include "RfbClientManager.h"
 #include "TcpDispatcherConnectionListener.h"
-#include "util/AnsiStringStorage.h"
-#include "log-writer/LogWriter.h"
+#include "../util/AnsiStringStorage.h"
+#include "../log-writer/LogWriter.h"
 
 /**
 Thread that makes attempt to connect to listening rfb client in separate thread.

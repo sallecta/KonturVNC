@@ -25,10 +25,10 @@
 #ifndef __SCREEN_H__
 #define __SCREEN_H__
 
-#include "util/CommonHeader.h"
-#include "rfb/PixelFormat.h"
-#include "region/Rect.h"
-#include "region/Dimension.h"
+#include "../util/CommonHeader.h"
+#include "../rfb/PixelFormat.h"
+#include "../region/Rect.h"
+#include "../region/Dimension.h"
 
 // This class get info for a windows desktop.
 class Screen

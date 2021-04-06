@@ -25,11 +25,11 @@
 #ifndef _CONTROL_PROXY_H_
 #define _CONTROL_PROXY_H_
 
-#include "tvncontrol-app/ControlGate.h"
-#include "tvncontrol-app/RfbClientInfo.h"
-#include "tvncontrol-app/TvnServerInfo.h"
+#include "../tvncontrol-app/ControlGate.h"
+#include "../tvncontrol-app/RfbClientInfo.h"
+#include "../tvncontrol-app/TvnServerInfo.h"
 
-#include "server-config-lib/ServerConfig.h"
+#include "../server-config-lib/ServerConfig.h"
 
 #include "ControlMessage.h"
 #include "RemoteException.h"
@@ -87,7 +87,7 @@ public:
    * @deprecated.
    */
   void reloadServerConfig() throw(IOException, RemoteException);
-  
+
   /**
    * Disconnects all existing rfb clients from server.
    * @throws RemoteException on error on server.

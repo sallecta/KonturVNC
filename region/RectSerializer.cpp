@@ -25,7 +25,7 @@
 #include "RectSerializer.h"
 #include <tchar.h>
 #include <stdio.h>
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 void RectSerializer::toString(const Rect *rect, StringStorage *strOut)
 {

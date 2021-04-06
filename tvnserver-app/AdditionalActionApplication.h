@@ -25,9 +25,9 @@
 #ifndef _ADDITIONAL_ACTION_APPLICATION_H_
 #define _ADDITIONAL_ACTION_APPLICATION_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
-#include "win-system/LocalWindowsApplication.h"
+#include "../win-system/LocalWindowsApplication.h"
 
 /**
  * Windows application that used to do additional actions:

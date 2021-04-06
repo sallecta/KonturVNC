@@ -22,10 +22,10 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/CommonHeader.h"
-#include "util/StringParser.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringParser.h"
 #include "HookLoaderApplication.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                        LPTSTR lpCmdLine, int nCmdShow)

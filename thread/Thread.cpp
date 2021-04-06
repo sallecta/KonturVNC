@@ -24,7 +24,7 @@
 
 #include "Thread.h"
 #include "AutoLock.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 Thread::Thread()
 : m_terminated(false), m_active(false)

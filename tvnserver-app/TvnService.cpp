@@ -25,10 +25,10 @@
 #include "TvnService.h"
 
 #include "ServerCommandLine.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../tvnserver-app/NamingDefs.h"
 
-#include "win-system/SCMClient.h"
-#include "win-system/Environment.h"
+#include "../win-system/SCMClient.h"
+#include "../win-system/Environment.h"
 
 const TCHAR TvnService::SERVICE_COMMAND_LINE_KEY[] = _T("-service");
 

@@ -24,11 +24,11 @@
 
 #include "LogConn.h"
 #include "LogConnAuthListener.h"
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 #include "SecurityPipeServer.h"
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "util/DateTime.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../util/DateTime.h"
 
 LogConn::LogConn(Channel *channel, LogConnAuthListener *extAuthListener,
                  LogListener *extLogListener, unsigned char logLevel)

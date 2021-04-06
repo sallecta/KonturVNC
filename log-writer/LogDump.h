@@ -25,7 +25,7 @@
 #ifndef __LOGDUMP_H__
 #define __LOGDUMP_H__
 
-#include "util/DateTime.h"
+#include "../util/DateTime.h"
 
 struct LogEntry
 {

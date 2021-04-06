@@ -25,7 +25,7 @@
 #ifndef _TOOLTIP_H_
 #define _TOOLTIP_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "Control.h"
 
 //

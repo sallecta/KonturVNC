@@ -27,7 +27,7 @@
 
 #include "Transport.h"
 
-#include "network/socket/SocketIPv4.h"
+#include "../network/socket/SocketIPv4.h"
 
 /**
  * Transport that uses IPv4 socket.

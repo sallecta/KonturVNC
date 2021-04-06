@@ -25,7 +25,7 @@
 #ifndef _DISCONNECT_ALL_COMMAND_H_
 #define _DISCONNECT_ALL_COMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

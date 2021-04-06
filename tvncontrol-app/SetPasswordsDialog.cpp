@@ -22,14 +22,14 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/winhdr.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../util/winhdr.h"
+#include "../tvnserver-app/NamingDefs.h"
 
-#include "win-system/Registry.h"
+#include "../win-system/Registry.h"
 
 #include "SetPasswordsDialog.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 SetPasswordsDialog::SetPasswordsDialog(bool initStateOfUseRfbAuth,
                                        bool initStateOfUseAdminAuth)

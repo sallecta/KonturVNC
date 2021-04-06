@@ -27,7 +27,7 @@
 
 #include "BaseDialog.h"
 #include "Control.h"
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class Tab
 {

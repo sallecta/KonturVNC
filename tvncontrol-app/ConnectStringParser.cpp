@@ -24,7 +24,7 @@
 
 #include "ConnectStringParser.h"
 
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 
 ConnectStringParser::ConnectStringParser()
 {

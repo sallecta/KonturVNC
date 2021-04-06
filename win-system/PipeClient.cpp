@@ -23,7 +23,7 @@
 //
 
 #include "PipeClient.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 PipeClient::PipeClient()
 {

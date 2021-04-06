@@ -25,9 +25,9 @@
 #ifndef _LIBRARY_H_
 #define _LIBRARY_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 /**
 Dynamic library class.

@@ -25,7 +25,7 @@
 #ifndef _COMMON_CONTROLS_EX_H_
 #define _COMMON_CONTROLS_EX_H_
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 class CommonControlsEx
 {

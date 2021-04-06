@@ -24,13 +24,13 @@
 
 #include "PasswordControl.h"
 
-#include "util/VncPassCrypt.h"
-#include "util/StringTable.h"
-#include "util/AnsiStringStorage.h"
+#include "../util/VncPassCrypt.h"
+#include "../util/StringTable.h"
+#include "../util/AnsiStringStorage.h"
 
 #include "ChangePasswordDialog.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 PasswordControl::PasswordControl(Control *changeButton, Control *unsetButton)
 : m_enabled(true), m_changeButton(changeButton), m_unsetButton(unsetButton)

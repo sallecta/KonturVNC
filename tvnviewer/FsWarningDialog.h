@@ -25,8 +25,8 @@
 #ifndef _FS_WARNING_DIALOG_H_
 #define _FS_WARNING_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/CheckBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/CheckBox.h"
 #include "resource.h"
 
 class FsWarningDialog : public BaseDialog

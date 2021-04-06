@@ -25,8 +25,8 @@
 #ifndef _DESKTOP_SERVER_COMMAND_LINE_H_
 #define _DESKTOP_SERVER_COMMAND_LINE_H_
 
-#include "util/CommandLine.h"
-#include "util/Exception.h"
+#include "../util/CommandLine.h"
+#include "../util/Exception.h"
 
 /**
  * Desktop server command line parser.

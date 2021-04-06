@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 #include "TcpConnection.h"
 

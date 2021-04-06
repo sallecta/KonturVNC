@@ -25,15 +25,15 @@
 #ifndef _SETTINGS_MANAGER_
 #define _SETTINGS_MANAGER_
 
-#include "util/CommonHeader.h"
-#include "util/StringStorage.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringStorage.h"
 
 class SettingsManager
 {
 public:
   SettingsManager();
   virtual ~SettingsManager();
-public:  
+public:
   virtual bool isOk() = 0;
 
   virtual bool keyExist(const TCHAR *name) = 0;

@@ -25,7 +25,7 @@
 #ifndef _SHAREPRIMARYCOMMAND_H_
 #define _SHAREPRIMARYCOMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

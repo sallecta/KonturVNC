@@ -22,8 +22,8 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/CommonHeader.h"
-#include "win-system/HookEventListener.h"
+#include "../util/CommonHeader.h"
+#include "../win-system/HookEventListener.h"
 
 // Class for intercepting keyboard on low level.
 class WinHooks
@@ -31,12 +31,12 @@ class WinHooks
 public:
   WinHooks();
   ~WinHooks();
-  
+
   // Hook procedure.
   static LRESULT CALLBACK lowLevelKeyboardHook(int nCode,
                                                WPARAM wParam,
                                                LPARAM lParam);
-  
+
   // Registration of keyboard hook.
   static void registerKeyboardHook(HookEventListener *hookEventListener);
 

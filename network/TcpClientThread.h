@@ -25,7 +25,7 @@
 #ifndef _TCP_CLIENT_THREAD_H_
 #define _TCP_CLIENT_THREAD_H_
 
-#include "thread/Thread.h"
+#include "../thread/Thread.h"
 
 #include "socket/SocketIPv4.h"
 

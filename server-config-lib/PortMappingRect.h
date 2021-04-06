@@ -25,9 +25,9 @@
 #ifndef _RECT_H_
 #define _RECT_H_
 
-#include "util/CommonHeader.h"
-#include "util/StringStorage.h"
-#include "region/Rect.h"
+#include "../util/CommonHeader.h"
+#include "../util/StringStorage.h"
+#include "../region/Rect.h"
 
 class PortMappingRect : public Rect
 {

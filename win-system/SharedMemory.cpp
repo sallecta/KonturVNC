@@ -23,7 +23,7 @@
 //
 
 #include "SharedMemory.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 #include <Aclapi.h>
 
 SharedMemory::SharedMemory(const TCHAR *name, size_t size)

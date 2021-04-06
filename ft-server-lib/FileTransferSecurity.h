@@ -25,13 +25,13 @@
 #ifndef _FT_SECURITY_H_
 #define _FT_SECURITY_H_
 
-#include "util/Exception.h"
-#include "util/Singleton.h"
-#include "log-writer/LogWriter.h"
+#include "../util/Exception.h"
+#include "../util/Singleton.h"
+#include "../log-writer/LogWriter.h"
 
-#include "win-system/Impersonator.h"
+#include "../win-system/Impersonator.h"
 
-#include "desktop/Desktop.h"
+#include "../lib_desktop/Desktop.h"
 
 class FileTransferSecurity : private Impersonator
 {

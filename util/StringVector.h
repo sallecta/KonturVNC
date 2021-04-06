@@ -29,7 +29,7 @@
 
 using namespace std;
 
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 typedef vector<StringStorage> StringVector;
 

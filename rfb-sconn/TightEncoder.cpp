@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "TightEncoder.h"
 
-#include "io-lib/ByteArrayOutputStream.h"
+#include "../io-lib/ByteArrayOutputStream.h"
 
 TightEncoder::TightEncoder(PixelConverter *conv, DataOutputStream *output)
 : Encoder(conv, output)

@@ -1,7 +1,7 @@
 #include "FTStatusDialog.h"
 
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 
 FTStatusDialog::FTStatusDialog()

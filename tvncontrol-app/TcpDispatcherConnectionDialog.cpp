@@ -22,12 +22,12 @@
 //-------------------------------------------------------------------------
 //
 
-#include "util/winhdr.h"
-#include "win-system/Registry.h"
+#include "../util/winhdr.h"
+#include "../win-system/Registry.h"
 #include "TcpDispatcherConnectionDialog.h"
-#include "util/StringParser.h"
-#include "tvnserver-app/NamingDefs.h"
-#include "tvnserver/resource.h"
+#include "../util/StringParser.h"
+#include "../tvnserver-app/NamingDefs.h"
+#include "../tvnserver/resource.h"
 
 TcpDispatcherConnectionDialog::TcpDispatcherConnectionDialog()
 : BaseDialog(IDD_DISPATCHER_CONN),

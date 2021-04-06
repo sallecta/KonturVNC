@@ -24,7 +24,7 @@
 
 #include "FbupdateNotifier.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 #include "CoreEventsAdapter.h"
 
@@ -190,7 +190,7 @@ void FbUpdateNotifier::updatePointerPos(const Point *position)
 
 void FbUpdateNotifier::setNewCursor(const Point *hotSpot,
                                     UINT16 width, UINT16 height,
-                                    const vector<UINT8> *cursor, 
+                                    const vector<UINT8> *cursor,
                                     const vector<UINT8> *bitmask)
 {
   {

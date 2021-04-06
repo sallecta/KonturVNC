@@ -28,7 +28,7 @@
 #include "TextBox.h"
 #include "BalloonTip.h"
 #include "StringFilter.h"
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class FilteredTextBox : public TextBox
 {

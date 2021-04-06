@@ -23,7 +23,7 @@
 //
 
 #include "RegistrySettingsManager.h"
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 #include <vector>
 
 RegistrySettingsManager::RegistrySettingsManager()

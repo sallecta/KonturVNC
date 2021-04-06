@@ -25,7 +25,7 @@
 #ifndef __CONNECTCOMMAND_H__
 #define __CONNECTCOMMAND_H__
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

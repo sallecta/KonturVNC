@@ -24,9 +24,9 @@
 
 
 #include "FileInfoListView.h"
-#include "util/DateTime.h"
+#include "../util/DateTime.h"
 #include "tvnviewer/resource.h"
-#include "util/ResourceLoader.h"
+#include "../util/ResourceLoader.h"
 #include <crtdbg.h>
 #include <stdio.h>
 
@@ -217,7 +217,7 @@ int FileInfoListView::compareItem(LPARAM lParam1,
   if (!firstItem->isDirectory() && secondItem->isDirectory()) {
     return 1;
   }
-  
+
   // change lParam1 and lParam2 with each other if order is descending
   if (sortAscending) {
     firstItem = reinterpret_cast<FileInfo *>(lParam1);
@@ -234,7 +234,7 @@ int FileInfoListView::compareItem(LPARAM lParam1,
     // calculate column number when order is ascending
     lParamSort -= 1;
   }
- 
+
   switch (lParamSort) {
   // It's column "FileName".
   case 0:

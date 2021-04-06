@@ -25,7 +25,7 @@
 #ifndef _RECTSERIALIZER_H_
 #define _RECTSERIALIZER_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "Rect.h"
 
 class RectSerializer

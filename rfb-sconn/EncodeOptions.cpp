@@ -23,7 +23,7 @@
 //
 
 #include "EncodeOptions.h"
-#include "rfb/EncodingDefs.h"
+#include "../rfb/EncodingDefs.h"
 
 EncodeOptions::EncodeOptions()
 {

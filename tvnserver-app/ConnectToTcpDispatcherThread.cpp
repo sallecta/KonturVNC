@@ -23,9 +23,9 @@
 //
 
 #include "ConnectToTcpDispatcherThread.h"
-#include "network/socket/SocketStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/DataInputStream.h"
+#include "../network/socket/SocketStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/DataInputStream.h"
 #include "tcp-dispatcher/TcpDispatcherInitializer.h"
 
 ConnectToTcpDispatcherThread::ConnectToTcpDispatcherThread(

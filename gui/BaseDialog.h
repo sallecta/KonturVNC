@@ -26,7 +26,7 @@
 #define _BASE_DIALOG_H_
 
 #include "Control.h"
-#include "util/StringStorage.h"
+#include "../util/StringStorage.h"
 
 class BaseDialog
 {
@@ -64,7 +64,7 @@ public:
   Control *getControl() { return &m_ctrlThis; }
   // Setup control by ID
   void setControlById(Control &control, DWORD id);
-  // Icon manipulation 
+  // Icon manipulation
   void loadIcon(DWORD id);
   void updateIcon();
 

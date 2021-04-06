@@ -24,7 +24,7 @@
 
 #include "ArgList.h"
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <vector>
 
 ArgList::ArgList(const char *argString)

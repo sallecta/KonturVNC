@@ -25,9 +25,9 @@
 #ifndef _QUERY_CONNECTION_COMMAND_LINE_H_
 #define _QUERY_CONNECTION_COMMAND_LINE_H_
 
-#include "util/CommonHeader.h"
-#include "util/CommandLine.h"
-#include "util/Exception.h"
+#include "../util/CommonHeader.h"
+#include "../util/CommandLine.h"
+#include "../util/Exception.h"
 
 class QueryConnectionCommandLine : private CommandLine
 {

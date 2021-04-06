@@ -1,7 +1,7 @@
 #include "TrayDialog.h"
 
-#include "tvnserver/resource.h"
-#include "thread/AutoLock.h"
+#include "../tvnserver/resource.h"
+#include "../thread/AutoLock.h"
 
 
 
@@ -24,7 +24,7 @@ void TrayDialog::PositionFlyout()
 
     RECT rcWindow;
     GetWindowRect(hwnd, &rcWindow);
-    
+
 	SIZE sizeWindow = {rcWindow.right - rcWindow.left, rcWindow.bottom - rcWindow.top};
 
     SetWindowPos(hwnd, HWND_TOPMOST, desktopRect.right-sizeWindow.cx, desktopRect.bottom-sizeWindow.cy, 0, 0, SWP_NOSIZE | SWP_SHOWWINDOW);
@@ -51,8 +51,8 @@ void TrayDialog::hide()
 		BaseDialog::hide();
 		isVisible = false;
 	}
-	
-	
+
+
 }
 
 void TrayDialog::initControls()
@@ -103,14 +103,14 @@ void TrayDialog::addClients(list<RfbClientInfo *> *clients)
 			m_clients.insert(std::pair<UINT32,int>(m_clientList.getItemData(i),i));
 		}
 	}
-	
+
 }
 
 BOOL TrayDialog::onInitDialog()
 {
-  
+
   initControls();
-  
+
   return TRUE;
 }
 

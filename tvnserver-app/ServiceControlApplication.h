@@ -25,10 +25,10 @@
 #ifndef _SERVICE_CONTROL_APPLICATION_H_
 #define _SERVICE_CONTROL_APPLICATION_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
-#include "win-system/WindowsApplication.h"
-#include "win-system/SCMClient.h"
+#include "../win-system/WindowsApplication.h"
+#include "../win-system/SCMClient.h"
 
 #include "TvnService.h"
 #include "ServiceControlCommandLine.h"

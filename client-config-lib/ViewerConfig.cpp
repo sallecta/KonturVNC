@@ -24,11 +24,11 @@
 
 #include "ViewerConfig.h"
 
-#include "win-system/Environment.h"
-#include "win-system/RegistryKey.h"
-#include "win-system/Registry.h"
+#include "../win-system/Environment.h"
+#include "../win-system/RegistryKey.h"
+#include "../win-system/Registry.h"
 
-#include "file-lib/File.h"
+#include "../file-lib/File.h"
 
 
 
@@ -56,7 +56,7 @@ ViewerConfig::ViewerConfig(const TCHAR registryPath[])
                        true);
 
 
-  
+
   TCHAR name[1024];
   ULONG nameSize = sizeof(name)/sizeof(TCHAR);
   if(GetUserNameEx(EXTENDED_NAME_FORMAT::NameDisplay, name, &nameSize)){
@@ -65,8 +65,8 @@ ViewerConfig::ViewerConfig(const TCHAR registryPath[])
   GetUserName(name,&nameSize);
   m_userName.setString(name);
   }
-  
-  
+
+
   StringStorage fullName(m_userName.getString());
   StringStorage nameParts[5];
   size_t namePartsCount;
@@ -78,8 +78,8 @@ ViewerConfig::ViewerConfig(const TCHAR registryPath[])
 	  m_peerName = m_userName;
   }
 
-  
-  
+
+
 
 }
 
@@ -140,7 +140,7 @@ bool ViewerConfig::saveToStorage(SettingsManager *storage) const
   TEST_FAIL(storage->setBoolean(_T("SkipFullScreenPrompt"), !m_promptOnFullscreen), saveAllOk);
   TEST_FAIL(storage->setBoolean(_T("AutoRecord"), m_autoRecord), saveAllOk);
   TEST_FAIL(storage->setBoolean(_T("AskComment"), m_askComment), saveAllOk);
-  
+
   TEST_FAIL(storage->setString(_T("VideoPath"),m_pathToVLogFile.getString()),saveAllOk);
   TEST_FAIL(storage->setString(_T("PeerName"),m_peerName.getString()),saveAllOk);
 
@@ -329,7 +329,7 @@ Logger *ViewerConfig::initLog(const TCHAR logDir[], const TCHAR logName[])
 	//vlogFileFolderPath.setString(_T("")); //default
 	vlogFileFolderPath.format(_T("\\\\ra-fs\\ra-joint\\TeamViewer Video\\%s"),m_userName.getString());
   }
-  
+
   // After that logFilePath variable will contain path to folder
   // where tvnviewer.log must be located
   if (Environment::getSpecialFolderPath(Environment::APPLICATION_DATA_SPECIAL_FOLDER, &appDataPath)) {
@@ -345,7 +345,7 @@ Logger *ViewerConfig::initLog(const TCHAR logDir[], const TCHAR logName[])
   }
 
   {
-	                                    
+
 
     if (vlogFileFolderPath.endsWith(_T('\\'))) {
       vlogFileFolderPath.truncate(1);
@@ -368,7 +368,7 @@ Logger *ViewerConfig::initLog(const TCHAR logDir[], const TCHAR logName[])
 		}
 	}
 
-	
+
 
 
 	/*
@@ -377,11 +377,11 @@ Logger *ViewerConfig::initLog(const TCHAR logDir[], const TCHAR logName[])
 		vlogUserFileFolderPath = logFileFolderPath;
 	}
 	else{
-		
-		
+
+
 
 		File userVideoFolder(vlogUserFileFolderPath.getString());
-		
+
 
 		if (!userVideoFolder.exists())
 			userVideoFolder.mkdir();
@@ -396,7 +396,7 @@ Logger *ViewerConfig::initLog(const TCHAR logDir[], const TCHAR logName[])
   m_pathToVLogFile = vlogFileFolderPath;
 
 
-  
+
   if (m_logger != 0) {
     delete m_logger;
   }

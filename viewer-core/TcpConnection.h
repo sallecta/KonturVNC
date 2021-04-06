@@ -25,12 +25,12 @@
 #ifndef _TCP_CONNECTION_H_
 #define _TCP_CONNECTION_H_
 
-#include "log-writer/LogWriter.h"
-#include "network/RfbInputGate.h"
-#include "network/RfbOutputGate.h"
-#include "network/socket/SocketIPv4.h"
-#include "network/socket/SocketStream.h"
-#include "thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
+#include "../network/RfbInputGate.h"
+#include "../network/RfbOutputGate.h"
+#include "../network/socket/SocketIPv4.h"
+#include "../network/socket/SocketStream.h"
+#include "../thread/LocalMutex.h"
 
 class TcpConnection
 {

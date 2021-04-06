@@ -25,7 +25,7 @@
 #ifndef _REGISTRY_KEY_H_
 #define _REGISTRY_KEY_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class RegistryKey
 {

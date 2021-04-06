@@ -25,7 +25,7 @@
 #ifndef _CONTROL_COMMAND_H_
 #define _CONTROL_COMMAND_H_
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "Notificator.h"
 

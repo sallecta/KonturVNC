@@ -25,7 +25,7 @@
 #ifndef _COMMON_INPUT_VALIDATION_H_
 #define _COMMON_INPUT_VALIDATION_H_
 
-#include "gui/TextBox.h"
+#include "../gui/TextBox.h"
 
 /**
  * Gives static methods set to validate integer data in text boxes.

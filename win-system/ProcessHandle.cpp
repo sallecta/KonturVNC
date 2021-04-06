@@ -23,7 +23,7 @@
 //
 
 #include "ProcessHandle.h"
-#include "win-system/SystemException.h"
+#include "../win-system/SystemException.h"
 
 ProcessHandle::ProcessHandle()
 : m_hProcess(0)

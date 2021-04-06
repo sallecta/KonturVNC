@@ -5,13 +5,13 @@
 #include "RfbDispatcherListener.h"
 #include "RfbCodeRegistrator.h"
 
-#include "network/RfbInputGate.h"
-#include "network/RfbOutputGate.h"
-#include "log-writer/LogWriter.h"
+#include "../network/RfbInputGate.h"
+#include "../network/RfbOutputGate.h"
+#include "../log-writer/LogWriter.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
-#include "p2p/p2ptransport.h"
+#include "../p2p/p2ptransport.h"
 
 
 

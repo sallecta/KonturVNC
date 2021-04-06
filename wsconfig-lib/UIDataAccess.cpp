@@ -24,7 +24,7 @@
 #include <crtdbg.h>
 #include "UIDataAccess.h"
 
-#include "util/StringParser.h"
+#include "../util/StringParser.h"
 
 UIDataAccess::UIDataAccess()
 {

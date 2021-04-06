@@ -25,8 +25,8 @@
 #ifndef _CURRENT_CONSOLE_PROCESS_H_
 #define _CURRENT_CONSOLE_PROCESS_H_
 
-#include "win-system/Process.h"
-#include "log-writer/LogWriter.h"
+#include "../win-system/Process.h"
+#include "../log-writer/LogWriter.h"
 
 /**
  * Enables you to start and stop processes in interactive console session.

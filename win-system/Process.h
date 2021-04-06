@@ -25,7 +25,7 @@
 #ifndef __PROCESSMANAGER_H__
 #define __PROCESSMANAGER_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "SystemException.h"
 

@@ -24,7 +24,7 @@
 
 #include "QueryConnectionDialog.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 QueryConnectionDialog::QueryConnectionDialog(const TCHAR *peerAddress,
                                              bool acceptByDefault,

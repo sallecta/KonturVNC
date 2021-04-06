@@ -24,7 +24,7 @@
 
 #include "BaseDialog.h"
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include <commctrl.h>
 #include <crtdbg.h>
@@ -215,7 +215,7 @@ TCHAR *BaseDialog::getResouceName()
   return m_resourceName;
 }
 
-void BaseDialog::setControlById(Control &control, DWORD id) 
+void BaseDialog::setControlById(Control &control, DWORD id)
 {
   control = GetDlgItem(m_ctrlThis.getWindow(), id);
 }

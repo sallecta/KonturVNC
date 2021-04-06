@@ -25,16 +25,16 @@
 #ifndef _SERVER_CONFIG_H_
 #define _SERVER_CONFIG_H_
 
-#include "util/StringVector.h"
-#include "util/Exception.h"
+#include "../util/StringVector.h"
+#include "../util/Exception.h"
 #include "PortMappingContainer.h"
 #include "IpAccessControl.h"
-#include "thread/AutoLock.h"
-#include "thread/LocalMutex.h"
+#include "../thread/AutoLock.h"
+#include "../thread/LocalMutex.h"
 #include "IpAccessRule.h"
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/IOException.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/IOException.h"
 
 #include <shlobj.h>
 

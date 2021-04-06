@@ -23,7 +23,7 @@
 //
 
 #include "ExtraRfbServers.h"
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
 ExtraRfbServers::Conf::Conf()
 : acceptConnections(false),

@@ -24,25 +24,25 @@
 
 #include "FileTransferRequestHandler.h"
 
-#include "io-lib/DataOutputStream.h"
+#include "../io-lib/DataOutputStream.h"
 
 #include "ft-common/FileTransferException.h"
-#include "io-lib/ByteArrayOutputStream.h"
-#include "file-lib/File.h"
-#include "file-lib/EOFException.h"
+#include "../io-lib/ByteArrayOutputStream.h"
+#include "../file-lib/File.h"
+#include "../file-lib/EOFException.h"
 #include "ft-common/FolderListener.h"
 #include "ft-common/FTMessage.h"
 #include "ft-common/WinFilePath.h"
 #include "ft-common/FileInfo.h"
-#include "util/md5.h"
-#include "network/RfbOutputGate.h"
-#include "network/RfbInputGate.h"
-#include "thread/AutoLock.h"
-#include "win-system/Impersonator.h"
-#include "win-system/Environment.h"
-#include "server-config-lib/Configurator.h"
-#include "win-system/SystemException.h"
-#include "rfb/VendorDefs.h"
+#include "../util/md5.h"
+#include "../network/RfbOutputGate.h"
+#include "../network/RfbInputGate.h"
+#include "../thread/AutoLock.h"
+#include "../win-system/Impersonator.h"
+#include "../win-system/Environment.h"
+#include "../server-config-lib/Configurator.h"
+#include "../win-system/SystemException.h"
+#include "../rfb/VendorDefs.h"
 
 FileTransferRequestHandler::FileTransferRequestHandler(RfbCodeRegistrator *registrator,
                                                        RfbOutputGate *output,

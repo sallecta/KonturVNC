@@ -25,9 +25,9 @@
 #ifndef __WINDOWFINDER_H__
 #define __WINDOWFINDER_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include <vector>
-#include "util/StringVector.h"
+#include "../util/StringVector.h"
 
 class WindowFinder
 {

@@ -35,11 +35,11 @@
 #include "ControlCommand.h"
 #include "UpdateLocalConfigCommand.h"
 
-#include "util/ResourceLoader.h"
-#include "util/StringTable.h"
-#include "util/MacroCommand.h"
+#include "../util/ResourceLoader.h"
+#include "../util/StringTable.h"
+#include "../util/MacroCommand.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
 #include <crtdbg.h>
 
@@ -343,7 +343,7 @@ void ControlTrayIcon::syncStatusWithServer()
     }
 
     setText(info.m_statusText.getString());
-	
+
     // Cleanup.
     for (std::list<RfbClientInfo *>::iterator it = clients.begin(); it != clients.end(); it++) {
       delete *it;

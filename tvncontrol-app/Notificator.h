@@ -25,7 +25,7 @@
 #ifndef _NOTIFICATOR_H_
 #define _NOTIFICATOR_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 // FIXME: Document this class.
 class Notificator

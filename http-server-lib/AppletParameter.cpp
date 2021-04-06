@@ -24,7 +24,7 @@
 
 #include "AppletParameter.h"
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include <crtdbg.h>
 

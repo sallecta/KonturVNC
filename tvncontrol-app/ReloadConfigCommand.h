@@ -25,7 +25,7 @@
 #ifndef __RELOADCONFIGCOMMAND_H__
 #define __RELOADCONFIGCOMMAND_H__
 
-#include "util/Command.h"
+#include "../util/Command.h"
 
 #include "ControlProxy.h"
 

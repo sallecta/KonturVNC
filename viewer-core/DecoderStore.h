@@ -30,7 +30,7 @@
 
 #include "Decoder.h"
 
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 class DecoderStore
 {
@@ -40,7 +40,7 @@ public:
 
   Decoder *getDecoder(INT32 decoderId);
   vector<INT32> getDecoderIds();
-  
+
   // return true, if adding is complete
   // return false, if decoder already exist
   bool addDecoder(Decoder *newDecoder, int priority);

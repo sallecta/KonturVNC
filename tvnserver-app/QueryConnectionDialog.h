@@ -25,10 +25,10 @@
 #ifndef _QUERY_CONNECTION_DIALOG_H_
 #define _QUERY_CONNECTION_DIALOG_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
-#include "gui/BaseDialog.h"
-#include "gui/Control.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/Control.h"
 
 class QueryConnectionDialog : public BaseDialog
 {

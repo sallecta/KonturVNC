@@ -25,7 +25,7 @@
 #ifndef _CONNECT_STRING_PARSER_H_
 #define _CONNECT_STRING_PARSER_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 class ConnectStringParser
 {

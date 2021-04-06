@@ -25,7 +25,7 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-#include "util/winhdr.h"
+#include "../util/winhdr.h"
 
 #include "SystemException.h"
 

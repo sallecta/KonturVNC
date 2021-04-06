@@ -25,7 +25,7 @@
 #ifndef _FILE_TRANSFER_EXCEPTION_H_
 #define _FILE_TRANSFER_EXCEPTION_H_
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 class FileTransferException : public Exception
 {

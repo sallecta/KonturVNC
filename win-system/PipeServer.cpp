@@ -23,7 +23,7 @@
 //
 
 #include "PipeServer.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
 #define BUFSIZE 512 * 1024
 

@@ -25,7 +25,7 @@
 #ifndef _EOF_EXCEPTION_H_
 #define _EOF_EXCEPTION_H_
 
-#include "io-lib/IOException.h"
+#include "../io-lib/IOException.h"
 
 class EOFException : public IOException
 {

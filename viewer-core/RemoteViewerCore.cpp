@@ -25,12 +25,12 @@
 #include "RemoteViewerCore.h"
 
 #include "ft-common/FTMessage.h"
-#include "rfb/AuthDefs.h"
-#include "rfb/TunnelDefs.h"
-#include "rfb/MsgDefs.h"
-#include "rfb/EncodingDefs.h"
-#include "rfb/VendorDefs.h"
-#include "util/AnsiStringStorage.h"
+#include "../rfb/AuthDefs.h"
+#include "../rfb/TunnelDefs.h"
+#include "../rfb/MsgDefs.h"
+#include "../rfb/EncodingDefs.h"
+#include "../rfb/VendorDefs.h"
+#include "../util/AnsiStringStorage.h"
 
 #include "AuthHandler.h"
 #include "RichCursorDecoder.h"
@@ -116,7 +116,7 @@ RemoteViewerCore::RemoteViewerCore(RfbInputGate *input, RfbOutputGate *output,
 void RemoteViewerCore::init()
 {
 
-	
+
   //m_isRecording = ViewerConfig::getInstance()->isAutoRecord();
 
   //if(!m_isRecording){
@@ -148,7 +148,7 @@ void RemoteViewerCore::init()
 
 RemoteViewerCore::~RemoteViewerCore()
 {
-	
+
 
 	if(!m_isRecording){
 		m_avilog.resume();
@@ -453,7 +453,7 @@ void RemoteViewerCore::enableCursorShapeUpdates(bool enabled)
     needUpdate |= m_decoderStore.removeDecoder(PseudoEncDefs::RICH_CURSOR);
     needUpdate |= m_decoderStore.removeDecoder(PseudoEncDefs::POINTER_POS);
   }
-  
+
   if (needUpdate) {
     sendEncodings();
   }
@@ -587,7 +587,7 @@ int RemoteViewerCore::negotiateAboutSecurityType()
     secTypeString.appendString(nameType.getString());
   }
   m_logWriter.detail(_T("Security Types received (%d): %s"),
-                   secTypes.size(), secTypeString.getString()); 
+                   secTypes.size(), secTypeString.getString());
 
   // select type security
   m_logWriter.debug(_T("Selecting auth-handler"));
@@ -705,7 +705,7 @@ void RemoteViewerCore::initTunnelling()
 
 
 void RemoteViewerCore::StartRecord(){
-	
+
 	m_isRecording = true;
 	m_avilog.m_isRecord = true;
 	m_avilog.resume();
@@ -763,13 +763,13 @@ void RemoteViewerCore::setDisplay(int disp){
   m_output->writeUInt8(UpdSenderClientMsgDefs::RFB_SHARE_DISPLAY);
   m_output->writeUInt8(disp);
   m_output->flush();
- 
+
 }
 
 void RemoteViewerCore::reqReboot(){
   m_output->writeUInt8(UpdSenderClientMsgDefs::RFB_REQ_REBOOT);
   m_output->flush();
- 
+
 }
 
 void RemoteViewerCore::startCP(){
@@ -779,7 +779,7 @@ void RemoteViewerCore::startCP(){
 }
 
 void RemoteViewerCore::beginNeg(){
- 
+
 	m_output->writeUInt8(ClientMsgDefs::BEGIN_NEG);
 	m_output->flush();
 }
@@ -789,7 +789,7 @@ void RemoteViewerCore::enableP2P(bool isEnable)
 	m_output->writeUInt8(ClientMsgDefs::ENABLE_P2P);
 	else
 	m_output->writeUInt8(ClientMsgDefs::DISABLE_P2P);
-	
+
 	m_output->flush();
 
 	m_p2p->m_enable = isEnable;
@@ -801,7 +801,7 @@ void RemoteViewerCore::sendTextMsg(StringStorage * msg){
   m_output->writeUInt8(ClientMsgDefs::CHAT_REQ);
   m_output->flush();
 
-    
+
   UINT32 length = static_cast<UINT32>(msg->getSize());
 
   AutoLock al(m_output);
@@ -833,11 +833,11 @@ void RemoteViewerCore::setFbProperties(const Dimension *fbDimension,
 {
   const PixelFormat &pxFormat = *fbPixelFormat;
   StringStorage pxString;
- 
-  	AutoLock mutex(&m_avilog.m_mutex);
-	
 
-  
+  	AutoLock mutex(&m_avilog.m_mutex);
+
+
+
   pxString.format(_T("[bits-per-pixel: %d, depth: %d, big-endian-flag: %d, ")
                   _T("true-color-flag: is set, ") // true color always is set
                   _T("red-max: %d, green-max: %d, blue-max: %d, ")
@@ -878,7 +878,7 @@ void RemoteViewerCore::setFbProperties(const Dimension *fbDimension,
 	}
 
 
-  
+
 }
 
 StringStorage RemoteViewerCore::getProtocolString() const
@@ -919,9 +919,9 @@ void RemoteViewerCore::execute()
     // is connected
     m_logWriter.info(_T("Protocol stage is \"Is connected\"."));
 
-	
-	
-	
+
+
+
     try {
       m_adapter->onConnected(m_output);
     } catch (const Exception &ex) {
@@ -1098,7 +1098,7 @@ bool RemoteViewerCore::receiveFbUpdateRectangle()
 
   int encodingType = m_input->readInt32();
 
-  m_logWriter.debug(_T("Rectangle: (%d, %d), (%d, %d). Type is %d"), 
+  m_logWriter.debug(_T("Rectangle: (%d, %d), (%d, %d). Type is %d"),
                     rect.left, rect.top, rect.right, rect.bottom, encodingType);
 
   if (encodingType == PseudoEncDefs::LAST_RECT)
@@ -1123,7 +1123,7 @@ bool RemoteViewerCore::receiveFbUpdateRectangle()
       errorString.format(_T("Decoder \"%d\" isn't exist"), encodingType);
       m_logWriter.error(_T("%s"), errorString.getString());
       throw Exception(errorString.getString());
-    } 
+    }
   } else { // it's pseudo encoding
     m_logWriter.debug(_T("It's pseudo encoding"));
     processPseudoEncoding(&rect, encodingType);
@@ -1143,7 +1143,7 @@ void RemoteViewerCore::processPseudoEncoding(const Rect *rect,
       setFbProperties(&Dimension(rect), &m_frameBuffer.getPixelFormat());
     }
     break;
-    
+
   case PseudoEncDefs::RICH_CURSOR:
     {
       m_logWriter.detail(_T("New rich cursor"));
@@ -1230,7 +1230,7 @@ void RemoteViewerCore::receiveServerCutText()
   std::vector<char> buffer(length + 1);
   m_input->readFully(&buffer.front(), length);
   buffer[length] = '\0';
-  
+
   AnsiStringStorage cutTextAnsi(&buffer.front());
 
   StringStorage cutText;
@@ -1281,7 +1281,7 @@ void RemoteViewerCore::handshake()
   m_isTight = false;
 
   m_logWriter.info(_T("Server sent protocol version: %s"), getProtocolString().getString());
-  if (!isRfbProtocolString(serverProtocol) || 
+  if (!isRfbProtocolString(serverProtocol) ||
       m_major < 3 ||
       (m_major == 3 && m_minor < 3)) {
     StringStorage error;
@@ -1335,7 +1335,7 @@ void RemoteViewerCore::clientAndServerInit()
     m_logWriter.info(_T("Setting share flag is off..."));
   }
   m_output->writeUInt8(m_sharedFlag);
- 
+
   StringStorage fullName(ViewerConfig::getInstance()->getPeerName());
   m_output->writeUInt32(fullName.getLength());
   m_output->writeUTF8(fullName.getString());
@@ -1346,7 +1346,7 @@ void RemoteViewerCore::clientAndServerInit()
   UINT16 height = m_input->readUInt16();
   Dimension screenDimension(width, height);
   PixelFormat serverPixelFormat = readPixelFormat();
-  
+
   {
     AutoLock al(&m_fbLock);
     setFbProperties(&screenDimension, &serverPixelFormat);

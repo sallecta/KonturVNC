@@ -25,11 +25,11 @@
 #include <windows.h>
 #include <Dbghelp.h>
 #include "CrashHook.h"
-#include "win-system/DynamicLibrary.h"
-#include "win-system/Environment.h"
-#include "win-system/RegistryKey.h"
-#include "thread/AutoLock.h"
-#include "tvnserver-app/NamingDefs.h"
+#include "../win-system/DynamicLibrary.h"
+#include "../win-system/Environment.h"
+#include "../win-system/RegistryKey.h"
+#include "../thread/AutoLock.h"
+#include "../tvnserver-app/NamingDefs.h"
 
 //typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(__in  HANDLE hProcess,
 //                                       __in  DWORD ProcessId,

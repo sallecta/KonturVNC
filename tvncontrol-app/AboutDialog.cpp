@@ -24,15 +24,15 @@
 
 #include "AboutDialog.h"
 
-#include "tvnserver/resource.h"
+#include "../tvnserver/resource.h"
 
-#include "win-system/Shell.h"
-#include "win-system/VersionInfo.h"
-#include "win-system/Environment.h"
+#include "../win-system/Shell.h"
+#include "../win-system/VersionInfo.h"
+#include "../win-system/Environment.h"
 
-#include "gui/Control.h"
+#include "../gui/Control.h"
 
-#include "tvnserver/BuildTime.h"
+#include "../tvnserver/BuildTime.h"
 
 AboutDialog::AboutDialog()
 : BaseDialog(IDD_ABOUT_DIALOG)

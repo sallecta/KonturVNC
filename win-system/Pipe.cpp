@@ -23,10 +23,10 @@
 //
 
 #include "Pipe.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 #include <crtdbg.h>
-#include "win-system/Environment.h"
-#include "thread/AutoLock.h"
+#include "../win-system/Environment.h"
+#include "../thread/AutoLock.h"
 
 #define MAX_PORTION_SIZE 512 * 1024
 

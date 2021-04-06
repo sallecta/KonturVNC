@@ -26,12 +26,12 @@
 #define __RFB_SERVER_H__
 
 #include "RfbClientManager.h"
-#include "thread/Thread.h"
-#include "network/TcpServer.h"
-#include "region/Rect.h"
+#include "../thread/Thread.h"
+#include "../network/TcpServer.h"
+#include "../region/Rect.h"
 
-#include "tvnserver-app/ChatDialog.h"
-#include "tvnserver-app/FTStatusDialog.h"
+#include "../tvnserver-app/ChatDialog.h"
+#include "../tvnserver-app/FTStatusDialog.h"
 
 
 

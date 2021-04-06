@@ -24,8 +24,8 @@
 
 
 #include "TvnViewer.h"
-#include "network/socket/WindowsSocket.h"
-#include "util/ResourceLoader.h"
+#include "../network/socket/WindowsSocket.h"
+#include "../util/ResourceLoader.h"
 #include "resource.h"
 
 
@@ -40,8 +40,8 @@ TvnViewer::TvnViewer(HINSTANCE appInstance, const TCHAR *windowClassName,
   m_logWriter(ViewerConfig::getInstance()->getLogger()),
   m_isListening(false)
 {
-  
-	  
+
+
   m_logWriter.info(_T("Init WinSock 2.1"));
   WindowsSocket::startup(2, 1);
   registerViewerWindowClass();
@@ -55,7 +55,7 @@ TvnViewer::TvnViewer(HINSTANCE appInstance, const TCHAR *windowClassName,
   m_trayIcon = new ControlTrayIcon(this);
   m_loginDialog = new LoginDialog(this);
   m_reconnectDialog = new ReconnectDialog(this);
-  bConnectionCanceled = FALSE;  
+  bConnectionCanceled = FALSE;
 }
 
 TvnViewer::~TvnViewer()
@@ -318,7 +318,7 @@ bool TvnViewer::onTimer(WPARAM idTimer)
   switch (idTimer) {
   case TIMER_DELETE_DEAD_INSTANCE:
     m_instances.deleteDeadInstances();
-    if (m_instances.empty() && 
+    if (m_instances.empty() &&
         !isVisibleLoginDialog() &&
         !m_isListening) {
       shutdown();
@@ -376,7 +376,7 @@ LRESULT CALLBACK TvnViewer::wndProc(HWND hWnd, UINT msg, WPARAM wparam, LPARAM l
 				case WM_CONNECTION_CANCELED:
 					// wparam - new value; lparam - request from connection thread
 					// ignore connection thread request if canceled by user
-					if (lparam && !wparam && _this->bConnectionCanceled) 
+					if (lparam && !wparam && _this->bConnectionCanceled)
 						break;
 					_this->bConnectionCanceled = wparam;
 					if (wparam)

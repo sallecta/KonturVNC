@@ -25,9 +25,9 @@
 #ifndef _NEW_FOLDER_DIALOG_H_
 #define _NEW_FOLDER_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/Control.h"
-#include "gui/TextBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/Control.h"
+#include "../gui/TextBox.h"
 
 class NewFolderDialog : public BaseDialog
 {

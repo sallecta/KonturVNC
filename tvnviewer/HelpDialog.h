@@ -25,8 +25,8 @@
 #ifndef _HELP_DIALOG_H_
 #define _HELP_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
 #include "resource.h"
 
 class HelpDialog : public BaseDialog

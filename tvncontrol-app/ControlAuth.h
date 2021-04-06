@@ -25,12 +25,12 @@
 #ifndef _CONTROL_AUTH_H_
 #define _CONTROL_AUTH_H_
 
-#include "tvncontrol-app/ControlGate.h"
-#include "tvncontrol-app/ControlAuthException.h"
+#include "../tvncontrol-app/ControlGate.h"
+#include "../tvncontrol-app/ControlAuthException.h"
 
-#include "util/Exception.h"
+#include "../util/Exception.h"
 
-#include "server-config-lib/ServerConfig.h"
+#include "../server-config-lib/ServerConfig.h"
 
 class ControlAuth
 {

@@ -24,7 +24,7 @@
 
 #include "CommonControlsEx.h"
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 CommonControlsEx::CommonControlsEx()
 {

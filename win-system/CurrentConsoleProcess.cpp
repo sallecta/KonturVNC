@@ -25,11 +25,11 @@
 #include "CurrentConsoleProcess.h"
 #include <userenv.h>
 
-#include "win-system/WinStaLibrary.h"
-#include "win-system/Environment.h"
-#include "win-system/SystemException.h"
-#include "win-system/Workstation.h"
-#include "win-system/WTS.h"
+#include "../win-system/WinStaLibrary.h"
+#include "../win-system/Environment.h"
+#include "../win-system/SystemException.h"
+#include "../win-system/Workstation.h"
+#include "../win-system/WTS.h"
 
 CurrentConsoleProcess::CurrentConsoleProcess(LogWriter *log, const TCHAR *path, const TCHAR *args, DWORD sessionID, bool imp)
 : Process(path, args),

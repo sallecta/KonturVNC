@@ -23,7 +23,7 @@
 //
 
 #include "WindowsEventEx.h"
-#include "util/Exception.h"
+#include "../util/Exception.h"
 #include <Aclapi.h>
 
 WindowsEventEx::WindowsEventEx(const TCHAR *name)

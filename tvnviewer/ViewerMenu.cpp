@@ -25,11 +25,11 @@
 #include "ViewerMenu.h"
 #include "resource.h"
 
-#include "util/ResourceLoader.h"
+#include "../util/ResourceLoader.h"
 
 void ViewerMenu::makeSeparator()
 {
-  insertSeparator(m_startIndex); 
+  insertSeparator(m_startIndex);
   m_startIndex++;
 }
 

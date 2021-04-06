@@ -25,14 +25,14 @@
 #ifndef _SETPASSWORDSDIALOG_H_
 #define _SETPASSWORDSDIALOG_H_
 
-#include "util/winhdr.h"
+#include "../util/winhdr.h"
 
-#include "gui/BaseDialog.h"
-#include "gui/CheckBox.h"
-#include "gui/TextBox.h"
-#include "gui/BalloonTip.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/CheckBox.h"
+#include "../gui/TextBox.h"
+#include "../gui/BalloonTip.h"
 
-#include "win-system/RegistryKey.h"
+#include "../win-system/RegistryKey.h"
 
 #include "config-lib/ConnectionHistory.h"
 

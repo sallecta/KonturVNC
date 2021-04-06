@@ -25,8 +25,8 @@
 #ifndef _CONTROL_AUTH_DIALOG_H_
 #define _CONTROL_AUTH_DIALOG_H_
 
-#include "gui/BaseDialog.h"
-#include "gui/TextBox.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/TextBox.h"
 
 /**
  * Control authentication dialog.

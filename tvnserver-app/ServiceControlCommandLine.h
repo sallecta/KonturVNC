@@ -25,8 +25,8 @@
 #ifndef _SERVICE_CONTROL_COMMAND_LINE_H_
 #define _SERVICE_CONTROL_COMMAND_LINE_H_
 
-#include "util/CommandLine.h"
-#include "util/Exception.h"
+#include "../util/CommandLine.h"
+#include "../util/Exception.h"
 
 /**
  * Service control application command line parser.

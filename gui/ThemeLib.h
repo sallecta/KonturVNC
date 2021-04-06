@@ -25,7 +25,7 @@
 #ifndef _THEME_LIB_H_
 #define _THEME_LIB_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 // XP specific stuff
 

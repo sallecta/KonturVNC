@@ -25,11 +25,11 @@
 #ifndef _WTS_H_
 #define _WTS_H_
 
-#include "util/winhdr.h"
-#include "thread/LocalMutex.h"
+#include "../util/winhdr.h"
+#include "../thread/LocalMutex.h"
 #include "DynamicLibrary.h"
 #include "SystemException.h"
-#include "log-writer/LogWriter.h"
+#include "../log-writer/LogWriter.h"
 
 typedef DWORD (WINAPI *pWTSGetActiveConsoleSessionId)(void);
 typedef BOOL (WINAPI *pWTSQueryUserToken)(ULONG SessionId, PHANDLE phToken);
@@ -62,7 +62,7 @@ class WTS
 public:
   /**
    * Gets active console session id.
-   * @return active console session id if WTS is avaliable or 0 if 
+   * @return active console session id if WTS is avaliable or 0 if
    * WinAPI WTSGetActiveConsoleSessionId function not avaliable.
    */
   static DWORD getActiveConsoleSessionId(LogWriter *log);

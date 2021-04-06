@@ -25,7 +25,7 @@
 #ifndef _HTTP_REQUEST_H_
 #define _HTTP_REQUEST_H_
 
-#include "io-lib/DataInputStream.h"
+#include "../io-lib/DataInputStream.h"
 
 #include "ArgList.h"
 

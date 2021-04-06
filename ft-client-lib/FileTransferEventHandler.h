@@ -33,7 +33,7 @@
 // FIXME: It can be renamed to FileTransferMessageListener
 //
 
-#include "io-lib/DataInputStream.h"
+#include "../io-lib/DataInputStream.h"
 
 class FileTransferEventHandler
 {

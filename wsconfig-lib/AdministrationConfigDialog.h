@@ -25,12 +25,12 @@
 #ifndef _ADMINISTRATION_CONFIG_DIALOG_H
 #define _ADMINISTRATION_CONFIG_DIALOG_H
 
-#include "gui/BaseDialog.h"
-#include "gui/CheckBox.h"
-#include "gui/TextBox.h"
-#include "gui/SpinControl.h"
-#include "gui/BalloonTip.h"
-#include "server-config-lib/ServerConfig.h"
+#include "../gui/BaseDialog.h"
+#include "../gui/CheckBox.h"
+#include "../gui/TextBox.h"
+#include "../gui/SpinControl.h"
+#include "../gui/BalloonTip.h"
+#include "../server-config-lib/ServerConfig.h"
 #include "PasswordControl.h"
 
 class AdministrationConfigDialog: public BaseDialog

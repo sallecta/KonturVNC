@@ -25,7 +25,7 @@
 #ifndef _NOTIFY_ICON_WINDOW_H_
 #define _NOTIFY_ICON_WINDOW_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 #include "WindowProcHolder.h"
 
@@ -38,7 +38,7 @@ public:
   HWND getWindow();
 
   void setWindowProcHolder(WindowProcHolder *wph);
-  
+
 protected:
   HWND m_window;
   WindowProcHolder *m_wph;

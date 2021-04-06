@@ -25,10 +25,10 @@
 #ifndef _CONTROL_COMMAND_LINE_H_
 #define _CONTROL_COMMAND_LINE_H_
 
-#include "util/CommandLine.h"
-#include "util/CommandLineFormatException.h"
+#include "../util/CommandLine.h"
+#include "../util/CommandLineFormatException.h"
 
-#include "region/Rect.h"
+#include "../region/Rect.h"
 
 class ControlCommandLine : private CommandLine
 {
@@ -57,7 +57,7 @@ public:
   static const TCHAR SLAVE_MODE[];
   static const TCHAR DONT_ELEVATE[];
 
-  
+
 
 public:
   ControlCommandLine();

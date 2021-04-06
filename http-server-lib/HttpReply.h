@@ -25,8 +25,8 @@
 #ifndef _HTTP_REPLY_H_
 #define _HTTP_REPLY_H_
 
-#include "io-lib/DataOutputStream.h"
-#include "io-lib/IOException.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../io-lib/IOException.h"
 
 class HttpReply
 {

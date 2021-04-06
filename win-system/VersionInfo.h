@@ -25,7 +25,7 @@
 #ifndef _VERSION_INFO_H_
 #define _VERSION_INFO_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #include "SystemException.h"
 
 /**

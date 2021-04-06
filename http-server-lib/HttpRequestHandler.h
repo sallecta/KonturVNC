@@ -25,9 +25,9 @@
 #ifndef _HTTP_REQUEST_HANDLER_H_
 #define _HTTP_REQUEST_HANDLER_H_
 
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "log-writer/LogWriter.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../log-writer/LogWriter.h"
 
 class HttpRequestHandler
 {

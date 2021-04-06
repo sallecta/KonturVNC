@@ -25,7 +25,7 @@
 #ifndef _CONTROL_PROTO_H_
 #define _CONTROL_PROTO_H_
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 
 /**
  * Control protocol constants.

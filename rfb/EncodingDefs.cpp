@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "rfb/EncodingDefs.h"
+#include "../rfb/EncodingDefs.h"
 
 const char *const EncodingDefs::SIG_RAW = "RAW_____";
 const char *const EncodingDefs::SIG_COPYRECT = "COPYRECT";

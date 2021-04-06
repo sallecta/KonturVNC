@@ -28,22 +28,22 @@
 #include "Transport.h"
 #include "TransportFactory.h"
 
-#include "util/CommonHeader.h"
-#include "util/ResourceLoader.h"
-#include "util/Command.h"
-#include "server-config-lib/Configurator.h"
-#include "log-writer/LogWriter.h"
+#include "../util/CommonHeader.h"
+#include "../util/ResourceLoader.h"
+#include "../util/Command.h"
+#include "../server-config-lib/Configurator.h"
+#include "../log-writer/LogWriter.h"
 
-#include "thread/Thread.h"
-#include "thread/LocalMutex.h"
+#include "../thread/Thread.h"
+#include "../thread/LocalMutex.h"
 
-#include "tvncontrol-app/ControlGate.h"
-#include "tvncontrol-app/ControlAuthException.h"
+#include "../tvncontrol-app/ControlGate.h"
+#include "../tvncontrol-app/ControlAuthException.h"
 
 #include "ControlProxy.h"
 #include "Notificator.h"
 
-#include "win-system/WindowsApplication.h"
+#include "../win-system/WindowsApplication.h"
 
 /**
  * External definition of tray icon.

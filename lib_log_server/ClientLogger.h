@@ -25,14 +25,14 @@
 #ifndef __CLIENTLOGGER_H__
 #define __CLIENTLOGGER_H__
 
-#include "util/CommonHeader.h"
-#include "io-lib/Channel.h"
-#include "io-lib/DataInputStream.h"
-#include "io-lib/DataOutputStream.h"
-#include "thread/Thread.h"
-#include "log-writer/Logger.h"
-#include "thread/AutoLock.h"
-#include "log-writer/LogDump.h"
+#include "../util/CommonHeader.h"
+#include "../io-lib/Channel.h"
+#include "../io-lib/DataInputStream.h"
+#include "../io-lib/DataOutputStream.h"
+#include "../thread/Thread.h"
+#include "../log-writer/Logger.h"
+#include "../thread/AutoLock.h"
+#include "../log-writer/LogDump.h"
 
 class ClientLogger : public Logger, private Thread, public LogDump
 {

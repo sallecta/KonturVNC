@@ -25,11 +25,11 @@
 #ifndef __DIBSECTION_H__
 #define __DIBSECTION_H__
 
-#include "util/CommonHeader.h"
+#include "../util/CommonHeader.h"
 #ifndef CAPTUREBLT
 #define CAPTUREBLT          (DWORD)0x40000000 /* Include layered windows */
 #endif
-#include "win-system/Screen.h"
+#include "../win-system/Screen.h"
 
 // This clas is a primitive wrapper to a DIB section.
 class DibSection
@@ -76,7 +76,7 @@ public:
   // This function throwing an exception on a failure.
   void stretchFromDibSection(const Rect *srcRect, const Rect *dstRect);
 
-  
+
 
 private:
   // Opens a new DIB section.

@@ -25,9 +25,9 @@
 #ifndef _CURSOR_PAINTER_H_
 #define _CURSOR_PAINTER_H_
 
-#include "log-writer/LogWriter.h"
-#include "rfb/CursorShape.h"
-#include "thread/LocalMutex.h"
+#include "../log-writer/LogWriter.h"
+#include "../rfb/CursorShape.h"
+#include "../thread/LocalMutex.h"
 
 class CursorPainter
 {
@@ -44,7 +44,7 @@ public:
   void updatePointerPos(const Point *position);
   void setNewCursor(const Point *hotSpot,
                     UINT16 width, UINT16 height,
-                    const vector<UINT8> *cursor, 
+                    const vector<UINT8> *cursor,
                     const vector<UINT8> *bitmask);
 private:
   // This function is thread-save.

@@ -1,8 +1,8 @@
 #include "StatSender.h"
 #include <time.h>
 #include "client-config-lib/ViewerConfig.h"
-#include "util/URLEncode.h"
-#include "p2p/p2ptransport.h"
+#include "../util/URLEncode.h"
+#include "../p2p/p2ptransport.h"
 
 const int sendStatInterval = 30 * 1000;
 
@@ -23,9 +23,9 @@ StatSender::StatSender(ConnectionData * condata, P2pTransport * p2p)
 	username.setString(cEncoder.Encode(name));
 	ausername.fromStringStorage(&username);
 	avp.fromStringStorage(&videoPath);
-	
+
 	m_condata = condata;
-	
+
 	resume();
 }
 

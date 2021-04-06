@@ -24,7 +24,7 @@
 
 #include "CursorPainter.h"
 
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 
 CursorPainter::CursorPainter(FrameBuffer *fb, LogWriter *logWriter)
 : m_fb(fb),
@@ -60,7 +60,7 @@ void CursorPainter::setNewCursor(const Point *hotSpot,
   m_logWriter->debug(_T("Cursor size is (%d, %d)"), width, height);
   Dimension cursorDimension(width, height);
   PixelFormat pixelFormat = m_fb->getPixelFormat();
-  
+
   m_cursor.setProperties(&cursorDimension, &pixelFormat);
   m_cursorOverlay.setProperties(&cursorDimension, &pixelFormat);
 

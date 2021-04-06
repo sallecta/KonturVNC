@@ -23,15 +23,15 @@
 //
 
 #include "RfbClient.h"
-#include "thread/AutoLock.h"
+#include "../thread/AutoLock.h"
 #include "RfbCodeRegistrator.h"
 #include "ft-server-lib/FileTransferRequestHandler.h"
-#include "network/socket/SocketStream.h"
+#include "../network/socket/SocketStream.h"
 #include "RfbInitializer.h"
 #include "ClientAuthListener.h"
-#include "server-config-lib/Configurator.h"
+#include "../server-config-lib/Configurator.h"
 
-#include "p2p/p2ptransport.h"
+#include "../p2p/p2ptransport.h"
 
 
 RfbClient::RfbClient(NewConnectionEvents *newConnectionEvents,

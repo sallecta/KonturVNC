@@ -24,7 +24,7 @@
 
 #pragma once
 
-#include "rfb/RfbKeySym.h"
+#include "../rfb/RfbKeySym.h"
 #include <vector>
 
 class KeySymTest : public RfbKeySymListener

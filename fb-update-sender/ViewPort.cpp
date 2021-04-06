@@ -24,8 +24,8 @@
 
 #include <crtdbg.h>
 #include "ViewPort.h"
-#include "thread/AutoLock.h"
-#include "util/BrokenHandleException.h"
+#include "../thread/AutoLock.h"
+#include "../util/BrokenHandleException.h"
 
 ViewPort::ViewPort(LogWriter *log)
 : m_desktop(0),

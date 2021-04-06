@@ -26,8 +26,8 @@
 #define __VIEWER_INSTANCE_H__
 
 #include "ViewerWindow.h"
-#include "network/socket/SocketIPv4.h"
-#include "log-writer/StatSender.h"
+#include "../network/socket/SocketIPv4.h"
+#include "../log-writer/StatSender.h"
 
 #include "ViewerVncAuthHandler.h"
 
