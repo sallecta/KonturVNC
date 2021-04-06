@@ -280,7 +280,7 @@ if(sctp->terminating) return 1;
  sctp->outgoing_queue.push(msg);
  }
  sctp->inEvent->notify();
- 
+
 
  /*d
 
@@ -289,7 +289,7 @@ if(sctp->terminating) return 1;
  }else{
  printf("BIO error");
  }*/
-  
+
   return 0;
 }
 
@@ -300,7 +300,7 @@ void Sctp::handle_notification_message(union sctp_notification *notify, size_t l
    switch (notify->sn_header.sn_type) {
     case SCTP_ASSOC_CHANGE:
       printf("SCTP_ASSOC_CHANGE\n");
-	  
+
 	    switch (notify->sn_assoc_change.sac_state) {
     case SCTP_COMM_UP:
       printf( "Association change SCTP_COMM_UP");
@@ -356,7 +356,7 @@ void Sctp::handle_notification_message(union sctp_notification *notify, size_t l
 	  printf("SCTP_ASSOC_RESET_EVENT\n");
       break;
     case SCTP_STREAM_CHANGE_EVENT:
-	  printf("SCTP_STREAM_CHANGE_EVENT\n");	
+	  printf("SCTP_STREAM_CHANGE_EVENT\n");
 	  break;
     default:
       printf("SCTP_ERROR %d\n",notify->sn_header.sn_type);
@@ -373,7 +373,7 @@ int Sctp::sctp_data_received_cb(struct socket *sock, union sctp_sockstore addr, 
 		//printf("sctp: %d b\n",len);
 
 	struct sctp_transport *sctp = (struct sctp_transport *)user_data;
-	
+
 	if(flags & MSG_NOTIFICATION) {
 		handle_notification_message((union sctp_notification *)data, len,user_data);
 	}else{
@@ -382,7 +382,7 @@ int Sctp::sctp_data_received_cb(struct socket *sock, union sctp_sockstore addr, 
 	AutoLock al(&sctp->outToUserEvent_mutex);
 	BIO_write(sctp->recv_bio,data,len);
 	}
-	
+
 	sctp->outToUserEvent.notify();
 	free(data); //leak!!
 
@@ -417,7 +417,25 @@ Sctp::Sctp(LogWriter *log, Dtls::dtls_transport * dtls_tr, sctp_transport * sctp
 	}
 
 	usrsctp_sysctl_set_sctp_ecn_enable(0);
-
+	//
+	struct sctp_event event = {0};
+    uint32_t nodelay = 1;
+ 	int event_types[] =  {SCTP_ASSOC_CHANGE,
+		SCTP_PEER_ADDR_CHANGE,
+		SCTP_REMOTE_ERROR,
+		SCTP_SEND_FAILED,
+		SCTP_SHUTDOWN_EVENT,
+		SCTP_ADAPTATION_INDICATION,
+		SCTP_PARTIAL_DELIVERY_EVENT,
+		SCTP_AUTHENTICATION_EVENT,
+		SCTP_STREAM_RESET_EVENT,
+		SCTP_SENDER_DRY_EVENT,
+		SCTP_NOTIFICATIONS_STOPPED_EVENT,
+		SCTP_ASSOC_RESET_EVENT,
+		SCTP_STREAM_CHANGE_EVENT,
+		SCTP_SEND_FAILED_EVENT};
+	BIO *bio = BIO_new(BIO_s_mem());
+	//
 	usrsctp_register_address(sctp);
 	struct socket *s = usrsctp_socket(AF_CONN, SOCK_STREAM, IPPROTO_SCTP,sctp_data_received_cb, NULL, 0, sctp);
 	if (s == NULL) {
@@ -425,7 +443,7 @@ Sctp::Sctp(LogWriter *log, Dtls::dtls_transport * dtls_tr, sctp_transport * sctp
 	}
 	sctp->sock = s;
 
-	BIO *bio = BIO_new(BIO_s_mem());
+
 	if (bio == NULL) {
 		goto trans_err;
 	}
@@ -463,7 +481,7 @@ Sctp::Sctp(LogWriter *log, Dtls::dtls_transport * dtls_tr, sctp_transport * sctp
 	av.assoc_value = 1;
 	usrsctp_setsockopt(s, IPPROTO_SCTP, SCTP_ENABLE_STREAM_RESET, &av, sizeof av);
 
-	uint32_t nodelay = 1;
+
 	usrsctp_setsockopt(s, IPPROTO_SCTP, SCTP_NODELAY, &nodelay, sizeof nodelay);
 
 	struct sctp_initmsg init_msg;
@@ -472,22 +490,9 @@ Sctp::Sctp(LogWriter *log, Dtls::dtls_transport * dtls_tr, sctp_transport * sctp
 	init_msg.sinit_max_instreams = RTCDC_MAX_IN_STREAM;
 	usrsctp_setsockopt(s, IPPROTO_SCTP, SCTP_INITMSG, &init_msg, sizeof init_msg);
 
-	int event_types[] =  {SCTP_ASSOC_CHANGE,
-		SCTP_PEER_ADDR_CHANGE,            
-		SCTP_REMOTE_ERROR,                
-		SCTP_SEND_FAILED,                 
-		SCTP_SHUTDOWN_EVENT,              
-		SCTP_ADAPTATION_INDICATION,       
-		SCTP_PARTIAL_DELIVERY_EVENT,      
-		SCTP_AUTHENTICATION_EVENT,        
-		SCTP_STREAM_RESET_EVENT,          
-		SCTP_SENDER_DRY_EVENT,            
-		SCTP_NOTIFICATIONS_STOPPED_EVENT, 
-		SCTP_ASSOC_RESET_EVENT,           
-		SCTP_STREAM_CHANGE_EVENT,         
-		SCTP_SEND_FAILED_EVENT};           
 
-	struct sctp_event event = {0};
+
+
 	event.se_assoc_id = SCTP_ALL_ASSOC;
 	event.se_on = 1;
 	for (size_t i = 0; i < 12; i++) {
@@ -542,17 +547,17 @@ void Sctp::execute()
 	m_inEvent->waitForEvent(100);
 	if(sctp->terminating)
 		return;
-	
+
 	{
 		AutoLock al(&sctp->incoming_mutex);
-		while(!sctp->incoming_queue.empty()) 
+		while(!sctp->incoming_queue.empty())
 		{
-	
+
 			msg = sctp->incoming_queue.front();
 
 			if(msg==NULL) continue;
 
-			if (msg->len > 0) 
+			if (msg->len > 0)
 			{
 				//printf("sctp->incoming_queue %d\n",msg->len);
 				usrsctp_conninput(sctp, msg->data, msg->len, 0);
@@ -562,7 +567,7 @@ void Sctp::execute()
 
 			msg = NULL;
 
-			sctp->incoming_queue.pop();	
+			sctp->incoming_queue.pop();
 		}
 	}
 
@@ -573,7 +578,7 @@ void Sctp::execute()
 		}
 	}
 
-//while(!sctp->outgoing_queue.empty()) 
+//while(!sctp->outgoing_queue.empty())
 //{
 //		sctp_message * msg;
 //		{
@@ -636,7 +641,7 @@ void Sctp::sctp_incoming_msg(sctp_transport *sctp, void* data, unsigned int len)
 	sctp_message * msg = create_sctp_message((char *)data,len);
 	{
 	AutoLock al(&sctp->incoming_mutex);
-	sctp->incoming_queue.push(msg); 
+	sctp->incoming_queue.push(msg);
 	}
 
 }
