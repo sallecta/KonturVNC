@@ -341,6 +341,7 @@
 					<Add library="wtsapi32" />
 					<Add library="psapi" />
 					<Add library="libversion" />
+					<Add library="ws2_32" />
 					<Add directory="$(TARGET_OUTPUT_DIR)" />
 				</Linker>
 			</Target>
