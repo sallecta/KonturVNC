@@ -19,7 +19,9 @@
 		<Project filename="tcp-dispatcher/tcp-dispatcher.cbp" />
 		<Project filename="rfb/rfb.cbp" />
 		<Project filename="io-lib/io-lib.cbp" />
-		<Project filename="rfb-sconn/rfb-sconn.cbp" />
+		<Project filename="rfb-sconn/rfb-sconn.cbp">
+			<Depends filename="fb-update-sender/fb-update-sender.cbp" />
+		</Project>
 		<Project filename="fb-update-sender/fb-update-sender.cbp" />
 		<Project filename="http-server-lib/http-server-lib.cbp" />
 		<Project filename="network/network.cbp" />

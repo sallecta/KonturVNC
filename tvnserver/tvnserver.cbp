@@ -328,8 +328,9 @@
 					<Add library="comctl32" />
 					<Add library="lib_win_event_log" />
 					<Add library="lib_http_server" />
-					<Add library="lib_network" />
 					<Add library="lib_http_server" />
+					<Add library="lib_network" />
+					<Add library="lib_fb_update_sender" />
 					<Add library="lib_rfb_sconn" />
 					<Add library="lib_fb_update_sender" />
 					<Add library="lib_io" />
