@@ -184,6 +184,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="lib_zlib" />
 				</Linker>
 			</Target>
 		</Build>

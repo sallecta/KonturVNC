@@ -37,7 +37,6 @@
 		<Project filename="util/util.cbp" />
 		<Project filename="tvnserver-app/tvnserver-app.cbp" />
 		<Project filename="log-writer/log-writer.cbp" />
-		<Project filename="tvnserver/tvnserver.cbp" />
 		<Project filename="viewer-keysym-test/viewer-keysym-test.cbp" />
 		<Project filename="hookldr/hookldr.cbp" />
 		<Project filename="tvnviewer/tvnviewer.cbp">
@@ -46,9 +45,10 @@
 		</Project>
 		<Project filename="viewer-core/viewer-core.cbp" />
 		<Project filename="setup-helper/setup-helper.cbp" />
-		<Project filename="libjpeg-turbo/libjpeg-turbo.cbp" />
 		<Project filename="avilog/avilogv11.cbp" />
 		<Project filename="revel-1.1.0/VC7/librevel.cbp" />
 		<Project filename="ztest/ztest.cbp" />
+		<Project filename="lib_jpegturbo/lib_jpegturbo.cbp" />
+		<Project filename="tvnserver/tvnserver.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

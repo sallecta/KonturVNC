@@ -39,7 +39,7 @@
 // Also you need to delete LIBJPEG_TURBO directive from the CommonHeader.h file.
 
 #ifdef LIBJPEG_TURBO
-#include "../libjpeg-turbo/jpeglib.h"
+#include "../lib_jpegturbo/libjpegturbo/jpeglib.h"
 #else
 #include "../libjpeg/jpeglib.h"
 #endif

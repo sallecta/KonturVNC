@@ -291,11 +291,9 @@
 					<Add directory="../pjlib/pjnath/include/" />
 					<Add directory="../openssl/include/" />
 					<Add directory="../usrsctplib/" />
-					<Add directory="../out/obj/Release_Win32/util" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add library="$(WORKSPACE_DIRECTORY)/libjpeg-turbo/jpeg-static.lib" />
 					<Add library="$(WORKSPACE_DIRECTORY)/pjlib/pjlib/lib/pjlib-i386-Win32-vc10-Release.lib" />
 					<Add library="$(WORKSPACE_DIRECTORY)/pjlib/pjlib-util/lib/pjlib-util-i386-Win32-vc10-Release.lib" />
 					<Add library="$(WORKSPACE_DIRECTORY)/pjlib/pjnath/lib/pjnath-i386-Win32-vc10-Release.lib" />
@@ -314,39 +312,15 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
-					<Add library="lib_tvnserver_app" />
 					<Add library="lib_tvncontrol_app" />
-					<Add library="lib_desktop" />
-					<Add library="lib_log_writer" />
-					<Add library="lib_util" />
-					<Add library="lib_thread" />
+					<Add library="lib_network" />
 					<Add library="lib_server_config" />
-					<Add library="lib_log_server" />
-					<Add library="lib_win_system" />
-					<Add library="lib_desktop_ipc" />
+					<Add library="lib_thread" />
 					<Add library="lib_gui" />
-					<Add library="comctl32" />
-					<Add library="lib_win_event_log" />
-					<Add library="lib_http_server" />
-					<Add library="lib_http_server" />
-					<Add library="lib_network" />
-					<Add library="lib_fb_update_sender" />
-					<Add library="lib_rfb_sconn" />
-					<Add library="lib_network" />
-					<Add library="lib_fb_update_sender" />
-					<Add library="lib_io" />
-					<Add library="lib_rfb" />
-					<Add library="lib_tcp_dispatcher" />
-					<Add library="lib_ws_config" />
-					<Add library="lib_region" />
-					<Add library="lib_config" />
-					<Add library="lib_file" />
-					<Add library="wtsapi32" />
-					<Add library="psapi" />
-					<Add library="libversion" />
-					<Add library="ws2_32" />
-					<Add library="lib_p2p" />
-					<Add library="lib_ft_server" />
+					<Add library="lib_util" />
+					<Add library="lib_tvnserver_app" />
+					<Add library="lib_log_writer" />
+					<Add library="lib_win_system" />
 					<Add directory="$(TARGET_OUTPUT_DIR)" />
 				</Linker>
 			</Target>
