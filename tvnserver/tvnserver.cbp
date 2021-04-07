@@ -332,6 +332,7 @@
 					<Add library="lib_network" />
 					<Add library="lib_fb_update_sender" />
 					<Add library="lib_rfb_sconn" />
+					<Add library="lib_network" />
 					<Add library="lib_fb_update_sender" />
 					<Add library="lib_io" />
 					<Add library="lib_rfb" />
