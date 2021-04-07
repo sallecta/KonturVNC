@@ -2,13 +2,16 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="tightvnc2010 workspace">
 		<Project filename="!notes/!notes.cbp" />
-		<Project filename="ft-server-lib/ft-server-lib.cbp" />
 		<Project filename="ft-client-lib/ft-client-lib.cbp" />
 		<Project filename="ft-common/ft-common.cbp" />
 		<Project filename="client-config-lib/client-config-lib.cbp" />
 		<Project filename="screen-hooks/screenhooks.cbp" />
 		<Project filename="zlib/zlib.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
+		<Project filename="ft-server-lib/ft-server-lib.cbp" />
+		<Project filename="p2p/p2p.cbp">
+			<Depends filename="usrsctplib/usrsctplib.cbp" />
+		</Project>
 		<Project filename="lib_file/lib_file.cbp" />
 		<Project filename="config-lib/config-lib.cbp" />
 		<Project filename="region/region.cbp" />
@@ -44,9 +47,6 @@
 		<Project filename="libjpeg-turbo/libjpeg-turbo.cbp" />
 		<Project filename="avilog/avilogv11.cbp" />
 		<Project filename="revel-1.1.0/VC7/librevel.cbp" />
-		<Project filename="p2p/p2p.cbp">
-			<Depends filename="usrsctplib/usrsctplib.cbp" />
-		</Project>
 		<Project filename="ztest/ztest.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
