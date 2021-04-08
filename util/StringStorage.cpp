@@ -32,7 +32,6 @@
 StringStorage::StringStorage()
 {
   setString(_T(""));
-  std::cout << "StringStorage constructor" << endl;
 }
 
 StringStorage::StringStorage(const TCHAR *string)

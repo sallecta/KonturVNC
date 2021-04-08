@@ -2,5 +2,5 @@
 <CodeBlocks_workspace_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveProject path="tvnserver/tvnserver.cbp" />
-	<PreferredTarget name="Release_Win32" />
+	<PreferredTarget name="Release_Win32static" />
 </CodeBlocks_workspace_layout_file>
