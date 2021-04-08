@@ -47,11 +47,11 @@
 		<Project filename="setup-helper/setup-helper.cbp" />
 		<Project filename="avilog/avilogv11.cbp" />
 		<Project filename="revel-1.1.0/VC7/librevel.cbp" />
-		<Project filename="ztest/ztest.cbp" />
 		<Project filename="lib_jpegturbo/lib_jpegturbo.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp" />
 		<Project filename="lib_pj/lib_pj.cbp" />
 		<Project filename="lib_pjnath/lib_pjnath.cbp" />
 		<Project filename="lib_pjutil/lib_pjutil.cbp" />
+		<Project filename="ztest/ztest.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
