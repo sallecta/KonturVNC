@@ -7,6 +7,11 @@
 			<Cursor1 position="1224" topLine="12" />
 		</Cursor>
 	</File>
+	<File name="ServerConfig.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1360" topLine="57" />
+		</Cursor>
+	</File>
 	<File name="IpAccessControl.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1104" topLine="12" />
@@ -14,7 +19,7 @@
 	</File>
 	<File name="Configurator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2100" topLine="45" />
+			<Cursor1 position="1199" topLine="24" />
 		</Cursor>
 	</File>
 	<File name="PortMappingContainer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,19 +27,14 @@
 			<Cursor1 position="2734" topLine="63" />
 		</Cursor>
 	</File>
-	<File name="PortMappingContainer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1104" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="ServerConfig.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1360" topLine="57" />
-		</Cursor>
-	</File>
 	<File name="RegistrySecurityAttributes.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1723" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="PortMappingContainer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1104" topLine="24" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

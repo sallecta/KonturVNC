@@ -2,29 +2,34 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release_Win32" />
+	<File name="FTStatusDialog.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1139" topLine="40" />
+		</Cursor>
+	</File>
+	<File name="ServiceControlCommandLine.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1868" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="TvnService.h" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1363" topLine="84" />
+		</Cursor>
+	</File>
 	<File name="WinEventLogWriter.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1302" topLine="4" />
+			<Cursor1 position="1118" topLine="8" />
 		</Cursor>
 	</File>
-	<File name="SessionChangesWatcher.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="TvnServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1206" topLine="0" />
+			<Cursor1 position="1560" topLine="25" />
 		</Cursor>
 	</File>
-	<File name="QueryConnectionCommandLine.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AuthTracker.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1699" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="DesktopServerCommandLine.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1125" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="RfbServer.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1215" topLine="48" />
+			<Cursor1 position="1181" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="QueryConnectionDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,49 +42,9 @@
 			<Cursor1 position="111" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="CrashHook.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ControlAppAuthenticator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1244" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="WinEventLogWriter.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1219" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="TvnServerApplication.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1564" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="ControlClient.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="15018" topLine="423" />
-		</Cursor>
-	</File>
-	<File name="ChatDialog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="87" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="WsConfigRunner.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1192" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="TvnServer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1654" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="ControlServer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1393" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="AuthTracker.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1181" topLine="0" />
+			<Cursor1 position="1163" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="DesktopServerApplication.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -87,114 +52,9 @@
 			<Cursor1 position="1245" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="TvnService.h" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="DesktopServerCommandLine.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1363" topLine="84" />
-		</Cursor>
-	</File>
-	<File name="TvnServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1560" topLine="25" />
-		</Cursor>
-	</File>
-	<File name="FTStatusDialog.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1139" topLine="40" />
-		</Cursor>
-	</File>
-	<File name="RfbClientManager.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1161" topLine="152" />
-		</Cursor>
-	</File>
-	<File name="ControlClient.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1444" topLine="155" />
-		</Cursor>
-	</File>
-	<File name="ServiceControlApplication.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="6445" topLine="159" />
-		</Cursor>
-	</File>
-	<File name="QueryConnectionApplication.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2702" topLine="60" />
-		</Cursor>
-	</File>
-	<File name="NamingDefs.h" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1199" topLine="26" />
-		</Cursor>
-	</File>
-	<File name="CrashHook.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1316" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="ServiceControlApplication.h" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3195" topLine="70" />
-		</Cursor>
-	</File>
-	<File name="QueryConnectionCommandLine.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1651" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="RfbServer.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1437" topLine="20" />
-		</Cursor>
-	</File>
-	<File name="FTStatusDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="73" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="RfbClientManager.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1345" topLine="41" />
-		</Cursor>
-	</File>
-	<File name="ServiceControlCommandLine.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2152" topLine="48" />
-		</Cursor>
-	</File>
-	<File name="QueryConnectionApplication.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2597" topLine="51" />
-		</Cursor>
-	</File>
-	<File name="AuthTracker.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1151" topLine="32" />
-		</Cursor>
-	</File>
-	<File name="ServiceControlCommandLine.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1868" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="ControlAppAuthenticator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1163" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ConnectToTcpDispatcherThread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1252" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="OutgoingRfbConnectionThread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1256" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="TvnService.cpp" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3467" topLine="110" />
+			<Cursor1 position="1125" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="TvnServerApplication.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -202,9 +62,64 @@
 			<Cursor1 position="1227" topLine="18" />
 		</Cursor>
 	</File>
+	<File name="FTStatusDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="73" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="NamingDefs.h" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1199" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="QueryConnectionCommandLine.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1651" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="RfbServer.h" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1215" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="TvnService.cpp" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3467" topLine="110" />
+		</Cursor>
+	</File>
+	<File name="ServiceControlApplication.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6445" topLine="159" />
+		</Cursor>
+	</File>
+	<File name="CrashHook.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1316" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="WinEventLogWriter.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1221" topLine="15" />
+		</Cursor>
+	</File>
 	<File name="AdditionalActionApplication.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1289" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="AuthTracker.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1151" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="WsConfigRunner.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1192" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ControlServer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1393" topLine="18" />
 		</Cursor>
 	</File>
 	<File name="ControlServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -212,9 +127,94 @@
 			<Cursor1 position="1257" topLine="35" />
 		</Cursor>
 	</File>
+	<File name="ServiceControlCommandLine.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2152" topLine="48" />
+		</Cursor>
+	</File>
+	<File name="RfbServer.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1437" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="SessionChangesWatcher.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1206" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="CrashHook.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1244" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="ConnectToTcpDispatcherThread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1252" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ChatDialog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="87" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ControlClient.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1444" topLine="155" />
+		</Cursor>
+	</File>
 	<File name="DesktopServerCommandLine.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1792" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="RfbClientManager.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1161" topLine="152" />
+		</Cursor>
+	</File>
+	<File name="TvnServer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1654" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="RfbClientManager.h" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1345" topLine="41" />
+		</Cursor>
+	</File>
+	<File name="ControlClient.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="15018" topLine="423" />
+		</Cursor>
+	</File>
+	<File name="TvnServerApplication.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1564" topLine="23" />
+		</Cursor>
+	</File>
+	<File name="OutgoingRfbConnectionThread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1256" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="QueryConnectionApplication.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2702" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="QueryConnectionApplication.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2597" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="QueryConnectionCommandLine.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1699" topLine="25" />
+		</Cursor>
+	</File>
+	<File name="ServiceControlApplication.h" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3195" topLine="70" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

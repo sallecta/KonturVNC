@@ -4,8 +4,8 @@
 		<Project filename="!notes/!notes.cbp" />
 		<Project filename="ft-client-lib/ft-client-lib.cbp" />
 		<Project filename="ft-common/ft-common.cbp" />
-		<Project filename="client-config-lib/client-config-lib.cbp" />
 		<Project filename="screen-hooks/screenhooks.cbp" />
+		<Project filename="client-config-lib/client-config-lib.cbp" />
 		<Project filename="zlib/zlib.cbp" />
 		<Project filename="usrsctplib/usrsctplib.cbp" />
 		<Project filename="ft-server-lib/ft-server-lib.cbp" />
@@ -50,5 +50,8 @@
 		<Project filename="ztest/ztest.cbp" />
 		<Project filename="lib_jpegturbo/lib_jpegturbo.cbp" />
 		<Project filename="tvnserver/tvnserver.cbp" />
+		<Project filename="lib_pj/lib_pj.cbp" />
+		<Project filename="lib_pjnath/lib_pjnath.cbp" />
+		<Project filename="lib_pjutil/lib_pjutil.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

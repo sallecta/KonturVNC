@@ -58,7 +58,7 @@ X509 * Dtls::gen_cert(EVP_PKEY* pkey, const char *common, int days) {
     goto cert_err;
 
   if (0) {
-cert_err:  
+cert_err:
     X509_free(x509);
     x509 = NULL;
   }
@@ -77,8 +77,8 @@ verify_peer_certificate_cb(int ok, X509_STORE_CTX *ctx)
 
 
 Dtls::Dtls(LogWriter *log, dtls_transport * dtls) {
-	
-SSL_library_init();
+
+OpenSSL_add_ssl_algorithms();
 OpenSSL_add_all_algorithms();
 
 SSL_CTX *context = SSL_CTX_new(DTLSv1_method());
@@ -103,7 +103,7 @@ if (cert == NULL)
      return;
 
 SSL_CTX_use_certificate(context, cert);
-  
+
 if (SSL_CTX_check_private_key(context) != 1)
    return;
 

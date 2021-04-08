@@ -1,0 +1,4 @@
+ This is cutted version of pjproject-1.16 pjlib.
+ Visit following resources to obtain original version:
+ https://www.pjsip.org/
+ https://github.com/pjsip/pjproject

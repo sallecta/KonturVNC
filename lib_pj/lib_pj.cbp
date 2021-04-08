@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lib_pj" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-D_LIB" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(PROJECT_DIR)" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-D_LIB" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(PROJECT_DIR)" />
+				</ResourceCompiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="$(PROJECT_DIR)" />
+			<Add directory="$(PROJECT_DIR)/include" />
+		</Compiler>
+		<Unit filename="include/pj/activesock.h" />
+		<Unit filename="include/pj/addr_resolv.h" />
+		<Unit filename="include/pj/array.h" />
+		<Unit filename="include/pj/assert.h" />
+		<Unit filename="include/pj/compat/assert.h" />
+		<Unit filename="include/pj/compat/cc_gcc.h" />
+		<Unit filename="include/pj/compat/cc_msvc.h" />
+		<Unit filename="include/pj/compat/ctype.h" />
+		<Unit filename="include/pj/compat/errno.h" />
+		<Unit filename="include/pj/compat/high_precision.h" />
+		<Unit filename="include/pj/compat/m_alpha.h" />
+		<Unit filename="include/pj/compat/m_i386.h" />
+		<Unit filename="include/pj/compat/m_m68k.h" />
+		<Unit filename="include/pj/compat/m_sparc.h" />
+		<Unit filename="include/pj/compat/malloc.h" />
+		<Unit filename="include/pj/compat/os_linux.h" />
+		<Unit filename="include/pj/compat/os_linux_kernel.h" />
+		<Unit filename="include/pj/compat/os_palmos.h" />
+		<Unit filename="include/pj/compat/os_sunos.h" />
+		<Unit filename="include/pj/compat/os_win32.h" />
+		<Unit filename="include/pj/compat/os_win32_wince.h" />
+		<Unit filename="include/pj/compat/rand.h" />
+		<Unit filename="include/pj/compat/setjmp.h" />
+		<Unit filename="include/pj/compat/size_t.h" />
+		<Unit filename="include/pj/compat/socket.h" />
+		<Unit filename="include/pj/compat/stdarg.h" />
+		<Unit filename="include/pj/compat/stdfileio.h" />
+		<Unit filename="include/pj/compat/string.h" />
+		<Unit filename="include/pj/compat/time.h" />
+		<Unit filename="include/pj/compat/vsprintf.h" />
+		<Unit filename="include/pj/config.h" />
+		<Unit filename="include/pj/config_site.h" />
+		<Unit filename="include/pj/config_site_sample.h" />
+		<Unit filename="include/pj/ctype.h" />
+		<Unit filename="include/pj/doxygen.h" />
+		<Unit filename="include/pj/equeue.h" />
+		<Unit filename="include/pj/errno.h" />
+		<Unit filename="include/pj/except.h" />
+		<Unit filename="include/pj/fifobuf.h" />
+		<Unit filename="include/pj/file_access.h" />
+		<Unit filename="include/pj/file_io.h" />
+		<Unit filename="include/pj/guid.h" />
+		<Unit filename="include/pj/hash.h" />
+		<Unit filename="include/pj/ioqueue.h" />
+		<Unit filename="include/pj/ip_helper.h" />
+		<Unit filename="include/pj/list.h" />
+		<Unit filename="include/pj/list_i.h" />
+		<Unit filename="include/pj/lock.h" />
+		<Unit filename="include/pj/log.h" />
+		<Unit filename="include/pj/math.h" />
+		<Unit filename="include/pj/os.h" />
+		<Unit filename="include/pj/pool.h" />
+		<Unit filename="include/pj/pool_alt.h" />
+		<Unit filename="include/pj/pool_buf.h" />
+		<Unit filename="include/pj/pool_i.h" />
+		<Unit filename="include/pj/rand.h" />
+		<Unit filename="include/pj/rbtree.h" />
+		<Unit filename="include/pj/sock.h" />
+		<Unit filename="include/pj/sock_qos.h" />
+		<Unit filename="include/pj/sock_select.h" />
+		<Unit filename="include/pj/ssl_sock.h" />
+		<Unit filename="include/pj/string.h" />
+		<Unit filename="include/pj/string_i.h" />
+		<Unit filename="include/pj/timer.h" />
+		<Unit filename="include/pj/types.h" />
+		<Unit filename="include/pj/unicode.h" />
+		<Unit filename="include/pjlib.h" />
+		<Unit filename="src/pj/activesock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/addr_resolv_linux_kernel.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/addr_resolv_sock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/array.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/config.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/ctype.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/errno.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/except.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/fifobuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/file_access_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/file_io_ansi.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/file_io_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/guid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/guid_simple.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/guid_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/hash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/ioqueue_common_abs.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/ioqueue_common_abs.h" />
+		<Unit filename="src/pj/ioqueue_dummy.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/ioqueue_epoll.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/ioqueue_select.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/ioqueue_winnt.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/ip_helper_generic.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/ip_helper_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/lock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/log.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/log_writer_printk.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/log_writer_stdout.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/os_core_linux_kernel.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_core_unix.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_core_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/os_error_linux_kernel.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_error_unix.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_error_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/os_info.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/os_time_linux_kernel.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_time_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/os_timestamp_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/os_timestamp_linux.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_timestamp_linux_kernel.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/os_timestamp_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/pool.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/pool_buf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/pool_caching.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/pool_dbg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/pool_policy_kmalloc.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/pool_policy_malloc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/rand.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/rbtree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_bsd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_linux_kernel.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/sock_qos_bsd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_qos_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_qos_dummy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_qos_wm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/sock_select.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/ssl_sock_common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/ssl_sock_dump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/ssl_sock_ossl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/symbols.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pj/timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/types.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pj/unicode_win32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

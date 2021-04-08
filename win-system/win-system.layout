@@ -2,69 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release_Win32" />
-	<File name="SCMClient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4474" topLine="113" />
-		</Cursor>
-	</File>
-	<File name="CtrlAltDelSimulator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1202" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AnonymousPipe.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1193" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="security\SecurityIdentifier.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2890" topLine="73" />
-		</Cursor>
-	</File>
-	<File name="security\SecurityDescriptor.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1846" topLine="34" />
-		</Cursor>
-	</File>
-	<File name="Impersonator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1468" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="Workstation.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1307" topLine="12" />
-		</Cursor>
-	</File>
 	<File name="Environment.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1207" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="WindowsApplication.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1229" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="VersionInfo.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1279" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="Pipe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1266" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="CurrentConsoleProcess.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2915" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="Process.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2734" topLine="80" />
 		</Cursor>
 	</File>
 	<File name="PipeImpersonatedThread.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -72,14 +12,14 @@
 			<Cursor1 position="1198" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Service.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="security\SecurityDescriptor.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1271" topLine="36" />
+			<Cursor1 position="1846" topLine="34" />
 		</Cursor>
 	</File>
-	<File name="NamedPipe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="WTS.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1276" topLine="0" />
+			<Cursor1 position="1599" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Workstation.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -87,19 +27,9 @@
 			<Cursor1 position="1611" topLine="26" />
 		</Cursor>
 	</File>
-	<File name="Service.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="CtrlAltDelSimulator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1258" topLine="32" />
-		</Cursor>
-	</File>
-	<File name="Pipe.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1242" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="WinCommandLineArgs.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1214" topLine="13" />
+			<Cursor1 position="1202" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="SCMClient.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -107,34 +37,19 @@
 			<Cursor1 position="1175" topLine="199" />
 		</Cursor>
 	</File>
-	<File name="AnonymousPipe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1300" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="WindowsApplication.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1200" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="VersionInfo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1555" topLine="20" />
 		</Cursor>
 	</File>
-	<File name="ProcessHandle.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AnonymousPipe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1980" topLine="33" />
+			<Cursor1 position="1300" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="CtrlAltDelSimulator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Shell.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1164" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="WinProcessCommandLine.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2055" topLine="36" />
+			<Cursor1 position="1859" topLine="39" />
 		</Cursor>
 	</File>
 	<File name="security\SecurityDescriptor.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -147,19 +62,9 @@
 			<Cursor1 position="2191" topLine="44" />
 		</Cursor>
 	</File>
-	<File name="Shell.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="NamedPipe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1859" topLine="39" />
-		</Cursor>
-	</File>
-	<File name="LocalWindowsApplication.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1199" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="PipeServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1245" topLine="0" />
+			<Cursor1 position="1276" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Impersonator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -167,14 +72,14 @@
 			<Cursor1 position="1443" topLine="25" />
 		</Cursor>
 	</File>
-	<File name="WsaStartup.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Pipe.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1158" topLine="11" />
+			<Cursor1 position="1242" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="WindowsEvent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="security\SecurityIdentifier.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1177" topLine="11" />
+			<Cursor1 position="2890" topLine="73" />
 		</Cursor>
 	</File>
 	<File name="Shell.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -182,9 +87,49 @@
 			<Cursor1 position="1717" topLine="32" />
 		</Cursor>
 	</File>
+	<File name="WinCommandLineArgs.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="796" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="VersionInfo.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1274" topLine="14" />
+		</Cursor>
+	</File>
+	<File name="LocalWindowsApplication.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1199" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="WTS.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2536" topLine="58" />
+		</Cursor>
+	</File>
+	<File name="Process.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2734" topLine="80" />
+		</Cursor>
+	</File>
+	<File name="Pipe.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1266" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="SCMClient.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4474" topLine="113" />
+		</Cursor>
+	</File>
+	<File name="AnonymousPipe.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1193" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="PipeServer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1245" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="NamedPipe.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -192,14 +137,69 @@
 			<Cursor1 position="1247" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="Workstation.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1307" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="Service.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1271" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="ProcessHandle.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1977" topLine="44" />
+		</Cursor>
+	</File>
+	<File name="WindowsEvent.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1177" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="CtrlAltDelSimulator.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1164" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="WsaStartup.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1158" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="WindowsApplication.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1200" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="WinProcessCommandLine.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2055" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="Service.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1258" topLine="32" />
+		</Cursor>
+	</File>
 	<File name="security\SecurityIdentifier.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3635" topLine="89" />
 		</Cursor>
 	</File>
-	<File name="WTS.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="WindowsApplication.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1599" topLine="0" />
+			<Cursor1 position="1229" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Impersonator.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1468" topLine="30" />
+		</Cursor>
+	</File>
+	<File name="CurrentConsoleProcess.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2915" topLine="72" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

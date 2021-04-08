@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="ft-common" />
+		<Option title="lib_ft_common" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -148,10 +148,10 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="Release Win32">
-				<Option output="$(WORKSPACE_DIRECTORY)/out/bin/Release_Win32/ftcommon" prefix_auto="1" extension_auto="1" />
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
 				<Option working_dir="" />
-				<Option object_output="$(WORKSPACE_DIRECTORY)/out/obj/Release_Win32/ftcommon/" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
 				<Option deps_output="../bin/Release_Win32/" />
 				<Option type="2" />
 				<Option compiler="gcc" />

@@ -2,9 +2,29 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release_Win32" />
-	<File name="OutgoingConnectionDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ControlCommandLine.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1310" topLine="0" />
+			<Cursor1 position="1289" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="ControlCommandLine.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1173" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="ControlMessage.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1455" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ControlGate.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1299" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ControlCommand.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="60" />
 		</Cursor>
 	</File>
 	<File name="TrayDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -12,9 +32,9 @@
 			<Cursor1 position="59" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ControlAuth.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AboutDialog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1243" topLine="0" />
+			<Cursor1 position="1304" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="ControlAuthDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -27,44 +47,19 @@
 			<Cursor1 position="1176" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ControlMessage.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ControlApplication.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1455" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="AboutDialog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1304" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ControlGate.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1299" topLine="0" />
+			<Cursor1 position="1284" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="ControlApplication.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2245" topLine="47" />
+			<Cursor1 position="1819" topLine="33" />
 		</Cursor>
 	</File>
-	<File name="ControlProxy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ControlAuth.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1202" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="TcpDispatcherConnectionDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1286" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ControlCommandLine.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1289" topLine="34" />
-		</Cursor>
-	</File>
-	<File name="ControlCommandLine.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1173" topLine="11" />
+			<Cursor1 position="1243" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Transport.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -72,19 +67,19 @@
 			<Cursor1 position="1978" topLine="48" />
 		</Cursor>
 	</File>
+	<File name="TcpDispatcherConnectionDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1286" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ControlProxy.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1202" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="SetPasswordsDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1312" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ControlCommand.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="60" />
-		</Cursor>
-	</File>
-	<File name="ControlApplication.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1480" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="TrayDialog.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -95,6 +90,11 @@
 	<File name="ControlTrayIcon.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1269" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="OutgoingConnectionDialog.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1310" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

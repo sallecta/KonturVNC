@@ -154,7 +154,7 @@
 					<Add directory="../pjlib/pjlib/include/" />
 					<Add directory="../pjlib/pjlib-util/include/" />
 					<Add directory="../pjlib/pjnath/include/" />
-					<Add directory="../openssl/include/" />
+					<Add directory="../lib_bin/openssl-1.1.1h-win32-mingw/include/" />
 					<Add directory="../usrsctplib/" />
 				</Compiler>
 				<Linker>
