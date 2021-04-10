@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lib_usrsctp" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-D__Userspace_os_Windows" />
+					<Add option="-DWINVER=0x0502" />
+					<Add option="-D_WIN32_WINNT=0x0502" />
+					<Add option="-DSCTP_PROCESS_LEVEL_LOCKS" />
+					<Add option="-DSCTP_SIMPLE_ALLOCATOR" />
+					<Add option="-D__Userspace__" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="distr/netinet6/sctp6_usrreq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet6/sctp6_var.h" />
+		<Unit filename="distr/netinet/sctp.h" />
+		<Unit filename="distr/netinet/sctp_asconf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_asconf.h" />
+		<Unit filename="distr/netinet/sctp_auth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_auth.h" />
+		<Unit filename="distr/netinet/sctp_bsd_addr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_bsd_addr.h" />
+		<Unit filename="distr/netinet/sctp_callout.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_callout.h" />
+		<Unit filename="distr/netinet/sctp_cc_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_constants.h" />
+		<Unit filename="distr/netinet/sctp_crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_crc32.h" />
+		<Unit filename="distr/netinet/sctp_header.h" />
+		<Unit filename="distr/netinet/sctp_indata.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_indata.h" />
+		<Unit filename="distr/netinet/sctp_input.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_input.h" />
+		<Unit filename="distr/netinet/sctp_lock_userspace.h" />
+		<Unit filename="distr/netinet/sctp_os.h" />
+		<Unit filename="distr/netinet/sctp_os_userspace.h" />
+		<Unit filename="distr/netinet/sctp_output.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_output.h" />
+		<Unit filename="distr/netinet/sctp_pcb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_pcb.h" />
+		<Unit filename="distr/netinet/sctp_peeloff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_peeloff.h" />
+		<Unit filename="distr/netinet/sctp_process_lock.h" />
+		<Unit filename="distr/netinet/sctp_sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_sha1.h" />
+		<Unit filename="distr/netinet/sctp_ss_functions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_structs.h" />
+		<Unit filename="distr/netinet/sctp_sysctl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_sysctl.h" />
+		<Unit filename="distr/netinet/sctp_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_timer.h" />
+		<Unit filename="distr/netinet/sctp_uio.h" />
+		<Unit filename="distr/netinet/sctp_userspace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_usrreq.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctp_var.h" />
+		<Unit filename="distr/netinet/sctputil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/netinet/sctputil.h" />
+		<Unit filename="distr/user_atomic.h" />
+		<Unit filename="distr/user_environment.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/user_environment.h" />
+		<Unit filename="distr/user_inpcb.h" />
+		<Unit filename="distr/user_ip6_var.h" />
+		<Unit filename="distr/user_ip_icmp.h" />
+		<Unit filename="distr/user_malloc.h" />
+		<Unit filename="distr/user_mbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/user_mbuf.h" />
+		<Unit filename="distr/user_queue.h" />
+		<Unit filename="distr/user_recv_thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/user_recv_thread.h" />
+		<Unit filename="distr/user_route.h" />
+		<Unit filename="distr/user_socket.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distr/user_socketvar.h" />
+		<Unit filename="distr/user_uma.h" />
+		<Unit filename="distr/usrsctp.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

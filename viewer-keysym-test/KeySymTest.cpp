@@ -23,8 +23,8 @@
 //
 
 #include "KeySymTest.h"
-#include "../util/Exception.h"
-#include "../util/StringParser.h"
+#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_util/StringParser.h"
 
 const TCHAR KeySymTest::VALID_WORD_LETTERS[] = _T("zyxwvutsrqponmlkjihgfedcba")
                                                _T("ZYXWVUTSRQPONMLKJIHGFEDCBA")

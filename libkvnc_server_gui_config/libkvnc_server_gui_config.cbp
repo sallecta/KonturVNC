@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libkvnc_server_gui_config" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="../bin/Debug_Win32/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Debug_Win32/wsconfiglib/" />
+				<Option deps_output="../bin/Debug_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="DebugNoUnicode x64">
+				<Option output="../bin/DebugNoUnicode_x64/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/DebugNoUnicode_x64/wsconfiglib/" />
+				<Option deps_output="../bin/DebugNoUnicode_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="DebugNoUnicode Win32">
+				<Option output="../bin/DebugNoUnicode_Win32/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/DebugNoUnicode_Win32/wsconfiglib/" />
+				<Option deps_output="../bin/DebugNoUnicode_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="ReleaseNoUnicode x64">
+				<Option output="../bin/ReleaseNoUnicode_x64/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/ReleaseNoUnicode_x64/wsconfiglib/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug x64">
+				<Option output="../bin/Debug_x64/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Debug_x64/wsconfiglib/" />
+				<Option deps_output="../bin/Debug_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O0" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+			</Target>
+			<Target title="Release x64">
+				<Option output="../bin/Release_x64/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/Release_x64/wsconfiglib/" />
+				<Option deps_output="../bin/Release_x64/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseNoUnicode Win32">
+				<Option output="../bin/ReleaseNoUnicode_Win32/wsconfiglib" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../obj/ReleaseNoUnicode_Win32/wsconfiglib/" />
+				<Option deps_output="../bin/ReleaseNoUnicode_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-O1" />
+					<Add option="-Wall" />
+					<Add option="-Wextra" />
+					<Add directory="./" />
+					<Add directory="../" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Release_Win32">
+				<Option output="../out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="../out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add directory="./" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="AdministrationConfigDialog.cpp" />
+		<Unit filename="AdministrationConfigDialog.h" />
+		<Unit filename="ChangePasswordDialog.cpp" />
+		<Unit filename="ChangePasswordDialog.h" />
+		<Unit filename="CommonInputValidation.cpp" />
+		<Unit filename="CommonInputValidation.h" />
+		<Unit filename="ConfigDialog.cpp" />
+		<Unit filename="ConfigDialog.h" />
+		<Unit filename="EditIpAccessRuleDialog.cpp" />
+		<Unit filename="EditIpAccessRuleDialog.h" />
+		<Unit filename="EditPortMappingDialog.cpp" />
+		<Unit filename="EditPortMappingDialog.h" />
+		<Unit filename="IpAccessControlDialog.cpp" />
+		<Unit filename="IpAccessControlDialog.h" />
+		<Unit filename="PasswordControl.cpp" />
+		<Unit filename="PasswordControl.h" />
+		<Unit filename="PortMappingDialog.cpp" />
+		<Unit filename="PortMappingDialog.h" />
+		<Unit filename="ServerConfigDialog.cpp" />
+		<Unit filename="ServerConfigDialog.h" />
+		<Unit filename="TvnLogFilename.cpp" />
+		<Unit filename="TvnLogFilename.h" />
+		<Unit filename="UIDataAccess.cpp" />
+		<Unit filename="UIDataAccess.h" />
+		<Unit filename="VideoRegionsConfigDialog.cpp" />
+		<Unit filename="VideoRegionsConfigDialog.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

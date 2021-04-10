@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libkvnc_setup_helper" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_USRDLL" />
+					<Add option="-DCUSTOMACTIONTEST_EXPORTS" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="msi" />
+					<Add library="shlwapi" />
+					<Add library="winmm" />
+					<Add library="comctl32" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="libkvnc_win_system" />
+					<Add library="lib_util" />
+					<Add library="lib_server_config" />
+					<Add library="libkvnc_config" />
+					<Add library="libkvnc_server_app" />
+					<Add library="libkvnc_win_system" />
+					<Add directory="$(TARGET_OUTPUT_DIR)" />
+					<LinkerExe value="CppCompiler" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="CustomAction.cpp" />
+		<Unit filename="CustomAction.def" />
+		<Unit filename="MsiProperties.cpp" />
+		<Unit filename="MsiProperties.h" />
+		<Unit filename="resource.h" />
+		<Unit filename="setup-helper.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

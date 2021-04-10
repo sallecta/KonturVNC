@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lib_pjutil" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-D_LIB" />
+					<Add directory="$(PROJECT_DIR)/include" />
+					<Add directory="$(WORKSPACEDIR)/lib_pj/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(PROJECT_DIR)/include" />
+					<Add directory="$(WORKSPACEDIR)/lib_pj/include" />
+				</ResourceCompiler>
+			</Target>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-D_LIB" />
+					<Add directory="$(PROJECT_DIR)/include" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(PROJECT_DIR)/include" />
+					<Add directory="$(WORKSPACEDIR)/lib_pj/include" />
+				</ResourceCompiler>
+			</Target>
+		</Build>
+		<Unit filename="include/pjlib-util.h" />
+		<Unit filename="include/pjlib-util/base64.h" />
+		<Unit filename="include/pjlib-util/config.h" />
+		<Unit filename="include/pjlib-util/crc32.h" />
+		<Unit filename="include/pjlib-util/dns.h" />
+		<Unit filename="include/pjlib-util/dns_server.h" />
+		<Unit filename="include/pjlib-util/errno.h" />
+		<Unit filename="include/pjlib-util/getopt.h" />
+		<Unit filename="include/pjlib-util/hmac_md5.h" />
+		<Unit filename="include/pjlib-util/hmac_sha1.h" />
+		<Unit filename="include/pjlib-util/http_client.h" />
+		<Unit filename="include/pjlib-util/md5.h" />
+		<Unit filename="include/pjlib-util/pcap.h" />
+		<Unit filename="include/pjlib-util/resolver.h" />
+		<Unit filename="include/pjlib-util/scanner.h" />
+		<Unit filename="include/pjlib-util/scanner_cis_bitwise.h" />
+		<Unit filename="include/pjlib-util/scanner_cis_uint.h" />
+		<Unit filename="include/pjlib-util/sha1.h" />
+		<Unit filename="include/pjlib-util/srv_resolver.h" />
+		<Unit filename="include/pjlib-util/string.h" />
+		<Unit filename="include/pjlib-util/stun_simple.h" />
+		<Unit filename="include/pjlib-util/types.h" />
+		<Unit filename="include/pjlib-util/xml.h" />
+		<Unit filename="src/pjlib-util/base64.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/dns.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/dns_dump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/dns_server.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/errno.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/getopt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/hmac_md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/hmac_sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/http_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/md5.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/pcap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/resolver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/scanner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/scanner_cis_bitwise.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pjlib-util/scanner_cis_uint.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/pjlib-util/sha1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/srv_resolver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/stun_simple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/stun_simple_client.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/symbols.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/pjlib-util/xml.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

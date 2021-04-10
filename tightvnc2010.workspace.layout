@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_layout_file>
 	<FileVersion major="1" minor="0" />
-	<ActiveProject path="tvnserver/tvnserver.cbp" />
+	<ActiveProject path="libkvnc_client_core/libkvnc_client_core.cbp" />
 	<PreferredTarget name="Release_Win32" />
 </CodeBlocks_workspace_layout_file>

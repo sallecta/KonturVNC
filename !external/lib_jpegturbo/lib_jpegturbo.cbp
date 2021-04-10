@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lib_jpegturbo" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="libjpegturbo/jaricom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jccoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jccolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcdctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jchuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcicc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcinit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcomapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcparam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcphuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcprepct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jcsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jctrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdatadst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdatasrc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdcoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdcolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jddctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdhuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdinput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdmerge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdphuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdpostct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jdtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jfdctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jfdctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jfdctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jidctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jidctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jidctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jidctred.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jmemmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jmemnobs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jquant1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jquant2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jsimd_none.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libjpegturbo/jutils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
