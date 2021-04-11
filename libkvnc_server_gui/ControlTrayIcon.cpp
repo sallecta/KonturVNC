@@ -39,7 +39,7 @@
 #include "../libkvnc_util/StringTable.h"
 #include "../libkvnc_util/MacroCommand.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include <crtdbg.h>
 

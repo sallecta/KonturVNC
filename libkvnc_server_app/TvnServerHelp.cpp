@@ -27,7 +27,7 @@
 #include "../libkvnc_util/winhdr.h"
 #include "../libkvnc_util/StringTable.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 TvnServerHelp::TvnServerHelp()
 {

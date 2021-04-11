@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 #include "VideoRegionsConfigDialog.h"
 #include "ConfigDialog.h"
 #include "UIDataAccess.h"

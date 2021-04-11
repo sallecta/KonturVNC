@@ -68,6 +68,7 @@
 #define PJ_THREAD_FUNC	
 #define PJ_NORETURN		__declspec(noreturn)
 #define PJ_ATTR_NORETURN	
+#define PJ_ATTR_MAY_ALIAS	
 
 #define PJ_HAS_INT64	1
 
@@ -79,6 +80,9 @@ typedef unsigned __int64 pj_uint64_t;
 #define PJ_INT64_FMT		"I64"
 
 #define PJ_UNREACHED(x)	    	
+
+#define PJ_ALIGN_DATA(declaration, alignment) __declspec(align(alignment)) declaration
+
 
 #endif	/* __PJ_COMPAT_CC_MSVC_H__ */
 

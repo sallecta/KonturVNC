@@ -36,7 +36,7 @@ static const char *spell_ttl(char *buf, int size, unsigned ttl)
 
     if (ttl > DAY) {
 	len = pj_ansi_snprintf(p, size, "%dd ", ttl/DAY);
-	if (len < 1)
+	if (len < 1 || len >= size)
 	    return "-err-";
 	size -= len;
 	p += len;
@@ -45,7 +45,7 @@ static const char *spell_ttl(char *buf, int size, unsigned ttl)
 
     if (ttl > HOUR) {
 	len = pj_ansi_snprintf(p, size, "%dh ", ttl/HOUR);
-	if (len < 1)
+	if (len < 1 || len >= size)
 	    return "-err-";
 	size -= len;
 	p += len;
@@ -54,7 +54,7 @@ static const char *spell_ttl(char *buf, int size, unsigned ttl)
 
     if (ttl > MINUTE) {
 	len = pj_ansi_snprintf(p, size, "%dm ", ttl/MINUTE);
-	if (len < 1)
+	if (len < 1 || len >= size)
 	    return "-err-";
 	size -= len;
 	p += len;
@@ -63,7 +63,7 @@ static const char *spell_ttl(char *buf, int size, unsigned ttl)
 
     if (ttl > 0) {
 	len = pj_ansi_snprintf(p, size, "%ds ", ttl);
-	if (len < 1)
+	if (len < 1 || len >= size)
 	    return "-err-";
 	size -= len;
 	p += len;
@@ -170,7 +170,7 @@ PJ_DEF(void) pj_dns_dump_packet(const pj_dns_parsed_packet *res)
     }
 
     /* Dump NS sections */
-    if (res->hdr.anscount) {
+    if (res->hdr.nscount) {
 	PJ_LOG(3,(THIS_FILE, " NS Authority RR:"));
 
 	for (i=0; i<res->hdr.nscount; ++i) {

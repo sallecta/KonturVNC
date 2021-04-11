@@ -616,6 +616,32 @@ typedef struct pj_ip_mreq {
     pj_in_addr imr_interface;	/**< local IP address of interface. */
 } pj_ip_mreq;
 
+/* Maximum number of socket options. */
+#define PJ_MAX_SOCKOPT_PARAMS 4
+
+/**
+ * Options to be set for the socket. 
+ */
+typedef struct pj_sockopt_params
+{
+    /* The number of options to be applied. */
+    unsigned cnt;
+
+    /* Array of options to be applied. */
+    struct {
+	/* The level at which the option is defined. */
+	int level;
+
+	/* Option name. */
+	int optname;
+
+	/* Pointer to the buffer in which the option is specified. */
+	void *optval;
+
+	/* Buffer size of the buffer pointed by optval. */
+	int optlen;
+    } options[PJ_MAX_SOCKOPT_PARAMS];
+} pj_sockopt_params;
 
 /*****************************************************************************
  *
@@ -1166,6 +1192,24 @@ PJ_DECL(pj_status_t) pj_sock_bind_in( pj_sock_t sockfd,
 				      pj_uint32_t addr,
 				      pj_uint16_t port);
 
+/**
+ * Bind the IP socket sockfd to the given address and a random port in the
+ * specified range.
+ *
+ * @param sockfd    	The socket desriptor.
+ * @param addr      	The local address and port to bind the socket to.
+ * @param port_range	The port range, relative the to start port number
+ * 			specified in port field in #addr. Note that if the
+ * 			port is zero, this param will be ignored.
+ * @param max_try   	Maximum retries.
+ *
+ * @return	    	Zero on success.
+ */
+PJ_DECL(pj_status_t) pj_sock_bind_random( pj_sock_t sockfd,
+				          const pj_sockaddr_t *addr,
+				          pj_uint16_t port_range,
+				          pj_uint16_t max_try);
+
 #if PJ_HAS_TCP
 /**
  * Listen for incoming connection. This function only applies to connection
@@ -1286,6 +1330,38 @@ PJ_DECL(pj_status_t) pj_sock_setsockopt( pj_sock_t sockfd,
 					 pj_uint16_t optname,
 					 const void *optval,
 					 int optlen);
+
+/**
+ * Set socket options associated with a socket. This method will apply all the 
+ * options specified, and ignore any errors that might be raised.
+ *
+ * @param sockfd	The socket descriptor.
+ * @param params	The socket options.
+ *
+ * @return		PJ_SUCCESS or the last error code. 
+ */
+PJ_DECL(pj_status_t) pj_sock_setsockopt_params( pj_sock_t sockfd,
+					       const pj_sockopt_params *params);					       
+
+/**
+ * Helper function to set socket buffer size using #pj_sock_setsockopt()
+ * with capability to auto retry with lower buffer setting value until
+ * the highest possible value is successfully set.
+ *
+ * @param sockfd	The socket descriptor.
+ * @param optname	The option name, valid values are pj_SO_RCVBUF()
+ *			and pj_SO_SNDBUF().
+ * @param auto_retry	Option whether auto retry with lower value is
+ *			enabled.
+ * @param buf_size	On input, specify the prefered buffer size setting,
+ *			on output, the buffer size setting applied.
+ *
+ * @return		PJ_SUCCESS or the status code.
+ */
+PJ_DECL(pj_status_t) pj_sock_setsockopt_sobuf( pj_sock_t sockfd,
+					       pj_uint16_t optname,
+					       pj_bool_t auto_retry,
+					       unsigned *buf_size);
 
 
 /**

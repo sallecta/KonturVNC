@@ -59,9 +59,9 @@ PJ_DEF(pj_status_t) pj_dns_make_query( void *packet,
 				       int qtype,
 				       const pj_str_t *name)
 {
-    pj_uint8_t *query, *p = (pj_uint8_t*)packet;
+    pj_uint8_t *p = (pj_uint8_t*)packet;
     const char *startlabel, *endlabel, *endname;
-    unsigned d;
+    pj_size_t d;
 
     /* Sanity check */
     PJ_ASSERT_RETURN(packet && size && qtype && name, PJ_EINVAL);
@@ -80,7 +80,7 @@ PJ_DEF(pj_status_t) pj_dns_make_query( void *packet,
     write16(p+4, (pj_uint16_t)1);
 
     /* Initialize query */
-    query = p = ((pj_uint8_t*)packet)+sizeof(pj_dns_hdr);
+    p = ((pj_uint8_t*)packet)+sizeof(pj_dns_hdr);
 
     /* Tokenize name */
     startlabel = endlabel = name->ptr;
@@ -106,7 +106,7 @@ PJ_DEF(pj_status_t) pj_dns_make_query( void *packet,
     p += 2;
 
     /* Done, calculate length */
-    *size = p - (pj_uint8_t*)packet;
+    *size = (unsigned)(p - (pj_uint8_t*)packet);
 
     return 0;
 }
@@ -326,8 +326,15 @@ static pj_status_t parse_rr(pj_dns_parsed_rr *rr, pj_pool_t *pool,
     p += 2;
 
     /* Class MUST be IN */
-    if (rr->dnsclass != 1)
-	return PJLIB_UTIL_EDNSINCLASS;
+    if (rr->dnsclass != 1) {
+	/* Class is not IN, return error only if type is known (see #1889) */
+	if (rr->type == PJ_DNS_TYPE_A     || rr->type == PJ_DNS_TYPE_AAAA  ||
+	    rr->type == PJ_DNS_TYPE_CNAME || rr->type == PJ_DNS_TYPE_NS    ||
+	    rr->type == PJ_DNS_TYPE_PTR   || rr->type == PJ_DNS_TYPE_SRV)
+	{
+	    return PJLIB_UTIL_EDNSINCLASS;
+	}
+    }
 
     /* Get TTL */
     pj_memcpy(&rr->ttl, p, 4);

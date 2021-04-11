@@ -27,9 +27,9 @@
 
 #include "RfbClientManager.h"
 
-#include "../tvncontrol-app/ControlGate.h"
-#include "../tvncontrol-app/ControlAuthException.h"
-#include "../tvncontrol-app/Transport.h"
+#include "../libkvnc_server_gui/ControlGate.h"
+#include "../libkvnc_server_gui/ControlAuthException.h"
+#include "../libkvnc_server_gui/Transport.h"
 #include "ControlAppAuthenticator.h"
 #include "TcpDispatcherConnectionListener.h"
 #include "../libkvnc_thread/ThreadCollector.h"

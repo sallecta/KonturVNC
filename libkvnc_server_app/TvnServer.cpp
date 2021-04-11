@@ -32,7 +32,7 @@
 
 #include "../libkvnc_thread/GlobalMutex.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include "../libkvnc_server_gui_config/TvnLogFilename.h"
 
@@ -45,10 +45,10 @@
 #include "../libkvnc_file/File.h"
 
 // FIXME: Bad dependency on tvncontrol-app.
-#include "../tvncontrol-app/TransportFactory.h"
-#include "../tvncontrol-app/ControlPipeName.h"
+#include "../libkvnc_server_gui/TransportFactory.h"
+#include "../libkvnc_server_gui/ControlPipeName.h"
 
-#include "../kvncserver/BuildTime.h"
+#include "../kvnc_server/BuildTime.h"
 
 #include <crtdbg.h>
 #include <time.h>

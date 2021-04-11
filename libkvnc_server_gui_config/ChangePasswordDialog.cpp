@@ -23,7 +23,7 @@
 //
 
 #include "ChangePasswordDialog.h"
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include "../libkvnc_server_config/ServerConfig.h"
 

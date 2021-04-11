@@ -24,7 +24,7 @@
 
 #include "QueryConnectionDialog.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 QueryConnectionDialog::QueryConnectionDialog(const TCHAR *peerAddress,
                                              bool acceptByDefault,

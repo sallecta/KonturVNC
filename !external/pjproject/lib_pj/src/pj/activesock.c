@@ -43,6 +43,13 @@ enum read_type
     TYPE_RECV_FROM
 };
 
+enum shutdown_dir
+{
+    SHUT_NONE = 0,
+    SHUT_RX = 1,
+    SHUT_TX = 2
+};
+
 struct read_op
 {
     pj_ioqueue_op_key_t	 op_key;
@@ -77,6 +84,7 @@ struct pj_activesock_t
     pj_ioqueue_t	*ioqueue;
     void		*user_data;
     unsigned		 async_count;
+    unsigned	 	 shutdown;
     unsigned		 max_loop;
     pj_activesock_cb	 cb;
 #if defined(PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT) && \
@@ -149,7 +157,9 @@ static void activesock_create_iphone_os_stream(pj_activesock_t *asock)
 	    CFReadStreamOpen(asock->readStream) != TRUE)
 	{
 	    PJ_LOG(2,("", "Failed to configure TCP transport for VoIP "
-		      "usage. Background mode will not be supported."));
+		      "usage. Usage of THIS particular TCP transport in "
+		      "background mode will not be supported."));
+
 	    
 	    activesock_destroy_iphone_os_stream(asock);
 	}
@@ -209,8 +219,9 @@ PJ_DEF(pj_status_t) pj_activesock_create( pj_pool_t *pool,
     ioq_cb.on_accept_complete = &ioqueue_on_accept_complete;
 #endif
 
-    status = pj_ioqueue_register_sock(pool, ioqueue, sock, asock, 
-				      &ioq_cb, &asock->key);
+    status = pj_ioqueue_register_sock2(pool, ioqueue, sock,
+                                       (opt? opt->grp_lock : NULL),
+                                       asock, &ioq_cb, &asock->key);
     if (status != PJ_SUCCESS) {
 	pj_activesock_close(asock);
 	return status;
@@ -283,17 +294,18 @@ PJ_DEF(pj_status_t) pj_activesock_create_udp( pj_pool_t *pool,
     return PJ_SUCCESS;
 }
 
-
 PJ_DEF(pj_status_t) pj_activesock_close(pj_activesock_t *asock)
 {
     PJ_ASSERT_RETURN(asock, PJ_EINVAL);
+    asock->shutdown = SHUT_RX | SHUT_TX;
     if (asock->key) {
+	pj_ioqueue_unregister(asock->key);
+
 #if defined(PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT) && \
     PJ_IPHONE_OS_HAS_MULTITASKING_SUPPORT!=0
 	activesock_destroy_iphone_os_stream(asock);
 #endif	
-	
-	pj_ioqueue_unregister(asock->key);
+
 	asock->key = NULL;
     }
     return PJ_SUCCESS;
@@ -361,7 +373,7 @@ PJ_DEF(pj_status_t) pj_activesock_start_read2( pj_activesock_t *asock,
 	pj_ssize_t size_to_read;
 
 	r->pkt = (pj_uint8_t*)readbuf[i];
-	r->max_size = size_to_read = buff_size;
+	size_to_read = r->max_size = buff_size;
 
 	status = pj_ioqueue_recv(asock->key, &r->op_key, r->pkt, &size_to_read,
 				 PJ_IOQUEUE_ALWAYS_ASYNC | flags);
@@ -420,7 +432,7 @@ PJ_DEF(pj_status_t) pj_activesock_start_recvfrom2( pj_activesock_t *asock,
 	pj_ssize_t size_to_read;
 
 	r->pkt = (pj_uint8_t*) readbuf[i];
-	r->max_size = size_to_read = buff_size;
+	size_to_read = r->max_size = buff_size;
 	r->src_addr_len = sizeof(r->src_addr);
 
 	status = pj_ioqueue_recvfrom(asock->key, &r->op_key, r->pkt,
@@ -447,6 +459,10 @@ static void ioqueue_on_read_complete(pj_ioqueue_key_t *key,
     pj_status_t status;
 
     asock = (pj_activesock_t*) pj_ioqueue_get_user_data(key);
+
+    /* Ignore if we've been shutdown */
+    if (asock->shutdown & SHUT_RX)
+	return;
 
     do {
 	unsigned flags;
@@ -519,7 +535,7 @@ static void ioqueue_on_read_complete(pj_ioqueue_key_t *key,
 		 * oriented, it means connection has been closed. For datagram
 		 * sockets, it means we've got some error (e.g. EWOULDBLOCK).
 		 */
-		status = -bytes_read;
+		status = (pj_status_t)-bytes_read;
 	    }
 
 	    /* Set default remainder to zero */
@@ -567,6 +583,10 @@ static void ioqueue_on_read_complete(pj_ioqueue_key_t *key,
 
 	    /* If callback returns false, we have been destroyed! */
 	    if (!ret)
+		return;
+
+	    /* Also stop further read if we've been shutdown */
+	    if (asock->shutdown & SHUT_RX)
 		return;
 
 	    /* Only stream oriented socket may leave data in the packet */
@@ -648,6 +668,9 @@ PJ_DEF(pj_status_t) pj_activesock_send( pj_activesock_t *asock,
 {
     PJ_ASSERT_RETURN(asock && send_key && data && size, PJ_EINVAL);
 
+    if (asock->shutdown & SHUT_TX)
+	return PJ_EINVALIDOP;
+
     send_key->activesock_data = NULL;
 
     if (asock->whole_data) {
@@ -698,6 +721,9 @@ PJ_DEF(pj_status_t) pj_activesock_sendto( pj_activesock_t *asock,
     PJ_ASSERT_RETURN(asock && send_key && data && size && addr && addr_len, 
 		     PJ_EINVAL);
 
+    if (asock->shutdown & SHUT_TX)
+	return PJ_EINVALIDOP;
+
     return pj_ioqueue_sendto(asock->key, send_key, data, size, flags,
 			     addr, addr_len);
 }
@@ -710,6 +736,13 @@ static void ioqueue_on_write_complete(pj_ioqueue_key_t *key,
     pj_activesock_t *asock;
 
     asock = (pj_activesock_t*) pj_ioqueue_get_user_data(key);
+
+    /* Ignore if we've been shutdown. This may cause data to be partially
+     * sent even when 'wholedata' was requested if the OS only sent partial
+     * buffer.
+     */
+    if (asock->shutdown & SHUT_TX)
+	return;
 
     if (bytes_sent > 0 && op_key->activesock_data) {
 	/* whole_data is requested. Make sure we send all the data */
@@ -756,6 +789,10 @@ PJ_DEF(pj_status_t) pj_activesock_start_accept(pj_activesock_t *asock,
     PJ_ASSERT_RETURN(asock, PJ_EINVAL);
     PJ_ASSERT_RETURN(asock->accept_op==NULL, PJ_EINVALIDOP);
 
+    /* Ignore if we've been shutdown */
+    if (asock->shutdown)
+	return PJ_EINVALIDOP;
+
     asock->accept_op = (struct accept_op*)
 		       pj_pool_calloc(pool, asock->async_count,
 				      sizeof(struct accept_op));
@@ -798,6 +835,10 @@ static void ioqueue_on_accept_complete(pj_ioqueue_key_t *key,
 
     PJ_UNUSED_ARG(new_sock);
 
+    /* Ignore if we've been shutdown */
+    if (asock->shutdown)
+	return;
+
     do {
 	if (status == asock->last_err && status != PJ_SUCCESS) {
 	    asock->err_counter++;
@@ -805,6 +846,16 @@ static void ioqueue_on_accept_complete(pj_ioqueue_key_t *key,
 		PJ_LOG(3, ("", "Received %d consecutive errors: %d for the accept()"
 			       " operation, stopping further ioqueue accepts.",
 			       asock->err_counter, asock->last_err));
+		
+		if ((status == PJ_STATUS_FROM_OS(OSERR_EWOULDBLOCK)) && 
+		    (asock->cb.on_accept_complete2)) 
+		{
+		    (*asock->cb.on_accept_complete2)(asock, 
+						     accept_op->new_sock,
+						     &accept_op->rem_addr,
+						     accept_op->rem_addr_len,
+						     PJ_ESOCKETSTOP);
+		}
 		return;
 	    }
 	} else {
@@ -812,13 +863,23 @@ static void ioqueue_on_accept_complete(pj_ioqueue_key_t *key,
 	    asock->last_err = status;
 	}
 
-	if (status==PJ_SUCCESS && asock->cb.on_accept_complete) {
+	if (status==PJ_SUCCESS && (asock->cb.on_accept_complete2 || 
+				   asock->cb.on_accept_complete)) {
 	    pj_bool_t ret;
 
 	    /* Notify callback */
-	    ret = (*asock->cb.on_accept_complete)(asock, accept_op->new_sock,
-						  &accept_op->rem_addr,
-						  accept_op->rem_addr_len);
+	    if (asock->cb.on_accept_complete2) {
+		ret = (*asock->cb.on_accept_complete2)(asock, 
+						       accept_op->new_sock,
+						       &accept_op->rem_addr,
+						       accept_op->rem_addr_len,
+						       status);
+	    } else {
+		ret = (*asock->cb.on_accept_complete)(asock, 
+						      accept_op->new_sock,
+						      &accept_op->rem_addr,
+						      accept_op->rem_addr_len);	    
+	    }
 
 	    /* If callback returns false, we have been destroyed! */
 	    if (!ret)
@@ -834,6 +895,10 @@ static void ioqueue_on_accept_complete(pj_ioqueue_key_t *key,
 	     */
 	    pj_sock_close(accept_op->new_sock);
 	}
+
+	/* Don't start another accept() if we've been shutdown */
+	if (asock->shutdown)
+	    return;
 
 	/* Prepare next accept() */
 	accept_op->new_sock = PJ_INVALID_SOCKET;
@@ -853,6 +918,10 @@ PJ_DEF(pj_status_t) pj_activesock_start_connect( pj_activesock_t *asock,
 						 int addr_len)
 {
     PJ_UNUSED_ARG(pool);
+
+    if (asock->shutdown)
+	return PJ_EINVALIDOP;
+
     return pj_ioqueue_connect(asock->key, remaddr, addr_len);
 }
 
@@ -860,6 +929,10 @@ static void ioqueue_on_connect_complete(pj_ioqueue_key_t *key,
 					pj_status_t status)
 {
     pj_activesock_t *asock = (pj_activesock_t*) pj_ioqueue_get_user_data(key);
+
+    /* Ignore if we've been shutdown */
+    if (asock->shutdown)
+	return;
 
     if (asock->cb.on_connect_complete) {
 	pj_bool_t ret;

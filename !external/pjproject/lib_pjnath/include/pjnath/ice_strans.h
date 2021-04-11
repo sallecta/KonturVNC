@@ -125,10 +125,14 @@ typedef enum pj_ice_strans_op
     /** Negotiation */
     PJ_ICE_STRANS_OP_NEGOTIATION,
 
-    /** This operatino is used to report failure in keep-alive operation.
+    /** This operation is used to report failure in keep-alive operation.
      *  Currently it is only used to report TURN Refresh failure.
      */
-    PJ_ICE_STRANS_OP_KEEP_ALIVE
+    PJ_ICE_STRANS_OP_KEEP_ALIVE,
+
+    /** IP address change notification from STUN keep-alive operation.
+     */
+    PJ_ICE_STRANS_OP_ADDR_CHANGE
 
 } pj_ice_strans_op;
 
@@ -269,6 +273,14 @@ typedef struct pj_ice_strans_cfg
 	 */
 	pj_uint16_t	     port;
 
+	/**
+	 * Ignore STUN resolution error and proceed with just local
+	 * addresses.
+	 *
+	 * The default is PJ_FALSE
+	 */
+	pj_bool_t	     ignore_stun_error;
+
     } stun;
 
     /**
@@ -361,6 +373,40 @@ typedef struct pj_ice_strans_cfg
 	 * By default all settings in this structure are disabled.
 	 */
 	pj_qos_params qos_params;
+
+	/**
+	 * Specify target value for socket receive buffer size. It will be
+	 * applied using setsockopt(). When it fails to set the specified
+	 * size, it will try with lower value until the highest possible is
+	 * successfully set.
+	 *
+	 * When this is set to zero, this component will apply socket receive
+	 * buffer size settings specified in STUN and TURN socket config
+	 * above, i.e: \a stun::cfg::so_rcvbuf_size and
+	 * \a turn::cfg::so_rcvbuf_size. Otherwise, this setting will be
+	 * applied to STUN and TURN sockets for this component, overriding
+	 * the setting specified in STUN/TURN socket config.
+	 *
+	 * Default: 0
+	 */
+	unsigned so_rcvbuf_size;
+
+	/**
+	 * Specify target value for socket send buffer size. It will be
+	 * applied using setsockopt(). When it fails to set the specified
+	 * size, it will try with lower value until the highest possible is
+	 * successfully set.
+	 *
+	 * When this is set to zero, this component will apply socket send
+	 * buffer size settings specified in STUN and TURN socket config
+	 * above, i.e: \a stun::cfg::so_sndbuf_size and
+	 * \a turn::cfg::so_sndbuf_size. Otherwise, this setting will be
+	 * applied to STUN and TURN sockets for this component, overriding
+	 * the setting specified in STUN/TURN socket config.
+	 *
+	 * Default: 0
+	 */
+	unsigned so_sndbuf_size;
 
     } comp[PJ_ICE_MAX_COMP];
 
@@ -522,6 +568,14 @@ PJ_DECL(pj_status_t) pj_ice_strans_get_options(pj_ice_strans *ice_st,
 PJ_DECL(pj_status_t) pj_ice_strans_set_options(pj_ice_strans *ice_st,
 					       const pj_ice_sess_options *opt);
 
+/**
+ * Get the group lock for this ICE stream transport.
+ *
+ * @param ice_st	The ICE stream transport.
+ *
+ * @return		The group lock.
+ */
+PJ_DECL(pj_grp_lock_t *) pj_ice_strans_get_grp_lock(pj_ice_strans *ice_st);
 
 /**
  * Initialize the ICE session in the ICE stream transport.

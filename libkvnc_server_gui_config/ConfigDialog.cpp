@@ -23,7 +23,7 @@
 //
 
 #include "ConfigDialog.h"
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 #include "../libkvnc_util/CommonHeader.h"
 
 ConfigDialog::ConfigDialog(bool forService, ControlCommand *reloadConfigCommand)

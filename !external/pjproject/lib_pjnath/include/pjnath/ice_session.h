@@ -154,7 +154,12 @@ typedef enum pj_ice_cand_type
      * ICE relayed candidate, which represents the address allocated in
      * TURN server.
      */
-    PJ_ICE_CAND_TYPE_RELAYED
+    PJ_ICE_CAND_TYPE_RELAYED,
+
+    /**
+     * Number of defined ICE candidate types.
+     */
+    PJ_ICE_CAND_TYPE_MAX
 
 } pj_ice_cand_type;
 
@@ -612,13 +617,14 @@ struct pj_ice_sess
 
     pj_pool_t		*pool;			    /**< Pool instance.	    */
     void		*user_data;		    /**< App. data.	    */
-    pj_mutex_t		*mutex;			    /**< Mutex.		    */
+    pj_grp_lock_t	*grp_lock;		    /**< Group lock	    */
     pj_ice_sess_role	 role;			    /**< ICE role.	    */
     pj_ice_sess_options	 opt;			    /**< Options	    */
     pj_timestamp	 tie_breaker;		    /**< Tie breaker value  */
     pj_uint8_t		*prefs;			    /**< Type preference.   */
     pj_bool_t		 is_nominating;		    /**< Nominating stage   */
     pj_bool_t		 is_complete;		    /**< Complete?	    */
+    pj_bool_t		 is_destroying;		    /**< Destroy is called  */
     pj_status_t		 ice_status;		    /**< Error status.	    */
     pj_timer_entry	 timer;			    /**< ICE timer.	    */
     pj_ice_sess_cb	 cb;			    /**< Callback.	    */
@@ -729,6 +735,8 @@ PJ_DECL(void) pj_ice_sess_options_default(pj_ice_sess_options *opt);
  *			the value is NULL, a random string will be 
  *			generated.
  * @param local_passwd	Optional string to be used as local password.
+ * @param grp_lock	Optional group lock to be used by this session.
+ * 			If NULL, the session will create one itself.
  * @param p_ice		Pointer to receive the ICE session instance.
  *
  * @return		PJ_SUCCESS if ICE session is created successfully.
@@ -740,6 +748,7 @@ PJ_DECL(pj_status_t) pj_ice_sess_create(pj_stun_config *stun_cfg,
 				        const pj_ice_sess_cb *cb,
 				        const pj_str_t *local_ufrag,
 				        const pj_str_t *local_passwd,
+				        pj_grp_lock_t *grp_lock,
 				        pj_ice_sess **p_ice);
 
 /**

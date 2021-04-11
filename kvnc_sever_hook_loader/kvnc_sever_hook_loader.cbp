@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="kvnc_sever_hook_loader" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,--start-group" />
+					<Add option="-lkvnc_desktop" />
+					<Add option="-lkvnc_server_app" />
+					<Add option="-lkvnc_thread" />
+					<Add option="-lkvnc_util" />
+					<Add option="-lkvnc_win_system" />
+					<Add option="-Wl,--end-group" />
+					<Add library="winmm" />
+					<Add library="comctl32" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add directory="$(TARGET_OUTPUT_DIR)" />
+					<LinkerExe value="CppCompiler" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="HookLoaderApplication.cpp" />
+		<Unit filename="HookLoaderApplication.h" />
+		<Unit filename="ParentEventsListener.h" />
+		<Unit filename="ParentWatcher.cpp" />
+		<Unit filename="ParentWatcher.h" />
+		<Unit filename="hookldr.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -24,6 +24,7 @@
 #include <pj/ip_helper.h>
 #include <pj/os.h>
 #include <pj/addr_resolv.h>
+#include <pj/rand.h>
 #include <pj/string.h>
 #include <pj/compat/socket.h>
 
@@ -127,7 +128,7 @@ PJ_DEF(pj_status_t) pj_sockaddr_in_set_str_addr( pj_sockaddr_in *addr,
                      (addr->sin_addr.s_addr=PJ_INADDR_NONE, PJ_EINVAL));
 
     PJ_SOCKADDR_RESET_LEN(addr);
-    addr->sin_family = AF_INET;
+    addr->sin_family = PJ_AF_INET;
     pj_bzero(addr->sin_zero, sizeof(addr->sin_zero));
 
     if (str_addr && str_addr->slen) {
@@ -179,7 +180,7 @@ PJ_DEF(pj_status_t) pj_sockaddr_set_str_addr(int af,
 	    status = pj_getaddrinfo(PJ_AF_INET6, str_addr, &count, &ai);
 	    if (status==PJ_SUCCESS) {
 		pj_memcpy(&addr->ipv6.sin6_addr, &ai.ai_addr.ipv6.sin6_addr,
-			  sizeof(pj_sockaddr_in6));
+			  sizeof(addr->ipv6.sin6_addr));
 	    }
 	}
     } else {
@@ -801,7 +802,6 @@ PJ_DEF(pj_status_t) pj_gethostip(int af, pj_sockaddr *addr)
     }
 #else
     PJ_UNUSED_ARG(ai);
-    PJ_UNUSED_ARG(count);
 #endif
 
     /* Get default interface (interface for default route) */
@@ -829,7 +829,7 @@ PJ_DEF(pj_status_t) pj_gethostip(int af, pj_sockaddr *addr)
     /* Enumerate IP interfaces */
     if (cand_cnt < PJ_ARRAY_SIZE(cand_addr)) {
 	unsigned start_if = cand_cnt;
-	unsigned count = PJ_ARRAY_SIZE(cand_addr) - start_if;
+	count = PJ_ARRAY_SIZE(cand_addr) - start_if;
 
 	status = pj_enum_ip_interface(af, &count, &cand_addr[start_if]);
 	if (status == PJ_SUCCESS && count) {
@@ -956,42 +956,54 @@ PJ_DEF(pj_status_t) pj_gethostip(int af, pj_sockaddr *addr)
     return PJ_SUCCESS;
 }
 
-/* Get the default IP interface */
-PJ_DEF(pj_status_t) pj_getdefaultipinterface(int af, pj_sockaddr *addr)
+/* Get IP interface for sending to the specified destination */
+PJ_DEF(pj_status_t) pj_getipinterface(int af,
+                                      const pj_str_t *dst,
+                                      pj_sockaddr *itf_addr,
+                                      pj_bool_t allow_resolve,
+                                      pj_sockaddr *p_dst_addr)
 {
+    pj_sockaddr dst_addr;
     pj_sock_t fd;
-    pj_str_t cp;
-    pj_sockaddr a;
     int len;
     pj_uint8_t zero[64];
     pj_status_t status;
 
-    addr->addr.sa_family = (pj_uint16_t)af;
+    pj_sockaddr_init(af, &dst_addr, NULL, 53);
+    status = pj_inet_pton(af, dst, pj_sockaddr_get_addr(&dst_addr));
+    if (status != PJ_SUCCESS) {
+	/* "dst" is not an IP address. */
+	if (allow_resolve) {
+	    status = pj_sockaddr_init(af, &dst_addr, dst, 53);
+	} else {
+	    pj_str_t cp;
 
+	    if (af == PJ_AF_INET) {
+		cp = pj_str("1.1.1.1");
+	    } else {
+		cp = pj_str("1::1");
+	    }
+	    status = pj_sockaddr_init(af, &dst_addr, &cp, 53);
+	}
+
+	if (status != PJ_SUCCESS)
+	    return status;
+    }
+
+    /* Create UDP socket and connect() to the destination IP */
     status = pj_sock_socket(af, pj_SOCK_DGRAM(), 0, &fd);
     if (status != PJ_SUCCESS) {
 	return status;
     }
 
-    if (af == PJ_AF_INET) {
-	cp = pj_str("1.1.1.1");
-    } else {
-	cp = pj_str("1::1");
-    }
-    status = pj_sockaddr_init(af, &a, &cp, 53);
+    status = pj_sock_connect(fd, &dst_addr, pj_sockaddr_get_len(&dst_addr));
     if (status != PJ_SUCCESS) {
 	pj_sock_close(fd);
 	return status;
     }
 
-    status = pj_sock_connect(fd, &a, pj_sockaddr_get_len(&a));
-    if (status != PJ_SUCCESS) {
-	pj_sock_close(fd);
-	return status;
-    }
-
-    len = sizeof(a);
-    status = pj_sock_getsockname(fd, &a, &len);
+    len = sizeof(*itf_addr);
+    status = pj_sock_getsockname(fd, itf_addr, &len);
     if (status != PJ_SUCCESS) {
 	pj_sock_close(fd);
 	return status;
@@ -1001,16 +1013,131 @@ PJ_DEF(pj_status_t) pj_getdefaultipinterface(int af, pj_sockaddr *addr)
 
     /* Check that the address returned is not zero */
     pj_bzero(zero, sizeof(zero));
-    if (pj_memcmp(pj_sockaddr_get_addr(&a), zero,
-		  pj_sockaddr_get_addr_len(&a))==0)
+    if (pj_memcmp(pj_sockaddr_get_addr(itf_addr), zero,
+		  pj_sockaddr_get_addr_len(itf_addr))==0)
     {
 	return PJ_ENOTFOUND;
     }
 
-    pj_sockaddr_copy_addr(addr, &a);
+    if (p_dst_addr)
+	*p_dst_addr = dst_addr;
 
-    /* Success */
     return PJ_SUCCESS;
+}
+
+/* Get the default IP interface */
+PJ_DEF(pj_status_t) pj_getdefaultipinterface(int af, pj_sockaddr *addr)
+{
+    pj_str_t cp;
+
+    if (af == PJ_AF_INET) {
+	cp = pj_str("1.1.1.1");
+    } else {
+	cp = pj_str("1::1");
+    }
+
+    return pj_getipinterface(af, &cp, addr, PJ_FALSE, NULL);
+}
+
+
+/*
+ * Bind socket at random port.
+ */
+PJ_DEF(pj_status_t) pj_sock_bind_random(  pj_sock_t sockfd,
+				          const pj_sockaddr_t *addr,
+				          pj_uint16_t port_range,
+				          pj_uint16_t max_try)
+{
+    pj_sockaddr bind_addr;
+    int addr_len;
+    pj_uint16_t base_port;
+    pj_status_t status = PJ_SUCCESS;
+
+    PJ_CHECK_STACK();
+
+    PJ_ASSERT_RETURN(addr, PJ_EINVAL);
+
+    pj_sockaddr_cp(&bind_addr, addr);
+    addr_len = pj_sockaddr_get_len(addr);
+    base_port = pj_sockaddr_get_port(addr);
+
+    if (base_port == 0 || port_range == 0) {
+	return pj_sock_bind(sockfd, &bind_addr, addr_len);
+    }
+
+    for (; max_try; --max_try) {
+	pj_uint16_t port;
+	port = (pj_uint16_t)(base_port + pj_rand() % (port_range + 1));
+	pj_sockaddr_set_port(&bind_addr, port);
+	status = pj_sock_bind(sockfd, &bind_addr, addr_len);
+	if (status == PJ_SUCCESS)
+	    break;
+    }
+
+    return status;
+}
+
+
+/*
+ * Adjust socket send/receive buffer size.
+ */
+PJ_DEF(pj_status_t) pj_sock_setsockopt_sobuf( pj_sock_t sockfd,
+					      pj_uint16_t optname,
+					      pj_bool_t auto_retry,
+					      unsigned *buf_size)
+{
+    pj_status_t status;
+    int try_size, cur_size, i, step, size_len;
+    enum { MAX_TRY = 20 };
+
+    PJ_CHECK_STACK();
+
+    PJ_ASSERT_RETURN(sockfd != PJ_INVALID_SOCKET &&
+		     buf_size &&
+		     *buf_size > 0 &&
+		     (optname == pj_SO_RCVBUF() ||
+		      optname == pj_SO_SNDBUF()),
+		     PJ_EINVAL);
+
+    size_len = sizeof(cur_size);
+    status = pj_sock_getsockopt(sockfd, pj_SOL_SOCKET(), optname,
+				&cur_size, &size_len);
+    if (status != PJ_SUCCESS)
+	return status;
+
+    try_size = *buf_size;
+    step = (try_size - cur_size) / MAX_TRY;
+    if (step < 4096)
+	step = 4096;
+
+    for (i = 0; i < (MAX_TRY-1); ++i) {
+	if (try_size <= cur_size) {
+	    /* Done, return current size */
+	    *buf_size = cur_size;
+	    break;
+	}
+
+	status = pj_sock_setsockopt(sockfd, pj_SOL_SOCKET(), optname,
+				    &try_size, sizeof(try_size));
+	if (status == PJ_SUCCESS) {
+	    status = pj_sock_getsockopt(sockfd, pj_SOL_SOCKET(), optname,
+					&cur_size, &size_len);
+	    if (status != PJ_SUCCESS) {
+		/* Ops! No info about current size, just return last try size
+		 * and quit.
+		 */
+		*buf_size = try_size;
+		break;
+	    }
+	}
+
+	if (!auto_retry)
+	    break;
+
+	try_size -= step;
+    }
+
+    return status;
 }
 
 

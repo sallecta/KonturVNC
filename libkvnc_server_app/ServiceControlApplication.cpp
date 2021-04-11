@@ -29,12 +29,12 @@
 #include "../libkvnc_util/StringTable.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include "WsConfigRunner.h"
 #include "TvnServerHelp.h"
 
-#include "../tvncontrol-app/ControlCommandLine.h"
+#include "../libkvnc_server_gui/ControlCommandLine.h"
 
 #include "../libkvnc_win_system/Registry.h"
 #include "../libkvnc_win_system/RegistryKey.h"

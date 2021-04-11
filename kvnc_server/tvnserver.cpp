@@ -26,7 +26,7 @@
 #include "../libkvnc_log_writer/LogWriter.h"
 #include "../libkvnc_server_app/WinEventLogWriter.h"
 #include "../libkvnc_util/ResourceLoader.h"
-#include "../tvncontrol-app/ControlCommandLine.h"
+#include "../libkvnc_server_gui/ControlCommandLine.h"
 #include "../libkvnc_util/StringStorage.h"//not working in linker
 //#include "util/StringStorage.h"
 #include "../libkvnc_util/Singleton.h"
@@ -46,9 +46,9 @@
 #include "../libkvnc_server_app/QueryConnectionCommandLine.h"
 #include "../libkvnc_server_app/DesktopServerCommandLine.h"
 
-#include "../tvncontrol-app/ControlApplication.h"
+#include "../libkvnc_server_gui/ControlApplication.h"
 
-#include "../kvncserver/resource.h"
+#include "resource.h"
 #include "../libkvnc_server_app/CrashHook.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 

@@ -33,7 +33,7 @@
 #include "../libkvnc_server_app/NamingDefs.h"
 #include "../libkvnc_file/WinFile.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include <crtdbg.h>
 

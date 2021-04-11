@@ -1,5 +1,5 @@
 /* $Id$ */
-/* 
+/*
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #include "test.h"
 #include <pjlib.h>
@@ -34,6 +34,7 @@ pj_status_t create_stun_config(pj_pool_t *pool, pj_stun_config *stun_cfg)
 {
     pj_ioqueue_t *ioqueue;
     pj_timer_heap_t *timer_heap;
+    pj_lock_t *lock;
     pj_status_t status;
 
     status = pj_ioqueue_create(pool, 64, &ioqueue);
@@ -48,6 +49,9 @@ pj_status_t create_stun_config(pj_pool_t *pool, pj_stun_config *stun_cfg)
 	pj_ioqueue_destroy(ioqueue);
 	return status;
     }
+
+    pj_lock_create_recursive_mutex(pool, NULL, &lock);
+    pj_timer_heap_set_lock(timer_heap, lock, PJ_TRUE);
 
     pj_stun_config_init(stun_cfg, mem, 0, ioqueue, timer_heap);
 
@@ -103,13 +107,13 @@ void capture_pjlib_state(pj_stun_config *cfg, struct pjlib_state *st)
 {
     pj_caching_pool *cp;
 
-    st->timer_cnt = pj_timer_heap_count(cfg->timer_heap);
-    
-    cp = (pj_caching_pool*)mem;
-    st->pool_used_cnt = cp->used_count;
+    st->timer_cnt = (unsigned)pj_timer_heap_count(cfg->timer_heap);
+
+    cp = (pj_caching_pool*)cfg->pf;
+    st->pool_used_cnt = (unsigned)cp->used_count;
 }
 
-int check_pjlib_state(pj_stun_config *cfg, 
+int check_pjlib_state(pj_stun_config *cfg,
 		      const struct pjlib_state *initial_st)
 {
     struct pjlib_state current_state;
@@ -120,6 +124,10 @@ int check_pjlib_state(pj_stun_config *cfg,
     if (current_state.timer_cnt > initial_st->timer_cnt) {
 	PJ_LOG(3,("", "    error: possibly leaking timer"));
 	rc |= ERR_TIMER_LEAK;
+
+#if PJ_TIMER_DEBUG
+	pj_timer_heap_dump(cfg->timer_heap);
+#endif
     }
 
     if (current_state.pool_used_cnt > initial_st->pool_used_cnt) {
@@ -145,8 +153,20 @@ int check_pjlib_state(pj_stun_config *cfg,
 
 pj_pool_factory *mem;
 
-int param_log_decor = PJ_LOG_HAS_NEWLINE | PJ_LOG_HAS_TIME | 
+int param_log_decor = PJ_LOG_HAS_NEWLINE | PJ_LOG_HAS_TIME |
 		      PJ_LOG_HAS_MICRO_SEC;
+
+pj_log_func *orig_log_func;
+FILE *log_file;
+
+static void test_log_func(int level, const char *data, int len)
+{
+    if (log_file) {
+	fwrite(data, len, 1, log_file);
+    }
+    if (level <= 3)
+	orig_log_func(level, data, len);
+}
 
 static int test_inner(void)
 {
@@ -158,6 +178,12 @@ static int test_inner(void)
 #if 1
     pj_log_set_level(3);
     pj_log_set_decor(param_log_decor);
+    PJ_UNUSED_ARG(test_log_func);
+#elif 1
+    log_file = fopen("pjnath-test.log", "wt");
+    pj_log_set_level(5);
+    orig_log_func = pj_log_get_log_func();
+    pj_log_set_log_func(&test_log_func);
 #endif
 
     rc = pj_init();
@@ -165,7 +191,7 @@ static int test_inner(void)
 	app_perror("pj_init() error!!", rc);
 	return rc;
     }
-    
+
     pj_dump_config();
     pj_caching_pool_init( &caching_pool, &pj_pool_factory_default_policy, 0 );
 
@@ -189,7 +215,13 @@ static int test_inner(void)
     DO_TEST(turn_sock_test());
 #endif
 
+#if INCLUDE_CONCUR_TEST
+    DO_TEST(concur_test());
+#endif
+
 on_return:
+    if (log_file)
+	fclose(log_file);
     return rc;
 }
 
@@ -202,7 +234,7 @@ int test_main(void)
     }
     PJ_CATCH_ANY {
         int id = PJ_GET_EXCEPTION();
-        PJ_LOG(3,("test", "FATAL: unhandled exception id %d (%s)", 
+        PJ_LOG(3,("test", "FATAL: unhandled exception id %d (%s)",
                   id, pj_exception_id_name(id)));
     }
     PJ_END;

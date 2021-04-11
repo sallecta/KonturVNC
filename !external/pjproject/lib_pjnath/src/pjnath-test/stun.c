@@ -668,7 +668,7 @@ static int fingerprint_test_vector()
 
 	/* Print our raw message */
 	PJ_LOG(4,(THIS_FILE, "Message PDU:\n%s",
-	          print_binary((pj_uint8_t*)buf, len)));
+	          print_binary((pj_uint8_t*)buf, (unsigned)len)));
 
 	/* Print our message */
 	pj_stun_msg_dump(msg, print, sizeof(print), NULL);
@@ -681,7 +681,7 @@ static int fingerprint_test_vector()
 	    goto on_return;
 	}
 
-	pos = cmp_buf(buf, (const pj_uint8_t*)v->pdu, len);
+	pos = cmp_buf(buf, (const pj_uint8_t*)v->pdu, (unsigned)len);
 	if (pos != (unsigned)-1) {
 	    PJ_LOG(1,(THIS_FILE, "    Message mismatch at byte %d", pos));
 	    rc = -1060;
@@ -692,7 +692,7 @@ static int fingerprint_test_vector()
 	if (v->options & USE_MESSAGE_INTEGRITY) {
 	    if (PJ_STUN_IS_REQUEST(msg->hdr.type)) {
 		pj_stun_auth_cred cred;
-		pj_status_t status;
+		pj_status_t status2;
 
 		pj_bzero(&cred, sizeof(cred));
 		cred.type = PJ_STUN_AUTH_CRED_STATIC;
@@ -701,11 +701,11 @@ static int fingerprint_test_vector()
 		cred.data.static_cred.data = pj_str(v->password);
 		cred.data.static_cred.nonce = pj_str(v->nonce);
 
-		status = pj_stun_authenticate_request(buf, len, msg, 
+		status2 = pj_stun_authenticate_request(buf, (unsigned)len, msg, 
 						      &cred, pool, NULL, NULL);
-		if (status != PJ_SUCCESS) {
+		if (status2 != PJ_SUCCESS) {
 		    char errmsg[PJ_ERR_MSG_SIZE];
-		    pj_strerror(status, errmsg, sizeof(errmsg));
+		    pj_strerror(status2, errmsg, sizeof(errmsg));
 		    PJ_LOG(1,(THIS_FILE, 
 			      "    Request authentication failed: %s",
 			      errmsg));
@@ -714,11 +714,12 @@ static int fingerprint_test_vector()
 		}
 
 	    } else if (PJ_STUN_IS_RESPONSE(msg->hdr.type)) {
-		pj_status_t status;
-		status = pj_stun_authenticate_response(buf, len, msg, &key);
-		if (status != PJ_SUCCESS) {
+		pj_status_t status2;
+		status2 = pj_stun_authenticate_response(buf, (unsigned)len, 
+						       msg, &key);
+		if (status2 != PJ_SUCCESS) {
 		    char errmsg[PJ_ERR_MSG_SIZE];
-		    pj_strerror(status, errmsg, sizeof(errmsg));
+		    pj_strerror(status2, errmsg, sizeof(errmsg));
 		    PJ_LOG(1,(THIS_FILE, 
 			      "    Response authentication failed: %s",
 			      errmsg));
@@ -924,7 +925,7 @@ static int handle_unknown_non_mandatory(void)
 	unsigned i;
 	puts("");
 	printf("{ ");
-	for (i=0; i<len; ++i) printf("0x%02x, ", packet[i]);
+	for (i=0; i<len; ++i) printf("0x%02x, ", packet[i] & 0xFF);
 	puts(" }");
     }
 #endif
@@ -942,7 +943,8 @@ static int handle_unknown_non_mandatory(void)
     cred.data.static_cred.data = PASSWORD;
 
     PJ_LOG(3,(THIS_FILE, "    authenticating"));
-    rc += pj_stun_authenticate_request(packet, len, msg1, &cred, pool, NULL, NULL);
+    rc += pj_stun_authenticate_request(packet, (unsigned)len, msg1, &cred, pool, 
+				       NULL, NULL);
 
     PJ_LOG(3,(THIS_FILE, "    clone"));
     msg2 = pj_stun_msg_clone(pool, msg1);

@@ -311,8 +311,10 @@ PJ_DECL(pj_thread_t*) pj_thread_this(void);
 
 /**
  * Join thread, and block the caller thread until the specified thread exits.
+ * If it is called from within the thread itself, it will return immediately
+ * with failure status.
  * If the specified thread has already been dead, or it does not exist,
- * the function will return immediately with successfull status.
+ * the function will return immediately with successful status.
  *
  * @param thread    The thread handle.
  *
@@ -1428,6 +1430,38 @@ PJ_DECL(pj_uint32_t) pj_elapsed_cycle( const pj_timestamp *start,
 
 
 #endif	/* PJ_HAS_HIGH_RES_TIMER */
+
+/** @} */
+
+
+/* **************************************************************************/
+/**
+ * @defgroup PJ_APP_OS Application execution
+ * @ingroup PJ_OS
+ * @{
+ */
+
+/**
+ * Type for application main function.
+ */
+typedef int (*pj_main_func_ptr)(int argc, char *argv[]);
+
+/**
+ * Run the application. This function has to be called in the main thread
+ * and after doing the necessary initialization according to the flags
+ * provided, it will call main_func() function.
+ *
+ * @param main_func Application's main function.
+ * @param argc	    Number of arguments from the main() function, which
+ * 		    will be passed to main_func() function.
+ * @param argv	    The arguments from the main() function, which will
+ * 		    be passed to main_func() function.
+ * @param flags     Flags for application execution, currently must be 0.
+ *
+ * @return          main_func()'s return value.
+ */
+PJ_DECL(int) pj_run_app(pj_main_func_ptr main_func, int argc, char *argv[],
+			unsigned flags);
 
 /** @} */
 

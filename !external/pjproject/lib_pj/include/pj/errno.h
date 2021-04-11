@@ -422,6 +422,16 @@ PJ_DECL(pj_status_t) pj_register_strerror(pj_status_t start_code,
  * Unsupported address family
  */
 #define PJ_EAFNOTSUP	    (PJ_ERRNO_START_STATUS + 22)/* 70022 */
+/**
+ * @hideinitializer
+ * Object no longer exists
+ */
+#define PJ_EGONE	    (PJ_ERRNO_START_STATUS + 23)/* 70023 */
+/**
+ * @hideinitializer
+ * Socket is stopped
+ */
+#define PJ_ESOCKETSTOP	    (PJ_ERRNO_START_STATUS + 24)/* 70024 */
 
 /** @} */   /* pj_errnum */
 
@@ -468,6 +478,8 @@ PJ_DECL(pj_status_t) pj_register_strerror(pj_status_t start_code,
  *  - PJLIB_UTIL_ERRNO_START	(PJ_ERRNO_START_USER + PJ_ERRNO_SPACE_SIZE*3)
  *  - PJNATH_ERRNO_START	(PJ_ERRNO_START_USER + PJ_ERRNO_SPACE_SIZE*4)
  *  - PJMEDIA_AUDIODEV_ERRNO_START (PJ_ERRNO_START_USER + PJ_ERRNO_SPACE_SIZE*5)
+ *  - PJ_SSL_ERRNO_START	   (PJ_ERRNO_START_USER + PJ_ERRNO_SPACE_SIZE*6)
+ *  - PJMEDIA_VIDEODEV_ERRNO_START (PJ_ERRNO_START_USER + PJ_ERRNO_SPACE_SIZE*7)
  */
 
 /* Internal */

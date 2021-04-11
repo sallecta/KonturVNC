@@ -81,7 +81,9 @@ enum pj_log_decoration
     PJ_LOG_HAS_SPACE	  =  512, /**< Include two spaces before log [yes]    */
     PJ_LOG_HAS_COLOR	  = 1024, /**< Colorize logs [yes on win32]	      */
     PJ_LOG_HAS_LEVEL_TEXT = 2048, /**< Include level text string [no]	      */
-    PJ_LOG_HAS_THREAD_ID  = 4096  /**< Include thread identification [no]     */
+    PJ_LOG_HAS_THREAD_ID  = 4096, /**< Include thread identification [no]     */
+    PJ_LOG_HAS_THREAD_SWC = 8192, /**< Add mark when thread has switched [yes]*/
+    PJ_LOG_HAS_INDENT     =16384  /**< Indentation. Say yes! [yes]            */
 };
 
 /**
@@ -203,6 +205,25 @@ PJ_DECL(void) pj_log_set_decor(unsigned decor);
  */
 PJ_DECL(unsigned) pj_log_get_decor(void);
 
+/**
+ * Add indentation to log message. Indentation will add PJ_LOG_INDENT_CHAR
+ * before the message, and is useful to show the depth of function calls.
+ *
+ * @param indent    The indentation to add or substract. Positive value
+ * 		    adds current indent, negative value subtracts current
+ * 		    indent.
+ */
+PJ_DECL(void) pj_log_add_indent(int indent);
+
+/**
+ * Push indentation to the right by default value (PJ_LOG_INDENT).
+ */
+PJ_DECL(void) pj_log_push_indent(void);
+
+/**
+ * Pop indentation (to the left) by default value (PJ_LOG_INDENT).
+ */
+PJ_DECL(void) pj_log_pop_indent(void);
 
 /**
  * Set color of log messages.
@@ -239,6 +260,16 @@ pj_status_t pj_log_init(void);
 #  define pj_log_set_log_func(func)
 
 /**
+ * Write to log.
+ *
+ * @param sender    Source of the message.
+ * @param level	    Verbosity level.
+ * @param format    Format.
+ * @param marker    Marker.
+ */
+#  define pj_log(sender, level, format, marker)
+
+/**
  * Set maximum log level. Application can call this function to set 
  * the desired level of verbosity of the logging messages. The bigger the
  * value, the more verbose the logging messages will be printed. However,
@@ -260,6 +291,26 @@ pj_status_t pj_log_init(void);
  *		    the layout of the log message.
  */
 #  define pj_log_set_decor(decor)
+
+/**
+ * Add indentation to log message. Indentation will add PJ_LOG_INDENT_CHAR
+ * before the message, and is useful to show the depth of function calls.
+ *
+ * @param indent    The indentation to add or substract. Positive value
+ * 		    adds current indent, negative value subtracts current
+ * 		    indent.
+ */
+#  define pj_log_add_indent(indent)
+
+/**
+ * Push indentation to the right by default value (PJ_LOG_INDENT).
+ */
+#  define pj_log_push_indent()
+
+/**
+ * Pop indentation (to the left) by default value (PJ_LOG_INDENT).
+ */
+#  define pj_log_pop_indent()
 
 /**
  * Set color of log messages.

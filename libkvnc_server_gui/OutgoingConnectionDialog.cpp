@@ -29,7 +29,7 @@
 
 #include "OutgoingConnectionDialog.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 OutgoingConnectionDialog::OutgoingConnectionDialog()
 : BaseDialog(IDD_OUTGOING_CONN),

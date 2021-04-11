@@ -33,7 +33,9 @@ PJ_BEGIN_DECL
                               	   char *buf, pj_size_t bufsize );
 PJ_END_DECL
 
-#define PJLIB_MAX_ERR_MSG_HANDLER   8
+#ifndef PJLIB_MAX_ERR_MSG_HANDLER
+#	define PJLIB_MAX_ERR_MSG_HANDLER   10
+#endif
 
 /* Error message handler. */
 static unsigned err_msg_hnd_cnt;
@@ -75,7 +77,9 @@ static const struct
     PJ_BUILD_ERR(PJ_ETOOSMALL,	   "Size is too short"),
     PJ_BUILD_ERR(PJ_EIGNORED,	   "Ignored"),
     PJ_BUILD_ERR(PJ_EIPV6NOTSUP,   "IPv6 is not supported"),
-    PJ_BUILD_ERR(PJ_EAFNOTSUP,	   "Unsupported address family")
+    PJ_BUILD_ERR(PJ_EAFNOTSUP,	   "Unsupported address family"),
+    PJ_BUILD_ERR(PJ_EGONE,	   "Object no longer exists"),
+    PJ_BUILD_ERR(PJ_ESOCKETSTOP,   "Socket is in bad state")
 };
 #endif	/* PJ_HAS_ERROR_STRING */
 
@@ -87,21 +91,26 @@ static const struct
  */
 static int pjlib_error(pj_status_t code, char *buf, pj_size_t size)
 {
+    int len;
+
 #if defined(PJ_HAS_ERROR_STRING) && PJ_HAS_ERROR_STRING!=0
     unsigned i;
 
     for (i=0; i<sizeof(err_str)/sizeof(err_str[0]); ++i) {
         if (err_str[i].code == code) {
-            pj_size_t len = strlen(err_str[i].msg);
-            if (len >= size) len = size-1;
-            pj_memcpy(buf, err_str[i].msg, len);
-            buf[len] = '\0';
-            return len;
+            pj_size_t len2 = pj_ansi_strlen(err_str[i].msg);
+            if (len2 >= size) len2 = size-1;
+            pj_memcpy(buf, err_str[i].msg, len2);
+            buf[len2] = '\0';
+            return (int)len2;
         }
     }
 #endif
 
-    return pj_ansi_snprintf( buf, size, "Unknown pjlib error %d", code);
+    len = pj_ansi_snprintf( buf, size, "Unknown pjlib error %d", code);
+    if (len < 1 || len >= (int)size)
+	len = (int)(size - 1);
+    return len;
 }
 
 #define IN_RANGE(val,start,end)	    ((val)>=(start) && (val)<(end))
@@ -195,9 +204,9 @@ PJ_DEF(pj_str_t) pj_strerror( pj_status_t statcode,
 	len = pj_ansi_snprintf( buf, bufsize, "Unknown error %d", statcode);
     }
 
-    if (len < 1) {
-        *buf = '\0';
-        len = 0;
+    if (len < 1 || len >= (int)bufsize) {
+	len = (int)(bufsize - 1);
+	buf[len] = '\0';
     }
 
     errstr.ptr = buf;

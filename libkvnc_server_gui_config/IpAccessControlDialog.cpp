@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 #include <crtdbg.h>
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 #include "IpAccessControlDialog.h"
 #include "ConfigDialog.h"
 #include "CommonInputValidation.h"

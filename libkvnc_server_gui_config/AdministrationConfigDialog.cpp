@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 #include "AdministrationConfigDialog.h"
 #include "CommonInputValidation.h"
 #include "UIDataAccess.h"

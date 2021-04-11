@@ -23,7 +23,7 @@
 //
 
 #include "WinEventLogWriter.h"
-#include "../win-event-log/MessageProvider.h"
+#include "../libkvnc_win_event_log/MessageProvider.h"
 
 WinEventLogWriter::WinEventLogWriter(LogWriter *log)
 : m_sysLog(log)

@@ -27,7 +27,7 @@
 #include "TcpDispatcherConnectionDialog.h"
 #include "../libkvnc_util/StringParser.h"
 #include "../libkvnc_server_app/NamingDefs.h"
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 TcpDispatcherConnectionDialog::TcpDispatcherConnectionDialog()
 : BaseDialog(IDD_DISPATCHER_CONN),

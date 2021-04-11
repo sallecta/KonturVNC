@@ -18,6 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
 
+#include <pj/assert.h>
 #include <pj/pool.h>
 
 PJ_IDEF(pj_str_t) pj_str(char *str)
@@ -117,6 +118,7 @@ PJ_IDEF(pj_str_t*) pj_strcpy2(pj_str_t *dst, const char *src)
 PJ_IDEF(pj_str_t*) pj_strncpy( pj_str_t *dst, const pj_str_t *src, 
 			       pj_ssize_t max)
 {
+    pj_assert(max >= 0);
     if (max > src->slen) max = src->slen;
     pj_memcpy(dst->ptr, src->ptr, max);
     dst->slen = max;
@@ -126,6 +128,8 @@ PJ_IDEF(pj_str_t*) pj_strncpy( pj_str_t *dst, const pj_str_t *src,
 PJ_IDEF(pj_str_t*) pj_strncpy_with_null( pj_str_t *dst, const pj_str_t *src,
 					 pj_ssize_t max)
 {
+    pj_assert(max > 0);
+
     if (max <= src->slen)
 	max = max-1;
     else
@@ -145,7 +149,7 @@ PJ_IDEF(int) pj_strcmp( const pj_str_t *str1, const pj_str_t *str2)
     } else if (str2->slen == 0) {
 	return 1;
     } else {
-	int min = (str1->slen < str2->slen)? str1->slen : str2->slen;
+	pj_size_t min = (str1->slen < str2->slen)? str1->slen : str2->slen;
 	int res = pj_memcmp(str1->ptr, str2->ptr, min);
 	if (res == 0) {
 	    return (str1->slen < str2->slen) ? -1 :
@@ -213,7 +217,7 @@ PJ_IDEF(int) pj_stricmp( const pj_str_t *str1, const pj_str_t *str2)
     } else if (str2->slen == 0) {
 	return 1;
     } else {
-	int min = (str1->slen < str2->slen)? str1->slen : str2->slen;
+	pj_size_t min = (str1->slen < str2->slen)? str1->slen : str2->slen;
 	int res = pj_ansi_strnicmp(str1->ptr, str2->ptr, min);
 	if (res == 0) {
 	    return (str1->slen < str2->slen) ? -1 :
@@ -355,7 +359,7 @@ PJ_IDEF(void) pj_strcat(pj_str_t *dst, const pj_str_t *src)
 
 PJ_IDEF(void) pj_strcat2(pj_str_t *dst, const char *str)
 {
-    unsigned len = str? pj_ansi_strlen(str) : 0;
+    pj_size_t len = str? pj_ansi_strlen(str) : 0;
     if (len) {
 	pj_memcpy(dst->ptr + dst->slen, str, len);
 	dst->slen += len;

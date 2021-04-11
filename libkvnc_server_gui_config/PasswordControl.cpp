@@ -30,7 +30,7 @@
 
 #include "ChangePasswordDialog.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 PasswordControl::PasswordControl(Control *changeButton, Control *unsetButton)
 : m_enabled(true), m_changeButton(changeButton), m_unsetButton(unsetButton)

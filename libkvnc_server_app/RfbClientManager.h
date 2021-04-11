@@ -43,7 +43,7 @@
 #include "../libkvnc_desktop/AbnormDeskTermListener.h"
 #include "../libkvnc_desktop/UpdateSendingListener.h"
 #include "../libkvnc_server_rfb/ClientAuthListener.h"
-#include "../tvncontrol-app/RfbClientInfo.h"
+#include "../libkvnc_server_gui/RfbClientInfo.h"
 #include "NewConnectionEvents.h"
 #include "../libkvnc_server_rfb/TextMsgListener.h"
 

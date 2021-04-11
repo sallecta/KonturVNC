@@ -25,7 +25,7 @@
 #ifndef _HTTP_CLIENT_H_
 #define _HTTP_CLIENT_H_
 
-#include "../libkvnc_networkTcpClientThread.h"
+#include "../libkvnc_network/TcpClientThread.h"
 
 #include "../libkvnc_network/socket/SocketIPv4.h"
 

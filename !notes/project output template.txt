@@ -1,8 +1,22 @@
-../out/bin/$(TARGET_NAME)/$(PROJECTNAME)
 $(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)
+..\out\bin\$(TARGET_NAME)\$(PROJECTNAME).exe
 
-
-../out/obj/$(TARGET_NAME)/$(PROJECTNAME)
 $(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)
+..\out\obj\$(TARGET_NAME)\$(PROJECTNAME)
 
 Release_Win32
+
+
+
+$(TARGET_OUTPUT_DIR)
+..\out\bin\$(TARGET_NAME)
+
+$(WORKSPACEDIR)\!external\openssl\include\
+$(WORKSPACEDIR)/!external/openssl/lib/
+
+$(WORKSPACEDIR)/!external/pjproject/lib_pj/include/
+$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include/
+$(WORKSPACEDIR)/!external/pjproject/lib_pjnath/include/
+
+
+$(WORKSPACEDIR)/!external/atl/include/

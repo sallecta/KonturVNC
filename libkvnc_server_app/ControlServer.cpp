@@ -24,7 +24,7 @@
 
 #include "ControlServer.h"
 #include "ControlClient.h"
-#include "../tvncontrol-app/NamedPipeTransport.h"
+#include "../libkvnc_server_gui/NamedPipeTransport.h"
 
 ControlServer::ControlServer(PipeServer *pipeServer,
                              RfbClientManager *rfbClientManager,

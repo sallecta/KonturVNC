@@ -59,7 +59,7 @@
 
 #include "../libkvnc_network/socket/WindowsSocket.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include "../libkvnc_server_gui_config/ConfigDialog.h"
 #include "../libkvnc_util/AnsiStringStorage.h"

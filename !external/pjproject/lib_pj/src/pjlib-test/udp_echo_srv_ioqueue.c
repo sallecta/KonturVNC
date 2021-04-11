@@ -36,7 +36,7 @@ struct op_key
     int                  addrlen;
 };
 
-static void on_read_complete(pj_ioqueue_key_t *key, 
+static void on_read_complete(pj_ioqueue_key_t *ioq_key, 
                              pj_ioqueue_op_key_t *op_key, 
                              pj_ssize_t bytes_received)
 {
@@ -49,20 +49,20 @@ static void on_read_complete(pj_ioqueue_key_t *key,
 
         if (bytes_received < 0) {
             if (-bytes_received != recv_rec->last_err) {
-                recv_rec->last_err = -bytes_received;
-                app_perror("...error receiving data", -bytes_received);
+                recv_rec->last_err = (pj_status_t)-bytes_received;
+                app_perror("...error receiving data", recv_rec->last_err);
             }
         } else if (bytes_received == 0) {
             /* note: previous error, or write callback */
         } else {
-            pj_atomic_add(total_bytes, bytes_received);
+            pj_atomic_add(total_bytes, (pj_atomic_value_t)bytes_received);
 
             if (!send_rec->is_pending) {
                 pj_ssize_t sent = bytes_received;
                 pj_memcpy(send_rec->buffer, recv_rec->buffer, bytes_received);
                 pj_memcpy(&send_rec->addr, &recv_rec->addr, recv_rec->addrlen);
                 send_rec->addrlen = recv_rec->addrlen;
-                rc = pj_ioqueue_sendto(key, &send_rec->op_key_, 
+                rc = pj_ioqueue_sendto(ioq_key, &send_rec->op_key_,
                                        send_rec->buffer, &sent, 0,
                                        &send_rec->addr, send_rec->addrlen);
                 send_rec->is_pending = (rc==PJ_EPENDING);
@@ -75,7 +75,7 @@ static void on_read_complete(pj_ioqueue_key_t *key,
 
         if (!send_rec->is_pending) {
             bytes_received = recv_rec->size;
-            rc = pj_ioqueue_recvfrom(key, &recv_rec->op_key_, 
+            rc = pj_ioqueue_recvfrom(ioq_key, &recv_rec->op_key_,
                                      recv_rec->buffer, &bytes_received, 0,
                                      &recv_rec->addr, &recv_rec->addrlen);
             recv_rec->is_pending = (rc==PJ_EPENDING);
@@ -99,14 +99,14 @@ static void on_read_complete(pj_ioqueue_key_t *key,
     }
 }
 
-static void on_write_complete(pj_ioqueue_key_t *key, 
+static void on_write_complete(pj_ioqueue_key_t *ioq_key, 
                               pj_ioqueue_op_key_t *op_key, 
                               pj_ssize_t bytes_sent)
 {
     struct op_key *send_rec = (struct op_key*)op_key;
 
     if (bytes_sent <= 0) {
-        pj_status_t rc = -bytes_sent;
+        pj_status_t rc = (pj_status_t)-bytes_sent;
         if (rc != send_rec->last_err) {
             send_rec->last_err = rc;
             app_perror("...send error(2)", rc);
@@ -114,7 +114,7 @@ static void on_write_complete(pj_ioqueue_key_t *key,
     }
 
     send_rec->is_pending = 0;
-    on_read_complete(key, &send_rec->peer->op_key_, 0);
+    on_read_complete(ioq_key, &send_rec->peer->op_key_, 0);
 }
 
 static int worker_thread(void *arg)

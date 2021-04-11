@@ -27,6 +27,7 @@
 #include <pjnath/stun_config.h>
 #include <pjlib-util/resolver.h>
 #include <pj/ioqueue.h>
+#include <pj/lock.h>
 #include <pj/sock.h>
 #include <pj/sock_qos.h>
 
@@ -218,7 +219,17 @@ typedef struct pj_stun_sock_info
 typedef struct pj_stun_sock_cfg
 {
     /**
-     * Packet buffer size. Default value is PJ_STUN_SOCK_PKT_LEN.
+     * The group lock to be used by the STUN socket. If NULL, the STUN socket
+     * will create one internally.
+     *
+     * Default: NULL
+     */
+    pj_grp_lock_t *grp_lock;
+
+    /**
+     * Packet buffer size.
+     *
+     * Default value is PJ_STUN_SOCK_PKT_LEN.
      */
     unsigned max_pkt_size;
 
@@ -236,9 +247,19 @@ typedef struct pj_stun_sock_cfg
      * address is zero, socket will be bound to INADDR_ANY. If the address
      * is non-zero, socket will be bound to this address only, and the
      * transport will have only one address alias (the \a alias_cnt field
-     * in #pj_stun_sock_info structure.
+     * in #pj_stun_sock_info structure. If the port is set to zero, the
+     * socket will bind at any port (chosen by the OS).
      */
     pj_sockaddr bound_addr;
+
+    /**
+     * Specify the port range for STUN socket binding, relative to the start
+     * port number specified in \a bound_addr. Note that this setting is only
+     * applicable when the start port number is non zero.
+     *
+     * Default value is zero.
+     */
+    pj_uint16_t	port_range;
 
     /**
      * Specify the STUN keep-alive duration, in seconds. The STUN transport
@@ -273,6 +294,26 @@ typedef struct pj_stun_sock_cfg
      * Default: PJ_TRUE
      */
     pj_bool_t qos_ignore_error;
+
+    /**
+     * Specify target value for socket receive buffer size. It will be
+     * applied using setsockopt(). When it fails to set the specified size,
+     * it will try with lower value until the highest possible is
+     * successfully set.
+     *
+     * Default: 0 (OS default)
+     */
+    unsigned so_rcvbuf_size;
+
+    /**
+     * Specify target value for socket send buffer size. It will be
+     * applied using setsockopt(). When it fails to set the specified size,
+     * it will try with lower value until the highest possible is
+     * successfully set.
+     *
+     * Default: 0 (OS default)
+     */
+    unsigned so_sndbuf_size;
 
 } pj_stun_sock_cfg;
 
@@ -390,6 +431,16 @@ PJ_DECL(pj_status_t) pj_stun_sock_set_user_data(pj_stun_sock *stun_sock,
  * @return		The user/application data.
  */
 PJ_DECL(void*) pj_stun_sock_get_user_data(pj_stun_sock *stun_sock);
+
+
+/**
+ * Get the group lock for this STUN transport.
+ *
+ * @param stun_sock	The STUN transport instance.
+ *
+ * @return	        The group lock.
+ */
+PJ_DECL(pj_grp_lock_t *) pj_stun_sock_get_grp_lock(pj_stun_sock *stun_sock);
 
 
 /**

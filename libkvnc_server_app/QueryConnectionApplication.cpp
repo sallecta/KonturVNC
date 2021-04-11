@@ -33,7 +33,7 @@
 #include "../libkvnc_win_system/Process.h"
 #include "../libkvnc_win_system/WinCommandLineArgs.h"
 #include "../libkvnc_util/ResourceLoader.h"
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
 QueryConnectionApplication::QueryConnectionApplication(HINSTANCE hInstance,

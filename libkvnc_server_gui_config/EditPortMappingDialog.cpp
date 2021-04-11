@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 #include "EditPortMappingDialog.h"
 
 #include "../libkvnc_util/StringParser.h"

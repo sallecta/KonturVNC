@@ -53,15 +53,17 @@
   typedef uint64_t		pj_uint64_t;
   #define PJ_INLINE_SPECIFIER	static __inline
   #define PJ_ATTR_NORETURN	
+  #define PJ_ATTR_MAY_ALIAS	
 #else
   typedef long long		pj_int64_t;
   typedef unsigned long long	pj_uint64_t;
   #define PJ_INLINE_SPECIFIER	static inline
   #define PJ_ATTR_NORETURN	__attribute__ ((noreturn))
+  #define PJ_ATTR_MAY_ALIAS	__attribute__((__may_alias__))
 #endif
 
 #define PJ_INT64(val)		val##LL
-#define PJ_UINT64(val)		val##LLU
+#define PJ_UINT64(val)		val##ULL
 #define PJ_INT64_FMT		"L"
 
 
@@ -70,6 +72,9 @@
 #endif
 
 #define PJ_UNREACHED(x)	    	
+
+#define PJ_ALIGN_DATA(declaration, alignment) declaration __attribute__((aligned (alignment)))
+
 
 #endif	/* __PJ_COMPAT_CC_GCC_H__ */
 

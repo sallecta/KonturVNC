@@ -132,7 +132,8 @@ typedef struct pj_activesock_cb
 
     /**
      * This callback is called when new connection arrives as the result
-     * of pj_activesock_start_accept().
+     * of pj_activesock_start_accept(). If the status of accept operation is
+     * needed use on_accept_complete2 instead of this callback.
      *
      * @param asock	The active socket.
      * @param newsock	The new incoming socket.
@@ -148,6 +149,30 @@ typedef struct pj_activesock_cb
 				    pj_sock_t newsock,
 				    const pj_sockaddr_t *src_addr,
 				    int src_addr_len);
+
+    /**
+     * This callback is called when new connection arrives as the result
+     * of pj_activesock_start_accept().
+     *
+     * @param asock	The active socket.
+     * @param newsock	The new incoming socket.
+     * @param src_addr	The source address of the connection.
+     * @param addr_len	Length of the source address.
+     * @param status	The status of the accept operation. This may contain
+     *			non-PJ_SUCCESS for example when the TCP listener is in
+     *			bad state for example on iOS platform after the
+     *			application waking up from background.
+     *
+     * @return		PJ_TRUE if further accept() is desired, and PJ_FALSE
+     *			when application no longer wants to accept incoming
+     *			connection. Application may destroy the active socket
+     *			in the callback and return PJ_FALSE here.
+     */
+    pj_bool_t (*on_accept_complete2)(pj_activesock_t *asock,
+				     pj_sock_t newsock,
+				     const pj_sockaddr_t *src_addr,
+				     int src_addr_len, 
+				     pj_status_t status);
 
     /**
      * This callback is called when pending connect operation has been
@@ -173,6 +198,11 @@ typedef struct pj_activesock_cb
  */
 typedef struct pj_activesock_cfg
 {
+    /**
+     * Optional group lock to be assigned to the ioqueue key.
+     */
+    pj_grp_lock_t *grp_lock;
+
     /**
      * Number of concurrent asynchronous operations that is to be supported
      * by the active socket. This value only affects socket receive and
@@ -289,7 +319,6 @@ PJ_DECL(pj_status_t) pj_activesock_create_udp(pj_pool_t *pool,
 					      void *user_data,
 					      pj_activesock_t **p_asock,
 					      pj_sockaddr *bound_addr);
-
 
 /**
  * Close the active socket. This will unregister the socket from the
@@ -547,6 +576,7 @@ PJ_DECL(pj_status_t) pj_activesock_start_connect(pj_activesock_t *asock,
 						 pj_pool_t *pool,
 						 const pj_sockaddr_t *remaddr,
 						 int addr_len);
+
 
 #endif	/* PJ_HAS_TCP */
 

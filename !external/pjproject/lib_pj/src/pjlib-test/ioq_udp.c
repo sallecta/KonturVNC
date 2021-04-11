@@ -115,7 +115,7 @@ static pj_ioqueue_callback test_cb =
     &on_ioqueue_connect,
 };
 
-#ifdef PJ_WIN32
+#if defined(PJ_WIN32) || defined(PJ_WIN64)
 #  define S_ADDR S_un.S_addr
 #else
 #  define S_ADDR s_addr
@@ -137,7 +137,8 @@ static int compliance_test(pj_bool_t allow_concur)
     pj_ioqueue_key_t *skey = NULL, *ckey = NULL;
     pj_ioqueue_op_key_t read_op, write_op;
     int bufsize = BUF_MIN_SIZE;
-    pj_ssize_t bytes, status = -1;
+    pj_ssize_t bytes;
+    int status = -1;
     pj_str_t temp;
     pj_bool_t send_pending, recv_pending;
     pj_status_t rc;
@@ -262,21 +263,21 @@ static int compliance_test(pj_bool_t allow_concur)
 
     // Poll if pending.
     while (send_pending || recv_pending) {
-	int rc;
+	int ret;
 	pj_time_val timeout = { 5, 0 };
 
 	TRACE_("poll...");
 #ifdef PJ_SYMBIAN
-	rc = pj_symbianos_poll(-1, PJ_TIME_VAL_MSEC(timeout));
+	ret = pj_symbianos_poll(-1, PJ_TIME_VAL_MSEC(timeout));
 #else
-	rc = pj_ioqueue_poll(ioque, &timeout);
+	ret = pj_ioqueue_poll(ioque, &timeout);
 #endif
 
-	if (rc == 0) {
+	if (ret == 0) {
 	    PJ_LOG(1,(THIS_FILE, "...ERROR: timed out..."));
 	    status=-45; goto on_error;
-        } else if (rc < 0) {
-            app_perror("...ERROR in ioqueue_poll()", -rc);
+        } else if (ret < 0) {
+            app_perror("...ERROR in ioqueue_poll()", -ret);
 	    status=-50; goto on_error;
 	}
 
@@ -768,7 +769,7 @@ static int bench_test(pj_bool_t allow_concur, int bufsize,
 	}
 	if (rc == PJ_SUCCESS) {
 	    if (bytes < 0) {
-		app_perror("...error: pj_ioqueue_sendto()", -bytes);
+		app_perror("...error: pj_ioqueue_sendto()",(pj_status_t)-bytes);
 		break;
 	    }
 	}

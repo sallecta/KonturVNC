@@ -26,7 +26,7 @@
 #define __WINEVENTLOGWRITER_H__
 
 #include "NewConnectionEvents.h"
-#include "../win-event-log/WinEventLog.h"
+#include "../libkvnc_win_event_log/WinEventLog.h"
 #include "../libkvnc_win_system/ApplicationCrashEvents.h"
 #include "WinServiceEvents.h"
 

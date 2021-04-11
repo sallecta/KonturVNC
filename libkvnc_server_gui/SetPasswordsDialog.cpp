@@ -29,7 +29,7 @@
 
 #include "SetPasswordsDialog.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 SetPasswordsDialog::SetPasswordsDialog(bool initStateOfUseRfbAuth,
                                        bool initStateOfUseAdminAuth)

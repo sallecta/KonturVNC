@@ -46,7 +46,7 @@
 
 #include "../libkvnc_server_config/Configurator.h"
 
-#include "../tvncontrol-app/TvnServerInfo.h"
+#include "../libkvnc_server_gui/TvnServerInfo.h"
 #include "LogInitListener.h"
 
 /**

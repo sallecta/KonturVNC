@@ -27,7 +27,7 @@
 #include "OutgoingRfbConnectionThread.h"
 #include "ConnectToTcpDispatcherThread.h"
 
-#include "../tvncontrol-app/ControlProto.h"
+#include "../libkvnc_server_gui/ControlProto.h"
 
 #include "../libkvnc_network/socket/SocketStream.h"
 
@@ -39,7 +39,7 @@
 
 #include "../libkvnc_win_system/WTS.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include <time.h>
 #include "../libkvnc_util/AnsiStringStorage.h"

@@ -1,7 +1,7 @@
 #include "FTStatusDialog.h"
 
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 
 FTStatusDialog::FTStatusDialog()

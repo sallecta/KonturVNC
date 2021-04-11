@@ -34,7 +34,7 @@
 #include "../libkvnc_win_system/WinCommandLineArgs.h"
 
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 TvnServerApplication::TvnServerApplication(HINSTANCE hInstance,
                                            const TCHAR *windowClassName,

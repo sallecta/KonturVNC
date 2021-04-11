@@ -28,7 +28,7 @@
 
 #include "../libkvnc_gui/BalloonTip.h"
 
-#include "../kvncserver/resource.h"
+#include "../kvnc_server/resource.h"
 
 #include "UIDataAccess.h"
 

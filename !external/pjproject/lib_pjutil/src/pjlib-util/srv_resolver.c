@@ -102,7 +102,7 @@ PJ_DEF(pj_status_t) pj_dns_srv_resolve( const pj_str_t *domain_name,
 					pj_dns_srv_resolver_cb *cb,
 					pj_dns_srv_async_query **p_query)
 {
-    int len;
+    pj_size_t len;
     pj_str_t target_name;
     pj_dns_srv_async_query *query_job;
     pj_status_t status;
@@ -254,10 +254,7 @@ static void build_server_entries(pj_dns_srv_async_query *query_job,
     }
 
     /* Second pass:
-     *	pick one host among hosts with the same priority, according
-     *	to its weight. The idea is when one server fails, client should
-     *	contact the next server with higher priority rather than contacting
-     *	server with the same priority as the failed one.
+     *	Order the entry in a list.
      *
      *  The algorithm for selecting server among servers with the same
      *  priority is described in RFC 2782.
@@ -298,12 +295,15 @@ static void build_server_entries(pj_dns_srv_async_query *query_job,
 	    SWAP(struct srv_target, &query_job->srv[i], &query_job->srv[j]);
 
 	    /* Remove all other entries (of the same priority) */
+	    /* Don't need to do this.
+	     * See https://trac.pjsip.org/repos/ticket/1719
 	    while (count > 1) {
 		pj_array_erase(query_job->srv, sizeof(struct srv_target), 
 			       query_job->srv_cnt, i+1);
 		--count;
 		--query_job->srv_cnt;
 	    }
+	    */
 	}
     }
 
@@ -329,7 +329,9 @@ static void build_server_entries(pj_dns_srv_async_query *query_job,
 	 * Update the IP address of the corresponding SRV record.
 	 */
 	for (j=0; j<query_job->srv_cnt; ++j) {
-	    if (pj_stricmp(&rr->name, &query_job->srv[j].target_name)==0) {
+            if (pj_stricmp(&rr->name, &query_job->srv[j].target_name)==0 &&
+                query_job->srv[j].addr_cnt < ADDR_MAX_COUNT)
+            {
 		unsigned cnt = query_job->srv[j].addr_cnt;
 		query_job->srv[j].addr[cnt].s_addr = rr->rdata.a.ip_addr.s_addr;
 		/* Only increment host_resolved once per SRV record */
@@ -405,7 +407,7 @@ static void build_server_entries(pj_dns_srv_async_query *query_job,
 /* Start DNS A record queries for all SRV records in the query_job structure */
 static pj_status_t resolve_hostnames(pj_dns_srv_async_query *query_job)
 {
-    unsigned i;
+    unsigned i, err_cnt = 0;
     pj_status_t err=PJ_SUCCESS, status;
 
     query_job->dns_state = PJ_DNS_TYPE_A;
@@ -420,6 +422,11 @@ static pj_status_t resolve_hostnames(pj_dns_srv_async_query *query_job)
 	srv->common.type = PJ_DNS_TYPE_A;
 	srv->parent = query_job;
 
+	/* See also #1809: dns_callback() will be invoked synchronously when response
+	 * is available in the cache, and var 'query_job->host_resolved' will get
+	 * incremented within the dns_callback(), which will cause this function
+	 * returning false error, so don't use that variable for counting errors.
+	 */
 	status = pj_dns_resolver_start_query(query_job->resolver,
 					     &srv->target_name,
 					     PJ_DNS_TYPE_A, 0,
@@ -427,11 +434,12 @@ static pj_status_t resolve_hostnames(pj_dns_srv_async_query *query_job)
 					     srv, &srv->q_a);
 	if (status != PJ_SUCCESS) {
 	    query_job->host_resolved++;
+	    err_cnt++;
 	    err = status;
 	}
     }
     
-    return (query_job->host_resolved == query_job->srv_cnt) ? err : PJ_SUCCESS;
+    return (err_cnt == query_job->srv_cnt) ? err : PJ_SUCCESS;
 }
 
 /* 
@@ -608,25 +616,25 @@ static void dns_callback(void *user_data,
 	srv_rec.count = 0;
 	for (i=0; i<query_job->srv_cnt; ++i) {
 	    unsigned j;
-	    struct srv_target *srv = &query_job->srv[i];
+	    struct srv_target *srv2 = &query_job->srv[i];
 
-	    srv_rec.entry[srv_rec.count].priority = srv->priority;
-	    srv_rec.entry[srv_rec.count].weight = srv->weight;
-	    srv_rec.entry[srv_rec.count].port = (pj_uint16_t)srv->port ;
+	    srv_rec.entry[srv_rec.count].priority = srv2->priority;
+	    srv_rec.entry[srv_rec.count].weight = srv2->weight;
+	    srv_rec.entry[srv_rec.count].port = (pj_uint16_t)srv2->port ;
 
-	    srv_rec.entry[srv_rec.count].server.name = srv->target_name;
-	    srv_rec.entry[srv_rec.count].server.alias = srv->cname;
+	    srv_rec.entry[srv_rec.count].server.name = srv2->target_name;
+	    srv_rec.entry[srv_rec.count].server.alias = srv2->cname;
 	    srv_rec.entry[srv_rec.count].server.addr_count = 0;
 
-	    pj_assert(srv->addr_cnt <= PJ_DNS_MAX_IP_IN_A_REC);
+	    pj_assert(srv2->addr_cnt <= PJ_DNS_MAX_IP_IN_A_REC);
 
-	    for (j=0; j<srv->addr_cnt; ++j) {
+	    for (j=0; j<srv2->addr_cnt; ++j) {
 		srv_rec.entry[srv_rec.count].server.addr[j].s_addr = 
-		    srv->addr[j].s_addr;
+		    srv2->addr[j].s_addr;
 		++srv_rec.entry[srv_rec.count].server.addr_count;
 	    }
 
-	    if (srv->addr_cnt > 0) {
+	    if (srv2->addr_cnt > 0) {
 		++srv_rec.count;
 		if (srv_rec.count == PJ_DNS_SRV_MAX_ADDR)
 		    break;

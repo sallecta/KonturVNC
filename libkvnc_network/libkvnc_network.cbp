@@ -178,6 +178,9 @@
 					<Add option="-DNDEBUG" />
 					<Add option="-D_LIB" />
 					<Add directory="$(WORKSPACEDIR)/!external/openssl/include" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include/" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include/" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjnath/include/" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />

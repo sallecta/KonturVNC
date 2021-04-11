@@ -26,7 +26,7 @@
 #include "../libkvnc_win_system/CurrentConsoleProcess.h"
 #include "../libkvnc_win_system/Environment.h"
 #include "../libkvnc_server_config/Configurator.h"
-#include "../tvncontrol-app/ControlCommandLine.h"
+#include "../libkvnc_server_gui/ControlCommandLine.h"
 
 WsConfigRunner::WsConfigRunner(Logger *logger, bool serviceMode)
 : m_serviceMode(serviceMode),

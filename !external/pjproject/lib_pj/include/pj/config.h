@@ -20,6 +20,7 @@
 #ifndef __PJ_CONFIG_H__
 #define __PJ_CONFIG_H__
 
+
 /**
  * @file config.h
  * @brief PJLIB Main configuration settings.
@@ -44,6 +45,10 @@
 #  error "Unknown compiler."
 #endif
 
+/* PJ_ALIGN_DATA is compiler specific directive to align data address */
+#ifndef PJ_ALIGN_DATA
+#  error "PJ_ALIGN_DATA is not defined!"
+#endif
 
 /********************************************************************
  * Include target OS specific configuration.
@@ -72,10 +77,15 @@
 #   define PJ_WIN32 1
 
 #elif defined(PJ_WIN32) || defined(_WIN32) || defined(__WIN32__) || \
-	defined(_WIN64) || defined(WIN32) || defined(__TOS_WIN__)
-    /*
-     * Win32
-     */
+	defined(WIN32) || defined(PJ_WIN64) || defined(_WIN64) || \
+	defined(WIN64) || defined(__TOS_WIN__) 
+#   if defined(PJ_WIN64) || defined(_WIN64) || defined(WIN64)
+	/*
+	 * Win64
+	 */
+#	undef PJ_WIN64
+#	define PJ_WIN64 1
+#   endif
 #   undef PJ_WIN32
 #   define PJ_WIN32 1
 #   include <pj/compat/os_win32.h>
@@ -151,7 +161,8 @@
 
 
 #elif defined (PJ_M_X86_64) || defined(__amd64__) || defined(__amd64) || \
-	defined(__x86_64__) || defined(__x86_64)
+	defined(__x86_64__) || defined(__x86_64) || \
+	defined(_M_X64) || defined(_M_AMD64)
     /*
      * AMD 64bit processor, little endian
      */
@@ -402,6 +413,33 @@
 #  define PJ_LOG_USE_STACK_BUFFER   1
 #endif
 
+/**
+ * Enable log indentation feature.
+ *
+ * Default: 1
+ */
+#ifndef PJ_LOG_ENABLE_INDENT
+#   define PJ_LOG_ENABLE_INDENT        1
+#endif
+
+/**
+ * Number of PJ_LOG_INDENT_CHAR to put every time pj_log_push_indent()
+ * is called.
+ *
+ * Default: 1
+ */
+#ifndef PJ_LOG_INDENT_SIZE
+#   define PJ_LOG_INDENT_SIZE        1
+#endif
+
+/**
+ * Log indentation character.
+ *
+ * Default: space
+ */
+#ifndef PJ_LOG_INDENT_CHAR
+#   define PJ_LOG_INDENT_CHAR	    '.'
+#endif
 
 /**
  * Colorfull terminal (for logging etc).
@@ -439,6 +477,27 @@
  */
 #ifndef PJ_POOL_DEBUG
 #  define PJ_POOL_DEBUG		    0
+#endif
+
+
+/**
+ * Enable timer heap debugging facility. When this is enabled, application
+ * can call pj_timer_heap_dump() to show the contents of the timer heap
+ * along with the source location where the timer entries were scheduled.
+ * See https://trac.pjsip.org/repos/ticket/1527 for more info.
+ *
+ * Default: 0
+ */
+#ifndef PJ_TIMER_DEBUG
+#  define PJ_TIMER_DEBUG	    0
+#endif
+
+
+/**
+ * Set this to 1 to enable debugging on the group lock. Default: 0
+ */
+#ifndef PJ_GRP_LOCK_DEBUG
+#  define PJ_GRP_LOCK_DEBUG	0
 #endif
 
 
@@ -616,12 +675,18 @@
 #else
     /* When FD_SETSIZE is not changeable, check if PJ_IOQUEUE_MAX_HANDLES
      * is lower than FD_SETSIZE value.
+     *
+     * Update: Not all ioqueue backends require this (such as epoll), so
+     * this check will be done on the ioqueue implementation itself, such as
+     * ioqueue select.
      */
+/*
 #   ifdef FD_SETSIZE
 #	if PJ_IOQUEUE_MAX_HANDLES > FD_SETSIZE
 #	    error "PJ_IOQUEUE_MAX_HANDLES is greater than FD_SETSIZE"
 #	endif
 #   endif
+*/
 #endif
 
 
@@ -797,6 +862,28 @@
  */
 #ifndef PJ_HAS_SSL_SOCK
 #  define PJ_HAS_SSL_SOCK	    0
+#endif
+
+
+/**
+ * Define the maximum number of ciphers supported by the secure socket.
+ *
+ * Default: 256
+ */
+#ifndef PJ_SSL_SOCK_MAX_CIPHERS
+#  define PJ_SSL_SOCK_MAX_CIPHERS   256
+#endif
+
+
+/**
+ * Specify what should be set as the available list of SSL_CIPHERs. For
+ * example, set this as "DEFAULT" to use the default cipher list (Note:
+ * PJSIP release 2.4 and before used this "DEFAULT" setting).
+ *
+ * Default: "HIGH:-COMPLEMENTOFDEFAULT"
+ */
+#ifndef PJ_SSL_SOCK_OSSL_CIPHERS
+#  define PJ_SSL_SOCK_OSSL_CIPHERS   "HIGH:-COMPLEMENTOFDEFAULT"
 #endif
 
 
@@ -1077,6 +1164,14 @@
 #endif
 
 /**
+ * Simulate race condition by sleeping the thread in strategic locations.
+ * Default: no!
+ */
+#ifndef PJ_RACE_ME
+#  define PJ_RACE_ME(x)
+#endif
+
+/**
  * Function attributes to inform that the function may throw exception.
  *
  * @param x     The exception list, enclosed in parenthesis.
@@ -1119,16 +1214,16 @@
 PJ_BEGIN_DECL
 
 /** PJLIB version major number. */
-#define PJ_VERSION_NUM_MAJOR	1
+#define PJ_VERSION_NUM_MAJOR	2
 
 /** PJLIB version minor number. */
-#define PJ_VERSION_NUM_MINOR	16
+#define PJ_VERSION_NUM_MINOR	5
 
 /** PJLIB version revision number. */
 #define PJ_VERSION_NUM_REV	0
 
 /**
- * Extra suffix for the version (e.g. "-svn"), or empty for
+ * Extra suffix for the version (e.g. "-trunk"), or empty for
  * web release version.
  */
 #define PJ_VERSION_NUM_EXTRA	""
