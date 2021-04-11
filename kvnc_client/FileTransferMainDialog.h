@@ -32,14 +32,14 @@
 #include "../libkvnc_gui/ImagedButton.h"
 #include "../libkvnc_gui/ProgressBar.h"
 
-#include "ft-common/FileInfo.h"
+#include "../libkvnc_ft/FileInfo.h"
 
 #include "../libkvnc_io/IOException.h"
 
 #include "FileInfoListView.h"
 #include "FileExistDialog.h"
 #include "../libkvnc_thread/Thread.h"
-#include "ft-client-lib/FileTransferInterface.h"
+#include "../libkvnc_client_ft/FileTransferInterface.h"
 
 #include <vector>
 

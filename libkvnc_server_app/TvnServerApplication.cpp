@@ -46,6 +46,7 @@ TvnServerApplication::TvnServerApplication(HINSTANCE hInstance,
   m_commandLine(commandLine),
   m_newConnectionEvents(newConnectionEvents)
 {
+
 }
 
 TvnServerApplication::~TvnServerApplication()
@@ -54,8 +55,7 @@ TvnServerApplication::~TvnServerApplication()
 
 int TvnServerApplication::run()
 {
-  // FIXME: May be an unhandled exception.
-  // Check wrong command line and situation when we need to show help.
+
 StringStorage firstKey(_T(""));
 
 

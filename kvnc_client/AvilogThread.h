@@ -1,9 +1,9 @@
 #pragma once
-#include "thread/Thread.h"
-#include "avilog/AVIGenerator.h"
-#include "log-writer/LogWriter.h"
-#include "rfb/FrameBuffer.h"
-#include "thread/GlobalMutex.h"
+#include "../libkvnc_thread/Thread.h"
+#include "../!external/lib_avilog/AVIGenerator.h"
+#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_rfb/FrameBuffer.h"
+#include "../libkvnc_thread/GlobalMutex.h"
 
 class AvilogThread :
 	public Thread
@@ -26,7 +26,7 @@ protected:
 	BYTE *m_tempbuffer;
 	size_t m_bufferLen;
 	BITMAPINFOHEADER  bmiHeader;
-	Rect crect;	
+	Rect crect;
 	int m_port;
 	CAVIGenerator *m_avilog;
 };

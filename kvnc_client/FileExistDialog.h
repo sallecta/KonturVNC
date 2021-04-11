@@ -27,7 +27,7 @@
 
 #include "../libkvnc_gui/BaseDialog.h"
 #include "../libkvnc_gui/Control.h"
-#include "ft-common/FileInfo.h"
+#include "../libkvnc_ft/FileInfo.h"
 
 class FileExistDialog : public BaseDialog
 {

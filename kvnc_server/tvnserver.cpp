@@ -21,21 +21,16 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include <iostream>
 #include <stdlib.h>
 #include "../libkvnc_log_writer/LogWriter.h"
 #include "../libkvnc_server_app/WinEventLogWriter.h"
 #include "../libkvnc_util/ResourceLoader.h"
 #include "../libkvnc_server_gui/ControlCommandLine.h"
-#include "../libkvnc_util/StringStorage.h"//not working in linker
-//#include "util/StringStorage.h"
+#include "../libkvnc_util/StringStorage.h"
 #include "../libkvnc_util/Singleton.h"
 #include "../libkvnc_win_system/WinCommandLineArgs.h"
-#include "../libkvnc_util/CommandLine.h"//not working in linker
-
-//#include "util/winhdr.h"
-//#include "util/CommandLine.h"
-
+#include "../libkvnc_util/CommandLine.h"
 #include "../libkvnc_server_app/TvnService.h"
 #include "../libkvnc_server_app/TvnServerApplication.h"
 #include "../libkvnc_server_app/QueryConnectionApplication.h"
@@ -142,9 +137,8 @@ if (firstKey.isEqualTo(_T("-reboot"))) {//0x1c3
 	  }else{
 		return 1;
 	  }
-  }
+  }//if (firstKey.isEqualTo(_T("-sas")))
 
-  //
 
   if (firstKey.isEqualTo(TvnService::SERVICE_COMMAND_LINE_KEY)) {
     TvnService tvnService(&winEventLogWriter, &winEventLogWriter);
@@ -223,6 +217,7 @@ if (firstKey.isEqualTo(_T("-reboot"))) {//0x1c3
 
   // No additional applications, run TightVNC server as single application.
   crashHook.setGuiEnabled();
+
   TvnServerApplication tvnServer(hInstance,
     WindowNames::WINDOW_CLASS_NAME,
     lpCmdLine, &winEventLogWriter);

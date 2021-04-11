@@ -26,7 +26,7 @@
 #define _VIEWER_CMD_LINE_H_
 
 #include "../libkvnc_win_system/WinProcessCommandLine.h"
-#include "client-config-lib/ViewerConfig.h"
+#include "libkvnc_client_config/ViewerConfig.h"
 #include "../libkvnc_util/CommandLineFormatException.h"
 #include "../libkvnc_util/CommandLineFormatHelp.h"
 #include "HelpDialog.h"

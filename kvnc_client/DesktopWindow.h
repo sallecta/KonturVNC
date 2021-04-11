@@ -30,13 +30,13 @@
 #include "../libkvnc_region/Rect.h"
 #include "../libkvnc_region/Dimension.h"
 #include "ScaleManager.h"
-#include "client-config-lib/ConnectionConfig.h"
+#include "../libkvnc_client_config/ConnectionConfig.h"
 #include "../libkvnc_gui/PaintWindow.h"
 #include "../libkvnc_gui/ScrollBar.h"
 #include "../libkvnc_gui/drawing/SolidBrush.h"
 #include "../libkvnc_gui/drawing/Graphics.h"
 #include "../libkvnc_rfb/RfbKeySym.h"
-#include "viewer-core/RemoteViewerCore.h"
+#include "../libkvnc_client_core/RemoteViewerCore.h"
 
 class DesktopWindow : public PaintWindow,
                       protected RfbKeySymListener

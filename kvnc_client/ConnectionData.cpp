@@ -28,7 +28,7 @@
 #include "ConnectionData.h"
 #include "../libkvnc_util/AnsiStringStorage.h"
 #include "../libkvnc_util/VncPassCrypt.h"
-#include "viewer-core/VncAuthentication.h"
+#include "../libkvnc_client_core/VncAuthentication.h"
 
 ConnectionData::ConnectionData()
 : m_isEmpty(true),
@@ -141,7 +141,7 @@ void ConnectionData::setPlainPassword(const StringStorage *password)
   memset(plainPassword, 0, VncAuthentication::VNC_PASSWORD_SIZE);
   memcpy(plainPassword,
          ansiPlainPassword.getString(),
-         min(VncAuthentication::VNC_PASSWORD_SIZE, ansiPlainPassword.getSize()));
+         std::min(VncAuthentication::VNC_PASSWORD_SIZE, int(ansiPlainPassword.getSize())));
   VncPassCrypt::getEncryptedPass(encryptedPassword, plainPassword);
   UINT8 hidePasswordChars[VncAuthentication::VNC_PASSWORD_SIZE * 2 + 1];
   hidePasswordChars[VncAuthentication::VNC_PASSWORD_SIZE * 2] = 0;

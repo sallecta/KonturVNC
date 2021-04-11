@@ -25,7 +25,7 @@
 #ifndef _SERVER_MESSAGE_LISTENER_H_
 #define _SERVER_MESSAGE_LISTENER_H_
 
-#include "io-lib/DataInputStream.h"
+#include "../libkvnc_io/DataInputStream.h"
 
 // FIXME: document it.
 class ServerMessageListener

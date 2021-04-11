@@ -26,7 +26,7 @@
 #define _FILE_INFO_LIST_VIEW_H_
 
 #include "../libkvnc_gui/ListView.h"
-#include "ft-common/FileInfo.h"
+#include "../libkvnc_ft/FileInfo.h"
 
 class FileInfoListView : public ListView
 {

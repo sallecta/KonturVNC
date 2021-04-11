@@ -1,5 +1,5 @@
 #include "AvilogThread.h"
-#include "client-config-lib/ViewerConfig.h"
+#include "../libkvnc_client_config/ViewerConfig.h"
 
 
 AvilogThread::AvilogThread(const FrameBuffer *buff, bool isAutoStart):
@@ -21,7 +21,7 @@ void AvilogThread::execute()
 
 	while(!isTerminating())
 	{
-		
+
 		if(!m_isRecord || m_frame->getBitsPerPixel()<16){
 			sleep(500);
 			continue;
@@ -33,7 +33,7 @@ void AvilogThread::execute()
 		{
 			SYSTEMTIME lt;
 			GetLocalTime(&lt);
-			TCHAR str[MAX_PATH + 32]; // 29 January 2008 jdp 
+			TCHAR str[MAX_PATH + 32]; // 29 January 2008 jdp
 			if(_tcslen(ViewerConfig::getInstance()->getFullPathToVLogFile())>0){
 			_tcscpy_s(str,ViewerConfig::getInstance()->getFullPathToVLogFile());
 			m_avilog = new CAVIGenerator(str,&bmiHeader);
@@ -43,7 +43,7 @@ void AvilogThread::execute()
 			m_avilog = new CAVIGenerator(str,ViewerConfig::getInstance()->getPathToVLogFile(),&bmiHeader);
 			}
 
-			
+
 
 			m_avilog->SetRate(10);
 
@@ -51,7 +51,7 @@ void AvilogThread::execute()
 			//HRESULT hr = 0;
 			if (FAILED(hr))
 			{
-				m_avilog->ReleaseEngine(); 
+				m_avilog->ReleaseEngine();
 				delete m_avilog;
 				m_avilog=NULL;
 			}
@@ -60,7 +60,7 @@ void AvilogThread::execute()
 		{
 			CopyMemory(m_tempbuffer, m_frame->getBuffer(), bmiHeader.biSizeImage);
 			// draw cursor
-			Rect rc;			
+			Rect rc;
 			rc.top = crect.top;
 			rc.bottom = crect.top+5;
 			rc.left = crect.left;
@@ -98,7 +98,7 @@ srcLinePtr+=pixelSize+sizeLineFb;
 pixPtr = srcLinePtr;
 for (int x = rc.left; x < rc.right; x++, pixPtr += pixelSize)
 	memcpy(pixPtr, &colour_black, pixelSize);
-dstLinePtr = srcLinePtr + sizeLineFb; 
+dstLinePtr = srcLinePtr + sizeLineFb;
 for (int y = rc.top + 1; y < rc.bottom; y++, dstLinePtr += sizeLineFb)
     memcpy(dstLinePtr, srcLinePtr, sizeLineRect);
 }
@@ -115,7 +115,7 @@ for (int y = rc.top + 1; y < rc.bottom; y++, dstLinePtr += sizeLineFb)
 	}
 	if(m_avilog)
 	m_avilog->ReleaseEngine();
-	
+
 }
 
 
@@ -131,16 +131,16 @@ void AvilogThread::UpdateAvilog()
 		bmiHeader.biCompression = BI_RGB;
 
 
-		if(m_tempbuffer) 
+		if(m_tempbuffer)
 			delete[] m_tempbuffer;
 
 		m_tempbuffer = new BYTE[bmiHeader.biSizeImage];
 
 		if(m_avilog && m_avilog->GetBitmapHeader()->biSizeImage != bmiHeader.biSizeImage)
-		{	
-			m_avilog->ReleaseEngine(); 
+		{
+			m_avilog->ReleaseEngine();
 			delete m_avilog;
-			m_avilog=NULL;			
+			m_avilog=NULL;
 		}
 }
 

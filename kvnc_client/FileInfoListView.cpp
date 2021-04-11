@@ -25,7 +25,7 @@
 
 #include "FileInfoListView.h"
 #include "../libkvnc_util/DateTime.h"
-#include "tvnviewer/resource.h"
+#include "../kvnc_clientresource.h"
 #include "../libkvnc_util/ResourceLoader.h"
 #include <crtdbg.h>
 #include <stdio.h>

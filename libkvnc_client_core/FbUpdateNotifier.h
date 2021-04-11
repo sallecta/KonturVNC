@@ -34,7 +34,7 @@
 #include "../libkvnc_thread/Thread.h"
 #include "../libkvnc_win_system/WindowsEvent.h"
 
-#include "tvnviewer/AvilogThread.h"
+#include "../kvnc_client/AvilogThread.h"
 
 
 #include "CursorPainter.h"

@@ -25,6 +25,8 @@
 #ifndef _NAMING_DEFS_H_
 #define _NAMING_DEFS_H_
 
+#define __in
+
 #include "../libkvnc_util/CommonHeader.h"
 
 class ProductNames

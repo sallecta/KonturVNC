@@ -3,7 +3,7 @@
 #include "resource.h"
 #include "../libkvnc_thread/AutoLock.h"
 
-#include <client-config-lib/ViewerConfig.h>
+#include "../libkvnc_client_config/ViewerConfig.h"
 
 ClientChatDialog::ClientChatDialog(	TextMsgListener * MsgListener)
 	: BaseDialog(IDD_CLIENTTEXTCHAT_DLG), m_extMsgListener(MsgListener)

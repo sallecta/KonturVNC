@@ -41,7 +41,7 @@
 #include "FbUpdateNotifier.h"
 #include "ServerMessageListener.h"
 #include "TcpConnection.h"
-#include "tvnviewer/AvilogThread.h"
+#include "../kvnc_client/AvilogThread.h"
 
 #include "../libkvnc_util/AnsiStringStorage.h"
 

@@ -25,10 +25,10 @@
 #ifndef _FILE_TRANSFER_CAPABILITY_H_
 #define _FILE_TRANSFER_CAPABILITY_H_
 
-#include "ft-client-lib/FileTransferRequestSender.h"
-#include "ft-client-lib/FileTransferReplyBuffer.h"
-#include "ft-client-lib/FileTransferMessageProcessor.h"
-#include "ft-client-lib/FileTransferCore.h"
+#include "../libkvnc_client_ft/FileTransferRequestSender.h"
+#include "../libkvnc_client_ft/FileTransferReplyBuffer.h"
+#include "../libkvnc_client_ft/FileTransferMessageProcessor.h"
+#include "../libkvnc_client_ft/FileTransferCore.h"
 
 #include "../libkvnc_log_writer/LogWriter.h"
 
