@@ -30,7 +30,8 @@ FileRenameDialog::FileRenameDialog()
 
 FileRenameDialog::FileRenameDialog(Control *parent)
 {
-  NewFolderDialog::NewFolderDialog(parent);
+  //NewFolderDialog::NewFolderDialog(parent);
+  NewFolderDialog *tmpFolderDialog = new NewFolderDialog(parent);
 }
 
 FileRenameDialog::~FileRenameDialog()
