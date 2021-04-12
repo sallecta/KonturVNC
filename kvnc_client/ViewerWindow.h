@@ -45,9 +45,9 @@
 
 #include "ClientChatDialog.h"
 
-#include "viewer-core/TextCapability.h"
+#include "../libkvnc_client_core/TextCapability.h"
 
-#include "viewer-core/SdpCapability.h"
+#include "../libkvnc_client_core/SdpCapability.h"
 
 #include "../libkvnc_server_rfb/TextMsgListener.h"
 

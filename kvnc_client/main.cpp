@@ -23,7 +23,7 @@
 //
 
 
-#include "libkvnc_client_config/ViewerConfig.h"
+#include "../libkvnc_client_config/ViewerConfig.h"
 #include "../libkvnc_log_writer/LogWriter.h"
 #include "TvnViewer.h"
 #include "ConnectionData.h"

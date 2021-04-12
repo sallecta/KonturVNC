@@ -24,8 +24,8 @@
 
 #include "ViewerInstance.h"
 
-#include "viewer-core/RemoteViewerCore.h"
-#include "viewer-core/FileTransferCapability.h"
+#include "libkvnc_client_core/RemoteViewerCore.h"
+#include "libkvnc_client_core/FileTransferCapability.h"
 #include "CommentDialog.h"
 
 
@@ -81,7 +81,7 @@ ViewerInstance::~ViewerInstance()
     m_socket->close();
   }
 
- 
+
   m_viewerCore.stop();
   m_viewerCore.waitTermination();
 
@@ -121,7 +121,7 @@ void ViewerInstance::start()
   m_vncAuthHandler.addAuthCapability(&m_viewerCore);
 
   m_fileTransfer.addCapabilities(&m_viewerCore);
-  
+
   m_textCap.addCapabilities(&m_viewerCore);
 
   m_sdpCap.addCapabilities(&m_viewerCore);

@@ -34,6 +34,17 @@ public:
   static const TCHAR MIRROR_DRIVER_MESSAGE_WINDOW_CLASS_NAME[];
 };
 
+
+/*
+Following ifndef removes redefinition of class error.
+ProductNames, RegistryPaths, WindowNames and LogNames
+are already defined in kvnc_client. So, when kvnc_client compiles.
+the error rises.
+The kvnc_client project has (must have) "kvnc_naming_defs_client"
+in CompilerSettings->Defines
+(i.e must compile with -Dkvnc_naming_defs_client option).
+*/
+#ifndef kvnc_naming_defs_client
 class ProductNames
 {
 public:
@@ -64,6 +75,8 @@ public:
   static const TCHAR LOG_PIPE_PUBLIC_NAME[];
   static const TCHAR WIN_EVENT_PROVIDER_NAME[];
 };
+#endif //kvnc_naming_defs_client
+
 
 class ClipboardNames
 {

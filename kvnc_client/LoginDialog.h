@@ -25,10 +25,10 @@
 #ifndef _LOGIN_DIALOG_H_
 #define _LOGIN_DIALOG_H_
 
-#include "libkvnc_client_config/ViewerConfig.h"
-#include "libkvnc_client_config/ConnectionConfig.h"
-#include "libkvnc_client_config/ConnectionConfigSM.h"
-#include "libkvnc_client_config/ViewerSettingsManager.h"
+#include "../libkvnc_client_config/ViewerConfig.h"
+#include "../libkvnc_client_config/ConnectionConfig.h"
+#include "../libkvnc_client_config/ConnectionConfigSM.h"
+#include "../libkvnc_client_config/ViewerSettingsManager.h"
 #include "../libkvnc_util/StringParser.h"
 #include "../libkvnc_gui/BaseDialog.h"
 #include "../libkvnc_gui/TextBox.h"

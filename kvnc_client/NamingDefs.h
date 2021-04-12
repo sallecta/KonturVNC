@@ -29,6 +29,7 @@
 
 #include "../libkvnc_util/CommonHeader.h"
 
+//#define kvnc_naming_defs_client
 class ProductNames
 {
 public:
@@ -49,13 +50,6 @@ public:
   static const TCHAR LOG_DIR_NAME[];
 };
 
-
-class ApplicationNames
-{
-public:
-  static const TCHAR WINDOW_CLASS_NAME[];
-};
-
 class WindowNames
 {
 public:
@@ -64,4 +58,10 @@ public:
   static const TCHAR TVN_SUB_WINDOW_TITLE_NAME[];
 };
 
-#endif
+class ApplicationNames
+{
+public:
+  static const TCHAR WINDOW_CLASS_NAME[];
+};
+
+#endif //#ifndef _NAMING_DEFS_H_

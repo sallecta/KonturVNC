@@ -25,7 +25,7 @@
 #ifndef __VIEWERVNCAUTHHANDLER_H__
 #define __VIEWERVNCAUTHHANDLER_H__
 
-#include "viewer-core/VncAuthenticationHandler.h"
+#include "../libkvnc_client_core/VncAuthenticationHandler.h"
 #include "ConnectionData.h"
 
 class ViewerVncAuthHandler : public VncAuthenticationHandler

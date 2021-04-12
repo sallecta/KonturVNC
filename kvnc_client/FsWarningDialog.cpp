@@ -23,8 +23,8 @@
 //
 
 #include "FsWarningDialog.h"
-#include "libkvnc_client_config/ViewerConfig.h"
-#include "libkvnc_client_config/ViewerSettingsManager.h"
+#include "../libkvnc_client_config/ViewerConfig.h"
+#include "../libkvnc_client_config/ViewerSettingsManager.h"
 
 FsWarningDialog::FsWarningDialog()
 : BaseDialog(IDD_FS_WARNING)

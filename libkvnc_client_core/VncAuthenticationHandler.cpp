@@ -27,7 +27,7 @@
 #include "../libkvnc_rfb/AuthDefs.h"
 #include "../libkvnc_rfb/VendorDefs.h"
 
-#include "viewer-core/VncAuthentication.h"
+#include "libkvnc_client_core/VncAuthentication.h"
 
 VncAuthenticationHandler::VncAuthenticationHandler()
 : AuthHandler(AuthDefs::VNC)

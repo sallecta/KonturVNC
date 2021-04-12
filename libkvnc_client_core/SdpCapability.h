@@ -5,7 +5,7 @@
 
 #include "ServerMessageListener.h"
 #include "CapabilitiesManager.h"
-#include "viewer-core/RemoteViewerCore.h"
+#include "../libkvnc_client_core/RemoteViewerCore.h"
 #include "../libkvnc_p2p/p2ptransport.h"
 
 

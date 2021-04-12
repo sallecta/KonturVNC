@@ -14,11 +14,11 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="-Wextra" />
-					<Add option="-Wall" />
+					<Add option="-std=c++11" />
 					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_WINDOWS" />
+					<Add option="-Dkvnc_naming_defs_client" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include/" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include/" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjnath/include/" />
@@ -118,7 +118,9 @@
 		<Unit filename="ViewerVncAuthHandler.h" />
 		<Unit filename="ViewerWindow.cpp" />
 		<Unit filename="ViewerWindow.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="main.cpp">
+			<Option weight="0" />
+		</Unit>
 		<Unit filename="res/appicon.ico" />
 		<Unit filename="res/dot.cur" />
 		<Unit filename="res/fileup.ico" />

@@ -5,7 +5,7 @@
 
 #include "ServerMessageListener.h"
 #include "CapabilitiesManager.h"
-#include "../kvnc_clientClientChatDialog.h"
+#include "../kvnc_client/ClientChatDialog.h"
 
 class TextCapability : public ServerMessageListener
 {
