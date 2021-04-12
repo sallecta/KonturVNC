@@ -25,6 +25,7 @@
 #ifndef _DESKTOP_WINDOW_H_
 #define _DESKTOP_WINDOW_H_
 
+#include<memory>
 #include "../libkvnc_win_system/WinClipboard.h"
 #include "../libkvnc_gui/DibFrameBuffer.h"
 #include "../libkvnc_region/Rect.h"
