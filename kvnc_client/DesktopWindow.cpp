@@ -126,7 +126,7 @@ bool DesktopWindow::onEraseBackground(HDC hdc) {
   return true;
 }
 
-bool DesktopWindow::onHScroll(WPARAM wParam, LPARAM lParam) 
+bool DesktopWindow::onHScroll(WPARAM wParam, LPARAM lParam)
 {
   switch(LOWORD(wParam)) {
     case SB_THUMBTRACK:
@@ -138,7 +138,7 @@ bool DesktopWindow::onHScroll(WPARAM wParam, LPARAM lParam)
       m_sbar.moveLeftHorz(ScrollBar::SCROLL_STEP);
       redraw();
       break;
-    case SB_PAGELEFT:   
+    case SB_PAGELEFT:
       m_sbar.moveLeftHorz();
       redraw();
       break;
@@ -146,7 +146,7 @@ bool DesktopWindow::onHScroll(WPARAM wParam, LPARAM lParam)
       m_sbar.moveRightHorz(ScrollBar::SCROLL_STEP);
       redraw();
       break;
-    case SB_PAGERIGHT:    
+    case SB_PAGERIGHT:
       m_sbar.moveRightHorz();
       redraw();
       break;
@@ -154,7 +154,7 @@ bool DesktopWindow::onHScroll(WPARAM wParam, LPARAM lParam)
   return true;
 }
 
-bool DesktopWindow::onVScroll(WPARAM wParam, LPARAM lParam) 
+bool DesktopWindow::onVScroll(WPARAM wParam, LPARAM lParam)
 {
   switch(LOWORD(wParam)) {
     case SB_THUMBTRACK:
@@ -199,7 +199,7 @@ bool DesktopWindow::onMouse(unsigned char mouseButtons, unsigned short wheelSpee
     bool bSecond = !!(mouseButtons & MOUSE_MDOWN);
     bool bThird  = !!(mouseButtons & MOUSE_RDOWN);
     mouseButtons &= ~(MOUSE_MDOWN | MOUSE_RDOWN);
-    if (bSecond) {  
+    if (bSecond) {
       mouseButtons |= MOUSE_RDOWN;
     }
     if (bThird) {
@@ -214,7 +214,7 @@ bool DesktopWindow::onMouse(unsigned char mouseButtons, unsigned short wheelSpee
   pos.x = mousePos.x;
   pos.y = mousePos.y;
 
- 
+
 
   // If coordinats of point is invalid, then skip event.
   if (pos.x >= 0 && pos.y >= 0) {
@@ -243,7 +243,7 @@ bool DesktopWindow::onMouse(unsigned char mouseButtons, unsigned short wheelSpee
   return true;
 }
 
-bool DesktopWindow::onKey(WPARAM wParam, LPARAM lParam) 
+bool DesktopWindow::onKey(WPARAM wParam, LPARAM lParam)
 {
   if (!m_conConf->isViewOnly()) {
     unsigned short virtualKey = static_cast<unsigned short>(wParam);
@@ -265,16 +265,16 @@ bool DesktopWindow::onKey(WPARAM wParam, LPARAM lParam)
   return true;
 }
 
-bool DesktopWindow::onChar(WPARAM wParam, LPARAM lParam) 
+bool DesktopWindow::onChar(WPARAM wParam, LPARAM lParam)
 {
   if (!m_conConf->isViewOnly()) {
-    m_rfbKeySym->processCharEvent(static_cast<WCHAR>(wParam), 
+    m_rfbKeySym->processCharEvent(static_cast<WCHAR>(wParam),
                                   static_cast<unsigned int>(lParam));
   }
   return true;
 }
 
-bool DesktopWindow::onDeadChar(WPARAM wParam, LPARAM lParam) 
+bool DesktopWindow::onDeadChar(WPARAM wParam, LPARAM lParam)
 {
   return true;
 }
@@ -315,17 +315,17 @@ void DesktopWindow::doDraw(DeviceContext *dc)
   if (!fbWidth || !fbHeight) {
     Graphics graphics(dc);
 
-    graphics.fillRect(m_clientArea.left, m_clientArea.top, 
+    graphics.fillRect(m_clientArea.left, m_clientArea.top,
                       m_clientArea.right, m_clientArea.bottom, &m_brush);
     return;
   }
 
   scrollProcessing(fbWidth, fbHeight);
 
-  int iHorzPos = 0; 
-  int iVertPos = 0; 
+  int iHorzPos = 0;
+  int iVertPos = 0;
 
-  if (m_showHorz) { 
+  if (m_showHorz) {
     iHorzPos = m_sbar.getHorzPos();
   }
 
@@ -343,7 +343,9 @@ void DesktopWindow::doDraw(DeviceContext *dc)
   int iHeight = m_clientArea.getHeight() - dst.getHeight();
 
   if (iWidth || iHeight) {
-    drawBackground(dc, &m_clientArea.toWindowsRect(), &dst.toWindowsRect());
+    RECT tmpRectMClient = m_clientArea.toWindowsRect();
+    RECT tmpRectDst = dst.toWindowsRect();
+    drawBackground(dc, &tmpRectMClient, &tmpRectDst);
   }
 
   drawImage(&src.toWindowsRect(), &dst.toWindowsRect());
@@ -460,7 +462,7 @@ void DesktopWindow::drawImage(const RECT *src, const RECT *dst)
   Rect rc_dest(dst);
 
   AutoLock al(&m_bufferLock);
-  
+
   if ((src->right - src->left) == (dst->right - dst->left) &&
      (src->bottom - src->top) == (dst->bottom - dst->top) &&
      src->left == dst->left &&
@@ -473,10 +475,10 @@ void DesktopWindow::drawImage(const RECT *src, const RECT *dst)
   }
 }
 
-bool DesktopWindow::onSize(WPARAM wParam, LPARAM lParam) 
+bool DesktopWindow::onSize(WPARAM wParam, LPARAM lParam)
 {
   calcClientArea();
-  m_winResize = true; 
+  m_winResize = true;
   return true;
 }
 
@@ -516,7 +518,7 @@ void DesktopWindow::setNewFramebuffer(const FrameBuffer *framebuffer)
   Dimension dimension = framebuffer->getDimension();
   Dimension olddimension = m_framebuffer.getDimension();
 
-  bool isBackgroundDirty = dimension.width < olddimension.width || 
+  bool isBackgroundDirty = dimension.width < olddimension.width ||
                            dimension.height < olddimension.height;
 
   m_logWriter->detail(_T("Desktop size: %d, %d"),  dimension.width, dimension.height);
@@ -527,15 +529,15 @@ void DesktopWindow::setNewFramebuffer(const FrameBuffer *framebuffer)
     m_serverDimension = dimension;
     if (!dimension.isEmpty()) {
       // the width and height should be aligned to 4
-		
+
 if(dimension.width%4!=0){
       int alignWidth = (dimension.width + 3) / 4;
       dimension.width = alignWidth * 4;
       int alignHeight = (dimension.height + 3) / 4;
       dimension.height = alignHeight * 4;
 }
-      m_framebuffer.setProperties(&dimension, 
-                                  &framebuffer->getPixelFormat(), 
+      m_framebuffer.setProperties(&dimension,
+                                  &framebuffer->getPixelFormat(),
                                   getHWnd());
       m_framebuffer.setColor(0, 0, 0);
       m_scManager.setScreenResolution(dimension.width, dimension.height);
@@ -680,7 +682,7 @@ void DesktopWindow::sendCtrlAltDel()
 {
   m_rfbKeySym->sendCtrlAltDel();
 
-	
+
 }
 
 void DesktopWindow::sendKeyboardEvent(bool downFlag, UINT32 key)
