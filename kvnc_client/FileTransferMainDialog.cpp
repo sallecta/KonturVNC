@@ -93,7 +93,7 @@ BOOL FileTransferMainDialog::onInitDialog()
   return TRUE;
 }
 
-BOOL FileTransferMainDialog::onNotify(UINT controlID, LPARAM data)
+BOOL FileTransferMainDialog::onNotify(UINT controlID, LPARAM data) throw(IOException)
 {
   LPNMHDR nmhdr = (LPNMHDR)data;
   switch (controlID) {
@@ -155,7 +155,7 @@ BOOL FileTransferMainDialog::onNotify(UINT controlID, LPARAM data)
   return TRUE;
 }
 
-BOOL FileTransferMainDialog::onCommand(UINT controlID, UINT notificationID)
+BOOL FileTransferMainDialog::onCommand(UINT controlID, UINT notificationID) throw(IOException)
 {
   switch (controlID) {
   case IDCANCEL:
@@ -265,7 +265,7 @@ void FileTransferMainDialog::onCancelOperationButtonClick()
   }
 }
 
-void FileTransferMainDialog::onRenameRemoteButtonClick()
+void FileTransferMainDialog::onRenameRemoteButtonClick() throw(IOException)
 {
   FileInfo *fileInfo = m_remoteFileListView.getSelectedFileInfo();
 
@@ -294,7 +294,7 @@ void FileTransferMainDialog::onRenameRemoteButtonClick()
   }
 }
 
-void FileTransferMainDialog::onMkDirRemoteButtonClick()
+void FileTransferMainDialog::onMkDirRemoteButtonClick() throw(IOException)
 {
   NewFolderDialog folderDialog(&m_ctrlThis);
   if (folderDialog.showModal() == IDOK) {
@@ -312,7 +312,7 @@ void FileTransferMainDialog::onMkDirRemoteButtonClick()
   }
 }
 
-void FileTransferMainDialog::onRemoveRemoteButtonClick()
+void FileTransferMainDialog::onRemoveRemoteButtonClick() throw(IOException)
 {
   unsigned int siCount = m_remoteFileListView.getSelectedItemsCount();
 
@@ -350,7 +350,7 @@ void FileTransferMainDialog::onRemoveRemoteButtonClick()
   delete[] filesInfo;
 }
 
-void FileTransferMainDialog::onRefreshRemoteButtonClick()
+void FileTransferMainDialog::onRefreshRemoteButtonClick() throw(IOException)
 {
   refreshRemoteFileList();
 }
