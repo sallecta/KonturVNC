@@ -26,7 +26,7 @@
 
 #include "../libkvnc_util/CommonHeader.h"
 #include "../libkvnc_util/winhdr.h"
-#include "ft-common/WinFilePath.h"
+#include "../libkvnc_ft/WinFilePath.h"
 #include "NewFolderDialog.h"
 #include "FileRenameDialog.h"
 
