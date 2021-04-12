@@ -22,14 +22,17 @@
 //-------------------------------------------------------------------------
 //
 
+#include <iostream>
+#include <map>
+#include <string>
+#include <iterator>
+
 #ifndef _STRING_TABLE_H_
 #define _STRING_TABLE_H_
 
 #include "StringStorage.h"
-
-#include <map>
-
-using namespace std;
+#define __in
+//using namespace std;
 
 /**
  * Helper class with only static methods to get strings from resources.
@@ -51,7 +54,7 @@ public:
 private:
   StringTable();
 
-  static map<UINT, StringStorage> _cache;
+  static std::map<UINT, StringStorage> _cache;
 };
 
 #endif

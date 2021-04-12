@@ -18,13 +18,11 @@
 					<Add option="-Wfatal-errors" />
 					<Add option="-Wall" />
 					<Add option="-std=c++11" />
-					<Add option="-m32" />
 					<Add option="-DWIN32" />
 					<Add directory="$(WORKSPACEDIR)/!external/atl/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
-					<Add option="-m32" />
 				</Linker>
 			</Target>
 		</Build>

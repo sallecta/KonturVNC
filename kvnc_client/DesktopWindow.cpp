@@ -343,12 +343,14 @@ void DesktopWindow::doDraw(DeviceContext *dc)
   int iHeight = m_clientArea.getHeight() - dst.getHeight();
 
   if (iWidth || iHeight) {
-    RECT tmpRectMClient = m_clientArea.toWindowsRect();
-    RECT tmpRectDst = dst.toWindowsRect();
-    drawBackground(dc, &tmpRectMClient, &tmpRectDst);
+    RECT tmpRect1 = m_clientArea.toWindowsRect();
+    RECT tmpRect2 = dst.toWindowsRect();
+    drawBackground(dc, &tmpRect1, &tmpRect2);
   }
-
-  drawImage(&src.toWindowsRect(), &dst.toWindowsRect());
+  RECT tmpRect1 = src.toWindowsRect();
+  RECT tmpRect2 = dst.toWindowsRect();
+  drawImage(&tmpRect1, &tmpRect2);
+  //drawImage(&src.toWindowsRect(), &dst.toWindowsRect());
 }
 
 void DesktopWindow::applyScrollbarChanges(bool isChanged, bool isVert, bool isHorz, int wndWidth, int wndHeight)
@@ -366,7 +368,9 @@ void DesktopWindow::applyScrollbarChanges(bool isChanged, bool isVert, bool isHo
   }
 
   if (isChanged) {
-    m_scManager.setWindow(&Rect(0, 0, wndWidth, wndHeight));
+    Rect tmpRect = Rect(0, 0, wndWidth, wndHeight);
+    m_scManager.setWindow(&tmpRect);
+    //m_scManager.setWindow(&Rect(0, 0, wndWidth, wndHeight));
     if (m_showVert) {
       m_sbar.setVertRange(0, m_scManager.getVertPoints(), wndHeight);
     }
