@@ -25,10 +25,10 @@
 #ifndef _NAMING_DEFS_H_
 #define _NAMING_DEFS_H_
 
-#define __in
+//#define __in
 
-#include "../libkvnc_util/CommonHeader.h"
-
+//#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_util/StringStorage.h"
 //#define kvnc_naming_defs_client
 class ProductNames
 {

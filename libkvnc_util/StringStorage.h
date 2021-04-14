@@ -28,8 +28,8 @@
 ////#define __in
 //#include <iostream>
 #include <map>
-//#include <string>
-////#include <iterator>
+#include <string>
+#include <iterator>
 
 
 #include <vector>
