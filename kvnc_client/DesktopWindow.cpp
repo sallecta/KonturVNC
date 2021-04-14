@@ -553,7 +553,8 @@ if(dimension.width%4!=0){
     }
   }
   if (dimension.isEmpty()) {
-    repaint(&dimension.getRect());
+    Rect tmpRect = dimension.getRect();
+    repaint(&tmpRect);
   } else {
     m_isBackgroundDirty = isBackgroundDirty;
   }
@@ -588,7 +589,8 @@ void DesktopWindow::repaint(const Rect *repaintRect)
     ++wnd.bottom;
   }
   wnd.intersection(&rect);
-  redraw(&wnd.toWindowsRect());
+  RECT tmpRect = wnd.toWindowsRect();
+  redraw(&tmpRect);
 }
 
 void DesktopWindow::setScale(int scale)

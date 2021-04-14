@@ -24,8 +24,8 @@
 
 #include "ViewerInstance.h"
 
-#include "libkvnc_client_core/RemoteViewerCore.h"
-#include "libkvnc_client_core/FileTransferCapability.h"
+#include "../libkvnc_client_core/RemoteViewerCore.h"
+#include "../libkvnc_client_core/FileTransferCapability.h"
 #include "CommentDialog.h"
 
 

@@ -22,16 +22,12 @@
 //-------------------------------------------------------------------------
 //
 
-#include <iostream>
-#include <map>
-#include <string>
-#include <iterator>
 
 #ifndef _STRING_TABLE_H_
 #define _STRING_TABLE_H_
 
 #include "StringStorage.h"
-#define __in
+
 //using namespace std;
 
 /**

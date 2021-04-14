@@ -609,7 +609,7 @@ void FileTransferMainDialog::moveUpRemoteFolder() throw(IOException)
   tryListRemoteFolder(parent.getString());
 }
 
-void FileTransferMainDialog::onRemoteListViewDoubleClick()
+void FileTransferMainDialog::onRemoteListViewDoubleClick() throw(IOException)
 {
   FileInfo *selFileInfo = m_remoteFileListView.getSelectedFileInfo();
   if (selFileInfo == 0)
@@ -844,14 +844,14 @@ void FileTransferMainDialog::tryListLocalFolder(const TCHAR *pathToFile)
   }
 }
 
-void FileTransferMainDialog::refreshRemoteFileList()
+void FileTransferMainDialog::refreshRemoteFileList() throw(IOException)
 {
   StringStorage currentFolder;
   m_remoteCurFolderTextBox.getText(&currentFolder);
   tryListRemoteFolder(currentFolder.getString());
 }
 
-void FileTransferMainDialog::tryListRemoteFolder(const TCHAR *pathToFile)
+void FileTransferMainDialog::tryListRemoteFolder(const TCHAR *pathToFile) throw(IOException)
 {
   m_lastSentFileListPath.setString(pathToFile);
   m_ftCore->remoteFileListOperation(pathToFile);

@@ -24,7 +24,7 @@
 
 #include "ScaleManager.h"
 
-ScaleManager::ScaleManager() 
+ScaleManager::ScaleManager()
 : m_scale(DEFAULT_SCALE_DENOMERATOR),
   m_scrWidth(1),
   m_scrHeight(1),
@@ -53,7 +53,7 @@ void ScaleManager::setScreenResolution(int maxWidth, int maxHeight)
     maxHeight = maxHeight >> 1;
   }
 
-  maxWidth = maxWidth > 0 ? maxWidth : 1; 
+  maxWidth = maxWidth > 0 ? maxWidth : 1;
   maxHeight = maxHeight > 0 ? maxHeight : 1;
 
   m_scrWScale = maxWidth;
@@ -67,7 +67,7 @@ void ScaleManager::keepAspectRatio(Rect *rc) const
 {
   int iHeight = rc->getHeight() / m_scrHScale;
   int iWidth = rc->getWidth() / m_scrWScale;
-  int iBar = min(iHeight, iWidth);
+  int iBar = std::min(iHeight, iWidth);
   rc->right = rc->left + iBar * m_scrWScale;
   rc->bottom = rc->top + iBar * m_scrHScale;
 }

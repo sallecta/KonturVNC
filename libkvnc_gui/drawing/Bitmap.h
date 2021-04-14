@@ -27,7 +27,7 @@
 
 #include "../../libkvnc_util/CommonHeader.h"
 
-#include <string>
+//#include <string>
 //#include <sstream>
 
 // Class manipulating windows HBITMAP object

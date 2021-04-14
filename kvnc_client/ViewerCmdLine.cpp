@@ -101,7 +101,7 @@ bool ViewerCmdLine::processCmdLine(const CmdLineOption *cmdLines, size_t lenCmdL
   return true;
 }
 
-void ViewerCmdLine::parse()
+void ViewerCmdLine::parse() throw(CommandLineFormatException, CommandLineFormatHelp)
 {
   const CmdLineOption options[] = {
     HELP,

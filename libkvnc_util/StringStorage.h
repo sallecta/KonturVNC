@@ -24,8 +24,14 @@
 
 #ifndef _STRING_BUFFER_H_
 #define _STRING_BUFFER_H_
-
 #include "winhdr.h"
+////#define __in
+//#include <iostream>
+#include <map>
+//#include <string>
+////#include <iterator>
+
+
 #include <vector>
 
 /**
