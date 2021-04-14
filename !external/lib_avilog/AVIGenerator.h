@@ -20,7 +20,6 @@
 #include <tchar.h>
 #include <string.h>
 #include <vfw.h>
-#include <windows.h>
 
 #pragma message("     _Adding library: vfw32.lib" )
 #pragma comment ( lib, "vfw32.lib")
@@ -69,9 +68,14 @@ class CAVIGenerator
 public:
 	//! \name Constructors and destructors
 	//@{
-	CAVIGenerator(LPCTSTR sFileName, LPCTSTR sPath,LPBITMAPINFOHEADER lpbih);
-	CAVIGenerator(LPCTSTR sFileName, LPBITMAPINFOHEADER lpbih);
-
+	//! Default constructor
+	CAVIGenerator();
+#ifdef _AVIGENERATOR_USE_MFC
+	//! Inplace constructor with CView
+	CAVIGenerator(LPCTSTR sFileName, CView* pView, DWORD dwRate);
+#endif
+	//! Inplace constructor with BITMAPINFOHEADER
+	CAVIGenerator(LPCTSTR sFileName, LPCTSTR sPath,LPBITMAPINFOHEADER lpbih, DWORD dwRate);
 	~CAVIGenerator();
 	//@}
 
@@ -101,7 +105,7 @@ public:
 	//! returns a pointer to bitmap info
 	LPBITMAPINFOHEADER GetBitmapHeader()							{	return &m_bih;};
 	//! sets the name of the ouput file (should be .avi)
-	void SetFileName(LPCTSTR _sFileName)							{	_tcscpy_s(m_sFile,_sFileName); MakeExtAvi();};
+	void SetFileName(LPCTSTR _sFileName)							{	strcpy_s(m_sFile,_sFileName); MakeExtAvi();};
 	//! Sets FrameRate (should equal or greater than one)
 	void SetRate(DWORD dwRate)										{	m_dwRate=dwRate;};
 	//@}
@@ -116,16 +120,15 @@ public:
 
 protected:
 	//! name of output file
-	TCHAR m_sFile[1024];
-	TCHAR mypath[1024];
-	BOOL released;
+	char m_sFile[1024];
+	char mypath[1024];
 	//! Frame rate
 	DWORD m_dwRate;
 	//! structure contains information for a single stream
 	BITMAPINFOHEADER m_bih;
 	//! last error string
-	TCHAR m_sError[1024];
-	//unsigned char *tempbuffer;
+	char m_sError[1024];
+	unsigned char *tempbuffer;
 
 private:
 	void MakeExtAvi();
@@ -137,11 +140,6 @@ private:
 	PAVISTREAM m_pStream;
 	//! Address of the compressed video stream
 	PAVISTREAM m_pStreamCompressed;
-
-	//revel
-	int encoderHandle;
-
-
 };
 
 #endif // !defined(AFX_AVIGENERATOR_H__6BAF2E9D_3866_4779_A43B_D1B21E7E4F39__INCLUDED_)
