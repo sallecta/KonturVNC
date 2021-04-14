@@ -414,9 +414,9 @@ public:
                                      const char *nameSignature,
                                      const StringStorage description = _T(""));
 
-  virtual void getEnabledClientMsgCapabilities(vector<UINT32> *codes) const;
-  virtual void getEnabledServerMsgCapabilities(vector<UINT32> *codes) const;
-  virtual void getEnabledEncodingCapabilities(vector<UINT32> *codes) const;
+  virtual void getEnabledClientMsgCapabilities(std::vector<UINT32> *codes) const;
+  virtual void getEnabledServerMsgCapabilities(std::vector<UINT32> *codes) const;
+  virtual void getEnabledEncodingCapabilities(std::vector<UINT32> *codes) const;
 
 private:
   //
@@ -501,11 +501,11 @@ private:
   int negotiateAboutSecurityType();
   void authenticate();
   void clientAndServerInit();
-  void readSecurityTypeList(vector<UINT32> *secTypes);
+  void readSecurityTypeList(std::vector<UINT32> *secTypes);
   StringStorage getSecurityTypeName(UINT32 securityType) const;
   StringStorage getAuthenticationTypeName(UINT32 authenticationType) const;
-  int selectSecurityType(const vector<UINT32> *secTypes,
-                         const map<UINT32, AuthHandler *> *authHandlers) const;
+  int selectSecurityType(const std::vector<UINT32> *secTypes,
+                         const std::map<UINT32, AuthHandler *> *authHandlers) const;
   void initTunnelling();
   int initAuthentication();
   void readCapabilities();
@@ -571,15 +571,15 @@ private:
   FbUpdateNotifier m_fbUpdateNotifier;
 
   CapsContainer m_authCaps;
-  map<UINT32, AuthHandler *> m_authHandlers;
+  std::map<UINT32, AuthHandler *> m_authHandlers;
 
   CapsContainer m_clientMsgCaps;
   CapsContainer m_serverMsgCaps;
-  map<UINT32, ServerMessageListener *> m_serverMsgHandlers;
+  std::map<UINT32, ServerMessageListener *> m_serverMsgHandlers;
 
   CapsContainer m_encodingCaps;
-  map<UINT32, Decoder *> m_decoderHandlers;
-  map<UINT32, int> m_decoderPriority;
+  std::map<UINT32, Decoder *> m_decoderHandlers;
+  std::map<UINT32, int> m_decoderPriority;
 
   // This flag is set after call start().
   mutable LocalMutex m_startLock;

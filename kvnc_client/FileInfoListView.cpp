@@ -113,7 +113,7 @@ void FileInfoListView::addItem(int index, FileInfo *fileInfo)
 
 void FileInfoListView::addRange(FileInfo **filesInfo, size_t count)
 {
-  int index = max(0, (getCount() - 1));
+  int index = std::max(0, (getCount() - 1));
   size_t i = 0;
   FileInfo *arr = *filesInfo;
 

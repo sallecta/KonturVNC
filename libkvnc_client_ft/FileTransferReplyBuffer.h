@@ -51,7 +51,7 @@ public:
   FileInfo *getFilesInfo();
 
   UINT32 getDownloadBufferSize();
-  vector<UINT8> getDownloadBuffer();
+  std::vector<UINT8> getDownloadBuffer();
 
   UINT8 getDownloadFileFlags();
   UINT64 getDownloadLastModified();
@@ -83,7 +83,7 @@ public:
 
 private:
 
-  vector<UINT8> readCompressedDataBlock(DataInputStream *input,
+  std::vector<UINT8> readCompressedDataBlock(DataInputStream *input,
                                         UINT32 compressedSize,
                                         UINT32 uncompressedSize,
                                         UINT8 compressionLevel)
@@ -116,7 +116,7 @@ protected:
   StringStorage m_lastErrorMessage;
 
   // Download data reply
-  vector<UINT8> m_downloadBuffer;
+  std::vector<UINT8> m_downloadBuffer;
   UINT32 m_downloadBufferSize;
 
   // Download end reply
