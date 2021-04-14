@@ -46,9 +46,9 @@ struct sctp_transport {
   struct socket *sock;
   BIO *incoming_bio;
   BIO *outgoing_bio;
-  queue<sctp_message *> incoming_queue;
+  std::queue<sctp_message *> incoming_queue;
   LocalMutex incoming_mutex;
-  queue<sctp_message *> outgoing_queue;
+  std::queue<sctp_message *> outgoing_queue;
   LocalMutex outgoing_mutex;
   BIO *recv_bio;
   LocalMutex outToUserEvent_mutex;
