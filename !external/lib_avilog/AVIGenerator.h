@@ -3,7 +3,7 @@
 // A class to easily create AVI
 //
 // Original code : Example code in WriteAvi.c of MSDN
-// 
+//
 // Author : Jonathan de Halleux. dehalleux@auto.ucl.ac.be
 //////////////////////////////////////////////////////////////////////
 
@@ -14,7 +14,7 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-// needed headers
+#include <cstdio>
 #include <comdef.h>
 #include <memory.h>
 #include <tchar.h>
@@ -22,7 +22,7 @@
 #include <vfw.h>
 #include <windows.h>
 
-#pragma message("     _Adding library: vfw32.lib" ) 
+#pragma message("     _Adding library: vfw32.lib" )
 #pragma comment ( lib, "vfw32.lib")
 
 // undefine this if you don't use MFC
@@ -64,7 +64,7 @@
 
 \author : Jonathan de Halleux, dehalleux@auto.ucl.ac.be (2001)
 */
-class CAVIGenerator  
+class CAVIGenerator
 {
 public:
 	//! \name Constructors and destructors
@@ -83,8 +83,8 @@ public:
 	*/
 	HRESULT InitEngine();
 
-	/*! \brief Adds a frame to the movie. 
-	
+	/*! \brief Adds a frame to the movie.
+
 	The data pointed by bmBits has to be compatible with the bitmap description of the movie.
 	*/
 	HRESULT AddFrame(BYTE* bmBits);
@@ -105,7 +105,7 @@ public:
 	//! Sets FrameRate (should equal or greater than one)
 	void SetRate(DWORD dwRate)										{	m_dwRate=dwRate;};
 	//@}
-	
+
 	//! \name Error handling
 	//@{
 	//! returns last  error message
@@ -114,15 +114,15 @@ public:
 	bool read(AVICOMPRESSOPTIONS opts);
 	bool save(AVICOMPRESSOPTIONS opts);
 
-protected:	
+protected:
 	//! name of output file
 	TCHAR m_sFile[1024];
 	TCHAR mypath[1024];
 	BOOL released;
-	//! Frame rate 
-	DWORD m_dwRate;	
+	//! Frame rate
+	DWORD m_dwRate;
 	//! structure contains information for a single stream
-	BITMAPINFOHEADER m_bih;	
+	BITMAPINFOHEADER m_bih;
 	//! last error string
 	TCHAR m_sError[1024];
 	//unsigned char *tempbuffer;
@@ -134,9 +134,9 @@ private:
 	//! file interface pointer
 	PAVIFILE m_pAVIFile;
 	//! Address of the stream interface
-	PAVISTREAM m_pStream;		
+	PAVISTREAM m_pStream;
 	//! Address of the compressed video stream
-	PAVISTREAM m_pStreamCompressed; 
+	PAVISTREAM m_pStreamCompressed;
 
 	//revel
 	int encoderHandle;
