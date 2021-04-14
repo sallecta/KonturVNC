@@ -540,8 +540,9 @@ if(dimension.width%4!=0){
       int alignHeight = (dimension.height + 3) / 4;
       dimension.height = alignHeight * 4;
 }
+      PixelFormat tmpPixelFormat = framebuffer->getPixelFormat();
       m_framebuffer.setProperties(&dimension,
-                                  &framebuffer->getPixelFormat(),
+                                  &tmpPixelFormat,
                                   getHWnd());
       m_framebuffer.setColor(0, 0, 0);
       m_scManager.setScreenResolution(dimension.width, dimension.height);
