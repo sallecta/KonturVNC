@@ -602,7 +602,7 @@ void FileTransferMainDialog::moveUpLocalFolder()
   tryListLocalFolder(pathToFile.getString());
 }
 
-void FileTransferMainDialog::moveUpRemoteFolder()
+void FileTransferMainDialog::moveUpRemoteFolder() throw(IOException)
 {
   StringStorage parent;
   getPathToParentRemoteFolder(&parent);
