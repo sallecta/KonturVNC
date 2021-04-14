@@ -90,11 +90,6 @@
 		<Unit filename="md5.h" />
 		<Unit filename="urlencode.cpp" />
 		<Unit filename="winhdr.h" />
-		<Unit filename="ztest.util.Class1.cpp" />
-		<Unit filename="ztest.util.Class1.h" />
-		<Unit filename="ztest.util.Class2.cpp" />
-		<Unit filename="ztest.util.Class2.h" />
-		<Unit filename="ztest.util.common.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
