@@ -72,9 +72,9 @@ void TightEncoder::splitRectangle(const Rect *rect,
   int maxHeight = maxSize / maxWidth;
 
   for (int y0 = rect->top; y0 < rect->bottom; y0 += maxHeight) {
-    int y1 = min(y0 + maxHeight, rect->bottom);
+    int y1 = std::min(y0 + maxHeight, rect->bottom);
     for (int x0 = rect->left; x0 < rect->right; x0 += maxWidth) {
-      int x1 = min(x0 + maxWidth, rect->right);
+      int x1 = std::min(x0 + maxWidth, rect->right);
       rectList->push_back(Rect(x0, y0, x1, y1));
     }
   }

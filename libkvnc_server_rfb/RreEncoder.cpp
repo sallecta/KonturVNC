@@ -47,8 +47,8 @@ void RreEncoder::splitRectangle(const Rect *rect,
 {
   for (int y0 = rect->top; y0 < rect->bottom; y0 += RECT_SIZE) {
     for (int x0 = rect->left; x0 < rect->right; x0 += RECT_SIZE) {
-      int x1 = min(x0 + RECT_SIZE, rect->right);
-      int y1 = min(y0 + RECT_SIZE, rect->bottom);
+      int x1 = std::min(x0 + RECT_SIZE, rect->right);
+      int y1 = std::min(y0 + RECT_SIZE, rect->bottom);
       rectList->push_back(Rect(x0, y0, x1, y1));
     }
   }
@@ -90,7 +90,7 @@ void RreEncoder::rreEncode(const Rect *r,
   // Clear the cache with m_rects.
   m_rects.resize(0);
 
-  vector<PIXEL_T> subrectPixelValue;
+  std::vector<PIXEL_T> subrectPixelValue;
 
   // Find lines with the same pixel values.
   for (int i = r->top; i < r->bottom; i++) {

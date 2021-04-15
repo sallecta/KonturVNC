@@ -24,7 +24,7 @@
 
 #include "RemoteViewerCore.h"
 
-#include "ft-common/FTMessage.h"
+#include "../libkvnc_ft/FTMessage.h"
 #include "../libkvnc_rfb/AuthDefs.h"
 #include "../libkvnc_rfb/TunnelDefs.h"
 #include "../libkvnc_rfb/MsgDefs.h"
@@ -56,10 +56,10 @@
 #include "PointerPosDecoder.h"
 #include "RichCursorDecoder.h"
 
-#include "fb-update-sender/UpdSenderMsgDefs.h"
+#include "../libkvnc_server_rfb_update_sender/UpdSenderMsgDefs.h"
 
 #include <algorithm>
-#include <client-config-lib/ViewerConfig.h>
+#include "../libkvnc_client_config/ViewerConfig.h"
 
 
 RemoteViewerCore::RemoteViewerCore(Logger *logger)

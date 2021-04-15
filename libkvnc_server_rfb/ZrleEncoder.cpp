@@ -126,11 +126,11 @@ void ZrleEncoder::sendRect(const Rect *rect,
   Rect tileRect;
   for (tileRect.top = rect->top; tileRect.top < rect->bottom; tileRect.top += TILE_SIZE) {
 
-    tileRect.bottom = min(rect->bottom, tileRect.top + TILE_SIZE);
+    tileRect.bottom = std::min(rect->bottom, tileRect.top + TILE_SIZE);
 
     for (tileRect.left = rect->left; tileRect.left < rect->right; tileRect.left += TILE_SIZE) {
 
-      tileRect.right = min(rect->right, tileRect.left + TILE_SIZE);
+      tileRect.right = std::min(rect->right, tileRect.left + TILE_SIZE);
 
       // Clear sizes and vector with plain RLE tile.
       m_rawTileSize = 0;

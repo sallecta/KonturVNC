@@ -21,7 +21,7 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include <crtdbg.h>
 #include "Decoder.h"
 
 Decoder::Decoder(LogWriter *logWriter)

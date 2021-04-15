@@ -84,11 +84,11 @@ void HextileEncoder::hextileFunction(const Rect &r,
 
   for (t.top = r.top; t.top < r.bottom; t.top += 16) {
 
-    t.bottom = min(r.bottom, t.top + 16);
+    t.bottom = std::min(r.bottom, t.top + 16);
 
     for (t.left = r.left; t.left < r.right; t.left += 16) {
 
-      t.right = min(r.right, t.left + 16);
+      t.right = std::min(r.right, t.left + 16);
 
       PixelFormat tmpPixelFormat = frameBuffer->getPixelFormat();
       fb.setProperties(&t, &tmpPixelFormat);

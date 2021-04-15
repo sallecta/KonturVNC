@@ -32,6 +32,11 @@
 					<Add option="-static-libgcc" />
 					<Add option="-static" />
 					<Add option="-m32" />
+					<Add option="-Wl,--start-group" />
+					<Add option="-lkvnc_util" />
+					<Add option="-lkvnc_client_config" />
+					<Add option="-lkvnc_log_writer" />
+					<Add option="-Wl,--end-group" />
 					<Add library="lib_avilog" />
 					<Add library="lib_jpegturbo" />
 					<Add library="comctl32" />
@@ -43,7 +48,7 @@
 					<Add library="lib_pjnath" />
 					<Add library="ssl" />
 					<Add library="crypto" />
-					<Add library="$(OutDir)usrsctplib.lib" />
+					<Add library="lib_usrsctp" />
 					<Add library="kernel32" />
 					<Add library="user32" />
 					<Add library="gdi32" />

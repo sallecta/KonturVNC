@@ -55,7 +55,7 @@ void RawDecoder::process(RfbInputGate *input,
   Rect deltaRect(width, deltaHeight);
   deltaRect.setLocation(rect->left, rect->top);
 
-  // Process all rectangle without last part of rectangle or 
+  // Process all rectangle without last part of rectangle or
   // two last part, if area of last part is less half of AREA_OF_ONE_PART.
   while (deltaRect.bottom + deltaHeight / 2 < rect->bottom) {
     DecoderOfRectangle::process(input,
@@ -67,7 +67,7 @@ void RawDecoder::process(RfbInputGate *input,
   }
 
   // And process remainder parts of rectangle.
-  deltaRect.top = max(rect->top, deltaRect.bottom - deltaHeight);
+  deltaRect.top = std::max(rect->top, deltaRect.bottom - deltaHeight);
   deltaRect.bottom = rect->bottom;
   DecoderOfRectangle::process(input,
                               frameBuffer, secondFrameBuffer, &deltaRect, fbLock,

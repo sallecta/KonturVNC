@@ -50,8 +50,8 @@ void HexTileDecoder::decode(RfbInputGate *input,
     for (int x = dstRect->left; x < dstRect->right; x += TILE_SIZE) {
       Rect tileRect(x,
                     y,
-                    min(x + TILE_SIZE, dstRect->right),
-                    min(y + TILE_SIZE, dstRect->bottom));
+                    std::min(x + TILE_SIZE, dstRect->right),
+                    std::min(y + TILE_SIZE, dstRect->bottom));
 
       if (!framebuffer->getDimension().getRect().intersection(&tileRect).isEqualTo(&tileRect))
         throw Exception(_T("Error in protocol: incorrect size of tile in hextile-decoder"));

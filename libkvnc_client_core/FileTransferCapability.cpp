@@ -25,12 +25,12 @@
 
 #include "FileTransferCapability.h"
 
-#include "libkvnc_client_ft/FileTransferRequestSender.h"
-#include "libkvnc_client_ft/FileTransferReplyBuffer.h"
-#include "libkvnc_client_ft/FileTransferMessageProcessor.h"
-#include "libkvnc_client_ft/FileTransferCore.h"
+#include "../libkvnc_client_ft/FileTransferRequestSender.h"
+#include "../libkvnc_client_ft/FileTransferReplyBuffer.h"
+#include "../libkvnc_client_ft/FileTransferMessageProcessor.h"
+#include "../libkvnc_client_ft/FileTransferCore.h"
 
-#include "ft-common/FTMessage.h"
+#include "../libkvnc_ft/FTMessage.h"
 #include "../libkvnc_rfb/VendorDefs.h"
 
 FileTransferCapability::FileTransferCapability(Logger *logger)
