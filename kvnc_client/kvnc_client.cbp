@@ -32,11 +32,11 @@
 					<Add option="-static-libgcc" />
 					<Add option="-static" />
 					<Add option="-m32" />
-					<Add library="$(OutDir)avilog.lib" />
+					<Add library="lib_avilog" />
 					<Add library="lib_jpegturbo" />
-					<Add library="comctl32.lib" />
-					<Add library="Secur32.lib" />
-					<Add library="WinMM.Lib" />
+					<Add library="comctl32" />
+					<Add library="Secur32" />
+					<Add library="WinMM" />
 					<Add library="lib_revel" />
 					<Add library="lib_pj" />
 					<Add library="lib_pjutil" />
@@ -44,18 +44,21 @@
 					<Add library="ssl" />
 					<Add library="crypto" />
 					<Add library="$(OutDir)usrsctplib.lib" />
-					<Add library="kernel32.lib" />
-					<Add library="user32.lib" />
-					<Add library="gdi32.lib" />
-					<Add library="winspool.lib" />
-					<Add library="comdlg32.lib" />
-					<Add library="advapi32.lib" />
-					<Add library="shell32.lib" />
-					<Add library="ole32.lib" />
-					<Add library="oleaut32.lib" />
-					<Add library="uuid.lib" />
-					<Add library="odbc32.lib" />
-					<Add library="odbccp32.lib" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add directory="$(TARGET_OUTPUT_DIR)" />
+					<Add directory="$(WORKSPACEDIR)/!external/openssl/lib" />
+					<LinkerExe value="CppCompiler" />
 				</Linker>
 			</Target>
 		</Build>

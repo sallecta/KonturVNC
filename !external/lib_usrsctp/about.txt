@@ -1,3 +1,2 @@
-This is cutted version of pjproject-1.16.
-Visit following resources to obtain original:
+
 https://github.com/sctplab/usrsctp
