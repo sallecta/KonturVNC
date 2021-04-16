@@ -37,7 +37,7 @@ public:
   virtual ~ZrleDecoder();
 
 protected:
-  typedef vector<unsigned int> Palette;
+  typedef std::vector<unsigned int> Palette;
 
 protected:
   virtual void decode(RfbInputGate *input,
@@ -56,31 +56,31 @@ protected:
                    Palette *palette);
 
   void readRawTile(DataInputStream *input,
-                   vector<char> &pixels,
+                   std::vector<char> &pixels,
                    const Rect *tileRect);
 
   void readSolidTile(DataInputStream *input,
-                     vector<char> &pixels,
+                     std::vector<char> &pixels,
                      const Rect *tileRect);
 
   void readPackedPaletteTile(DataInputStream *input,
-                             vector<char> &pixels,
+                             std::vector<char> &pixels,
                              const Rect *tileRect,
                              const int type);
 
   void readPlainRleTile(DataInputStream *input,
-                        vector<char> &pixels,
+                        std::vector<char> &pixels,
                         const Rect *tileRect);
 
   void readPaletteRleTile(DataInputStream *input,
-                          vector<char> &pixels,
+                          std::vector<char> &pixels,
                           const Rect *tileRect,
                           const int type);
 
 
   void drawTile(FrameBuffer *fb,
                 const Rect *tileRect,
-                const vector<char> *pixels);
+                const std::vector<char> *pixels);
 
   Inflater m_inflater;
   size_t m_bytesPerPixel;

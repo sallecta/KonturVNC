@@ -278,11 +278,14 @@ bool RemoteViewerCore::updatePixelFormat()
     AutoLock al(&m_fbLock);
     // FIXME: here isn't accept true-colour flag.
     // PixelFormats may be equal, if isn't.
-    if (pxFormat.isEqualTo(&m_frameBuffer.getPixelFormat())) {
+    PixelFormat tmpPixelFormat = m_frameBuffer.getPixelFormat();
+    if (pxFormat.isEqualTo(&tmpPixelFormat)) {
       return false;
     }
+    Dimension tmpDimension = m_frameBuffer.getDimension();
     if (m_frameBuffer.getBuffer() != 0)
-      setFbProperties(&m_frameBuffer.getDimension(), &pxFormat);
+      setFbProperties(&tmpDimension,
+                      &pxFormat);
   }
 
   RfbSetPixelFormatClientMessage pixelFormatMessage(&pxFormat);
@@ -1140,7 +1143,10 @@ void RemoteViewerCore::processPseudoEncoding(const Rect *rect,
     {
       AutoLock al(&m_fbLock);
 	  m_frameBuffer.setDisplayCount(pad);
-      setFbProperties(&Dimension(rect), &m_frameBuffer.getPixelFormat());
+	  Dimension tmpDimension = Dimension(rect);
+	  PixelFormat tmpPixelFormat = m_frameBuffer.getPixelFormat();
+      setFbProperties(&tmpDimension,
+                      &tmpPixelFormat);
     }
     break;
 
@@ -1311,7 +1317,8 @@ void RemoteViewerCore::handshake()
   m_logWriter.info(_T("Send to server protocol version: %s"), getProtocolString().getString());
 
   AnsiStringStorage clientProtocolAnsi;
-  clientProtocolAnsi.fromStringStorage(&getProtocolString());
+  StringStorage tmpStringStorage = getProtocolString();
+  clientProtocolAnsi.fromStringStorage(&tmpStringStorage);
   m_output->writeFully(clientProtocolAnsi.getString(), 12);
   m_output->flush();
 }
@@ -1353,9 +1360,12 @@ void RemoteViewerCore::clientAndServerInit()
   }
 
   UINT32 sizeInBytes = m_input->readUInt32();
-  std::vector<const char> buffer(sizeInBytes + 1);
+  std::vector<char> buffer(sizeInBytes + 1);
+  //std::vector<const char> buffer(sizeInBytes + 1);
+  //std::vector <std::string> buffer(sizeInBytes + 1);
   m_input->read(&buffer.front(), sizeInBytes);
-  buffer[sizeInBytes] = '\0';
+  //buffer[sizeInBytes] = '\0';
+  buffer.push_back('\0');
   AnsiStringStorage ansiStr;
   ansiStr.setString(&buffer[0]);
   ansiStr.toStringStorage(&m_remoteDesktopName);

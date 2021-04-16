@@ -22,6 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
+#include <crtdbg.h>
 #include "../libkvnc_thread/AutoLock.h"
 
 #include "TcpConnection.h"

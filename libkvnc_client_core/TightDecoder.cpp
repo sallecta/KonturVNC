@@ -21,7 +21,7 @@
 // 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 //-------------------------------------------------------------------------
 //
-
+#include <crtdbg.h>
 #include "TightDecoder.h"
 
 #include "../libkvnc_rfb/StandardPixelFormatFactory.h"
@@ -94,9 +94,9 @@ UINT32 TightDecoder::transformPixelToTight(UINT32 color)
   return result;
 }
 
-vector<UINT8> TightDecoder::transformArray(const vector<UINT8> &buffer)
+std::vector<UINT8> TightDecoder::transformArray(const std::vector<UINT8> &buffer)
 {
-  vector<UINT8> result(buffer.size() * 4 / 3);
+  std::vector<UINT8> result(buffer.size() * 4 / 3);
   for (size_t bi = 0, ri = 0; bi < buffer.size(); bi += 3, ri += 4) {
     result[ri] = buffer[bi + 2];
     result[ri + 1] = buffer[bi + 1];
@@ -160,12 +160,12 @@ void TightDecoder::processJpeg(RfbInputGate *input,
   UINT32 jpegBufLen = readCompactSize(input);
   if (jpegBufLen == 0)
     throw Exception(_T("Error in protocol: empty byffer of jpeg (tight-decoder)"));
-  vector<UINT8> buffer;
+  std::vector<UINT8> buffer;
   buffer.resize(jpegBufLen);
   input->readFully(&buffer.front(), jpegBufLen);
 
   if (dstRect->area() != 0) {
-    vector<UINT8> pixels;
+    std::vector<UINT8> pixels;
     pixels.resize(dstRect->area() * JpegDecompressor::BYTES_PER_PIXEL);
 
     try {
@@ -202,7 +202,7 @@ void TightDecoder::processBasicTypes(RfbInputGate *input,
     lengthCurrentBpp = dstRect->area() * 3;
   }
 
-  vector<UINT8> buffer;
+  std::vector<UINT8> buffer;
 
   switch (filterId) {
   case COPY_FILTER:
@@ -218,7 +218,7 @@ void TightDecoder::processBasicTypes(RfbInputGate *input,
   case PALETTE_FILTER:
     {
       int paletteSize = input->readUInt8() + 1;
-      vector<UINT32> palette = readPalette(input, paletteSize, bytesPerCPixel);
+      std::vector<UINT32> palette = readPalette(input, paletteSize, bytesPerCPixel);
       size_t dataLength = dstRect->area();
       if (paletteSize == 2) {
         dataLength = (dstRect->getWidth() + 7) / 8 * dstRect->getHeight();
@@ -238,11 +238,11 @@ void TightDecoder::processBasicTypes(RfbInputGate *input,
   }
 }
 
-vector<UINT32> TightDecoder::readPalette(RfbInputGate *input,
+std::vector<UINT32> TightDecoder::readPalette(RfbInputGate *input,
                                       int paletteSize,
                                       int bytesPerCPixel)
 {
-  vector<UINT32> palette(paletteSize);
+  std::vector<UINT32> palette(paletteSize);
   for (int i = 0; i < paletteSize; i++) {
     palette[i] = readTightPixel(input, bytesPerCPixel);
   }
@@ -250,7 +250,7 @@ vector<UINT32> TightDecoder::readPalette(RfbInputGate *input,
 }
 
 void TightDecoder::readTightData(RfbInputGate *input,
-                                 vector<UINT8> &buffer,
+                                 std::vector<UINT8> &buffer,
                                  size_t expectedLength,
                                  const int decoderId)
 {
@@ -265,13 +265,13 @@ void TightDecoder::readTightData(RfbInputGate *input,
 }
 
 void TightDecoder::readCompressedData(RfbInputGate *input,
-                                      vector<UINT8> &buffer,
+                                      std::vector<UINT8> &buffer,
                                       size_t expectedLength,
                                       const int decoderId)
 {
   size_t rawDataLength = readCompactSize(input);
 
-  vector<char> compressed(rawDataLength);
+  std::vector<char> compressed(rawDataLength);
 
   // read compressed (raw) data behind space allocated for decompressed data
   if (rawDataLength != 0) {
@@ -294,8 +294,8 @@ void TightDecoder::readCompressedData(RfbInputGate *input,
 }
 
 void TightDecoder::drawPalette(FrameBuffer *fb,
-                               const vector<UINT32> &palette,
-                               const vector<UINT8> &pixels,
+                               const std::vector<UINT32> &palette,
+                               const std::vector<UINT8> &pixels,
                                const Rect *dstRect)
 {
   // TODO: removed duplicate code (draw Tight bytes)
@@ -334,7 +334,7 @@ void TightDecoder::drawPalette(FrameBuffer *fb,
 }
 
 void TightDecoder::drawTightBytes(FrameBuffer *fb,
-                                  const vector<UINT8> *pixels,
+                                  const std::vector<UINT8> *pixels,
                                   const Rect *dstRect)
 {
   // TODO: removed duplicate code (zrle)
@@ -354,7 +354,7 @@ void TightDecoder::drawTightBytes(FrameBuffer *fb,
 }
 
 void TightDecoder::drawJpegBytes(FrameBuffer *fb,
-                                 const vector<UINT8> *pixels,
+                                 const std::vector<UINT8> *pixels,
                                  const Rect *dstRect)
 {
   // TODO: removed duplicate code (draw tight bytes)
@@ -399,13 +399,13 @@ void TightDecoder::drawJpegBytes(FrameBuffer *fb,
  */
 
 void TightDecoder::drawGradient(FrameBuffer *fb,
-                                const vector<UINT8> &pixels,
+                                const std::vector<UINT8> &pixels,
                                 const Rect *dstRect)
 {
-  typedef vector<UINT16> RowType;
+  typedef std::vector<UINT16> RowType;
   size_t opRowLength = dstRect->getWidth() * 3 + 3;
 
-  vector<RowType> opRows(2);
+  std::vector<RowType> opRows(2);
   opRows[0].resize(opRowLength);
   opRows[1].resize(opRowLength);
 
@@ -449,7 +449,7 @@ void TightDecoder::drawGradient(FrameBuffer *fb,
 }
 
 UINT32 TightDecoder::getRawTightColor(const PixelFormat *pxFormat,
-                                      const vector<UINT8> &pixels,
+                                      const std::vector<UINT8> &pixels,
                                       const size_t offset)
 {
   if (m_isCPixel) {
@@ -464,7 +464,7 @@ UINT32 TightDecoder::getRawTightColor(const PixelFormat *pxFormat,
 
 void TightDecoder::fillRawComponents(const PixelFormat *pxFormat,
                                      UINT8 components[],
-                                     const vector<UINT8> &pixels,
+                                     const std::vector<UINT8> &pixels,
                                      const size_t pixelOffset)
 {
   int rawColor = getRawTightColor(pxFormat, pixels, pixelOffset);
