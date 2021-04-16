@@ -1529,7 +1529,7 @@ void RemoteViewerCore::sendEncodings()
   if (!wasConnected()) {
     return;
   }
-
-  RfbSetEncodingsClientMessage encodingsMessage(&m_decoderStore.getDecoderIds());
+  vector<INT32> tmpVectorINT32 = m_decoderStore.getDecoderIds();
+  RfbSetEncodingsClientMessage encodingsMessage(&tmpVectorINT32);
   encodingsMessage.send(m_output);
 }
