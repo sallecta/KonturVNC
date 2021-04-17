@@ -85,7 +85,7 @@ UINT64 FileTransferReplyBuffer::getDirSize()
   return m_dirSize;
 }
 
-vector<UINT8> FileTransferReplyBuffer::getDownloadBuffer()
+std::vector<UINT8> FileTransferReplyBuffer::getDownloadBuffer()
 {
   return m_downloadBuffer;
 }
@@ -104,7 +104,7 @@ void FileTransferReplyBuffer::onFileListReply(DataInputStream *input) throw(IOEx
   UINT32 compressedSize = 0;
   UINT32 uncompressedSize = 0;
 
-  vector<UINT8> buffer;
+  std::vector<UINT8> buffer;
 
   {
     compressionLevel = input->readUInt8();
@@ -239,7 +239,7 @@ void FileTransferReplyBuffer::onLastRequestFailedReply(DataInputStream *input) t
                     m_lastErrorMessage.getString());
 }
 
-vector<UINT8> FileTransferReplyBuffer::readCompressedDataBlock(DataInputStream *input,
+std::vector<UINT8> FileTransferReplyBuffer::readCompressedDataBlock(DataInputStream *input,
                                                                UINT32 compressedSize,
                                                                UINT32 uncompressedSize,
                                                                UINT8 compressionLevel)
@@ -253,7 +253,7 @@ vector<UINT8> FileTransferReplyBuffer::readCompressedDataBlock(DataInputStream *
   UINT32 coSize = compressedSize;
   UINT32 uncoSize = uncompressedSize;
 
-  vector<UINT8> coBuffer(coSize);
+  std::vector<UINT8> coBuffer(coSize);
 
   //
   // Read compressed data
@@ -269,7 +269,7 @@ vector<UINT8> FileTransferReplyBuffer::readCompressedDataBlock(DataInputStream *
     return coBuffer;
   }
 
-  vector<UINT8> uncoBuffer(uncoSize);
+  std::vector<UINT8> uncoBuffer(uncoSize);
 
   m_inflater.setUnpackedSize(uncoSize);
   // FIXME: type conversion in C-style

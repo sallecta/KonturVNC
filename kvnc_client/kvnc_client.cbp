@@ -14,7 +14,6 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add option="-Wfatal-errors" />
 					<Add option="-std=c++11" />
 					<Add option="-m32" />
 					<Add option="-DWIN32" />
@@ -29,13 +28,29 @@
 				<Linker>
 					<Add option="-s" />
 					<Add option="-static-libstdc++" />
-					<Add option="-static-libgcc" />
 					<Add option="-static" />
 					<Add option="-m32" />
 					<Add option="-Wl,--start-group" />
 					<Add option="-lkvnc_util" />
 					<Add option="-lkvnc_client_config" />
 					<Add option="-lkvnc_log_writer" />
+					<Add option="-lkvnc_win_system" />
+					<Add option="-lkvnc_client_core" />
+					<Add option="-lkvnc_rfb" />
+					<Add option="-lkvnc_gui" />
+					<Add option="-lkvnc_thread" />
+					<Add option="-lkvnc_config" />
+					<Add option="-lkvnc_file" />
+					<Add option="-lkvnc_network" />
+					<Add option="-lkvnc_ft" />
+					<Add option="-lkvnc_client_ft" />
+					<Add option="-lkvnc_p2p" />
+					<Add option="-lkvnc_io" />
+					<Add option="-lkvnc_region" />
+					<Add option="-l_pj" />
+					<Add option="-l_pjutil" />
+					<Add option="-l_pjnath" />
+					<Add option="-lstdc++" />
 					<Add option="-Wl,--end-group" />
 					<Add library="lib_avilog" />
 					<Add library="lib_jpegturbo" />
@@ -43,9 +58,6 @@
 					<Add library="Secur32" />
 					<Add library="WinMM" />
 					<Add library="lib_revel" />
-					<Add library="lib_pj" />
-					<Add library="lib_pjutil" />
-					<Add library="lib_pjnath" />
 					<Add library="ssl" />
 					<Add library="crypto" />
 					<Add library="lib_usrsctp" />
@@ -61,6 +73,16 @@
 					<Add library="uuid" />
 					<Add library="odbc32" />
 					<Add library="odbccp32" />
+					<Add library="psapi" />
+					<Add library="version" />
+					<Add library="ws2_32" />
+					<Add library="wtsapi32" />
+					<Add library="lib_zlib" />
+					<Add library="gdiplus" />
+					<Add library="rpcrt4" />
+					<Add library="msvfw32" />
+					<Add library="vfw32" />
+					<Add library="iphlpapi" />
 					<Add directory="$(TARGET_OUTPUT_DIR)" />
 					<Add directory="$(WORKSPACEDIR)/!external/openssl/lib" />
 					<LinkerExe value="CppCompiler" />

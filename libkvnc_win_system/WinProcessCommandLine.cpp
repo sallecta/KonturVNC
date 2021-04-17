@@ -24,7 +24,7 @@
 
 #include "WinProcessCommandLine.h"
 
-WinProcessCommandLine::WinProcessCommandLine() 
+WinProcessCommandLine::WinProcessCommandLine()
 {
   std::vector<StringStorage> out;
 
@@ -41,9 +41,9 @@ WinProcessCommandLine::WinProcessCommandLine()
 
 void WinProcessCommandLine::optionParser(StringStorage *out)
 {
-  pair<StringStorage, StringStorage> strPair;
-  
-  out->remove(0, 1); 
+  std::pair<StringStorage, StringStorage> strPair;
+
+  out->remove(0, 1);
   size_t ipos = out->findChar(_T('='));
   if (ipos == -1) {
     strPair.first = *out;

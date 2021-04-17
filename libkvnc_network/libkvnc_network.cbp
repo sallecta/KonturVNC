@@ -15,13 +15,14 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add option="-O0" />
 					<Add option="-DWIN32" />
 					<Add option="-D_DEBUG" />
 					<Add option="-D_LIB" />
-					<Add option="-O0" />
-					<Add option="-Wall" />
-					<Add option="-Wextra" />
 					<Add directory="./" />
 					<Add directory="../" />
 					<Add directory="../pjlib/pjlib/include/" />

@@ -170,7 +170,7 @@ bool Environment::getCurrentModuleFolderPath(StringStorage *out)
   size_t lastPos = out->findLast(_T('\\'));
 
   if (lastPos != (size_t)-1) {
-    out->getSubstring(out, 0, max(static_cast<int>(lastPos -1), 0));
+    out->getSubstring(out, 0, std::max(static_cast<int>(lastPos -1), 0));
   }
 
   return true;

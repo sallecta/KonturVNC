@@ -25,6 +25,7 @@
 #include <algorithm>
 #include <functional>
 
+#include "../libkvnc_rfb/EncodingDefs.h"
 #include "DecoderStore.h"
 
 DecoderStore::DecoderStore(LogWriter *logWriter)
@@ -84,8 +85,9 @@ std::vector<INT32> DecoderStore::getDecoderIds()
        i++) {
     sortedDecoders.push_back(i->second);
   }
-  if (sortedDecoders.empty())
-    sortedDecoders.push_back(EncodingDefs::RAW);
+  if (sortedDecoders.empty()){
+    static const int tmpInt = EncodingDefs::RAW;
+    sortedDecoders.push_back(tmpInt);}
   return sortedDecoders;
 }
 
