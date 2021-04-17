@@ -23,81 +23,81 @@ LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
 
 IDD_ABOUT_DIALOG DIALOGEX 0, 0, 308, 138
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "Ðž Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ðµ KonturVNC Viewer"
+CAPTION "Î ïðîãðàììå KonturVNC Viewer"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
     CONTROL         139,IDC_STATIC,"Static",SS_BITMAP | WS_GROUP,24,14,60,55
-    LTEXT           "KonturVNC Viewer Ð´Ð»Ñ Windows",IDC_STATIC,107,12,189,10
-    LTEXT           "Ð’ÐµÑ€ÑÐ¸Ñ unknown, ÑÐ±Ð¾Ñ€ÐºÐ° unknown",IDC_STATIC_VERSION,107,20,189,10
-    LTEXT           "(C) 2013-2015 Ð—ÐÐž ""ÐŸÐ¤ ""Ð¡ÐšÐ‘ ÐšÐ¾Ð½Ñ‚ÑƒÑ€"".\n(C) 2008-2013 GlavSoft LLC.\nÐ’ÑÐµ Ð¿Ñ€Ð°Ð²Ð° Ð·Ð°Ñ‰Ð¸Ñ‰ÐµÐ½Ñ‹.",IDC_STATIC,107,35,189,25
+    LTEXT           "KonturVNC Viewer äëÿ Windows",IDC_STATIC,107,12,189,10
+    LTEXT           "Âåðñèÿ unknown, ñáîðêà unknown",IDC_STATIC_VERSION,107,20,189,10
+    LTEXT           "(C) 2013-2015 ÇÀÎ ""ÏÔ ""ÑÊÁ Êîíòóð"".\n(C) 2008-2013 GlavSoft LLC.\nÂñå ïðàâà çàùèùåíû.",IDC_STATIC,107,35,189,25
     LTEXT           "",IDC_STATIC_LICENSING,107,66,189,10
     LTEXT           "We provide technical support, development and customization services on TightVNC.\nThe source code is available commercially as well, if the GPL license is not acceptable.\nPlease visit the Web site for more information on our products.",IDC_STATIC,13,81,283,26
-    DEFPUSHBUTTON   "ÐŸÐ¾ÑÐµÑ‚Ð¸Ñ‚ÑŒ Ð²ÐµÐ±-ÑÐ°Ð¹Ñ‚",IDC_VISIT_WEB_SITE_BUTTON,7,116,94,15,WS_GROUP
-    PUSHBUTTON      "ÐšÐ¾Ð¼Ð¼ÐµÑ€Ñ‡ÐµÑÐºÐ°Ñ Ð»Ð¸Ñ†ÐµÐ½Ð·Ð¸Ñ",IDC_ORDER_SUPPORT_BUTTON,107,116,94,15
-    PUSHBUTTON      "Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ ÑÑ‚Ð¾ Ð¾ÐºÐ½Ð¾",IDCANCEL,207,116,94,15
+    DEFPUSHBUTTON   "Ïîñåòèòü âåá-ñàéò",IDC_VISIT_WEB_SITE_BUTTON,7,116,94,15,WS_GROUP
+    PUSHBUTTON      "Êîììåð÷åñêàÿ ëèöåíçèÿ",IDC_ORDER_SUPPORT_BUTTON,107,116,94,15
+    PUSHBUTTON      "Çàêðûòü ýòî îêíî",IDCANCEL,207,116,94,15
 END
 
 ftclient_createFolderDialog DIALOGEX 0, 0, 174, 57
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð¿Ð°Ð¿ÐºÑƒ"
+CAPTION "KonturVNC - Ñîçäàòü ïàïêó"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    LTEXT           "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð½Ð¾Ð²Ð¾Ð¹ Ð¿Ð°Ð¿ÐºÐ¸:",IDC_LABEL,6,6,156,8
+    LTEXT           "Ââåäèòå èìÿ íîâîé ïàïêè:",IDC_LABEL,6,6,156,8
     EDITTEXT        IDC_FILENAME_EDIT,6,18,162,12,ES_AUTOHSCROLL | WS_GROUP
     DEFPUSHBUTTON   "OK",IDOK,33,36,50,15,WS_GROUP
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDCANCEL,90,36,50,15
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,90,36,50,15
 END
 
 ftclient_fileExistDialog DIALOGEX 0, 0, 323, 79
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - ÐŸÑ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ"
+CAPTION "KonturVNC - Ïðåäóïðåæäåíèå"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    CTEXT           "Ð’ÐÐ˜ÐœÐÐÐ˜Ð•: Ð¢Ð°ÐºÐ¾Ð¹ Ñ„Ð°Ð¹Ð» ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ.",IDC_STATIC,103,5,151,8
+    CTEXT           "ÂÍÈÌÀÍÈÅ: Òàêîé ôàéë óæå åñòü.",IDC_STATIC,103,5,151,8
     LTEXT           "This label should contain full filename of the conflicted file.",IDC_FILENAME_LABEL,5,18,307,8
-    LTEXT           "ÐÐ¾Ð²Ñ‹Ð¹:",IDC_STATIC,23,31,27,10
-    LTEXT           "Ð˜Ð¼ÐµÑŽÑ‰Ð¸Ð¹ÑÑ:",IDC_STATIC,6,44,44,10
+    LTEXT           "Íîâûé:",IDC_STATIC,23,31,27,10
+    LTEXT           "Èìåþùèéñÿ:",IDC_STATIC,6,44,44,10
     LTEXT           "Size1",IDC_SIZE1_LABEL,127,31,106,10
     LTEXT           "Size2",IDC_SIZE2_LABEL,127,44,106,10
     LTEXT           "Date1",IDC_DATE1_LABEL,238,31,74,10
     LTEXT           "Date2",IDC_DATE2_LABEL,238,44,74,10
-    DEFPUSHBUTTON   "Ð—Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ",IDC_OVERWRITE_BUTTON,4,58,50,15,WS_GROUP
-    PUSHBUTTON      "Ð—Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð²ÑÐµ",IDC_OVERWRITE_ALL_BUTTON,57,58,50,15
-    PUSHBUTTON      "ÐŸÑ€Ð¾Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ",IDC_SKIP_BUTTON,110,58,50,15
-    PUSHBUTTON      "ÐŸÑ€Ð¾Ð¿. Ð²ÑÐµ",IDC_SKIP_ALL_BUTTON,163,58,50,15
-    PUSHBUTTON      "Ð”Ð¾Ð¿Ð¸ÑÐ°Ñ‚ÑŒ",IDC_APPEND_BUTTON,216,58,50,15
-    PUSHBUTTON      "ÐžÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ",IDC_CANCEL_BUTTON,269,58,50,15
+    DEFPUSHBUTTON   "Çàìåíèòü",IDC_OVERWRITE_BUTTON,4,58,50,15,WS_GROUP
+    PUSHBUTTON      "Çàìåíèòü âñå",IDC_OVERWRITE_ALL_BUTTON,57,58,50,15
+    PUSHBUTTON      "Ïðîïóñòèòü",IDC_SKIP_BUTTON,110,58,50,15
+    PUSHBUTTON      "Ïðîï. âñå",IDC_SKIP_ALL_BUTTON,163,58,50,15
+    PUSHBUTTON      "Äîïèñàòü",IDC_APPEND_BUTTON,216,58,50,15
+    PUSHBUTTON      "Îñòàíîâèòü",IDC_CANCEL_BUTTON,269,58,50,15
 END
 
 ftclient_mainDialog DIALOGEX 0, 0, 503, 320
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - ÐŸÐµÑ€ÐµÐ´Ð°Ñ‡Ð° Ñ„Ð°Ð¹Ð»Ð¾Ð²"
+CAPTION "KonturVNC - Ïåðåäà÷à ôàéëîâ"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    LTEXT           "Ð›Ð¾ÐºÐ°Ð»ÑŒÐ½Ñ‹Ð¹ ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€ (Viewer)",IDC_STATIC,5,4,226,10
+    LTEXT           "Ëîêàëüíûé êîìïüþòåð (Viewer)",IDC_STATIC,5,4,226,10
     EDITTEXT        IDC_LOCAL_CURRENT_FOLDER_EDIT,5,16,226,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
     CONTROL         "",IDC_LOCAL_FILE_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_GROUP | WS_TABSTOP,5,34,226,215
-    PUSHBUTTON      "ÐŸÐµÑ€ÐµÐ¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ñ‚ÑŒ",IDC_RENAME_LOCAL_BUTTON,5,253,56,15,WS_GROUP
-    PUSHBUTTON      "Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð¿Ð°Ð¿ÐºÑƒ",IDC_MKDIR_LOCAL_BUTTON,66,253,54,15
-    PUSHBUTTON      "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ",IDC_REMOVE_LOCAL_BUTTON,125,253,50,15
-    PUSHBUTTON      "ÐžÐ±Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ",IDC_REFRESH_LOCAL_BUTTON,181,253,50,15
+    PUSHBUTTON      "Ïåðåèìåíîâàòü",IDC_RENAME_LOCAL_BUTTON,5,253,56,15,WS_GROUP
+    PUSHBUTTON      "Ñîçäàòü ïàïêó",IDC_MKDIR_LOCAL_BUTTON,66,253,54,15
+    PUSHBUTTON      "Óäàëèòü",IDC_REMOVE_LOCAL_BUTTON,125,253,50,15
+    PUSHBUTTON      "Îáíîâèòü",IDC_REFRESH_LOCAL_BUTTON,181,253,50,15
     PUSHBUTTON      ">>",IDC_UPLOAD_BUTTON,235,111,33,22,WS_GROUP
     PUSHBUTTON      "<<",IDC_DOWNLOAD_BUTTON,235,138,33,22
-    LTEXT           "Ð£Ð´Ð°Ð»ÐµÐ½Ð½Ñ‹Ð¹ ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€ (Ð¡ÐµÑ€Ð²ÐµÑ€)",IDC_STATIC,272,4,226,10
+    LTEXT           "Óäàëåííûé êîìïüþòåð (Ñåðâåð)",IDC_STATIC,272,4,226,10
     EDITTEXT        IDC_REMOTE_CURRENT_FOLDER_EDIT,272,16,226,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
     CONTROL         "",IDC_REMOTE_FILE_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,272,34,226,215
-    PUSHBUTTON      "ÐŸÐµÑ€ÐµÐ¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ñ‚ÑŒ",IDC_RENAME_REMOTE_BUTTON,272,253,55,15,WS_GROUP
-    PUSHBUTTON      "Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð¿Ð°Ð¿ÐºÑƒ",IDC_MKDIR_REMOTE_BUTTON,332,253,57,15
-    PUSHBUTTON      "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ",IDC_REMOVE_REMOTE_BUTTON,393,253,50,15
-    PUSHBUTTON      "ÐžÐ±Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ",IDC_REFRESH_REMOTE_BUTTON,447,253,50,15
+    PUSHBUTTON      "Ïåðåèìåíîâàòü",IDC_RENAME_REMOTE_BUTTON,272,253,55,15,WS_GROUP
+    PUSHBUTTON      "Ñîçäàòü ïàïêó",IDC_MKDIR_REMOTE_BUTTON,332,253,57,15
+    PUSHBUTTON      "Óäàëèòü",IDC_REMOVE_REMOTE_BUTTON,393,253,50,15
+    PUSHBUTTON      "Îáíîâèòü",IDC_REFRESH_REMOTE_BUTTON,447,253,50,15
     COMBOBOX        IDC_LOG_COMBO,6,281,492,77,CBS_DROPDOWNLIST | CBS_HASSTRINGS | WS_GROUP
     CONTROL         "",IDC_TOTAL_PROGRESS,"msctls_progress32",WS_GROUP,6,299,437,15
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDC_CANCEL_BUTTON,448,299,50,15,WS_GROUP
+    PUSHBUTTON      "Îòìåíà",IDC_CANCEL_BUTTON,448,299,50,15,WS_GROUP
 END
 
 IDD_CMDLINE DIALOGEX 0, 0, 280, 204
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC Viewer - ÐžÐ¿Ñ†Ð¸Ð¸ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸"
+CAPTION "KonturVNC Viewer - Îïöèè êîìàíäíîé ñòðîêè"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,115,183,50,14,BS_CENTER | WS_GROUP
@@ -106,169 +106,169 @@ END
 
 IDD_CONFIGURATION DIALOGEX 0, 0, 221, 310
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC Viewer - ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸"
+CAPTION "KonturVNC Viewer - Íàñòðîéêè"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    GROUPBOX        "Ð˜Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ",IDC_STATIC,7,7,207,41,WS_GROUP
-    CONTROL         "ÐŸÐ¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð¿Ð°Ð½ÐµÐ»Ð¸ Ð¸Ð½ÑÑ‚Ñ€ÑƒÐ¼ÐµÐ½Ñ‚Ð¾Ð²",IDC_CSHOWTOOLBARS,
+    GROUPBOX        "Èíòåðôåéñ",IDC_STATIC,7,7,207,41,WS_GROUP
+    CONTROL         "Ïî óìîë÷àíèþ ïîêàçûâàòü ïàíåëè èíñòðóìåíòîâ",IDC_CSHOWTOOLBARS,
                     "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,19,188,10
-    CONTROL         "ÐŸÑ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´Ð°Ñ‚ÑŒ Ð¾ Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´Ðµ Ð² Ð¿Ð¾Ð»Ð½Ð¾ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼",IDC_CWARNATSW,
+    CONTROL         "Ïðåäóïðåæäàòü î ïåðåõîäå â ïîëíîýêðàííûé ðåæèì",IDC_CWARNATSW,
                     "Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,33,191,10
-    GROUPBOX        "ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ",IDC_STATIC,7,54,207,50,WS_GROUP
-    LTEXT           "ÐŸÐ¾Ð¼Ð½Ð¸Ñ‚ÑŒ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ñ… Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹:",IDC_STATIC,16,66,127,10
+    GROUPBOX        "Ïîäêëþ÷åíèÿ",IDC_STATIC,7,54,207,50,WS_GROUP
+    LTEXT           "Ïîìíèòü ïîñëåäíèõ ïîäêëþ÷åíèé:",IDC_STATIC,16,66,127,10
     EDITTEXT        IDC_ENUMCON,151,64,43,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
     CONTROL         "",IDC_SNUMCON,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,203,62,11,14
-    PUSHBUTTON      "ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº Ð·Ð°Ð¿Ð¾Ð¼Ð½ÐµÐ½Ð½Ñ‹Ñ… Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹",IDC_BCLEAR_LIST,32,82,162,14,WS_GROUP
-    GROUPBOX        "Ð ÐµÐ¶Ð¸Ð¼ Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹",IDC_STATIC,7,108,207,29,WS_GROUP
-    LTEXT           "Ð Ð°Ð·Ñ€ÐµÑˆÐ¸Ñ‚ÑŒ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ð½Ð° TCP-Ð¿Ð¾Ñ€Ñ‚:",IDC_STATIC,16,120,132,10
+    PUSHBUTTON      "Î÷èñòèòü ñïèñîê çàïîìíåííûõ ïîäêëþ÷åíèé",IDC_BCLEAR_LIST,32,82,162,14,WS_GROUP
+    GROUPBOX        "Ðåæèì îæèäàíèÿ ïîäêëþ÷åíèé",IDC_STATIC,7,108,207,29,WS_GROUP
+    LTEXT           "Ðàçðåøèòü ïîäêëþ÷åíèÿ íà TCP-ïîðò:",IDC_STATIC,16,120,132,10
     EDITTEXT        IDC_EREVCON,151,118,43,12,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SREVCON,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,203,116,11,14
-    GROUPBOX        "Ð›Ð¾Ð³Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ",IDC_STATIC,7,142,207,48
-    LTEXT           "Ð”ÐµÑ‚Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð»Ð¾Ð³Ð¾Ð² (0 = Ð¾Ñ‚ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ):",IDC_STATIC,16,155,131,10
+    GROUPBOX        "Ëîãèðîâàíèå",IDC_STATIC,7,142,207,48
+    LTEXT           "Äåòàëèçàöèÿ ëîãîâ (0 = îòêëþ÷èòü):",IDC_STATIC,16,155,131,10
     EDITTEXT        IDC_EVERBLVL,151,152,33,13,ES_AUTOHSCROLL | ES_NUMBER
     CONTROL         "",IDC_SVERBLVL,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,203,151,11,14
-    LTEXT           "Ð¤Ð°Ð¹Ð»:",IDC_STATIC,16,172,27,10
+    LTEXT           "Ôàéë:",IDC_STATIC,16,172,27,10
     EDITTEXT        IDC_ELOGGING,47,170,120,12,ES_AUTOHSCROLL | ES_READONLY | WS_GROUP
-    PUSHBUTTON      "ÐÐ°Ð¹Ñ‚Ð¸",IDC_OPEN_LOG_FOLDER_BUTTON,173,169,34,14,WS_GROUP
-    DEFPUSHBUTTON   "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ",IDOK,56,291,50,14,WS_GROUP
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDCANCEL,116,291,50,14
-    CONTROL         "ÐÐ²Ñ‚Ð¾Ð¼Ð°Ñ‚Ð¸Ñ‡ÐµÑÐºÐ¸ Ð½Ð°Ñ‡Ð¸Ð½Ð°Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÑŒ",IDC_AUTOREC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,205,148,10
-    GROUPBOX        "Ð’Ð¸Ð´ÐµÐ¾Ð·Ð°Ð¿Ð¸ÑÑŒ ÑÐµÑÑÐ¸Ð¹",IDC_STATIC,7,193,207,46
+    PUSHBUTTON      "Íàéòè",IDC_OPEN_LOG_FOLDER_BUTTON,173,169,34,14,WS_GROUP
+    DEFPUSHBUTTON   "Ñîõðàíèòü",IDOK,56,291,50,14,WS_GROUP
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,116,291,50,14
+    CONTROL         "Àâòîìàòè÷åñêè íà÷èíàòü çàïèñü",IDC_AUTOREC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,205,148,10
+    GROUPBOX        "Âèäåîçàïèñü ñåññèé",IDC_STATIC,7,193,207,46
     EDITTEXT        IDC_VIDPATH,47,221,161,14,ES_AUTOHSCROLL
-    LTEXT           "ÐŸÑƒÑ‚ÑŒ:",IDC_STATIC,16,223,20,8
-    GROUPBOX        "Ð’Ð°Ñˆ Ð¿ÑÐµÐ²Ð´Ð¾Ð½Ð¸Ð¼ (Ð¸Ð¼Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ)",IDC_STATIC,7,242,207,32
+    LTEXT           "Ïóòü:",IDC_STATIC,16,223,20,8
+    GROUPBOX        "Âàø ïñåâäîíèì (èìÿ ïîëüçîâàòåëÿ)",IDC_STATIC,7,242,207,32
     EDITTEXT        IDC_PEERNAME,16,254,192,14,ES_AUTOHSCROLL
-    CONTROL         "Ð—Ð°Ð¿Ñ€Ð°ÑˆÐ¸Ð²Ð°Ñ‚ÑŒ ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹",IDC_ACOMMENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,278,148,10
+    CONTROL         "Çàïðàøèâàòü êîììåíòàðèé",IDC_ACOMMENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,278,148,10
 END
 
 IDD_RECONNECT DIALOGEX 0, 0, 180, 110
 STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ"
+CAPTION "KonturVNC - îæèäàíèå ïîäêëþ÷åíèÿ"
 BEGIN
-    LTEXT           "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ.",IDC_STATIC,5,7,170,10
+    LTEXT           "Íå óäàëîñü óñòàíîâèòü ñîåäèíåíèå.",IDC_STATIC,5,7,170,10
     LTEXT           "1",IDC_ATTEMPT,88,17,50,10
-    LTEXT           "ÐŸÐ¾Ð¿Ñ‹Ñ‚ÐºÐ° Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ #",IDC_STATIC,5,17,83,10
-    CTEXT           "Ð”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð°Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ:",IDC_STATIC,5,37,170,10
+    LTEXT           "Ïîïûòêà ïîäêëþ÷åíèÿ #",IDC_STATIC,5,17,83,10
+    CTEXT           "Äîïîëíèòåëüíàÿ èíôîðìàöèÿ:",IDC_STATIC,5,37,170,10
     LTEXT           "",IDC_ADDITIONALINFO,5,47,170,40
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDCANCEL,70,90,40,12
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,70,90,40,12
 END
 
 IDD_DAUTH DIALOGEX 0, 0, 186, 73
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - ÐÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ"
+CAPTION "KonturVNC - Àóòåíòèôèêàöèÿ"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    RTEXT           "ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¾ Ðº:",IDC_STATIC,11,13,56,10
+    RTEXT           "Ïîäêëþ÷åíî ê:",IDC_STATIC,11,13,56,10
     EDITTEXT        IDC_EHOST,70,11,101,12,ES_AUTOHSCROLL | ES_READONLY
-    RTEXT           "ÐŸÐ°Ñ€Ð¾Ð»ÑŒ:",IDC_STATIC,11,31,56,10
+    RTEXT           "Ïàðîëü:",IDC_STATIC,11,31,56,10
     EDITTEXT        IDC_EPASSW,70,29,101,12,ES_PASSWORD | ES_AUTOHSCROLL
     DEFPUSHBUTTON   "OK",IDOK,37,52,50,14,WS_GROUP
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDCANCEL,97,52,50,14
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,97,52,50,14
 END
 
 IDD_DCOMMENT DIALOGEX 0, 0, 220, 73
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - ÐšÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹"
+CAPTION "KonturVNC - Êîììåíòàðèé"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    RTEXT           "ÐšÐ¾Ð¼Ð¼ÐµÐ½Ñ‚:",IDC_STATIC,11,13,36,10
+    RTEXT           "Êîììåíò:",IDC_STATIC,11,13,36,10
     COMBOBOX        IDC_COMM,50,11,155,12,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
     DEFPUSHBUTTON   "OK",IDOK,37,52,50,14,WS_GROUP
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDCANCEL,97,52,50,14
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,97,52,50,14
 END
 
 IDD_LOGINDIALOG DIALOGEX 0, 0, 284, 172
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - ÐÐ¾Ð²Ð¾Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ"
+CAPTION "KonturVNC - Íîâîå ïîäêëþ÷åíèå"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    GROUPBOX        "ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ",IDC_STATIC,7,7,270,50,WS_GROUP
-    LTEXT           "ÐšÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€:",IDC_SSERVER,16,20,51,10
+    GROUPBOX        "Ïîäêëþ÷åíèå",IDC_STATIC,7,7,270,50,WS_GROUP
+    LTEXT           "Êîìïüþòåð:",IDC_SSERVER,16,20,51,10
     COMBOBOX        IDC_CSERVER,69,18,130,37,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
-    LTEXT           "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð¸Ð»Ð¸ IP-Ð°Ð´Ñ€ÐµÑ. Ð”Ð»Ñ ÑƒÐºÐ°Ð·Ð°Ð½Ð¸Ñ Ð¿Ð¾Ñ€Ñ‚Ð° Ð´Ð¾Ð±Ð°Ð²ÑŒÑ‚Ðµ Ð´Ð²Ð° Ð´Ð²Ð¾ÐµÑ‚Ð¾Ñ‡Ð¸Ñ (Ð½Ð°Ð¿Ñ€Ð¸Ð¼ÐµÑ€, mypc::5902).",IDC_STATIC,16,34,183,18
-    GROUPBOX        "Ð ÐµÐ¶Ð¸Ð¼ Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹",IDC_STATIC,7,62,270,34
-    LTEXT           "Ð­Ñ‚Ð¾Ñ‚ Ñ€ÐµÐ¶Ð¸Ð¼ Ð¿Ð¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ Ð´Ñ€ÑƒÐ³Ð¸Ð¼ Ð»ÑŽÐ´ÑÐ¼ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð°Ñ‚ÑŒÑÑ Ðº Ð²Ð°Ð¼ Ð´Ð»Ñ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€Ð° Ð¸Ñ… Ñ€Ð°Ð±Ð¾Ñ‡Ð¸Ñ… ÑÑ‚Ð¾Ð»Ð¾Ð².",IDC_STATIC,16,73,183,18,NOT WS_GROUP
+    LTEXT           "Ââåäèòå èìÿ èëè IP-àäðåñ. Äëÿ óêàçàíèÿ ïîðòà äîáàâüòå äâà äâîåòî÷èÿ (íàïðèìåð, mypc::5902).",IDC_STATIC,16,34,183,18
+    GROUPBOX        "Ðåæèì îæèäàíèÿ ïîäêëþ÷åíèé",IDC_STATIC,7,62,270,34
+    LTEXT           "Ýòîò ðåæèì ïîçâîëÿåò äðóãèì ëþäÿì ïîäêëþ÷àòüñÿ ê âàì äëÿ ïðîñìîòðà èõ ðàáî÷èõ ñòîëîâ.",IDC_STATIC,16,73,183,18,NOT WS_GROUP
     GROUPBOX        "KonturVNC Viewer",IDC_STATIC,7,101,270,64
     CONTROL         141,IDC_STATIC,"Static",SS_BITMAP,22,119,32,30
     LTEXT           "TightVNC is cross-platform remote control software.",IDC_STATIC,69,111,200,10,NOT WS_GROUP
     LTEXT           "Its source code is available to everyone, either freely\n(GNU GPL license) or commercially (with no GPL restrictions).",IDC_STATIC,69,122,200,18,NOT WS_GROUP
-    DEFPUSHBUTTON   "ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒÑÑ",IDOK,209,17,60,14,WS_GROUP
-    PUSHBUTTON      "&ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸...",IDC_BOPTIONS,209,36,60,14
-    PUSHBUTTON      "&Ð ÐµÐ¶Ð¸Ð¼ Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ",IDC_LISTENING,206,74,63,14
-    PUSHBUTTON      "&Ð˜Ð½Ñ„Ð¾ Ð¾ Ð²ÐµÑ€ÑÐ¸Ð¸...",IDC_BABOUT,69,144,62,14
-    PUSHBUTTON      "Ð›Ð¸Ñ†ÐµÐ½Ð·Ð¸Ñ",IDC_ORDER_SUPPORT_BUTTON,139,144,60,14
-    PUSHBUTTON      "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ...",IDC_BCONFIGURATION,209,144,60,14
+    DEFPUSHBUTTON   "Ïîäêëþ÷èòüñÿ",IDOK,209,17,60,14,WS_GROUP
+    PUSHBUTTON      "&Íàñòðîéêè...",IDC_BOPTIONS,209,36,60,14
+    PUSHBUTTON      "&Ðåæèì îæèäàíèÿ",IDC_LISTENING,206,74,63,14
+    PUSHBUTTON      "&Èíôî î âåðñèè...",IDC_BABOUT,69,144,62,14
+    PUSHBUTTON      "Ëèöåíçèÿ",IDC_ORDER_SUPPORT_BUTTON,139,144,60,14
+    PUSHBUTTON      "Íàñòðîèòü...",IDC_BCONFIGURATION,209,144,60,14
 END
 
 IDD_OPTIONS DIALOGEX 0, 0, 303, 262
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ"
+CAPTION "KonturVNC - Íàñòðîéêè ïîäêëþ÷åíèÿ"
 FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
 BEGIN
-    GROUPBOX        "Ð¤Ð¾Ñ€Ð¼Ð°Ñ‚ Ð¸ ÐºÐ¾Ð´Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ",IDC_STATIC,7,7,140,147,WS_GROUP
+    GROUPBOX        "Ôîðìàò è êîäèðîâàíèå",IDC_STATIC,7,7,140,147,WS_GROUP
     LTEXT           "Preferred encoding:",IDC_STATIC,16,20,66,10
     COMBOBOX        IDC_CUSEENC,91,18,47,44,CBS_DROPDOWNLIST | CBS_HASSTRINGS | WS_TABSTOP
-    CONTROL         "256 Ñ†Ð²ÐµÑ‚Ð¾Ð² (Ð¼ÐµÐ½ÑŒÑˆÐµ Ñ‚Ñ€Ð°Ñ„Ð¸ÐºÐ°)",IDC_CEIGHTBIT,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,36,122,10
-    CONTROL         "Ð—Ð°Ð´Ð°Ñ‚ÑŒ ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ ÑÐ¶Ð°Ñ‚Ð¸Ñ:",IDC_CCOMPRLVL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,50,122,10
-    RTEXT           "Ð±Ñ‹ÑÑ‚Ñ€.",IDC_SFAST,11,71,23,10
+    CONTROL         "256 öâåòîâ (ìåíüøå òðàôèêà)",IDC_CEIGHTBIT,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,36,122,10
+    CONTROL         "Çàäàòü óðîâåíü ñæàòèÿ:",IDC_CCOMPRLVL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,50,122,10
+    RTEXT           "áûñòð.",IDC_SFAST,11,71,23,10
     CONTROL         "",IDC_SCOMP,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,34,62,82,19
-    LTEXT           "ÑÑƒÐ¿ÐµÑ€",IDC_SBEST,116,71,22,10,NOT WS_GROUP
-    RTEXT           "ÑƒÑ€Ð¾Ð²ÐµÐ½ÑŒ:",IDC_STQUALITY,34,81,45,10,NOT WS_GROUP
+    LTEXT           "ñóïåð",IDC_SBEST,116,71,22,10,NOT WS_GROUP
+    RTEXT           "óðîâåíü:",IDC_STQUALITY,34,81,45,10,NOT WS_GROUP
     LTEXT           "6",IDC_SQUALITY,82,81,8,10,NOT WS_GROUP
-    CONTROL         "Ð Ð°Ð·Ñ€ÐµÑˆÐ¸Ñ‚ÑŒ JPEG, ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ð¾:",IDC_CJPEG,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,94,122,10
-    RTEXT           "Ð¿Ð»Ð¾Ñ…Ð¾",IDC_SPOOR,11,115,23,10
+    CONTROL         "Ðàçðåøèòü JPEG, êà÷åñòâî:",IDC_CJPEG,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,94,122,10
+    RTEXT           "ïëîõî",IDC_SPOOR,11,115,23,10
     CONTROL         "",IDC_SJPEG,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,34,106,82,19
-    LTEXT           "ÑÑƒÐ¿ÐµÑ€",IDC_SBEST2,116,115,22,10,NOT WS_GROUP
-    RTEXT           "ÐºÐ°Ñ‡ÐµÑÑ‚Ð²Ð¾:",IDC_STQUALITY2,34,125,45,10,NOT WS_GROUP
+    LTEXT           "ñóïåð",IDC_SBEST2,116,115,22,10,NOT WS_GROUP
+    RTEXT           "êà÷åñòâî:",IDC_STQUALITY2,34,125,45,10,NOT WS_GROUP
     LTEXT           "6",IDC_SQUALITY2,82,125,8,10,NOT WS_GROUP
-    CONTROL         "Ð Ð°Ð·Ñ€ÐµÑˆÐ¸Ñ‚ÑŒ ÐºÐ¾Ð¿Ð¸Ñ€.Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð».",IDC_CCOPYRECT,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,138,122,10
-    GROUPBOX        "ÐžÐ³Ñ€Ð°Ð½Ð¸Ñ‡ÐµÐ½Ð¸Ñ",IDC_STATIC,7,159,140,43,WS_GROUP
-    CONTROL         "Ð¢Ð¾Ð»ÑŒÐºÐ¾ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ (Ð±ÐµÐ· ÑƒÐ¿Ñ€Ð°Ð²Ð».)",IDC_CVIEWONLY,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,171,122,10
-    CONTROL         "Ð—Ð°Ð¿Ñ€ÐµÑ‚Ð¸Ñ‚ÑŒ Ð±ÑƒÑ„ÐµÑ€ Ð¾Ð±Ð¼ÐµÐ½Ð°",IDC_CDISCLIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,185,122,10
-    GROUPBOX        "ÐžÑ‚Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ",IDC_STATIC,156,7,140,58,WS_GROUP
-    LTEXT           "ÐœÐ°ÑÑˆÑ‚Ð°Ð±:",IDC_STATIC,164,20,34,10,NOT WS_GROUP
+    CONTROL         "Ðàçðåøèòü êîïèð.ïðÿìîóãîë.",IDC_CCOPYRECT,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,138,122,10
+    GROUPBOX        "Îãðàíè÷åíèÿ",IDC_STATIC,7,159,140,43,WS_GROUP
+    CONTROL         "Òîëüêî ïðîñìîòð (áåç óïðàâë.)",IDC_CVIEWONLY,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,171,122,10
+    CONTROL         "Çàïðåòèòü áóôåð îáìåíà",IDC_CDISCLIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,185,122,10
+    GROUPBOX        "Îòîáðàæåíèå",IDC_STATIC,156,7,140,58,WS_GROUP
+    LTEXT           "Ìàñøòàá:",IDC_STATIC,164,20,34,10,NOT WS_GROUP
     COMBOBOX        IDC_CSCALE,202,18,38,46,CBS_DROPDOWN | CBS_HASSTRINGS | WS_TABSTOP
     LTEXT           "%",IDC_STATIC,245,20,8,10,NOT WS_GROUP
-    CONTROL         "ÐŸÐ¾Ð»Ð½Ð¾ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼",IDC_CFULLSCR,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,164,36,124,10
-    CONTROL         "Ð’Ð¾ÑÑÑ‚. Ð¿Ñ€Ð¸ ÑÐ¾Ð±Ñ‹Ñ‚Ð¸ÑÑ… Ð·Ð²Ð¾Ð½ÐºÐ°",IDC_CDEICONFY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,50,124,10
-    GROUPBOX        "ÐœÑ‹ÑˆÑŒ",IDC_STATIC,156,69,140,27,WS_GROUP
-    CONTROL         "ÐŸÐ¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¿Ñ€Ð°Ð²ÑƒÑŽ Ð¸ ÑÑ€ÐµÐ´Ð½ÑŽÑŽ ÐºÐ½.",IDC_CSWAPMOUSE,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,163,80,124,10
-    GROUPBOX        "ÐšÑƒÑ€ÑÐ¾Ñ€ Ð¼Ñ‹ÑˆÐ¸",IDC_STATIC,156,100,140,54,WS_GROUP
-    CONTROL         "ÐŸÐ¾ÐºÐ°Ð·. ÑƒÐ´Ð°Ð». ÐºÑƒÑ€ÑÐ¾Ñ€ Ð»Ð¾ÐºÐ°Ð»ÑŒÐ½Ð¾",IDC_RTRACK,"Button",BS_AUTORADIOBUTTON | WS_GROUP,164,112,124,10
-    CONTROL         "ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð¾Ð±Ð° ÐºÑƒÑ€ÑÐ¾Ñ€Ð°",IDC_RCURSOR,"Button",BS_AUTORADIOBUTTON,164,125,124,10
-    CONTROL         "ÐÐµ Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ ÑƒÐ´Ð°Ð». ÐºÑƒÑ€ÑÐ¾Ñ€",IDC_RNCURSOR,"Button",BS_AUTORADIOBUTTON,164,138,124,10
-    GROUPBOX        "Ð¤Ð¾Ñ€Ð¼Ð° Ð»Ð¾ÐºÐ°Ð»ÑŒÐ½Ð¾Ð³Ð¾ ÐºÑƒÑ€ÑÐ¾Ñ€Ð° Ð¼Ñ‹ÑˆÐ¸",IDC_STATIC,156,159,140,43,WS_GROUP
-    CONTROL         "ÐÐ¾Ñ€Ð¼. Ñ‚Ð¾Ñ‡ÐºÐ°",IDC_RDOT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,164,172,54,10
-    CONTROL         "ÐœÐ°Ð». Ñ‚Ð¾Ñ‡ÐºÐ°",IDC_RSMALLDOT,"Button",BS_AUTORADIOBUTTON,164,185,54,10
-    CONTROL         "Ð¡Ñ‚Ñ€ÐµÐ»ÐºÐ°",IDC_RARROW,"Button",BS_AUTORADIOBUTTON,226,172,62,10
-    CONTROL         "ÐÐµ Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ",IDC_RNLOCAL,"Button",BS_AUTORADIOBUTTON,226,185,62,10
-    GROUPBOX        "ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ",IDC_STATIC,7,206,289,29,WS_GROUP
-    CONTROL         "Ð—Ð°Ð¿Ñ€Ð¾Ñ Ð¾Ð±Ñ‰ÐµÐ¹ ÑÐµÑÑÐ¸Ð¸ (Ð½Ðµ Ð²Ñ‹ÐºÐ¸Ð´Ñ‹Ð²Ð°Ñ‚ÑŒ ÑƒÐ¶Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð½Ñ‹Ñ… ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð¾Ð²)",IDC_CSHAREDSES,
+    CONTROL         "Ïîëíîýêðàííûé ðåæèì",IDC_CFULLSCR,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,164,36,124,10
+    CONTROL         "Âîññò. ïðè ñîáûòèÿõ çâîíêà",IDC_CDEICONFY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,164,50,124,10
+    GROUPBOX        "Ìûøü",IDC_STATIC,156,69,140,27,WS_GROUP
+    CONTROL         "Ïîìåíÿòü ïðàâóþ è ñðåäíþþ êí.",IDC_CSWAPMOUSE,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,163,80,124,10
+    GROUPBOX        "Êóðñîð ìûøè",IDC_STATIC,156,100,140,54,WS_GROUP
+    CONTROL         "Ïîêàç. óäàë. êóðñîð ëîêàëüíî",IDC_RTRACK,"Button",BS_AUTORADIOBUTTON | WS_GROUP,164,112,124,10
+    CONTROL         "Ïîêàçàòü îáà êóðñîðà",IDC_RCURSOR,"Button",BS_AUTORADIOBUTTON,164,125,124,10
+    CONTROL         "Íå ïîêàçûâàòü óäàë. êóðñîð",IDC_RNCURSOR,"Button",BS_AUTORADIOBUTTON,164,138,124,10
+    GROUPBOX        "Ôîðìà ëîêàëüíîãî êóðñîðà ìûøè",IDC_STATIC,156,159,140,43,WS_GROUP
+    CONTROL         "Íîðì. òî÷êà",IDC_RDOT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,164,172,54,10
+    CONTROL         "Ìàë. òî÷êà",IDC_RSMALLDOT,"Button",BS_AUTORADIOBUTTON,164,185,54,10
+    CONTROL         "Ñòðåëêà",IDC_RARROW,"Button",BS_AUTORADIOBUTTON,226,172,62,10
+    CONTROL         "Íå ïîêàçûâàòü",IDC_RNLOCAL,"Button",BS_AUTORADIOBUTTON,226,185,62,10
+    GROUPBOX        "Ïîäêëþ÷åíèå",IDC_STATIC,7,206,289,29,WS_GROUP
+    CONTROL         "Çàïðîñ îáùåé ñåññèè (íå âûêèäûâàòü óæå ïîäêëþ÷åííûõ êëèåíòîâ)",IDC_CSHAREDSES,
                     "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,16,218,272,10
-    DEFPUSHBUTTON   "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ",IDOK,97,241,50,14,WS_GROUP
-    PUSHBUTTON      "ÐžÑ‚Ð¼ÐµÐ½Ð°",IDCANCEL,156,241,50,14
+    DEFPUSHBUTTON   "Ñîõðàíèòü",IDOK,97,241,50,14,WS_GROUP
+    PUSHBUTTON      "Îòìåíà",IDCANCEL,156,241,50,14
 END
 
 IDD_FS_WARNING DIALOGEX 0, 0, 243, 84
 STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "KonturVNC - Ð’Ñ…Ð¾Ð´ Ð² Ð¿Ð¾Ð»Ð½Ð¾ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼"
+CAPTION "KonturVNC - Âõîä â ïîëíîýêðàííûé ðåæèì"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "ÐžÐš",IDOK,81,63,50,14
-    LTEXT           "Ð”Ð»Ñ Ð²Ñ‹Ñ…Ð¾Ð´Ð° Ð¸Ð· Ð¿Ð¾Ð»Ð½Ð¾ÑÐºÑ€Ð°Ð½Ð½Ð¾Ð³Ð¾ Ñ€ÐµÐ¶Ð¸Ð¼Ð° Ð½Ð°Ð¶Ð¼Ð¸Ñ‚Ðµ Cltr+Alt+Shift+F.",IDC_STATIC,7,7,229,13,NOT WS_GROUP
-    CONTROL         "Ð‘Ð¾Ð»ÑŒÑˆÐµ Ð½Ðµ Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ ÑÑ‚Ð¾ ÑÐ¾Ð¾Ð±Ñ‰ÐµÐ½Ð¸Ðµ",IDC_CWARN_FS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,43,44,155,10
-    CTEXT           "Ð›Ð¸Ð±Ð¾ Ð½Ð°Ð¶Ð¼Ð¸Ñ‚Ðµ Ctrl+Esc Ð¸ Ð·Ð°Ñ‚ÐµÐ¼ Ð¿Ñ€Ð°Ð²Ð¾Ð¹ ÐºÐ½Ð¾Ð¿ÐºÐ¾Ð¹ Ð¿Ð¾ Ð¸ÐºÐ¾Ð½ÐºÐµ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ Ð² Ñ‚Ñ€ÐµÐµ (Ñ€ÑÐ´Ð¾Ð¼ Ñ Ñ‡Ð°ÑÐ°Ð¼Ð¸), Ñ‡Ñ‚Ð¾Ð±Ñ‹ ÑƒÐ²Ð¸Ð´ÐµÑ‚ÑŒ Ð¼ÐµÐ½ÑŽ.",IDC_STATIC,7,21,229,17,NOT WS_GROUP
+    DEFPUSHBUTTON   "ÎÊ",IDOK,81,63,50,14
+    LTEXT           "Äëÿ âûõîäà èç ïîëíîýêðàííîãî ðåæèìà íàæìèòå Cltr+Alt+Shift+F.",IDC_STATIC,7,7,229,13,NOT WS_GROUP
+    CONTROL         "Áîëüøå íå ïîêàçûâàòü ýòî ñîîáùåíèå",IDC_CWARN_FS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,43,44,155,10
+    CTEXT           "Ëèáî íàæìèòå Ctrl+Esc è çàòåì ïðàâîé êíîïêîé ïî èêîíêå ïðèëîæåíèÿ â òðåå (ðÿäîì ñ ÷àñàìè), ÷òîáû óâèäåòü ìåíþ.",IDC_STATIC,7,21,229,17,NOT WS_GROUP
 END
 
 IDD_CLIENTTEXTCHAT_DLG DIALOGEX 0, 0, 308, 177
 STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_THICKFRAME
-CAPTION "KonturVNC - ÐžÐ±Ñ‰ÐµÐ½Ð¸Ðµ Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¼ Ð¸ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€Ð°Ð¼Ð¸"
+CAPTION "KonturVNC - Îáùåíèå ñ ïîëüçîâàòåëåì è îïåðàòîðàìè"
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     EDITTEXT        IDC_INPUTAREA_EDIT,4,135,255,39,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
-    PUSHBUTTON      "ÐžÑ‚Ð¿Ñ€.",IDC_SEND_B,264,135,39,16,BS_MULTILINE
-    PUSHBUTTON      "Ð¡Ð²ÐµÑ€Ð½ÑƒÑ‚ÑŒ",IDC_HIDE_B,264,153,39,11
-    PUSHBUTTON      "Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ",IDCANCEL,264,164,39,11
+    PUSHBUTTON      "Îòïð.",IDC_SEND_B,264,135,39,16,BS_MULTILINE
+    PUSHBUTTON      "Ñâåðíóòü",IDC_HIDE_B,264,153,39,11
+    PUSHBUTTON      "Çàêðûòü",IDCANCEL,264,164,39,11
     EDITTEXT        IDC_CHATAREA_EDIT,4,4,300,122,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
     PUSHBUTTON      "",IDOK,303,0,6,6,NOT WS_VISIBLE
     LTEXT           "",IDC_STATIC_SPLIT,5,127,298,8,SS_NOTIFY
@@ -520,85 +520,85 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_TB_NEWCONNECTION    "ÐÐ¾Ð²Ð¾Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ..."
-    IDS_TB_SAVESESSION      "Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ ÑÐµÑÑÐ¸ÑŽ Ð² Ñ„Ð°Ð¹Ð» .vnc..."
-    IDS_TB_CONNOPTIONS      "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¿&Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ...\tCtrl+Alt+Shift+O"
-    IDS_TB_CONNINFO         "&Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¸...\tCtrl+Alt+Shift+I"
-    IDS_TB_PAUSE            "ÐŸÐ°ÑƒÐ·Ð°"
-    IDS_TB_REFRESH          "Ð—Ð°Ð¿Ñ€Ð¾Ñ &Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ ÑÐºÑ€Ð°Ð½Ð°\tCtrl+Alt+Shift+R"
-    IDS_TB_CTRLALTDEL       "ÐžÑ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ctrl+Alt+&Del\tCtrl+Alt+Shift+Del"
-    IDS_TB_CTRLESC          "ÐžÑ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ctrl-Esc"
+    IDS_TB_NEWCONNECTION    "Íîâîå ïîäêëþ÷åíèå..."
+    IDS_TB_SAVESESSION      "Ñîõðàíèòü ñåññèþ â ôàéë .vnc..."
+    IDS_TB_CONNOPTIONS      "Íàñòðîéêè ï&îäêëþ÷åíèÿ...\tCtrl+Alt+Shift+O"
+    IDS_TB_CONNINFO         "&Èíôîðìàöèÿ î ïîäêëþ÷åíèè...\tCtrl+Alt+Shift+I"
+    IDS_TB_PAUSE            "Ïàóçà"
+    IDS_TB_REFRESH          "Çàïðîñ &îáíîâëåíèÿ ýêðàíà\tCtrl+Alt+Shift+R"
+    IDS_TB_CTRLALTDEL       "Îòïðàâèòü Ctrl+Alt+&Del\tCtrl+Alt+Shift+Del"
+    IDS_TB_CTRLESC          "Îòïðàâèòü Ctrl-Esc"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_TB_CTRL             "Ð—Ð°Ð¶Ð°Ñ‚ÑŒ Ctrl"
-    IDS_TB_ALT              "Ð—Ð°Ð¶Ð°Ñ‚ÑŒ Alt"
-    IDS_TB_TRANSFER         "ÐŸÐµÑ€ÐµÐ´Ð°Ñ‡Ð° &Ñ„Ð°Ð¹Ð»Ð¾Ð²...\tCtrl+Alt+Shift+E"
-    IDS_TB_SCALEIN          "Ð£Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ñ‚ÑŒ"
-    IDS_TB_SCALEOUT         "Ð£Ð¼ÐµÐ½ÑŒÑˆÐ¸Ñ‚ÑŒ"
-    IDS_TB_SCALE100         "ÐœÐ°ÑÑˆÑ‚Ð°Ð± 100%"
-    IDS_TB_SCALEAUTO        "ÐœÐ°ÑÑˆÑ‚Ð°Ð± ÐÐ²Ñ‚Ð¾"
-    IDS_TB_FULLSCREEN       "ÐŸÐ¾Ð»Ð½Ð¾&ÑÐºÑ€Ð°Ð½Ð½Ñ‹Ð¹ Ñ€ÐµÐ¶Ð¸Ð¼\tCtrl+Alt+Shift+F"
-    IDS_TB_REC              "&Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ ÑÐµÑÑÐ¸ÑŽ"
-    IDS_TB_DISP             "ÐŸÐµÑ€ÐµÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒ &Ð¼Ð¾Ð½Ð¸Ñ‚Ð¾Ñ€"
-    IDS_TB_REBOOT           "Ð£Ð´Ð°Ð»ÐµÐ½Ð½Ð°Ñ Ð¿Ðµ&Ñ€ÐµÐ·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ°"
-    IDS_TB_CP               "ÐŸÐ°Ð½ÐµÐ»ÑŒ &ÑƒÐ¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ"
-    IDS_TB_SCREENSHOT       "Ð¡Ð´ÐµÐ»Ð°Ñ‚ÑŒ &ÑÐºÑ€Ð¸Ð½ÑˆÐ¾Ñ‚"
-    IDS_TB_CHAT             "ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ &Ñ‡Ð°Ñ‚"
+    IDS_TB_CTRL             "Çàæàòü Ctrl"
+    IDS_TB_ALT              "Çàæàòü Alt"
+    IDS_TB_TRANSFER         "Ïåðåäà÷à &ôàéëîâ...\tCtrl+Alt+Shift+E"
+    IDS_TB_SCALEIN          "Óâåëè÷èòü"
+    IDS_TB_SCALEOUT         "Óìåíüøèòü"
+    IDS_TB_SCALE100         "Ìàñøòàá 100%"
+    IDS_TB_SCALEAUTO        "Ìàñøòàá Àâòî"
+    IDS_TB_FULLSCREEN       "Ïîëíî&ýêðàííûé ðåæèì\tCtrl+Alt+Shift+F"
+    IDS_TB_REC              "&Çàïèñàòü ñåññèþ"
+    IDS_TB_DISP             "Ïåðåêëþ÷èòü &ìîíèòîð"
+    IDS_TB_REBOOT           "Óäàëåííàÿ ïå&ðåçàãðóçêà"
+    IDS_TB_CP               "Ïàíåëü &óïðàâëåíèÿ"
+    IDS_TB_SCREENSHOT       "Ñäåëàòü &ñêðèíøîò"
+    IDS_TB_CHAT             "Ïîêàçàòü &÷àò"
     IDS_TB_P2P              "P2P"
-    IDS_TB_CONFIGURATION    "&ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸..."
+    IDS_TB_CONFIGURATION    "&Íàñòðîéêè..."
 END
 
 STRINGTABLE
 BEGIN
-    IDS_LISTENING_OPTIONS   "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð²Ñ…Ð¾Ð´ÑÑ‰Ð¸Ñ… Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹..."
-    IDS_CONFIG              "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸..."
-    IDS_CLOSE               "Ð—Ð°Ð¿Ñ€ÐµÑ‚Ð¸Ñ‚ÑŒ Ð²Ñ…Ð¾Ð´ÑÑ‰Ð¸Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ"
+    IDS_LISTENING_OPTIONS   "Íàñòðîéêè âõîäÿùèõ ïîäêëþ÷åíèé..."
+    IDS_CONFIG              "Íàñòðîéêè..."
+    IDS_CLOSE               "Çàïðåòèòü âõîäÿùèå ïîäêëþ÷åíèÿ"
     IDS_URL_LICENSING_FVA   "http://www.tightvnc.com/licensing/?f=va"
     IDS_URL_PRODUCT_FVA     "http://www.tightvnc.com/?f=va"
-    IDS_CMDLINE_HELP        "KonturVNC Viewer Ð¿Ð¾Ð·Ð²Ð¾Ð»ÑÐµÑ‚ Ð²Ð°Ð¼ Ð¿Ñ€Ð¾ÑÐ¼Ð°Ñ‚Ñ€Ð¸Ð²Ð°Ñ‚ÑŒ Ð¸ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÑÑ‚ÑŒ Ð´Ð¸ÑÑ‚Ð°Ð½Ñ†Ð¸Ð¾Ð½Ð½Ñ‹Ð¼Ð¸ ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€Ð°Ð¼Ð¸\r\nÐ³Ð´Ðµ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½ ÑÐµÑ€Ð²ÐµÑ€ KonturVNC.\r\n\r\nÐžÐ¿Ñ†Ð¸Ð¸ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸.\r\n\r\nÐ—Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ viewer:\r\n  kvnviewer\r\n\r\nÐ—Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ viewer Ð¸ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒÑÑ Ðº ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€Ñƒ:\r\n  kvnviewer hostname::port [OPTIONS]\r\n  kvnviewer -host=hostname [OPTIONS]\r\n  kvnviewer -optionsfile=FILENAME [OPTIONS]\r\n\r\nÐ—Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ viewer Ð² Ñ€ÐµÐ¶Ð¸Ð¼Ðµ Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ Ð²Ñ…Ð¾Ð´ÑÑ‰Ð¸Ñ… Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹:\r\n  kvnviewer -listen\r\n\r\nÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ ÑÐ¿Ñ€Ð°Ð²ÐºÑƒ Ð¿Ð¾ Ð¾Ð¿Ñ†Ð¸ÑÐ¼ ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸:\r\n  kvnviewer -help\r\n\r\nÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÑŽÑ‚ÑÑ ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ðµ OPTIONS (Ð²ÑÐµ Ð¾Ð½Ð¸ Ð´Ð¾Ð»Ð¶Ð½Ñ‹ Ð±Ñ‹Ñ‚ÑŒ Ð² Ñ„Ð¾Ñ€Ð¼Ðµ\r\n -option=VALUE , Ð³Ð´Ðµ Ð¸Ð¼Ñ Ð¾Ð¿Ñ†Ð¸Ð¸ Ð¸ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¾Ð½ÐµÐ·Ð°Ð²Ð¸ÑÐ¸Ð¼Ñ‹Ðµ):\r\n\r\n  -optionsfile\tÐ£ÐºÐ°Ð·Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð» Ð±ÑƒÐ´ÐµÑ‚ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ð½ Ð¸ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‰ÐµÐµ\r\n\t\tÐ¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ Ð±ÑƒÐ´ÐµÑ‚ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¾ (Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹Ñ‚Ðµ Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ ÐšÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ð¹\r\n\t\tÐ´Ð»Ñ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ñ‚Ð°ÐºÐ¸Ñ… Ñ„Ð°Ð¹Ð»Ð¾Ð²).\r\n\r\n  -host\t\tÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒÑÑ Ðº ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð¾Ð¼Ñƒ ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€Ñƒ.\r\n\r\n  -port\t\tÐŸÐ¾Ñ€Ñ‚ Ð´Ð¸ÑÑ‚Ð°Ð½Ñ†Ð¸Ð¾Ð½Ð½Ð¾Ð³Ð¾ ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€Ð°.\r\n\r\n  -password\tÐŸÐ°Ñ€Ð¾Ð»ÑŒ Ð´Ð»Ñ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ Ðº ÐºÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€Ñƒ.\r\n"
+    IDS_CMDLINE_HELP        "KonturVNC Viewer ïîçâîëÿåò âàì ïðîñìàòðèâàòü è óïðàâëÿòü äèñòàíöèîííûìè êîìïüþòåðàìè\r\nãäå çàïóùåí ñåðâåð KonturVNC.\r\n\r\nÎïöèè êîìàíäíîé ñòðîêè.\r\n\r\nÇàïóñòèòü viewer:\r\n  kvnviewer\r\n\r\nÇàïóñòèòü viewer è ïîäêëþ÷èòüñÿ ê êîìïüþòåðó:\r\n  kvnviewer hostname::port [OPTIONS]\r\n  kvnviewer -host=hostname [OPTIONS]\r\n  kvnviewer -optionsfile=FILENAME [OPTIONS]\r\n\r\nÇàïóñòèòü viewer â ðåæèìå îæèäàíèÿ âõîäÿùèõ ïîäêëþ÷åíèé:\r\n  kvnviewer -listen\r\n\r\nÏîêàçàòü ñïðàâêó ïî îïöèÿì êîìàíäíîé ñòðîêè:\r\n  kvnviewer -help\r\n\r\nÏîääåðæèâàþòñÿ ñëåäóþùèå OPTIONS (âñå îíè äîëæíû áûòü â ôîðìå\r\n -option=VALUE , ãäå èìÿ îïöèè è çíà÷åíèå ðåãèñòðîíåçàâèñèìûå):\r\n\r\n  -optionsfile\tÓêàçàííûé ôàéë áóäåò ïðî÷èòàí è ñîîòâåòñòâóþùåå\r\n\t\tïîäêëþ÷åíèå áóäåò óñòàíîâëåíî (èñïîëüçóéòå Ñîõðàíåíèå Êîíôèãóðàöèé\r\n\t\täëÿ ñîçäàíèÿ òàêèõ ôàéëîâ).\r\n\r\n  -host\t\tÏîäêëþ÷èòüñÿ ê óêàçàííîìó êîìïüþòåðó.\r\n\r\n  -port\t\tÏîðò äèñòàíöèîííîãî êîìïüþòåðà.\r\n\r\n  -password\tÏàðîëü äëÿ ïîäêëþ÷åíèÿ ê êîìïüþòåðó.\r\n"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_FAILED_TO_OPEN_URL_FORMAT 
-                            "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð’ÐµÐ±-Ñ€ÐµÑÑƒÑ€Ñ Ð¿Ð¾ Ð¿Ñ€Ð¸Ñ‡Ð¸Ð½Ðµ:\n%s"
-    IDS_TB_TOOLBAR          "ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ &Ð¿Ð°Ð½ÐµÐ»ÑŒ\tCtrl+Alt+Shift+T"
+    IDS_FAILED_TO_OPEN_URL_FORMAT
+                            "Íå óäàëîñü îòêðûòü Âåá-ðåñóðñ ïî ïðè÷èíå:\n%s"
+    IDS_TB_TOOLBAR          "Ïîêàçàòü &ïàíåëü\tCtrl+Alt+Shift+T"
     IDS_MBC_TVNVIEWER       "KonturVNC Viewer"
-    IDS_ERROR_IN_PROTOCOL   "ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¾Ñ‚Ð¾ÐºÐ¾Ð»Ð°. ÐŸÐ¾Ð¶Ð°Ð»ÑƒÐ¹ÑÑ‚Ð° Ð¿ÐµÑ€ÐµÐ¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÐµÑÑŒ Ðº ÑÐµÑ€Ð²ÐµÑ€Ñƒ."
-    IDS_DISCONNECT          "Ð¡Ð¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ñ ÑÐµÑ€Ð²ÐµÑ€Ð¾Ð¼ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¾."
-    IDS_PRODUCT_VERSION_FORMAT "Ð’ÐµÑ€ÑÐ¸Ñ %s (ÑÐ±Ð¾Ñ€ÐºÐ° %s)"
-    IDS_SAVE_SESSION_FILTER_VNC_FILES "VNC-Ñ„Ð°Ð¹Ð»Ñ‹ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº (*.vnc)"
-    IDS_SAVE_SESSION_FILTER_ALL_FILES "Ð’ÑÐµ Ñ„Ð°Ð¹Ð»Ñ‹ (*.*)"
-    IDS_SECURITY_WARNING_CAPTION "ÐŸÑ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ Ð±ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾ÑÑ‚Ð¸"
-    IDS_LICENSING_INFO      "Ð›Ð¸Ñ†ÐµÐ½Ð·Ð¸Ñ: GNU General Public License Ð²ÐµÑ€ÑÐ¸Ñ 2"
-    IDS_QUESTION_SAVE_PASSWORD 
-                            "Ð’Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ Ð² ÑÑ‚Ð¾Ð¼ Ñ„Ð°Ð¹Ð»Ðµ?\r\nÐ•ÑÐ»Ð¸ Ð²Ñ‹Ð±Ñ€Ð°Ñ‚ÑŒ ""Ð”Ð°"", Ð»ÑŽÐ±Ð¾Ð¹ Ñ‡ÐµÐ»Ð¾Ð²ÐµÐº, Ð¸Ð¼ÐµÑŽÑ‰Ð¸Ð¹ Ð´Ð¾ÑÑ‚ÑƒÐ¿ Ðº ÑÑ‚Ð¾Ð¼Ñƒ Ñ„Ð°Ð¹Ð»Ñƒ, ÑÐ¼Ð¾Ð¶ÐµÑ‚ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒÑÑ Ð¸ Ð´Ð°Ð¶Ðµ (Ð¿Ð¾Ñ‚ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾) ÑƒÐ·Ð½Ð°Ñ‚ÑŒ ÑÐ°Ð¼ Ð¿Ð°Ñ€Ð¾Ð»ÑŒ."
-    IDS_CONNECTION_INFO_CAPTION "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¸"
-    IDS_ABOUT_VIEWER        "Ðž Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ðµ KonturVNC..."
-    IDS_CONNECTION_INFO_FORMAT 
-                            "ÐšÐ¾Ð¼Ð¿ÑŒÑŽÑ‚ÐµÑ€: %s\nÐŸÐ°Ñ€Ð¾Ð»ÑŒ: %s\nÐœÐ¾Ð½Ð¸Ñ‚Ð¾Ñ€: %s\nÐŸÑ€Ð¾Ñ‚Ð¾ÐºÐ¾Ð»: %s\nÐ Ð°Ð·Ñ€ÐµÑˆÐµÐ½Ð¸Ðµ: %ix%i %i Ð±Ð¸Ñ‚\nÐ Ð°ÑÐºÐ»Ð°Ð´ÐºÐ° ÐºÐ»Ð°Ð²Ð¸Ð°Ñ‚ÑƒÑ€Ñ‹: %s"
+    IDS_ERROR_IN_PROTOCOL   "Îøèáêà ïðîòîêîëà. Ïîæàëóéñòà ïåðåïîäêëþ÷èòåñü ê ñåðâåðó."
+    IDS_DISCONNECT          "Ñîåäèíåíèå ñ ñåðâåðîì çàêðûòî."
+    IDS_PRODUCT_VERSION_FORMAT "Âåðñèÿ %s (ñáîðêà %s)"
+    IDS_SAVE_SESSION_FILTER_VNC_FILES "VNC-ôàéëû íàñòðîåê (*.vnc)"
+    IDS_SAVE_SESSION_FILTER_ALL_FILES "Âñå ôàéëû (*.*)"
+    IDS_SECURITY_WARNING_CAPTION "Ïðåäóïðåæäåíèå áåçîïàñíîñòè"
+    IDS_LICENSING_INFO      "Ëèöåíçèÿ: GNU General Public License âåðñèÿ 2"
+    IDS_QUESTION_SAVE_PASSWORD
+                            "Âû õîòèòå ñîõðàíèòü ïàðîëü â ýòîì ôàéëå?\r\nÅñëè âûáðàòü ""Äà"", ëþáîé ÷åëîâåê, èìåþùèé äîñòóï ê ýòîìó ôàéëó, ñìîæåò ïîäêëþ÷èòüñÿ è äàæå (ïîòåíöèàëüíî) óçíàòü ñàì ïàðîëü."
+    IDS_CONNECTION_INFO_CAPTION "Èíôîðìàöèÿ î ïîäêëþ÷åíèè"
+    IDS_ABOUT_VIEWER        "Î ïðîãðàììå KonturVNC..."
+    IDS_CONNECTION_INFO_FORMAT
+                            "Êîìïüþòåð: %s\nÏàðîëü: %s\nÌîíèòîð: %s\nÏðîòîêîë: %s\nÐàçðåøåíèå: %ix%i %i áèò\nÐàñêëàäêà êëàâèàòóðû: %s"
     IDS_URL_LICENSING_FVC   "http://www.tightvnc.com/licensing/?f=vc"
-    IDS_UNKNOWN_ERROR_IN_VIEWER 
-                            "ÐžÑˆÐ¸Ð±ÐºÐ° Ð² KonturVNC Viewer. ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð±ÑƒÐ´ÐµÑ‚ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð°."
+    IDS_UNKNOWN_ERROR_IN_VIEWER
+                            "Îøèáêà â KonturVNC Viewer. Ïðîãðàììà áóäåò çàêðûòà."
 END
 
 STRINGTABLE
 BEGIN
-    IDS_CONFIGURATION_LISTEN_PORT "ÐŸÐ¾Ñ€Ñ‚ Ð´Ð»Ñ Ð²Ñ…Ð¾Ð´ÑÑ‰Ð¸Ñ… Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹"
-    IDS_CONFIGURATION_LOG_LEVEL "Ð£Ñ€Ð¾Ð²ÐµÐ½ÑŒ Ð»Ð¾Ð³Ð¾Ð²"
-    IDS_CONFIGURATION_HISTORY_LIMIT "Ð›Ð¸Ð¼Ð¸Ñ‚ Ð¸ÑÑ‚Ð¾Ñ€Ð¸Ð¸"
-    IDS_OPTIONS_SCALE       "ÐœÐ°ÑÑˆÑ‚Ð°Ð±"
-    IDS_CONFIGURATION_CAPTION "ÐšÐ¾Ð½Ñ„Ð¸Ð³ÑƒÑ€Ð°Ñ†Ð¸Ñ KonturVNC Viewer"
-    IDS_OPTIONS_CAPTION     "ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ñ"
-    IDS_ERROR_VALUE_FIELD_ONLY_NUMERIC 
-                            "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¿Ð¾Ð»Ðµ '%s' Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ñ‡Ð¸ÑÐ»Ð¾Ð¼."
-    IDS_ERROR_VALUE_FIELD_ONLY_POSITIVE_NUMERIC 
-                            "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð² Ð¿Ð¾Ð»Ðµ '%s' Ð´Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¼ Ñ‡Ð¸ÑÐ»Ð¾Ð¼."
-    IDS_ERROR_START_LISTENING "Ð ÐµÐ¶Ð¸Ð¼ Ð¾Ð¶Ð¸Ð´Ð°Ð½Ð¸Ñ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ð¹ Ð¾Ñ‚ÐºÐ»ÑŽÑ‡ÐµÐ½."
-    IDS_ERROR_COMMAND_LINE  "ÐžÑˆÐ¸Ð±ÐºÐ° Ð² Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ñ… ÐºÐ¾Ð¼Ð°Ð½Ð´Ð½Ð¾Ð¹ ÑÑ‚Ñ€Ð¾ÐºÐ¸. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ð¾Ð¿Ñ†Ð¸ÑŽ ""-help"" Ð´Ð»Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð° ÑÐ¿Ñ€Ð°Ð²ÐºÐ¸."
-    IDS_ERROR_PARSE_OPTIONS_FILE "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð» Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº."
+    IDS_CONFIGURATION_LISTEN_PORT "Ïîðò äëÿ âõîäÿùèõ ïîäêëþ÷åíèé"
+    IDS_CONFIGURATION_LOG_LEVEL "Óðîâåíü ëîãîâ"
+    IDS_CONFIGURATION_HISTORY_LIMIT "Ëèìèò èñòîðèè"
+    IDS_OPTIONS_SCALE       "Ìàñøòàá"
+    IDS_CONFIGURATION_CAPTION "Êîíôèãóðàöèÿ KonturVNC Viewer"
+    IDS_OPTIONS_CAPTION     "Íàñòðîéêè ïîäêëþ÷åíèÿ"
+    IDS_ERROR_VALUE_FIELD_ONLY_NUMERIC
+                            "Çíà÷åíèå â ïîëå '%s' äîëæíî áûòü ÷èñëîì."
+    IDS_ERROR_VALUE_FIELD_ONLY_POSITIVE_NUMERIC
+                            "Çíà÷åíèå â ïîëå '%s' äîëæíî áûòü ïîëîæèòåëüíûì ÷èñëîì."
+    IDS_ERROR_START_LISTENING "Ðåæèì îæèäàíèÿ ïîäêëþ÷åíèé îòêëþ÷åí."
+    IDS_ERROR_COMMAND_LINE  "Îøèáêà â ïàðàìåòðàõ êîìàíäíîé ñòðîêè. Ïîïðîáóéòå îïöèþ ""-help"" äëÿ âûâîäà ñïðàâêè."
+    IDS_ERROR_PARSE_OPTIONS_FILE "Íå óäàëîñü ïðî÷èòàòü ôàéë íàñòðîåê."
 END
 
 #endif    // Russian (Russia) resources
@@ -617,18 +617,18 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
     "#include ""afxres.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
     "\r\n"
     "\0"
