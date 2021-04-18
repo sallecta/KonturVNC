@@ -144,7 +144,7 @@ void InputInjector::injectKeyEvent(BYTE vkCode, bool release, bool extended)
   }
 }
 
-void InputInjector::injectCharEvent(WCHAR ch, bool release) throw(SystemException)
+void InputInjector::injectCharEvent(WCHAR ch, bool release)
 {
   m_log->debug(_T("Try insert a char event: char = %d, release = %d"),
              (int)ch, (int)release);

@@ -38,7 +38,7 @@ SecurityDescriptor::~SecurityDescriptor()
 }
 
 void SecurityDescriptor::setRulesAsDacl(size_t count,
-                                        EXPLICIT_ACCESS *rules) throw(SystemException)
+                                        EXPLICIT_ACCESS *rules)
 {
   PACL acl = 0;
 
@@ -53,7 +53,7 @@ void SecurityDescriptor::setRulesAsDacl(size_t count,
   setUserDacl(acl);
 }
 
-void SecurityDescriptor::setUserDacl(ACL *acl) throw(SystemException)
+void SecurityDescriptor::setUserDacl(ACL *acl)
 {
   if (SetSecurityDescriptorDacl(&m_sd, TRUE, acl,  FALSE) == FALSE) {
     throw SystemException();

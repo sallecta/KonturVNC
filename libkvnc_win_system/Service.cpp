@@ -107,7 +107,7 @@ Service::~Service()
   Service::g_service = 0;
 }
 
-void Service::run() throw(Exception)
+void Service::run()
 {
   TCHAR name[1024];
 

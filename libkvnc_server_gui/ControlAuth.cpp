@@ -76,7 +76,7 @@ ControlAuth::~ControlAuth()
 {
 }
 
-void ControlAuth::authRfb() throw(IOException, ControlAuthException)
+void ControlAuth::authRfb()
 {
   UINT8 challenge[16];
   UINT8 response[16];

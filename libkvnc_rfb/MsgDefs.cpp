@@ -23,3 +23,4 @@
 //
 
 #include "MsgDefs.h"
+const UINT32 ClientMsgDefs::BEGIN_NEG = 12;

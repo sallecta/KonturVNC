@@ -35,7 +35,7 @@ UpdateRemoteConfigCommand::~UpdateRemoteConfigCommand()
 {
 }
 
-void UpdateRemoteConfigCommand::execute() throw(IOException, RemoteException)
+void UpdateRemoteConfigCommand::execute()
 {
   m_serverControl->setServerConfig(Configurator::getInstance()->getServerConfig());
 }

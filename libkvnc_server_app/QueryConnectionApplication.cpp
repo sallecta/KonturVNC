@@ -74,7 +74,7 @@ int QueryConnectionApplication::run()
 }
 
 int QueryConnectionApplication::execute
-(const TCHAR *peerAddr, bool acceptByDefault, DWORD timeOutSec) throw(Exception)
+(const TCHAR *peerAddr, bool acceptByDefault, DWORD timeOutSec)
 {
    // Prepare command for execution.
 

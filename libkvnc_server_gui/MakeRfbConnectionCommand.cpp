@@ -35,7 +35,7 @@ MakeRfbConnectionCommand::~MakeRfbConnectionCommand()
 {
 }
 
-void MakeRfbConnectionCommand::execute() throw(IOException, RemoteException)
+void MakeRfbConnectionCommand::execute()
 {
   m_proxy->makeOutgoingConnection(m_connectString.getString(), m_viewOnly);
 }

@@ -949,7 +949,7 @@ bool FileTransferRequestHandler::getDirectorySize(const TCHAR *pathname, UINT64 
   return true;
 }
 
-void FileTransferRequestHandler::checkAccess() throw(SystemException)
+void FileTransferRequestHandler::checkAccess()
 {
   try {
     if (!isFileTransferEnabled()) {

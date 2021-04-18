@@ -42,7 +42,7 @@ CurrentConsoleProcess::~CurrentConsoleProcess()
 }
 
 
-void CurrentConsoleProcess::start() throw(SystemException)
+void CurrentConsoleProcess::start()
 {
   cleanup();
 

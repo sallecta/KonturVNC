@@ -50,7 +50,7 @@ void Inflater::setUnpackedSize(size_t size)
   m_unpackedSize = size;
 }
 
-void Inflater::inflate() throw(ZLibException)
+void Inflater::inflate()
 {
   size_t avaliableOutput = m_unpackedSize + m_unpackedSize / 100 + 1024;
   unsigned long prevTotalOut = m_zlibStream.total_out;

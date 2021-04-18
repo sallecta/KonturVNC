@@ -48,8 +48,8 @@ public:
   virtual void start();
 
 protected:
-  virtual void onMvReply(DataInputStream *input) throw();
-  virtual void onLastRequestFailedReply(DataInputStream *input) throw();
+  virtual void onMvReply(DataInputStream *input);
+  virtual void onLastRequestFailedReply(DataInputStream *input);
 
 protected:
   StringStorage m_pathToSourceFile;

@@ -83,7 +83,7 @@ void Process::getStartupInfo(STARTUPINFO *sti)
   }
 }
 
-void Process::start() throw(SystemException)
+void Process::start()
 {
   cleanup();
 
@@ -106,7 +106,7 @@ void Process::start() throw(SystemException)
   m_hProcess = pi.hProcess;
 }
 
-void Process::kill() throw(SystemException)
+void Process::kill()
 {
   if (TerminateProcess(m_hProcess, 0) == 0) {
     throw SystemException();
@@ -125,7 +125,7 @@ void Process::stopWait()
   SetEvent(m_hStopWait);
 }
 
-DWORD Process::getExitCode() throw(SystemException)
+DWORD Process::getExitCode()
 {
   DWORD exitCode;
 

@@ -337,7 +337,7 @@ void RfbInitializer::sendInteractionCaps(const CapContainer *srvToClCaps,
   encCaps->sendCaps(m_output);
 }
 
-unsigned int RfbInitializer::getProtocolMinorVersion(const char str[12]) throw(Exception)
+unsigned int RfbInitializer::getProtocolMinorVersion(const char str[12])
 {
   if ( str[0] != 'R' || str[1] != 'F' || str[2] != 'B' || str[3] != ' ' ||
        !isdigit(str[4]) || !isdigit(str[5]) || !isdigit(str[6]) ||

@@ -39,7 +39,7 @@ Impersonator::~Impersonator()
 {
 }
 
-void Impersonator::impersonateAsLoggedUser() throw(SystemException)
+void Impersonator::impersonateAsLoggedUser()
 {
   WTS::queryConsoleUserToken(&m_token, m_log);
 
@@ -49,7 +49,7 @@ void Impersonator::impersonateAsLoggedUser() throw(SystemException)
   }
 }
 
-void Impersonator::revertToSelf() throw(SystemException)
+void Impersonator::revertToSelf()
 {
   if (m_dupToken != INVALID_HANDLE_VALUE) {
     CloseHandle(m_dupToken);

@@ -44,7 +44,7 @@ public:
   virtual ~ControlAuth();
 
 protected:
-  void authRfb() throw(IOException, ControlAuthException);
+  void authRfb();
 
 protected:
   ControlGate *m_gate;

@@ -38,7 +38,7 @@ public:
                             const TCHAR *pathToTargetRoot);
   virtual ~LocalFilesDeleteOperation();
 
-  virtual void start() throw();
+  virtual void start();
   virtual void terminate();
 
 private:

@@ -44,7 +44,7 @@ NamedPipe::~NamedPipe(void)
   }
 }
 
-void NamedPipe::close() throw()
+void NamedPipe::close()
 {
   AutoLock al(&m_hPipeMutex);
   if (m_asServer) {

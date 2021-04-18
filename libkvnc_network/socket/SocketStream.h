@@ -49,7 +49,7 @@ public:
 
   // Closes connection and break all blocked operation.
   // @throw Exception on error.
-  virtual void close() throw();
+  virtual void close();
 
 protected:
   SocketIPv4 *m_socket;

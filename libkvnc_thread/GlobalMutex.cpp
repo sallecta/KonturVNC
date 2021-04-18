@@ -26,7 +26,7 @@
 #include "../libkvnc_win_system/SystemException.h"
 #include <Aclapi.h>
 
-GlobalMutex::GlobalMutex(const TCHAR *name, bool interSession, bool throwIfExist) throw(Exception)
+GlobalMutex::GlobalMutex(const TCHAR *name, bool interSession, bool throwIfExist)
 {
   StringStorage mutexName;
 

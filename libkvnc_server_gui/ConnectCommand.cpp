@@ -35,7 +35,7 @@ ConnectCommand::~ConnectCommand()
 {
 }
 
-void ConnectCommand::execute() throw(IOException, RemoteException)
+void ConnectCommand::execute()
 {
   m_proxy->makeOutgoingConnection(m_hostName.getString(), false);
 }

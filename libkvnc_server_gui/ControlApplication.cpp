@@ -249,7 +249,7 @@ int ControlApplication::run()
   return retCode;
 }
 
-void ControlApplication::connect(bool controlService, bool slave) throw(Exception)
+void ControlApplication::connect(bool controlService, bool slave)
 {
   // Determine the name of pipe to connect to.
   StringStorage pipeName;

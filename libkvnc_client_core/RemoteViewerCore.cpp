@@ -25,9 +25,9 @@
 #include "RemoteViewerCore.h"
 
 #include "../libkvnc_ft/FTMessage.h"
-#include "../libkvnc_rfb/AuthDefs.h"
+#include "../libkvnc_rfb/AuthDefs.cpp"
 #include "../libkvnc_rfb/TunnelDefs.h"
-#include "../libkvnc_rfb/MsgDefs.h"
+#include "../libkvnc_rfb/MsgDefs.cpp"
 #include "../libkvnc_rfb/EncodingDefs.h"
 #include "../libkvnc_rfb/VendorDefs.h"
 #include "../libkvnc_util/AnsiStringStorage.h"

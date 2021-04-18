@@ -79,7 +79,7 @@ public:
    * Sends control message and checks server answer (exceptions).
    * @throws IOException on io error, RemoteException on auth or server error.
    */
-  virtual void send() throw(IOException, RemoteException);
+  virtual void send();
 
 private:
   /**
@@ -92,7 +92,7 @@ private:
    * Checks control message ret code.
    * @throws IOException on io error, RemoteException if there error during executing remote command (method).
    */
-  void checkRetCode() throw(IOException, RemoteException);
+  void checkRetCode();
 
   // Perform auth with a specified password file.
   void authFromFile();

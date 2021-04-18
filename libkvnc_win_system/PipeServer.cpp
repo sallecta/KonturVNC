@@ -28,7 +28,7 @@
 #define BUFSIZE 512 * 1024
 
 PipeServer::PipeServer(const TCHAR *name, SecurityAttributes *secAttr,
-                       DWORD milliseconds) throw(Exception)
+                       DWORD milliseconds)
 : m_milliseconds(milliseconds),
   m_secAttr(secAttr),
   m_serverPipe(INVALID_HANDLE_VALUE)
@@ -38,7 +38,7 @@ PipeServer::PipeServer(const TCHAR *name, SecurityAttributes *secAttr,
   createServerPipe();
 }
 
-void PipeServer::createServerPipe() throw(Exception)
+void PipeServer::createServerPipe()
 {
   m_serverPipe = CreateNamedPipe(m_pipeName.getString(),   // pipe name
                                  PIPE_ACCESS_DUPLEX |      // read/write access
@@ -60,7 +60,7 @@ void PipeServer::createServerPipe() throw(Exception)
   }
 }
 
-NamedPipe *PipeServer::accept() throw(Exception)
+NamedPipe *PipeServer::accept()
 {
   if (m_serverPipe == INVALID_HANDLE_VALUE) {
     createServerPipe();
@@ -107,7 +107,7 @@ NamedPipe *PipeServer::accept() throw(Exception)
   return result;
 }
 
-void PipeServer::close() throw(Exception)
+void PipeServer::close()
 {
   /*if (m_isConnected) {
     if (DisconnectNamedPipe(hPipe)) {

@@ -39,7 +39,7 @@ QueryConnectionCommandLine::~QueryConnectionCommandLine()
 {
 }
 
-void QueryConnectionCommandLine::parse(const CommandLineArgs *commandLine) throw(Exception)
+void QueryConnectionCommandLine::parse(const CommandLineArgs *commandLine)
 {
   CommandLineFormat format[] = {
     { QUERY_CONNECTION, NO_ARG },

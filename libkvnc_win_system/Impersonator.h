@@ -46,13 +46,13 @@ public:
   Impersonates calling process as user that logged on current console session.
   @throws SystemException if impersonation fails.
   */
-  virtual void impersonateAsLoggedUser() throw(SystemException);
+  virtual void impersonateAsLoggedUser();
 
   /**
   Cancels effect of impersonateAsLoggedUser method call.
   @throws SystemException on fail.
   */
-  virtual void revertToSelf() throw(SystemException);
+  virtual void revertToSelf();
 
 protected:
   HANDLE m_token;

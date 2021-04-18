@@ -51,7 +51,7 @@ public:
   // lossless Tight encoding.
   virtual void sendRectangle(const Rect *rect,
                              const FrameBuffer *serverFb,
-                             const EncodeOptions *options) throw();
+                             const EncodeOptions *options);
 
 protected:
   TightEncoder *m_tightEncoder;

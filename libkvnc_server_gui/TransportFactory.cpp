@@ -29,7 +29,7 @@
 #include "../libkvnc_win_system/SecurityAttributes.h"
 
 Transport *TransportFactory::createSocketClientTransport(const TCHAR *connectHost,
-                                                         unsigned int connectPort) throw(SocketException)
+                                                         unsigned int connectPort)
 {
   SocketIPv4 *socket = new SocketIPv4();
 
@@ -44,7 +44,7 @@ Transport *TransportFactory::createSocketClientTransport(const TCHAR *connectHos
 }
 
 Transport *TransportFactory::createSocketServerTransport(const TCHAR *bindHost,
-                                                         unsigned int bindPort) throw(SocketException)
+                                                         unsigned int bindPort)
 {
   SocketIPv4 *socket = new SocketIPv4();
 
@@ -59,12 +59,12 @@ Transport *TransportFactory::createSocketServerTransport(const TCHAR *bindHost,
   return new SocketIPv4Transport(socket);
 }
 
-Transport *TransportFactory::createPipeClientTransport(const TCHAR *name) throw(Exception)
+Transport *TransportFactory::createPipeClientTransport(const TCHAR *name)
 {
   return new NamedPipeTransport(PipeClient::connect(name));
 }
 
-Transport *TransportFactory::createPipeServerTransport(const TCHAR *name) throw(Exception)
+Transport *TransportFactory::createPipeServerTransport(const TCHAR *name)
 {
   // FIXME: Memory leak.
   SecurityAttributes *pipeSecurity = new SecurityAttributes();

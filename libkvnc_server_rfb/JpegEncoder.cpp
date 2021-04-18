@@ -53,7 +53,7 @@ void JpegEncoder::splitRectangle(const Rect *rect,
 
 void JpegEncoder::sendRectangle(const Rect *rect,
                                 const FrameBuffer *serverFb,
-                                const EncodeOptions *options) throw()
+                                const EncodeOptions *options)
 {
   size_t bppServer = m_pixelConverter->getSrcBitsPerPixel();
   size_t bppClient = m_pixelConverter->getDstBitsPerPixel();

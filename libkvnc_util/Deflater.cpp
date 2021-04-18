@@ -44,7 +44,7 @@ Deflater::~Deflater()
   deflateEnd(&m_zlibStream);
 }
 
-void Deflater::deflate()throw(ZLibException)
+void Deflater::deflate()
 {
   size_t reserve = m_inputSize / 100 + 1024;
   size_t avaliableOutput = m_inputSize + reserve;

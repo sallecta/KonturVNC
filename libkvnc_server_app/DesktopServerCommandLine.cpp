@@ -40,7 +40,7 @@ DesktopServerCommandLine::~DesktopServerCommandLine()
 {
 }
 
-void DesktopServerCommandLine::parse(const CommandLineArgs *cmdArgs) throw(Exception)
+void DesktopServerCommandLine::parse(const CommandLineArgs *cmdArgs)
 {
   CommandLineFormat format[] = {
     { DESKTOP_SERVER_KEY, NO_ARG },

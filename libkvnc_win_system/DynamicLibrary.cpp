@@ -26,7 +26,7 @@
 
 #include <crtdbg.h>
 
-DynamicLibrary::DynamicLibrary(const TCHAR *filename) throw(Exception)
+DynamicLibrary::DynamicLibrary(const TCHAR *filename)
 : m_module(0)
 {
   init(filename);

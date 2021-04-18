@@ -41,7 +41,7 @@ ServiceControlCommandLine::~ServiceControlCommandLine()
 {
 }
 
-void ServiceControlCommandLine::parse(const CommandLineArgs *cmdArgs) throw(Exception)
+void ServiceControlCommandLine::parse(const CommandLineArgs *cmdArgs)
 {
   CommandLineFormat format[] = {
     { INSTALL_SERVICE, NO_ARG },

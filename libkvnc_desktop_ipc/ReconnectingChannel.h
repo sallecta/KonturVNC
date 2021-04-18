@@ -46,7 +46,7 @@ public:
 
   // Closes connection and break all blocked operation.
   // @throw Exception on error.
-  virtual void close() throw();
+  virtual void close();
 
 private:
   // @param funName - is a function name that will be placed to the

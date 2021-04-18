@@ -49,7 +49,7 @@ void ControlProxy::setPasswordProperties(const TCHAR *passwordFile,
   m_forService = forService;
 }
 
-TvnServerInfo ControlProxy::getServerInfo() throw(IOException, RemoteException)
+TvnServerInfo ControlProxy::getServerInfo()
 {
   TvnServerInfo ret;
 
@@ -65,28 +65,28 @@ TvnServerInfo ControlProxy::getServerInfo() throw(IOException, RemoteException)
   return ret;
 }
 
-void ControlProxy::reloadServerConfig() throw(IOException, RemoteException)
+void ControlProxy::reloadServerConfig()
 {
   AutoLock l(m_gate);
 
   createMessage(ControlProto::RELOAD_CONFIG_MSG_ID)->send();
 }
 
-void ControlProxy::disconnectAllClients() throw(IOException, RemoteException)
+void ControlProxy::disconnectAllClients()
 {
   AutoLock l(m_gate);
 
   createMessage(ControlProto::DISCONNECT_ALL_CLIENTS_MSG_ID)->send();
 }
 
-void ControlProxy::shutdownTightVnc() throw(IOException, RemoteException)
+void ControlProxy::shutdownTightVnc()
 {
   AutoLock l(m_gate);
 
   createMessage(ControlProto::SHUTDOWN_SERVER_MSG_ID)->send();
 }
 
-void ControlProxy::getClientsList(list<RfbClientInfo *> *clients) throw(IOException, RemoteException)
+void ControlProxy::getClientsList(list<RfbClientInfo *> *clients)
 {
   AutoLock l(m_gate);
 
@@ -188,7 +188,7 @@ void ControlProxy::shareApp(unsigned int procId)
   msg->send();
 }
 
-void ControlProxy::setServerConfig(ServerConfig *config) throw(IOException, RemoteException)
+void ControlProxy::setServerConfig(ServerConfig *config)
 {
   AutoLock l(m_gate);
 
@@ -199,7 +199,7 @@ void ControlProxy::setServerConfig(ServerConfig *config) throw(IOException, Remo
   msg->send();
 }
 
-void ControlProxy::getServerConfig(ServerConfig *config) throw(IOException, RemoteException)
+void ControlProxy::getServerConfig(ServerConfig *config)
 {
   AutoLock l(m_gate);
 
@@ -208,7 +208,7 @@ void ControlProxy::getServerConfig(ServerConfig *config) throw(IOException, Remo
   config->deserialize(m_gate);
 }
 
-bool ControlProxy::getShowTrayIconFlag() throw(IOException, RemoteException)
+bool ControlProxy::getShowTrayIconFlag()
 {
   AutoLock l(m_gate);
 
@@ -217,7 +217,7 @@ bool ControlProxy::getShowTrayIconFlag() throw(IOException, RemoteException)
   return m_gate->readUInt8() == 1;
 }
 
-void ControlProxy::updateTvnControlProcessId(DWORD processId) throw(IOException, RemoteException)
+void ControlProxy::updateTvnControlProcessId(DWORD processId)
 {
   AutoLock l(m_gate);
 

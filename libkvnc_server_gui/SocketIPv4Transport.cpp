@@ -52,7 +52,7 @@ Channel* SocketIPv4Transport::getIOStream()
   return m_stream;
 }
 
-Transport *SocketIPv4Transport::accept() throw(SocketException)
+Transport *SocketIPv4Transport::accept()
 {
   if (!m_socket->isBound()) {
     _ASSERT(FALSE);
@@ -63,7 +63,7 @@ Transport *SocketIPv4Transport::accept() throw(SocketException)
   return new SocketIPv4Transport(m_socket->accept());
 }
 
-void SocketIPv4Transport::close() throw(SocketException)
+void SocketIPv4Transport::close()
 {
   try { m_socket->shutdown(SD_BOTH); } catch (...) { }
 

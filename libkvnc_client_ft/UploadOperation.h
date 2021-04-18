@@ -92,12 +92,12 @@ public:
   // Event handlers to process file transfer messages
   //
 
-  virtual void onUploadReply(DataInputStream *input) throw();
-  virtual void onUploadDataReply(DataInputStream *input) throw();
-  virtual void onUploadEndReply(DataInputStream *input) throw();
-  virtual void onMkdirReply(DataInputStream *input) throw();
-  virtual void onLastRequestFailedReply(DataInputStream *input) throw();
-  virtual void onFileListReply(DataInputStream *input) throw();
+  virtual void onUploadReply(DataInputStream *input);
+  virtual void onUploadDataReply(DataInputStream *input);
+  virtual void onUploadEndReply(DataInputStream *input);
+  virtual void onMkdirReply(DataInputStream *input);
+  virtual void onLastRequestFailedReply(DataInputStream *input);
+  virtual void onFileListReply(DataInputStream *input);
 
 private:
 

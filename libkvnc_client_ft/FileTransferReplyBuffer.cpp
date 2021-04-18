@@ -98,7 +98,7 @@ void FileTransferReplyBuffer::onCompressionSupportReply(DataInputStream *input)
                     m_isCompressionSupported ? _T("supported") : _T("not supported"));
 }
 
-void FileTransferReplyBuffer::onFileListReply(DataInputStream *input) throw(IOException, ZLibException)
+void FileTransferReplyBuffer::onFileListReply(DataInputStream *input)
 {
   UINT8 compressionLevel = 0;
   UINT32 compressedSize = 0;
@@ -156,7 +156,7 @@ void FileTransferReplyBuffer::onFileListReply(DataInputStream *input) throw(IOEx
   }
 }
 
-void FileTransferReplyBuffer::onMd5DataReply(DataInputStream *input) throw(IOException, OperationNotSupportedException)
+void FileTransferReplyBuffer::onMd5DataReply(DataInputStream *input)
 {
   throw OperationNotSupportedException();
 }
@@ -181,7 +181,7 @@ void FileTransferReplyBuffer::onDownloadReply(DataInputStream *input)
   m_logWriter->info(_T("Received download reply\n"));
 }
 
-void FileTransferReplyBuffer::onDownloadDataReply(DataInputStream *input) throw(IOException, ZLibException)
+void FileTransferReplyBuffer::onDownloadDataReply(DataInputStream *input)
 {
   UINT8 coLevel = input->readUInt8();
   UINT32 coBufferSize = input->readUInt32();
@@ -243,7 +243,6 @@ std::vector<UINT8> FileTransferReplyBuffer::readCompressedDataBlock(DataInputStr
                                                                UINT32 compressedSize,
                                                                UINT32 uncompressedSize,
                                                                UINT8 compressionLevel)
-                                                               throw(IOException, ZLibException)
 {
   //
   // Buffers with compressed and uncompressed data.

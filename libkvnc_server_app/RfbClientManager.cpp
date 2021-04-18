@@ -145,7 +145,7 @@ void RfbClientManager::onAuthFailed(RfbClient *client)
   m_newConnectionEvents->onAuthFailed(&ip);
 }
 
-void RfbClientManager::onCheckAccessControl(RfbClient *client) throw(AuthException)
+void RfbClientManager::onCheckAccessControl(RfbClient *client)
 {
   SocketAddressIPv4 peerAddr;
 

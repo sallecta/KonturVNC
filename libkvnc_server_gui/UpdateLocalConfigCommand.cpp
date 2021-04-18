@@ -35,7 +35,7 @@ UpdateLocalConfigCommand::~UpdateLocalConfigCommand()
 {
 }
 
-void UpdateLocalConfigCommand::execute() throw(IOException, RemoteException)
+void UpdateLocalConfigCommand::execute()
 {
   m_proxy->getServerConfig(Configurator::getInstance()->getServerConfig());
 }

@@ -65,7 +65,7 @@ DWORD WTS::getActiveConsoleSessionId(LogWriter *log)
 */
 }
 
-void WTS::queryConsoleUserToken(HANDLE *token, LogWriter *log) throw(SystemException)
+void WTS::queryConsoleUserToken(HANDLE *token, LogWriter *log)
 {
   {
     AutoLock l(&m_mutex);

@@ -62,14 +62,14 @@ SocketIPv4::~SocketIPv4()
   }
 }
 
-void SocketIPv4::connect(const TCHAR *host, unsigned short port) throw(SocketException)
+void SocketIPv4::connect(const TCHAR *host, unsigned short port)
 {
   SocketAddressIPv4 address(host, port);
 
   connect(address);
 }
 
-void SocketIPv4::connect(const SocketAddressIPv4 &addr) throw(SocketException)
+void SocketIPv4::connect(const SocketAddressIPv4 &addr)
 {
   struct sockaddr_in targetSockAddr = addr.getSockAddr();
 
@@ -88,12 +88,12 @@ void SocketIPv4::connect(const SocketAddressIPv4 &addr) throw(SocketException)
   m_isBound = false;
 }
 
-void SocketIPv4::close() throw(SocketException)
+void SocketIPv4::close()
 {
   m_isClosed = true;
 }
 
-void SocketIPv4::shutdown(int how) throw(SocketException)
+void SocketIPv4::shutdown(int how)
 {
   if (::shutdown(m_socket, how) == SOCKET_ERROR) {
     throw SocketException();
@@ -107,7 +107,7 @@ void SocketIPv4::bind(const TCHAR *bindHost, unsigned int bindPort)
   bind(address);
 }
 
-void SocketIPv4::bind(const SocketAddressIPv4 &addr) throw(SocketException)
+void SocketIPv4::bind(const SocketAddressIPv4 &addr)
 {
   struct sockaddr_in bindSockaddr = addr.getSockAddr();
 
@@ -133,14 +133,14 @@ bool SocketIPv4::isBound()
   return m_isBound;
 }
 
-void SocketIPv4::listen(int backlog) throw(SocketException)
+void SocketIPv4::listen(int backlog)
 {
   if (::listen(m_socket, backlog) == SOCKET_ERROR) {
     throw SocketException();
   }
 }
 
-SocketIPv4 *SocketIPv4::accept() throw(SocketException)
+SocketIPv4 *SocketIPv4::accept()
 {
   struct sockaddr_in addr;
 
@@ -288,28 +288,28 @@ bool SocketIPv4::getPeerAddr(SocketAddressIPv4 *addr)
 }
 
 /* Auxiliary */
-void SocketIPv4::setSocketOptions(int level, int name, void *value, socklen_t len) throw(SocketException)
+void SocketIPv4::setSocketOptions(int level, int name, void *value, socklen_t len)
 {
   if (setsockopt(m_socket, level, name, (char*)value, len) == SOCKET_ERROR) {
     throw SocketException();
   }
 }
 
-void SocketIPv4::getSocketOptions(int level, int name, void *value, socklen_t *len) throw(SocketException)
+void SocketIPv4::getSocketOptions(int level, int name, void *value, socklen_t *len)
 {
   if (getsockopt(m_socket, level, name, (char*)value, len) == SOCKET_ERROR) {
     throw SocketException();
   }
 }
 
-void SocketIPv4::enableNaggleAlgorithm(bool enabled) throw(SocketException)
+void SocketIPv4::enableNaggleAlgorithm(bool enabled)
 {
   BOOL disabled = enabled ? 0 : 1;
 
   setSocketOptions(IPPROTO_TCP, TCP_NODELAY, &disabled, sizeof(disabled));
 }
 
-void SocketIPv4::setExclusiveAddrUse() throw(SocketException)
+void SocketIPv4::setExclusiveAddrUse()
 {
   int val = 1;
 

@@ -25,6 +25,26 @@
 					<Add option="-Wextra" />
 				</Compiler>
 			</Target>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-D__Userspace_os_Windows" />
+					<Add option="-DWINVER=0x0502" />
+					<Add option="-D_WIN32_WINNT=0x0502" />
+					<Add option="-DSCTP_PROCESS_LEVEL_LOCKS" />
+					<Add option="-DSCTP_SIMPLE_ALLOCATOR" />
+					<Add option="-D__Userspace__" />
+				</Compiler>
+			</Target>
 		</Build>
 		<Unit filename="distr/netinet6/sctp6_usrreq.c">
 			<Option compilerVar="CC" />

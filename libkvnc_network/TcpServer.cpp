@@ -28,7 +28,7 @@
 
 TcpServer::TcpServer(const TCHAR *bindHost, unsigned short bindPort,
                      bool autoStart,
-                     bool lockAddr) throw(Exception)
+                     bool lockAddr)
 : m_bindHost(bindHost), m_bindPort(bindPort)
 {
   SocketAddressIPv4 bindAddr = SocketAddressIPv4::resolve(bindHost, bindPort);

@@ -69,11 +69,11 @@ protected:
   //
 
   virtual void onFileListReply(DataInputStream *input);
-  virtual void onDownloadReply(DataInputStream *input)throw();
-  virtual void onDownloadDataReply(DataInputStream *input) throw();
-  virtual void onDownloadEndReply(DataInputStream *input) throw();
-  virtual void onLastRequestFailedReply(DataInputStream *input) throw();
-  virtual void onDirSizeReply(DataInputStream *input) throw();
+  virtual void onDownloadReply(DataInputStream *input);
+  virtual void onDownloadDataReply(DataInputStream *input);
+  virtual void onDownloadEndReply(DataInputStream *input);
+  virtual void onLastRequestFailedReply(DataInputStream *input);
+  virtual void onDirSizeReply(DataInputStream *input);
 
 private:
 

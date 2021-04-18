@@ -33,7 +33,7 @@ public:
   static const UINT32 INVALID = 0;
   static const UINT32 NONE = 1;
   static const UINT32 VNC = 2;
-  static const UINT32 TIGHT = 16;
+  static const UINT32 TIGHT;// = 16;
   static UINT32 convertFromAuthType(UINT32 authType);
 };
 

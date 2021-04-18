@@ -23,6 +23,7 @@
 //
 
 #include "AuthDefs.h"
+const UINT32 SecurityDefs::TIGHT = 16;
 
 const char *const AuthDefs::SIG_NONE = "NOAUTH__";
 const char *const AuthDefs::SIG_VNC = "VNCAUTH_";

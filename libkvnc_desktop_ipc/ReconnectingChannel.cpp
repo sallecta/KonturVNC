@@ -47,7 +47,7 @@ ReconnectingChannel::~ReconnectingChannel()
   }
 }
 
-void ReconnectingChannel::close() throw()
+void ReconnectingChannel::close()
 {
   AutoLock al(&m_chanMut);
   m_isClosed = true;

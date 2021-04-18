@@ -76,7 +76,7 @@ public:
    * process id will be used to get user token (this id can be set by using of
    * defineConsoleUserProcessId() method).
    */
-  static void queryConsoleUserToken(HANDLE *token, LogWriter *log) throw(SystemException);
+  static void queryConsoleUserToken(HANDLE *token, LogWriter *log);
 
   /**
    * Defines global (for WTS class) user process that will be used

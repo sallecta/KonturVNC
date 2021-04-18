@@ -67,7 +67,7 @@ ControlCommandLine::~ControlCommandLine()
 {
 }
 
-void ControlCommandLine::parse(const CommandLineArgs *cmdArgs) throw(CommandLineFormatException)
+void ControlCommandLine::parse(const CommandLineArgs *cmdArgs)
 {
   CommandLineFormat fmt[] = {
     { PASSWORD_FILE, NEEDS_ARG },

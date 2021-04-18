@@ -138,7 +138,7 @@ void SocketAddressIPv4::toString(StringStorage *address) const
   address->format(_T("%d.%d.%d.%d"), b1, b2, b3, b4);
 }
 
-SocketAddressIPv4 SocketAddressIPv4::resolve(const TCHAR *host, unsigned short m_port) throw(SocketException)
+SocketAddressIPv4 SocketAddressIPv4::resolve(const TCHAR *host, unsigned short m_port)
 {
   SocketAddressIPv4 resolvedAddress;
 

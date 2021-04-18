@@ -47,7 +47,7 @@ int SCMClientException::getSCMErrorCode() const
   return m_scmErrCode;
 }
 
-SCMClient::SCMClient(DWORD desiredAccess) throw(SystemException)
+SCMClient::SCMClient(DWORD desiredAccess)
 {
   m_managerHandle = OpenSCManager(NULL, NULL, desiredAccess);
 
@@ -64,7 +64,7 @@ SCMClient::~SCMClient()
 }
 
 void SCMClient::installService(const TCHAR *name, const TCHAR *nameToDisplay,
-                               const TCHAR *binPath, const TCHAR *dependencies) throw(SystemException)
+                               const TCHAR *binPath, const TCHAR *dependencies)
 {
   SC_HANDLE serviceHandle = CreateService(
     m_managerHandle,              // SCManager database
@@ -104,7 +104,7 @@ void SCMClient::installService(const TCHAR *name, const TCHAR *nameToDisplay,
   CloseServiceHandle(serviceHandle);
 }
 
-void SCMClient::removeService(const TCHAR *name) throw(SystemException)
+void SCMClient::removeService(const TCHAR *name)
 {
   try { stopService(name); } catch (...) { }
 
@@ -139,7 +139,7 @@ void SCMClient::removeService(const TCHAR *name) throw(SystemException)
   }
 }
 
-void SCMClient::startService(const TCHAR *name, bool waitCompletion) throw(SystemException, SCMClientException)
+void SCMClient::startService(const TCHAR *name, bool waitCompletion)
 {
   // FIXME: Wrap SC_HANDLE into a class with a call to CloseServiceHandle()
   //        in the destructor.
@@ -179,7 +179,7 @@ void SCMClient::startService(const TCHAR *name, bool waitCompletion) throw(Syste
   CloseServiceHandle(serviceHandle);
 }
 
-void SCMClient::stopService(const TCHAR *name, bool waitCompletion) throw(SystemException, SCMClientException)
+void SCMClient::stopService(const TCHAR *name, bool waitCompletion)
 {
   SC_HANDLE serviceHandle = OpenService(m_managerHandle, name, SERVICE_STOP | SERVICE_QUERY_STATUS);
   if (serviceHandle == NULL) {

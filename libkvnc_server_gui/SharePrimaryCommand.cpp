@@ -33,7 +33,7 @@ SharePrimaryCommand::~SharePrimaryCommand()
 {
 }
 
-void SharePrimaryCommand::execute() throw(IOException, RemoteException)
+void SharePrimaryCommand::execute()
 {
   m_proxy->sharePrimary();
 }

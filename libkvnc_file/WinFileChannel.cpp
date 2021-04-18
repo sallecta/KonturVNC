@@ -47,7 +47,7 @@ size_t WinFileChannel::write(const void *buffer, size_t len)
   return m_winFile.write(buffer, len);
 }
 
-void WinFileChannel::close() throw(Exception)
+void WinFileChannel::close()
 {
   m_winFile.close();
 }

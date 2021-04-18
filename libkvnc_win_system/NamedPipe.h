@@ -53,7 +53,7 @@ public:
    *
    * @throws Exception on fail.
    */
-  void close() throw();
+  void close();
 
   /**
    * Reads data from pipe.
