@@ -62,24 +62,24 @@ public:
   // Inherited from FileTransferEventHandler abstract class
   //
 
-  virtual void onCompressionSupportReply(DataInputStream *input) throw(IOException);
-  virtual void onFileListReply(DataInputStream *input) throw(IOException, ZLibException);
-  virtual void onMd5DataReply(DataInputStream *input) throw(IOException, OperationNotSupportedException);
+  virtual void onCompressionSupportReply(DataInputStream *input);
+  virtual void onFileListReply(DataInputStream *input);
+  virtual void onMd5DataReply(DataInputStream *input);
 
-  virtual void onUploadReply(DataInputStream *input) throw(IOException);
-  virtual void onUploadDataReply(DataInputStream *input) throw(IOException);
-  virtual void onUploadEndReply(DataInputStream *input) throw(IOException);
+  virtual void onUploadReply(DataInputStream *input);
+  virtual void onUploadDataReply(DataInputStream *input);
+  virtual void onUploadEndReply(DataInputStream *input);
 
-  virtual void onDownloadReply(DataInputStream *input) throw(IOException);
-  virtual void onDownloadDataReply(DataInputStream *input) throw(IOException, ZLibException);
-  virtual void onDownloadEndReply(DataInputStream *input) throw(IOException);
+  virtual void onDownloadReply(DataInputStream *input);
+  virtual void onDownloadDataReply(DataInputStream *input);
+  virtual void onDownloadEndReply(DataInputStream *input);
 
-  virtual void onMkdirReply(DataInputStream *input) throw(IOException);
-  virtual void onRmReply(DataInputStream *input) throw(IOException);
-  virtual void onMvReply(DataInputStream *input) throw(IOException);
+  virtual void onMkdirReply(DataInputStream *input);
+  virtual void onRmReply(DataInputStream *input);
+  virtual void onMvReply(DataInputStream *input);
 
-  virtual void onDirSizeReply(DataInputStream *input) throw(IOException);
-  virtual void onLastRequestFailedReply(DataInputStream *input) throw(IOException);
+  virtual void onDirSizeReply(DataInputStream *input);
+  virtual void onLastRequestFailedReply(DataInputStream *input);
 
 private:
 
@@ -87,7 +87,7 @@ private:
                                         UINT32 compressedSize,
                                         UINT32 uncompressedSize,
                                         UINT8 compressionLevel)
-                throw(IOException, ZLibException);
+                ;
 
 protected:
 

@@ -79,7 +79,7 @@ void AnonymousPipe::close() throw(Exception)
   }
 }
 
-size_t AnonymousPipe::read(void *buffer, size_t len) throw(IOException)
+size_t AnonymousPipe::read(void *buffer, size_t len)
 {
   try {
     return readByHandle(buffer, len, m_hRead);
@@ -90,7 +90,7 @@ size_t AnonymousPipe::read(void *buffer, size_t len) throw(IOException)
   }
 }
 
-size_t AnonymousPipe::write(const void *buffer, size_t len) throw(IOException)
+size_t AnonymousPipe::write(const void *buffer, size_t len)
 {
   try {
     return writeByHandle(buffer, len, m_hWrite);

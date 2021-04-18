@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-
+#include <windows.h>
 #include "TvnViewer.h"
 #include "../libkvnc_network/socket/WindowsSocket.h"
 #include "../libkvnc_util/ResourceLoader.h"
@@ -150,6 +150,7 @@ void TvnViewer::runInstance(const StringStorage *hostName, const ConnectionConfi
 
 void TvnViewer::runInstance(ConnectionData *conData, const ConnectionConfig *config)
 {
+
   ViewerInstance *viewerInst = new ViewerInstance(this, conData, config);
   viewerInst->start();
 
@@ -203,7 +204,8 @@ void TvnViewer::registerWindowClass(WNDCLASS *wndClass)
 
 void TvnViewer::registerViewerWindowClass()
 {
-  memset(&m_viewerWndClass, 0, sizeof(WNDCLASS));
+  size_t m_viewerWndClassSize = sizeof(m_viewerWndClass);
+  memset(&m_viewerWndClass, 0, sizeof(m_viewerWndClass));
 
   m_viewerWndClass.lpfnWndProc   = wndProcViewer;
   m_viewerWndClass.hInstance     = m_appInstance;

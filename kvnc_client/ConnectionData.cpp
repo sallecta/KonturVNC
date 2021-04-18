@@ -35,6 +35,7 @@ ConnectionData::ConnectionData()
   m_isSetPassword(false),
   m_isIncoming(false)
 {
+    //m_defaultPassword="";
 }
 
 ConnectionData::ConnectionData(const ConnectionData &connectionData)
@@ -139,9 +140,10 @@ void ConnectionData::setPlainPassword(const StringStorage *password)
   UINT8 plainPassword[VncAuthentication::VNC_PASSWORD_SIZE];
   UINT8 encryptedPassword[VncAuthentication::VNC_PASSWORD_SIZE];
   memset(plainPassword, 0, VncAuthentication::VNC_PASSWORD_SIZE);
+  static const int tmpConInt = VncAuthentication::VNC_PASSWORD_SIZE;
   memcpy(plainPassword,
          ansiPlainPassword.getString(),
-         std::min(VncAuthentication::VNC_PASSWORD_SIZE, int(ansiPlainPassword.getSize())));
+         std::min(tmpConInt, int(ansiPlainPassword.getSize())));
   VncPassCrypt::getEncryptedPass(encryptedPassword, plainPassword);
   UINT8 hidePasswordChars[VncAuthentication::VNC_PASSWORD_SIZE * 2 + 1];
   hidePasswordChars[VncAuthentication::VNC_PASSWORD_SIZE * 2] = 0;

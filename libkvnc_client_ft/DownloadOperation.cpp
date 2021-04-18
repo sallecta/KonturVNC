@@ -57,7 +57,7 @@ DownloadOperation::~DownloadOperation()
   }
 }
 
-void DownloadOperation::start() throw(IOException)
+void DownloadOperation::start()
 {
   m_foldersToCalcSizeLeft = 0;
 
@@ -229,7 +229,7 @@ void DownloadOperation::onDirSizeReply(DataInputStream *input) throw()
   decFoldersToCalcSizeCount();
 }
 
-void DownloadOperation::startDownload() throw(IOException)
+void DownloadOperation::startDownload()
 {
   if (isTerminating()) {
     killOp();
@@ -260,7 +260,7 @@ void DownloadOperation::startDownload() throw(IOException)
   } // if terminating
 }
 
-void DownloadOperation::processFile() throw(IOException)
+void DownloadOperation::processFile()
 {
   m_fileOffset = 0;
 
@@ -301,7 +301,7 @@ void DownloadOperation::processFile() throw(IOException)
   m_sender->sendDownloadRequest(m_pathToSourceFile.getString(), m_fileOffset);
 }
 
-void DownloadOperation::processFolder() throw(IOException)
+void DownloadOperation::processFolder()
 {
   File local(m_pathToTargetFile.getString());
   if (local.exists() && local.isDirectory()) {
@@ -325,7 +325,7 @@ void DownloadOperation::processFolder() throw(IOException)
                                 m_replyBuffer->isCompressionSupported());
 }
 
-void DownloadOperation::gotoNext() throw(IOException)
+void DownloadOperation::gotoNext()
 {
   FileInfoList *current = m_toCopy;
 
@@ -361,7 +361,7 @@ void DownloadOperation::gotoNext() throw(IOException)
   } // if / else
 } // void
 
-void DownloadOperation::tryCalcInputFilesSize() throw(IOException)
+void DownloadOperation::tryCalcInputFilesSize()
 {
   FileInfoList *fil = m_toCopy;
 

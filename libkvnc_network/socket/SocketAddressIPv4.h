@@ -50,7 +50,7 @@ public:
   // Converts socket address to it's string value (ip address as string).
   void toString(StringStorage *address) const;
 
-  static SocketAddressIPv4 resolve(const TCHAR *host, unsigned short port) throw(SocketException);
+  static SocketAddressIPv4 resolve(const TCHAR *host, unsigned short port);
 
 protected:
   WsaStartup m_wsaStartup;

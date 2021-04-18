@@ -48,7 +48,7 @@ public:
    *
    * @throws Exception on fail.
    */
-  void close() throw(Exception);//= 0;
+  void close();//= 0;
 
   /**
    * Reads data from pipe.
@@ -57,7 +57,7 @@ public:
    * @param len count of bytes to read.
    * @throws IOException on io error.
    */
-  virtual size_t read(void *buffer, size_t len) throw(IOException);
+  virtual size_t read(void *buffer, size_t len);
 
   /**
    * Writes data to pipe.
@@ -66,7 +66,7 @@ public:
    * @param len count of bytes to write.
    * @throws IOException on io error.
    */
-  virtual size_t write(const void *buffer, size_t len) throw(IOException);
+  virtual size_t write(const void *buffer, size_t len);
 
   // Returns pipe handle to write
   HANDLE getWriteHandle() const;

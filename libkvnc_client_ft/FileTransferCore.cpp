@@ -115,7 +115,7 @@ void FileTransferCore::ftOpStarted(FileTransferOperation *sender)
   m_ftInterface->onFtOpStarted();
 }
 
-void FileTransferCore::ftOpFinished(FileTransferOperation *sender) throw(IOException)
+void FileTransferCore::ftOpFinished(FileTransferOperation *sender)
 {
   //
   // If operation that sends to us this notification is remote file list operation
@@ -183,7 +183,7 @@ void FileTransferCore::ftOpInfoMessage(FileTransferOperation *sender,
   m_ftInterface->onFtOpInfo(message);
 }
 
-void FileTransferCore::executeOperation(FileTransferOperation *newOperation) throw(IOException)
+void FileTransferCore::executeOperation(FileTransferOperation *newOperation)
 
 {
   //

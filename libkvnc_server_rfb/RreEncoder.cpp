@@ -56,7 +56,7 @@ void RreEncoder::splitRectangle(const Rect *rect,
 
 void RreEncoder::sendRectangle(const Rect *rect,
                                const FrameBuffer *serverFb,
-                               const EncodeOptions *options) throw(IOException)
+                               const EncodeOptions *options)
 {
   const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
 
@@ -75,7 +75,7 @@ void RreEncoder::sendRectangle(const Rect *rect,
 
 template <class PIXEL_T>
 void RreEncoder::rreEncode(const Rect *r,
-                           const FrameBuffer *frameBuffer) throw(IOException)
+                           const FrameBuffer *frameBuffer)
 {
   PIXEL_T *buffer = (PIXEL_T *)frameBuffer->getBuffer();
   int fbWidth = frameBuffer->getDimension().width;

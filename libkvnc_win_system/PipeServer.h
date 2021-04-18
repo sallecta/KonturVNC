@@ -49,7 +49,7 @@ public:
    * @fixme stub.
    */
   PipeServer(const TCHAR *name, SecurityAttributes *secAttr = 0,
-             DWORD milliseconds = INFINITE) throw(Exception);
+             DWORD milliseconds = INFINITE);
   /**
    * Destroys pipe server.
    */
@@ -63,13 +63,13 @@ public:
    *
    * @fixme stub.
    */
-  NamedPipe *accept() throw(Exception);
+  NamedPipe *accept();
 
   /**
    * Closes pipe server.
    * @throws PipeException on fail.
    */
-  void close() throw(Exception);
+  void close();
 
   /**
    * @deprecated.
@@ -81,7 +81,7 @@ public:
   virtual void closeConnection();
 
 private:
-  void createServerPipe() throw(Exception);
+  void createServerPipe();
 private:
   StringStorage m_pipeName;
   WindowsEvent m_winEvent;

@@ -59,7 +59,7 @@ public:
   // Starts executing this delete operation
   //
 
-  virtual void start() throw(IOException);
+  virtual void start();
 
   //
   // File transfer message(accepted by this operation) handlers
@@ -71,8 +71,8 @@ public:
 
 private:
 
-  void remove(bool removeIfFolder) throw(IOException);
-  void gotoNext() throw(IOException);
+  void remove(bool removeIfFolder);
+  void gotoNext();
   void killOp();
 
 protected:

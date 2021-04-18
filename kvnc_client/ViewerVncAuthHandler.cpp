@@ -28,6 +28,7 @@
 ViewerVncAuthHandler::ViewerVncAuthHandler(ConnectionData *connectionData)
 : m_connectionData(connectionData)
 {
+//m_connectionData=connectionData;
 }
 
 ViewerVncAuthHandler::~ViewerVncAuthHandler()

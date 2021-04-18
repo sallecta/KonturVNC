@@ -5,17 +5,18 @@
 		<Option title="kvnc_client" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="doc/" />
 		<Build>
 			<Target title="Release_Win32">
-				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="1" extension_auto="1" />
+				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
 				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
 				<Option deps_output="../bin/Release_Win32/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-O2" />
 					<Add option="-std=c++11" />
 					<Add option="-m32" />
+					<Add option="-g" />
 					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_WINDOWS" />
@@ -26,10 +27,88 @@
 					<Add directory="$(WORKSPACEDIR)/!external/openssl/include/" />
 				</Compiler>
 				<Linker>
-					<Add option="-s" />
 					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
 					<Add option="-static" />
 					<Add option="-m32" />
+					<Add option="-Wl,--start-group" />
+					<Add option="-lkvnc_util" />
+					<Add option="-lkvnc_client_config" />
+					<Add option="-lkvnc_log_writer" />
+					<Add option="-lkvnc_win_system" />
+					<Add option="-lkvnc_client_core" />
+					<Add option="-lkvnc_rfb" />
+					<Add option="-lkvnc_gui" />
+					<Add option="-lkvnc_thread" />
+					<Add option="-lkvnc_config" />
+					<Add option="-lkvnc_file" />
+					<Add option="-lkvnc_network" />
+					<Add option="-lkvnc_ft" />
+					<Add option="-lkvnc_client_ft" />
+					<Add option="-lkvnc_p2p" />
+					<Add option="-lkvnc_io" />
+					<Add option="-lkvnc_region" />
+					<Add option="-l_pj" />
+					<Add option="-l_pjutil" />
+					<Add option="-l_pjnath" />
+					<Add option="-lstdc++" />
+					<Add option="-Wl,--end-group" />
+					<Add library="lib_avilog" />
+					<Add library="lib_jpegturbo" />
+					<Add library="comctl32" />
+					<Add library="Secur32" />
+					<Add library="WinMM" />
+					<Add library="lib_revel" />
+					<Add library="ssl" />
+					<Add library="crypto" />
+					<Add library="lib_usrsctp" />
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="psapi" />
+					<Add library="version" />
+					<Add library="ws2_32" />
+					<Add library="wtsapi32" />
+					<Add library="lib_zlib" />
+					<Add library="gdiplus" />
+					<Add library="rpcrt4" />
+					<Add library="msvfw32" />
+					<Add library="vfw32" />
+					<Add library="iphlpapi" />
+					<Add directory="$(TARGET_OUTPUT_DIR)" />
+					<Add directory="$(WORKSPACEDIR)/!external/openssl/lib" />
+					<LinkerExe value="CppCompiler" />
+				</Linker>
+			</Target>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/out/bin/Release_Win32/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option parameters="127.0.0.1::8080" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-Dkvnc_naming_defs_client" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include/" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include/" />
+					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjnath/include/" />
+					<Add directory="$(WORKSPACEDIR)/!external/openssl/include/" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
 					<Add option="-Wl,--start-group" />
 					<Add option="-lkvnc_util" />
 					<Add option="-lkvnc_client_config" />
@@ -153,6 +232,9 @@
 		<Unit filename="ViewerVncAuthHandler.h" />
 		<Unit filename="ViewerWindow.cpp" />
 		<Unit filename="ViewerWindow.h" />
+		<Unit filename="doc/kvnc_client.cmdline-help.txt">
+			<Option virtualFolder="doc/" />
+		</Unit>
 		<Unit filename="main.cpp">
 			<Option weight="0" />
 		</Unit>

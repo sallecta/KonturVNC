@@ -50,7 +50,7 @@ void Encoder::splitRectangle(const Rect *rect,
 
 void Encoder::sendRectangle(const Rect *rect,
                             const FrameBuffer *serverFb,
-                            const EncodeOptions *options) throw(IOException)
+                            const EncodeOptions *options)
 {
   const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
   int pixelSize = (int)fb->getBytesPerPixel();

@@ -47,7 +47,7 @@ HttpRequestHandler::~HttpRequestHandler()
 }
 
 // FIXME: Refactor this code.
-void HttpRequestHandler::processRequest() throw(IOException)
+void HttpRequestHandler::processRequest()
 {
   HttpRequest httpRequest(m_dataInput);
 

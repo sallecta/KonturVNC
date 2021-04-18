@@ -86,7 +86,7 @@ private:
    * Writes control message to control gate.
    * @throws IOException on io error.
    */
-  void sendData() throw(IOException);
+  void sendData();
 
   /**
    * Checks control message ret code.

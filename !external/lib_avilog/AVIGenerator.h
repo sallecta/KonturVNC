@@ -7,12 +7,12 @@
 // Author : Jonathan de Halleux. dehalleux@auto.ucl.ac.be
 //////////////////////////////////////////////////////////////////////
 
+#pragma once
+#pragma message "including " __FILE__ "..."
+
 #if !defined(AFX_AVIGENERATOR_H__6BAF2E9D_3866_4779_A43B_D1B21E7E4F39__INCLUDED_)
 #define AFX_AVIGENERATOR_H__6BAF2E9D_3866_4779_A43B_D1B21E7E4F39__INCLUDED_
 
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
 
 #include <cstdio>
 #include <comdef.h>
@@ -21,8 +21,7 @@
 #include <string.h>
 #include <vfw.h>
 
-#pragma message("     _Adding library: vfw32.lib" )
-#pragma comment ( lib, "vfw32.lib")
+
 
 // undefine this if you don't use MFC
 //#define _AVIGENERATOR_USE_MFC

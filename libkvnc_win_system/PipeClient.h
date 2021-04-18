@@ -34,7 +34,7 @@
 class PipeClient
 {
 public:
-  static NamedPipe *connect(const TCHAR *name) throw(Exception);
+  static NamedPipe *connect(const TCHAR *name);
 
 private:
   PipeClient();

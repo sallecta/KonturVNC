@@ -37,7 +37,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE,
                        LPTSTR lpCmdLine, int nCmdShow)
 {
 
-  ClientCrashHook clientCrashHook(NULL);
+  //ClientCrashHook clientCrashHook(NULL);
 
   ViewerSettingsManager::initInstance(RegistryPaths::VIEWER_PATH);
   SettingsManager *sm = ViewerSettingsManager::getInstance();
@@ -75,9 +75,11 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE,
     if (isListening) {
       // FIXME: set listening connection options.
       tvnViewer.startListening(ConnectionListener::DEFAULT_PORT);
-    } else if (!condata.isEmpty()) {
+    }
+    else if (!condata.isEmpty()) {
       tvnViewer.newConnection(&condata, &conConf);
-    } else {
+    }
+    else {
       tvnViewer.showLoginDialog();
     }
     result = tvnViewer.run();

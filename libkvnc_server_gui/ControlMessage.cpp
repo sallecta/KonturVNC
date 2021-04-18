@@ -63,7 +63,7 @@ void ControlMessage::send() throw(IOException, RemoteException)
   checkRetCode();
 }
 
-void ControlMessage::sendData() throw(IOException)
+void ControlMessage::sendData()
 {
   m_gate->writeUInt32(m_messageId);
   _ASSERT((UINT32)m_tunnel->size() == m_tunnel->size());

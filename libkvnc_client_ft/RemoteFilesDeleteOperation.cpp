@@ -50,7 +50,7 @@ RemoteFilesDeleteOperation::~RemoteFilesDeleteOperation()
   }
 }
 
-void RemoteFilesDeleteOperation::start() throw(IOException)
+void RemoteFilesDeleteOperation::start()
 {
   // Notify listeners that operation have started
   notifyStart();
@@ -116,7 +116,7 @@ void RemoteFilesDeleteOperation::onLastRequestFailedReply(DataInputStream *input
   gotoNext();
 }
 
-void RemoteFilesDeleteOperation::remove(bool removeIfFolder) throw(IOException)
+void RemoteFilesDeleteOperation::remove(bool removeIfFolder)
 {
   if (isTerminating()) {
     killOp();
@@ -174,7 +174,7 @@ void RemoteFilesDeleteOperation::remove(bool removeIfFolder) throw(IOException)
   }
 }
 
-void RemoteFilesDeleteOperation::gotoNext() throw(IOException)
+void RemoteFilesDeleteOperation::gotoNext()
 {
   FileInfoList *current = m_toDelete;
 

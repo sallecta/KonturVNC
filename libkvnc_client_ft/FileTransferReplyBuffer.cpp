@@ -90,7 +90,7 @@ std::vector<UINT8> FileTransferReplyBuffer::getDownloadBuffer()
   return m_downloadBuffer;
 }
 
-void FileTransferReplyBuffer::onCompressionSupportReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onCompressionSupportReply(DataInputStream *input)
 {
   m_isCompressionSupported = (input->readUInt8() == 1);
 
@@ -161,22 +161,22 @@ void FileTransferReplyBuffer::onMd5DataReply(DataInputStream *input) throw(IOExc
   throw OperationNotSupportedException();
 }
 
-void FileTransferReplyBuffer::onUploadReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onUploadReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received upload reply\n"));
 }
 
-void FileTransferReplyBuffer::onUploadDataReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onUploadDataReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received upload data reply\n"));
 }
 
-void FileTransferReplyBuffer::onUploadEndReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onUploadEndReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received upload end reply\n"));
 }
 
-void FileTransferReplyBuffer::onDownloadReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onDownloadReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received download reply\n"));
 }
@@ -197,7 +197,7 @@ void FileTransferReplyBuffer::onDownloadDataReply(DataInputStream *input) throw(
                     coBufferSize, uncoBufferSize, coLevel);
 }
 
-void FileTransferReplyBuffer::onDownloadEndReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onDownloadEndReply(DataInputStream *input)
 {
   m_downloadFileFlags = input->readUInt8();
   m_downloadLastModified = input->readUInt64();
@@ -208,29 +208,29 @@ void FileTransferReplyBuffer::onDownloadEndReply(DataInputStream *input) throw(I
                     m_downloadFileFlags, m_downloadLastModified);
 }
 
-void FileTransferReplyBuffer::onMkdirReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onMkdirReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received mkdir reply\n"));
 }
 
-void FileTransferReplyBuffer::onRmReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onRmReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received rm reply\n"));
 }
 
-void FileTransferReplyBuffer::onMvReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onMvReply(DataInputStream *input)
 {
   m_logWriter->info(_T("Received rename reply\n"));
 }
 
-void FileTransferReplyBuffer::onDirSizeReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onDirSizeReply(DataInputStream *input)
 {
   m_dirSize = input->readUInt64();
 
   m_logWriter->info(_T("Received dirsize reply\n"));
 }
 
-void FileTransferReplyBuffer::onLastRequestFailedReply(DataInputStream *input) throw(IOException)
+void FileTransferReplyBuffer::onLastRequestFailedReply(DataInputStream *input)
 {
   input->readUTF8(&m_lastErrorMessage);
 

@@ -213,7 +213,7 @@ SOCKET SocketIPv4::getAcceptedSocket(struct sockaddr_in *addr)
   return result;
 }
 
-int SocketIPv4::send(const char *data, int size, int flags) throw(IOException)
+int SocketIPv4::send(const char *data, int size, int flags)
 {
   int result;
 
@@ -235,7 +235,7 @@ int SocketIPv4::send(const char *data, int size, int flags) throw(IOException)
   return result;
 }
 
-int SocketIPv4::recv(char *buffer, int size, int flags) throw(IOException)
+int SocketIPv4::recv(char *buffer, int size, int flags)
 {
   int result;
 

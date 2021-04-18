@@ -25,14 +25,14 @@
 #include "NamingDefs.h"
 
 const TCHAR ProductNames::PRODUCT_NAME[] = _T("KonturVNC");
-const TCHAR ProductNames::VIEWER_PRODUCT_NAME[] = _T("KonturVNC Viewer");
+const TCHAR ProductNames::VIEWER_PRODUCT_NAME[] = _T("kvnc_client");
 
 const TCHAR LogNames::VIEWER_LOG_FILE_STUB_NAME[] = _T("kvnviewer");
 const TCHAR LogNames::LOG_DIR_NAME[] = _T("KonturVNC");
 
 const TCHAR RegistryPaths::VIEWER_PATH[] = _T("Software\\SKBKontur\\KonturVNC\\Viewer");
 
-const TCHAR ApplicationNames::WINDOW_CLASS_NAME[] = 
+const TCHAR ApplicationNames::WINDOW_CLASS_NAME[] =
   _T("KvnApplicationClass");
 
 const TCHAR WindowNames::TVN_WINDOW_CLASS_NAME[] = _T("KvnWindowClass");

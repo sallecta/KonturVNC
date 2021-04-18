@@ -65,12 +65,12 @@ void NamedPipe::close() throw()
   m_writeEvent.notify();
 }
 
-size_t NamedPipe::write(const void *buffer, size_t len) throw(IOException)
+size_t NamedPipe::write(const void *buffer, size_t len)
 {
   return writeByHandle(buffer, len, m_hPipe);
 }
 
-size_t NamedPipe::read(void *buffer, size_t len) throw(IOException)
+size_t NamedPipe::read(void *buffer, size_t len)
 {
   return readByHandle(buffer, len, m_hPipe);
 }

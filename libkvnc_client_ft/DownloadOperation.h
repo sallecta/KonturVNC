@@ -60,7 +60,7 @@ public:
   // Inherited from FileTransferOperation
   //
 
-  virtual void start() throw(IOException);
+  virtual void start();
 
 protected:
 
@@ -68,7 +68,7 @@ protected:
   // Inherited from FileTransferEventHandler
   //
 
-  virtual void onFileListReply(DataInputStream *input) throw(OperationNotPermittedException);
+  virtual void onFileListReply(DataInputStream *input);
   virtual void onDownloadReply(DataInputStream *input)throw();
   virtual void onDownloadDataReply(DataInputStream *input) throw();
   virtual void onDownloadEndReply(DataInputStream *input) throw();
@@ -78,21 +78,21 @@ protected:
 private:
 
   // Starts download of current file (m_toCopy member)
-  void startDownload() throw(IOException);
+  void startDownload();
 
   // Starts download of file
-  void processFile() throw(IOException);
+  void processFile();
 
   // Start download of folder
-  void processFolder() throw(IOException);
+  void processFolder();
 
   // Sets m_toCopy member to next file to download
-  void gotoNext() throw(IOException);
+  void gotoNext();
 
   // Sends get folder size request to server to know
   // how many bytes must be receivied during
   // all download process
-  void tryCalcInputFilesSize() throw(IOException);
+  void tryCalcInputFilesSize();
 
   // Terminates operation execution
   void killOp();

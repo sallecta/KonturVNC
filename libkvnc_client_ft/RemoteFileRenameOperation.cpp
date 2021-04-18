@@ -50,7 +50,7 @@ RemoteFileRenameOperation::~RemoteFileRenameOperation()
 {
 }
 
-void RemoteFileRenameOperation::start() throw(IOException)
+void RemoteFileRenameOperation::start()
 {
   // Logging
   StringStorage message;

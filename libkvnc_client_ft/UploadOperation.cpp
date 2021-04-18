@@ -76,7 +76,7 @@ UploadOperation::~UploadOperation()
   releaseRemoteFilesInfo();
 }
 
-void UploadOperation::start() throw(IOException)
+void UploadOperation::start()
 {
   //
   // Reset flags
@@ -179,7 +179,7 @@ void UploadOperation::killOp()
   notifyFinish();
 }
 
-bool UploadOperation::specialHandler() throw(IOException)
+bool UploadOperation::specialHandler()
 {
   // If first upload that start real upload operation
   if (m_firstUpload) {
@@ -259,7 +259,7 @@ UINT64 UploadOperation::getFileSize(const TCHAR *pathToFile)
   return fileSize;
 }
 
-void UploadOperation::startUpload() throw(IOException)
+void UploadOperation::startUpload()
 {
   if (isTerminating()) {
     killOp();
@@ -291,7 +291,7 @@ void UploadOperation::startUpload() throw(IOException)
   } // terminate operation is needed
 } // void
 
-void UploadOperation::processFolder() throw(IOException)
+void UploadOperation::processFolder()
 {
   StringStorage message;
 
@@ -313,7 +313,7 @@ void UploadOperation::processFolder() throw(IOException)
   m_sender->sendMkDirRequest(m_pathToTargetFile.getString());
 }
 
-void UploadOperation::processFile() throw(IOException)
+void UploadOperation::processFile()
 {
   //
   // Cleanup
@@ -390,7 +390,7 @@ void UploadOperation::processFile() throw(IOException)
                               initialFileOffset);
 } // void
 
-void UploadOperation::sendFileDataChunk() throw(IOException)
+void UploadOperation::sendFileDataChunk()
 {
   _ASSERT(m_fis != NULL);
 
@@ -443,7 +443,7 @@ void UploadOperation::gotoNext()
   gotoNext(true);
 }
 
-void UploadOperation::gotoNext(bool fake) throw(IOException)
+void UploadOperation::gotoNext(bool fake)
 {
   FileInfoList *current = m_toCopy;
 

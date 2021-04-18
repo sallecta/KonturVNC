@@ -93,7 +93,7 @@ BOOL FileTransferMainDialog::onInitDialog()
   return TRUE;
 }
 
-BOOL FileTransferMainDialog::onNotify(UINT controlID, LPARAM data) throw(IOException)
+BOOL FileTransferMainDialog::onNotify(UINT controlID, LPARAM data)
 {
   LPNMHDR nmhdr = (LPNMHDR)data;
   switch (controlID) {
@@ -155,7 +155,7 @@ BOOL FileTransferMainDialog::onNotify(UINT controlID, LPARAM data) throw(IOExcep
   return TRUE;
 }
 
-BOOL FileTransferMainDialog::onCommand(UINT controlID, UINT notificationID) throw(IOException)
+BOOL FileTransferMainDialog::onCommand(UINT controlID, UINT notificationID)
 {
   switch (controlID) {
   case IDCANCEL:
@@ -265,7 +265,7 @@ void FileTransferMainDialog::onCancelOperationButtonClick()
   }
 }
 
-void FileTransferMainDialog::onRenameRemoteButtonClick() throw(IOException)
+void FileTransferMainDialog::onRenameRemoteButtonClick()
 {
   FileInfo *fileInfo = m_remoteFileListView.getSelectedFileInfo();
 
@@ -294,7 +294,7 @@ void FileTransferMainDialog::onRenameRemoteButtonClick() throw(IOException)
   }
 }
 
-void FileTransferMainDialog::onMkDirRemoteButtonClick() throw(IOException)
+void FileTransferMainDialog::onMkDirRemoteButtonClick()
 {
   NewFolderDialog folderDialog(&m_ctrlThis);
   if (folderDialog.showModal() == IDOK) {
@@ -312,7 +312,7 @@ void FileTransferMainDialog::onMkDirRemoteButtonClick() throw(IOException)
   }
 }
 
-void FileTransferMainDialog::onRemoveRemoteButtonClick() throw(IOException)
+void FileTransferMainDialog::onRemoveRemoteButtonClick()
 {
   unsigned int siCount = m_remoteFileListView.getSelectedItemsCount();
 
@@ -350,7 +350,7 @@ void FileTransferMainDialog::onRemoveRemoteButtonClick() throw(IOException)
   delete[] filesInfo;
 }
 
-void FileTransferMainDialog::onRefreshRemoteButtonClick() throw(IOException)
+void FileTransferMainDialog::onRefreshRemoteButtonClick()
 {
   refreshRemoteFileList();
 }
@@ -602,14 +602,14 @@ void FileTransferMainDialog::moveUpLocalFolder()
   tryListLocalFolder(pathToFile.getString());
 }
 
-void FileTransferMainDialog::moveUpRemoteFolder() throw(IOException)
+void FileTransferMainDialog::moveUpRemoteFolder()
 {
   StringStorage parent;
   getPathToParentRemoteFolder(&parent);
   tryListRemoteFolder(parent.getString());
 }
 
-void FileTransferMainDialog::onRemoteListViewDoubleClick() throw(IOException)
+void FileTransferMainDialog::onRemoteListViewDoubleClick()
 {
   FileInfo *selFileInfo = m_remoteFileListView.getSelectedFileInfo();
   if (selFileInfo == 0)
@@ -844,14 +844,14 @@ void FileTransferMainDialog::tryListLocalFolder(const TCHAR *pathToFile)
   }
 }
 
-void FileTransferMainDialog::refreshRemoteFileList() throw(IOException)
+void FileTransferMainDialog::refreshRemoteFileList()
 {
   StringStorage currentFolder;
   m_remoteCurFolderTextBox.getText(&currentFolder);
   tryListRemoteFolder(currentFolder.getString());
 }
 
-void FileTransferMainDialog::tryListRemoteFolder(const TCHAR *pathToFile) throw(IOException)
+void FileTransferMainDialog::tryListRemoteFolder(const TCHAR *pathToFile)
 {
   m_lastSentFileListPath.setString(pathToFile);
   m_ftCore->remoteFileListOperation(pathToFile);

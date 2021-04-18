@@ -57,7 +57,7 @@ void ZrleEncoder::splitRectangle(const Rect *rect,
 
 void ZrleEncoder::sendRectangle(const Rect *rect,
                                 const FrameBuffer *serverFb,
-                                const EncodeOptions *options) throw(IOException)
+                                const EncodeOptions *options)
 {
   // Determing the number of bytes per pixel and the first byte of them.
   // It is possible only if red, green and blue intensities fit
@@ -118,7 +118,7 @@ template <class PIXEL_T>
 void ZrleEncoder::sendRect(const Rect *rect,
                            const FrameBuffer *serverFb,
                            const FrameBuffer *clientFb,
-                           const EncodeOptions *options) throw(IOException)
+                           const EncodeOptions *options)
 {
   m_rgbData.resize(0);
   //const PIXEL_T *buffer = static_cast<const PIXEL_T *>(clientFb->getBuffer());
@@ -217,7 +217,7 @@ void ZrleEncoder::sendRect(const Rect *rect,
 
 template <class PIXEL_T>
 void ZrleEncoder::writeRawTile(const Rect *tileRect,
-                               const FrameBuffer *fb) throw(IOException)
+                               const FrameBuffer *fb)
 {
   m_oldSize = m_rgbData.size();
   m_rgbData.resize(m_oldSize + tileRect->area() * m_bytesPerPixel + 1);
@@ -229,7 +229,7 @@ void ZrleEncoder::writeRawTile(const Rect *tileRect,
   }
 }
 
-void ZrleEncoder::writeSolidTile() throw(IOException)
+void ZrleEncoder::writeSolidTile()
 {
   m_oldSize = m_rgbData.size();
   UINT32 colorPixel = m_pal.getEntry(0);
@@ -240,7 +240,7 @@ void ZrleEncoder::writeSolidTile() throw(IOException)
 
 template <class PIXEL_T>
 void ZrleEncoder::writePackedPaletteTile(const Rect *tileRect,
-                                         const FrameBuffer *fb) throw(IOException)
+                                         const FrameBuffer *fb)
 {
   int numColors = m_pal.getNumColors();
   m_oldSize = m_rgbData.size();
@@ -323,7 +323,7 @@ void ZrleEncoder::pushRunLengthPaletteRle(int runLength,
 
 template <class PIXEL_T>
 void ZrleEncoder::writePaletteRleTile(const Rect *tileRect,
-                                      const FrameBuffer *fb) throw(IOException)
+                                      const FrameBuffer *fb)
 {
   int numColors = m_pal.getNumColors();
   std::vector<UINT8> paletteRleData;

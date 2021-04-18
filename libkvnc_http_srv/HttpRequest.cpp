@@ -59,14 +59,14 @@ ArgList *HttpRequest::getArguments() const
   return m_argList;
 }
 
-void HttpRequest::readHeader() throw(IOException)
+void HttpRequest::readHeader()
 {
   readLine('\n', m_request, sizeof(m_request) - 1);
 
   skipHeader(true);
 }
 
-void HttpRequest::skipHeader(bool lastWasEndLn) throw(IOException)
+void HttpRequest::skipHeader(bool lastWasEndLn)
 {
   char c;
 
@@ -124,7 +124,7 @@ bool HttpRequest::parseHeader()
   return true;
 }
 
-void HttpRequest::readLine(char endLnChar, char *buffer, size_t maxSize) throw(IOException)
+void HttpRequest::readLine(char endLnChar, char *buffer, size_t maxSize)
 {
   size_t readTotal = 0;
 
