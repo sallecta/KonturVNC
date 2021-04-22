@@ -46,6 +46,7 @@
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-std=c++11" />
+					<Add option="-g" />
 					<Add option="-DWIN32" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_LIB" />
@@ -55,7 +56,6 @@
 					<Add directory="$(WORKSPACEDIR)/!external/openssl/include" />
 				</Compiler>
 				<Linker>
-					<Add library="libkvnc_rfb" />
 					<LinkerExe value="CppCompiler" />
 				</Linker>
 			</Target>

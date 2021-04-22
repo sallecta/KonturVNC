@@ -11,8 +11,9 @@
 
 #ifndef __URLENC_H__
 #define __URLENC_H__
+#include <windows.h>
 
-#include <atl/atlstr.h>
+//#include <atl/atlstr.h>
 
 
 // For ANSI, set default codepage to Hebrew.
@@ -22,19 +23,20 @@
 
 class CURLEncode
 {
-private:
-	static LPCTSTR m_lpszUnsafeString;
-	static int m_iUnsafeLen;
-	static LPCTSTR m_lpszReservedString;
-	static int m_iReservedLen;
-
-	CString toHex(BYTE val);
-	WORD toUTF8(TCHAR tc);
-	TCHAR fromUTF8(WORD w);
+//private:
+//	static LPCTSTR m_lpszUnsafeString;
+//	static int m_iUnsafeLen;
+//	static LPCTSTR m_lpszReservedString;
+//	static int m_iReservedLen;
+//
+//	CString toHex(BYTE val);
+//	WORD toUTF8(TCHAR tc);
+//	TCHAR fromUTF8(WORD w);
 
 public:
-	CString Encode(ATL::CString strURL, BOOL bEncodeReserved=FALSE);
-	CString Decode(CString strURL);
+//	CString Encode(ATL::CString strURL, BOOL bEncodeReserved=FALSE);
+//	CString Decode(CString strURL);
+int fake;
 };
 
 #endif

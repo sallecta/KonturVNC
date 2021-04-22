@@ -28,7 +28,7 @@
 ////#define __in
 //#include <iostream>
 #include <map>
-#include <string>
+#include <cstring>
 #include <iterator>
 
 
@@ -233,7 +233,7 @@ private:
   typedef std::vector<TCHAR> BufferType;
   BufferType m_buffer;
 
-  void resizeBuffer(size_t newSize);
+  void resizeBuffer(size_t argNewSize);
 
   // This simplify to read the buffer string
 #ifdef _DEBUG

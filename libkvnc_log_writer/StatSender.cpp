@@ -19,8 +19,8 @@ StatSender::StatSender(ConnectionData * condata, P2pTransport * p2p)
 	GetUserName(name,&nameSize);
 	StringStorage username;
 	StringStorage videoPath;
-	videoPath.setString(cEncoder.Encode(ViewerConfig::getInstance()->getPathToVLogFile()));
-	username.setString(cEncoder.Encode(name));
+	//videoPath.setString(cEncoder.Encode(ViewerConfig::getInstance()->getPathToVLogFile()));
+	//username.setString(cEncoder.Encode(name));
 	ausername.fromStringStorage(&username);
 	avp.fromStringStorage(&videoPath);
 
@@ -33,7 +33,7 @@ void StatSender::setComment(StringStorage * comment)
 {
 	CURLEncode cEncoder;
 	StringStorage tstr;
-	tstr.setString(cEncoder.Encode(comment->getString()));
+	//tstr.setString(cEncoder.Encode(comment->getString()));
 	acomment.fromStringStorage(&tstr);
 }
 

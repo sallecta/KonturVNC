@@ -48,20 +48,20 @@ StringStorage::~StringStorage()
 {
 }
 
-void StringStorage::setString(const TCHAR *string)
+void StringStorage::setString(const TCHAR *argString)
 {
-  if (string == 0) {
-    string = _T("");
+  if (argString == 0) {
+    argString = _T("");
   }
 
-  size_t length = _tcslen(string);
+  size_t length = strlen(argString);
   resizeBuffer(length + 1);
-  memcpy(&m_buffer.front(), string, getSize());
+  memcpy(&m_buffer.front(), argString, getSize());
 }
 
-void StringStorage::resizeBuffer(size_t newSize)
+void StringStorage::resizeBuffer(size_t argNewSize)
 {
-  m_buffer.resize(newSize);
+  m_buffer.resize(argNewSize);
 
 #ifdef _DEBUG
   m_readableString = &m_buffer.front();

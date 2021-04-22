@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include <string.h>
+#include <cstring>
 #include <stdlib.h>
 #include "HostPath.h"
 
@@ -74,8 +74,12 @@ HostPath::set(const char *path)
   if (path == 0) {
     return false;
   }
-  size_t pathLen = strlen(path);
-  if (pathLen < 1 || pathLen > MAX_PATH_LEN) {
+  size_t pathLen;
+  pathLen = strlen(path);
+  if (pathLen < 1) {
+    return false;
+  }
+  if (pathLen > MAX_PATH_LEN) {
     return false;
   }
   m_path = new char[pathLen + 1];
@@ -136,6 +140,7 @@ HostPath::set(const char *path)
   }
   m_vncHost = new char[hostLen + 1];
   memcpy(m_vncHost, hostStart, hostLen);
+  //m_vncHost[hostLen] = '\0';
   m_vncHost[hostLen] = '\0';
   tokenStart += tokens[2];
 

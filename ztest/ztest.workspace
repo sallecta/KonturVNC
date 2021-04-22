@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="ztest workspace">
+		<Project filename="ztest.heloo.cpp/ztest.heloo.cpp.cbp" />
+		<Project filename="hello.static.c/hello.static.c.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

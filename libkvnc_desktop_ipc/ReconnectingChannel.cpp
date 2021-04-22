@@ -149,7 +149,7 @@ void ReconnectingChannel::waitForReconnect(const TCHAR *funName,
   DateTime startTime = DateTime::now();
   bool success = false;
   while (!success) {
-    unsigned int timeForWait = max((int)m_timeOut -
+    unsigned int timeForWait = std::max((int)m_timeOut -
                                    (int)(DateTime::now() -
                                          startTime).getTime(),
                                    0);

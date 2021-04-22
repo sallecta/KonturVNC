@@ -7,20 +7,17 @@
 		<Option compiler="gcc" />
 		<Option virtualFolders="doc/" />
 		<Build>
-			<Target title="Release_Win32">
+			<Target title="Debug_Win32">
 				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
 				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
-				<Option deps_output="../bin/Release_Win32/" />
+				<Option external_deps="$(TARGET_OUTPUT_DIR)/libkvnc_util.a;$(TARGET_OUTPUT_DIR)/libkvnc_client_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_log_writer.a;$(TARGET_OUTPUT_DIR)/libkvnc_win_system.a;$(TARGET_OUTPUT_DIR)/libkvnc_client_core.a;$(TARGET_OUTPUT_DIR)/libkvnc_rfb.a;$(TARGET_OUTPUT_DIR)/libkvnc_gui.a;$(TARGET_OUTPUT_DIR)/libkvnc_thread.a;$(TARGET_OUTPUT_DIR)/libkvnc_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_file.a;$(TARGET_OUTPUT_DIR)/libkvnc_network.a;$(TARGET_OUTPUT_DIR)/libkvnc_ft.a;$(TARGET_OUTPUT_DIR)/libkvnc_client_ft.a;$(TARGET_OUTPUT_DIR)/libkvnc_p2p.a;$(TARGET_OUTPUT_DIR)/libkvnc_io.a;$(TARGET_OUTPUT_DIR)/libkvnc_region.a;$(TARGET_OUTPUT_DIR)/lib_pj.a;$(TARGET_OUTPUT_DIR)/lib_pjutil.a;$(TARGET_OUTPUT_DIR)/lib_pjnath.a;$(TARGET_OUTPUT_DIR)/lib_avilog.a;$(TARGET_OUTPUT_DIR)/lib_jpegturbo.a;$(TARGET_OUTPUT_DIR)/lib_avilog.a;$(TARGET_OUTPUT_DIR)/lib_jpegturbo.a;$(TARGET_OUTPUT_DIR)/lib_zlib.a;$(TARGET_OUTPUT_DIR)/lib_usrsctp.a;$(TARGET_OUTPUT_DIR)/lib_revel.a;" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Option parameters="127.0.0.11::8080" />
 				<Compiler>
-					<Add option="-std=c++11" />
-					<Add option="-m32" />
 					<Add option="-g" />
-					<Add option="-DWIN32" />
-					<Add option="-DNDEBUG" />
-					<Add option="-D_WINDOWS" />
 					<Add option="-Dkvnc_naming_defs_client" />
+					<Add option="-D_DEBUG" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include/" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include/" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjnath/include/" />
@@ -30,7 +27,6 @@
 					<Add option="-static-libstdc++" />
 					<Add option="-static-libgcc" />
 					<Add option="-static" />
-					<Add option="-m32" />
 					<Add option="-Wl,--start-group" />
 					<Add option="-lkvnc_util" />
 					<Add option="-lkvnc_client_config" />
@@ -89,16 +85,20 @@
 					<LinkerExe value="CppCompiler" />
 				</Linker>
 			</Target>
-			<Target title="Debug_Win32">
+			<Target title="Release_Win32">
 				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)" />
 				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
 				<Option deps_output="../bin/Release_Win32/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option parameters="127.0.0.1::8080" />
 				<Compiler>
 					<Add option="-std=c++11" />
+					<Add option="-m32" />
 					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
 					<Add option="-Dkvnc_naming_defs_client" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include/" />
 					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include/" />
@@ -109,6 +109,7 @@
 					<Add option="-static-libstdc++" />
 					<Add option="-static-libgcc" />
 					<Add option="-static" />
+					<Add option="-m32" />
 					<Add option="-Wl,--start-group" />
 					<Add option="-lkvnc_util" />
 					<Add option="-lkvnc_client_config" />

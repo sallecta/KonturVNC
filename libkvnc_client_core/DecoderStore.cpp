@@ -98,7 +98,7 @@ bool DecoderStore::addDecoder(Decoder *decoder, int priority)
     m_decoders[decoder->getCode()] = std::make_pair(priority, decoder);
     return true;
   }
-  delete[] decoder;
+  //delete[] decoder;
   return false;
 }
 

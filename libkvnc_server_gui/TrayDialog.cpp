@@ -64,10 +64,10 @@ void TrayDialog::initControls()
 	m_clientList.addColumn(0, _T("Èìÿ"), 190);
 }
 
-void TrayDialog::addClients(list<RfbClientInfo *> *clients)
+void TrayDialog::addClients(std::list<RfbClientInfo *> *clients)
 {
 	AutoLock al(&m_mapLock);
-	map<UINT32, int> tmpClients = m_clients;
+	std::map<UINT32, int> tmpClients = m_clients;
 	bool modified=false;
 	for (std::list<RfbClientInfo *>::iterator it = clients->begin(); it != clients->end(); it++) {
 		if(!m_clients.count((*it)->m_id))
@@ -78,7 +78,7 @@ void TrayDialog::addClients(list<RfbClientInfo *> *clients)
 		else
 			tmpClients.erase((*it)->m_id);
     }
-	list<int> deleted;
+	std::list<int> deleted;
 
 	if(tmpClients.size()){
 		modified=true;

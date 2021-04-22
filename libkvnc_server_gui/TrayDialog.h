@@ -1,4 +1,4 @@
-
+#include <list>
 #include "../libkvnc_gui/BaseDialog.h"
 #include "../libkvnc_gui/ListView.h"
 #include "../libkvnc_thread/LocalMutex.h"
@@ -18,7 +18,7 @@ public:
 
 	int show();
 	void hide();
-	void addClients(list<RfbClientInfo *> *clients);
+	void addClients(std::list<RfbClientInfo *> *clients);
 private:
 	void initControls();
 
@@ -26,7 +26,7 @@ private:
 
 	ListView m_clientList;
 
-	map<UINT32, int> m_clients;
+	std::map<UINT32, int> m_clients;
 
 	bool compare_nocase (RfbClientInfo * first, RfbClientInfo * second) { return first->m_id <= second->m_id;	 }
 	bool m_min;

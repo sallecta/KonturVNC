@@ -45,6 +45,5 @@
 		<Project filename="libkvnc_util/libkvnc_util.cbp" />
 		<Project filename="libkvnc_win_event_log/libkvnc_win_event_log.cbp" />
 		<Project filename="libkvnc_win_system/libkvnc_win_system.cbp" />
-		<Project filename="ztest/ztest.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

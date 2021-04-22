@@ -77,7 +77,7 @@ void PasswordControl::setPassword(const TCHAR *plainText)
   StringStorage tmpStringStorage = StringStorage(plainText);
   AnsiStringStorage ansiPlainTextStorage(&tmpStringStorage);
   memcpy(plainTextInANSI, ansiPlainTextStorage.getString(),
-         min(ansiPlainTextStorage.getLength(), sizeof(plainTextInANSI)));
+         std::min(ansiPlainTextStorage.getLength(), sizeof(plainTextInANSI)));
 
   UINT8 cryptedPassword[8];
   memset(cryptedPassword, 0, 8);
