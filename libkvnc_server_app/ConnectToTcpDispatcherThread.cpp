@@ -23,10 +23,10 @@
 //
 
 #include "ConnectToTcpDispatcherThread.h"
-#include "../libkvnc_network/socket/SocketStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_tcp_dispatcher/TcpDispatcherInitializer.h"
+#include "../libkvnc_all_network/socket/SocketStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_server_tcpDispatcher/TcpDispatcherInitializer.h"
 
 ConnectToTcpDispatcherThread::ConnectToTcpDispatcherThread(
   const TCHAR *connectHost,

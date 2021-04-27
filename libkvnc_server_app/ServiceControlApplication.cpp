@@ -25,23 +25,23 @@
 #include "ServiceControlApplication.h"
 #include "ServiceControlCommandLine.h"
 
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../libkvnc_util/StringTable.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../libkvnc_all_util/StringTable.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 #include "WsConfigRunner.h"
 #include "TvnServerHelp.h"
 
 #include "../libkvnc_server_gui/ControlCommandLine.h"
 
-#include "../libkvnc_win_system/Registry.h"
-#include "../libkvnc_win_system/RegistryKey.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/Shell.h"
-#include "../libkvnc_win_system/SCMClient.h"
-#include "../libkvnc_win_system/WinCommandLineArgs.h"
+#include "../libkvnc_all_winSystem/Registry.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/Shell.h"
+#include "../libkvnc_all_winSystem/SCMClient.h"
+#include "../libkvnc_all_winSystem/WinCommandLineArgs.h"
 
 ServiceControlApplication::ServiceControlApplication(HINSTANCE hInstance,
                                                      const TCHAR *windowClassName,

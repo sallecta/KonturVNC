@@ -25,23 +25,23 @@
 #ifndef __RFBCLIENTMANAGER_H__
 #define __RFBCLIENTMANAGER_H__
 
-#include "../libkvnc_util/ListenerContainer.h"
+#include "../libkvnc_all_util/ListenerContainer.h"
 #include "../libkvnc_server_rfb/RfbClient.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_win_system/WindowsEvent.h"
-#include "../libkvnc_desktop/Desktop.h"
-#include "../libkvnc_desktop/DesktopFactory.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_winSystem/WindowsEvent.h"
+#include "../libkvnc_server_desktop/Desktop.h"
+#include "../libkvnc_server_desktop/DesktopFactory.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 // Listener interfaces
 #include "RfbClientManager.h"
 #include "RfbClientManagerEventListener.h"
 #include "../libkvnc_server_rfb/ClientTerminationListener.h"
-#include "../libkvnc_desktop/ClipboardListener.h"
-#include "../libkvnc_desktop/AbnormDeskTermListener.h"
-#include "../libkvnc_desktop/UpdateSendingListener.h"
+#include "../libkvnc_server_desktop/ClipboardListener.h"
+#include "../libkvnc_server_desktop/AbnormDeskTermListener.h"
+#include "../libkvnc_server_desktop/UpdateSendingListener.h"
 #include "../libkvnc_server_rfb/ClientAuthListener.h"
 #include "../libkvnc_server_gui/RfbClientInfo.h"
 #include "NewConnectionEvents.h"
@@ -113,7 +113,7 @@ protected:
   virtual void onCheckAccessControl(RfbClient *client);
   virtual void onClipboardUpdate(const StringStorage *newClipboard);
   virtual void onSendUpdate(const UpdateContainer *updateContainer,
-                            const CursorShape *cursorShape);
+                            const lkvnc_rfb_CursorShape *lkvnc_rfb_CursorShape);
   virtual bool isReadyToSend();
   // If an error occured RfbClientManager closes all current connections
   // (authorized and not authorized) that bring to closing the belonged desktop

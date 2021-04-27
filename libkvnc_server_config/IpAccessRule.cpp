@@ -23,7 +23,7 @@
 //
 
 #include "IpAccessRule.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 
 IpAccessRule::IpAccessRule()
 : m_action(ACTION_TYPE_DENY)

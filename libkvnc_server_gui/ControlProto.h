@@ -25,7 +25,7 @@
 #ifndef _CONTROL_PROTO_H_
 #define _CONTROL_PROTO_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 /**
  * Control protocol constants.

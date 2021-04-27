@@ -29,9 +29,9 @@
 #include "TvnServerListener.h"
 #include "../libkvnc_server_log/LogServer.h"
 #include "../libkvnc_server_log/ClientLogger.h"
-#include "../libkvnc_win_system/Service.h"
+#include "../libkvnc_all_winSystem/Service.h"
 
-#include "../libkvnc_thread/Thread.h"
+#include "../libkvnc_all_thread/Thread.h"
 #include "WinServiceEvents.h"
 #include "NewConnectionEvents.h"
 

@@ -24,7 +24,7 @@
 
 #include "ConnectStringParser.h"
 
-#include "../libkvnc_util/StringParser.h"
+#include "../libkvnc_all_util/StringParser.h"
 
 ConnectStringParser::ConnectStringParser()
 {

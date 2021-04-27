@@ -1,10 +1,10 @@
 /*
 Copyright (C) (2004) (Cort Stratton) <cort at cortstratton dot org>
 
-This program is free software; you can redistribute it and/or 
-modify it under the terms of the GNU General Public License 
-as published by the Free Software Foundation; either 
-version 2 of the License, or (at your option) any later 
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later
 version.
 
 This program is distributed in the hope that it will be useful,
@@ -136,7 +136,7 @@ Revel_XvidEncoder::Revel_XvidEncoder(void)
 
 Revel_XvidEncoder::~Revel_XvidEncoder(void)
 {
-    
+
 }
 
 
@@ -163,7 +163,7 @@ int Revel_XvidEncoder::CreateXvidEncoder(void **encoderOut)
     xvid_gbl_init.debug = 0;
     xvid_gbl_init.cpu_flags = 0;
 	xvid_global(NULL, XVID_GBL_INIT, &xvid_gbl_init, NULL);
-    
+
     // Initialize XviD encoder
     xvid_enc_create_t xvid_enc_create;
 	memset(&xvid_enc_create, 0, sizeof(xvid_enc_create));
@@ -180,7 +180,7 @@ int Revel_XvidEncoder::CreateXvidEncoder(void **encoderOut)
 	zones[0].base=100;
 	zones[0].mode=XVID_ZONE_WEIGHT;
 	zones[0].increment=100;
-	
+
 
     xvid_enc_create.zones = zones;
     xvid_enc_create.num_zones = NUM_ZONES;
@@ -196,14 +196,14 @@ int Revel_XvidEncoder::CreateXvidEncoder(void **encoderOut)
 	single.reaction_delay_factor = 16;
 	single.averaging_period = 100;
 	single.buffer = 100;
-	
+
 
 	xvid_enc_plugin_t plugins[7];
-	
+
 	plugins[0].func=xvid_plugin_single;
 	plugins[0].param = &single;
 
-	
+
 	xvid_enc_create.plugins = plugins;
 	xvid_enc_create.num_plugins = 1;
 
@@ -217,9 +217,9 @@ int Revel_XvidEncoder::CreateXvidEncoder(void **encoderOut)
 	xvid_enc_create.bquant_ratio = 150;
 	xvid_enc_create.bquant_offset = 100;
 
-	
+
     xvid_enc_create.frame_drop_ratio = 0;
-    xvid_enc_create.global = 0; 
+    xvid_enc_create.global = 0;
 
 	xvid_enc_create.min_quant[0] = 1;
 	xvid_enc_create.max_quant[0] = 31;
@@ -250,7 +250,7 @@ Revel_Error Revel_XvidEncoder::EncodeStart(const string& filename,
     Revel_Error revError = Revel_BaseEncoder::EncodeStart(filename, params);
     if (revError != REVEL_ERR_NONE)
         return revError;
-        
+
     // Create XviD encoder
     int error = CreateXvidEncoder(&m_xvidEncoderHandle);
     if (error != 0 || m_xvidEncoderHandle == NULL)
@@ -282,11 +282,11 @@ Revel_Error Revel_XvidEncoder::EncodeFrame(const Revel_VideoFrame& frame,
 	// Bind output buffer
 	xvid_enc_frame.bitstream = m_frameBuffer;
 	xvid_enc_frame.length = -1;
-	
+
 	// Initialize input image fields
 	if (frame.pixels != NULL) {
 		xvid_enc_frame.input.plane[0] = frame.pixels;
-		xvid_enc_frame.input.csp = GetXvidPixelFormat(frame.pixelFormat);
+		xvid_enc_frame.input.csp = GetXvidPixelFormat(frame.lkvnc_rfb_PixelFormat);
 		xvid_enc_frame.input.stride[0] = frame.width * frame.bytesPerPixel;
 	} else {
 		xvid_enc_frame.input.csp = XVID_CSP_NULL;
@@ -298,7 +298,7 @@ Revel_Error Revel_XvidEncoder::EncodeFrame(const Revel_VideoFrame& frame,
 	// Set up core's general features
     int quality = GetXvidQuality(m_params.quality);
 	xvid_enc_frame.vop_flags = vop_presets[quality];
-	
+
 
 	// Frame type -- let core decide for us
 	xvid_enc_frame.type = XVID_TYPE_AUTO;
@@ -308,11 +308,11 @@ Revel_Error Revel_XvidEncoder::EncodeFrame(const Revel_VideoFrame& frame,
 
 	xvid_enc_frame.vol_flags |= XVID_VOL_MPEGQUANT;
 	xvid_enc_frame.vol_flags |= XVID_VOL_QUARTERPEL;
-	
+
 
 	// Set up motion estimation flags
-	
-	
+
+
 	xvid_enc_frame.motion =  motion_presets[quality];
 	xvid_enc_frame.vol_flags = 0;
 	xvid_enc_frame.vop_flags = 398;
@@ -322,7 +322,7 @@ Revel_Error Revel_XvidEncoder::EncodeFrame(const Revel_VideoFrame& frame,
 	xvid_enc_frame.quant_intra_matrix = NULL;
 	xvid_enc_frame.quant_inter_matrix = NULL;
 
-	
+
 
 	// Encode the frame
 	int frameBytes = xvid_encore(m_xvidEncoderHandle, XVID_ENC_ENCODE,

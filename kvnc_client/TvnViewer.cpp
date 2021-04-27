@@ -24,9 +24,9 @@
 
 #include <windows.h>
 #include "TvnViewer.h"
-#include "../libkvnc_network/socket/WindowsSocket.h"
-#include "../libkvnc_util/ResourceLoader.h"
-#include "resource.h"
+#include "../libkvnc_all_network/socket/WindowsSocket.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "kvnc_client_Resource.h"
 
 
 

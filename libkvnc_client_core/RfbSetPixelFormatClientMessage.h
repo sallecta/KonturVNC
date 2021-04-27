@@ -25,19 +25,19 @@
 #ifndef _RFB_SET_PIXEL_FORMAT_CLIENT_MESSAGE_H_
 #define _RFB_SET_PIXEL_FORMAT_CLIENT_MESSAGE_H_
 
-#include "../libkvnc_rfb/PixelFormat.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_PixelFormat.h"
 #include "RfbClientToServerMessage.h"
 
 class RfbSetPixelFormatClientMessage : public RfbClientToServerMessage
 {
 public:
-  RfbSetPixelFormatClientMessage(const PixelFormat *pixelFormat);
+  RfbSetPixelFormatClientMessage(const lkvnc_rfb_PixelFormat *lkvnc_rfb_PixelFormat);
   virtual ~RfbSetPixelFormatClientMessage();
 
   void send(RfbOutputGate *output);
 
 protected:
-  PixelFormat m_pixelFormat;
+  lkvnc_rfb_PixelFormat m_pixelFormat;
 };
 
 #endif

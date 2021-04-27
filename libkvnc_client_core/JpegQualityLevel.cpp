@@ -37,16 +37,16 @@ JpegQualityLevel::~JpegQualityLevel()
 int JpegQualityLevel::qualityToEncoding(int qualityLevel)
 {
   switch (qualityLevel) {
-  case 0: return PseudoEncDefs::QUALITY_LEVEL_0;
-  case 1: return PseudoEncDefs::QUALITY_LEVEL_1;
-  case 2: return PseudoEncDefs::QUALITY_LEVEL_2;
-  case 3: return PseudoEncDefs::QUALITY_LEVEL_3;
-  case 4: return PseudoEncDefs::QUALITY_LEVEL_4;
-  case 5: return PseudoEncDefs::QUALITY_LEVEL_5;
-  case 6: return PseudoEncDefs::QUALITY_LEVEL_6;
-  case 7: return PseudoEncDefs::QUALITY_LEVEL_7;
-  case 8: return PseudoEncDefs::QUALITY_LEVEL_8;
-  case 9: return PseudoEncDefs::QUALITY_LEVEL_9;
+  case 0: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_0;
+  case 1: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_1;
+  case 2: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_2;
+  case 3: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_3;
+  case 4: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_4;
+  case 5: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_5;
+  case 6: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_6;
+  case 7: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_7;
+  case 8: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_8;
+  case 9: return lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_9;
   default:
     StringStorage error;
     error.format(_T("Quality of jpeg \"%d\" is not valid"), qualityLevel);

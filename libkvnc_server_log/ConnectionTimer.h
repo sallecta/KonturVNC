@@ -25,8 +25,8 @@
 #ifndef __CONNECTIONTIMER_H__
 #define __CONNECTIONTIMER_H__
 
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_win_system/WindowsEvent.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_winSystem/WindowsEvent.h"
 #include "TimerListener.h"
 
 // This class waits for time interval after that notifies to external listener.

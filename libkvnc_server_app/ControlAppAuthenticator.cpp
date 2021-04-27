@@ -23,8 +23,8 @@
 //
 
 #include "ControlAppAuthenticator.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_util/VncPassCrypt.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_util/VncPassCrypt.h"
 
 ControlAppAuthenticator::ControlAppAuthenticator(UINT64 failureTimeInterval,
                                                  unsigned int failureMaxCount)

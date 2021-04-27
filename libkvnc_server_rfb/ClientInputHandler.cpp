@@ -23,7 +23,7 @@
 //
 
 #include "ClientInputHandler.h"
-#include "../libkvnc_rfb/MsgDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 
 ClientInputHandler::ClientInputHandler(RfbCodeRegistrator *codeRegtor,
                                        ClientInputEventListener *extEventListener,
@@ -32,8 +32,8 @@ ClientInputHandler::ClientInputHandler(RfbCodeRegistrator *codeRegtor,
   m_viewOnly(viewOnly)
 {
   // Request codes
-  codeRegtor->regCode(ClientMsgDefs::KEYBOARD_EVENT, this);
-  codeRegtor->regCode(ClientMsgDefs::POINTER_EVENT, this);
+  codeRegtor->regCode(lkvnc_rfb_Defs__Client::KEYBOARD_EVENT, this);
+  codeRegtor->regCode(lkvnc_rfb_Defs__Client::POINTER_EVENT, this);
 }
 
 ClientInputHandler::~ClientInputHandler()
@@ -43,7 +43,7 @@ ClientInputHandler::~ClientInputHandler()
 void ClientInputHandler::onRequest(UINT32 reqCode, RfbInputGate *input)
 {
   switch (reqCode) {
-  case ClientMsgDefs::KEYBOARD_EVENT:
+  case lkvnc_rfb_Defs__Client::KEYBOARD_EVENT:
     {
       bool down = input->readUInt8() != 0;
       input->readUInt16(); // Pad
@@ -53,7 +53,7 @@ void ClientInputHandler::onRequest(UINT32 reqCode, RfbInputGate *input)
       }
     }
     break;
-  case ClientMsgDefs::POINTER_EVENT:
+  case lkvnc_rfb_Defs__Client::POINTER_EVENT:
     {
       UINT8 buttonMask = input->readUInt8();
       UINT16 x = input->readUInt16();

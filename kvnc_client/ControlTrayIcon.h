@@ -25,11 +25,11 @@
 #ifndef _CONTROL_TRAY_ICON_H_
 #define _CONTROL_TRAY_ICON_H_
 
-#include "../libkvnc_gui/NotifyIcon.h"
-#include "../libkvnc_gui/Menu.h"
+#include "../libkvnc_all_gui/NotifyIcon.h"
+#include "../libkvnc_all_gui/Menu.h"
 #include "TvnViewer.h"
 
-#include "resource.h"
+#include "kvnc_client_Resource.h"
 
 class TvnViewer;
 

@@ -41,7 +41,7 @@ int JpegEncoder::getCode() const
 
 void JpegEncoder::splitRectangle(const Rect *rect,
                                  std::vector<Rect> *rectList,
-                                 const FrameBuffer *serverFb,
+                                 const lkvnc_rfb_FrameBuffer *serverFb,
                                  const EncodeOptions *options)
 {
   int maxWidth = 2048;
@@ -52,7 +52,7 @@ void JpegEncoder::splitRectangle(const Rect *rect,
 }
 
 void JpegEncoder::sendRectangle(const Rect *rect,
-                                const FrameBuffer *serverFb,
+                                const lkvnc_rfb_FrameBuffer *serverFb,
                                 const EncodeOptions *options)
 {
   size_t bppServer = m_pixelConverter->getSrcBitsPerPixel();

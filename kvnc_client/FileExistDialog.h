@@ -25,9 +25,9 @@
 #ifndef _FILE_EXIST_DIALOG_H_
 #define _FILE_EXIST_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/Control.h"
-#include "../libkvnc_ft/FileInfo.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/Control.h"
+#include "../libkvnc_all_fileTransfer/FileInfo.h"
 
 class FileExistDialog : public BaseDialog
 {

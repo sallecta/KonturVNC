@@ -35,11 +35,11 @@
 #include "ControlCommand.h"
 #include "UpdateLocalConfigCommand.h"
 
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../libkvnc_util/StringTable.h"
-#include "../libkvnc_util/MacroCommand.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../libkvnc_all_util/StringTable.h"
+#include "../libkvnc_all_util/MacroCommand.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 #include <crtdbg.h>
 

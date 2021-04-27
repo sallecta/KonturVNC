@@ -25,10 +25,10 @@
 #ifndef _QUERY_CONNECTION_DIALOG_H_
 #define _QUERY_CONNECTION_DIALOG_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/Control.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/Control.h"
 
 class QueryConnectionDialog : public BaseDialog
 {

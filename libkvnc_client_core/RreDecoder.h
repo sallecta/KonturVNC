@@ -35,7 +35,7 @@ public:
 
 protected:
   virtual void decode(RfbInputGate *input,
-                      FrameBuffer *framebuffer,
+                      lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                       const Rect *dstRect);
 };
 

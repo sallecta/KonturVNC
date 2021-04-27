@@ -23,10 +23,10 @@
 //
 
 #include "LoginDialog.h"
-#include "NamingDefs.h"
+#include "kvnc_client__Defs.h"
 #include "OptionsDialog.h"
 
-#include "../libkvnc_win_system/Shell.h"
+#include "../libkvnc_all_winSystem/Shell.h"
 
 LoginDialog::LoginDialog(TvnViewer *viewer)
 : BaseDialog(IDD_LOGINDIALOG),

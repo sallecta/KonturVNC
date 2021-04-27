@@ -29,10 +29,10 @@
 
 #include "IpAccessRule.h"
 
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/Exception.h"
 
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
 
 using namespace std;
 

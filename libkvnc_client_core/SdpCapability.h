@@ -6,7 +6,7 @@
 #include "ServerMessageListener.h"
 #include "CapabilitiesManager.h"
 #include "../libkvnc_client_core/RemoteViewerCore.h"
-#include "../libkvnc_p2p/p2ptransport.h"
+#include "../libkvnc_all_p2p/p2ptransport.h"
 
 
 class SdpCapability : public ServerMessageListener

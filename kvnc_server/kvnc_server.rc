@@ -1,0 +1,553 @@
+#include "kvnc_server_Resource.h"
+#include <afxres.h>
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+1 VERSIONINFO
+ FILEVERSION 2,7,15,15
+ PRODUCTVERSION 2,7,15,15
+ FILEFLAGSMASK 0x0L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40000L
+ FILETYPE 0x0L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041904e3"
+        BEGIN
+            VALUE "CompanyName", "ZAO PF SKB Kontur, GlavSoft LLC."
+            VALUE "FileDescription", "kvnc server"
+            VALUE "FileVersion", "2.7.15.15"
+            VALUE "InternalName", "kvnc server"
+            VALUE "LegalCopyright", "(C) 2013-2015 ZAO PF SKB Kontur, (C) 2008-2013 GlavSoft LLC."
+            VALUE "OriginalFilename", "kvnc server.exe"
+            VALUE "ProductName", "kvnc"
+            VALUE "ProductVersion", "2.7.15.15"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x419, 1251
+    END
+END
+
+IDR_TRAYMENU MENU
+BEGIN
+    POPUP "tray"
+    BEGIN
+        MENUITEM "Настройки...",                ID_CONFIGURATION
+        MENUITEM SEPARATOR
+        MENUITEM "Подключить ожидающего наблюдателя...", ID_OUTGOING_CONN
+        MENUITEM "Подключить диспетчера...",    IDM_ATTACH_TO_DISPATCHER, GRAYED
+        MENUITEM "Отключить всех наблюдателей", ID_KILLCLIENTS
+        MENUITEM SEPARATOR
+        MENUITEM "О программе...",              ID_ABOUT_TIGHTVNC_MENUITEM
+        MENUITEM SEPARATOR
+        MENUITEM "Отключить сервер kvnc",  ID_SHUTDOWN_SERVICE
+        MENUITEM "Закрыть окно управления",     ID_CLOSE_CONTROL_INTERFACE
+    END
+END
+
+
+IDI_CONNECTED           ICON                    ".\\res\\connected.ico"
+IDI_IDLE                ICON                    ".\\res\\idle.ico"
+IDI_DISABLED            ICON                    ".\\res\\disabled.ico"
+
+
+IDD_ABOUT_DIALOG DIALOGEX 0, 0, 308, 138
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "О программе kvnc Server"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    CONTROL         127,IDC_STATIC,"Static",SS_BITMAP | WS_GROUP,24,14,60,55
+    LTEXT           "kvnc Server для Windows",IDC_STATIC,107,12,189,10
+    LTEXT           "Версия unknown, сборка unknown",IDC_STATIC_VERSION,107,20,189,10
+    LTEXT           "(C) 2013-2014 ЗАО ""ПФ ""СКБ Контур""\n(C) 2008-2013 GlavSoft LLC.\nВсе права защищены.",IDC_STATIC,107,38,189,26
+    LTEXT           "",IDC_STATIC_LICENSING,107,67,189,10
+    LTEXT           "We provide technical support, development and customization services on TightVNC.\nThe source code is available commercially as well, if the GPL license is not acceptable.\nPlease visit the Web site for more information on our products.",IDC_STATIC,13,81,283,26
+    DEFPUSHBUTTON   "Посетить Веб-сайт",IDC_VISIT_WEB_SITE_BUTTON,7,116,94,15,WS_GROUP
+    PUSHBUTTON      "Коммерческая лицензия",IDC_ORDER_SUPPORT_BUTTON,107,116,94,15
+    PUSHBUTTON      "Закрыть это окно",IDCANCEL,207,116,94,15
+END
+
+IDD_CHANGE_PASSWORD DIALOGEX 0, 0, 126, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Сменить пароль"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    LTEXT           "Введите новый пароль:",IDC_STATIC,9,6,115,10
+    EDITTEXT        IDC_PASSWORD,9,17,107,12,ES_PASSWORD | ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "Повторите пароль:",IDC_STATIC,9,33,115,10
+    EDITTEXT        IDC_PASSWORD2,9,43,107,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,9,64,50,15,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,66,64,50,15
+END
+
+IDD_CONFIG DIALOGEX 0, 0, 319, 246
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "kvnc - Конфигурация сервера"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,154,225,50,15,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,209,225,50,15
+    PUSHBUTTON      "Применить",IDC_APPLY,264,225,50,15
+    CONTROL         "",IDC_CONFIG_TAB,"SysTabControl32",WS_GROUP | WS_TABSTOP,5,5,310,215
+END
+
+IDD_CONFIG_ACCESS_CONTROL_PAGE DIALOGEX 0, 0, 306, 199
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Правила",IDC_STATIC,6,4,293,96,WS_GROUP
+    CONTROL         "",IDC_IP_ACCESS_CONTROL_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_GROUP | WS_TABSTOP,13,15,207,61
+    DEFPUSHBUTTON   "Добавить...",IDC_ADD_BUTTON,228,14,66,14,WS_GROUP
+    PUSHBUTTON      "Изменить...",IDC_EDIT_BUTTON,228,30,66,14
+    PUSHBUTTON      "Удалить",IDC_REMOVE_BUTTON,228,46,66,14
+    PUSHBUTTON      "Вверх",IDC_MOVE_UP_BUTTON,228,62,66,14
+    PUSHBUTTON      "Вниз",IDC_MOVE_DOWN_BUTTON,228,78,66,14
+    LTEXT           "Проверить правило:",IDC_STATIC,13,85,75,10
+    EDITTEXT        IDC_IP_FOR_CHECK_EDIT,91,83,62,12,ES_AUTOHSCROLL | WS_GROUP
+    LTEXT           "[результат]",IDC_IP_CHECK_RESULT_LABEL,156,85,66,10
+    GROUPBOX        "Настройки подтверждений",IDC_STATIC,6,104,142,89
+    LTEXT           "Эти настройки влияют на правила с Действием ""Спросить пользователя"".",IDC_STATIC,10,116,131,18
+    LTEXT           "Таймаут ожидания:",IDC_STATIC,10,138,68,10
+    EDITTEXT        IDC_TIMEOUT,83,136,34,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
+    CONTROL         "",IDC_QUERY_TIMEOUT_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,106,134,11,14
+    LTEXT           "сек.",IDC_STATIC,121,138,20,10
+    LTEXT           "По умолчанию после таймаута:",IDC_STATIC,10,152,134,10
+    RADIOBUTTON     "Запретить подключение",IDC_REFUSE,26,165,110,10,WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Разрешить подключение",IDC_ACCEPT,26,178,115,10
+    GROUPBOX        "Локальные подключения",IDC_STATIC,157,104,142,89,WS_GROUP
+    LTEXT           "По умолчанию, подключения с этого же компьютера запрещены из-за эффекта каскадных окон.",IDC_STATIC,162,116,132,26
+    LTEXT           "Правила для локал. подкл. работают независимо от указанных выше!",IDC_STATIC,162,144,132,18
+    CONTROL         "Разрешить локал. подключения",IDC_ALLOW_LOOPBACK_CONNECTIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,162,165,125,10
+    CONTROL         "Разрешать только локал. подкл.",IDC_ALLOW_ONLY_LOOPBACK_CONNECTIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,162,178,125,10
+END
+
+IDD_CONFIG_ADMINISTRATION_PAGE DIALOGEX 0, 0, 306, 199
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Интерфейс управления",IDC_STATIC,6,4,178,53
+    CONTROL         "Защитить операции паролем",IDC_USE_CONTROL_AUTH_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_GROUP | WS_TABSTOP,10,16,163,11
+    LTEXT           "Пароль Администратора:",IDC_STATIC,10,30,95,12
+    PUSHBUTTON      "Задать...",IDC_CONTROL_PASSWORD_BUTTON,99,27,37,15,WS_GROUP
+    PUSHBUTTON      "Убрать",IDC_UNSET_CONTROL_PASWORD_BUTTON,141,27,37,15
+    CONTROL         "Спрашивать пароль для каждой операции",IDC_REPEAT_CONTROL_AUTH_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_GROUP | WS_TABSTOP,10,43,163,10
+    GROUPBOX        "После последнего клиента",IDC_STATIC,193,4,106,53,WS_GROUP
+    RADIOBUTTON     "Ничего не делать",IDC_DO_NOTHING,199,16,95,10,WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Блокировать Windows",IDC_LOCK_WORKSTATION,199,29,95,10
+    RADIOBUTTON     "Выход из системы",IDC_LOGOFF_WORKSTATION,199,42,95,10
+    GROUPBOX        "Общие сессии подключений",IDC_STATIC,6,62,293,79,WS_GROUP
+    RADIOBUTTON     "[Общие] Добавлять новых клиентов, не разрывая старые подключения",IDC_SHARED_RADIO1,10,73,276,10,WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "[Не общие] Запрещать подключаться новым, если уже есть хотя бы один",IDC_SHARED_RADIO2,10,86,276,10
+    RADIOBUTTON     "[Не общие] Отключать старых клиентов при подключении новых",IDC_SHARED_RADIO3,10,99,276,10
+    RADIOBUTTON     "Запрещать новые не-общие подключения, если кто-нибудь уже подключен",IDC_SHARED_RADIO4,10,112,284,10
+    RADIOBUTTON     "Отключать старых клиентов при новом не-общем поключении клиента",IDC_SHARED_RADIO5,10,125,276,10
+    GROUPBOX        "Логирование",IDC_STATIC,6,145,293,48,WS_GROUP
+    LTEXT           "Уровень логирования (0 = откл.):",IDC_STATIC,10,158,132,10
+    EDITTEXT        IDC_LOG_LEVEL,131,156,24,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
+    CONTROL         "",IDC_LOG_LEVEL_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,155,156,11,12
+    CONTROL         "Логи доступны всем польз.",IDC_LOG_FOR_ALL_USERS,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,177,158,109,10
+    LTEXT           "Лог-файл:",IDC_STATIC,10,176,36,10
+    EDITTEXT        IDC_LOG_FILEPATH_EDIT,48,174,185,12,ES_AUTOHSCROLL | ES_READONLY | WS_GROUP
+    PUSHBUTTON      "Открыть папку",IDC_OPEN_LOG_FOLDER_BUTTON,235,173,59,15,WS_GROUP
+END
+
+IDD_CONFIG_PORT_MAPPING_PAGE DIALOGEX 0, 0, 306, 199
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Дополнительные порты",IDC_STATIC,6,4,293,86
+    LTEXT           "Правила для дополнительных TCP-портов и частей экрана:",IDC_STATIC,16,16,224,10
+    LISTBOX         IDC_MAPPINGS,16,29,214,52,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "Добавить...",IDC_ADD_PORT,240,29,50,15,WS_GROUP
+    PUSHBUTTON      "Изменить...",IDC_EDIT_PORT,240,47,50,15,WS_DISABLED
+    PUSHBUTTON      "Удалить",IDC_REMOVE_PORT,240,66,50,15,WS_DISABLED
+    GROUPBOX        "Пояснение",IDC_STATIC,6,95,293,98,WS_GROUP
+    LTEXT           "По умолчанию, сервер kvnc принимает подключения только на один (главный) TCP-порт и показывает клиентам весь рабочий стол.",IDC_STATIC,16,108,274,24
+    LTEXT           "Однако, возможно добавить еще несколько дополнительных портов и для каждого назначить свою область экрана. Если клиент подключается к доп. порту - то он увидит только назначенную ему область экрана.",IDC_STATIC,16,132,274,32
+    LTEXT           "Области экрана представляют собой шаблоны вида 640x480+120+240 (в этом примере: ширина(W)=640, высота(H)=480, горизонтальное смещение(X)=120 и вертикальное смещение(Y)=240).",IDC_STATIC,16,164,274,24
+END
+
+IDD_CONFIG_SERVER_PAGE DIALOGEX 0, 0, 306, 199
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Входящие подключения клиентов",IDC_STATIC,6,4,142,123
+    CONTROL         "Разрешить входящие подключения",IDC_ACCEPT_RFB_CONNECTIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,10,17,133,10
+    RTEXT           "Главный порт:",IDC_STATIC,23,32,59,10
+    EDITTEXT        IDC_RFB_PORT,89,31,38,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_RFB_PORT_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,128,30,11,14
+    CONTROL         "Требовать аутентификацию VNC",IDC_USE_AUTHENTICATION,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,10,47,132,10
+    LTEXT           "Главный пароль (для управления):",IDC_STATIC,17,62,123,10
+    PUSHBUTTON      "Задать...",IDC_PRIMARY_PASSWORD,37,74,39,15,WS_GROUP
+    PUSHBUTTON      "Убрать",IDC_UNSET_PRIMARY_PASSWORD_BUTTON,81,74,39,15,NOT WS_TABSTOP
+    LTEXT           "Пароль только для просмотра:",IDC_STATIC,17,92,119,10
+    PUSHBUTTON      "Задать...",IDC_VIEW_ONLY_PASSWORD,37,104,39,15,WS_GROUP
+    PUSHBUTTON      "Убрать",IDC_UNSET_READONLY_PASSWORD_BUTTON,81,104,39,15,NOT WS_TABSTOP
+    GROUPBOX        "Разное",IDC_STATIC,6,132,142,61,WS_GROUP
+    CONTROL         "Разрешить передачу файлов",IDC_ENABLE_FILE_TRANSFERS,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,10,146,130,10
+    CONTROL         "Скрывать обои рабочего стола",IDC_REMOVE_WALLPAPER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,161,133,10
+    CONTROL         "Показывать иконку в трее",IDC_SHOW_TVNCONTROL_ICON_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,176,131,10
+    GROUPBOX        "Веб-доступ",IDC_STATIC,152,4,147,45,WS_GROUP
+    CONTROL         "Java Viewer для веб-клиентов",IDC_ACCEPT_HTTP_CONNECTIONS,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,17,126,10
+    RTEXT           "Порт Веб-доступа:",IDC_STATIC,157,32,69,10
+    EDITTEXT        IDC_HTTP_PORT,239,31,38,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_HTTP_PORT_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,273,30,11,14
+    GROUPBOX        "Ввод и управление",IDC_STATIC,152,54,147,73
+    CONTROL         "Всегда блокировать события ввода",IDC_BLOCK_REMOTE_INPUT,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,67,138,10
+    CONTROL         "Блокировать ввод при локал.актив.",IDC_LOCAL_INPUT_PRIORITY,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,82,138,10
+    LTEXT           "Таймаут бездействия:",IDC_STATIC,157,96,82,10
+    EDITTEXT        IDC_LOCAL_INPUT_PRIORITY_TIMEOUT,239,94,31,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "",IDC_INACTIVITY_TIMEOUT_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,266,93,11,14
+    LTEXT           "сек.",IDC_STATIC,278,96,17,10
+    CONTROL         "Откл. локал. ввод во время подкл.",IDC_BLOCK_LOCAL_INPUT,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,111,138,10
+    GROUPBOX        "Обновления экрана",IDC_STATIC,152,132,147,61
+    CONTROL         "Использ. зеркал. драйвер, если есть",IDC_USE_MIRROR_DRIVER,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,146,138,10
+    CONTROL         "Захватывать прозрачные окна",IDC_GRAB_TRANSPARENT,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,157,161,138,10
+    LTEXT           "Частота опроса экрана:",IDC_STATIC,157,176,82,10
+    EDITTEXT        IDC_POLLING_INTERVAL,239,174,38,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
+    CONTROL         "",IDC_POLLING_INTERVAL_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,269,173,11,14
+    LTEXT           "мс",IDC_STATIC,282,175,13,10
+END
+
+IDD_CONFIG_VIDEO_CLASSES_PAGE DIALOGEX 0, 0, 306, 199
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Определение видео",IDC_STATIC,6,4,293,96
+    LTEXT           "Имена классов видеоокон в Windows (по одному имени в строке, без кавычек):",IDC_STATIC,10,16,284,10
+    EDITTEXT        IDC_VIDEO_CLASS_NAMES,10,28,284,50,ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN | WS_GROUP
+    LTEXT           "Интервал распознавания видео:",IDC_STATIC,10,85,111,10
+    EDITTEXT        IDC_VIDEO_RECOGNITION_INTERVAL,130,83,38,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
+    LTEXT           "мс",IDC_STATIC,172,85,18,10
+    CONTROL         "",IDC_VIDEO_RECOGNITION_INTERVAL_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,185,81,11,14
+    GROUPBOX        "Пояснение",IDC_STATIC,6,104,293,89
+    LTEXT           "kvnc не умеет автоматически определять видео-окна на экране (это технически невозможно). Однако, вы можете помочь, указав список имен классов окон, в которых есть видео.",IDC_STATIC,10,115,277,25
+    LTEXT           "Имя класса - это специальная строка, назначенная каждому окну (например, большинство версий Windows Media Player показывают видео в окне с именем класса ""WMPlayerApp"").",IDC_STATIC,10,163,284,26
+    LTEXT           "Как только эти видео-окна будут найдены, их содержимое будет кодироваться в JPEG и отправляться наблюдателям непрерывно с минимальными задержками.",IDC_STATIC,10,143,284,18
+END
+
+IDD_CONTROL_AUTH DIALOGEX 0, 0, 186, 78
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "kvnc - Аутентификация"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    LTEXT           "Эта операция требует аутентификации на сервере kvnc. Пожалуйста, введите пароль Администратора, как указано в конфигурации сервера.",IDC_STATIC,7,2,171,32
+    LTEXT           "Пароль Администратора:",IDC_STATIC,7,38,91,10
+    EDITTEXT        IDC_PASSWORD_EDIT,100,36,77,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,39,56,50,15,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,96,56,50,15
+END
+
+IDD_DISPATCHER_CONN DIALOGEX 0, 0, 257, 144
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "kvnc - Подключение к TCP-диспетчеру"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    LTEXT           "Здесь вы можете подключиться к TCP-диспетчеру, который позволит его наблюдателям смотреть или управлять вашим компьютером.",IDC_STATIC,7,7,243,18
+    LTEXT           "Для указания TCP-порта, добавьте перед ним 2 двоеточия (myhost::443). Число от 1 до 99 после 1 двоеточия будет означать смещение от стандартного TCP-порта 5500.",IDC_STATIC,7,27,240,24,NOT WS_GROUP
+    RTEXT           "Имя или IP-адрес TCP-диспетчера:",IDC_STATIC,7,52,81,18,NOT WS_GROUP
+    COMBOBOX        IDC_HOSTNAME_COMBO,94,56,154,68,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_GROUP | WS_TABSTOP
+    RTEXT           "Имя TCP-диспетчера:",IDC_STATIC,7,73,81,12,SS_CENTERIMAGE | NOT WS_GROUP
+    EDITTEXT        IDC_DISPATCH_NAME,94,73,154,12,ES_AUTOHSCROLL | WS_GROUP
+    RTEXT           "Идентификатор:",IDC_STATIC,9,89,78,12,SS_CENTERIMAGE | NOT WS_GROUP
+    EDITTEXT        IDC_DISPATCH_ID,94,90,78,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
+    RTEXT           "Ключевое слово:",IDC_STATIC,5,105,83,12,SS_CENTERIMAGE | NOT WS_GROUP
+    EDITTEXT        IDC_DISPATCH_KEYWORD,94,106,78,12,ES_AUTOHSCROLL | WS_GROUP
+    DEFPUSHBUTTON   "&Подключиться",IDOK,67,124,58,15,WS_GROUP
+    PUSHBUTTON      "&Отмена",IDCANCEL,132,124,50,15
+END
+
+IDD_EDIT_IP_ACESS_CONTROL DIALOGEX 0, 0, 157, 158
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Изменить правило доступа"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "IP-адреса",IDC_STATIC,5,5,146,65,WS_GROUP
+    RTEXT           "Первый IP:",IDC_STATIC,12,17,53,8
+    EDITTEXT        IDC_FIRST_IP,71,16,71,12,ES_AUTOHSCROLL | WS_GROUP
+    RTEXT           "Последний IP:",IDC_STATIC,11,34,55,10
+    EDITTEXT        IDC_LAST_IP,71,32,71,12,ES_AUTOHSCROLL | WS_GROUP
+    CTEXT           "(Оставьте поле ""Последний IP"" пустым для только одного IP-адреса)",IDC_STATIC,9,47,137,18
+    GROUPBOX        "Действие",IDC_STATIC,5,75,146,56
+    RADIOBUTTON     "Разрешить",IDC_ALLOW,15,87,125,10,WS_GROUP | WS_TABSTOP
+    RADIOBUTTON     "Запретить",IDC_DENY,15,101,131,10
+    RADIOBUTTON     "Спрашивать локал. пользователя",IDC_QUERY,15,115,129,10
+    DEFPUSHBUTTON   "OK",IDOK,25,137,50,15,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,82,137,50,15
+END
+
+IDD_EDIT_PORT_MAPPING DIALOGEX 0, 0, 138, 57
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Назначение порта"
+FONT 8, "Ms Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "Порт:",IDC_STATIC,5,5,33,10
+    EDITTEXT        IDC_PORT_EDIT,5,17,33,12,ES_AUTOHSCROLL | ES_NUMBER | WS_GROUP
+    LTEXT           "Описание геометрии:",IDC_STATIC,43,5,89,10
+    EDITTEXT        IDC_GEOMETRY_EDIT,43,17,90,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,15,37,50,15,WS_GROUP
+    PUSHBUTTON      "Отмена",IDCANCEL,72,37,50,15
+END
+
+IDD_OUTGOING_CONN DIALOGEX 0, 0, 257, 107
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "kvnc - Подключить ожидающего наблюдателя"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    LTEXT           "Здесь вы можете подключить ожидающего наблюдателя с kvnc. Это называется обратным подключением.",IDC_STATIC,7,5,243,18
+    LTEXT           "Для указания TCP-порта добавьте перед ним 2 двоеточия (myhost::443).  Число от 1 до 99 после 1 двоеточия означает смещения от TCP-порта 5500.",IDC_STATIC,7,25,240,24,NOT WS_GROUP
+    RTEXT           "Имя или IP-адрес наблюдателя:",IDC_STATIC,7,54,127,10,NOT WS_GROUP
+    COMBOBOX        IDC_HOSTNAME_COMBO,138,52,110,55,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_GROUP | WS_TABSTOP
+    CONTROL         "Только просмотр (без управления)",IDC_VIEW_ONLY_CHECKBOX,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,60,67,153,10
+    DEFPUSHBUTTON   "&Подключить",IDOK,75,85,50,15,WS_GROUP
+    PUSHBUTTON      "&Отмена",IDCANCEL,132,85,50,15
+END
+
+IDD_QUERY_RFB_CONNECTION DIALOGEX 0, 0, 250, 104
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "kvnc - Входящее подключение"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    LTEXT           "kvnc Server получил запрос входящего подключения от:",IDC_STATIC,7,7,236,10
+    EDITTEXT        IDC_IP_EDIT,7,19,236,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER | WS_GROUP | NOT WS_TABSTOP
+    LTEXT           "Разрешая подключение, вы даете права наблюдателю на просмотр и, возможно, управление вашим компьютером.\nВыберите действие ниже, нажав на кнопку.",IDC_STATIC,7,36,236,26,NOT WS_GROUP
+    PUSHBUTTON      "&Разрешить",IDC_ACCEPT_BUTTON,71,64,50,15,WS_GROUP
+    PUSHBUTTON      "&Отклонить",IDC_REJECT_BUTTON,128,64,50,15
+    CTEXT           "[действие по умолчанию]",IDC_TIMEOUT_LABEL,7,86,236,10
+END
+
+IDD_SET_PASSWORDS DIALOGEX 0, 0, 299, 230
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "kvnc Server - Задать пароли для доступа"
+FONT 8, "Ms Shell Dlg 2", 0, 0, 0x0
+BEGIN
+    LTEXT           "Пожалуйста, защитите свой сервер kvnc.\nНе забудьте про пароль для Веб-доступа и, возможно, пароль Администратора.",IDC_STATIC,7,7,285,18
+    GROUPBOX        "Пароль для дистанционного доступа наблюдателей",IDC_STATIC,7,29,285,85,WS_GROUP
+    CONTROL         "Не менять",IDC_DONT_CHANGE_RFB_AUTH_SETTINGS_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,16,41,251,10
+    CONTROL         "НЕ использовать защиту паролем (ОПАСНО!)",IDC_DONT_USE_RFB_AUTH_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,16,54,258,10
+    CONTROL         "Требовать ввод пароля (КРАЙНЕ рекомендуется!):",IDC_USE_RFB_AUTH_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,16,67,270,10
+    LTEXT           "Задайте пароль:",IDC_STATIC,26,82,75,10
+    LTEXT           "Повторите пароль:",IDC_STATIC,26,97,75,10
+    EDITTEXT        IDC_ENTER_RFB_PASSWORD,101,80,130,12,ES_PASSWORD | ES_AUTOHSCROLL | WS_GROUP
+    EDITTEXT        IDC_CONFIRM_RFB_PASSWORD,101,95,130,12,ES_PASSWORD | ES_AUTOHSCROLL | WS_GROUP
+    GROUPBOX        "Пароль Администратора сервера kvnc",IDC_STATIC,7,118,285,85,WS_GROUP
+    CONTROL         "Не менять",IDC_DONT_CHANGE_CONTROL_PROTECTION_SETTINGS_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,16,130,246,10
+    CONTROL         "НЕ использовать защиту паролем (иногда опасно!)",IDC_DONT_USE_CONTROL_PROTECTION_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,16,143,259,10
+    CONTROL         "Требовать ввод пароля для управления сервером kvnc:",IDC_PROTECT_CONTROL_INTERFACE_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,16,156,260,10
+    LTEXT           "Задайте пароль:",IDC_STATIC,26,171,75,10
+    LTEXT           "Повторите пароль:",IDC_STATIC,26,186,75,10
+    EDITTEXT        IDC_ENTER_ADMIN_PASSWORD,101,169,130,12,ES_PASSWORD | ES_AUTOHSCROLL | WS_GROUP
+    EDITTEXT        IDC_CONFIRM_ADMIN_PASSWORD,101,184,130,12,ES_PASSWORD | ES_AUTOHSCROLL | WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,124,209,50,14,WS_GROUP
+END
+
+IDD_TRAYOUT DIALOGEX 0, 0, 148, 97
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "kvnc - Операторы"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_CLIENT_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,134,80
+END
+
+IDD_TEXTCHAT_DLG DIALOGEX 0, 0, 308, 177
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_THICKFRAME
+CAPTION "kvnc - Общение с операторами"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_INPUTAREA_EDIT,4,135,255,39,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
+    PUSHBUTTON      "Отпр.",IDC_SEND_B,264,135,39,16,BS_MULTILINE
+    PUSHBUTTON      "Свернуть",IDC_HIDE_B,264,153,39,11
+    PUSHBUTTON      "Закрыть",IDCANCEL,264,164,39,11
+    EDITTEXT        IDC_CHATAREA_EDIT,4,4,300,122,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | NOT WS_BORDER | WS_VSCROLL,WS_EX_STATICEDGE
+    PUSHBUTTON      "",IDOK,303,0,6,6,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC_SPLIT,5,127,298,8,SS_NOTIFY
+END
+
+IDD_FT_STATUS DIALOGEX 0, 0, 180, 45
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "kvnc - Передача файлов"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_FTSTATUS,10,10,170,20
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SET_CONTROL_PASSWORD_NOTIFICATION
+                            "Вы выбрали защиту от опасных операций путем ввода пароля, но не указали пароль.\n\nПожалуйста укажите пароль администратора (кнопка ""Задать...""), либо отключите опцию ""Защитить операции управления""."
+    IDS_ENTER_IP_HINT       "( введите IP адрес )"
+    IDS_CAPTION_BAD_INPUT   "Введены неверные данные"
+    IDS_INVALID_LOG_LEVEL   "Указан неверный уровень логирования ошибок.\nНужно указать число от 0 до 9."
+    IDS_CONTROL_SERVER_RAISE_EXCEPTION
+                            "Сервер kvnc сообщает об ошибке:\n%s"
+    IDS_CONTROL_CONNECTION_LOST
+                            "Соединение с сервером kvnc было прервано."
+    IDS_SERVER_ALREADY_RUNNING "Другая копия kvnc уже работает."
+    IDS_MBC_ERROR           "Ошибка"
+    IDS_CANNOT_SAVE_CONFIG  "Ошибка сохранения настроек."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_INVALID_PORT_MAPPING_STRING "Неверный формат строки геометрии."
+    IDS_PORT_RANGE_ERROR    "Порт должен быть числом от 1 до 65535."
+    IDS_PORT_ALREADY_IN_USE "Запись с указанным портом уже есть.\nПожалуйста укажите другой порт."
+    IDS_SET_PASSWORD_NOTIFICATION
+                            "Вы выбрали аутентификацию по паролю, но не указали пароль.\n\nПожалуйста укажите пароль (кнопка ""Задать...""), либо отключите опцию ""Требовать аутентификацию VNC""."
+    IDS_MBC_TVNSERVER       "Сервер kvnc"
+    IDS_MBC_TVNCONTROL      "Управление kvnc"
+    IDS_LOGPATH_UNAVALIABLE "(н/д)"
+    IDS_PASSWORD_IS_EMPTY   "Пустой пароль."
+    IDS_PASSWORDS_NOT_MATCH "Пароли не совпадают."
+    IDS_NEW_PASSWORD        "Новый пароль"
+    IDS_CHANGE_PASSWORD     "Сменить пароль"
+    IDS_SERVER_TAB_CAPTION  "Сервер"
+    IDS_ACCESS_CONTROL_TAB_CAPTION "Доступ"
+    IDS_EXTRA_PORTS_TAB_CAPTION "Доп. порты"
+    IDS_VIDEO_WINDOWS_TAB_CAPTION "Видео"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_ADMINISTRATION_TAB_CAPTION "Администрирование"
+    IDS_SERVICE             "Служба"
+    IDS_SERVER              "Сервер"
+    IDS_OFFLINE_MODE        " (не в сети)"
+    IDS_SERVER_CONFIG_CAPTION_FORMAT "kvnc %s Конфигурация %s"
+    IDS_INVALID_IP_TITLE    "Неверный IP адрес"
+    IDS_IP_ADDRESS_HINT     "Правильные IP адреса состоят из 4 чисел, разделенных запятой, каждое - от 0 до 255."
+    IDS_LAST_IP_MUST_BE_MORE_THAN_FIRST
+                            "Последний IP адрес должен быть не меньше первого."
+    IDS_NEW_IP_ACCESS_RULE_DIALOG_CAPTION "Новое правило доступа по IP"
+    IDS_EDIT_IP_ACCESS_RULE_DIALOG_CAPTION "Изменить правило доступа по IP"
+    IDS_QUERY_TIMEOUT_TOO_SMALL
+                            "Задержка запроса слишком мала, должно быть не менее 1 секунды"
+    IDS_FIRST_IP_COLUMN     "Первый IP"
+    IDS_LAST_IP_COLUMN      "Последний IP"
+    IDS_ACTION_COLUMN       "Действие"
+    IDS_SET_PASSWORD_CAPTION "Задать..."
+    IDS_CHANGE_PASSWORD_CAPTION "Изменить..."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_HTTP_RFB_PORTS_ARE_EQUAL
+                            "Нельзя задать один и тот же TCP порт для сервера и для доступа через Веб."
+    IDS_POLL_INTERVAL_TOO_SMALL
+                            "Интервал опроса слишком мал, должно быть не менее 30 мс."
+    IDS_INACTIVITY_TIMEOUT_TOO_SMALL
+                            "Задержка бездействия слишком мала, должно быть не менее 1 секунды."
+    IDS_BAD_IP_HINT         "( неверный IP адрес )"
+    IDS_ACTION_UNDEF_HINT   "( действие не задано )"
+    IDS_ACTION_ACCEPT_HINT  "будет разрешено"
+    IDS_ACTION_REJECT_HINT  "будет запрещено"
+    IDS_ACTION_QUERY_HINT   "спросить пользователя"
+    IDS_ACTION_ACCEPT       "Разрешить"
+    IDS_ACTION_DENY         "Запретить"
+    IDS_ACTION_QUERY        "Спросить"
+    IDS_USER_CANCEL_CONTROL_AUTH "Аутентификация отменена пользователем."
+    IDS_TVNSERVER_USAGE     "Сервер kvnc поддерживает следующие опции командной строки:\n\nkvnserver\t-help\nkvnserver\t[ -run ]\nkvnserver\t{ -install | -reinstall | -remove | -start | -stop }  [ -silent ]\nkvnserver\t{ -controlservice | -controlapp }\nkvnserver\t{ -controlservice | -controlapp }\n\t   { -connect HOST | -disconnectall | -reload | -shutdown |\n\t      -sharefull | -shareprimary |\n\t      -sharedisplay DISPLAY_NUMBER  | \n\t      -sharerect WIDTHxHEIGHT+LEFT+TOP |\n\t      -sharewindow CAPTION }\n\t   [ -passfile FILE ]\nkvnserver\t{ -configservice | -configapp }"
+    IDS_SERVER_NOT_LISTENING "not listening"
+    IDS_FAILED_TO_CONNECT_TO_CONTROL_SERVER
+                            "Ошибка подключения к серверу kvnc."
+    IDS_MBC_TVNSERVER_USAGE "Справка по использованию сервера kvnc"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_UNSET_PASSWORD_PROMT "Вы хотите отключить пароль?"
+    IDS_FAILED_TO_OPEN_URL_FORMAT
+                            "Не удалось открыть Веб-ресурс по причине:\n%s"
+    IDS_PRODUCT_VERSION_FORMAT "Версия %s (сборка %s)"
+    IDS_OFFLINE_CONFIG_SAVE_NOTIFICATION
+                            "Изменения конфигурации вступят в силу после перезапуска сервера kvnc."
+    IDS_ADMIN_RIGHTS_NEEDED "Для запуска программы нужны права Администратора."
+    IDS_AUTO_ACCEPT_CONNECTION_FORMAT
+                            "Соединение будет автоматически разрешено через %d секунд."
+    IDS_AUTO_REJECT_CONNECTION_FORMAT
+                            "Соединение будет автоматически отклонено через %d секунд."
+    IDS_INVALID_CONTROL_PASSWORD "Указан неверный пароль администратора."
+    IDS_URL_LICENSING_FSA   "http://localhost"
+    IDS_URL_PRODUCT_FSA     "http://localhost"
+    IDS_SERVICE_STOP_TIMEOUT "Таймаут ожидания завершения работы службы"
+    IDS_SERVICE_START_TIMEOUT "Таймаут ожидания запуска службы"
+    IDS_SERVICE_ALREADY_RUNNING "Служба уже запущена"
+    IDS_SERVICE_ALREADY_STOPPED "Служба не запущена"
+    IDS_CONTROL_CLIENT_NOT_CONNECTED "Нет подключения"
+    IDS_FAILED_TO_INSTALL_SERVICE_FORMAT
+                            "Не удалось зарегистрировать службу kvnc по причине:\n%s."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_FAILED_TO_REMOVE_SERVICE_FORMAT
+                            "Не удалось удалить службу kvnc по причине:\n%s."
+    IDS_FAILED_TO_START_SERVICE_FORMAT
+                            "Не удалось запустить службу kvnc по причине:\n%s."
+    IDS_FAILED_TO_STOP_SERVICE_FORMAT
+                            "Не удалось остановить службу kvnc по причине:\n%s."
+    IDS_SERVICE_INSTALLED   "Служба kvnc была зарегистрирована."
+    IDS_SERVICE_REMOVED     "Служба kvnc была удалена."
+    IDS_SERVICE_REINSTALLED "Служба kvnc была переустановлена."
+    IDS_INVALID_POLLING_INTERVAL
+                            "Интервал опроса должен быть числом от 30 до 4294967295."
+    IDS_INVALID_INACTIVITY_TIMEOUT
+                            "Задержка бездействия должна быть числом от 1 до 4294967295."
+    IDS_NO_PASSWORDS_SET    "пароли не заданы"
+    IDS_INVALID_QUERY_TIMEOUT
+                            "Задержка запроса должна быть числом от 1 до 4294967295."
+    IDS_INVALID_VIDEO_RECOGNITION_INTERVAL
+                            "Интервал распознавания видео должен быть числом от 1 до 4294967295."
+    IDS_TVNSERVER_SERVICE   "Служба kvnc"
+    IDS_1060_ERROR_DESCRIPTION "Служба не зарегистрирована"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TVNSERVER_APP       "Сервер kvnc"
+    IDS_1073_ERROR_DESCRIPTION "Служба уже зарегистрирована"
+    IDS_SHUTDOWN_NOTIFICATION_FORMAT
+                            "Это действие отключит всех наблюдателей, и они не смогут подключиться до тех пор, пока сервер kvnc не будет перезапущен.\n\nВы уверены, что хотите отключить %s?"
+    IDS_NO_AUTH_STATUS      " (без пароля!)"
+    IDS_LICENSING_INFO      "Лицензия: GNU General Public License версия 2"
+    IDS_FAILED_TO_RELOAD_SERVICE_ON_CHECK_PASS
+                            "Невозможно обновить конфигурацию службы kvnc по причине: %s."
+END
+
+IDB_LOGO_BIG            PNG                     ".\\res\\kvnc.png"

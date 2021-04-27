@@ -46,41 +46,41 @@ bool Decoder::isPseudo() const
 bool Decoder::isPseudo(int encoding)
 {
   switch (encoding) {
-  case EncodingDefs::RAW:
-  case EncodingDefs::COPYRECT:
-  case EncodingDefs::RRE:
-  case EncodingDefs::HEXTILE:
-  case EncodingDefs::TIGHT:
-  case EncodingDefs::ZRLE:
+  case lkvnc_rfb_DefsEncoding::RAW:
+  case lkvnc_rfb_DefsEncoding::COPYRECT:
+  case lkvnc_rfb_DefsEncoding::RRE:
+  case lkvnc_rfb_DefsEncoding::HEXTILE:
+  case lkvnc_rfb_DefsEncoding::TIGHT:
+  case lkvnc_rfb_DefsEncoding::ZRLE:
     return false;
 
-  case PseudoEncDefs::COMPR_LEVEL_0:
-  case PseudoEncDefs::COMPR_LEVEL_1:
-  case PseudoEncDefs::COMPR_LEVEL_2:
-  case PseudoEncDefs::COMPR_LEVEL_3:
-  case PseudoEncDefs::COMPR_LEVEL_4:
-  case PseudoEncDefs::COMPR_LEVEL_5:
-  case PseudoEncDefs::COMPR_LEVEL_6:
-  case PseudoEncDefs::COMPR_LEVEL_7:
-  case PseudoEncDefs::COMPR_LEVEL_8:
-  case PseudoEncDefs::COMPR_LEVEL_9:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_0:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_1:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_2:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_3:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_4:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_5:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_6:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_7:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_8:
+  case lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_9:
 
-  case PseudoEncDefs::QUALITY_LEVEL_0:
-  case PseudoEncDefs::QUALITY_LEVEL_1:
-  case PseudoEncDefs::QUALITY_LEVEL_2:
-  case PseudoEncDefs::QUALITY_LEVEL_3:
-  case PseudoEncDefs::QUALITY_LEVEL_4:
-  case PseudoEncDefs::QUALITY_LEVEL_5:
-  case PseudoEncDefs::QUALITY_LEVEL_6:
-  case PseudoEncDefs::QUALITY_LEVEL_7:
-  case PseudoEncDefs::QUALITY_LEVEL_8:
-  case PseudoEncDefs::QUALITY_LEVEL_9:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_0:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_1:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_2:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_3:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_4:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_5:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_6:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_7:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_8:
+  case lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_9:
 
-  case PseudoEncDefs::DESKTOP_SIZE:
-  case PseudoEncDefs::X_CURSOR:
-  case PseudoEncDefs::RICH_CURSOR:
-  case PseudoEncDefs::POINTER_POS:
-  case PseudoEncDefs::LAST_RECT:
+  case lkvnc_rfb_DefsEncoding__Pseudo::DESKTOP_SIZE:
+  case lkvnc_rfb_DefsEncoding__Pseudo::X_CURSOR:
+  case lkvnc_rfb_DefsEncoding__Pseudo::RICH_CURSOR:
+  case lkvnc_rfb_DefsEncoding__Pseudo::POINTER_POS:
+  case lkvnc_rfb_DefsEncoding__Pseudo::LAST_RECT:
     return true;
   default:
     // if the encoding type is unknown, then generate assertions.

@@ -24,14 +24,14 @@
 
 #include "ZrleDecoder.h"
 
-#include "../libkvnc_io/ByteArrayInputStream.h"
+#include "../libkvnc_all_io/ByteArrayInputStream.h"
 
 #include <vector>
 
 ZrleDecoder::ZrleDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter)
 {
-  m_encoding = EncodingDefs::ZRLE;
+  m_encoding = lkvnc_rfb_DefsEncoding::ZRLE;
 }
 
 ZrleDecoder::~ZrleDecoder()
@@ -39,7 +39,7 @@ ZrleDecoder::~ZrleDecoder()
 }
 
 void ZrleDecoder::decode(RfbInputGate *input,
-                         FrameBuffer *frameBuffer,
+                         lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                          const Rect *dstRect)
 {
   size_t maxUnpackedSize = getMaxSizeOfRectangle(dstRect);
@@ -63,7 +63,7 @@ void ZrleDecoder::decode(RfbInputGate *input,
   DataInputStream unpackedDataStream(&unpackedByteArrayStream);
 
   m_numberFirstByte = 0;
-  PixelFormat pxFormat = frameBuffer->getPixelFormat();
+  lkvnc_rfb_PixelFormat pxFormat = lkvnc_rfb_FrameBuffer->getPixelFormat();
 
   if (pxFormat.bitsPerPixel == 8) {
     m_bytesPerPixel = 1;
@@ -92,7 +92,7 @@ void ZrleDecoder::decode(RfbInputGate *input,
                     std::min(x + TILE_SIZE, dstRect->right),
                     std::min(y + TILE_SIZE, dstRect->bottom));
 
-      if (!frameBuffer->getDimension().getRect().intersection(&tileRect).isEqualTo(&tileRect)) {
+      if (!lkvnc_rfb_FrameBuffer->getDimension().getRect().intersection(&tileRect).isEqualTo(&tileRect)) {
         throw Exception(_T("Error in protocol: incorrect size of tile (zrle-decoder)"));
       }
       size_t tileLength = tileRect.area();
@@ -126,7 +126,7 @@ void ZrleDecoder::decode(RfbInputGate *input,
         readPaletteRleTile(&unpackedDataStream, pixels, &tileRect, type);
       }
 
-      drawTile(frameBuffer, &tileRect, &pixels);
+      drawTile(lkvnc_rfb_FrameBuffer, &tileRect, &pixels);
     } // tile(x, y)
   } // tile(..., y)
 }
@@ -313,7 +313,7 @@ void ZrleDecoder::readPaletteRleTile(DataInputStream *input,
   }
 }
 
-void ZrleDecoder::drawTile(FrameBuffer *fb,
+void ZrleDecoder::drawTile(lkvnc_rfb_FrameBuffer *fb,
                            const Rect *tileRect,
                            const std::vector<char> *pixels)
 {

@@ -25,8 +25,8 @@
 #ifndef _CONTROL_PIPE_NAME_H_
 #define _CONTROL_PIPE_NAME_H_
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 /**
  * Used to create pipe name for control transport.

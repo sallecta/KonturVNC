@@ -7,9 +7,6 @@
 // Author : Jonathan de Halleux. dehalleux@auto.ucl.ac.be
 //////////////////////////////////////////////////////////////////////
 
-#pragma once
-#pragma message "including " __FILE__ "..."
-
 #if !defined(AFX_AVIGENERATOR_H__6BAF2E9D_3866_4779_A43B_D1B21E7E4F39__INCLUDED_)
 #define AFX_AVIGENERATOR_H__6BAF2E9D_3866_4779_A43B_D1B21E7E4F39__INCLUDED_
 

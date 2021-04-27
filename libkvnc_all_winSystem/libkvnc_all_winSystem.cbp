@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libkvnc_all_winSystem" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-fpermissive" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add directory="$(WORKSPACEDIR)/!external/atl/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-fpermissive" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+					<Add directory="$(WORKSPACEDIR)/!external/atl/include" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Linker>
+			<Add library="psapi" />
+		</Linker>
+		<Unit filename="AnonymousPipe.cpp" />
+		<Unit filename="AnonymousPipe.h" />
+		<Unit filename="AnonymousPipeFactory.cpp" />
+		<Unit filename="AnonymousPipeFactory.h" />
+		<Unit filename="AutoImpersonator.cpp" />
+		<Unit filename="AutoImpersonator.h" />
+		<Unit filename="CtrlAltDelSimulator.cpp" />
+		<Unit filename="CtrlAltDelSimulator.h" />
+		<Unit filename="CurrentConsoleProcess.cpp" />
+		<Unit filename="CurrentConsoleProcess.h" />
+		<Unit filename="DibSection.cpp" />
+		<Unit filename="DibSection.h" />
+		<Unit filename="DynamicLibrary.cpp" />
+		<Unit filename="DynamicLibrary.h" />
+		<Unit filename="Environment.cpp" />
+		<Unit filename="Environment.h" />
+		<Unit filename="HookEventListener.h" />
+		<Unit filename="Impersonator.cpp" />
+		<Unit filename="Impersonator.h" />
+		<Unit filename="InputInjector.cpp" />
+		<Unit filename="InputInjector.h" />
+		<Unit filename="Keyboard.cpp" />
+		<Unit filename="Keyboard.h" />
+		<Unit filename="LocalWindowsApplication.cpp" />
+		<Unit filename="LocalWindowsApplication.h" />
+		<Unit filename="NamedPipe.cpp" />
+		<Unit filename="NamedPipe.h" />
+		<Unit filename="ParentProcess.cpp" />
+		<Unit filename="ParentProcess.h" />
+		<Unit filename="Pipe.cpp" />
+		<Unit filename="Pipe.h" />
+		<Unit filename="PipeClient.cpp" />
+		<Unit filename="PipeClient.h" />
+		<Unit filename="PipeImpersonatedThread.cpp" />
+		<Unit filename="PipeImpersonatedThread.h" />
+		<Unit filename="PipeServer.cpp" />
+		<Unit filename="PipeServer.h" />
+		<Unit filename="Process.cpp" />
+		<Unit filename="Process.h" />
+		<Unit filename="ProcessHandle.cpp" />
+		<Unit filename="ProcessHandle.h" />
+		<Unit filename="Registry.cpp" />
+		<Unit filename="Registry.h" />
+		<Unit filename="RegistryKey.cpp" />
+		<Unit filename="RegistryKey.h" />
+		<Unit filename="SCMClient.cpp" />
+		<Unit filename="SCMClient.h" />
+		<Unit filename="Screen.cpp" />
+		<Unit filename="Screen.h" />
+		<Unit filename="SecurityAttributes.cpp" />
+		<Unit filename="SecurityAttributes.h" />
+		<Unit filename="Service.cpp" />
+		<Unit filename="Service.h" />
+		<Unit filename="SharedMemory.cpp" />
+		<Unit filename="SharedMemory.h" />
+		<Unit filename="Shell.cpp" />
+		<Unit filename="Shell.h" />
+		<Unit filename="SystemException.cpp" />
+		<Unit filename="SystemException.h" />
+		<Unit filename="SystemInformation.cpp" />
+		<Unit filename="SystemInformation.h" />
+		<Unit filename="UipiControl.cpp" />
+		<Unit filename="UipiControl.h" />
+		<Unit filename="VersionInfo.cpp" />
+		<Unit filename="VersionInfo.h" />
+		<Unit filename="WTS.cpp" />
+		<Unit filename="WTS.h" />
+		<Unit filename="WinClipboard.cpp" />
+		<Unit filename="WinClipboard.h" />
+		<Unit filename="WinCommandLineArgs.cpp" />
+		<Unit filename="WinCommandLineArgs.h" />
+		<Unit filename="WinCursor.cpp" />
+		<Unit filename="WinCursor.h" />
+		<Unit filename="WinHandles.cpp" />
+		<Unit filename="WinHandles.h" />
+		<Unit filename="WinHooks.cpp" />
+		<Unit filename="WinHooks.h" />
+		<Unit filename="WinProcessCommandLine.cpp" />
+		<Unit filename="WinProcessCommandLine.h" />
+		<Unit filename="WinStaLibrary.cpp" />
+		<Unit filename="WinStaLibrary.h" />
+		<Unit filename="WinTimeMillis.cpp" />
+		<Unit filename="WinTimeMillis.h" />
+		<Unit filename="WindowsApplication.cpp" />
+		<Unit filename="WindowsApplication.h" />
+		<Unit filename="WindowsDisplays.cpp" />
+		<Unit filename="WindowsDisplays.h" />
+		<Unit filename="WindowsEvent.cpp" />
+		<Unit filename="WindowsEvent.h" />
+		<Unit filename="WindowsEventEx.cpp" />
+		<Unit filename="WindowsEventEx.h" />
+		<Unit filename="Workstation.cpp" />
+		<Unit filename="Workstation.h" />
+		<Unit filename="WsaStartup.cpp" />
+		<Unit filename="WsaStartup.h" />
+		<Unit filename="security/SecurityDescriptor.cpp" />
+		<Unit filename="security/SecurityDescriptor.h" />
+		<Unit filename="security/SecurityIdentifier.cpp" />
+		<Unit filename="security/SecurityIdentifier.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -5,11 +5,11 @@
 #include "RfbDispatcherListener.h"
 #include "RfbCodeRegistrator.h"
 
-#include "../libkvnc_network/RfbInputGate.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_network/RfbInputGate.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 #include "../libkvnc_server_app/ChatDialog.h"
 

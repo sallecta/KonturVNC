@@ -23,9 +23,9 @@
 //
 
 #include "ClipboardExchange.h"
-#include "../libkvnc_rfb/MsgDefs.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 ClipboardExchange::ClipboardExchange(RfbCodeRegistrator *codeRegtor,
                                      Desktop *desktop,
@@ -39,7 +39,7 @@ ClipboardExchange::ClipboardExchange(RfbCodeRegistrator *codeRegtor,
   m_log(log)
 {
   // Request code
-  codeRegtor->regCode(ClientMsgDefs::CLIENT_CUT_TEXT, this);
+  codeRegtor->regCode(lkvnc_rfb_Defs__Client::CLIENT_CUT_TEXT, this);
   resume();
 }
 
@@ -52,7 +52,7 @@ ClipboardExchange::~ClipboardExchange()
 void ClipboardExchange::onRequest(UINT32 reqCode, RfbInputGate *input)
 {
   switch (reqCode) {
-  case ClientMsgDefs::CLIENT_CUT_TEXT:
+  case lkvnc_rfb_Defs__Client::CLIENT_CUT_TEXT:
     input->readUInt8(); // pad
     input->readUInt16(); // pad
     {
@@ -102,7 +102,7 @@ void ClipboardExchange::execute()
 
       try {
         AutoLock al(m_output);
-        m_output->writeUInt8(ServerMsgDefs::SERVER_CUT_TEXT); // type
+        m_output->writeUInt8(lkvnc_rfb_Defs__Server::SERVER_CUT_TEXT); // type
         m_output->writeUInt8(0); // pad
         m_output->writeUInt16(0); // pad
 

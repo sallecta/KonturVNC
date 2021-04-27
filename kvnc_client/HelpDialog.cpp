@@ -24,7 +24,7 @@
 
 #include "HelpDialog.h"
 
-#include "../libkvnc_util/ResourceLoader.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
 
 HelpDialog::HelpDialog()
 : BaseDialog(IDD_CMDLINE)

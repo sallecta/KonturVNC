@@ -26,8 +26,8 @@
 #define __WINEVENTLOGWRITER_H__
 
 #include "NewConnectionEvents.h"
-#include "../libkvnc_win_event_log/WinEventLog.h"
-#include "../libkvnc_win_system/ApplicationCrashEvents.h"
+#include "../libkvnc_server_winEventLog/WinEventLog.h"
+#include "../libkvnc_all_winSystem/ApplicationCrashEvents.h"
 #include "WinServiceEvents.h"
 
 // This class provide response to events by writing to the Windows log.

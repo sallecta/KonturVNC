@@ -24,8 +24,8 @@
 
 #include "JpegCompressor.h"
 
-#include "../libkvnc_util/AnsiStringStorage.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/Exception.h"
 
 const int StandardJpegCompressor::ALLOC_CHUNK_SIZE = 65536;
 const int StandardJpegCompressor::DEFAULT_JPEG_QUALITY = 75;
@@ -207,7 +207,7 @@ StandardJpegCompressor::resetQuality()
 
 void
 StandardJpegCompressor::compress(const void *buf,
-                                 const PixelFormat *fmt,
+                                 const lkvnc_rfb_PixelFormat *fmt,
                                  int w, int h, int stride)
 {
   bool useQuickConversion =
@@ -266,7 +266,7 @@ const char *StandardJpegCompressor::getOutputData()
 
 void
 StandardJpegCompressor::convertRow24(JSAMPLE *dst, const void *src,
-                                     const PixelFormat *fmt, int numPixels)
+                                     const lkvnc_rfb_PixelFormat *fmt, int numPixels)
 {
   const UINT32 *srcPixels = (const UINT32 *)src;
   while (numPixels--) {
@@ -279,7 +279,7 @@ StandardJpegCompressor::convertRow24(JSAMPLE *dst, const void *src,
 
 void
 StandardJpegCompressor::convertRow(JSAMPLE *dst, const void *src,
-                                   const PixelFormat *fmt, int numPixels)
+                                   const lkvnc_rfb_PixelFormat *fmt, int numPixels)
 {
   if (fmt->bitsPerPixel == 32) {
     const UINT32 *srcPixels = (const UINT32 *)src;

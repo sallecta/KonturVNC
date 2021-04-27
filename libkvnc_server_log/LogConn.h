@@ -25,9 +25,9 @@
 #ifndef __LOGCONN_H__
 #define __LOGCONN_H__
 
-#include "../libkvnc_io/Channel.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_win_system/Pipe.h"
+#include "../libkvnc_all_io/Channel.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_winSystem/Pipe.h"
 #include "LogListener.h"
 #include "LogLevelSender.h"
 

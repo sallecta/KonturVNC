@@ -2,7 +2,7 @@
 #include "../libkvnc_client_config/ViewerConfig.h"
 
 
-AvilogThread::AvilogThread(const FrameBuffer *buff, bool isAutoStart):
+AvilogThread::AvilogThread(const lkvnc_rfb_FrameBuffer *buff, bool isAutoStart):
 	m_avilog(0),m_buffer(0),m_bufferLen(0),m_tempbuffer(0),m_mutex(),crect(0,0,0,0),m_isRecord(isAutoStart),m_port(0)
 {
 	m_frame = buff;
@@ -39,7 +39,7 @@ void AvilogThread::execute()
 			//m_avilog = new CAVIGenerator(str,&bmiHeader);
 			m_avilog = new CAVIGenerator();
 			}else{
-			_sntprintf_s(str, sizeof str, _T("%d.%04d-%02d-%02d_%02d-%02d-%02d"), m_port, lt.wYear,lt.wMonth,lt.wDay,lt.wHour, lt.wMinute,lt.wSecond);
+			snprintf(str, sizeof str, _T("%d.%04d-%02d-%02d_%02d-%02d-%02d"), m_port, lt.wYear,lt.wMonth,lt.wDay,lt.wHour, lt.wMinute,lt.wSecond);
 			_tcscat_s(str,_T("_vnc.avi"));
 			m_avilog = new CAVIGenerator(str,ViewerConfig::getInstance()->getPathToVLogFile(),&bmiHeader);
 			}

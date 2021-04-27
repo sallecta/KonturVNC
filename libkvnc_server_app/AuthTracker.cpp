@@ -23,7 +23,7 @@
 //
 
 #include "AuthTracker.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 AuthTracker::AuthTracker(UINT64 failureTimeInterval,
                          unsigned int failureMaxCount)

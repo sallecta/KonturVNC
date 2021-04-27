@@ -24,7 +24,7 @@
 
 #include "ConnectionConfig.h"
 
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 #include <crtdbg.h>
 
@@ -32,7 +32,7 @@
 
 ConnectionConfig::ConnectionConfig()
 : m_swapMouse(false), m_viewOnly(false),
-  m_useFullscreen(false), m_use8BitColor(false), m_preferredEncoding(EncodingDefs::TIGHT),
+  m_useFullscreen(false), m_use8BitColor(false), m_preferredEncoding(lkvnc_rfb_DefsEncoding::TIGHT),
   m_requestSharedSession(true), m_deiconifyOnRemoteBell(false),
   m_isClipboardEnabled(true),
   m_customCompressionLevel(-1), m_jpegCompressionLevel(6),
@@ -356,22 +356,22 @@ bool ConnectionConfig::isIgnoringShapeUpdates()
   return m_ignoreShapeUpdates;
 }
 
-void ConnectionConfig::setLocalCursorShape(int cursorShape)
+void ConnectionConfig::setLocalCursorShape(int lkvnc_rfb_CursorShape)
 {
-  switch (cursorShape) {
+  switch (lkvnc_rfb_CursorShape) {
   case NO_CURSOR:
   case DOT_CURSOR:
   case NORMAL_CURSOR:
   case SMALL_CURSOR:
     break;
   default:
-    cursorShape = DOT_CURSOR;
+    lkvnc_rfb_CursorShape = DOT_CURSOR;
     _ASSERT(FALSE);
   } // switch
 
   {
     AutoLock l(&m_cs);
-    m_localCursor = cursorShape;
+    m_localCursor = lkvnc_rfb_CursorShape;
   }
 }
 
@@ -398,7 +398,7 @@ bool ConnectionConfig::saveToStorage(SettingsManager *sm) const
   TEST_FAIL(sm->setBoolean(_T("disableclipboard"), !m_isClipboardEnabled), saveAllOk);
   TEST_FAIL(sm->setBoolean(_T("swapmouse"),        m_swapMouse), saveAllOk);
   TEST_FAIL(sm->setBoolean(_T("fitwindow"),        m_fitWindow), saveAllOk);
-  TEST_FAIL(sm->setBoolean(_T("cursorshape"),      m_requestShapeUpdates), saveAllOk);
+  TEST_FAIL(sm->setBoolean(_T("lkvnc_rfb_CursorShape"),      m_requestShapeUpdates), saveAllOk);
   TEST_FAIL(sm->setBoolean(_T("noremotecursor"),   m_ignoreShapeUpdates), saveAllOk);
 
   TEST_FAIL(sm->setByte(_T("preferred_encoding"),  m_preferredEncoding), saveAllOk);
@@ -437,7 +437,7 @@ bool ConnectionConfig::loadFromStorage(SettingsManager *sm)
 
   TEST_FAIL(sm->getBoolean(_T("swapmouse"),        &m_swapMouse), loadAllOk);
   TEST_FAIL(sm->getBoolean(_T("fitwindow"),        &m_fitWindow), loadAllOk);
-  TEST_FAIL(sm->getBoolean(_T("cursorshape"),      &m_requestShapeUpdates), loadAllOk);
+  TEST_FAIL(sm->getBoolean(_T("lkvnc_rfb_CursorShape"),      &m_requestShapeUpdates), loadAllOk);
   TEST_FAIL(sm->getBoolean(_T("noremotecursor"),   &m_ignoreShapeUpdates), loadAllOk);
 
   TEST_FAIL(sm->getByte(_T("preferred_encoding"),  (char *)&m_preferredEncoding), loadAllOk);

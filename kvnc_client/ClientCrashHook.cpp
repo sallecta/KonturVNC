@@ -23,11 +23,11 @@
 //
 
 #include "ClientCrashHook.h"
-#include "../libkvnc_win_system/DynamicLibrary.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/RegistryKey.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "NamingDefs.h"
+#include "../libkvnc_all_winSystem/DynamicLibrary.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "kvnc_client__Defs.h"
 
 //typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(__in  HANDLE hProcess,
 //                                       __in  DWORD ProcessId,

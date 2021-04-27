@@ -27,7 +27,7 @@
 RawDecoder::RawDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter)
 {
-  m_encoding = EncodingDefs::RAW;
+  m_encoding = lkvnc_rfb_DefsEncoding::RAW;
 }
 
 RawDecoder::~RawDecoder()
@@ -35,8 +35,8 @@ RawDecoder::~RawDecoder()
 }
 
 void RawDecoder::process(RfbInputGate *input,
-                         FrameBuffer *frameBuffer,
-                         FrameBuffer *secondFrameBuffer,
+                         lkvnc_rfb_FrameBuffer *argFrameBuffer,
+                         lkvnc_rfb_FrameBuffer *secondFrameBuffer,
                          const Rect *rect,
                          LocalMutex *fbLock,
                          FbUpdateNotifier *fbNotifier)
@@ -58,8 +58,7 @@ void RawDecoder::process(RfbInputGate *input,
   // Process all rectangle without last part of rectangle or
   // two last part, if area of last part is less half of AREA_OF_ONE_PART.
   while (deltaRect.bottom + deltaHeight / 2 < rect->bottom) {
-    DecoderOfRectangle::process(input,
-                                frameBuffer, secondFrameBuffer, &deltaRect, fbLock,
+    DecoderOfRectangle::process(input, argFrameBuffer, secondFrameBuffer, &deltaRect, fbLock,
                                 fbNotifier);
 
     // Increment position of rectangle.
@@ -69,20 +68,19 @@ void RawDecoder::process(RfbInputGate *input,
   // And process remainder parts of rectangle.
   deltaRect.top = std::max(rect->top, deltaRect.bottom - deltaHeight);
   deltaRect.bottom = rect->bottom;
-  DecoderOfRectangle::process(input,
-                              frameBuffer, secondFrameBuffer, &deltaRect, fbLock,
+  DecoderOfRectangle::process(input, argFrameBuffer, secondFrameBuffer, &deltaRect, fbLock,
                               fbNotifier);
 }
 
 void RawDecoder::decode(RfbInputGate *input,
-                     FrameBuffer *frameBuffer,
+                     lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                      const Rect *rect)
 {
-  size_t bytesPerPixel = frameBuffer->getPixelFormat().bitsPerPixel / 8;
+  size_t bytesPerPixel = lkvnc_rfb_FrameBuffer->getPixelFormat().bitsPerPixel / 8;
   size_t bytesPerLine = bytesPerPixel * rect->getWidth();
 
-  if (!frameBuffer->getDimension().getRect().intersection(rect).isEqualTo(rect))
+  if (!lkvnc_rfb_FrameBuffer->getDimension().getRect().intersection(rect).isEqualTo(rect))
     throw Exception(_T("Error in protocol: incorrect size of rectangle"));
   for (int y = rect->top; y < rect->bottom; y++)
-    input->readFully(frameBuffer->getBufferPtr(rect->left, y), bytesPerLine);
+    input->readFully(lkvnc_rfb_FrameBuffer->getBufferPtr(rect->left, y), bytesPerLine);
 }

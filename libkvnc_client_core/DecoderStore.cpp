@@ -25,12 +25,12 @@
 #include <algorithm>
 #include <functional>
 
-#include "../libkvnc_rfb/EncodingDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
 #include "DecoderStore.h"
 
 DecoderStore::DecoderStore(LogWriter *logWriter)
 : m_logWriter(logWriter),
-  m_preferredEncoding(EncodingDefs::TIGHT),
+  m_preferredEncoding(lkvnc_rfb_DefsEncoding::TIGHT),
   m_allowCopyRect(true)
 {
 }
@@ -71,7 +71,7 @@ std::vector<INT32> DecoderStore::getDecoderIds()
     // preferred encoding is skipping
     if (i->first != m_preferredEncoding) {
       // copy rect is allowed?
-      if (i->first != EncodingDefs::COPYRECT || m_allowCopyRect)
+      if (i->first != lkvnc_rfb_DefsEncoding::COPYRECT || m_allowCopyRect)
         decoders.push_back(std::make_pair(i->second.first, i->first));
     }
   }
@@ -86,7 +86,7 @@ std::vector<INT32> DecoderStore::getDecoderIds()
     sortedDecoders.push_back(i->second);
   }
   if (sortedDecoders.empty()){
-    static const int tmpInt = EncodingDefs::RAW;
+    static const int tmpInt = lkvnc_rfb_DefsEncoding::RAW;
     sortedDecoders.push_back(tmpInt);}
   return sortedDecoders;
 }

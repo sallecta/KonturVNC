@@ -25,9 +25,9 @@
 #ifndef __SESSIONCHANGESWATCHER_H__
 #define __SESSIONCHANGESWATCHER_H__
 
-#include "../libkvnc_thread/GuiThread.h"
-#include "../libkvnc_util/AnEventListener.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_thread/GuiThread.h"
+#include "../libkvnc_all_util/AnEventListener.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 class SessionChangesWatcher : public GuiThread
 {

@@ -27,11 +27,11 @@
 
 #include "Transport.h"
 
-#include "../libkvnc_network/socket/SocketIPv4.h"
+#include "../libkvnc_all_network/socket/SocketIPv4.h"
 
-#include "../libkvnc_win_system/Pipe.h"
-#include "../libkvnc_win_system/PipeClient.h"
-#include "../libkvnc_win_system/PipeServer.h"
+#include "../libkvnc_all_winSystem/Pipe.h"
+#include "../libkvnc_all_winSystem/PipeClient.h"
+#include "../libkvnc_all_winSystem/PipeServer.h"
 
 /**
  * Transport factory.

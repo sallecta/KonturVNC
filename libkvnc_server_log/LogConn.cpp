@@ -24,11 +24,11 @@
 
 #include "LogConn.h"
 #include "LogConnAuthListener.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 #include "SecurityPipeServer.h"
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_util/DateTime.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_util/DateTime.h"
 
 LogConn::LogConn(Channel *channel, LogConnAuthListener *extAuthListener,
                  LogListener *extLogListener, unsigned char logLevel)

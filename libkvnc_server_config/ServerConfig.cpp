@@ -25,9 +25,9 @@
 #include <crtdbg.h>
 #include "ServerConfig.h"
 
-#include "../libkvnc_win_system/Environment.h"
+#include "../libkvnc_all_winSystem/Environment.h"
 
-#include "../libkvnc_file/File.h"
+#include "../libkvnc_all_file/File.h"
 
 ServerConfig::ServerConfig()
 : m_rfbPort(5959), m_httpPort(5858),

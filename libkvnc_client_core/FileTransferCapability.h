@@ -25,12 +25,12 @@
 #ifndef _FILE_TRANSFER_CAPABILITY_H_
 #define _FILE_TRANSFER_CAPABILITY_H_
 
-#include "../libkvnc_client_ft/FileTransferRequestSender.h"
-#include "../libkvnc_client_ft/FileTransferReplyBuffer.h"
-#include "../libkvnc_client_ft/FileTransferMessageProcessor.h"
-#include "../libkvnc_client_ft/FileTransferCore.h"
+#include "../libkvnc_client_fileTransfer/FileTransferRequestSender.h"
+#include "../libkvnc_client_fileTransfer/FileTransferReplyBuffer.h"
+#include "../libkvnc_client_fileTransfer/FileTransferMessageProcessor.h"
+#include "../libkvnc_client_fileTransfer/FileTransferCore.h"
 
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 #include "ServerMessageListener.h"
 #include "CapabilitiesManager.h"

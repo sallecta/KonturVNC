@@ -27,7 +27,7 @@
 LastRectDecoder::LastRectDecoder(LogWriter *logWriter)
 : PseudoDecoder(logWriter)
 {
-  m_encoding = PseudoEncDefs::LAST_RECT;
+  m_encoding = lkvnc_rfb_DefsEncoding__Pseudo::LAST_RECT;
 }
 
 LastRectDecoder::~LastRectDecoder()

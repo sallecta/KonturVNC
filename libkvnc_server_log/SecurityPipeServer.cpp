@@ -23,12 +23,12 @@
 //
 
 #include "SecurityPipeServer.h"
-#include "../libkvnc_win_system/PipeServer.h"
-#include "../libkvnc_win_system/PipeClient.h"
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/WinHandles.h"
+#include "../libkvnc_all_winSystem/PipeServer.h"
+#include "../libkvnc_all_winSystem/PipeClient.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/WinHandles.h"
 #include "ConnectionTimer.h"
 #include <time.h>
 

@@ -22,7 +22,7 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 
 #include "RfbCutTextEventClientMessage.h"
 
@@ -42,7 +42,7 @@ void RfbCutTextEventClientMessage::send(RfbOutputGate *output)
   UINT32 length = static_cast<UINT32>(cutTextAnsi.getLength());
 
   AutoLock al(output);
-  output->writeUInt8(ClientMsgDefs::CLIENT_CUT_TEXT);
+  output->writeUInt8(lkvnc_rfb_Defs__Client::CLIENT_CUT_TEXT);
   output->writeUInt8(0); // padding 3 bytes
   output->writeUInt8(0);
   output->writeUInt8(0);

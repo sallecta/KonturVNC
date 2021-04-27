@@ -26,7 +26,7 @@
 #define _PUBLIC_NAMES_H_
 
 // This file contains all public names.
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 class NamingDefs
 {

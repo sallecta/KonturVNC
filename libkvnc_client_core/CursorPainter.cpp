@@ -25,9 +25,9 @@
 #include <crtdbg.h>
 #include "CursorPainter.h"
 
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
-CursorPainter::CursorPainter(FrameBuffer *fb, LogWriter *logWriter)
+CursorPainter::CursorPainter(lkvnc_rfb_FrameBuffer *fb, LogWriter *logWriter)
 : m_fb(fb),
   m_logWriter(logWriter),
   m_cursorIsMoveable(false),
@@ -60,10 +60,10 @@ void CursorPainter::setNewCursor(const Point *hotSpot,
 
   m_logWriter->debug(_T("Cursor size is (%d, %d)"), width, height);
   Dimension cursorDimension(width, height);
-  PixelFormat pixelFormat = m_fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat lkvnc_rfb_PixelFormat = m_fb->getPixelFormat();
 
-  m_cursor.setProperties(&cursorDimension, &pixelFormat);
-  m_cursorOverlay.setProperties(&cursorDimension, &pixelFormat);
+  m_cursor.setProperties(&cursorDimension, &lkvnc_rfb_PixelFormat);
+  m_cursorOverlay.setProperties(&cursorDimension, &lkvnc_rfb_PixelFormat);
 
   size_t pixelSize = m_fb->getBytesPerPixel();
   size_t cursorSize = width * height * pixelSize;

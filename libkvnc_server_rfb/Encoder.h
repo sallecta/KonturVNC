@@ -27,12 +27,12 @@
 
 #include <vector>
 
-#include "../libkvnc_rfb/FrameBuffer.h"
-#include "../libkvnc_io/IOException.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_rfb/EncodingDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_FrameBuffer.h"
+#include "../libkvnc_all_io/IOException.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
 #include "EncodeOptions.h"
-#include "../libkvnc_rfb/PixelConverter.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_PixelConverter.h"
 
 //
 // Encoder is the base class for all RFB encoders.
@@ -44,8 +44,8 @@ class Encoder
 public:
 
   // The constructor.
-  // `conv' specifies a PixelConverter allowing encoders to translate pixels
-  // from the given framebuffer to some other pixel format (typically, the
+  // `conv' specifies a lkvnc_rfb_PixelConverter allowing encoders to translate pixels
+  // from the given lkvnc_rfb_FrameBuffer to some other pixel format (typically, the
   // pixel format used by an RFB client). The converter must be maintained by
   // its owner so that it would be relevant at the moment of calling
   // splitRectangle() or sendRectangle(). The same object may not be used by
@@ -55,7 +55,7 @@ public:
   // `output' specifies the output stream to write the encoded data to.
   // Both `conv' and 'output' should point to objects that should remain
   // relevant during the whole life cycle of the Encoder.
-  Encoder(PixelConverter *conv, DataOutputStream *output);
+  Encoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output);
 
   virtual ~Encoder(void);
 
@@ -81,10 +81,10 @@ public:
   // the same data as in the subsequent calls to sendRectanle(). Also, it's
   // guaranteed that the state of m_pixelConverter will not be changed between
   // splitRectangle() and sendRectangle() calls. splitRectangles() may change
-  // the state of PixelConverter that's why it cannot be declared const.
+  // the state of lkvnc_rfb_PixelConverter that's why it cannot be declared const.
   virtual void splitRectangle(const Rect *rect,
                               std::vector<Rect> *rectList,
-                              const FrameBuffer *serverFb,
+                              const lkvnc_rfb_FrameBuffer *serverFb,
                               const EncodeOptions *options);
 
   // Encode and send the rectangle. The `serverFb' argument points to a frame
@@ -93,19 +93,19 @@ public:
   // encoders must convert the data from *serverFb explicitly, e.g. by calling
   // m_pixelConverter->convert().
   virtual void sendRectangle(const Rect *rect,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options);
 
 protected:
 
-  // PixelConverter is used for converting pixels from the given framebuffer
+  // lkvnc_rfb_PixelConverter is used for converting pixels from the given lkvnc_rfb_FrameBuffer
   // to some other pixel format (typically, the pixel format using by an RFB
   // client). Encoders may assume it will be properly configured at the moment
   // of calling splitRectangle() or sendRectangle(). The same object may not
   // be used by other threads during the execution the mentioned functions of
   // the Encoder, and it may not be altered between a call to splitRectangle()
   // and the corresponding calls to sendRectangle().
-  PixelConverter *m_pixelConverter;
+  lkvnc_rfb_PixelConverter *m_pixelConverter;
 
   // The output stream to write the encoded data to.
   DataOutputStream *m_output;

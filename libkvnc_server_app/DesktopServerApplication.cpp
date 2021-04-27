@@ -24,11 +24,11 @@
 
 #include "DesktopServerApplication.h"
 #include "DesktopServerCommandLine.h"
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../libkvnc_desktop/WallpaperUtil.h"
-#include "../libkvnc_win_system/WTS.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/SharedMemory.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../libkvnc_server_desktop/WallpaperUtil.h"
+#include "../libkvnc_all_winSystem/WTS.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/SharedMemory.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
 DesktopServerApplication::DesktopServerApplication(HINSTANCE appInstance,

@@ -26,17 +26,18 @@
 #define _DESKTOP_WINDOW_H_
 
 #include<memory>
-#include "../libkvnc_win_system/WinClipboard.h"
-#include "../libkvnc_gui/DibFrameBuffer.h"
-#include "../libkvnc_region/Rect.h"
-#include "../libkvnc_region/Dimension.h"
+#include "../libkvnc_all_winSystem/WinClipboard.h"
+#include "../libkvnc_all_gui/DibFrameBuffer.h"
+#include "../libkvnc_all_region/Rect.h"
+#include "../libkvnc_all_region/Dimension.h"
 #include "ScaleManager.h"
 #include "../libkvnc_client_config/ConnectionConfig.h"
-#include "../libkvnc_gui/PaintWindow.h"
-#include "../libkvnc_gui/ScrollBar.h"
-#include "../libkvnc_gui/drawing/SolidBrush.h"
-#include "../libkvnc_gui/drawing/Graphics.h"
-#include "../libkvnc_rfb/RfbKeySym.h"
+#include "../libkvnc_all_gui/PaintWindow.h"
+#include "../libkvnc_all_gui/ScrollBar.h"
+#include "../libkvnc_all_gui/drawing/SolidBrush.h"
+#include "../libkvnc_all_gui/drawing/Graphics.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_KeySym.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 #include "../libkvnc_client_core/RemoteViewerCore.h"
 
 class DesktopWindow : public PaintWindow,
@@ -47,11 +48,11 @@ public:
   virtual ~DesktopWindow();
 
   void setClipboardData(const StringStorage *strText);
-  void updateFramebuffer(const FrameBuffer *framebuffer,
+  void updateFramebuffer(const lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                          const Rect *dstRect);
   // this function must be called if size of image was changed
   // or the number of bits per pixel
-  void setNewFramebuffer(const FrameBuffer *framebuffer);
+  void setNewFramebuffer(const lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer);
 
   // set scale of image, can -1 = Auto, in percent
   void setScale(int scale);
@@ -94,7 +95,7 @@ protected:
   //
   // Overrides RfbKeySymListener::onRfbKeySymEvent().
   //
-  void onRfbKeySymEvent(unsigned int rfbKeySym, bool down);
+  void onRfbKeySymEvent(unsigned int lkvnc_rfb_KeySym, bool down);
 
   //
   // Inherited from BaseWindow.
@@ -131,7 +132,7 @@ protected:
   bool m_isConnected;
 
   // keyboard support
-  std::auto_ptr<RfbKeySym> m_rfbKeySym;
+  std::auto_ptr<lkvnc_rfb_KeySym> m_rfbKeySym;
 
   // This variable contained previously state of mouse-button and position of cursor.
   unsigned char m_previousMouseState;

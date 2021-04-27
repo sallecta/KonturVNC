@@ -1,7 +1,7 @@
 #include <list>
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/ListView.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/ListView.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 #include "RfbClientInfo.h"
 
 #ifndef _TRAY_DIALOG_H_

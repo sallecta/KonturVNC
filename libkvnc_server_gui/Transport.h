@@ -25,9 +25,9 @@
 #ifndef _TRANSPORT_H_
 #define _TRANSPORT_H_
 
-#include "../libkvnc_io/Channel.h"
+#include "../libkvnc_all_io/Channel.h"
 
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/Exception.h"
 
 /**
  * Abstract control transport that can be used by client and server side

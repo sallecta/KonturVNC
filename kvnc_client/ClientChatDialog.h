@@ -2,9 +2,9 @@
 #ifndef _CLIENT_CHAT_DIALOG_H_
 #define _CLIENT_CHAT_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/TextBox.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/TextBox.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 #include "../libkvnc_server_rfb/TextMsgListener.h"
 

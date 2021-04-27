@@ -23,8 +23,8 @@
 //
 
 #include "ViewerCmdLine.h"
-#include "../libkvnc_config/IniFileSettingsManager.h"
-#include "../libkvnc_win_system/SystemException.h"
+#include "../libkvnc_all_config/IniFileSettingsManager.h"
+#include "../libkvnc_all_winSystem/SystemException.h"
 
 const TCHAR ViewerCmdLine::HELP[] = _T("help");
 const TCHAR ViewerCmdLine::HELP_SHORT[] = _T("h");
@@ -258,19 +258,19 @@ void ViewerCmdLine::parsePassword()
 void ViewerCmdLine::parseEncoding()
 {
   if (isPresent(ENCODING)) {
-    int iEncoding = EncodingDefs::RAW;
+    int iEncoding = lkvnc_rfb_DefsEncoding::RAW;
 
     if (m_options[ENCODING] == HEXTILE) {
-      iEncoding = EncodingDefs::HEXTILE;
+      iEncoding = lkvnc_rfb_DefsEncoding::HEXTILE;
     }
     if (m_options[ENCODING] == TIGHT) {
-      iEncoding = EncodingDefs::TIGHT;
+      iEncoding = lkvnc_rfb_DefsEncoding::TIGHT;
     }
     if (m_options[ENCODING] == RRE) {
-      iEncoding = EncodingDefs::RRE;
+      iEncoding = lkvnc_rfb_DefsEncoding::RRE;
     }
     if (m_options[ENCODING] == ZRLE) {
-      iEncoding = EncodingDefs::ZRLE;
+      iEncoding = lkvnc_rfb_DefsEncoding::ZRLE;
     }
     m_conConf->setPreferredEncoding(iEncoding);
   }

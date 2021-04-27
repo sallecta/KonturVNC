@@ -27,12 +27,12 @@
 
 #include "Encoder.h"
 #include "TightPalette.h"
-#include "../libkvnc_util/Deflater.h"
+#include "../libkvnc_all_util/Deflater.h"
 
 class ZrleEncoder : public Encoder
 {
 public:
-  ZrleEncoder(PixelConverter *conv, DataOutputStream *output);
+  ZrleEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output);
   virtual ~ZrleEncoder();
 
   // Follow methods were inherited from the Encoder.
@@ -40,25 +40,25 @@ public:
 
   virtual void splitRectangle(const Rect *rect,
                               std::vector<Rect> *rectList,
-                              const FrameBuffer *serverFb,
+                              const lkvnc_rfb_FrameBuffer *serverFb,
                               const EncodeOptions *options);
 
   virtual void sendRectangle(const Rect *rect,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options);
 
 private:
   // Determine the class of rectangle and call necessary function for this type.
   template <class PIXEL_T>
     void sendRect(const Rect *rect,
-                  const FrameBuffer *serverFb,
-                  const FrameBuffer *clientFb,
+                  const lkvnc_rfb_FrameBuffer *serverFb,
+                  const lkvnc_rfb_FrameBuffer *clientFb,
                   const EncodeOptions *options);
 
   // Send raw tile.
   template <class PIXEL_T>
     void writeRawTile(const Rect *tileRect,
-                      const FrameBuffer *fb);
+                      const lkvnc_rfb_FrameBuffer *fb);
 
   // Send a solid-color tile.
     void writeSolidTile();
@@ -66,12 +66,12 @@ private:
   // Send packed palette tile.
   template <class PIXEL_T>
     void writePackedPaletteTile(const Rect *tileRect,
-                                const FrameBuffer *fb);
+                                const lkvnc_rfb_FrameBuffer *fb);
 
   // Send palette RLE tile.
   template <class PIXEL_T>
     void writePaletteRleTile(const Rect *tileRect,
-                             const FrameBuffer *fb);
+                             const lkvnc_rfb_FrameBuffer *fb);
 
   // Write data from runLength (used in plain Rle encoding).
   void pushRunLengthRle(int runLength);
@@ -88,17 +88,17 @@ private:
   // Fill palette (m_pal), create m_plainRleTile vector and calculate size of data in palette RLE tile.
   template <class PIXEL_T>
     void fillPalette(const Rect *tileRect,
-                     const FrameBuffer *fb);
+                     const lkvnc_rfb_FrameBuffer *fb);
 
   // Copy ordinary PIXELs.
   template <class PIXEL_T>
     void copyPixels(const Rect *rect,
-                    const FrameBuffer *fb,
+                    const lkvnc_rfb_FrameBuffer *fb,
                     UINT8 *dst);
 
   // Copy CPIXELs.
   void copyCPixels(const Rect *rect,
-                   const FrameBuffer *fb,
+                   const lkvnc_rfb_FrameBuffer *fb,
                    UINT8 *dst);
 
   // Vector for storing all tiles for the future zlib compression.
@@ -113,7 +113,7 @@ private:
   int m_mSize;
 
   // The only pixel format type for whole rectangle.
-  PixelFormat m_pxFormat;
+  lkvnc_rfb_PixelFormat m_pxFormat;
 
   // Used for determing: is it CPIXEL or PIXEL.
   size_t m_bytesPerPixel;

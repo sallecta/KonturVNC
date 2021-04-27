@@ -2,14 +2,14 @@
 #ifndef _COMMENT_DIALOG_H_
 #define _COMMENT_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/ComboBox.h"
-#include "resource.h"
-#include "../libkvnc_config/CommentHistory.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/ComboBox.h"
+#include "kvnc_client_Resource.h"
+#include "../libkvnc_all_config/CommentHistory.h"
 
-#include "../libkvnc_win_system/RegistryKey.h"
-#include "../libkvnc_win_system/Registry.h"
-#include "NamingDefs.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
+#include "../libkvnc_all_winSystem/Registry.h"
+#include "kvnc_client__Defs.h"
 
 
 

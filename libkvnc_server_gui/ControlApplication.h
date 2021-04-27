@@ -28,14 +28,14 @@
 #include "Transport.h"
 #include "TransportFactory.h"
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../libkvnc_all_util/Command.h"
 #include "../libkvnc_server_config/Configurator.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 #include "ControlGate.h"
 #include "ControlAuthException.h"
@@ -43,7 +43,7 @@
 #include "ControlProxy.h"
 #include "Notificator.h"
 
-#include "../libkvnc_win_system/WindowsApplication.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
 
 /**
  * External definition of tray icon.

@@ -25,7 +25,7 @@
 #ifndef _IP_ACCESS_RULE_H_
 #define _IP_ACCESS_RULE_H_
 
-#include "../libkvnc_util/StringStorage.h"
+#include "../libkvnc_all_util/StringStorage.h"
 
 //
 // Class contains information about

@@ -25,14 +25,14 @@
 #ifndef __TCPDISPATCHERCONNECTIONDIALOG_H__
 #define __TCPDISPATCHERCONNECTIONDIALOG_H__
 
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/winhdr.h"
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/ComboBox.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/ComboBox.h"
 
-#include "../libkvnc_win_system/RegistryKey.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
 
-#include "../libkvnc_config/ConnectionHistory.h"
+#include "../libkvnc_all_config/ConnectionHistory.h"
 
  // Tcp dispatcher connection dialog. Just allows user to put connection string
 class TcpDispatcherConnectionDialog : public BaseDialog

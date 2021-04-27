@@ -25,23 +25,23 @@
 #ifndef _TVN_SERVER_H_
 #define _TVN_SERVER_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
-#include "../libkvnc_desktop/WinServiceDesktopFactory.h"
-#include "../libkvnc_desktop/ApplicationDesktopFactory.h"
+#include "../libkvnc_server_desktop/WinServiceDesktopFactory.h"
+#include "../libkvnc_server_desktop/ApplicationDesktopFactory.h"
 #include "RfbClientManager.h"
 #include "RfbServer.h"
 #include "ExtraRfbServers.h"
 #include "ControlServer.h"
 #include "TvnServerListener.h"
 
-#include "../libkvnc_http_srv/HttpServer.h"
+#include "../libkvnc_server_http/HttpServer.h"
 
-#include "../libkvnc_thread/ZombieKiller.h"
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_util/Singleton.h"
-#include "../libkvnc_util/ListenerContainer.h"
+#include "../libkvnc_all_thread/ZombieKiller.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_util/Singleton.h"
+#include "../libkvnc_all_util/ListenerContainer.h"
 #include "NewConnectionEvents.h"
 
 #include "../libkvnc_server_config/Configurator.h"

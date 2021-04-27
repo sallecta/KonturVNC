@@ -25,11 +25,11 @@
 #ifndef _CONTROL_GATE_H_
 #define _CONTROL_GATE_H_
 
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_io/Channel.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_io/Channel.h"
 
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 class ControlGate : public DataInputStream, public DataOutputStream,
                     public LocalMutex

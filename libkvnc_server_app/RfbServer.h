@@ -26,9 +26,9 @@
 #define __RFB_SERVER_H__
 
 #include "RfbClientManager.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_network/TcpServer.h"
-#include "../libkvnc_region/Rect.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_network/TcpServer.h"
+#include "../libkvnc_all_region/Rect.h"
 
 #include "../libkvnc_server_app/ChatDialog.h"
 #include "../libkvnc_server_app/FTStatusDialog.h"
@@ -57,8 +57,7 @@ public:
             RfbClientManager *clientManager,
             bool lockAddr,
             LogWriter *log,
-            const Rect *viewPort = 0)
-            throw(Exception);
+            const Rect *viewPort = 0);
   /**
    * Stops listening thread and deletes rfb server.
    */

@@ -25,7 +25,7 @@
 #ifndef _CONNECTION_CONFIG_SETTINGS_MANAGER_H_
 #define _CONNECTION_CONFIG_SETTINGS_MANAGER_H_
 
-#include "../libkvnc_config/RegistrySettingsManager.h"
+#include "../libkvnc_all_config/RegistrySettingsManager.h"
 
 class ConnectionConfigSM : public RegistrySettingsManager
 {

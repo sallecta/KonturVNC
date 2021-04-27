@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "Encoder.h"
 
-Encoder::Encoder(PixelConverter *conv, DataOutputStream *output)
+Encoder::Encoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output)
 : m_pixelConverter(conv),
   m_output(output)
 {
@@ -37,22 +37,22 @@ Encoder::~Encoder(void)
 
 int Encoder::getCode() const
 {
-  return EncodingDefs::RAW;
+  return lkvnc_rfb_DefsEncoding::RAW;
 }
 
 void Encoder::splitRectangle(const Rect *rect,
                              std::vector<Rect> *rectList,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options)
 {
   rectList->push_back(*rect);
 }
 
 void Encoder::sendRectangle(const Rect *rect,
-                            const FrameBuffer *serverFb,
+                            const lkvnc_rfb_FrameBuffer *serverFb,
                             const EncodeOptions *options)
 {
-  const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
+  const lkvnc_rfb_FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
   int pixelSize = (int)fb->getBytesPerPixel();
   _ASSERT(pixelSize == fb->getBytesPerPixel());
 

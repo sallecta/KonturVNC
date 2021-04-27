@@ -25,10 +25,10 @@
 #ifndef _SERVICE_CONTROL_APPLICATION_H_
 #define _SERVICE_CONTROL_APPLICATION_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
-#include "../libkvnc_win_system/WindowsApplication.h"
-#include "../libkvnc_win_system/SCMClient.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
+#include "../libkvnc_all_winSystem/SCMClient.h"
 
 #include "TvnService.h"
 #include "ServiceControlCommandLine.h"

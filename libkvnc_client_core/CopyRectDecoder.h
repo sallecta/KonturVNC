@@ -27,7 +27,7 @@
 
 #include "DecoderOfRectangle.h"
 
-#include "../libkvnc_region/Point.h"
+#include "../libkvnc_all_region/Point.h"
 
 class CopyRectDecoder : public DecoderOfRectangle
 {
@@ -40,14 +40,14 @@ protected:
   // This method inherited by DecoderOfRectangle.
   //
   virtual void decode(RfbInputGate *input,
-                      FrameBuffer *frameBuffer,
+                      lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                       const Rect *dstRect);
 
   //
   // This method inherited by DecoderOfRectangle.
   //
-  virtual void copy(FrameBuffer *dstFrameBuffer,
-                    const FrameBuffer *srcFrameBuffer,
+  virtual void copy(lkvnc_rfb_FrameBuffer *dstFrameBuffer,
+                    const lkvnc_rfb_FrameBuffer *srcFrameBuffer,
                     const Rect *rect,
                     LocalMutex *fbLock);
 

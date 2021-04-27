@@ -27,13 +27,13 @@
 #include "ControlAuthDialog.h"
 #include "ControlProto.h"
 #include "../libkvnc_server_config/Configurator.h"
-#include "../libkvnc_config/RegistrySettingsManager.h"
-#include "../libkvnc_util/VncPassCrypt.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_config/RegistrySettingsManager.h"
+#include "../libkvnc_all_util/VncPassCrypt.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 #include "../libkvnc_server_app/NamingDefs.h"
-#include "../libkvnc_file/WinFile.h"
+#include "../libkvnc_all_file/WinFile.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 #include <crtdbg.h>
 

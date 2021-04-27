@@ -1,10 +1,10 @@
 /*
 Copyright (C) (2004) (Cort Stratton) <cort at cortstratton dot org>
 
-This program is free software; you can redistribute it and/or 
-modify it under the terms of the GNU General Public License 
-as published by the Free Software Foundation; either 
-version 2 of the License, or (at your option) any later 
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later
 version.
 
 This program is distributed in the hope that it will be useful,
@@ -102,7 +102,7 @@ Revel_Error Revel_BaseEncoder::EncodeStart(const string& filename,
 		Reset();
 		return REVEL_ERR_FILE;
 	}
-	
+
 	memset(&myBitmapInfoHeader, 0, sizeof(BITMAPINFOHEADER));
 	myBitmapInfoHeader.biHeight = params.height;
 	myBitmapInfoHeader.biWidth = params.width;
@@ -111,7 +111,7 @@ Revel_Error Revel_BaseEncoder::EncodeStart(const string& filename,
 	myBitmapInfoHeader.biCompression = MAKEFOURCC('X', 'V', 'I', 'D');
 	myBitmapInfoHeader.biBitCount = 12;
 	myBitmapInfoHeader.biSizeImage = 6*params.width*params.height;
-	
+
 	if ((avierr=AVIStreamSetFormat(myAVIStream, 0, &myBitmapInfoHeader, sizeof(BITMAPINFOHEADER)))) {
 		Reset();
 		return REVEL_ERR_FILE;
@@ -173,7 +173,7 @@ Revel_Error Revel_BaseEncoder::EncodeFrame(const Revel_VideoFrame& frame,
     // Check args
     if (frame.width != m_params.width ||
         frame.height != m_params.height ||
-        (frame.pixelFormat < 0 || frame.pixelFormat >= REVEL_PF_COUNT))
+        (frame.lkvnc_rfb_PixelFormat < 0 || frame.lkvnc_rfb_PixelFormat >= REVEL_PF_COUNT))
     {
         return REVEL_ERR_PARAMS;
     }
@@ -188,7 +188,7 @@ Revel_Error Revel_BaseEncoder::EncodeAudio(const void *sampleBuffer,
     // Make sure it's safe to be encoding.
     if (!m_isEncoding)
         return REVEL_ERR_BUSY;
-    
+
     if (m_params.hasAudio != 1)
         return REVEL_ERR_NONE;
 
@@ -197,7 +197,7 @@ Revel_Error Revel_BaseEncoder::EncodeAudio(const void *sampleBuffer,
         return REVEL_ERR_NONE;
     if (sampleBuffer == NULL)
         return REVEL_ERR_PARAMS;
-    
+
     int err = AVI_write_audio(m_outFile, (char*)sampleBuffer, numBytes);
     if (err != 0)
         return REVEL_ERR_UNKNOWN;
@@ -229,7 +229,7 @@ Revel_Error Revel_BaseEncoder::EncodeEnd(int *totalSize)
     if (totalSize != NULL)
         *totalSize = m_totalOutBytes;
     Reset();
- 
+
     if (aviErr != 0)
         return REVEL_ERR_FILE;*/
     return REVEL_ERR_NONE;

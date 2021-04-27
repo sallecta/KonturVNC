@@ -27,7 +27,7 @@
 
 #include <cstdio>
 
-#include "../libkvnc_region/Rect.h"
+#include "../libkvnc_all_region/Rect.h"
 
 // More help of jpeg-lib in /usr/share/doc/jpeg-8c-r1/example.c.bz2
 

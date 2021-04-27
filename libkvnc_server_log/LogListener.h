@@ -26,7 +26,7 @@
 #define __LOGLISTENER_H__
 
 #include "FileLogDefs.h"
-#include "../libkvnc_util/DateTime.h"
+#include "../libkvnc_all_util/DateTime.h"
 
 class LogListener
 {

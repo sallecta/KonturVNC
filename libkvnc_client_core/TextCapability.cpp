@@ -1,8 +1,8 @@
 
 
-#include "../libkvnc_rfb/VendorDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsVendor.h"
 #include "TextCapability.h"
-#include "../libkvnc_rfb/MsgDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 
 
 TextCapability::TextCapability()
@@ -40,9 +40,9 @@ void TextCapability::addCapabilities(CapabilitiesManager *capabilities)
 {
 
   capabilities->addServerMsgCapability(this,
-                                  ClientMsgDefs::SERVER_CHAT_MSG,
-                                  VendorDefs::TIGHTVNC,
-                                  VendorDefs::TIGHTVNC,
+                                  lkvnc_rfb_Defs__Client::SERVER_CHAT_MSG,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
                                   _T("Text Chat"));
 
 

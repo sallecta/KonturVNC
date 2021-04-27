@@ -25,7 +25,7 @@
 #include "ConnectionListener.h"
 #include "TvnViewer.h"
 
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 const TCHAR ConnectionListener::DEFAULT_HOST[] = _T("0.0.0.0");
 

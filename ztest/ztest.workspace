@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_file>
 	<Workspace title="ztest workspace">
-		<Project filename="ztest.heloo.cpp/ztest.heloo.cpp.cbp" />
-		<Project filename="hello.static.c/hello.static.c.cbp" />
+		<Project filename="ztest_helo_cpp/ztest_helo_cpp.cbp" />
+		<Project filename="ztestlib_hello/ztestlib_hello.cbp" />
+		<Project filename="../libkvnc_rfb/libkvnc_rfb.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

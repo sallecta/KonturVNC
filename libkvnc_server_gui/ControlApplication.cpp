@@ -39,30 +39,30 @@
 #include "ConnectCommand.h"
 #include "ShutdownCommand.h"
 
-#include "../libkvnc_util/VncPassCrypt.h"
-#include "../libkvnc_util/winhdr.h"
-#include "../libkvnc_util/StringTable.h"
+#include "../libkvnc_all_util/VncPassCrypt.h"
+#include "../libkvnc_all_util/winhdr.h"
+#include "../libkvnc_all_util/StringTable.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
 #include "ControlCommandLine.h"
 #include "../libkvnc_server_app/TvnServerHelp.h"
 
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/Shell.h"
-#include "../libkvnc_win_system/Process.h"
-#include "../libkvnc_win_system/WinCommandLineArgs.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/Shell.h"
+#include "../libkvnc_all_winSystem/Process.h"
+#include "../libkvnc_all_winSystem/WinCommandLineArgs.h"
 
-#include "../libkvnc_thread/ZombieKiller.h"
-#include "../libkvnc_thread/GlobalMutex.h"
+#include "../libkvnc_all_thread/ZombieKiller.h"
+#include "../libkvnc_all_thread/GlobalMutex.h"
 
-#include "../libkvnc_gui/CommonControlsEx.h"
+#include "../libkvnc_all_gui/CommonControlsEx.h"
 
-#include "../libkvnc_network/socket/WindowsSocket.h"
+#include "../libkvnc_all_network/socket/WindowsSocket.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
-#include "../libkvnc_server_gui_config/ConfigDialog.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_server_guiConfig/ConfigDialog.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 #include "SetPasswordsDialog.h"
 

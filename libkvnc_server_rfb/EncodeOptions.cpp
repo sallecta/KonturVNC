@@ -23,7 +23,7 @@
 //
 
 #include "EncodeOptions.h"
-#include "../libkvnc_rfb/EncodingDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
 
 EncodeOptions::EncodeOptions()
 {
@@ -36,7 +36,7 @@ EncodeOptions::~EncodeOptions()
 
 void EncodeOptions::reset()
 {
-  m_preferredEncoding = EncodingDefs::RAW;
+  m_preferredEncoding = lkvnc_rfb_DefsEncoding::RAW;
 
   m_compressionLevel = EO_DEFAULT;
   m_jpegQualityLevel = EO_DEFAULT;
@@ -65,29 +65,29 @@ void EncodeOptions::setEncodings(std::vector<int> *list)
       m_preferredEncoding = code;
       encoderWasSet = true;
     }
-    if (code == EncodingDefs::TIGHT) {
+    if (code == lkvnc_rfb_DefsEncoding::TIGHT) {
       m_enableTight = true;
-    } else if (code == EncodingDefs::ZRLE) {
+    } else if (code == lkvnc_rfb_DefsEncoding::ZRLE) {
       m_enableZrle = true;
-    } else if (code == EncodingDefs::HEXTILE) {
+    } else if (code == lkvnc_rfb_DefsEncoding::HEXTILE) {
       m_enableHextile = true;
-    } else if (code == EncodingDefs::RRE) {
+    } else if (code == lkvnc_rfb_DefsEncoding::RRE) {
       m_enableRRE = true;
-    } else if (code == EncodingDefs::COPYRECT) {
+    } else if (code == lkvnc_rfb_DefsEncoding::COPYRECT) {
       m_enableCopyRect = true;
-    } else if (code == PseudoEncDefs::RICH_CURSOR) {
+    } else if (code == lkvnc_rfb_DefsEncoding__Pseudo::RICH_CURSOR) {
       m_enableRichCursor = true;
-    } else if (code == PseudoEncDefs::POINTER_POS) {
+    } else if (code == lkvnc_rfb_DefsEncoding__Pseudo::POINTER_POS) {
       m_enablePointerPos = true;
-    } else if (code == PseudoEncDefs::DESKTOP_SIZE) {
+    } else if (code == lkvnc_rfb_DefsEncoding__Pseudo::DESKTOP_SIZE) {
       m_enableDesktopSize = true;
-    } else if (code >= PseudoEncDefs::COMPR_LEVEL_0 &&
-               code <= PseudoEncDefs::COMPR_LEVEL_9) {
-      int level = code - PseudoEncDefs::COMPR_LEVEL_0;
+    } else if (code >= lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_0 &&
+               code <= lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_9) {
+      int level = code - lkvnc_rfb_DefsEncoding__Pseudo::COMPR_LEVEL_0;
       m_compressionLevel = level;
-    } else if (code >= PseudoEncDefs::QUALITY_LEVEL_0 &&
-               code <= PseudoEncDefs::QUALITY_LEVEL_9) {
-      int level = code - PseudoEncDefs::QUALITY_LEVEL_0;
+    } else if (code >= lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_0 &&
+               code <= lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_9) {
+      int level = code - lkvnc_rfb_DefsEncoding__Pseudo::QUALITY_LEVEL_0;
       m_jpegQualityLevel = level;
     }
   }
@@ -101,15 +101,15 @@ int EncodeOptions::getPreferredEncoding() const
 bool EncodeOptions::encodingEnabled(int code) const
 {
   switch (code) {
-  case EncodingDefs::RAW:
+  case lkvnc_rfb_DefsEncoding::RAW:
     return true;
-  case EncodingDefs::RRE:
+  case lkvnc_rfb_DefsEncoding::RRE:
     return m_enableRRE;
-  case EncodingDefs::HEXTILE:
+  case lkvnc_rfb_DefsEncoding::HEXTILE:
     return m_enableHextile;
-  case EncodingDefs::ZRLE:
+  case lkvnc_rfb_DefsEncoding::ZRLE:
     return m_enableZrle;
-  case EncodingDefs::TIGHT:
+  case lkvnc_rfb_DefsEncoding::TIGHT:
     return m_enableTight;
   }
   return false;
@@ -153,9 +153,9 @@ bool EncodeOptions::desktopSizeEnabled() const
 
 bool EncodeOptions::normalEncoding(int code)
 {
-  return (code == EncodingDefs::RAW ||
-          code == EncodingDefs::RRE ||
-          code == EncodingDefs::HEXTILE ||
-          code == EncodingDefs::ZRLE ||
-          code == EncodingDefs::TIGHT);
+  return (code == lkvnc_rfb_DefsEncoding::RAW ||
+          code == lkvnc_rfb_DefsEncoding::RRE ||
+          code == lkvnc_rfb_DefsEncoding::HEXTILE ||
+          code == lkvnc_rfb_DefsEncoding::ZRLE ||
+          code == lkvnc_rfb_DefsEncoding::TIGHT);
 }

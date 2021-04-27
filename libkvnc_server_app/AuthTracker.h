@@ -25,8 +25,8 @@
 #ifndef __AUTHTRACKER_H__
 #define __AUTHTRACKER_H__
 
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_util/DateTime.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_util/DateTime.h"
 
 // This class will be insert an time interval between trying of
 // authentications

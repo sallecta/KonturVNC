@@ -1,9 +1,9 @@
 
 
-#include "../libkvnc_rfb/VendorDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsVendor.h"
 #include "SdpCapability.h"
-#include "../libkvnc_rfb/MsgDefs.h"
 
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 
 SdpCapability::SdpCapability()
 {
@@ -28,7 +28,7 @@ AnsiStringStorage msg;
 UINT32 length;
 
 switch (code) {
-    case ClientMsgDefs::SERVER_SDP:
+    case (lkvnc_rfb_Defs__Client::SERVER_SDP):
 
 	length = input->readUInt32();
 	input->readFully(&buffer, length);
@@ -42,7 +42,7 @@ switch (code) {
 	m_core->sendClientSdp(&msg);
 	break;
 
-	case ClientMsgDefs::P2P_OK:
+	case lkvnc_rfb_Defs__Client::P2P_OK:
 		break;
 }
 
@@ -53,20 +53,20 @@ switch (code) {
 void SdpCapability::addCapabilities(CapabilitiesManager *capabilities)
 {
 
-  capabilities->addClientMsgCapability(ClientMsgDefs::BEGIN_NEG,
-                                  VendorDefs::TIGHTVNC,
+  capabilities->addClientMsgCapability(lkvnc_rfb_Defs__Client::BEGIN_NEG,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
                                   ("P2PBEGNE"),
                                   _T("p2p support"));
 
   capabilities->addServerMsgCapability(this,
-                                  ClientMsgDefs::SERVER_SDP,
-                                  VendorDefs::TIGHTVNC,
-                                  VendorDefs::TIGHTVNC,
+                                  lkvnc_rfb_Defs__Client::SERVER_SDP,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
                                   _T("SDP"));
   capabilities->addServerMsgCapability(this,
-                                  ClientMsgDefs::P2P_OK,
-                                  VendorDefs::TIGHTVNC,
-                                  VendorDefs::TIGHTVNC,
+                                  lkvnc_rfb_Defs__Client::P2P_OK,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
+                                  lkvnc_rfb_DefsVendor__Common::TIGHTVNC,
                                   _T("P2P"));
 
 

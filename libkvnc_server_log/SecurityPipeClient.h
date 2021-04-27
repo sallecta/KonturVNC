@@ -25,7 +25,7 @@
 #ifndef __SECURITYPIPECLIENT_H__
 #define __SECURITYPIPECLIENT_H__
 
-#include "../libkvnc_io/Channel.h"
+#include "../libkvnc_all_io/Channel.h"
 
 // The SecurityPipeClient class gets new security pipe connection by
 // a granted temporary channel.

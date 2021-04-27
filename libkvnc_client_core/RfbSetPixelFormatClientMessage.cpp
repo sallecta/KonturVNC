@@ -24,9 +24,9 @@
 
 #include "RfbSetPixelFormatClientMessage.h"
 
-RfbSetPixelFormatClientMessage::RfbSetPixelFormatClientMessage(const PixelFormat *pixelFormat)
+RfbSetPixelFormatClientMessage::RfbSetPixelFormatClientMessage(const lkvnc_rfb_PixelFormat *lkvnc_rfb_PixelFormat)
 {
-  m_pixelFormat = *pixelFormat;
+  m_pixelFormat = *lkvnc_rfb_PixelFormat;
 }
 
 RfbSetPixelFormatClientMessage::~RfbSetPixelFormatClientMessage()
@@ -51,7 +51,7 @@ RfbSetPixelFormatClientMessage::~RfbSetPixelFormatClientMessage()
 void RfbSetPixelFormatClientMessage::send(RfbOutputGate *output)
 {
   AutoLock al(output);
-  output->writeUInt8(ClientMsgDefs::SET_PIXEL_FORMAT);
+  output->writeUInt8(lkvnc_rfb_Defs__Client::SET_PIXEL_FORMAT);
   // padding 3 bytes
   output->writeUInt16(0);
   output->writeUInt8(0);

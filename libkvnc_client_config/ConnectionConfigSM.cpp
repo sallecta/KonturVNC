@@ -24,7 +24,7 @@
 
 #include "ConnectionConfigSM.h"
 
-#include "../libkvnc_win_system/Registry.h"
+#include "../libkvnc_all_winSystem/Registry.h"
 
 ConnectionConfigSM::ConnectionConfigSM(const TCHAR registryPath[],
                                        const TCHAR entryName[])

@@ -27,7 +27,7 @@
 PointerPosDecoder::PointerPosDecoder(LogWriter *logWriter)
 : PseudoDecoder(logWriter)
 {
-  m_encoding = PseudoEncDefs::POINTER_POS;
+  m_encoding = lkvnc_rfb_DefsEncoding__Pseudo::POINTER_POS;
 }
 
 PointerPosDecoder::~PointerPosDecoder()

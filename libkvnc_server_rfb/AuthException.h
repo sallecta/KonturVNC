@@ -25,7 +25,7 @@
 #ifndef __AUTHEXCEPTION_H__
 #define __AUTHEXCEPTION_H__
 
-#include "../libkvnc_util/exception.h"
+#include "../libkvnc_all_util/exception.h"
 
 class AuthException : public Exception
 {

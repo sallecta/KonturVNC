@@ -24,8 +24,8 @@
 
 #include "JpegDecompressor.h"
 
-#include "../libkvnc_util/AnsiStringStorage.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/Exception.h"
 
 JpegDecompressor::JpegDecompressor()
 {

@@ -36,19 +36,19 @@ DecoderOfRectangle::~DecoderOfRectangle()
 }
 
 void DecoderOfRectangle::process(RfbInputGate *input,
-                     FrameBuffer *frameBuffer,
-                     FrameBuffer *secondFrameBuffer,
+                     lkvnc_rfb_FrameBuffer *argFrameBuffer,
+                     lkvnc_rfb_FrameBuffer *secondFrameBuffer,
                      const Rect *rect,
                      LocalMutex *fbLock,
                      FbUpdateNotifier *fbNotifier)
 {
   decode(input, secondFrameBuffer, rect);
-  copy(frameBuffer, secondFrameBuffer, rect, fbLock);
+  copy(argFrameBuffer, secondFrameBuffer, rect, fbLock);
   notify(fbNotifier, rect);
 }
 
-void DecoderOfRectangle::copy(FrameBuffer *dstFrameBuffer,
-                   const FrameBuffer *srcFrameBuffer,
+void DecoderOfRectangle::copy(lkvnc_rfb_FrameBuffer *dstFrameBuffer,
+                   const lkvnc_rfb_FrameBuffer *srcFrameBuffer,
                    const Rect *rect,
                    LocalMutex *fbLock)
 {

@@ -23,9 +23,9 @@
 //
 
 #include "ViewerMenu.h"
-#include "resource.h"
+#include "kvnc_client_Resource.h"
 
-#include "../libkvnc_util/ResourceLoader.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
 
 void ViewerMenu::makeSeparator()
 {

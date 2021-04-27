@@ -25,9 +25,9 @@
 #ifndef _NEW_FOLDER_DIALOG_H_
 #define _NEW_FOLDER_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/Control.h"
-#include "../libkvnc_gui/TextBox.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/Control.h"
+#include "../libkvnc_all_gui/TextBox.h"
 
 class NewFolderDialog : public BaseDialog
 {

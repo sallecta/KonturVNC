@@ -25,7 +25,7 @@
 #ifndef _SHAREDISPLAYCOMMAND_H_
 #define _SHAREDISPLAYCOMMAND_H_
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 #include "ControlProxy.h"
 
 class ShareDisplayCommand : public Command

@@ -30,7 +30,7 @@
 
 #include "Decoder.h"
 
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 class DecoderStore
 {

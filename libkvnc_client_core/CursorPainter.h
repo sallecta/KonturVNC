@@ -25,14 +25,14 @@
 #ifndef _CURSOR_PAINTER_H_
 #define _CURSOR_PAINTER_H_
 
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_rfb/CursorShape.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_CursorShape.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 class CursorPainter
 {
 public:
-  CursorPainter(FrameBuffer *fb, LogWriter *logWriter);
+  CursorPainter(lkvnc_rfb_FrameBuffer *fb, LogWriter *logWriter);
   virtual ~CursorPainter();
 
   // this functions is thread-safe for private data of cursor, but need external lock of frame buffer
@@ -52,10 +52,10 @@ private:
 
   LogWriter *m_logWriter;
 
-  FrameBuffer *const m_fb;
+  lkvnc_rfb_FrameBuffer *const m_fb;
 
   LocalMutex m_lock;
-  CursorShape m_cursor;
+  lkvnc_rfb_CursorShape m_cursor;
 
   // Actual position of pointer
   Point m_pointerPosition;
@@ -63,7 +63,7 @@ private:
   // Last painted position of pointer
   Point m_lastPosition;
   // Copy of rect frame buffer under cursor
-  FrameBuffer m_cursorOverlay;
+  lkvnc_rfb_FrameBuffer m_cursorOverlay;
 
   // Flag is set, if cursor is showed.
   bool m_isExist;

@@ -23,8 +23,8 @@
 //
 
 #pragma once
-
-#include "../libkvnc_rfb/RfbKeySym.h"
+#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_rfb/lkvnc_rfb_KeySym.h"
 #include <vector>
 
 class KeySymTest : public RfbKeySymListener
@@ -36,7 +36,7 @@ public:
   int run();
 
 private:
-  virtual void onRfbKeySymEvent(unsigned int rfbKeySym, bool down);
+  virtual void onRfbKeySymEvent(unsigned int lkvnc_rfb_KeySym, bool down);
 
   static const TCHAR VALID_WORD_LETTERS[];
 
@@ -52,7 +52,7 @@ private:
 
   void changeKbdLayout(HKL hkl);
 
-  RfbKeySym *m_rfbKeySym;
+  lkvnc_rfb_KeySym *m_rfbKeySym;
   StringStorage m_fromFileName;
   StringStorage m_toFileName;
   FILE *m_fFrom;

@@ -23,7 +23,7 @@
 //
 
 #include "ViewerCollector.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 ViewerCollector::ViewerCollector()
 : m_countToReconnect(0)

@@ -24,8 +24,8 @@
 
 #include "ViewerSettingsManager.h"
 
-#include "../libkvnc_util/Exception.h"
-#include "../libkvnc_win_system/Registry.h"
+#include "../libkvnc_all_util/Exception.h"
+#include "../libkvnc_all_winSystem/Registry.h"
 
 SettingsManager *ViewerSettingsManager::s_instance = 0;
 

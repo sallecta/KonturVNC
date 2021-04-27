@@ -26,7 +26,7 @@
 #define __RFB_HEXTILE_TILE_H_INCLUDED__
 
 #include "TightPalette.h"
-#include "../libkvnc_util/inttypes.h"
+#include "../libkvnc_all_util/inttypes.h"
 #include <crtdbg.h>
 
 template<class PIXEL_T> class HextileTile

@@ -25,7 +25,7 @@
 #ifndef _NOTIFICATOR_H_
 #define _NOTIFICATOR_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 // FIXME: Document this class.
 class Notificator

@@ -27,10 +27,10 @@
 
 #include "ListenLogServer.h"
 #include "LogConn.h"
-#include "../libkvnc_log_writer/FileAccount.h"
-#include "../libkvnc_util/Singleton.h"
+#include "../libkvnc_all_logger/FileAccount.h"
+#include "../libkvnc_all_util/Singleton.h"
 #include "LogConnAuthListener.h"
-#include "../libkvnc_thread/ThreadCollector.h"
+#include "../libkvnc_all_thread/ThreadCollector.h"
 #include "LogListener.h"
 #include <list>
 #include <map>

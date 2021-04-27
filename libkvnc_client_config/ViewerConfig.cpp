@@ -24,11 +24,11 @@
 
 #include "ViewerConfig.h"
 
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/RegistryKey.h"
-#include "../libkvnc_win_system/Registry.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
+#include "../libkvnc_all_winSystem/Registry.h"
 
-#include "../libkvnc_file/File.h"
+#include "../libkvnc_all_file/File.h"
 
 
 

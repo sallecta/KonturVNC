@@ -25,7 +25,7 @@
 #ifndef _PORT_MAPPING_H_
 #define _PORT_MAPPING_H_
 
-#include "../libkvnc_util/StringStorage.h"
+#include "../libkvnc_all_util/StringStorage.h"
 #include "PortMappingRect.h"
 
 class PortMapping

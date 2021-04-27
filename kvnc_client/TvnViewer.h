@@ -33,10 +33,10 @@
 #include "OptionsDialog.h"
 #include "ViewerCollector.h"
 #include "ReconnectWnd.h"
-#include "../libkvnc_win_system/WindowsApplication.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
 
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 #include <map>
 

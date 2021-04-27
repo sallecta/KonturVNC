@@ -25,15 +25,15 @@
 #ifndef _TVN_SERVER_APPLICATION_H_
 #define _TVN_SERVER_APPLICATION_H_
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/winhdr.h"
 
-#include "../libkvnc_win_system/WindowsApplication.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
 
 #include "TvnServer.h"
 #include "TvnServerListener.h"
 #include "WsConfigRunner.h"
-#include "../libkvnc_log_writer/FileLogger.h"
+#include "../libkvnc_all_logger/FileLogger.h"
 #include "LogInitListener.h"
 
 /**

@@ -25,14 +25,14 @@
 #ifndef _FB_UDPATE_NOTIFIER_H_
 #define _FB_UPDATE_NOTIFIER_H_
 
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_rfb/FrameBuffer.h"
-#include "../libkvnc_region/Point.h"
-#include "../libkvnc_region/Rect.h"
-#include "../libkvnc_region/Region.h"
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_win_system/WindowsEvent.h"
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_FrameBuffer.h"
+#include "../libkvnc_all_region/Point.h"
+#include "../libkvnc_all_region/Rect.h"
+#include "../libkvnc_all_region/Region.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_winSystem/WindowsEvent.h"
 
 #include "../kvnc_client/AvilogThread.h"
 
@@ -44,7 +44,7 @@ class CoreEventsAdapter;
 class FbUpdateNotifier : public Thread
 {
 public:
-  FbUpdateNotifier(FrameBuffer *fb, LocalMutex *fbLock, LogWriter *logger);
+  FbUpdateNotifier(lkvnc_rfb_FrameBuffer *fb, LocalMutex *fbLock, LogWriter *logger);
   virtual ~FbUpdateNotifier();
 
   void setAdapter(CoreEventsAdapter *adapter);
@@ -69,7 +69,7 @@ protected:
   void onTerminate();
 
   LocalMutex *m_fbLock;
-  FrameBuffer *m_frameBuffer;
+  lkvnc_rfb_FrameBuffer *m_frameBuffer;
   CursorPainter m_cursorPainter;
 
   // Pointer to adapter.

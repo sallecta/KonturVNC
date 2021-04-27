@@ -24,10 +24,10 @@
 
 #include "TvnServerHelp.h"
 
-#include "../libkvnc_util/winhdr.h"
-#include "../libkvnc_util/StringTable.h"
+#include "../libkvnc_all_util/winhdr.h"
+#include "../libkvnc_all_util/StringTable.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 TvnServerHelp::TvnServerHelp()
 {

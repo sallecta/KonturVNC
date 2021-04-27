@@ -26,15 +26,15 @@
 #include "ServerCommandLine.h"
 #include "TvnServerHelp.h"
 
-#include "../libkvnc_thread/GlobalMutex.h"
+#include "../libkvnc_all_thread/GlobalMutex.h"
 
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../libkvnc_util/StringTable.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../libkvnc_all_util/StringTable.h"
 #include "../libkvnc_server_app/NamingDefs.h"
-#include "../libkvnc_win_system/WinCommandLineArgs.h"
+#include "../libkvnc_all_winSystem/WinCommandLineArgs.h"
 
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 TvnServerApplication::TvnServerApplication(HINSTANCE hInstance,
                                            const TCHAR *windowClassName,

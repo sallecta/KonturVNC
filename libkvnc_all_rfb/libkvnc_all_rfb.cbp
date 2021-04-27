@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libkvnc_all_rfb" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+				</Compiler>
+			</Target>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="../bin/Release_Win32/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_LIB" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="lkvnc_rfb_CursorShape.cpp" />
+		<Unit filename="lkvnc_rfb_CursorShape.h" />
+		<Unit filename="lkvnc_rfb_Defs.cpp" />
+		<Unit filename="lkvnc_rfb_Defs.h" />
+		<Unit filename="lkvnc_rfb_DefsAuth.cpp" />
+		<Unit filename="lkvnc_rfb_DefsAuth.h" />
+		<Unit filename="lkvnc_rfb_DefsEncoding.cpp" />
+		<Unit filename="lkvnc_rfb_DefsEncoding.h" />
+		<Unit filename="lkvnc_rfb_DefsKeySym.h" />
+		<Unit filename="lkvnc_rfb_DefsTunnel.cpp" />
+		<Unit filename="lkvnc_rfb_DefsTunnel.h" />
+		<Unit filename="lkvnc_rfb_DefsVendor.cpp" />
+		<Unit filename="lkvnc_rfb_DefsVendor.h" />
+		<Unit filename="lkvnc_rfb_FrameBuffer.cpp" />
+		<Unit filename="lkvnc_rfb_FrameBuffer.h" />
+		<Unit filename="lkvnc_rfb_HostParser.cpp" />
+		<Unit filename="lkvnc_rfb_HostParser.h" />
+		<Unit filename="lkvnc_rfb_KeySym.cpp" />
+		<Unit filename="lkvnc_rfb_KeySym.h" />
+		<Unit filename="lkvnc_rfb_KeySymListener.h" />
+		<Unit filename="lkvnc_rfb_PixelConverter.cpp" />
+		<Unit filename="lkvnc_rfb_PixelConverter.h" />
+		<Unit filename="lkvnc_rfb_PixelFormat.cpp" />
+		<Unit filename="lkvnc_rfb_PixelFormat.h" />
+		<Unit filename="lkvnc_rfb_PixelFormatCreator.cpp" />
+		<Unit filename="lkvnc_rfb_PixelFormatCreator.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

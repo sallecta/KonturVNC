@@ -118,11 +118,11 @@ BOOL OptionsDialog::onInitDialog()
   setControlById(m_arrow, IDC_RARROW);
   setControlById(m_nlocal, IDC_RNLOCAL);
 
-  m_useEnc.addItem(_T("Raw"), reinterpret_cast<void *>(EncodingDefs::RAW));
-  m_useEnc.addItem(_T("Hextile"), reinterpret_cast<void *>(EncodingDefs::HEXTILE));
-  m_useEnc.addItem(_T("Tight"), reinterpret_cast<void *>(EncodingDefs::TIGHT));
-  m_useEnc.addItem(_T("RRE"), reinterpret_cast<void *>(EncodingDefs::RRE));
-  m_useEnc.addItem(_T("ZRLE"), reinterpret_cast<void *>(EncodingDefs::ZRLE));
+  m_useEnc.addItem(_T("Raw"), reinterpret_cast<void *>(lkvnc_rfb_DefsEncoding::RAW));
+  m_useEnc.addItem(_T("Hextile"), reinterpret_cast<void *>(lkvnc_rfb_DefsEncoding::HEXTILE));
+  m_useEnc.addItem(_T("Tight"), reinterpret_cast<void *>(lkvnc_rfb_DefsEncoding::TIGHT));
+  m_useEnc.addItem(_T("RRE"), reinterpret_cast<void *>(lkvnc_rfb_DefsEncoding::RRE));
+  m_useEnc.addItem(_T("ZRLE"), reinterpret_cast<void *>(lkvnc_rfb_DefsEncoding::ZRLE));
 
 
   // FIXME: replaced literals to named constants
@@ -149,7 +149,7 @@ void OptionsDialog::updateControlValues()
     } // if found
 
     // set default value, if preferred encoding not in list
-    if (enc == EncodingDefs::HEXTILE)
+    if (enc == lkvnc_rfb_DefsEncoding::HEXTILE)
       m_useEnc.setSelectedItem(i);
   } // for i
 
@@ -296,7 +296,7 @@ void OptionsDialog::onPreferredEncodingSelectionChange()
   }
   int encoding = reinterpret_cast<int>(m_useEnc.getItemData(index));
   switch (encoding) {
-  case EncodingDefs::TIGHT:
+  case lkvnc_rfb_DefsEncoding::TIGHT:
     enableCustomCompression(m_compLvl.isChecked());
     m_compLvl.setEnabled(true);
     break;
@@ -412,7 +412,7 @@ void OptionsDialog::apply()
     m_conConfig->setPreferredEncoding(preferredEncoding);
   } else {
     _ASSERT(pesii >= 0);
-    m_conConfig->setPreferredEncoding(EncodingDefs::TIGHT);
+    m_conConfig->setPreferredEncoding(lkvnc_rfb_DefsEncoding::TIGHT);
   }
 
   if (m_compLvl.isChecked()) {

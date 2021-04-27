@@ -23,9 +23,9 @@
 //
 
 #include "SecurityPipeClient.h"
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_win_system/NamedPipe.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_winSystem/NamedPipe.h"
 
 SecurityPipeClient::SecurityPipeClient(Channel *tempPublChan)
 : m_secChannel(0)

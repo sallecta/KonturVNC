@@ -25,15 +25,15 @@
 #include "QueryConnectionApplication.h"
 #include "QueryConnectionCommandLine.h"
 #include "QueryConnectionDialog.h"
-#include "../libkvnc_win_system/CurrentConsoleProcess.h"
+#include "../libkvnc_all_winSystem/CurrentConsoleProcess.h"
 #include "TvnServerHelp.h"
 
 #include "../libkvnc_server_config/Configurator.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/Process.h"
-#include "../libkvnc_win_system/WinCommandLineArgs.h"
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../kvnc_server/resource.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/Process.h"
+#include "../libkvnc_all_winSystem/WinCommandLineArgs.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
 QueryConnectionApplication::QueryConnectionApplication(HINSTANCE hInstance,

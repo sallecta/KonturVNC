@@ -36,7 +36,7 @@ const int hextileSubrectsColoured = 16;
 #include "HextileEncoder.h"
 #include "HextileTile.h"
 
-HextileEncoder::HextileEncoder(PixelConverter *conv, DataOutputStream *output)
+HextileEncoder::HextileEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output)
 : Encoder(conv, output)
 {
 }
@@ -47,14 +47,14 @@ HextileEncoder::~HextileEncoder()
 
 int HextileEncoder::getCode() const
 {
-  return EncodingDefs::HEXTILE;
+  return lkvnc_rfb_DefsEncoding::HEXTILE;
 }
 
 void HextileEncoder::sendRectangle(const Rect *rect,
-                                   const FrameBuffer *serverFb,
+                                   const lkvnc_rfb_FrameBuffer *serverFb,
                                    const EncodeOptions *options)
 {
-  const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
+  const lkvnc_rfb_FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
 
   size_t bpp = fb->getBitsPerPixel();
   if (bpp == 8) {
@@ -70,11 +70,11 @@ void HextileEncoder::sendRectangle(const Rect *rect,
 
 template <class PIXEL_T>
 void HextileEncoder::hextileFunction(const Rect &r,
-                                     const FrameBuffer *frameBuffer)
+                                     const lkvnc_rfb_FrameBuffer *argFrameBuffer)
 {
   Rect t;
   PIXEL_T *buf;
-  FrameBuffer fb;
+  lkvnc_rfb_FrameBuffer fb;
   PIXEL_T oldBg = 0, oldFg = 0;
   bool oldBgValid = false;
   bool oldFgValid = false;
@@ -90,9 +90,9 @@ void HextileEncoder::hextileFunction(const Rect &r,
 
       t.right = std::min(r.right, t.left + 16);
 
-      PixelFormat tmpPixelFormat = frameBuffer->getPixelFormat();
+      lkvnc_rfb_PixelFormat tmpPixelFormat = argFrameBuffer->getPixelFormat();
       fb.setProperties(&t, &tmpPixelFormat);
-      fb.copyFrom(frameBuffer, t.left, t.top);
+      fb.copyFrom(argFrameBuffer, t.left, t.top);
       buf = (PIXEL_T *)fb.getBuffer();
 
       tile.newTile(buf, t.getWidth(), t.getHeight());

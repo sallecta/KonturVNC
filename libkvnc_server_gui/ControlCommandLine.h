@@ -25,10 +25,10 @@
 #ifndef _CONTROL_COMMAND_LINE_H_
 #define _CONTROL_COMMAND_LINE_H_
 
-#include "../libkvnc_util/CommandLine.h"
-#include "../libkvnc_util/CommandLineFormatException.h"
+#include "../libkvnc_all_util/CommandLine.h"
+#include "../libkvnc_all_util/CommandLineFormatException.h"
 
-#include "../libkvnc_region/Rect.h"
+#include "../libkvnc_all_region/Rect.h"
 
 class ControlCommandLine : private CommandLine
 {

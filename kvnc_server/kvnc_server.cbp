@@ -7,18 +7,22 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug_Win32">
-				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
-				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
-				<Option deps_output="$(WORKSPACE_DIRECTORY)/out/bin/Release_Win32" />
-				<Option external_deps="$(TARGET_OUTPUT_DIR)/libkvnc_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_desktop.a;$(TARGET_OUTPUT_DIR)/libkvnc_desktop_ipc.a;$(TARGET_OUTPUT_DIR)/libkvnc_file.a;$(TARGET_OUTPUT_DIR)/libkvnc_ft.a;$(TARGET_OUTPUT_DIR)/libkvnc_gui.a;$(TARGET_OUTPUT_DIR)/libkvnc_http_srv.a;$(TARGET_OUTPUT_DIR)/libkvnc_io.a;$(TARGET_OUTPUT_DIR)/libkvnc_log_writer.a;$(TARGET_OUTPUT_DIR)/libkvnc_network.a;$(TARGET_OUTPUT_DIR)/libkvnc_p2p.a;$(TARGET_OUTPUT_DIR)/libkvnc_region.a;$(TARGET_OUTPUT_DIR)/libkvnc_rfb.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_app.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_ft.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_gui.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_gui_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_log.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_rfb.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_rfb_update_sender.a;$(TARGET_OUTPUT_DIR)/libkvnc_tcp_dispatcher.a;$(TARGET_OUTPUT_DIR)/libkvnc_thread.a;$(TARGET_OUTPUT_DIR)/libkvnc_util.a;$(TARGET_OUTPUT_DIR)/libkvnc_win_event_log.a;$(TARGET_OUTPUT_DIR)/libkvnc_win_system.a;$(TARGET_OUTPUT_DIR)/lib_jpegturbo.a;$(TARGET_OUTPUT_DIR)/lib_pj.a;$(TARGET_OUTPUT_DIR)/lib_pjnath.a;$(TARGET_OUTPUT_DIR)/lib_pjutil.a;$(TARGET_OUTPUT_DIR)/lib_usrsctp.a;$(TARGET_OUTPUT_DIR)/lib_zlib.a;" />
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option deps_output="$(WORKSPACEDIR)/!out/bin/Release_Win32" />
+				<Option external_deps="$(TARGET_OUTPUT_DIR)/libkvnc_all_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_desktop.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_desktopIpc.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_file.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_fileTransfer.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_gui.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_http.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_io.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_logger.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_network.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_p2p.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_region.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_rfb.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_app.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_config.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_fileTransfer.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_gui.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_guiConfig.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_log.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_rfb.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_rfbUpdateSender.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_tcpDispatcher.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_thread.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_util.a;$(TARGET_OUTPUT_DIR)/libkvnc_server_winEventLog.a;$(TARGET_OUTPUT_DIR)/libkvnc_all_winSystem.a;$(TARGET_OUTPUT_DIR)/lib_jpegturbo.a;$(TARGET_OUTPUT_DIR)/lib_pj.a;$(TARGET_OUTPUT_DIR)/lib_pjnath.a;$(TARGET_OUTPUT_DIR)/lib_pjutil.a;$(TARGET_OUTPUT_DIR)/lib_usrsctp.a;$(TARGET_OUTPUT_DIR)/lib_zlib.a;" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Option projectCompilerOptionsRelation="1" />
+				<Option projectLinkerOptionsRelation="1" />
+				<Option projectIncludeDirsRelation="1" />
+				<Option projectResourceIncludeDirsRelation="1" />
+				<Option projectLibDirsRelation="1" />
 				<Compiler>
 					<Add option="-Wfatal-errors" />
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-std=c++11" />
-					<Add option="-m32" />
 					<Add option="-g" />
 					<Add option="-DNDEBUG" />
 					<Add option="-D_WINDOWS" />
@@ -32,35 +36,35 @@
 					<Add option="-static-libstdc++" />
 					<Add option="-static-libgcc" />
 					<Add option="-static" />
-					<Add option="-m32" />
 					<Add option="-Wl,--start-group" />
-					<Add option="-lkvnc_config" />
-					<Add option="-lkvnc_desktop" />
-					<Add option="-lkvnc_desktop_ipc" />
-					<Add option="-lkvnc_file" />
-					<Add option="-lkvnc_ft" />
-					<Add option="-lkvnc_gui" />
-					<Add option="-lkvnc_http_srv" />
-					<Add option="-lkvnc_io" />
-					<Add option="-lkvnc_log_writer" />
-					<Add option="-lkvnc_network" />
-					<Add option="-lkvnc_p2p" />
-					<Add option="-lkvnc_region" />
-					<Add option="-lkvnc_rfb" />
+					<Add option="-lkvnc_all_config" />
+					<Add option="-lkvnc_all_file" />
+					<Add option="-lkvnc_all_fileTransfer" />
+					<Add option="-lkvnc_all_gui" />
+					<Add option="-lkvnc_all_io" />
+					<Add option="-lkvnc_all_logger" />
+					<Add option="-lkvnc_all_network" />
+					<Add option="-lkvnc_all_p2p" />
+					<Add option="-lkvnc_all_region" />
+					<Add option="-lkvnc_all_rfb" />
+					<Add option="-lkvnc_all_thread" />
+					<Add option="-lkvnc_all_util" />
+					<Add option="-lkvnc_all_winSystem" />
 					<Add option="-lkvnc_server_app" />
 					<Add option="-lkvnc_server_config" />
-					<Add option="-lkvnc_server_ft" />
+					<Add option="-lkvnc_server_desktop" />
+					<Add option="-lkvnc_server_desktopIpc" />
+					<Add option="-lkvnc_server_fileTransfer" />
 					<Add option="-lkvnc_server_gui" />
-					<Add option="-lkvnc_server_gui_config" />
+					<Add option="-lkvnc_server_guiConfig" />
+					<Add option="-lkvnc_server_http" />
 					<Add option="-lkvnc_server_log" />
 					<Add option="-lkvnc_server_rfb" />
-					<Add option="-lkvnc_server_rfb_update_sender" />
-					<Add option="-lkvnc_tcp_dispatcher" />
-					<Add option="-lkvnc_thread" />
-					<Add option="-lkvnc_util" />
-					<Add option="-lkvnc_win_event_log" />
-					<Add option="-lkvnc_win_system" />
+					<Add option="-lkvnc_server_rfbUpdateSender" />
+					<Add option="-lkvnc_server_tcpDispatcher" />
+					<Add option="-lkvnc_server_winEventLog" />
 					<Add option="-Wl,--end-group" />
+					<Add library="psapi" />
 					<Add library="ssl" />
 					<Add library="crypto" />
 					<Add library="lib_pjnath" />
@@ -82,120 +86,31 @@
 					<Add library="ws2_32" />
 					<Add library="comctl32" />
 					<Add library="wtsapi32" />
-					<Add library="psapi" />
 					<Add library="libversion" />
 					<Add library="lib_usrsctp" />
 					<Add library="Iphlpapi" />
 					<Add library="lib_zlib" />
 					<Add library="lib_jpegturbo" />
-					<Add directory="$(WORKSPACEDIR)/!external/openssl/lib" />
-					<Add directory="$(TARGET_OUTPUT_DIR)" />
-					<LinkerExe value="CppCompiler" />
-				</Linker>
-			</Target>
-			<Target title="Release_Win32">
-				<Option output="$(WORKSPACEDIR)/out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
-				<Option object_output="$(WORKSPACEDIR)/out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
-				<Option deps_output="$(WORKSPACE_DIRECTORY)/out/bin/Release_Win32" />
-				<Option type="0" />
-				<Option compiler="gcc" />
-				<Compiler>
-					<Add option="-O2" />
-					<Add option="-Wfatal-errors" />
-					<Add option="-Wextra" />
-					<Add option="-Wall" />
-					<Add option="-std=c++11" />
-					<Add option="-m32" />
-					<Add option="-DNDEBUG" />
-					<Add option="-D_WINDOWS" />
-					<Add option="-DWIN32" />
-					<Add directory="$(WORKSPACEDIR)/!external/openssl/include" />
-					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pj/include" />
-					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjutil/include" />
-					<Add directory="$(WORKSPACEDIR)/!external/pjproject/lib_pjnath/include" />
-				</Compiler>
-				<Linker>
-					<Add option="-s" />
-					<Add option="-static-libstdc++" />
-					<Add option="-static-libgcc" />
-					<Add option="-static" />
-					<Add option="-m32" />
-					<Add option="-Wl,--start-group" />
-					<Add option="-lkvnc_config" />
-					<Add option="-lkvnc_desktop" />
-					<Add option="-lkvnc_desktop_ipc" />
-					<Add option="-lkvnc_file" />
-					<Add option="-lkvnc_ft" />
-					<Add option="-lkvnc_gui" />
-					<Add option="-lkvnc_http_srv" />
-					<Add option="-lkvnc_io" />
-					<Add option="-lkvnc_log_writer" />
-					<Add option="-lkvnc_network" />
-					<Add option="-lkvnc_p2p" />
-					<Add option="-lkvnc_region" />
-					<Add option="-lkvnc_rfb" />
-					<Add option="-lkvnc_server_app" />
-					<Add option="-lkvnc_server_config" />
-					<Add option="-lkvnc_server_ft" />
-					<Add option="-lkvnc_server_gui" />
-					<Add option="-lkvnc_server_gui_config" />
-					<Add option="-lkvnc_server_log" />
-					<Add option="-lkvnc_server_rfb" />
-					<Add option="-lkvnc_server_rfb_update_sender" />
-					<Add option="-lkvnc_tcp_dispatcher" />
-					<Add option="-lkvnc_thread" />
-					<Add option="-lkvnc_util" />
-					<Add option="-lkvnc_win_event_log" />
-					<Add option="-lkvnc_win_system" />
-					<Add option="-Wl,--end-group" />
-					<Add library="ssl" />
-					<Add library="crypto" />
-					<Add library="lib_pjnath" />
-					<Add library="lib_pj" />
-					<Add library="lib_pjutil" />
-					<Add library="winmm" />
-					<Add library="kernel32" />
-					<Add library="user32" />
-					<Add library="gdi32" />
-					<Add library="winspool" />
-					<Add library="comdlg32" />
-					<Add library="advapi32" />
-					<Add library="shell32" />
-					<Add library="ole32" />
-					<Add library="oleaut32" />
-					<Add library="uuid" />
-					<Add library="odbc32" />
-					<Add library="odbccp32" />
-					<Add library="ws2_32" />
-					<Add library="comctl32" />
-					<Add library="wtsapi32" />
-					<Add library="psapi" />
-					<Add library="libversion" />
-					<Add library="lib_usrsctp" />
-					<Add library="Iphlpapi" />
-					<Add library="lib_zlib" />
-					<Add library="lib_jpegturbo" />
+					<Add library="libstdc++" />
 					<Add directory="$(WORKSPACEDIR)/!external/openssl/lib" />
 					<Add directory="$(TARGET_OUTPUT_DIR)" />
 					<LinkerExe value="CppCompiler" />
 				</Linker>
 			</Target>
 		</Build>
-		<Unit filename="../libkvnc_win_event_log/MessageProvider.rc">
+		<Compiler>
+			<Add option="-std=c++11" />
+		</Compiler>
+		<Unit filename="kvnc_server.cpp" />
+		<Unit filename="kvnc_server.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="BuildTime.cpp" />
-		<Unit filename="BuildTime.h" />
+		<Unit filename="kvnc_server_BuildTime.cpp" />
+		<Unit filename="kvnc_server_BuildTime.h" />
+		<Unit filename="kvnc_server_Resource.h" />
 		<Unit filename="res/connected.ico" />
 		<Unit filename="res/disabled.ico" />
 		<Unit filename="res/idle.ico" />
-		<Unit filename="res/konturvnc.png" />
-		<Unit filename="res/tightvnc.bmp" />
-		<Unit filename="resource.h" />
-		<Unit filename="tvnserver.cpp" />
-		<Unit filename="tvnserver.rc">
-			<Option compilerVar="WINDRES" />
-		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -25,7 +25,7 @@
 #ifndef _MAKE_TCP_DISPATCHER_CONN_COMMAND_H_
 #define _MAKE_TCP_DISPATCHER_CONN_COMMAND_H_
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 
 #include "ControlProxy.h"
 

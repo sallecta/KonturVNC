@@ -24,13 +24,13 @@
 
 #include "VncAuthenticationHandler.h"
 
-#include "../libkvnc_rfb/AuthDefs.h"
-#include "../libkvnc_rfb/VendorDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsAuth.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsVendor.h"
 
 #include "../libkvnc_client_core/VncAuthentication.h"
 
 VncAuthenticationHandler::VncAuthenticationHandler()
-: AuthHandler(AuthDefs::VNC)
+: AuthHandler(lkvnc_rfb_DefsAuth::VNC)
 {
 }
 
@@ -50,5 +50,5 @@ void VncAuthenticationHandler::authenticate(DataInputStream *input,
 
 void VncAuthenticationHandler::addAuthCapability(CapabilitiesManager *capManager)
 {
-  capManager->addAuthCapability(this, AuthDefs::VNC, VendorDefs::STANDARD, AuthDefs::SIG_VNC);
+  capManager->addAuthCapability(this, lkvnc_rfb_DefsAuth::VNC, lkvnc_rfb_DefsVendor__Common::STANDARD, lkvnc_rfb_DefsAuth::SIG_VNC);
 }

@@ -25,10 +25,10 @@
 #ifndef __RFBDISPATCHER_H__
 #define __RFBDISPATCHER_H__
 
-#include "../libkvnc_thread/Thread.h"
+#include "../libkvnc_all_thread/Thread.h"
 #include "RfbDispatcherListener.h"
-#include "../libkvnc_util/AnEventListener.h"
-#include "../libkvnc_win_system/WindowsEvent.h"
+#include "../libkvnc_all_util/AnEventListener.h"
+#include "../libkvnc_all_winSystem/WindowsEvent.h"
 #include <map>
 
 class RfbDispatcher : public Thread

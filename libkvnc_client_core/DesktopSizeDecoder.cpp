@@ -27,7 +27,7 @@
 DesktopSizeDecoder::DesktopSizeDecoder(LogWriter *logWriter)
 : PseudoDecoder(logWriter)
 {
-  m_encoding = PseudoEncDefs::DESKTOP_SIZE;
+  m_encoding = lkvnc_rfb_DefsEncoding__Pseudo::DESKTOP_SIZE;
 }
 
 DesktopSizeDecoder::~DesktopSizeDecoder()

@@ -23,7 +23,7 @@
 //
 
 #include "LogServer.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 LogServer::LogServer(const TCHAR *publicPipeName)
 : m_listenLogServer(0),

@@ -26,13 +26,13 @@
 #define __RFBCLIENT_H__
 
 #include <list>
-#include "../libkvnc_network/socket/SocketIPv4.h"
-#include "../libkvnc_win_system/WindowsEvent.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_desktop/Desktop.h"
-#include "../libkvnc_server_rfb_update_sender/UpdateSender.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_network/socket/SocketIPv4.h"
+#include "../libkvnc_all_winSystem/WindowsEvent.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_server_desktop/Desktop.h"
+#include "../libkvnc_server_rfbUpdateSender/UpdateSender.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 #include "RfbDispatcher.h"
 #include "ClipboardExchange.h"
@@ -96,7 +96,7 @@ public:
 
   bool clientIsReady() const { return m_updateSender->clientIsReady(); }
   void sendUpdate(const UpdateContainer *updateContainer,
-                  const CursorShape *cursorShape);
+                  const lkvnc_rfb_CursorShape *lkvnc_rfb_CursorShape);
   void sendClipboard(const StringStorage *newClipboard);
 
   void sendMsg(const StringStorage *msg);

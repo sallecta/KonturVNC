@@ -25,21 +25,21 @@
 #ifndef _FILE_TRANSFER_MAIN_DIALOG_H_
 #define _FILE_TRANSFER_MAIN_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/Control.h"
-#include "../libkvnc_gui/TextBox.h"
-#include "../libkvnc_gui/ComboBox.h"
-#include "../libkvnc_gui/ImagedButton.h"
-#include "../libkvnc_gui/ProgressBar.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/Control.h"
+#include "../libkvnc_all_gui/TextBox.h"
+#include "../libkvnc_all_gui/ComboBox.h"
+#include "../libkvnc_all_gui/ImagedButton.h"
+#include "../libkvnc_all_gui/ProgressBar.h"
 
-#include "../libkvnc_ft/FileInfo.h"
+#include "../libkvnc_all_fileTransfer/FileInfo.h"
 
-#include "../libkvnc_io/IOException.h"
+#include "../libkvnc_all_io/IOException.h"
 
 #include "FileInfoListView.h"
 #include "FileExistDialog.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_client_ft/FileTransferInterface.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_client_fileTransfer/FileTransferInterface.h"
 
 #include <vector>
 

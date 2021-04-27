@@ -29,10 +29,10 @@
 #include "ZrleEncoder.h"
 #include "TightEncoder.h"
 
-EncoderStore::EncoderStore(PixelConverter *pixelConverter, DataOutputStream *output)
+EncoderStore::EncoderStore(lkvnc_rfb_PixelConverter *lkvnc_rfb_PixelConverter, DataOutputStream *output)
 : m_encoder(0),
   m_jpegEncoder(0),
-  m_pixelConverter(pixelConverter),
+  m_pixelConverter(lkvnc_rfb_PixelConverter),
   m_output(output)
 {
 }
@@ -68,7 +68,7 @@ void EncoderStore::selectEncoder(int encType)
 void EncoderStore::validateJpegEncoder()
 {
   if (m_jpegEncoder == 0) {
-    TightEncoder *tight = (TightEncoder *)validateEncoder(EncodingDefs::TIGHT);
+    TightEncoder *tight = (TightEncoder *)validateEncoder(lkvnc_rfb_DefsEncoding::TIGHT);
     m_jpegEncoder = new JpegEncoder(tight);
   }
 }
@@ -79,7 +79,7 @@ Encoder *EncoderStore::validateEncoder(int encType)
 {
   // Use Raw encoding instead of unknown codes.
   if (!encodingSupported(encType)) {
-    encType = EncodingDefs::RAW;
+    encType = lkvnc_rfb_DefsEncoding::RAW;
   }
   // If that encoder is already allocated, return a pointer to it.
   std::map<int, Encoder *>::iterator it = m_map.find(encType);
@@ -104,25 +104,25 @@ Encoder *EncoderStore::validateEncoder(int encType)
 
 bool EncoderStore::encodingSupported(int encType)
 {
-  return (encType == EncodingDefs::RAW ||
-          encType == EncodingDefs::RRE ||
-          encType == EncodingDefs::HEXTILE ||
-          encType == EncodingDefs::ZRLE ||
-          encType == EncodingDefs::TIGHT);
+  return (encType == lkvnc_rfb_DefsEncoding::RAW ||
+          encType == lkvnc_rfb_DefsEncoding::RRE ||
+          encType == lkvnc_rfb_DefsEncoding::HEXTILE ||
+          encType == lkvnc_rfb_DefsEncoding::ZRLE ||
+          encType == lkvnc_rfb_DefsEncoding::TIGHT);
 }
 
 Encoder *EncoderStore::allocateEncoder(int encType) const
 {
   switch (encType) {
-  case EncodingDefs::TIGHT:
+  case lkvnc_rfb_DefsEncoding::TIGHT:
     return new TightEncoder(m_pixelConverter, m_output);
-  case EncodingDefs::ZRLE:
+  case lkvnc_rfb_DefsEncoding::ZRLE:
     return new ZrleEncoder(m_pixelConverter, m_output);
-  case EncodingDefs::HEXTILE:
+  case lkvnc_rfb_DefsEncoding::HEXTILE:
     return new HextileEncoder(m_pixelConverter, m_output);
-  case EncodingDefs::RRE:
+  case lkvnc_rfb_DefsEncoding::RRE:
     return new RreEncoder(m_pixelConverter, m_output);
-  case EncodingDefs::RAW:
+  case lkvnc_rfb_DefsEncoding::RAW:
     return new Encoder(m_pixelConverter, m_output);
   default:
     throw Exception(_T("Cannot create encoder of the specified type"));

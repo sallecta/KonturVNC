@@ -25,7 +25,7 @@
 #ifndef _RFB_FRAMEBUFFER_UPDATE_REQUEST_CLIENT_MESSAGE_H_
 #define _RFB_FRAMEBUFFER_UPDATE_REQUEST_CLIENT_MESSAGE_H_
 
-#include "../libkvnc_region/Rect.h"
+#include "../libkvnc_all_region/Rect.h"
 #include "RfbClientToServerMessage.h"
 
 class RfbFramebufferUpdateRequestClientMessage :

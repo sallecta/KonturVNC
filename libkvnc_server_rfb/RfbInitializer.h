@@ -25,12 +25,12 @@
 #ifndef __RFBINITIALIZER_H__
 #define __RFBINITIALIZER_H__
 
-#include "../libkvnc_io/Channel.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_io/DataInputStream.h"
+#include "../libkvnc_all_io/Channel.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_io/DataInputStream.h"
 #include "CapContainer.h"
-#include "../libkvnc_region/Dimension.h"
-#include "../libkvnc_rfb/PixelFormat.h"
+#include "../libkvnc_all_region/Dimension.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_PixelFormat.h"
 // External listeners
 #include "ClientAuthListener.h"
 
@@ -47,7 +47,7 @@ public:
                       const CapContainer *clToSrvCaps,
                       const CapContainer *encCaps,
                       const Dimension *dim,
-                      const PixelFormat *pf);
+                      const lkvnc_rfb_PixelFormat *pf);
 
   // Returns shared flag value. Shared flag value is valid only after
   // the authPhase() function calling.
@@ -64,7 +64,7 @@ protected:
   void initAuthenticate();
   void readClientInit();
   void sendServerInit(const Dimension *dim,
-                      const PixelFormat *pf);
+                      const lkvnc_rfb_PixelFormat *pf);
   void sendDesktopName();
   void sendInteractionCaps(const CapContainer *srvToClCaps,
                            const CapContainer *clToSrvCaps,

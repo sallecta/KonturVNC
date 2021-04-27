@@ -22,14 +22,14 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/winhdr.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
-#include "../libkvnc_win_system/Registry.h"
+#include "../libkvnc_all_winSystem/Registry.h"
 
 #include "SetPasswordsDialog.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 SetPasswordsDialog::SetPasswordsDialog(bool initStateOfUseRfbAuth,
                                        bool initStateOfUseAdminAuth)

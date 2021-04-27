@@ -25,10 +25,10 @@
 #ifndef __ClientCrashHook_H__
 #define __ClientCrashHook_H__
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/Singleton.h"
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_win_system/ApplicationCrashEvents.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/Singleton.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_winSystem/ApplicationCrashEvents.h"
 
 class ClientCrashHook : private Singleton<ClientCrashHook>
 {

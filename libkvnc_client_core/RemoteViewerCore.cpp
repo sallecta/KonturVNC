@@ -24,13 +24,12 @@
 
 #include "RemoteViewerCore.h"
 
-#include "../libkvnc_ft/FTMessage.h"
-#include "../libkvnc_rfb/AuthDefs.cpp"
-#include "../libkvnc_rfb/TunnelDefs.h"
-#include "../libkvnc_rfb/MsgDefs.cpp"
-#include "../libkvnc_rfb/EncodingDefs.h"
-#include "../libkvnc_rfb/VendorDefs.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_fileTransfer/FTMessage.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsAuth.cpp"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsTunnel.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsVendor.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 
 #include "AuthHandler.h"
 #include "RichCursorDecoder.h"
@@ -56,17 +55,21 @@
 #include "PointerPosDecoder.h"
 #include "RichCursorDecoder.h"
 
-#include "../libkvnc_server_rfb_update_sender/UpdSenderMsgDefs.h"
+#include "../libkvnc_server_rfbUpdateSender/UpdSenderMsgDefs.h"
 
 #include <algorithm>
 #include "../libkvnc_client_config/ViewerConfig.h"
+
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 
 
 RemoteViewerCore::RemoteViewerCore(Logger *logger)
 : m_logWriter(logger),
   m_tcpConnection(&m_logWriter),
   m_fbUpdateNotifier(&m_frameBuffer, &m_fbLock, &m_logWriter),
-  m_decoderStore(&m_logWriter),simp_counter(0),m_avilog(&m_frameBuffer,ViewerConfig::getInstance()->isAutoRecord()),m_isRecording(ViewerConfig::getInstance()->isAutoRecord())
+  m_decoderStore(&m_logWriter),simp_counter(0),
+  m_avilog(&m_frameBuffer,ViewerConfig::getInstance()->isAutoRecord()),
+  m_isRecording(ViewerConfig::getInstance()->isAutoRecord())
 {
   init();
 }
@@ -249,17 +252,17 @@ void RemoteViewerCore::waitTermination()
   wait();
 }
 
-void RemoteViewerCore::setPixelFormat(const PixelFormat *pixelFormat)
+void RemoteViewerCore::setPixelFormat(const lkvnc_rfb_PixelFormat *lkvnc_rfb_PixelFormat)
 {
   m_logWriter.detail(_T("Pixel format will changed"));
   AutoLock al(&m_pixelFormatLock);
   m_isNewPixelFormat = true;
-  m_viewerPixelFormat = *pixelFormat;
+  m_viewerPixelFormat = *lkvnc_rfb_PixelFormat;
 }
 
 bool RemoteViewerCore::updatePixelFormat()
 {
-  PixelFormat pxFormat;
+  lkvnc_rfb_PixelFormat pxFormat;
   m_logWriter.debug(_T("Check pixel format change..."));
   {
     AutoLock al(&m_pixelFormatLock);
@@ -278,7 +281,7 @@ bool RemoteViewerCore::updatePixelFormat()
     AutoLock al(&m_fbLock);
     // FIXME: here isn't accept true-colour flag.
     // PixelFormats may be equal, if isn't.
-    PixelFormat tmpPixelFormat = m_frameBuffer.getPixelFormat();
+    lkvnc_rfb_PixelFormat tmpPixelFormat = m_frameBuffer.getPixelFormat();
     if (pxFormat.isEqualTo(&tmpPixelFormat)) {
       return false;
     }
@@ -453,8 +456,8 @@ void RemoteViewerCore::enableCursorShapeUpdates(bool enabled)
     needUpdate |= m_decoderStore.addDecoder(new RichCursorDecoder(&m_logWriter), -1);
     needUpdate |= m_decoderStore.addDecoder(new PointerPosDecoder(&m_logWriter), -1);
   } else {
-    needUpdate |= m_decoderStore.removeDecoder(PseudoEncDefs::RICH_CURSOR);
-    needUpdate |= m_decoderStore.removeDecoder(PseudoEncDefs::POINTER_POS);
+    needUpdate |= m_decoderStore.removeDecoder(lkvnc_rfb_DefsEncoding__Pseudo::RICH_CURSOR);
+    needUpdate |= m_decoderStore.removeDecoder(lkvnc_rfb_DefsEncoding__Pseudo::POINTER_POS);
   }
 
   if (needUpdate) {
@@ -481,27 +484,27 @@ void RemoteViewerCore::stopUpdating(bool isStopped)
   }
 }
 
-PixelFormat RemoteViewerCore::readPixelFormat()
+lkvnc_rfb_PixelFormat RemoteViewerCore::readPixelFormat()
 {
-  PixelFormat pixelFormat;
-  pixelFormat.bitsPerPixel = m_input->readUInt8();
-  pixelFormat.colorDepth = m_input->readUInt8();
-  pixelFormat.bigEndian = !!m_input->readUInt8();
+  lkvnc_rfb_PixelFormat lkvnc_rfb_PixelFormat;
+  lkvnc_rfb_PixelFormat.bitsPerPixel = m_input->readUInt8();
+  lkvnc_rfb_PixelFormat.colorDepth = m_input->readUInt8();
+  lkvnc_rfb_PixelFormat.bigEndian = !!m_input->readUInt8();
   // now, supported only true color
   int trueColour = m_input->readUInt8();
   if (trueColour == false) {
     m_logWriter.error(_T("Not supported palette. Flag \"True colour\" is not set."));
   }
-  pixelFormat.redMax = m_input->readUInt16();
-  pixelFormat.greenMax = m_input->readUInt16();
-  pixelFormat.blueMax = m_input->readUInt16();
-  pixelFormat.redShift = m_input->readUInt8();
-  pixelFormat.greenShift = m_input->readUInt8();
-  pixelFormat.blueShift = m_input->readUInt8();
+  lkvnc_rfb_PixelFormat.redMax = m_input->readUInt16();
+  lkvnc_rfb_PixelFormat.greenMax = m_input->readUInt16();
+  lkvnc_rfb_PixelFormat.blueMax = m_input->readUInt16();
+  lkvnc_rfb_PixelFormat.redShift = m_input->readUInt8();
+  lkvnc_rfb_PixelFormat.greenShift = m_input->readUInt8();
+  lkvnc_rfb_PixelFormat.blueShift = m_input->readUInt8();
   m_input->readUInt8(); // padding bytes (3)
   m_input->readUInt8();
   m_input->readUInt8();
-  return pixelFormat;
+  return lkvnc_rfb_PixelFormat;
 }
 
 void RemoteViewerCore::connectToHost()
@@ -534,7 +537,7 @@ void RemoteViewerCore::authenticate()
       m_authHandlers[authenticationType]->authenticate(m_input, m_output);
     } else {
       // Security type is added automatic, but not by user.
-      if (authenticationType != SecurityDefs::NONE) {
+      if (authenticationType != lkvnc_rfb_DefsAuth__Security::NONE) {
         m_logWriter.error(_T("Isn't exist authentication handler for selected security type %d"),
                           authenticationType);
         throw AuthException(_T("Isn't exist authentication handler ")
@@ -544,7 +547,7 @@ void RemoteViewerCore::authenticate()
   }
 
   // get authentication result, if version 3.8 or authentication isn't None
-  if (m_minor >= 8 || authenticationType != SecurityDefs::NONE) {
+  if (m_minor >= 8 || authenticationType != lkvnc_rfb_DefsAuth__Security::NONE) {
     UINT32 authResult = 0;
     if (authenticationType) {
       authResult = m_input->readUInt32();
@@ -596,7 +599,7 @@ int RemoteViewerCore::negotiateAboutSecurityType()
   m_logWriter.debug(_T("Selecting auth-handler"));
   int typeSelected = selectSecurityType(&secTypes, &m_authHandlers);
   m_logWriter.info(_T("Security type is selected: %d"), typeSelected);
-  if (typeSelected == SecurityDefs::TIGHT) {
+  if (typeSelected == lkvnc_rfb_DefsAuth__Security::TIGHT) {
     m_logWriter.info(_T("Tight capabilities is enable"));
     m_isTight = true;
 
@@ -634,11 +637,11 @@ void RemoteViewerCore::readSecurityTypeList(vector<UINT32> *secTypes)
 StringStorage RemoteViewerCore::getSecurityTypeName(UINT32 securityType) const
 {
   switch (securityType) {
-  case SecurityDefs::NONE:
+  case lkvnc_rfb_DefsAuth__Security::NONE:
     return _T("None");
-  case SecurityDefs::VNC:
+  case lkvnc_rfb_DefsAuth__Security::VNC:
     return _T("VNC");
-  case SecurityDefs::TIGHT:
+  case lkvnc_rfb_DefsAuth__Security::TIGHT:
     return _T("Tight");
   }
   return _T("Unknown type");
@@ -647,9 +650,9 @@ StringStorage RemoteViewerCore::getSecurityTypeName(UINT32 securityType) const
 StringStorage RemoteViewerCore::getAuthenticationTypeName(UINT32 authenticationType) const
 {
   switch (authenticationType) {
-  case AuthDefs::NONE:
+  case lkvnc_rfb_DefsAuth::NONE:
     return _T("None");
-  case AuthDefs::VNC:
+  case lkvnc_rfb_DefsAuth::VNC:
     return _T("VNC");
   }
   return _T("Unknown type");
@@ -664,7 +667,7 @@ int RemoteViewerCore::selectSecurityType(const vector<UINT32> *secTypes,
   // If server is support security type "Tight", then select him.
   SecTypesIterator tightSecType = std::find(secTypes->begin(),
                                             secTypes->end(),
-                                            SecurityDefs::TIGHT);
+                                            lkvnc_rfb_DefsAuth__Security::TIGHT);
   if (tightSecType != secTypes->end()) {
     return *tightSecType;
   }
@@ -674,7 +677,7 @@ int RemoteViewerCore::selectSecurityType(const vector<UINT32> *secTypes,
        i != secTypes->end();
        i++) {
     if (authHandlers->find(*i) != authHandlers->end() ||
-        *i == SecurityDefs::NONE)
+        *i == lkvnc_rfb_DefsAuth__Security::NONE)
       return *i;
   }
 
@@ -691,12 +694,12 @@ void RemoteViewerCore::initTunnelling()
     bool hasNoTunnel = false;
     for (UINT32 i = 0; i < tunnelCount; i++) {
       RfbCapabilityInfo cap = readCapability();
-      if (cap.code == TunnelDefs::NOTUNNEL) {
+      if (cap.code == lkvnc_rfb_DefsTunnel::NOTUNNEL) {
         hasNoTunnel = true;
       }
     }
     if (hasNoTunnel) {
-      m_output->writeUInt32(TunnelDefs::NOTUNNEL);
+      m_output->writeUInt32(lkvnc_rfb_DefsTunnel::NOTUNNEL);
       m_output->flush();
     } else {
       m_logWriter.error(_T("Viewer support only default tunneling tight-authentication"));
@@ -731,7 +734,7 @@ int RemoteViewerCore::initAuthentication()
 
   m_logWriter.info(_T("Number of auth-types is %d"), authTypesNumber);
   if (authTypesNumber == 0) {
-    return AuthDefs::NONE;
+    return lkvnc_rfb_DefsAuth::NONE;
   }
 
   m_logWriter.detail(_T("Reading authentication capability..."));
@@ -783,15 +786,15 @@ void RemoteViewerCore::startCP(){
 
 void RemoteViewerCore::beginNeg(){
 
-	m_output->writeUInt8(ClientMsgDefs::BEGIN_NEG);
+	m_output->writeUInt8(lkvnc_rfb_Defs__Client::BEGIN_NEG);
 	m_output->flush();
 }
 void RemoteViewerCore::enableP2P(bool isEnable)
 {
 	if(isEnable)
-	m_output->writeUInt8(ClientMsgDefs::ENABLE_P2P);
+	m_output->writeUInt8(lkvnc_rfb_Defs__Client::ENABLE_P2P);
 	else
-	m_output->writeUInt8(ClientMsgDefs::DISABLE_P2P);
+	m_output->writeUInt8(lkvnc_rfb_Defs__Client::DISABLE_P2P);
 
 	m_output->flush();
 
@@ -801,14 +804,14 @@ void RemoteViewerCore::enableP2P(bool isEnable)
 
 void RemoteViewerCore::sendTextMsg(StringStorage * msg){
 
-  m_output->writeUInt8(ClientMsgDefs::CHAT_REQ);
+  m_output->writeUInt8(lkvnc_rfb_Defs__Client::CHAT_REQ);
   m_output->flush();
 
 
   UINT32 length = static_cast<UINT32>(msg->getSize());
 
   AutoLock al(m_output);
-  m_output->writeUInt8(ClientMsgDefs::CLIENT_CHAT_MSG);
+  m_output->writeUInt8(lkvnc_rfb_Defs__Client::CLIENT_CHAT_MSG);
   m_output->writeUInt32(length);
   m_output->writeFully(msg->getString(), length);
   m_output->flush();
@@ -821,7 +824,7 @@ void RemoteViewerCore::sendClientSdp(AnsiStringStorage * msg){
   UINT32 length = static_cast<UINT32>(msg->getSize());
   if (length > 0){
   AutoLock al(m_output);
-  m_output->writeUInt8(ClientMsgDefs::CLIENT_SDP);
+  m_output->writeUInt8(lkvnc_rfb_Defs__Client::CLIENT_SDP);
   m_output->writeUInt32(length);
   m_output->writeFully(msg->getString(), length);
   m_output->flush();
@@ -832,9 +835,9 @@ void RemoteViewerCore::sendClientSdp(AnsiStringStorage * msg){
 
 
 void RemoteViewerCore::setFbProperties(const Dimension *fbDimension,
-                                       const PixelFormat *fbPixelFormat)
+                                       const lkvnc_rfb_PixelFormat *fbPixelFormat)
 {
-  const PixelFormat &pxFormat = *fbPixelFormat;
+  const lkvnc_rfb_PixelFormat &pxFormat = *fbPixelFormat;
   StringStorage pxString;
 
   	AutoLock mutex(&m_avilog.m_mutex);
@@ -952,7 +955,8 @@ void RemoteViewerCore::execute()
 	//is p2p supported?
 	vector<UINT32> clientCaps;
 	getEnabledClientMsgCapabilities(&clientCaps);
-	if(std::find(clientCaps.begin(), clientCaps.end(), ClientMsgDefs::BEGIN_NEG) != clientCaps.end()){
+	const UINT32 findMe = lkvnc_rfb_Defs__Client::BEGIN_NEG;
+	if(std::find(clientCaps.begin(), clientCaps.end(), findMe) != clientCaps.end()){
 		beginNeg();
 	}
 
@@ -961,22 +965,22 @@ void RemoteViewerCore::execute()
       UINT32 msgType = receiveServerMessageType();
 
       switch (msgType) {
-      case ServerMsgDefs::FB_UPDATE:
+      case lkvnc_rfb_Defs__Server::FB_UPDATE:
         m_logWriter.detail(_T("Received message: FB_UPDATE"));
         receiveFbUpdate();
         break;
 
-      case ServerMsgDefs::SET_COLOR_MAP_ENTRIES:
+      case lkvnc_rfb_Defs__Server::SET_COLOR_MAP_ENTRIES:
         m_logWriter.detail(_T("Received message: SET_COLOR_MAP_ENTRIES"));
         receiveSetColorMapEntries();
         break;
 
-      case ServerMsgDefs::BELL:
+      case lkvnc_rfb_Defs__Server::BELL:
         m_logWriter.detail(_T("Received message: BELL"));
         receiveBell();
         break;
 
-      case ServerMsgDefs::SERVER_CUT_TEXT:
+      case lkvnc_rfb_Defs__Server::SERVER_CUT_TEXT:
         m_logWriter.detail(_T("Received message: SERVER_CUT_TEXT"));
         receiveServerCutText();
         break;
@@ -1104,7 +1108,7 @@ bool RemoteViewerCore::receiveFbUpdateRectangle()
   m_logWriter.debug(_T("Rectangle: (%d, %d), (%d, %d). Type is %d"),
                     rect.left, rect.top, rect.right, rect.bottom, encodingType);
 
-  if (encodingType == PseudoEncDefs::LAST_RECT)
+  if (encodingType == lkvnc_rfb_DefsEncoding__Pseudo::LAST_RECT)
     return true;
   if (!Decoder::isPseudo(encodingType)) {
     if (!m_frameBuffer.getDimension().getRect().intersection(&rect).isEqualTo(&rect)) {
@@ -1138,19 +1142,19 @@ void RemoteViewerCore::processPseudoEncoding(const Rect *rect,
                                              int encodingType)
 {
   switch (encodingType) {
-  case PseudoEncDefs::DESKTOP_SIZE:
+  case lkvnc_rfb_DefsEncoding__Pseudo::DESKTOP_SIZE:
     m_logWriter.info(_T("Changed size of desktop"));
     {
       AutoLock al(&m_fbLock);
 	  m_frameBuffer.setDisplayCount(pad);
 	  Dimension tmpDimension = Dimension(rect);
-	  PixelFormat tmpPixelFormat = m_frameBuffer.getPixelFormat();
+	  lkvnc_rfb_PixelFormat tmpPixelFormat = m_frameBuffer.getPixelFormat();
       setFbProperties(&tmpDimension,
                       &tmpPixelFormat);
     }
     break;
 
-  case PseudoEncDefs::RICH_CURSOR:
+  case lkvnc_rfb_DefsEncoding__Pseudo::RICH_CURSOR:
     {
       m_logWriter.detail(_T("New rich cursor"));
 
@@ -1178,7 +1182,7 @@ void RemoteViewerCore::processPseudoEncoding(const Rect *rect,
     }
     break;
 
-  case PseudoEncDefs::POINTER_POS:
+  case lkvnc_rfb_DefsEncoding__Pseudo::POINTER_POS:
     {
       m_logWriter.detail(_T("Updating pointer position: [%d, %d]"), rect->left, rect->top);
       Point position(rect->left, rect->top);
@@ -1328,9 +1332,9 @@ void RemoteViewerCore::handshake()
  * 2           - U8          - shared flag
  *
  * Server send:
- * 2           - U16         - framebuffer-width
- * 2           - U16         - framebuffer-height
- * 16          - PixelFormat - server-pixel-format
+ * 2           - U16         - lkvnc_rfb_FrameBuffer-width
+ * 2           - U16         - lkvnc_rfb_FrameBuffer-height
+ * 16          - lkvnc_rfb_PixelFormat - server-pixel-format
  * 4           - U32         - name-length
  * name-length - U8 array    - name-string
  */
@@ -1352,7 +1356,7 @@ void RemoteViewerCore::clientAndServerInit()
   UINT16 width = m_input->readUInt16();
   UINT16 height = m_input->readUInt16();
   Dimension screenDimension(width, height);
-  PixelFormat serverPixelFormat = readPixelFormat();
+  lkvnc_rfb_PixelFormat serverPixelFormat = readPixelFormat();
 
   {
     AutoLock al(&m_fbLock);

@@ -24,10 +24,10 @@
 
 #include "ControlPipeName.h"
 
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/winhdr.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
-#include "../libkvnc_win_system/WTS.h"
+#include "../libkvnc_all_winSystem/WTS.h"
 
 void ControlPipeName::createPipeName(bool forService, StringStorage *pipeName, LogWriter *log)
 {

@@ -26,8 +26,8 @@
 #include <sstream>
 
 #include "ConnectionData.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
-#include "../libkvnc_util/VncPassCrypt.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/VncPassCrypt.h"
 #include "../libkvnc_client_core/VncAuthentication.h"
 
 ConnectionData::ConnectionData()

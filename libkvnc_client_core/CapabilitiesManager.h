@@ -25,8 +25,8 @@
 #ifndef _CAPABILITIES_MANAGER_H_
 #define _CAPABILITIES_MANAGER_H_
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/inttypes.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/inttypes.h"
 
 class AuthHandler;
 class ServerMessageListener;

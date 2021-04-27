@@ -25,16 +25,16 @@
 #ifndef _SERVER_CONFIG_H_
 #define _SERVER_CONFIG_H_
 
-#include "../libkvnc_util/StringVector.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/StringVector.h"
+#include "../libkvnc_all_util/Exception.h"
 #include "PortMappingContainer.h"
 #include "IpAccessControl.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 #include "IpAccessRule.h"
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_io/IOException.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_io/IOException.h"
 
 #include <shlobj.h>
 

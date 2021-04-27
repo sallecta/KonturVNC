@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "DesktopServerCommandLine.h"
 
-#include "../libkvnc_util/StringParser.h"
+#include "../libkvnc_all_util/StringParser.h"
 
 const TCHAR DesktopServerCommandLine::DESKTOP_SERVER_KEY[] = _T("-desktopserver");
 const TCHAR DesktopServerCommandLine::LOG_DIR_KEY[] = _T("-logdir");

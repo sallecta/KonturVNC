@@ -29,17 +29,17 @@
 #include "../libkvnc_client_config/ConnectionConfig.h"
 #include "../libkvnc_client_config/ConnectionConfigSM.h"
 #include "../libkvnc_client_config/ViewerSettingsManager.h"
-#include "../libkvnc_util/StringParser.h"
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/Control.h"
-#include "../libkvnc_gui/TextBox.h"
-#include "../libkvnc_gui/CheckBox.h"
-#include "../libkvnc_gui/SpinControl.h"
-#include "../libkvnc_gui/ComboBox.h"
-#include "../libkvnc_gui/TrackBar.h"
-#include "resource.h"
+#include "../libkvnc_all_util/StringParser.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/Control.h"
+#include "../libkvnc_all_gui/TextBox.h"
+#include "../libkvnc_all_gui/CheckBox.h"
+#include "../libkvnc_all_gui/SpinControl.h"
+#include "../libkvnc_all_gui/ComboBox.h"
+#include "../libkvnc_all_gui/TrackBar.h"
+#include "kvnc_client_Resource.h"
 
-#include "../libkvnc_win_system/WindowsApplication.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
 
 class ConfigurationDialog : public BaseDialog
 {

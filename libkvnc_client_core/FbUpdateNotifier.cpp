@@ -24,11 +24,11 @@
 
 #include "FbupdateNotifier.h"
 
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 #include "CoreEventsAdapter.h"
 
-FbUpdateNotifier::FbUpdateNotifier(FrameBuffer *fb, LocalMutex *fbLock, LogWriter *logWriter)
+FbUpdateNotifier::FbUpdateNotifier(lkvnc_rfb_FrameBuffer *fb, LocalMutex *fbLock, LogWriter *logWriter)
 : m_frameBuffer(fb),
   m_fbLock(fbLock),
   m_logWriter(logWriter),

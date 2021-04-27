@@ -25,8 +25,8 @@
 #ifndef _CONNECTION_DATA_
 #define _CONNECTION_DATA_
 
-#include "../libkvnc_util/StringStorage.h"
-#include "../libkvnc_rfb/HostPath.h"
+#include "../libkvnc_all_util/StringStorage.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_HostParser.h"
 
 class ConnectionData
 {
@@ -69,7 +69,7 @@ public:
   bool isIncoming() const;
 
 protected:
-  HostPath m_hostPath;
+  lkvnc_rfb_HostParser m_hostPath;
 
   // This flag is true, if host isn't set.
   bool m_isEmpty;

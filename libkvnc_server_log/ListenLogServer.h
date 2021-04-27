@@ -25,8 +25,8 @@
 #ifndef __LISTENLOGSERVER_H__
 #define __LISTENLOGSERVER_H__
 
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_win_system/PipeServer.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_winSystem/PipeServer.h"
 #include "ConnectionListener.h"
 
 class ListenLogServer : private Thread

@@ -23,12 +23,12 @@
 //
 
 #include "ControlAuth.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 #include "ControlProto.h"
 
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
-#include "../libkvnc_util/DesCrypt.h"
+#include "../libkvnc_all_util/DesCrypt.h"
 
 ControlAuth::ControlAuth(ControlGate *gate, const TCHAR *password)
   throw(IOException, ControlAuthException, Exception)

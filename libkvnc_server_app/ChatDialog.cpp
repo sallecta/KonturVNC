@@ -1,10 +1,10 @@
 #include "ChatDialog.h"
 
-#include "../kvnc_server/resource.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_win_system/Environment.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_winSystem/Environment.h"
 
-#include "../libkvnc_util/DateTime.h"
+#include "../libkvnc_all_util/DateTime.h"
 
 
 ChatDialog::ChatDialog(TextMsgListener * extMsgListener)

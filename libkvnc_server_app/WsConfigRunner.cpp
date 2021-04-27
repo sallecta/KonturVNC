@@ -23,8 +23,8 @@
 //
 
 #include "WsConfigRunner.h"
-#include "../libkvnc_win_system/CurrentConsoleProcess.h"
-#include "../libkvnc_win_system/Environment.h"
+#include "../libkvnc_all_winSystem/CurrentConsoleProcess.h"
+#include "../libkvnc_all_winSystem/Environment.h"
 #include "../libkvnc_server_config/Configurator.h"
 #include "../libkvnc_server_gui/ControlCommandLine.h"
 

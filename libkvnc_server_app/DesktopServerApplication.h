@@ -25,21 +25,21 @@
 #ifndef __DESKTOP_SERVER_APPLICATION_H__
 #define __DESKTOP_SERVER_APPLICATION_H__
 
-#include "../libkvnc_win_system/WindowsApplication.h"
-#include "../libkvnc_util/AnEventListener.h"
-#include "../libkvnc_win_system/AnonymousPipe.h"
-#include "../libkvnc_desktop_ipc/BlockingGate.h"
-#include "../libkvnc_desktop_ipc/DesktopSrvDispatcher.h"
-#include "../libkvnc_desktop_ipc/UpdateHandlerServer.h"
-#include "../libkvnc_desktop_ipc/UserInputServer.h"
-#include "../libkvnc_desktop_ipc/ConfigServer.h"
-#include "../libkvnc_desktop_ipc/GateKickHandler.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
+#include "../libkvnc_all_util/AnEventListener.h"
+#include "../libkvnc_all_winSystem/AnonymousPipe.h"
+#include "../libkvnc_server_desktopIpc/BlockingGate.h"
+#include "../libkvnc_server_desktopIpc/DesktopSrvDispatcher.h"
+#include "../libkvnc_server_desktopIpc/UpdateHandlerServer.h"
+#include "../libkvnc_server_desktopIpc/UserInputServer.h"
+#include "../libkvnc_server_desktopIpc/ConfigServer.h"
+#include "../libkvnc_server_desktopIpc/GateKickHandler.h"
 #include "SessionChangesWatcher.h"
-#include "../libkvnc_win_system/LocalWindowsApplication.h"
+#include "../libkvnc_all_winSystem/LocalWindowsApplication.h"
 #include "../libkvnc_server_log/ClientLogger.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 #include "../libkvnc_server_config/ConfigReloadListener.h"
-#include "../libkvnc_util/CommandLineArgs.h"
+#include "../libkvnc_all_util/CommandLineArgs.h"
 
 /**
  * Desktop server application.

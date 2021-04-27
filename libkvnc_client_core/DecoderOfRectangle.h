@@ -39,15 +39,15 @@ public:
   // This function does the following:
   //   1. read update of dstRect from input
   //   2. decode rectangle on "secondFrameBuffer"
-  //   3. copy rectangle from secondFrameBuffer to "frameBuffer"
+  //   3. copy rectangle from secondFrameBuffer to "lkvnc_rfb_FrameBuffer"
   //   4. notify fbNotifier
   // His called decode(), copy() and notify() by order, defined in implementation.
   //
-  // This function is thread-safe for frameBuffer.
+  // This function is thread-safe for lkvnc_rfb_FrameBuffer.
   //
   virtual void process(RfbInputGate *input,
-                       FrameBuffer *frameBuffer,
-                       FrameBuffer *secondFrameBuffer,
+                       lkvnc_rfb_FrameBuffer *argFrameBuffer,
+                       lkvnc_rfb_FrameBuffer *secondFrameBuffer,
                        const Rect *rect,
                        LocalMutex *fbLock,
                        FbUpdateNotifier *fbNotifier);
@@ -59,18 +59,18 @@ public:
 
 protected:
   //
-  // This method read rectangle-update from input and decode on frameBuffer.
+  // This method read rectangle-update from input and decode on lkvnc_rfb_FrameBuffer.
   //
   virtual void decode(RfbInputGate *input,
-                      FrameBuffer *frameBuffer,
+                      lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                       const Rect *rect) = 0;
 
   //
   // This method copy rectangle from srcFrameBuffer to dstFrameBuffer.
   // This function is thread-safe from dstFrameBuffer.
   //
-  virtual void copy(FrameBuffer *dstFrameBuffer,
-                    const FrameBuffer *srcFrameBuffer,
+  virtual void copy(lkvnc_rfb_FrameBuffer *dstFrameBuffer,
+                    const lkvnc_rfb_FrameBuffer *srcFrameBuffer,
                     const Rect *rect,
                     LocalMutex *fbLock);
 

@@ -23,15 +23,15 @@
 //
 
 #include "RfbClient.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 #include "RfbCodeRegistrator.h"
-#include "../libkvnc_server_ft/FileTransferRequestHandler.h"
-#include "../libkvnc_network/socket/SocketStream.h"
+#include "../libkvnc_server_fileTransfer/FileTransferRequestHandler.h"
+#include "../libkvnc_all_network/socket/SocketStream.h"
 #include "RfbInitializer.h"
 #include "ClientAuthListener.h"
 #include "../libkvnc_server_config/Configurator.h"
 
-#include "../libkvnc_p2p/p2ptransport.h"
+#include "../libkvnc_all_p2p/p2ptransport.h"
 
 
 RfbClient::RfbClient(NewConnectionEvents *newConnectionEvents,
@@ -236,7 +236,7 @@ void RfbClient::execute()
     m_updateSender = new UpdateSender(&codeRegtor, m_desktop, this,
                                       &output, m_id, m_desktop, m_log);
     m_log->debug(_T("UpdateSender has been created"));
-    PixelFormat pf;
+    lkvnc_rfb_PixelFormat pf;
     Dimension fbDim;
     m_desktop->getFrameBufferProperties(&fbDim, &pf);
     Rect viewPort = getViewPortRect(&fbDim);
@@ -308,9 +308,9 @@ void RfbClient::execute()
 }
 
 void RfbClient::sendUpdate(const UpdateContainer *updateContainer,
-                           const CursorShape *cursorShape)
+                           const lkvnc_rfb_CursorShape *lkvnc_rfb_CursorShape)
 {
-  m_updateSender->newUpdates(updateContainer, cursorShape);
+  m_updateSender->newUpdates(updateContainer, lkvnc_rfb_CursorShape);
 }
 
 
@@ -334,7 +334,7 @@ void RfbClient::onKeyboardEvent(UINT32 keySym, bool down)
 
 void RfbClient::onMouseEvent(UINT16 x, UINT16 y, UINT8 buttonMask)
 {
-  PixelFormat pfStub;
+  lkvnc_rfb_PixelFormat pfStub;
   Dimension fbDim;
   m_desktop->getFrameBufferProperties(&fbDim, &pfStub);
 
@@ -379,7 +379,7 @@ void RfbClient::getViewPortInfo(const Dimension *fbDimension, Rect *resultRect,
 
 void RfbClient::onGetViewPort(Rect *viewRect, bool *shareApp, Region *shareAppRegion, bool newViewpoint,const ViewPortState *dynViewPort)
 {
-  PixelFormat pfStub;
+  lkvnc_rfb_PixelFormat pfStub;
   Dimension fbDim;
   if(newViewpoint){
 	changeDynViewPort(dynViewPort);

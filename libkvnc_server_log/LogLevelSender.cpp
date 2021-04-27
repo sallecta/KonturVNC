@@ -23,7 +23,7 @@
 //
 
 #include "LogLevelSender.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 LogLevelSender::LogLevelSender()
 : m_outStream(0),

@@ -27,7 +27,7 @@
 CopyRectDecoder::CopyRectDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter)
 {
-  m_encoding = EncodingDefs::COPYRECT;
+  m_encoding = lkvnc_rfb_DefsEncoding::COPYRECT;
 }
 
 CopyRectDecoder::~CopyRectDecoder()
@@ -35,15 +35,15 @@ CopyRectDecoder::~CopyRectDecoder()
 }
 
 void CopyRectDecoder::decode(RfbInputGate *input,
-                             FrameBuffer *frameBuffer,
+                             lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                              const Rect *dstRect)
 {
   m_sourcePosition.x = input->readInt16();
   m_sourcePosition.y = input->readInt16();
 }
 
-void CopyRectDecoder::copy(FrameBuffer *dstFrameBuffer,
-                           const FrameBuffer *srcFrameBuffer,
+void CopyRectDecoder::copy(lkvnc_rfb_FrameBuffer *dstFrameBuffer,
+                           const lkvnc_rfb_FrameBuffer *srcFrameBuffer,
                            const Rect *rect,
                            LocalMutex *fbLock)
 {

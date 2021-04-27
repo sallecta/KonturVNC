@@ -30,19 +30,19 @@
 class HextileEncoder : public Encoder
 {
 public:
-  HextileEncoder(PixelConverter *conv, DataOutputStream *output);
+  HextileEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output);
   virtual ~HextileEncoder();
 
   virtual int getCode() const;
 
   virtual void sendRectangle(const Rect *rect,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options);
 
 private:
   template <class PIXEL_T>
     void hextileFunction(const Rect &r,
-                         const FrameBuffer *frameBuffer);
+                         const lkvnc_rfb_FrameBuffer *argFrameBuffer);
 };
 
 #endif // __RFB_HEXTILE_ENCODER_H_INCLUDED__

@@ -27,8 +27,8 @@
 
 #include "DecoderOfRectangle.h"
 
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_util/Inflater.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_util/Inflater.h"
 
 class ZrleDecoder : public DecoderOfRectangle
 {
@@ -41,7 +41,7 @@ protected:
 
 protected:
   virtual void decode(RfbInputGate *input,
-                      FrameBuffer *frameBuffer,
+                      lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                       const Rect *dstRect);
 
 
@@ -78,7 +78,7 @@ protected:
                           const int type);
 
 
-  void drawTile(FrameBuffer *fb,
+  void drawTile(lkvnc_rfb_FrameBuffer *fb,
                 const Rect *tileRect,
                 const std::vector<char> *pixels);
 

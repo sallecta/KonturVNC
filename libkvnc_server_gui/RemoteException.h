@@ -25,7 +25,7 @@
 #ifndef _REMOTE_EXCEPTION_H_
 #define _REMOTE_EXCEPTION_H_
 
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/Exception.h"
 
 /**
  * Exception on remote side class.

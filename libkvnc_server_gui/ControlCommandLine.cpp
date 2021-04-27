@@ -24,10 +24,10 @@
 
 #include "ControlCommandLine.h"
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/CommandLine.h"
-#include "../libkvnc_region/RectSerializer.h"
-#include "../libkvnc_util/StringParser.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommandLine.h"
+#include "../libkvnc_all_region/RectSerializer.h"
+#include "../libkvnc_all_util/StringParser.h"
 
 #include "ConnectStringParser.h"
 

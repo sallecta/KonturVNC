@@ -25,7 +25,7 @@
 #ifndef __RFBDISPATCHERLISTENER_H__
 #define __RFBDISPATCHERLISTENER_H__
 
-#include "../libkvnc_network/RfbInputGate.h"
+#include "../libkvnc_all_network/RfbInputGate.h"
 
 class RfbDispatcherListener
 {

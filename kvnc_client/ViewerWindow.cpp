@@ -22,13 +22,13 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../libkvnc_config/IniFileSettingsManager.h"
-#include "../libkvnc_util/Exception.h"
-#include "../libkvnc_util/ResourceLoader.h"
-#include "../libkvnc_rfb/StandardPixelFormatFactory.h"
+#include "../libkvnc_all_config/IniFileSettingsManager.h"
+#include "../libkvnc_all_util/Exception.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_PixelFormatCreator.h"
 
 #include "FsWarningDialog.h"
-#include "NamingDefs.h"
+#include "kvnc_client__Defs.h"
 #include "TvnViewer.h"
 #include "ViewerWindow.h"
 
@@ -223,12 +223,12 @@ bool ViewerWindow::viewerCoreSettings()
   // set -1, if jpeg-compression is disabled
   m_viewerCore->setJpegQualityLevel(m_conConf->getJpegCompressionLevel());
 
-  PixelFormat tmpPixelFormat;
+  lkvnc_rfb_PixelFormat tmpPixelFormat;
   if (m_conConf->isUsing8BitColor()) {
-    tmpPixelFormat = StandardPixelFormatFactory::create8bppPixelFormat();
+    tmpPixelFormat = lkvnc_rfb_PixelFormatCreator::create8bppPixelFormat();
     m_viewerCore->setPixelFormat(&tmpPixelFormat);
   } else {
-    tmpPixelFormat = StandardPixelFormatFactory::create32bppPixelFormat();
+    tmpPixelFormat = lkvnc_rfb_PixelFormatCreator::create32bppPixelFormat();
     m_viewerCore->setPixelFormat(&tmpPixelFormat);
   }
   return true;
@@ -1341,12 +1341,12 @@ void ViewerWindow::onError(const Exception *exception)
   postMessage(WM_USER_ERROR);
 }
 
-void ViewerWindow::onFrameBufferUpdate(const FrameBuffer *fb, const Rect *rect)
+void ViewerWindow::onFrameBufferUpdate(const lkvnc_rfb_FrameBuffer *fb, const Rect *rect)
 {
   m_dsktWnd.updateFramebuffer(fb, rect);
 }
 
-void ViewerWindow::onFrameBufferPropChange(const FrameBuffer *fb)
+void ViewerWindow::onFrameBufferPropChange(const lkvnc_rfb_FrameBuffer *fb)
 {
   m_dsktWnd.setNewFramebuffer(fb);
   displayCount = fb->getDisplayCount();

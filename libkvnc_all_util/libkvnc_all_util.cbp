@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="libkvnc_all_util" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release_Win32">
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-DWIN32" />
+					<Add directory="$(WORKSPACEDIR)/!external/atl/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Debug_Win32">
+				<Option output="$(WORKSPACEDIR)/!out/bin/$(TARGET_NAME)/$(PROJECTNAME)" prefix_auto="0" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="$(WORKSPACEDIR)/!out/obj/$(TARGET_NAME)/$(PROJECTNAME)" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wall" />
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add directory="$(WORKSPACEDIR)/!external/atl/include" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="AnEventListener.h" />
+		<Unit filename="AnsiStringStorage.cpp" />
+		<Unit filename="AnsiStringStorage.h" />
+		<Unit filename="BrokenHandleException.cpp" />
+		<Unit filename="BrokenHandleException.h" />
+		<Unit filename="CharDefs.h" />
+		<Unit filename="Command.cpp" />
+		<Unit filename="Command.h" />
+		<Unit filename="CommandLine.cpp" />
+		<Unit filename="CommandLine.h" />
+		<Unit filename="CommandLineArgs.cpp" />
+		<Unit filename="CommandLineArgs.h" />
+		<Unit filename="CommandLineFormatException.cpp" />
+		<Unit filename="CommandLineFormatException.h" />
+		<Unit filename="CommandLineFormatHelp.cpp" />
+		<Unit filename="CommandLineFormatHelp.h" />
+		<Unit filename="CommonHeader.h" />
+		<Unit filename="DateTime.cpp" />
+		<Unit filename="DateTime.h" />
+		<Unit filename="Deflater.cpp" />
+		<Unit filename="Deflater.h" />
+		<Unit filename="DemandTimer.cpp" />
+		<Unit filename="DemandTimer.h" />
+		<Unit filename="DesCrypt.cpp" />
+		<Unit filename="DesCrypt.h" />
+		<Unit filename="Exception.cpp" />
+		<Unit filename="Exception.h" />
+		<Unit filename="Inflater.cpp" />
+		<Unit filename="Inflater.h" />
+		<Unit filename="KeyContainer.cpp" />
+		<Unit filename="KeyContainer.h" />
+		<Unit filename="Keymap.cpp" />
+		<Unit filename="Keymap.h" />
+		<Unit filename="ListenerContainer.h" />
+		<Unit filename="MacroCommand.cpp" />
+		<Unit filename="MacroCommand.h" />
+		<Unit filename="ResourceLoader.cpp" />
+		<Unit filename="ResourceLoader.h" />
+		<Unit filename="Singleton.h" />
+		<Unit filename="StringParser.cpp" />
+		<Unit filename="StringParser.h" />
+		<Unit filename="StringStorage.cpp" />
+		<Unit filename="StringStorage.h" />
+		<Unit filename="StringTable.cpp" />
+		<Unit filename="StringTable.h" />
+		<Unit filename="StringVector.h" />
+		<Unit filename="URLEncode.h" />
+		<Unit filename="Unicode.cpp" />
+		<Unit filename="Unicode.h" />
+		<Unit filename="UnicodeStringStorage.cpp" />
+		<Unit filename="UnicodeStringStorage.h" />
+		<Unit filename="Utf8StringStorage.cpp" />
+		<Unit filename="Utf8StringStorage.h" />
+		<Unit filename="VncPassCrypt.cpp" />
+		<Unit filename="VncPassCrypt.h" />
+		<Unit filename="ZLibBase.cpp" />
+		<Unit filename="ZLibBase.h" />
+		<Unit filename="ZlibException.cpp" />
+		<Unit filename="ZlibException.h" />
+		<Unit filename="inttypes.h" />
+		<Unit filename="md5.cpp" />
+		<Unit filename="md5.h" />
+		<Unit filename="urlencode.cpp" />
+		<Unit filename="winhdr.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -25,7 +25,7 @@
 #ifndef _SHARERECTCOMMAND_H_
 #define _SHARERECTCOMMAND_H_
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 #include "ControlProxy.h"
 
 class ShareRectCommand : public Command

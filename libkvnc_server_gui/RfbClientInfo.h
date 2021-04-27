@@ -25,7 +25,7 @@
 #ifndef _RFB_CLIENT_INFO_H_
 #define _RFB_CLIENT_INFO_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 #include <list>
 

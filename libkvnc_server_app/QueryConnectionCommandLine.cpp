@@ -24,7 +24,7 @@
 
 #include "QueryConnectionCommandLine.h"
 
-#include "../libkvnc_util/StringParser.h"
+#include "../libkvnc_all_util/StringParser.h"
 
 const TCHAR QueryConnectionCommandLine::QUERY_CONNECTION[] = _T("-queryconnection");
 const TCHAR QueryConnectionCommandLine::PEER_ADDR[] = _T("-peer");

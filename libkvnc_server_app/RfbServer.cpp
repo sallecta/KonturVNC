@@ -29,7 +29,7 @@ RfbServer::RfbServer(const TCHAR *bindHost, unsigned short bindPort,
                      RfbClientManager *clientManager,
                      bool lockAddr,
                      LogWriter *log,
-                     const Rect *viewPort)  throw(Exception)
+                     const Rect *viewPort)
 : TcpServer(bindHost, bindPort, false, lockAddr),
   m_clientManager(clientManager),
   m_log(log), m_chatDialog(m_clientManager)

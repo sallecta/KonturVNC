@@ -23,7 +23,7 @@
 //
 
 #include "PortMapping.h"
-#include "../libkvnc_util/StringParser.h"
+#include "../libkvnc_all_util/StringParser.h"
 
 #include <tchar.h>
 #include <stdio.h>

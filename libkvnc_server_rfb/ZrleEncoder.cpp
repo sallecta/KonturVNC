@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "ZrleEncoder.h"
 
-ZrleEncoder::ZrleEncoder(PixelConverter *conv, DataOutputStream *output)
+ZrleEncoder::ZrleEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output)
 : Encoder(conv, output),
   // FIXME: This values (zlib options) is not used now.
   // May be to improve Deflater class?
@@ -44,19 +44,19 @@ ZrleEncoder::~ZrleEncoder()
 
 int ZrleEncoder::getCode() const
 {
-  return EncodingDefs::ZRLE;
+  return lkvnc_rfb_DefsEncoding::ZRLE;
 }
 
 void ZrleEncoder::splitRectangle(const Rect *rect,
                                  std::vector<Rect> *rectList,
-                                 const FrameBuffer *serverFb,
+                                 const lkvnc_rfb_FrameBuffer *serverFb,
                                  const EncodeOptions *options)
 {
   rectList->push_back(*rect);
 }
 
 void ZrleEncoder::sendRectangle(const Rect *rect,
-                                const FrameBuffer *serverFb,
+                                const lkvnc_rfb_FrameBuffer *serverFb,
                                 const EncodeOptions *options)
 {
   // Determing the number of bytes per pixel and the first byte of them.
@@ -65,11 +65,11 @@ void ZrleEncoder::sendRectangle(const Rect *rect,
   // Used for futher work with CPIXELs.
   m_bytesPerPixel = 0;
   m_numberFirstByte = 0;
-  const FrameBuffer *clientFb = m_pixelConverter->convert(rect, serverFb);
+  const lkvnc_rfb_FrameBuffer *clientFb = m_pixelConverter->convert(rect, serverFb);
   //client pixel format
   m_pxFormat = clientFb->getPixelFormat();
   //server pixel format
-  PixelFormat serverPxFormat = serverFb->getPixelFormat();
+  lkvnc_rfb_PixelFormat serverPxFormat = serverFb->getPixelFormat();
   bool bigEndianDiffs = m_pxFormat.bigEndian != serverPxFormat.bigEndian;
   if (m_pxFormat.bitsPerPixel == 8) {
     m_bytesPerPixel = 1;
@@ -116,8 +116,8 @@ void ZrleEncoder::sendRectangle(const Rect *rect,
 
 template <class PIXEL_T>
 void ZrleEncoder::sendRect(const Rect *rect,
-                           const FrameBuffer *serverFb,
-                           const FrameBuffer *clientFb,
+                           const lkvnc_rfb_FrameBuffer *serverFb,
+                           const lkvnc_rfb_FrameBuffer *clientFb,
                            const EncodeOptions *options)
 {
   m_rgbData.resize(0);
@@ -217,7 +217,7 @@ void ZrleEncoder::sendRect(const Rect *rect,
 
 template <class PIXEL_T>
 void ZrleEncoder::writeRawTile(const Rect *tileRect,
-                               const FrameBuffer *fb)
+                               const lkvnc_rfb_FrameBuffer *fb)
 {
   m_oldSize = m_rgbData.size();
   m_rgbData.resize(m_oldSize + tileRect->area() * m_bytesPerPixel + 1);
@@ -240,7 +240,7 @@ void ZrleEncoder::writeSolidTile()
 
 template <class PIXEL_T>
 void ZrleEncoder::writePackedPaletteTile(const Rect *tileRect,
-                                         const FrameBuffer *fb)
+                                         const lkvnc_rfb_FrameBuffer *fb)
 {
   int numColors = m_pal.getNumColors();
   m_oldSize = m_rgbData.size();
@@ -323,7 +323,7 @@ void ZrleEncoder::pushRunLengthPaletteRle(int runLength,
 
 template <class PIXEL_T>
 void ZrleEncoder::writePaletteRleTile(const Rect *tileRect,
-                                      const FrameBuffer *fb)
+                                      const lkvnc_rfb_FrameBuffer *fb)
 {
   int numColors = m_pal.getNumColors();
   std::vector<UINT8> paletteRleData;
@@ -341,7 +341,7 @@ void ZrleEncoder::writePaletteRleTile(const Rect *tileRect,
   }
 
   const PIXEL_T *buffer = static_cast<const PIXEL_T *>(fb->getBuffer());
-  PixelFormat pxFormat = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pxFormat = fb->getPixelFormat();
 
   // There is the first iteration of loop below.
   PIXEL_T px = buffer[tileRect->top * m_fbWidth + tileRect->left];
@@ -409,7 +409,7 @@ void ZrleEncoder::writePixelToPlainRleTile(const PIXEL_T px,
 
 template <class PIXEL_T>
 void ZrleEncoder::fillPalette(const Rect *tileRect,
-                              const FrameBuffer *fb)
+                              const lkvnc_rfb_FrameBuffer *fb)
 {
   // Clear the palette.
   m_pal.reset();
@@ -417,7 +417,7 @@ void ZrleEncoder::fillPalette(const Rect *tileRect,
   int tryInsertPx = 1;
 
   const PIXEL_T *buffer = (const PIXEL_T *)fb->getBuffer();
-  PixelFormat pxFormat = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pxFormat = fb->getPixelFormat();
 
   // Mask for cutting rubbish bits.
   PIXEL_T mask = pxFormat.redMax << pxFormat.redShift |
@@ -481,7 +481,7 @@ void ZrleEncoder::fillPalette(const Rect *tileRect,
 
 template <class PIXEL_T>
 void ZrleEncoder::copyPixels(const Rect *rect,
-                             const FrameBuffer *fb,
+                             const lkvnc_rfb_FrameBuffer *fb,
                              UINT8 *dst)
 {
   const int rectHeight = rect->getHeight();
@@ -498,7 +498,7 @@ void ZrleEncoder::copyPixels(const Rect *rect,
 }
 
 void ZrleEncoder::copyCPixels(const Rect *rect,
-                              const FrameBuffer *fb,
+                              const lkvnc_rfb_FrameBuffer *fb,
                               UINT8 *dst)
 {
   const int rectHeight = rect->getHeight();

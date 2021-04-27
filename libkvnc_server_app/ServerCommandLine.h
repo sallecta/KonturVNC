@@ -25,7 +25,7 @@
 #ifndef __SERVERCOMMANDLINE_H__
 #define __SERVERCOMMANDLINE_H__
 
-#include "../libkvnc_util/CommandLine.h"
+#include "../libkvnc_all_util/CommandLine.h"
 
 /**
  * TvnServerApplication command line parser.

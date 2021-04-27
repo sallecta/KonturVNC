@@ -23,8 +23,8 @@
 //
 
 #include "FileExistDialog.h"
-#include "../libkvnc_util/DateTime.h"
-#include "resource.h"
+#include "../libkvnc_all_util/DateTime.h"
+#include "kvnc_client_Resource.h"
 #include <crtdbg.h>
 #include <stdio.h>
 
@@ -169,7 +169,7 @@ void FileExistDialog::onCancelButtonClick()
 void FileExistDialog::updateGui(FileInfo *fileInfo, Control *sizeLabel, Control *modTimeLabel)
 {
   TCHAR buffer[255];
-  _stprintf_s(&buffer[0], 255, _T("%ld байт"), fileInfo->getSize());
+  snprintf(&buffer[0], 255, _T("%ld байт"), fileInfo->getSize());
   sizeLabel->setText(&buffer[0]);
 
   DateTime dateTime(fileInfo->lastModified());

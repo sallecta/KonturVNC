@@ -26,8 +26,8 @@
 #define __CAPCONTAINER_H__
 
 #include <vector>
-#include "../libkvnc_util/inttypes.h"
-#include "../libkvnc_io/DataOutputStream.h"
+#include "../libkvnc_all_util/inttypes.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
 
 // FIXME: The same structure is used in the viewer named RfbCapabilityInfo.
 struct Cap

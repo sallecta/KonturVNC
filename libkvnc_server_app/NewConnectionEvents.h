@@ -25,7 +25,7 @@
 #ifndef __NEWCONNECTIONEVENTS_H__
 #define __NEWCONNECTIONEVENTS_H__
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 class NewConnectionEvents
 {

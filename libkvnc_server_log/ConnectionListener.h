@@ -25,7 +25,7 @@
 #ifndef __CONNECTIONLISTENER_H__
 #define __CONNECTIONLISTENER_H__
 
-#include "../libkvnc_io/Channel.h"
+#include "../libkvnc_all_io/Channel.h"
 
 class ConnectionListener
 {

@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "SocketIPv4Transport.h"
 
-#include "../libkvnc_network/socket/SocketStream.h"
+#include "../libkvnc_all_network/socket/SocketStream.h"
 
 SocketIPv4Transport::SocketIPv4Transport(SocketIPv4 *socket)
 : m_socket(socket)

@@ -25,9 +25,9 @@
 #ifndef _RECT_H_
 #define _RECT_H_
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/StringStorage.h"
-#include "../libkvnc_region/Rect.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/StringStorage.h"
+#include "../libkvnc_all_region/Rect.h"
 
 class PortMappingRect : public Rect
 {

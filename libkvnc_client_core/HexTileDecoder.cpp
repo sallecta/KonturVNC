@@ -27,7 +27,7 @@
 HexTileDecoder::HexTileDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter)
 {
-  m_encoding = EncodingDefs::HEXTILE;
+  m_encoding = lkvnc_rfb_DefsEncoding::HEXTILE;
 }
 
 HexTileDecoder::~HexTileDecoder()
@@ -35,11 +35,11 @@ HexTileDecoder::~HexTileDecoder()
 }
 
 void HexTileDecoder::decode(RfbInputGate *input,
-                            FrameBuffer *framebuffer,
+                            lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                             const Rect *dstRect)
 {
   // shorcut
-  const int bytesPerPixel = framebuffer->getBytesPerPixel();
+  const int bytesPerPixel = lkvnc_rfb_FrameBuffer->getBytesPerPixel();
 
   UINT32 background = 0;
   UINT32 foreground = 0;
@@ -53,14 +53,14 @@ void HexTileDecoder::decode(RfbInputGate *input,
                     std::min(x + TILE_SIZE, dstRect->right),
                     std::min(y + TILE_SIZE, dstRect->bottom));
 
-      if (!framebuffer->getDimension().getRect().intersection(&tileRect).isEqualTo(&tileRect))
+      if (!lkvnc_rfb_FrameBuffer->getDimension().getRect().intersection(&tileRect).isEqualTo(&tileRect))
         throw Exception(_T("Error in protocol: incorrect size of tile in hextile-decoder"));
 
       UINT8 flags = input->readUInt8();
       // If tile-coding is RAW.
       if (flags & 0x1) {
         for (int y = tileRect.top; y < tileRect.bottom; y++)
-          input->readFully(framebuffer->getBufferPtr(tileRect.left, y),
+          input->readFully(lkvnc_rfb_FrameBuffer->getBufferPtr(tileRect.left, y),
                            tileRect.getWidth() * bytesPerPixel);
       } else {
         if (flags & 0x2) {
@@ -69,7 +69,7 @@ void HexTileDecoder::decode(RfbInputGate *input,
         }
 
         if (backgroundAccepted)
-          framebuffer->fillRect(&tileRect, background);
+          lkvnc_rfb_FrameBuffer->fillRect(&tileRect, background);
 
         if (flags & 0x4)
           input->readFully(&foreground, bytesPerPixel);
@@ -91,7 +91,7 @@ void HexTileDecoder::decode(RfbInputGate *input,
             Rect subRect(x, y, x + w, y + h);
 
             subRect.move(tileRect.left, tileRect.top);
-            framebuffer->fillRect(&subRect, foreground);
+            lkvnc_rfb_FrameBuffer->fillRect(&subRect, foreground);
           }
         } else { // exist subrect
           if (!backgroundAccepted)

@@ -25,12 +25,12 @@
 #ifndef _VIEWER_CONFIG_H_
 #define _VIEWER_CONFIG_H_
 
-#include "../libkvnc_util/StringStorage.h"
-#include "../libkvnc_util/Singleton.h"
-#include "../libkvnc_config/ConnectionHistory.h"
-#include "../libkvnc_log_writer/FileLogger.h"
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_util/StringStorage.h"
+#include "../libkvnc_all_util/Singleton.h"
+#include "../libkvnc_all_config/ConnectionHistory.h"
+#include "../libkvnc_all_logger/FileLogger.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 #include "ConnectionConfig.h"
 

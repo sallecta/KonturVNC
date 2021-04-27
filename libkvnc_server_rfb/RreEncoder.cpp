@@ -25,7 +25,7 @@
 #include <crtdbg.h>
 #include "RreEncoder.h"
 
-RreEncoder::RreEncoder(PixelConverter *conv, DataOutputStream *output)
+RreEncoder::RreEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output)
 : Encoder(conv, output)
 {
   m_rects.reserve(4096);
@@ -37,12 +37,12 @@ RreEncoder::~RreEncoder()
 
 int RreEncoder::getCode() const
 {
-  return EncodingDefs::RRE;
+  return lkvnc_rfb_DefsEncoding::RRE;
 }
 
 void RreEncoder::splitRectangle(const Rect *rect,
                                 std::vector<Rect> *rectList,
-                                const FrameBuffer *serverFb,
+                                const lkvnc_rfb_FrameBuffer *serverFb,
                                 const EncodeOptions *options)
 {
   for (int y0 = rect->top; y0 < rect->bottom; y0 += RECT_SIZE) {
@@ -55,10 +55,10 @@ void RreEncoder::splitRectangle(const Rect *rect,
 }
 
 void RreEncoder::sendRectangle(const Rect *rect,
-                               const FrameBuffer *serverFb,
+                               const lkvnc_rfb_FrameBuffer *serverFb,
                                const EncodeOptions *options)
 {
-  const FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
+  const lkvnc_rfb_FrameBuffer *fb = m_pixelConverter->convert(rect, serverFb);
 
   size_t bpp = fb->getBitsPerPixel();
   // Choose size of pixel according to options.
@@ -75,11 +75,11 @@ void RreEncoder::sendRectangle(const Rect *rect,
 
 template <class PIXEL_T>
 void RreEncoder::rreEncode(const Rect *r,
-                           const FrameBuffer *frameBuffer)
+                           const lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer)
 {
-  PIXEL_T *buffer = (PIXEL_T *)frameBuffer->getBuffer();
-  int fbWidth = frameBuffer->getDimension().width;
-  PixelFormat pxFormat = frameBuffer->getPixelFormat();
+  PIXEL_T *buffer = (PIXEL_T *)lkvnc_rfb_FrameBuffer->getBuffer();
+  int fbWidth = lkvnc_rfb_FrameBuffer->getDimension().width;
+  lkvnc_rfb_PixelFormat pxFormat = lkvnc_rfb_FrameBuffer->getPixelFormat();
   // Mask for cutting rubbish bits.
   PIXEL_T mask = pxFormat.redMax << pxFormat.redShift |
                  pxFormat.greenMax << pxFormat.greenShift |

@@ -25,13 +25,13 @@
 #ifndef _CORE_EVENTS_ADAPTER_H_
 #define _CORE_EVENTS_ADAPTER_H_
 
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_io/IOException.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_rfb/FrameBuffer.h"
-#include "../libkvnc_region/Rect.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_io/IOException.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_FrameBuffer.h"
+#include "../libkvnc_all_region/Rect.h"
+#include "../libkvnc_all_util/Exception.h"
 
 #include "AuthHandler.h"
 
@@ -102,7 +102,7 @@ public:
   // the frame buffer is locked, and the rectangle is guaranteed to be valid
   // (no guarantees about other areas of the frame buffer).
   //
-  virtual void onFrameBufferUpdate(const FrameBuffer *fb, const Rect *update);
+  virtual void onFrameBufferUpdate(const lkvnc_rfb_FrameBuffer *fb, const Rect *update);
 
   // changed properties of frame buffer.
   // In this moment frame buffer area is dirty and may be contained incorrect data
@@ -111,7 +111,7 @@ public:
   // frame buffer has been created and the old one has been destroyed. This
   // notification will be called on initial frame buffer allocation as well.
   //
-  virtual void onFrameBufferPropChange(const FrameBuffer *fb);
+  virtual void onFrameBufferPropChange(const lkvnc_rfb_FrameBuffer *fb);
 };
 
 #endif

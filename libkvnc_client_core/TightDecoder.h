@@ -27,7 +27,7 @@
 
 #include <vector>
 
-#include "../libkvnc_util/Inflater.h"
+#include "../libkvnc_all_util/Inflater.h"
 
 #include "DecoderOfRectangle.h"
 #include "JpegDecompressor.h"
@@ -40,7 +40,7 @@ public:
 
 protected:
   virtual void decode(RfbInputGate *input,
-                      FrameBuffer *frameBuffer,
+                      lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                       const Rect *dstRect);
 
 private:
@@ -52,10 +52,10 @@ private:
                           int paletteSize,
                           int bytesPerCPixel);
   void processJpeg(RfbInputGate *input,
-                   FrameBuffer *frameBuffer,
+                   lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                    const Rect *dstRect);
   void processBasicTypes(RfbInputGate *input,
-                         FrameBuffer *frameBuffer,
+                         lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                          const Rect *dstRect,
                          UINT8 compControl);
   void readTightData(RfbInputGate *input,
@@ -66,24 +66,24 @@ private:
                           std::vector<UINT8> &buffer,
                           size_t expectedLength,
                           const int decoderId);
-  void drawPalette(FrameBuffer *fb,
+  void drawPalette(lkvnc_rfb_FrameBuffer *fb,
                    const std::vector<UINT32> &palette,
                    const std::vector<UINT8> &pixels,
                    const Rect *dstRect);
-  void drawGradient(FrameBuffer *fb,
+  void drawGradient(lkvnc_rfb_FrameBuffer *fb,
                     const std::vector<UINT8> &pixels,
                     const Rect *dstRect);
-  void drawTightBytes(FrameBuffer *fb,
+  void drawTightBytes(lkvnc_rfb_FrameBuffer *fb,
                      const std::vector<UINT8> *pixels,
                      const Rect *dstRect);
-  void drawJpegBytes(FrameBuffer *fb,
+  void drawJpegBytes(lkvnc_rfb_FrameBuffer *fb,
                      const std::vector<UINT8> *pixels,
                      const Rect *dstRect);
 
-  UINT32 getRawTightColor(const PixelFormat *pxFormat,
+  UINT32 getRawTightColor(const lkvnc_rfb_PixelFormat *pxFormat,
                           const std::vector<UINT8> &pixels,
                           size_t offset);
-  void fillRawComponents(const PixelFormat *pxFormat,
+  void fillRawComponents(const lkvnc_rfb_PixelFormat *pxFormat,
                          UINT8 components[],
                          const std::vector<UINT8> &pixels,
                          size_t pixelOffset);

@@ -28,20 +28,21 @@
 #include "ConnectionData.h"
 #include "DesktopWindow.h"
 #include "FileTransferMainDialog.h"
-#include "NamingDefs.h"
+#include "kvnc_client__Defs.h"
 #include "OptionsDialog.h"
 #include "ScaleManager.h"
 #include "ReconnectWnd.h"
 #include "ViewerMenu.h"
-#include "../libkvnc_gui/ToolBar.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_gui/ToolBar.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 #include "../libkvnc_client_core/FileTransferCapability.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 #include "../libkvnc_client_core/RemoteViewerCore.h"
 #include "../libkvnc_client_core/CoreEventsAdapter.h"
 #include "../libkvnc_client_core/VncAuthentication.h"
-#include "../libkvnc_win_system/SystemInformation.h"
-#include "../libkvnc_win_system/WindowsApplication.h"
-#include "../libkvnc_win_system/WinHooks.h"
+#include "../libkvnc_all_winSystem/SystemInformation.h"
+#include "../libkvnc_all_winSystem/WindowsApplication.h"
+#include "../libkvnc_all_winSystem/WinHooks.h"
 
 #include "ClientChatDialog.h"
 
@@ -51,7 +52,7 @@
 
 #include "../libkvnc_server_rfb/TextMsgListener.h"
 
-#include "../libkvnc_p2p/P2pEventListener.h"
+#include "../libkvnc_all_p2p/P2pEventListener.h"
 
 class ViewerWindow : public BaseWindow,
                      public CoreEventsAdapter,
@@ -143,8 +144,8 @@ protected:
   void onDisconnect(const StringStorage *message);
   void onAuthError(const AuthException *exception);
   void onError(const Exception *exception);
-  void onFrameBufferUpdate(const FrameBuffer *fb, const Rect *rect);
-  void onFrameBufferPropChange(const FrameBuffer *fb);
+  void onFrameBufferUpdate(const lkvnc_rfb_FrameBuffer *fb, const Rect *rect);
+  void onFrameBufferPropChange(const lkvnc_rfb_FrameBuffer *fb);
   void onCutText(const StringStorage *cutText);
 
   void notifyErrorWnd();

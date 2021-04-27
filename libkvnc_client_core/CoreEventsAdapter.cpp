@@ -23,7 +23,7 @@
 //
 
 #include "CoreEventsAdapter.h"
-#include "../libkvnc_rfb/AuthDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsAuth.h"
 
 // It's abstract, but still needs an implementation.
 CoreEventsAdapter::~CoreEventsAdapter()
@@ -59,11 +59,11 @@ void CoreEventsAdapter::onError(const Exception *exception)
 {
 }
 
-void CoreEventsAdapter::onFrameBufferUpdate(const FrameBuffer *fb,
+void CoreEventsAdapter::onFrameBufferUpdate(const lkvnc_rfb_FrameBuffer *fb,
                                             const Rect *rect)
 {
 }
 
-void CoreEventsAdapter::onFrameBufferPropChange(const FrameBuffer *fb)
+void CoreEventsAdapter::onFrameBufferPropChange(const lkvnc_rfb_FrameBuffer *fb)
 {
 }

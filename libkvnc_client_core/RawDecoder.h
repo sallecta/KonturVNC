@@ -37,15 +37,15 @@ public:
   // This method is inherited from DecoderOfRectangle.
   //
   virtual void process(RfbInputGate *input,
-                       FrameBuffer *frameBuffer,
-                       FrameBuffer *secondFrameBuffer,
+                       lkvnc_rfb_FrameBuffer *argFrameBuffer,
+                       lkvnc_rfb_FrameBuffer *secondFrameBuffer,
                        const Rect *rect,
                        LocalMutex *fbLock,
                        FbUpdateNotifier *fbNotifier);
 
 protected:
   virtual void decode(RfbInputGate *input,
-                      FrameBuffer *frameBuffer,
+                      lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                       const Rect *rect);
 
 private:

@@ -25,15 +25,15 @@
 #ifndef _OUTGOING_CONNECTION_DIALOG_H_
 #define _OUTGOING_CONNECTION_DIALOG_H_
 
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/winhdr.h"
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/ComboBox.h"
-#include "../libkvnc_gui/CheckBox.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/ComboBox.h"
+#include "../libkvnc_all_gui/CheckBox.h"
 
-#include "../libkvnc_win_system/RegistryKey.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
 
-#include "../libkvnc_config/ConnectionHistory.h"
+#include "../libkvnc_all_config/ConnectionHistory.h"
 
 /**
  * Outgoing connection dialog. Just allows user to put connection string

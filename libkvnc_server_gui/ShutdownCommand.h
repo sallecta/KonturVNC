@@ -25,7 +25,7 @@
 #ifndef _SHUTDOWN_COMMAND_H_
 #define _SHUTDOWN_COMMAND_H_
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 
 #include "ControlProxy.h"
 

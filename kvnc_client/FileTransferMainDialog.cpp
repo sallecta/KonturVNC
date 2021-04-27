@@ -24,15 +24,15 @@
 
 #include "FileTransferMainDialog.h"
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/winhdr.h"
-#include "../libkvnc_ft/WinFilePath.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/winhdr.h"
+#include "../libkvnc_all_fileTransfer/WinFilePath.h"
 #include "NewFolderDialog.h"
 #include "FileRenameDialog.h"
 
-#include "../libkvnc_file/File.h"
+#include "../libkvnc_all_file/File.h"
 
-#include "resource.h"
+#include "kvnc_client_Resource.h"
 #include <stdio.h>
 
 FileTransferMainDialog::FileTransferMainDialog(FileTransferCore *core)

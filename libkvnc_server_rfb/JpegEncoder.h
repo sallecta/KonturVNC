@@ -42,7 +42,7 @@ public:
   // rectangles are no wider than 2048 pixels.
   virtual void splitRectangle(const Rect *rect,
                               std::vector<Rect> *rectList,
-                              const FrameBuffer *serverFb,
+                              const lkvnc_rfb_FrameBuffer *serverFb,
                               const EncodeOptions *options);
 
   // Encode and send the rectangle. JpegEncoder forces JPEG sub-encoding if
@@ -50,7 +50,7 @@ public:
   // formats are at least 16 bits per pixel. Otherwise, it falls back to usual
   // lossless Tight encoding.
   virtual void sendRectangle(const Rect *rect,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options);
 
 protected:

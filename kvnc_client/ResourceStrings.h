@@ -25,8 +25,8 @@
 #ifndef _RESOURCE_STRINGS_H_
 #define _RESOURCE_STRINGS_H_
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "resource.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "kvnc_client_Resource.h"
 
 class ResourceStrings
 {

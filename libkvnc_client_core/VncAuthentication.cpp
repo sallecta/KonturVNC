@@ -24,8 +24,8 @@
 
 #include "VncAuthentication.h"
 
-#include "../libkvnc_util/AnsiStringStorage.h"
-#include "../libkvnc_util/DesCrypt.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/DesCrypt.h"
 
 void VncAuthentication::vncAuthenticate(DataInputStream *input,
                                         DataOutputStream *output,

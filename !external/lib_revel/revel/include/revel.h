@@ -27,10 +27,10 @@
 /*
 Copyright (C) (2004) (Cort Stratton) <cort at cortstratton dot org>
 
-This program is free software; you can redistribute it and/or 
-modify it under the terms of the GNU General Public License 
-as published by the Free Software Foundation; either 
-version 2 of the License, or (at your option) any later 
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later
 version.
 
 This program is distributed in the hope that it will be useful,
@@ -100,14 +100,14 @@ typedef enum
 /**
  * Partial list of supported audio sample formats.
  * This enum only contains the most common sample formats.
- * In actuality, any of the Microsoft WAVE_FORMAT_XXX values is 
+ * In actuality, any of the Microsoft WAVE_FORMAT_XXX values is
  * legal.  Please refer to the Windows mmreg.h file (available
  * on the web at:
  * http://graphics.cs.uni-sb.de/NMM/dist-0.6.0/Docs/Doxygen/html/mmreg_8h.html)
  * for a full list of supported sample formats and their associated
  * numerical values.
  */
-typedef enum 
+typedef enum
 {
     REVEL_ASF_UNKNOWN = 0x0000, /**< Unknown format / no audio present. */
     REVEL_ASF_PCM     = 0x0001, /**< PCM format (the most common choice). */
@@ -120,7 +120,7 @@ typedef enum
 /**
  * List of error codes.
  */
-typedef enum 
+typedef enum
 {
     REVEL_ERR_NONE = 0,         /**< No error (the operation completed successfully). */
     REVEL_ERR_UNKNOWN,          /**< An unknown/unclassified error. */
@@ -142,7 +142,7 @@ typedef struct
     float frameRate; /**< frames per second. */
     float quality; /**< ranges 0 to 1 */
     Revel_VideoCodec codec; /**< This codec will be used to compress the video frames. */
-    
+
     /**
      * If 1, the output movie will include an audio stream.
      * Any other value means the movie will be silent.
@@ -165,7 +165,7 @@ typedef struct
 {
     unsigned int width, height; /**< width/height in pixels. */
     unsigned char bytesPerPixel; /**< color depth of pixels, in bytes. */
-    Revel_PixelFormat pixelFormat; /**< color channel ordering for these pixels. */
+    Revel_PixelFormat lkvnc_rfb_PixelFormat; /**< color channel ordering for these pixels. */
     void *pixels; /**< Pointer to pixel data. */
 } Revel_VideoFrame;
 
@@ -212,7 +212,7 @@ Revel_Error Revel_EncodeStart(int encoderHandle, const char* filename,
  *
  * @param encoderHandle must be a valid encoder handle.
  * @param frame The video frame to encode.  It will not be written to at all,
- *              so it is unnecessary to make a copy of your framebuffer first.
+ *              so it is unnecessary to make a copy of your lkvnc_rfb_FrameBuffer first.
  * @param frameSize If non-NULL, the size of the encoded frame (in bytes) will
  *                  be stored here.
  * @return REVEL_ERR_NONE if success, an error code if not.
@@ -260,7 +260,7 @@ Revel_Error Revel_EncodeEnd(int encoderHandle, int *totalSize = 0);
 /**
  * Destroys an encoder through its handle, and frees the memory associated
  * with it.
- * 
+ *
  * @param encoderHandle A handle to the encoder to destroy.
  * @return REVEL_ERR_NONE if success, an error code if not.
  */

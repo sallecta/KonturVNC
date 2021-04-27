@@ -25,7 +25,7 @@
 #ifndef __CLIENTAUTHLISTENER_H__
 #define __CLIENTAUTHLISTENER_H__
 
-#include "../libkvnc_desktop/Desktop.h"
+#include "../libkvnc_server_desktop/Desktop.h"
 #include "../libkvnc_server_rfb/RfbClient.h"
 #include "AuthException.h"
 

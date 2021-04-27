@@ -25,9 +25,9 @@
 #ifndef _QUERY_CONNECTION_COMMAND_LINE_H_
 #define _QUERY_CONNECTION_COMMAND_LINE_H_
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/CommandLine.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommandLine.h"
+#include "../libkvnc_all_util/Exception.h"
 
 class QueryConnectionCommandLine : private CommandLine
 {

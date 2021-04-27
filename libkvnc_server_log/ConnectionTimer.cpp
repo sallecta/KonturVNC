@@ -23,7 +23,7 @@
 //
 
 #include "ConnectionTimer.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 ConnectionTimer::ConnectionTimer(TimerListener *timerListener,
                                  unsigned int timeOut)

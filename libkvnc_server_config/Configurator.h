@@ -25,7 +25,7 @@
 #ifndef _CONFIGURATOR_H_
 #define _CONFIGURATOR_H_
 
-#include "../libkvnc_config/SettingsManager.h"
+#include "../libkvnc_all_config/SettingsManager.h"
 
 #include "PortMappingContainer.h"
 #include "IpAccessControl.h"
@@ -33,7 +33,7 @@
 #include "ConfigReloadListener.h"
 #include "RegistrySecurityAttributes.h"
 
-#include "../libkvnc_util/ListenerContainer.h"
+#include "../libkvnc_all_util/ListenerContainer.h"
 
 class Configurator : public ListenerContainer<ConfigReloadListener *>
 {

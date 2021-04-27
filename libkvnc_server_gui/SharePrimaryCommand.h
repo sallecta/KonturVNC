@@ -25,7 +25,7 @@
 #ifndef _SHAREPRIMARYCOMMAND_H_
 #define _SHAREPRIMARYCOMMAND_H_
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 
 #include "ControlProxy.h"
 

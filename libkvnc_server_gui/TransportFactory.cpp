@@ -26,7 +26,7 @@
 #include "SocketIPv4Transport.h"
 #include "NamedPipeTransport.h"
 
-#include "../libkvnc_win_system/SecurityAttributes.h"
+#include "../libkvnc_all_winSystem/SecurityAttributes.h"
 
 Transport *TransportFactory::createSocketClientTransport(const TCHAR *connectHost,
                                                          unsigned int connectPort)

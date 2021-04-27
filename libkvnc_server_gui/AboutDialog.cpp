@@ -24,15 +24,15 @@
 
 #include "AboutDialog.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
-#include "../libkvnc_win_system/Shell.h"
-#include "../libkvnc_win_system/VersionInfo.h"
-#include "../libkvnc_win_system/Environment.h"
+#include "../libkvnc_all_winSystem/Shell.h"
+#include "../libkvnc_all_winSystem/VersionInfo.h"
+#include "../libkvnc_all_winSystem/Environment.h"
 
-#include "../libkvnc_gui/Control.h"
+#include "../libkvnc_all_gui/Control.h"
 
-#include "../kvnc_server/BuildTime.h"
+#include "../kvnc_server/kvnc_server_BuildTime.h"
 
 AboutDialog::AboutDialog()
 : BaseDialog(IDD_ABOUT_DIALOG)

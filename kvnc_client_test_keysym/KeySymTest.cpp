@@ -37,9 +37,9 @@ KeySymTest::KeySymTest(const TCHAR *fileFrom, const TCHAR *fileTo)
   m_fromFileName(fileFrom),
   m_toFileName(fileTo),
   m_isNextEventInSeries(false),
-  m_log(0)
+  m_log.info("0")
 {
-  m_rfbKeySym = new RfbKeySym(this, &m_log);
+  m_rfbKeySym = new lkvnc_rfb_KeySym(this, &m_log);
   m_fFrom = _tfopen(m_fromFileName.getString(), _T("rt,ccs=UNICODE"));
   if (m_fFrom == 0) {
     StringStorage errMess;
@@ -168,12 +168,12 @@ bool KeySymTest::getWord(const StringStorage *line,
   return true;
 }
 
-void KeySymTest::onRfbKeySymEvent(unsigned int rfbKeySym, bool down)
+void KeySymTest::onRfbKeySymEvent(unsigned int lkvnc_rfb_KeySym, bool down)
 {
   // Separating next event from previous by new line.
   if (m_isNextEventInSeries) {
     _ftprintf(m_fTo, _T("\n"));
   }
-  _ftprintf(m_fTo, _T("%d %#4.4x           "), int(down), (unsigned int)rfbKeySym);
+  _ftprintf(m_fTo, _T("%d %#4.4x           "), int(down), (unsigned int)lkvnc_rfb_KeySym);
   m_isNextEventInSeries = true;
 }

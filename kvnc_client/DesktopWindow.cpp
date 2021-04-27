@@ -41,7 +41,7 @@ DesktopWindow::DesktopWindow(LogWriter *logWriter, ConnectionConfig *conConf)
   m_previousMouseState(0),
   m_isBackgroundDirty(false)
 {
-  m_rfbKeySym = std::auto_ptr<RfbKeySym>(new RfbKeySym(this, m_logWriter));
+  m_rfbKeySym = std::auto_ptr<lkvnc_rfb_KeySym>(new lkvnc_rfb_KeySym(this, m_logWriter));
 }
 
 DesktopWindow::~DesktopWindow()
@@ -497,7 +497,7 @@ void DesktopWindow::saveScreenshot()
 }
 
 
-void DesktopWindow::updateFramebuffer(const FrameBuffer *framebuffer,
+void DesktopWindow::updateFramebuffer(const lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                                      const Rect *dstRect)
 {
   // This code doesn't require blocking of m_framebuffer.
@@ -506,10 +506,10 @@ void DesktopWindow::updateFramebuffer(const FrameBuffer *framebuffer,
   // then image on viewer is not valid, but next update fix this
   // It is not critical.
   //
-  // Size of framebuffer can not changed, because onFrameBufferUpdate()
+  // Size of lkvnc_rfb_FrameBuffer can not changed, because onFrameBufferUpdate()
   // and onFrameBufferPropChange() may be called only from one thread.
 
-  if (!m_framebuffer.copyFrom(dstRect, framebuffer, dstRect->left, dstRect->top)) {
+  if (!m_framebuffer.copyFrom(dstRect, lkvnc_rfb_FrameBuffer, dstRect->left, dstRect->top)) {
     m_logWriter->error(_T("Possible invalide region. (%d, %d), (%d, %d)"),
                        dstRect->left, dstRect->top, dstRect->right, dstRect->bottom);
     m_logWriter->interror(_T("Error in updateFramebuffer (ViewerWindow)"));
@@ -517,9 +517,9 @@ void DesktopWindow::updateFramebuffer(const FrameBuffer *framebuffer,
   repaint(dstRect);
 }
 
-void DesktopWindow::setNewFramebuffer(const FrameBuffer *framebuffer)
+void DesktopWindow::setNewFramebuffer(const lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer)
 {
-  Dimension dimension = framebuffer->getDimension();
+  Dimension dimension = lkvnc_rfb_FrameBuffer->getDimension();
   Dimension olddimension = m_framebuffer.getDimension();
 
   bool isBackgroundDirty = dimension.width < olddimension.width ||
@@ -540,7 +540,7 @@ if(dimension.width%4!=0){
       int alignHeight = (dimension.height + 3) / 4;
       dimension.height = alignHeight * 4;
 }
-      PixelFormat tmpPixelFormat = framebuffer->getPixelFormat();
+      lkvnc_rfb_PixelFormat tmpPixelFormat = lkvnc_rfb_FrameBuffer->getPixelFormat();
       m_framebuffer.setProperties(&dimension,
                                   &tmpPixelFormat,
                                   getHWnd());
@@ -649,9 +649,9 @@ void DesktopWindow::getServerGeometry(Rect *rect, int *pixelsize)
   }
 }
 
-void DesktopWindow::onRfbKeySymEvent(unsigned int rfbKeySym, bool down)
+void DesktopWindow::onRfbKeySymEvent(unsigned int lkvnc_rfb_KeySym, bool down)
 {
-  sendKeyboardEvent(down, rfbKeySym);
+  sendKeyboardEvent(down, lkvnc_rfb_KeySym);
 }
 
 void DesktopWindow::setCtrlState(const bool ctrlState)

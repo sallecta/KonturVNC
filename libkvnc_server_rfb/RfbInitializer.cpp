@@ -24,15 +24,15 @@
 
 #include <crtdbg.h>
 #include "RfbInitializer.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_rfb/VendorDefs.h"
-#include "../libkvnc_rfb/AuthDefs.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsVendor.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsAuth.h"
 #include "CapContainer.h"
 #include "../libkvnc_server_config/Configurator.h"
 #include "AuthException.h"
-#include "../libkvnc_util/VncPassCrypt.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/VncPassCrypt.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
 #include <stdlib.h>
@@ -70,7 +70,7 @@ void RfbInitializer::afterAuthPhase(const CapContainer *srvToClCaps,
                                     const CapContainer *clToSrvCaps,
                                     const CapContainer *encCaps,
                                     const Dimension *dim,
-                                    const PixelFormat *pf)
+                                    const lkvnc_rfb_PixelFormat *pf)
 {
   sendServerInit(dim, pf);
   sendDesktopName();
@@ -137,7 +137,7 @@ void RfbInitializer::doTightAuth()
   if (Configurator::getInstance()->getServerConfig()->isUsingAuthentication()
       && m_authAllowed) {
     CapContainer authInfo;
-    authInfo.addCap(AuthDefs::VNC, VendorDefs::STANDARD, AuthDefs::SIG_VNC);
+    authInfo.addCap(lkvnc_rfb_DefsAuth::VNC, lkvnc_rfb_DefsVendor__Common::STANDARD, lkvnc_rfb_DefsAuth::SIG_VNC);
     m_output->writeUInt32(authInfo.getCapCount());
     authInfo.sendCaps(m_output);
     // Read the security type selected by the client.
@@ -148,15 +148,15 @@ void RfbInitializer::doTightAuth()
     doAuth(clientAuthValue);
   } else {
     m_output->writeUInt32(0);
-    doAuth(AuthDefs::NONE);
+    doAuth(lkvnc_rfb_DefsAuth::NONE);
   }
 }
 
 void RfbInitializer::doAuth(UINT32 authType)
 {
-  if (authType == AuthDefs::VNC) {
+  if (authType == lkvnc_rfb_DefsAuth::VNC) {
     doVncAuth();
-  } else if (authType == AuthDefs::NONE) {
+  } else if (authType == lkvnc_rfb_DefsAuth::NONE) {
     doAuthNone();
   } else {
     throw Exception(_T(""));
@@ -164,7 +164,7 @@ void RfbInitializer::doAuth(UINT32 authType)
   // Perform additional work via a listener.
   m_extAuthListener->onCheckAccessControl(m_client);
   // Send authentication result.
-  if (m_minorVerNum >= 8 || authType != AuthDefs::NONE) {
+  if (m_minorVerNum >= 8 || authType != lkvnc_rfb_DefsAuth::NONE) {
     m_output->writeUInt32(0); // FIXME: Use a named constant instead of 0.
   }
 }
@@ -230,10 +230,10 @@ void RfbInitializer::initAuthenticate()
 {
   try {
     // Determine effective security type from the configuration.
-    UINT32 primSecType = SecurityDefs::VNC;
+    UINT32 primSecType = lkvnc_rfb_DefsAuth__Security::VNC;
     if (!Configurator::getInstance()->getServerConfig()->isUsingAuthentication()
         || !m_authAllowed) {
-      primSecType = SecurityDefs::NONE;
+      primSecType = lkvnc_rfb_DefsAuth__Security::NONE;
     }
     // Here the protocol varies between versions 3.3 and 3.7+.
     if (m_minorVerNum >= 7) {
@@ -241,26 +241,26 @@ void RfbInitializer::initAuthenticate()
       // and a special code allowing to enable TightVNC protocol extensions.
       m_output->writeUInt8(2);
       m_output->writeUInt8(primSecType);
-      m_output->writeUInt8(SecurityDefs::TIGHT);
+      m_output->writeUInt8(lkvnc_rfb_DefsAuth__Security::TIGHT);
       // Read what the client has actually selected.
       UINT8 clientSecType = m_input->readUInt8();
-      if (clientSecType == SecurityDefs::TIGHT) {
+      if (clientSecType == lkvnc_rfb_DefsAuth__Security::TIGHT) {
         m_tightEnabled = true;
         doTightAuth();
       } else {
         if (clientSecType != primSecType) {
           throw Exception(_T("Security types do not match"));
         }
-        doAuth(AuthDefs::convertFromSecurityType(clientSecType));
+        doAuth(lkvnc_rfb_DefsAuth::convertFromSecurityType(clientSecType));
       }
     } else {
       // Just tell the client we will use the configured security type.
       m_output->writeUInt32(primSecType);
-      doAuth(AuthDefs::convertFromSecurityType(primSecType));
+      doAuth(lkvnc_rfb_DefsAuth::convertFromSecurityType(primSecType));
     }
   } catch (AuthException &e) {
     // FIXME: The authentication result must be sent in protocols 3.3 and 3.7
-    //        as well, unless the authentication was set to AuthDefs::NONE.
+    //        as well, unless the authentication was set to lkvnc_rfb_DefsAuth::NONE.
     if (m_minorVerNum >= 8) {
       StringStorage tmpStringStorage = StringStorage(e.getMessage());
       AnsiStringStorage reason(&tmpStringStorage);
@@ -288,7 +288,7 @@ void RfbInitializer::readClientInit()
 }
 
 void RfbInitializer::sendServerInit(const Dimension *dim,
-                                    const PixelFormat *pf)
+                                    const lkvnc_rfb_PixelFormat *pf)
 {
   m_output->writeUInt16((UINT16)dim->width);
   m_output->writeUInt16((UINT16)dim->height);

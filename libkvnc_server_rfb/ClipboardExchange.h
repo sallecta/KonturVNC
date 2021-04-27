@@ -27,9 +27,9 @@
 
 #include "RfbDispatcherListener.h"
 #include "RfbCodeRegistrator.h"
-#include "../libkvnc_desktop/Desktop.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_server_desktop/Desktop.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 class ClipboardExchange : public RfbDispatcherListener, public Thread
 {

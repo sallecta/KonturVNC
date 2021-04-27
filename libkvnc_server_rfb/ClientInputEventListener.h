@@ -25,7 +25,7 @@
 #ifndef __CLIENTINPUTEVENTLISTENER_H__
 #define __CLIENTINPUTEVENTLISTENER_H__
 
-#include "../libkvnc_util/inttypes.h"
+#include "../libkvnc_all_util/inttypes.h"
 
 class ClientInputEventListener
 {

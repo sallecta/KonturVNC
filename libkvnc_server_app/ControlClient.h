@@ -32,8 +32,8 @@
 #include "../libkvnc_server_gui/Transport.h"
 #include "ControlAppAuthenticator.h"
 #include "TcpDispatcherConnectionListener.h"
-#include "../libkvnc_thread/ThreadCollector.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_thread/ThreadCollector.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 /**
  * ControlClient exception sclass.

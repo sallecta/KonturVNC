@@ -33,7 +33,7 @@
 #define __RFB_TIGHTPALETTE_H_INCLUDED__
 
 #include <string.h>
-#include "../libkvnc_util/inttypes.h"
+#include "../libkvnc_all_util/inttypes.h"
 
 struct TightColorList {
   TightColorList *next;

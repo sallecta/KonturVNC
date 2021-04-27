@@ -28,7 +28,7 @@
 #include "ControlGate.h"
 #include "ControlAuthException.h"
 
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/Exception.h"
 
 #include "../libkvnc_server_config/ServerConfig.h"
 

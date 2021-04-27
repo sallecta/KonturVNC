@@ -26,29 +26,29 @@
 #define __RFB_RRE_ENCODER_H_INCLUDED__
 
 #include "Encoder.h"
-#include "../libkvnc_region/Region.h"
+#include "../libkvnc_all_region/Region.h"
 
 class RreEncoder : public Encoder
 {
 public:
-  RreEncoder(PixelConverter *conv, DataOutputStream *output);
+  RreEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output);
   virtual ~RreEncoder();
 
   virtual int getCode() const;
 
   virtual void splitRectangle(const Rect *rect,
                               std::vector<Rect> *rectList,
-                              const FrameBuffer *serverFb,
+                              const lkvnc_rfb_FrameBuffer *serverFb,
                               const EncodeOptions *options);
 
   virtual void sendRectangle(const Rect *rect,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options);
 
 private:
   template <class PIXEL_T>
     void rreEncode(const Rect *r,
-                   const FrameBuffer *frameBuffer);
+                   const lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer);
 
   // Coordinates of subrectangles.
   std::vector<Rect> m_rects;

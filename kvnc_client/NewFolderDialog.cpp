@@ -23,7 +23,7 @@
 //
 
 #include "NewFolderDialog.h"
-#include "resource.h"
+#include "kvnc_client_Resource.h"
 
 NewFolderDialog::NewFolderDialog()
 {

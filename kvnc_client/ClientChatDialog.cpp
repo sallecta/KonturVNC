@@ -1,7 +1,7 @@
 #include "ClientChatDialog.h"
 
-#include "resource.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "kvnc_client_Resource.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 #include "../libkvnc_client_config/ViewerConfig.h"
 

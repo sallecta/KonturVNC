@@ -25,7 +25,7 @@
 #ifndef __TCPDISPATCHERCONNECTIONLISTENER_H__
 #define __TCPDISPATCHERCONNECTIONLISTENER_H__
 
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 
 class TcpDispatcherConnectionListener
 {

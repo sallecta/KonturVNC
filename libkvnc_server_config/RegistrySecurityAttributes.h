@@ -25,10 +25,10 @@
 #ifndef _REGISTRY_SECURITY_ATTRIBUTES_H_
 #define _REGISTRY_SECURITY_ATTRIBUTES_H_
 
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/winhdr.h"
 
-#include "../libkvnc_win_system/security/SecurityIdentifier.h"
-#include "../libkvnc_win_system/security/SecurityDescriptor.h"
+#include "../libkvnc_all_winSystem/security/SecurityIdentifier.h"
+#include "../libkvnc_all_winSystem/security/SecurityDescriptor.h"
 
 #include <AccCtrl.h>
 #include <Aclapi.h>

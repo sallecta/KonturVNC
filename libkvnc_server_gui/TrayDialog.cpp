@@ -1,7 +1,7 @@
 #include "TrayDialog.h"
 
-#include "../kvnc_server/resource.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 
 

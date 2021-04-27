@@ -25,9 +25,9 @@
 #ifndef _QUERY_CONNECTION_APPLICATION_H_
 #define _QUERY_CONNECTION_APPLICATION_H_
 
-#include "../libkvnc_win_system/LocalWindowsApplication.h"
+#include "../libkvnc_all_winSystem/LocalWindowsApplication.h"
 
-#include "../libkvnc_win_system/SystemException.h"
+#include "../libkvnc_all_winSystem/SystemException.h"
 
 /**
  * Application that shows "Accept / Reject rfb connection dialog" to user

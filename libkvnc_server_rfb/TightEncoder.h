@@ -37,7 +37,7 @@ class TightEncoder : public Encoder
   friend class JpegEncoder;
 
 public:
-  TightEncoder(PixelConverter *conv, DataOutputStream *output);
+  TightEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output);
   virtual ~TightEncoder();
 
   virtual int getCode() const;
@@ -46,80 +46,80 @@ public:
   // corresponding to the compression level set in EncodeOptions.
   virtual void splitRectangle(const Rect *rect,
                               std::vector<Rect> *rectList,
-                              const FrameBuffer *serverFb,
+                              const lkvnc_rfb_FrameBuffer *serverFb,
                               const EncodeOptions *options);
 
   virtual void sendRectangle(const Rect *rect,
-                             const FrameBuffer *serverFb,
+                             const lkvnc_rfb_FrameBuffer *serverFb,
                              const EncodeOptions *options);
 
 protected:
   // An implementation of sendRectangle() for the given pixel size.
   template <class PIXEL_T>
     void sendAnyRect(const Rect *rect,
-                     const FrameBuffer *serverFb,
-                     const FrameBuffer *clientFb,
+                     const lkvnc_rfb_FrameBuffer *serverFb,
+                     const lkvnc_rfb_FrameBuffer *clientFb,
                      const EncodeOptions *options);
 
   // Send a solid-color rectangle.
-  void sendSolidRect(const Rect *r, const FrameBuffer *fb);
+  void sendSolidRect(const Rect *r, const lkvnc_rfb_FrameBuffer *fb);
 
   // Send a two-color rectangle (1 bit per pixel).
   template <class PIXEL_T>
     void sendMonoRect(const Rect *rect,
-                      const FrameBuffer *fb,
+                      const lkvnc_rfb_FrameBuffer *fb,
                       const EncodeOptions *options);
 
   // Send an indexed-color rectangle (1 byte per pixel).
   template <class PIXEL_T>
     void sendIndexedRect(const Rect *rect,
-                         const FrameBuffer *fb,
+                         const lkvnc_rfb_FrameBuffer *fb,
                          const EncodeOptions *options);
 
   // Send a true color rectangle.
   template <class PIXEL_T>
     void sendFullColorRect(const Rect *rect,
-                           const FrameBuffer *fb,
+                           const lkvnc_rfb_FrameBuffer *fb,
                            const EncodeOptions *options);
 
   // Send a rectangle encoded with JPEG.
   void sendJpegRect(const Rect *rect,
-                    const FrameBuffer *serverFb,
+                    const lkvnc_rfb_FrameBuffer *serverFb,
                     const EncodeOptions *options);
 
   // Return true if 32-bit pixels should be packed into 24-bit representation,
   // false otherwise. This function should be given the client's pixel format.
-  bool shouldPackPixels(const PixelFormat *pf) const;
+  bool shouldPackPixels(const lkvnc_rfb_PixelFormat *pf) const;
 
   // Convert 32-bit color samples into 24-bit sequences, in place. It should
   // be called only when bpp is 32; color depth is 24; and redMax, greenMax
   // and blueMax are all 255.
-  static void packPixels(UINT8 *buf, int count, const PixelFormat *pf);
+  static void packPixels(UINT8 *buf, int count, const lkvnc_rfb_PixelFormat *pf);
 
   // Fill in the palette (m_pal) assuming that pixels have the type PIXEL_T
   // (where PIXEL_T can be UINT8, UINT16 or UINT32). Do not allow more than
   // maxColors in the palette, reset the palette size to 0 if actual number of
   // colors exceeds this limitation.
   template <class PIXEL_T>
-    void fillPalette(const Rect *r, const FrameBuffer *fb, int maxColors);
+    void fillPalette(const Rect *r, const lkvnc_rfb_FrameBuffer *fb, int maxColors);
 
   // Copy pixel data from the frame buffer to a byte array.
   template <class PIXEL_T>
-    void copyPixels(const Rect *rect, const FrameBuffer *fb, UINT8 *dst);
+    void copyPixels(const Rect *rect, const lkvnc_rfb_FrameBuffer *fb, UINT8 *dst);
 
   // Encode a two-color rectangle using m_pal as a palette, produce a bitmap
   // where one pixel is represented by one bit. Each line is padded with
   // zeroes to the byte boundary.
   // FIXME: Do not use DataOutputStream, do not throw IOException.
   template <class PIXEL_T>
-    void encodeMonoRect(const Rect *rect, const FrameBuffer *fb,
+    void encodeMonoRect(const Rect *rect, const lkvnc_rfb_FrameBuffer *fb,
                         DataOutputStream *out);
 
   // Encode a rectangle using m_pal as a palette, produce a pixmap where one
   // pixel is represented by one byte which is its index in the palette.
   // FIXME: Do not use DataOutputStream, do not throw IOException.
   template <class PIXEL_T>
-    void encodeIndexedRect(const Rect *rect, const FrameBuffer *fb,
+    void encodeIndexedRect(const Rect *rect, const lkvnc_rfb_FrameBuffer *fb,
                            DataOutputStream *out);
 
   // FIXME: Throw ZlibException instead.

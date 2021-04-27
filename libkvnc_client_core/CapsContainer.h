@@ -25,8 +25,8 @@
 #include <map>
 #include <vector>
 
-#include "../libkvnc_thread/LocalMutex.h"
-#include "../libkvnc_util/StringStorage.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
+#include "../libkvnc_all_util/StringStorage.h"
 
 #ifndef _CAPS_CONTAINER_H_
 #define _CAPS_CONTAINER_H_

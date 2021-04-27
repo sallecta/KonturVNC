@@ -25,10 +25,10 @@
 #ifndef _OUTGOING_RFB_CONNECTION_THREAD_H_
 #define _OUTGOING_RFB_CONNECTION_THREAD_H_
 
-#include "../libkvnc_util/StringStorage.h"
-#include "../libkvnc_thread/Thread.h"
+#include "../libkvnc_all_util/StringStorage.h"
+#include "../libkvnc_all_thread/Thread.h"
 #include "RfbClientManager.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 /**
 Thread that makes attempt to connect to listening rfb client in separate thread.

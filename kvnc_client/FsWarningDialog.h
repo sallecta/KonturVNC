@@ -25,9 +25,9 @@
 #ifndef _FS_WARNING_DIALOG_H_
 #define _FS_WARNING_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/CheckBox.h"
-#include "resource.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/CheckBox.h"
+#include "kvnc_client_Resource.h"
 
 class FsWarningDialog : public BaseDialog
 {

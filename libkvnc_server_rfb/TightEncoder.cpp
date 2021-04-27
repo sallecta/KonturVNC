@@ -25,9 +25,9 @@
 #include <crtdbg.h>
 #include "TightEncoder.h"
 
-#include "../libkvnc_io/ByteArrayOutputStream.h"
+#include "../libkvnc_all_io/ByteArrayOutputStream.h"
 
-TightEncoder::TightEncoder(PixelConverter *conv, DataOutputStream *output)
+TightEncoder::TightEncoder(lkvnc_rfb_PixelConverter *conv, DataOutputStream *output)
 : Encoder(conv, output)
 {
   for (int i = 0; i < NUM_ZLIB_STREAMS; i++) {
@@ -46,12 +46,12 @@ TightEncoder::~TightEncoder()
 
 int TightEncoder::getCode() const
 {
-  return EncodingDefs::TIGHT;
+  return lkvnc_rfb_DefsEncoding::TIGHT;
 }
 
 void TightEncoder::splitRectangle(const Rect *rect,
                                   std::vector<Rect> *rectList,
-                                  const FrameBuffer *serverFb,
+                                  const lkvnc_rfb_FrameBuffer *serverFb,
                                   const EncodeOptions *options)
 {
   int maxSize = getConf(options).maxRectSize;
@@ -81,11 +81,11 @@ void TightEncoder::splitRectangle(const Rect *rect,
 }
 
 void TightEncoder::sendRectangle(const Rect *rect,
-                                 const FrameBuffer *serverFb,
+                                 const lkvnc_rfb_FrameBuffer *serverFb,
                                  const EncodeOptions *options)
 {
   // First, convert pixels to client format.
-  const FrameBuffer *clientFb = m_pixelConverter->convert(rect, serverFb);
+  const lkvnc_rfb_FrameBuffer *clientFb = m_pixelConverter->convert(rect, serverFb);
 
   // Now call an encoder function corresponding to the client's pixel size.
   size_t bpp = clientFb->getBitsPerPixel();
@@ -110,8 +110,8 @@ void TightEncoder::sendRectangle(const Rect *rect,
 // FIXME: Make a special version for the case when PIXEL_T is UINT8.
 template <class PIXEL_T>
 void TightEncoder::sendAnyRect(const Rect *rect,
-                               const FrameBuffer *serverFb,
-                               const FrameBuffer *clientFb,
+                               const lkvnc_rfb_FrameBuffer *serverFb,
+                               const lkvnc_rfb_FrameBuffer *clientFb,
                                const EncodeOptions *options)
 {
   // Compute maximum number of colors to be allowed in the palette.
@@ -148,9 +148,9 @@ void TightEncoder::sendAnyRect(const Rect *rect,
   }
 }
 
-void TightEncoder::sendSolidRect(const Rect *r, const FrameBuffer *fb)
+void TightEncoder::sendSolidRect(const Rect *r, const lkvnc_rfb_FrameBuffer *fb)
 {
-  PixelFormat pf = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pf = fb->getPixelFormat();
   size_t pixelSize = pf.bitsPerPixel / 8;
 
   // Copy the leftmost upper pixel of the rectangle into a buffer.
@@ -168,7 +168,7 @@ void TightEncoder::sendSolidRect(const Rect *r, const FrameBuffer *fb)
 
 template <class PIXEL_T>
 void TightEncoder::sendMonoRect(const Rect *rect,
-                                const FrameBuffer *fb,
+                                const lkvnc_rfb_FrameBuffer *fb,
                                 const EncodeOptions *options)
 {
   // Send control info.
@@ -189,7 +189,7 @@ void TightEncoder::sendMonoRect(const Rect *rect,
     (PIXEL_T)m_pal.getEntry(0),
     (PIXEL_T)m_pal.getEntry(1)
   };
-  PixelFormat pf = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pf = fb->getPixelFormat();
   size_t pixelSize = sizeof(PIXEL_T);
   if (shouldPackPixels(&pf)) {
     packPixels((UINT8 *)palette, 2, &pf);
@@ -208,7 +208,7 @@ void TightEncoder::sendMonoRect(const Rect *rect,
 
 template <class PIXEL_T>
 void TightEncoder::sendIndexedRect(const Rect *rect,
-                                   const FrameBuffer *fb,
+                                   const lkvnc_rfb_FrameBuffer *fb,
                                    const EncodeOptions *options)
 {
   // Send control info.
@@ -229,7 +229,7 @@ void TightEncoder::sendIndexedRect(const Rect *rect,
   for (int i = 0; i < numColors; i++) {
     palette[i] = (PIXEL_T)m_pal.getEntry(i);
   }
-  PixelFormat pf = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pf = fb->getPixelFormat();
   size_t pixelSize = sizeof(PIXEL_T);
   if (shouldPackPixels(&pf)) {
     packPixels((UINT8 *)palette, numColors, &pf);
@@ -248,7 +248,7 @@ void TightEncoder::sendIndexedRect(const Rect *rect,
 
 template <class PIXEL_T>
 void TightEncoder::sendFullColorRect(const Rect *rect,
-                                     const FrameBuffer *fb,
+                                     const lkvnc_rfb_FrameBuffer *fb,
                                      const EncodeOptions *options)
 {
   // Send control info.
@@ -265,7 +265,7 @@ void TightEncoder::sendFullColorRect(const Rect *rect,
   _ASSERT(rgbData.size() == dataLen);
 
   // Pack pixels into 24-bit samples if necessary.
-  PixelFormat pf = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pf = fb->getPixelFormat();
   if (shouldPackPixels(&pf)) {
     packPixels(&rgbData.front(), rect->area(), &pf);
     rgbData.resize(rect->area() * 3);
@@ -279,7 +279,7 @@ void TightEncoder::sendFullColorRect(const Rect *rect,
 }
 
 void TightEncoder::sendJpegRect(const Rect *rect,
-                                const FrameBuffer *serverFb,
+                                const lkvnc_rfb_FrameBuffer *serverFb,
                                 const EncodeOptions *options)
 {
   _ASSERT(options->jpegEnabled());
@@ -292,7 +292,7 @@ void TightEncoder::sendJpegRect(const Rect *rect,
 
   // Shortcuts.
   const void *ptr = serverFb->getBufferPtr(rect->left, rect->top);
-  PixelFormat fmt = serverFb->getPixelFormat();
+  lkvnc_rfb_PixelFormat fmt = serverFb->getPixelFormat();
   int width = rect->getWidth();
   int height = rect->getHeight();
   int stride = serverFb->getBytesPerRow();
@@ -309,7 +309,7 @@ void TightEncoder::sendJpegRect(const Rect *rect,
 
 //--------------------------------------------------------------------------//
 
-bool TightEncoder::shouldPackPixels(const PixelFormat *pf) const
+bool TightEncoder::shouldPackPixels(const lkvnc_rfb_PixelFormat *pf) const
 {
   return (pf->colorDepth == 24 &&
           pf->redMax == 0xFF &&
@@ -318,7 +318,7 @@ bool TightEncoder::shouldPackPixels(const PixelFormat *pf) const
           pf->bitsPerPixel == 32);
 }
 
-void TightEncoder::packPixels(UINT8 *buf, int count, const PixelFormat *pf)
+void TightEncoder::packPixels(UINT8 *buf, int count, const lkvnc_rfb_PixelFormat *pf)
 {
   UINT8 *dst = buf;
   UINT32 pix;
@@ -343,7 +343,7 @@ void TightEncoder::packPixels(UINT8 *buf, int count, const PixelFormat *pf)
 }
 
 template <class PIXEL_T>
-void TightEncoder::fillPalette(const Rect *r, const FrameBuffer *fb, int maxColors)
+void TightEncoder::fillPalette(const Rect *r, const lkvnc_rfb_FrameBuffer *fb, int maxColors)
 {
   // Clear the palette.
   m_pal.reset();
@@ -377,7 +377,7 @@ void TightEncoder::fillPalette(const Rect *r, const FrameBuffer *fb, int maxColo
 }
 
 template <class PIXEL_T>
-void TightEncoder::copyPixels(const Rect *rect, const FrameBuffer *fb,
+void TightEncoder::copyPixels(const Rect *rect, const lkvnc_rfb_FrameBuffer *fb,
                               UINT8 *dst)
 {
   const int rectWidth = rect->getWidth();
@@ -395,7 +395,7 @@ void TightEncoder::copyPixels(const Rect *rect, const FrameBuffer *fb,
 }
 
 template <class PIXEL_T>
-void TightEncoder::encodeMonoRect(const Rect *rect, const FrameBuffer *fb,
+void TightEncoder::encodeMonoRect(const Rect *rect, const lkvnc_rfb_FrameBuffer *fb,
                                   DataOutputStream *out)
 {
   const PIXEL_T *src = (const PIXEL_T *)fb->getBufferPtr(rect->left, rect->top);
@@ -444,7 +444,7 @@ void TightEncoder::encodeMonoRect(const Rect *rect, const FrameBuffer *fb,
 }
 
 template <class PIXEL_T>
-void TightEncoder::encodeIndexedRect(const Rect *rect, const FrameBuffer *fb,
+void TightEncoder::encodeIndexedRect(const Rect *rect, const lkvnc_rfb_FrameBuffer *fb,
                                      DataOutputStream *out)
 {
   const PIXEL_T *src = (const PIXEL_T *)fb->getBufferPtr(rect->left, rect->top);

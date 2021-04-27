@@ -25,7 +25,7 @@
 #ifndef __SCALE_MANAGER_H__
 #define __SCALE_MANAGER_H__
 
-#include "../libkvnc_region/Rect.h"
+#include "../libkvnc_all_region/Rect.h"
 
 class ScaleManager
 {

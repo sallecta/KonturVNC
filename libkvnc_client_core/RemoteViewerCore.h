@@ -25,15 +25,17 @@
 #ifndef _REMOTE_VIEWER_CORE_H_
 #define _REMOTE_VIEWER_CORE_H_
 
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_network/RfbInputGate.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_network/socket/SocketStream.h"
-#include "../libkvnc_network/socket/SocketIPv4.h"
-#include "../libkvnc_rfb/FrameBuffer.h"
-#include "../libkvnc_region/Dimension.h"
-#include "../libkvnc_region/Point.h"
-#include "../libkvnc_thread/Thread.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
+
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_network/RfbInputGate.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_network/socket/SocketStream.h"
+#include "../libkvnc_all_network/socket/SocketIPv4.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_FrameBuffer.h"
+#include "../libkvnc_all_region/Dimension.h"
+#include "../libkvnc_all_region/Point.h"
+#include "../libkvnc_all_thread/Thread.h"
 
 #include "CapsContainer.h"
 #include "CoreEventsAdapter.h"
@@ -43,7 +45,7 @@
 #include "TcpConnection.h"
 #include "../kvnc_client/AvilogThread.h"
 
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 
 #include <map>
 
@@ -288,7 +290,7 @@ public:
   // guaranteed to be applied immediately. It will be applied when allowed by
   // the protocol, and adapter's onNewFrameBuffer() will be called after that.
   //
-  void setPixelFormat(const PixelFormat *viewerPixelFormat);
+  void setPixelFormat(const lkvnc_rfb_PixelFormat *viewerPixelFormat);
 
   //
   // Pause/resume updating the frame buffer.
@@ -296,12 +298,12 @@ public:
   void stopUpdating(bool isStopped);
 
   //
-  // Request full refresh of the framebuffer, so that the whole screen will be
+  // Request full refresh of the lkvnc_rfb_FrameBuffer, so that the whole screen will be
   // re-sent from the server. The refresh is not guaranteed to happen
   // immediately, it will be completed when allowed by the protocol.
   //
   // This function does nothing when called before entering the main phase of
-  // the protocol (when the framebuffer does not exist yet).
+  // the protocol (when the lkvnc_rfb_FrameBuffer does not exist yet).
   //
   void refreshFrameBuffer();
 
@@ -325,7 +327,7 @@ public:
   //
   // Set the preferred encoding type. Note that the server is not guaranteed
   // to use this encoding, this is only a recommendation for the server.
-  // By default, Tight encoding (EncodingDefs::TIGHT) is the preferred one.
+  // By default, Tight encoding (lkvnc_rfb_DefsEncoding::TIGHT) is the preferred one.
   //
   void setPreferredEncoding(INT32 encodingType);
 
@@ -448,13 +450,13 @@ private:
   //
   // Read pixel format from the data connection and return it.
   //
-  PixelFormat readPixelFormat();
+  lkvnc_rfb_PixelFormat readPixelFormat();
 
   //
-  // This method processes FramebufferUpdate server message (code 0):
+  // This method processes lkvnc_rfb_FrameBufferUpdate server message (code 0):
   //   * receive the number of rectangles in this update,
   //   * then call receiveFrameBufferUpdRectangle() for each rectangle,
-  //   * then send FramebufferUpdateRequest client message (code 3).
+  //   * then send lkvnc_rfb_FrameBufferUpdateRequest client message (code 3).
   //
   void receiveFbUpdate();
 
@@ -473,7 +475,7 @@ private:
   void processPseudoEncoding(const Rect *rect, int encType);
 
   //
-  // Send FramebufferUpdateRequest client message (code 3).
+  // Send lkvnc_rfb_FrameBufferUpdateRequest client message (code 3).
   // This method updates pixel format if needed.
   //
   void sendFbUpdateRequest(bool incremental = true);
@@ -523,7 +525,7 @@ private:
   // Update properties (Dimension and PixelfFormat) of m_frameBuffer.
   //
   void setFbProperties(const Dimension *fbDimension,
-                       const PixelFormat *fbPixelFormat);
+                       const lkvnc_rfb_PixelFormat *fbPixelFormat);
 
   //
   // If m_isNewPixelFormat flag is set to true, then pixel format of the frame buffer
@@ -596,19 +598,19 @@ private:
   //
   // Mutex m_fbLock must locked into only this thread, else may be deadlock.
   LocalMutex m_fbLock;
-  FrameBuffer m_frameBuffer;
+  lkvnc_rfb_FrameBuffer m_frameBuffer;
 
-  // Decoder work with this framebuffer. It is not actual frame buffer,
+  // Decoder work with this lkvnc_rfb_FrameBuffer. It is not actual frame buffer,
   // it only easy buffer, common to all decoders. In future this frame buffer
   // may be replaced small buffers (e.g. 64KB) into ever decoder.
   //
   // After finish of decoding Decoder copy data to m_frameBuffer.
   // This buffer is not need to blocking: read information is one-thread.
-  FrameBuffer m_rectangleFb;
+  lkvnc_rfb_FrameBuffer m_rectangleFb;
 
   LocalMutex m_pixelFormatLock;
   bool m_isNewPixelFormat;
-  PixelFormat m_viewerPixelFormat;
+  lkvnc_rfb_PixelFormat m_viewerPixelFormat;
 
   LocalMutex m_refreshingLock;
   bool m_isRefreshing;

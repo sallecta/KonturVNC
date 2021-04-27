@@ -25,7 +25,7 @@
 #ifndef __RELOADCONFIGCOMMAND_H__
 #define __RELOADCONFIGCOMMAND_H__
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 
 #include "ControlProxy.h"
 

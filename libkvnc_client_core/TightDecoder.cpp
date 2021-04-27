@@ -24,13 +24,13 @@
 #include <crtdbg.h>
 #include "TightDecoder.h"
 
-#include "../libkvnc_rfb/StandardPixelFormatFactory.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_PixelFormatCreator.h"
 
 TightDecoder::TightDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter),
   m_isCPixel(false)
 {
-  m_encoding = EncodingDefs::TIGHT;
+  m_encoding = lkvnc_rfb_DefsEncoding::TIGHT;
 
   m_inflater.resize(DECODERS_NUM);
   for (int i = 0; i < DECODERS_NUM; i++)
@@ -49,7 +49,7 @@ TightDecoder::~TightDecoder()
 }
 
 void TightDecoder::decode(RfbInputGate *input,
-                          FrameBuffer *fb,
+                          lkvnc_rfb_FrameBuffer *fb,
                           const Rect *dstRect)
 {
  // The width of any Tight-encoded rectangle cannot exceed 2048
@@ -57,7 +57,7 @@ void TightDecoder::decode(RfbInputGate *input,
  // and each one should be encoded separately.
 
   m_isCPixel = false;
-  PixelFormat pf = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pf = fb->getPixelFormat();
   if (pf.colorDepth == 24 && pf.bitsPerPixel == 32 &&
       pf.redMax == 255 && pf.greenMax == 255 && pf.blueMax == 255) {
     m_isCPixel = true;
@@ -154,7 +154,7 @@ int TightDecoder::readCompactSize(RfbInputGate *input)
 }
 
 void TightDecoder::processJpeg(RfbInputGate *input,
-                               FrameBuffer *frameBuffer,
+                               lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                                const Rect *dstRect)
 {
   UINT32 jpegBufLen = readCompactSize(input);
@@ -172,9 +172,9 @@ void TightDecoder::processJpeg(RfbInputGate *input,
       m_jpeg.decompress(buffer, jpegBufLen, pixels, dstRect);
       if (m_isCPixel) {
         pixels = transformArray(pixels);
-        drawTightBytes(frameBuffer, &pixels, dstRect);
+        drawTightBytes(lkvnc_rfb_FrameBuffer, &pixels, dstRect);
       } else {
-        drawJpegBytes(frameBuffer, &pixels, dstRect);
+        drawJpegBytes(lkvnc_rfb_FrameBuffer, &pixels, dstRect);
       }
     } catch (const Exception &ex) {
       StringStorage error;
@@ -186,7 +186,7 @@ void TightDecoder::processJpeg(RfbInputGate *input,
 }
 
 void TightDecoder::processBasicTypes(RfbInputGate *input,
-                                     FrameBuffer *fb,
+                                     lkvnc_rfb_FrameBuffer *fb,
                                      const Rect *dstRect,
                                      UINT8 compressionControl)
 {
@@ -293,7 +293,7 @@ void TightDecoder::readCompressedData(RfbInputGate *input,
   }
 }
 
-void TightDecoder::drawPalette(FrameBuffer *fb,
+void TightDecoder::drawPalette(lkvnc_rfb_FrameBuffer *fb,
                                const std::vector<UINT32> &palette,
                                const std::vector<UINT8> &pixels,
                                const Rect *dstRect)
@@ -333,7 +333,7 @@ void TightDecoder::drawPalette(FrameBuffer *fb,
   }
 }
 
-void TightDecoder::drawTightBytes(FrameBuffer *fb,
+void TightDecoder::drawTightBytes(lkvnc_rfb_FrameBuffer *fb,
                                   const std::vector<UINT8> *pixels,
                                   const Rect *dstRect)
 {
@@ -353,7 +353,7 @@ void TightDecoder::drawTightBytes(FrameBuffer *fb,
   }
 }
 
-void TightDecoder::drawJpegBytes(FrameBuffer *fb,
+void TightDecoder::drawJpegBytes(lkvnc_rfb_FrameBuffer *fb,
                                  const std::vector<UINT8> *pixels,
                                  const Rect *dstRect)
 {
@@ -363,7 +363,7 @@ void TightDecoder::drawJpegBytes(FrameBuffer *fb,
 
   int fbBytesPerPixel = fb->getBytesPerPixel();
   int bytesPerCPixel = 3;
-  PixelFormat pxFormat = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pxFormat = fb->getPixelFormat();
 
   int dstLength = dstRect->area();
 
@@ -398,7 +398,7 @@ void TightDecoder::drawJpegBytes(FrameBuffer *fb,
  * component.
  */
 
-void TightDecoder::drawGradient(FrameBuffer *fb,
+void TightDecoder::drawGradient(lkvnc_rfb_FrameBuffer *fb,
                                 const std::vector<UINT8> &pixels,
                                 const Rect *dstRect)
 {
@@ -412,7 +412,7 @@ void TightDecoder::drawGradient(FrameBuffer *fb,
   memset(&opRows[0].front(), 0, opRowLength * sizeof(UINT16));
   memset(&opRows[1].front(), 0, opRowLength * sizeof(UINT16));
 
-  PixelFormat pxFormat = fb->getPixelFormat();
+  lkvnc_rfb_PixelFormat pxFormat = fb->getPixelFormat();
   int fbBytesPerPixel = fb->getBytesPerPixel();
   int bytesPerCPixel = fbBytesPerPixel;
   if (m_isCPixel) {
@@ -448,7 +448,7 @@ void TightDecoder::drawGradient(FrameBuffer *fb,
   }
 }
 
-UINT32 TightDecoder::getRawTightColor(const PixelFormat *pxFormat,
+UINT32 TightDecoder::getRawTightColor(const lkvnc_rfb_PixelFormat *pxFormat,
                                       const std::vector<UINT8> &pixels,
                                       const size_t offset)
 {
@@ -462,7 +462,7 @@ UINT32 TightDecoder::getRawTightColor(const PixelFormat *pxFormat,
   return rawColor;
 }
 
-void TightDecoder::fillRawComponents(const PixelFormat *pxFormat,
+void TightDecoder::fillRawComponents(const lkvnc_rfb_PixelFormat *pxFormat,
                                      UINT8 components[],
                                      const std::vector<UINT8> &pixels,
                                      const size_t pixelOffset)

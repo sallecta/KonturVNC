@@ -23,9 +23,9 @@
 //
 
 #include "ClientLogger.h"
-#include "../libkvnc_win_system/PipeClient.h"
+#include "../libkvnc_all_winSystem/PipeClient.h"
 #include "SecurityPipeClient.h"
-#include "../libkvnc_util/DateTime.h"
+#include "../libkvnc_all_util/DateTime.h"
 
 ClientLogger::ClientLogger(const TCHAR *publicPipeName, const TCHAR *logFileName)
 : LogDump(false, true),

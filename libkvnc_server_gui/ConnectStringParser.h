@@ -25,7 +25,7 @@
 #ifndef _CONNECT_STRING_PARSER_H_
 #define _CONNECT_STRING_PARSER_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 class ConnectStringParser
 {

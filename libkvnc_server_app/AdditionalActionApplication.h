@@ -25,9 +25,9 @@
 #ifndef _ADDITIONAL_ACTION_APPLICATION_H_
 #define _ADDITIONAL_ACTION_APPLICATION_H_
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
-#include "../libkvnc_win_system/LocalWindowsApplication.h"
+#include "../libkvnc_all_winSystem/LocalWindowsApplication.h"
 
 /**
  * Windows application that used to do additional actions:

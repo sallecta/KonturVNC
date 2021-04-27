@@ -25,8 +25,8 @@
 #ifndef _DESKTOP_SERVER_COMMAND_LINE_H_
 #define _DESKTOP_SERVER_COMMAND_LINE_H_
 
-#include "../libkvnc_util/CommandLine.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/CommandLine.h"
+#include "../libkvnc_all_util/Exception.h"
 
 /**
  * Desktop server command line parser.

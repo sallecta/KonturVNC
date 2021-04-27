@@ -25,12 +25,12 @@
 #ifndef _CONNECTTOTCPDISPATCHERTHREAD_H_
 #define _CONNECTTOTCPDISPATCHERTHREAD_H_
 
-#include "../libkvnc_util/StringStorage.h"
-#include "../libkvnc_thread/Thread.h"
+#include "../libkvnc_all_util/StringStorage.h"
+#include "../libkvnc_all_thread/Thread.h"
 #include "RfbClientManager.h"
 #include "TcpDispatcherConnectionListener.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 /**
 Thread that makes attempt to connect to listening rfb client in separate thread.

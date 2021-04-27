@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/TextBox.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/TextBox.h"
 #include <list>
 #include "RfbClientInfo.h"
 

@@ -25,7 +25,7 @@
 #ifndef __CONNECTCOMMAND_H__
 #define __CONNECTCOMMAND_H__
 
-#include "../libkvnc_util/Command.h"
+#include "../libkvnc_all_util/Command.h"
 
 #include "ControlProxy.h"
 

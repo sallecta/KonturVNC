@@ -22,14 +22,14 @@
 //-------------------------------------------------------------------------
 //
 
-
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 #include "../libkvnc_client_config/ViewerConfig.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 #include "TvnViewer.h"
 #include "ConnectionData.h"
 #include "ConnectionListener.h"
 #include "ViewerCmdLine.h"
-#include "../libkvnc_util/ResourceLoader.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
 
 #include "ClientCrashHook.h"
 

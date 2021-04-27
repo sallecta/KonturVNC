@@ -25,8 +25,8 @@
 #ifndef __WSCONFIGRUNNER_H__
 #define __WSCONFIGRUNNER_H__
 
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_log_writer/LogWriter.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_logger/LogWriter.h"
 
 // This class runs TvnControl in current session.
 // This class only for application mode running.

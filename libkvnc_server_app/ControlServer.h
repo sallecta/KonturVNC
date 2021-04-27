@@ -27,11 +27,11 @@
 
 #include "RfbClientManager.h"
 #include "ControlAppAuthenticator.h"
-#include "../libkvnc_thread/ThreadCollector.h"
+#include "../libkvnc_all_thread/ThreadCollector.h"
 
-#include "../libkvnc_network/TcpServer.h"
+#include "../libkvnc_all_network/TcpServer.h"
 
-#include "../libkvnc_win_system/PipeServer.h"
+#include "../libkvnc_all_winSystem/PipeServer.h"
 
 /**
  * Tcp server that listens for incoming control connections

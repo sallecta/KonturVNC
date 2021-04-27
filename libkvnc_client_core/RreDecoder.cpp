@@ -27,7 +27,7 @@
 RreDecoder::RreDecoder(LogWriter *logWriter)
 : DecoderOfRectangle(logWriter)
 {
-  m_encoding = EncodingDefs::RRE;
+  m_encoding = lkvnc_rfb_DefsEncoding::RRE;
 }
 
 RreDecoder::~RreDecoder()
@@ -35,15 +35,15 @@ RreDecoder::~RreDecoder()
 }
 
 void RreDecoder::decode(RfbInputGate *input,
-                        FrameBuffer *frameBuffer,
+                        lkvnc_rfb_FrameBuffer *lkvnc_rfb_FrameBuffer,
                         const Rect *dstRect)
 {
   UINT32 numberRectangle = input->readUInt32();
-  size_t bytesPerPixel = frameBuffer->getBytesPerPixel();
+  size_t bytesPerPixel = lkvnc_rfb_FrameBuffer->getBytesPerPixel();
 
   UINT32 backgroundColor;
   input->readFully(&backgroundColor, bytesPerPixel);
-  frameBuffer->fillRect(dstRect, backgroundColor);
+  lkvnc_rfb_FrameBuffer->fillRect(dstRect, backgroundColor);
 
   while (numberRectangle--) {
     UINT32 color;
@@ -55,6 +55,6 @@ void RreDecoder::decode(RfbInputGate *input,
 
     Rect rect(x, y, x + w, y + h);
     rect.move(dstRect->left, dstRect->top);
-    frameBuffer->fillRect(&rect, color);
+    lkvnc_rfb_FrameBuffer->fillRect(&rect, color);
   }
 }

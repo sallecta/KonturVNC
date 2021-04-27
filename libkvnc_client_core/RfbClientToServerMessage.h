@@ -25,9 +25,9 @@
 #ifndef _RFB_CLIENT_TO_SERVER_MESSAGE_H_
 #define _RFB_CLIENT_TO_SERVER_MESSAGE_H_
 
-#include "../libkvnc_rfb/MsgDefs.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 
 class RfbClientToServerMessage
 {

@@ -25,10 +25,10 @@
 #include <windows.h>
 #include <Dbghelp.h>
 #include "CrashHook.h"
-#include "../libkvnc_win_system/DynamicLibrary.h"
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_win_system/RegistryKey.h"
-#include "../libkvnc_thread/AutoLock.h"
+#include "../libkvnc_all_winSystem/DynamicLibrary.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
+#include "../libkvnc_all_thread/AutoLock.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
 //typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(__in  HANDLE hProcess,

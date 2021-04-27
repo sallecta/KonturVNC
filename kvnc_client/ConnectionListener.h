@@ -26,8 +26,8 @@
 #define __CONNECTION_LISTENER_H__
 
 #include "ViewerInstance.h"
-#include "../libkvnc_network/TcpServer.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_network/TcpServer.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 class ConnectionListener : protected TcpServer
 {

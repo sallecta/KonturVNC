@@ -23,7 +23,7 @@
 //
 
 #include "RfbClientManager.h"
-#include "../libkvnc_thread/ZombieKiller.h"
+#include "../libkvnc_all_thread/ZombieKiller.h"
 #include "QueryConnectionApplication.h"
 #include "../libkvnc_server_config/Configurator.h"
 
@@ -195,13 +195,13 @@ void RfbClientManager::onClipboardUpdate(const StringStorage *newClipboard)
 }
 
 void RfbClientManager::onSendUpdate(const UpdateContainer *updateContainer,
-                                    const CursorShape *cursorShape)
+                                    const lkvnc_rfb_CursorShape *lkvnc_rfb_CursorShape)
 {
   AutoLock al(&m_clientListLocker);
   for (ClientListIter iter = m_clientList.begin();
        iter != m_clientList.end(); iter++) {
     if ((*iter)->getClientState() == IN_NORMAL_PHASE) {
-      (*iter)->sendUpdate(updateContainer, cursorShape);
+      (*iter)->sendUpdate(updateContainer, lkvnc_rfb_CursorShape);
     }
   }
 }

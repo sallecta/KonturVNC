@@ -23,7 +23,7 @@
 //
 
 #include "SessionChangesWatcher.h"
-#include "../libkvnc_win_system/WTS.h"
+#include "../libkvnc_all_winSystem/WTS.h"
 
 SessionChangesWatcher::SessionChangesWatcher(AnEventListener *extSessionChangesListener,
                                              LogWriter *log)

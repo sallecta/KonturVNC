@@ -27,8 +27,8 @@
 
 #include <stdio.h>
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_rfb/PixelFormat.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_PixelFormat.h"
 
 // For Windows platforms only.
 // For using libjpeg for encoding go to Property Pages of tvnserver -> Linker -> Input -> Additional Dependencies
@@ -62,7 +62,7 @@ public:
   // flag must correspond to the native byte order. The stride value specifies
   // the number of bytes (not pixels!) occupied by one row of the buffer,
   // including padding if any.
-  virtual void compress(const void *buf, const PixelFormat *fmt,
+  virtual void compress(const void *buf, const lkvnc_rfb_PixelFormat *fmt,
                         int w, int h, int stride) = 0;
 
   // Get the length of the output data, in bytes.
@@ -89,7 +89,7 @@ public:
   virtual void setQuality(int level);
   virtual void resetQuality();
 
-  virtual void compress(const void *buf, const PixelFormat *fmt,
+  virtual void compress(const void *buf, const lkvnc_rfb_PixelFormat *fmt,
                         int w, int h, int stride);
 
   virtual size_t getOutputLength();
@@ -118,14 +118,14 @@ protected:
   // Convert one row (scanline) from the specified pixel format to the format
   // supported by the IJG JPEG library (one byte per one color component).
   void convertRow(JSAMPLE *dst, const void *src,
-                  const PixelFormat *fmt, int numPixels);
+                  const lkvnc_rfb_PixelFormat *fmt, int numPixels);
 
   // Convert one row (scanline) from the specified pixel format to the format
   // supported by the IJG JPEG library (one byte per one color component).
   // This is a faster version assuming that source pixels are 32-bit values
   // with actual color depth of 24 (redMax, greenMax and blueMax are all 255).
   void convertRow24(JSAMPLE *dst, const void *src,
-                    const PixelFormat *fmt, int numPixels);
+                    const lkvnc_rfb_PixelFormat *fmt, int numPixels);
 
 private:
   METHODDEF(StringStorage) getMessage(j_common_ptr cinfo);

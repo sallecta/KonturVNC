@@ -25,9 +25,9 @@
 #ifndef __LOGLEVELSENDER_H__
 #define __LOGLEVELSENDER_H__
 
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_win_system/WindowsEvent.h"
-#include "../libkvnc_io/DataOutputStream.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_winSystem/WindowsEvent.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
 
 class LogLevelSender : public Thread
 {

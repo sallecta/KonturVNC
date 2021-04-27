@@ -25,30 +25,30 @@
 #include "TvnServer.h"
 #include "WsConfigRunner.h"
 #include "AdditionalActionApplication.h"
-#include "../libkvnc_win_system/CurrentConsoleProcess.h"
-#include "../libkvnc_win_system/Environment.h"
+#include "../libkvnc_all_winSystem/CurrentConsoleProcess.h"
+#include "../libkvnc_all_winSystem/Environment.h"
 
 #include "../libkvnc_server_config/Configurator.h"
 
-#include "../libkvnc_thread/GlobalMutex.h"
+#include "../libkvnc_all_thread/GlobalMutex.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
-#include "../libkvnc_server_gui_config/TvnLogFilename.h"
+#include "../libkvnc_server_guiConfig/TvnLogFilename.h"
 
-#include "../libkvnc_network/socket/WindowsSocket.h"
+#include "../libkvnc_all_network/socket/WindowsSocket.h"
 
-#include "../libkvnc_util/StringTable.h"
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/StringTable.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
-#include "../libkvnc_file/File.h"
+#include "../libkvnc_all_file/File.h"
 
 // FIXME: Bad dependency on tvncontrol-app.
 #include "../libkvnc_server_gui/TransportFactory.h"
 #include "../libkvnc_server_gui/ControlPipeName.h"
 
-#include "../kvnc_server/BuildTime.h"
+#include "../kvnc_server/kvnc_server_BuildTime.h"
 
 #include <crtdbg.h>
 #include <time.h>

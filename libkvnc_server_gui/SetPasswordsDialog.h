@@ -25,16 +25,16 @@
 #ifndef _SETPASSWORDSDIALOG_H_
 #define _SETPASSWORDSDIALOG_H_
 
-#include "../libkvnc_util/winhdr.h"
+#include "../libkvnc_all_util/winhdr.h"
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/CheckBox.h"
-#include "../libkvnc_gui/TextBox.h"
-#include "../libkvnc_gui/BalloonTip.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/CheckBox.h"
+#include "../libkvnc_all_gui/TextBox.h"
+#include "../libkvnc_all_gui/BalloonTip.h"
 
-#include "../libkvnc_win_system/RegistryKey.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
 
-#include "../libkvnc_config/ConnectionHistory.h"
+#include "../libkvnc_all_config/ConnectionHistory.h"
 
 // Set passwords dialog. Just allows user to set rfb and administrators
 // passwords.

@@ -29,20 +29,20 @@
 
 #include "../libkvnc_server_gui/ControlProto.h"
 
-#include "../libkvnc_network/socket/SocketStream.h"
+#include "../libkvnc_all_network/socket/SocketStream.h"
 
 #include "../libkvnc_server_config/Configurator.h"
 
-#include "../libkvnc_util/VncPassCrypt.h"
+#include "../libkvnc_all_util/VncPassCrypt.h"
 
-#include "../libkvnc_rfb/HostPath.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_HostParser.h"
 
-#include "../libkvnc_win_system/WTS.h"
+#include "../libkvnc_all_winSystem/WTS.h"
 
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 #include <time.h>
-#include "../libkvnc_util/AnsiStringStorage.h"
+#include "../libkvnc_all_util/AnsiStringStorage.h"
 
 const UINT32 ControlClient::REQUIRES_AUTH[] = { ControlProto::ADD_CLIENT_MSG_ID,
                                                 ControlProto::DISCONNECT_ALL_CLIENTS_MSG_ID,
@@ -370,7 +370,7 @@ void ControlClient::addClientMsgRcvd()
   // Parse host and port from connection string.
   //
   AnsiStringStorage connectStringAnsi(&connectString);
-  HostPath hp(connectStringAnsi.getString(), 5500);
+  lkvnc_rfb_HostParser hp(connectStringAnsi.getString(), 5500);
 
   if (!hp.isValid()) {
     return;
@@ -412,7 +412,7 @@ void ControlClient::connectToTcpDispatcher()
 
   // Parse host and port from connection string.
   AnsiStringStorage connectStringAnsi(&connectString);
-  HostPath hp(connectStringAnsi.getString(), 5959);
+  lkvnc_rfb_HostParser hp(connectStringAnsi.getString(), 5959);
   if (!hp.isValid()) {
     return;
   }

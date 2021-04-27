@@ -23,7 +23,7 @@
 //
 
 #include "ResourceStrings.h"
-#include "../libkvnc_util/ResourceLoader.h"
+#include "../libkvnc_all_util/ResourceLoader.h"
 
 ResourceStrings::ResourceStrings()
 : m_min(0),

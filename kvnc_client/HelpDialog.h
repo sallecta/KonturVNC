@@ -25,9 +25,9 @@
 #ifndef _HELP_DIALOG_H_
 #define _HELP_DIALOG_H_
 
-#include "../libkvnc_gui/BaseDialog.h"
-#include "../libkvnc_gui/TextBox.h"
-#include "resource.h"
+#include "../libkvnc_all_gui/BaseDialog.h"
+#include "../libkvnc_all_gui/TextBox.h"
+#include "kvnc_client_Resource.h"
 
 class HelpDialog : public BaseDialog
 {

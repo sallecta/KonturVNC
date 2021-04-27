@@ -25,17 +25,17 @@
 #ifndef _CONTROL_TRAY_ICON_H_
 #define _CONTROL_TRAY_ICON_H_
 
-#include "../libkvnc_gui/NotifyIcon.h"
-#include "../libkvnc_gui/WindowProcHolder.h"
-#include "../libkvnc_gui/drawing/Icon.h"
+#include "../libkvnc_all_gui/NotifyIcon.h"
+#include "../libkvnc_all_gui/WindowProcHolder.h"
+#include "../libkvnc_all_gui/drawing/Icon.h"
 
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
-#include "../libkvnc_util/Command.h"
-#include "../libkvnc_util/MacroCommand.h"
+#include "../libkvnc_all_util/Command.h"
+#include "../libkvnc_all_util/MacroCommand.h"
 
-#include "../libkvnc_server_gui_config/ConfigDialog.h"
+#include "../libkvnc_server_guiConfig/ConfigDialog.h"
 
 #include "ControlProxy.h"
 #include "Notificator.h"

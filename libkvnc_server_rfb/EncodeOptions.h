@@ -44,9 +44,9 @@ public:
   // Preferred encoding is the first "normal" encoding from the list passed
   // to setEncodings(). If setEncodings() has not been called after object
   // construction or the most recent reset() call, then Raw will be considered
-  // the preferred encoding so this function will return EncodingDefs::RAW.
+  // the preferred encoding so this function will return lkvnc_rfb_DefsEncoding::RAW.
   // Similarly, if there was no suitable encoding in the list passed in the
-  // most recent setEncodings() call, EncodingDefs::RAW will be returned.
+  // most recent setEncodings() call, lkvnc_rfb_DefsEncoding::RAW will be returned.
   int getPreferredEncoding() const;
 
   // Return true is a particular encoding was enabled via setEncodings(),

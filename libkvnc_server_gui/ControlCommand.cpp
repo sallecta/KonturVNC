@@ -27,10 +27,10 @@
 #include "RemoteException.h"
 #include "ControlAuthException.h"
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_util/Exception.h"
 
-#include "../libkvnc_io/IOException.h"
+#include "../libkvnc_all_io/IOException.h"
 
 ControlCommand::ControlCommand(Command *command, Notificator *notificator)
 : m_command(command), m_notificator(notificator), m_successfull(false)

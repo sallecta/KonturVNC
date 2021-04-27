@@ -23,12 +23,12 @@
 //
 
 #include "ConfigurationDialog.h"
-#include "NamingDefs.h"
+#include "kvnc_client__Defs.h"
 #include "TvnViewer.h"
-#include "resource.h"
+#include "kvnc_client_Resource.h"
 
-#include "../libkvnc_file/File.h"
-#include "../libkvnc_win_system/Process.h"
+#include "../libkvnc_all_file/File.h"
+#include "../libkvnc_all_winSystem/Process.h"
 
 ConfigurationDialog::ConfigurationDialog()
 : BaseDialog(IDD_CONFIGURATION),

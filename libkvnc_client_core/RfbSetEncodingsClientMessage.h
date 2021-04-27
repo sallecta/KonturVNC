@@ -26,7 +26,7 @@
 #define _RFB_SET_ENCODINGS_CLIENT_MESSAGE_H_
 
 #include "RfbClientToServerMessage.h"
-#include "../libkvnc_rfb/EncodingDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
 
 class RfbSetEncodingsClientMessage : public RfbClientToServerMessage
 {

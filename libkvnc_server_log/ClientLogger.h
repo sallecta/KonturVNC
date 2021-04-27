@@ -25,14 +25,14 @@
 #ifndef __CLIENTLOGGER_H__
 #define __CLIENTLOGGER_H__
 
-#include "../libkvnc_util/CommonHeader.h"
-#include "../libkvnc_io/Channel.h"
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_thread/Thread.h"
-#include "../libkvnc_log_writer/Logger.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_log_writer/LogDump.h"
+#include "../libkvnc_all_util/CommonHeader.h"
+#include "../libkvnc_all_io/Channel.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_thread/Thread.h"
+#include "../libkvnc_all_logger/Logger.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_logger/LogDump.h"
 
 class ClientLogger : public Logger, private Thread, public LogDump
 {

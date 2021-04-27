@@ -25,10 +25,10 @@
 #ifndef _AUTH_HANDLER_H_
 #define _AUTH_HANDLER_H_
 
-#include "../libkvnc_io/DataInputStream.h"
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_rfb/AuthDefs.h"
-#include "../libkvnc_util/Exception.h"
+#include "../libkvnc_all_io/DataInputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsAuth.h"
+#include "../libkvnc_all_util/Exception.h"
 
 #include "CapabilitiesManager.h"
 

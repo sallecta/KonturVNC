@@ -27,7 +27,7 @@
 RichCursorDecoder::RichCursorDecoder(LogWriter *logWriter)
 : PseudoDecoder(logWriter)
 {
-  m_encoding = PseudoEncDefs::RICH_CURSOR;
+  m_encoding = lkvnc_rfb_DefsEncoding__Pseudo::RICH_CURSOR;
 }
 
 RichCursorDecoder::~RichCursorDecoder()

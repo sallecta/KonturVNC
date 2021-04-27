@@ -27,8 +27,8 @@
 #include "ServerCommandLine.h"
 #include "../libkvnc_server_app/NamingDefs.h"
 
-#include "../libkvnc_win_system/SCMClient.h"
-#include "../libkvnc_win_system/Environment.h"
+#include "../libkvnc_all_winSystem/SCMClient.h"
+#include "../libkvnc_all_winSystem/Environment.h"
 
 const TCHAR TvnService::SERVICE_COMMAND_LINE_KEY[] = _T("-service");
 

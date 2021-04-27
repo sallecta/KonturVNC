@@ -1,9 +1,9 @@
 #include "ReconnectWnd.h"
-#include "resource.h"
+#include "kvnc_client_Resource.h"
 #include "ViewerWindow.h"
 #include "TvnViewer.h"
 
-ReconnectDialog::ReconnectDialog(class TvnViewer * pViewer) : 
+ReconnectDialog::ReconnectDialog(class TvnViewer * pViewer) :
 	BaseDialog(IDD_RECONNECT),
 	dwAttempt(1),
 	pViewer(pViewer),
@@ -27,7 +27,7 @@ BOOL ReconnectDialog::onInitDialog() {
 	return TRUE;
 }
 
-VOID ReconnectDialog::storeAdditionalInfo(LPTSTR szText){ 
+VOID ReconnectDialog::storeAdditionalInfo(LPTSTR szText){
 	EnterCriticalSection(&csErrorInfo);
 	if (szErrorInfo)
 		free(szErrorInfo);

@@ -25,10 +25,10 @@
 #ifndef _CONTROL_MESSAGE_H_
 #define _CONTROL_MESSAGE_H_
 
-#include "../libkvnc_io/DataOutputStream.h"
-#include "../libkvnc_io/ByteArrayOutputStream.h"
+#include "../libkvnc_all_io/DataOutputStream.h"
+#include "../libkvnc_all_io/ByteArrayOutputStream.h"
 
-#include "../libkvnc_util/CommonHeader.h"
+#include "../libkvnc_all_util/CommonHeader.h"
 
 #include "RemoteException.h"
 #include "ControlGate.h"

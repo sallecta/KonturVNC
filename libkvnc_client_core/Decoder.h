@@ -25,13 +25,13 @@
 #ifndef _DECODER_H_
 #define _DECODER_H_
 
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_network/RfbInputGate.h"
-#include "../libkvnc_region/Rect.h"
-#include "../libkvnc_rfb/FrameBuffer.h"
-#include "../libkvnc_rfb/EncodingDefs.h"
-#include "../libkvnc_thread/AutoLock.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_network/RfbInputGate.h"
+#include "../libkvnc_all_region/Rect.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_FrameBuffer.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
+#include "../libkvnc_all_thread/AutoLock.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 class Decoder
 {

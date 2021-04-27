@@ -25,11 +25,11 @@
 #ifndef _CONNECTION_CONFIG_H_
 #define _CONNECTION_CONFIG_H_
 
-#include "../libkvnc_config/SettingsManager.h"
+#include "../libkvnc_all_config/SettingsManager.h"
 
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
-#include "../libkvnc_rfb/EncodingDefs.h"
+#include "../libkvnc_all_rfb/lkvnc_rfb_DefsEncoding.h"
 
 //
 // Contains options of connection configuration.
@@ -156,7 +156,7 @@ public:
   bool isIgnoringShapeUpdates();
 
   // Sets local cursor shape
-  void setLocalCursorShape(int cursorShape);
+  void setLocalCursorShape(int lkvnc_rfb_CursorShape);
   // Gets local cursor shape
   int getLocalCursorShape();
 

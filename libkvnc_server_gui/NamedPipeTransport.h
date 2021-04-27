@@ -27,8 +27,8 @@
 
 #include "Transport.h"
 
-#include "../libkvnc_win_system/Pipe.h"
-#include "../libkvnc_win_system/PipeServer.h"
+#include "../libkvnc_all_winSystem/Pipe.h"
+#include "../libkvnc_all_winSystem/PipeServer.h"
 
 /**
  * Transport that uses pipe as transport.

@@ -217,13 +217,8 @@ pip-log.txt
 
 .svn/
 
-
-
-
-Version.h
-/tvnserver/Version.h
-/tvnviewer/Version.h
-
 *.depend
 *.layout
 *.ods#
+**/out/
+**/!out/

@@ -22,12 +22,12 @@
 //-------------------------------------------------------------------------
 //
 
-#include "../libkvnc_util/winhdr.h"
-#include "../libkvnc_win_system/Registry.h"
+#include "../libkvnc_all_util/winhdr.h"
+#include "../libkvnc_all_winSystem/Registry.h"
 #include "TcpDispatcherConnectionDialog.h"
-#include "../libkvnc_util/StringParser.h"
+#include "../libkvnc_all_util/StringParser.h"
 #include "../libkvnc_server_app/NamingDefs.h"
-#include "../kvnc_server/resource.h"
+#include "../kvnc_server/kvnc_server_Resource.h"
 
 TcpDispatcherConnectionDialog::TcpDispatcherConnectionDialog()
 : BaseDialog(IDD_DISPATCHER_CONN),

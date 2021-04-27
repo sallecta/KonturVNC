@@ -23,7 +23,7 @@
 //
 
 #include "ServerCommandLine.h"
-#include "../libkvnc_util/CommandLine.h"
+#include "../libkvnc_all_util/CommandLine.h"
 
 ServerCommandLine::ServerCommandLine()
 {

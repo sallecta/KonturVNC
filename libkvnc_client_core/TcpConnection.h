@@ -25,12 +25,12 @@
 #ifndef _TCP_CONNECTION_H_
 #define _TCP_CONNECTION_H_
 
-#include "../libkvnc_log_writer/LogWriter.h"
-#include "../libkvnc_network/RfbInputGate.h"
-#include "../libkvnc_network/RfbOutputGate.h"
-#include "../libkvnc_network/socket/SocketIPv4.h"
-#include "../libkvnc_network/socket/SocketStream.h"
-#include "../libkvnc_thread/LocalMutex.h"
+#include "../libkvnc_all_logger/LogWriter.h"
+#include "../libkvnc_all_network/RfbInputGate.h"
+#include "../libkvnc_all_network/RfbOutputGate.h"
+#include "../libkvnc_all_network/socket/SocketIPv4.h"
+#include "../libkvnc_all_network/socket/SocketStream.h"
+#include "../libkvnc_all_thread/LocalMutex.h"
 
 class TcpConnection
 {

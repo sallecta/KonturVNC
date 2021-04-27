@@ -23,7 +23,7 @@
 //
 
 #include "ViewerInstance.h"
-
+#include "../libkvnc_all_rfb/lkvnc_rfb_Defs.cpp"
 #include "../libkvnc_client_core/RemoteViewerCore.h"
 #include "../libkvnc_client_core/FileTransferCapability.h"
 #include "CommentDialog.h"

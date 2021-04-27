@@ -25,7 +25,7 @@
 #ifndef _VIEWER_MENU_H_
 #define _VIEWER_MENU_H_
 
-#include "../libkvnc_gui/Menu.h"
+#include "../libkvnc_all_gui/Menu.h"
 
 class ViewerMenu: public Menu
 {

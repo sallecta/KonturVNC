@@ -23,12 +23,12 @@
 //
 
 #include <crtdbg.h>
-#include "../libkvnc_win_system/Environment.h"
-#include "../libkvnc_server_gui_config/TvnLogFilename.h"
-#include "../libkvnc_config/RegistrySettingsManager.h"
+#include "../libkvnc_all_winSystem/Environment.h"
+#include "../libkvnc_server_guiConfig/TvnLogFilename.h"
+#include "../libkvnc_all_config/RegistrySettingsManager.h"
 
-#include "../libkvnc_win_system/Registry.h"
-#include "../libkvnc_win_system/RegistryKey.h"
+#include "../libkvnc_all_winSystem/Registry.h"
+#include "../libkvnc_all_winSystem/RegistryKey.h"
 
 #include "Configurator.h"
 #include "../libkvnc_server_app/NamingDefs.h"

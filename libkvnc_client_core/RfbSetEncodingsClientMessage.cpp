@@ -37,7 +37,7 @@ RfbSetEncodingsClientMessage::~RfbSetEncodingsClientMessage()
 void RfbSetEncodingsClientMessage::send(RfbOutputGate *output)
 {
   AutoLock al(output);
-  output->writeUInt8(ClientMsgDefs::SET_ENCODINGS);
+  output->writeUInt8(lkvnc_rfb_Defs__Client::SET_ENCODINGS);
   output->writeUInt8(0); // padding 1 byte
 
   // output count of encoding and out code of all encodings

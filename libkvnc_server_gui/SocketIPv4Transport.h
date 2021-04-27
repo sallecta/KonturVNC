@@ -27,7 +27,7 @@
 
 #include "Transport.h"
 
-#include "../libkvnc_network/socket/SocketIPv4.h"
+#include "../libkvnc_all_network/socket/SocketIPv4.h"
 
 /**
  * Transport that uses IPv4 socket.

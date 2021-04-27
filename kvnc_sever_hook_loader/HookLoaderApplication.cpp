@@ -25,7 +25,7 @@
 #include "HookLoaderApplication.h"
 #include "../libkvnc_util/StringParser.h"
 #include "../libkvnc_server_app/NamingDefs.h"
-#include "../libkvnc_desktop/HookInstaller.h"
+#include "../libkvnc_server_desktop/HookInstaller.h"
 
 HookLoaderApplication::HookLoaderApplication(HINSTANCE appInstance,
                                              const TCHAR *windowClassName,
