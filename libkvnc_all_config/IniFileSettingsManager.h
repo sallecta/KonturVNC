@@ -59,7 +59,7 @@ public:
   // Remark: returns value if value is NULL.
   virtual bool setString(const TCHAR *name, const TCHAR *value);
 
-  virtual bool getLong(const TCHAR *name, long *value);
+  //stub virtual bool getLong(const TCHAR *name, long *value);
   virtual bool setLong(const TCHAR *name, long value);
 
   virtual bool getBoolean(const TCHAR *name, bool *value);

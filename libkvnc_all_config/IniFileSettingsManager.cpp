@@ -107,11 +107,11 @@ bool IniFileSettingsManager::setString(const TCHAR *name, const TCHAR *value)
 }
 
 // FIXME: Stub
-bool IniFileSettingsManager::getLong(const TCHAR *name, long *value)
-{
-  _ASSERT(FALSE);
-  return false;
-}
+//bool IniFileSettingsManager::getLong(const TCHAR *name, long *value)
+//{
+//  _ASSERT(FALSE);
+//  return false;
+//}
 
 // FIXME: Stub
 bool IniFileSettingsManager::setLong(const TCHAR *name, long value)
