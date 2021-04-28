@@ -74,8 +74,8 @@ public:
   virtual bool getByte(const TCHAR *name, char *value);
   virtual bool setByte(const TCHAR *name, char value);
 
-  virtual bool getBinaryData(const TCHAR *name, void *value, size_t *size);
-  virtual bool setBinaryData(const TCHAR *name, const void *value, size_t size);
+//  virtual bool getBinaryData(const TCHAR *name, void *value, size_t *size);
+//  virtual bool setBinaryData(const TCHAR *name, const void *value, size_t size);
 
 protected:
   StringStorage m_appName;

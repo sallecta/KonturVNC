@@ -184,19 +184,19 @@ bool IniFileSettingsManager::setByte(const TCHAR *name, char value)
   return setInt(name, value);
 }
 
-// FIXME: Stub
-bool IniFileSettingsManager::getBinaryData(const TCHAR *name, void *value, size_t *size)
-{
-  _ASSERT(FALSE);
-  return false;
-}
-
-// FIXME: Stub
-bool IniFileSettingsManager::setBinaryData(const TCHAR *name, const void *value, size_t size)
-{
-  _ASSERT(FALSE);
-  return false;
-}
+//// FIXME: Stub
+//bool IniFileSettingsManager::getBinaryData(const TCHAR *name, void *value, size_t *size)
+//{
+//  _ASSERT(FALSE);
+//  return false;
+//}
+//
+//// FIXME: Stub
+//bool IniFileSettingsManager::setBinaryData(const TCHAR *name, const void *value, size_t size)
+//{
+//  _ASSERT(FALSE);
+//  return false;
+//}
 
 void IniFileSettingsManager::getPrivateProfileString(const TCHAR *name,
                                                      StringStorage *value,
