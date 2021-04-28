@@ -30,6 +30,7 @@
 class WinFilePath : public StringStorage
 {
 public:
+
   WinFilePath();
   WinFilePath(const TCHAR *string);
   WinFilePath(const WinFilePath &stringBuffer);

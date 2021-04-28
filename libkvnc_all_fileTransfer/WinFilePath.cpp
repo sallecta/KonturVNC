@@ -28,7 +28,9 @@
 
 
 WinFilePath::WinFilePath()
-: m_parentPathIsRoot(false)
+:
+StringStorage (),
+m_parentPathIsRoot(false)
 {
 }
 
@@ -38,11 +40,21 @@ WinFilePath::WinFilePath(const TCHAR *string)
   setString(string);
 }
 
+// note
+// base class should be explicitly initialized in the copy constructor [-Wextra]
+// B (const B & object) {/*do somthing*/}
+// is actually equivalent to
+// B (const B & object) : A(object) {/*do somthing*/}
+// https://stackoverflow.com/a/43613363
+// Peter, https://stackoverflow.com/users/4706785/peter
 WinFilePath::WinFilePath(const WinFilePath &stringBuffer)
-: m_parentPathIsRoot(false)
+:
+StringStorage (stringBuffer),
+m_parentPathIsRoot(false)
 {
   setString(stringBuffer.getString());
 }
+// end note
 
 WinFilePath::~WinFilePath()
 {
