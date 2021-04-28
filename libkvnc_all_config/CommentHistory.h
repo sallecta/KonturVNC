@@ -27,8 +27,8 @@ protected:
 
 protected:
   vector<StringStorage> m_coms;
-  size_t m_limit;
   RegistryKey *m_key;
+  size_t m_limit;
 };
 
 #endif

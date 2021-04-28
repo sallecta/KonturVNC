@@ -114,15 +114,13 @@ protected:
    */
   vector<StringStorage> m_hosts;
 
+// Registry key for saving and loading connection history data.
+  RegistryKey *m_key;
+
   /**
    * Maximum count of history entries.
    */
   size_t m_limit;
-
-  /**
-   * Registry key for saving and loading connection history data.
-   */
-  RegistryKey *m_key;
 };
 
 #endif
