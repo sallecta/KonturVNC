@@ -60,7 +60,7 @@ public:
   virtual bool setString(const TCHAR *name, const TCHAR *value);
 
   //stub virtual bool getLong(const TCHAR *name, long *value);
-  virtual bool setLong(const TCHAR *name, long value);
+  //virtual bool setLong(const TCHAR *name, long value);
 
   virtual bool getBoolean(const TCHAR *name, bool *value);
   virtual bool setBoolean(const TCHAR *name, bool value);
